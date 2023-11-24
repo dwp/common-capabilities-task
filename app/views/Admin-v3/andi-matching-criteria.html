@@ -1,0 +1,192 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-l">
+    Andi's matching criteria
+  </h1>
+
+  <p>To match Andi to tasks as an individual, choose matching criteria that apply to Andi. These criteria will match Andi to Maternity Allowance tasks.</p>
+
+  <p> Do not select any matching criteria if you only want Andi to get tasks as a member of a group.</p>
+
+   
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <form class="form" action="andi-groups" method="post">
+          <div class="govuk-grid-column-one-third">
+            
+            {{ govukCheckboxes({
+              name: "andi-grade",
+              values: data['andi-grade'],
+              fieldset: {
+                legend: {
+                  text: "Grade",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "aa",
+                  text: "AA"
+                },
+                {
+                  value: "ao",
+                  text: "AO"
+                }
+              ]
+            }) }}
+    
+            {{ govukCheckboxes({
+              name: "language",
+              values: data['language'],
+              fieldset: {
+                legend: {
+                  text: "Language",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "welsh",
+                  text: "Welsh"
+                }
+              ]
+            }) }}
+            
+            {{ govukCheckboxes({
+              name: "country",
+              values: data['country'],
+              fieldset: {
+                legend: {
+                  text: "Location",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "england",
+                  text: "England"
+                },
+                {
+                  value: "northern-ireland",
+                  text: "Northern Ireland"
+                },
+                {
+                  value: "scotland",
+                  text: "Scotland"
+                },
+                {
+                  value: "wales",
+                  text: "Wales"
+                }
+              ]
+            }) }}
+            
+    
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukCheckboxes({
+              name: "location",
+              values: data['location'],
+              fieldset: {
+                legend: {
+                  text: "Office ID",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "bristol",
+                  text: "Bristol"
+                },
+                {
+                  value: "glasgow",
+                  text: "Glasgow"
+                },
+                {
+                  value: "leeds",
+                  text: "Leeds"
+                },
+                {
+                  value: "longbenton",
+                  text: "Longbenton"
+                }
+              ]
+            }) }}
+          </div>
+          <div class="govuk-grid-column-one-third">
+            {{ govukCheckboxes({
+              name: "andi-role",
+              values: data['andi-role'],
+              fieldset: {
+                legend: {
+                  text: "Role",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+            
+              items: [
+                {
+                  value: "decision-maker",
+                  text: "Decision maker"
+                },
+                {
+                  value: "claims-processor",
+                  text: "Claims processor"
+                }
+              ]
+            }) }}
+    
+            {{ govukCheckboxes({
+              name: "pattern",
+              values: data['pattern'],
+              fieldset: {
+                legend: {
+                  text: "Working pattern",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "mfpm",
+                  text: "M-F PM"
+                }
+              ]
+            }) }}
+          </div>
+        </div>
+      </main>
+      
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+    <form class="form" action="andi-groups" method="post">
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+    &nbsp;
+    <a href="andi-groups"></a>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Skip
+      </button> 
+  </div>
+</form>
+
+{% endblock %}

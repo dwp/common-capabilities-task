@@ -1,0 +1,60 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="andi-matching-criteria">Back</a>
+{% endblock %}
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-l">
+    Add Andi to groups
+  </h1>
+
+  <p>Add Andi to a group. Andi will be able to claim tasks as a member of a group.</p>
+
+    <p>Do not select any groups if you do not want to put Andi into a group.</p>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <form class="form" action="andi-review" method="post">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukCheckboxes({
+            name: "groups",
+            values: data['groups'],
+            fieldset: {
+              legend: {
+                text: "Groups",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Select the groups you want to add Andi to."
+            },
+            items: [
+              {
+                value: "admin",
+                text: "Admin"
+              },
+              {
+                value: "decision makers",
+                text: "Decision makers"
+              }
+            ]
+          }) }}
+        </div>
+  </main>
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  <form class="form" action="andi-review" method="post">
+    {{ govukButton({
+      text: "Check Andi's details"
+    }) }}
+  </form>
+</div>
+
+{% endblock %}

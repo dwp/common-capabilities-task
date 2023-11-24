@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  <form class="form" action="review-edit-group" method="post">
+
+  <h1 class="govuk-heading-l">
+    Create a group
+  </h1>
+  <p>Create a group and add team members with shared matching criteria.</p>
+  &nbsp;
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{{ govukInput({
+  id: "group name",
+  name: "group-name",
+  label: {
+    text: "Group name",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+value: data['group-name']
+
+}) }}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "group-members",
+  value: data['group-members'],
+  fieldset: {
+    legend: {
+      text: "Group members",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "You can save your changes and add a team member later. To do this you must add them to your team in the organisation unit set up area."
+  },
+  items: [
+    {
+      value: "Amy Anderson",
+      text: "Amy Anderson"
+    },
+    {
+      value: "Aiden Jenkins",
+      text: "Aiden Jenkins"
+    },
+    {
+      value: "Dmitrij Ivanov",
+      text: "Dmitrij Ivanov"
+    },
+    {
+      value: "Julia Nguyen",
+      text: "Julia Nguyen"
+    },
+    {
+      value: "Fiona Murray-Reed",
+      text: "Fiona Murray-Reed"
+    }
+  ]
+}) }}
+
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "group-description",
+  id: "group description",
+  label: {
+    text: "Group description",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    text: "Add a description to your group."
+  },
+  value: data['group-description']
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="review-edit-group" method="post">.
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Manage Maternity Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-dashboard">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Manage Maternity Allowance</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="maternity-team-home">Team members</a></h2>
+    <p>View a list of team members. Add or change criteria to help match them to tasks.  </p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="groups-home">Groups</a></h2>
+    <p>Create groups of team members with the same matching criteria.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="task-templates-home">Task templates</a></h2>
+      <p>Create templates for tasks your team does regularly.</p>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    &nbsp;
+      <div class="box">
+        <h2 class="govuk-heading-m"><a href="#">Maternity allowance profile</a></h2>
+        <p></p>
+      </div>
+    </div>
+&nbsp;
+{% endblock %}
+

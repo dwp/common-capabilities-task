@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  <form class="form" action="add-team-member" method="post">
+
+  <h1 class="govuk-heading-l">
+    Set up a profile for Maternity Allowance
+  </h1>
+  <p>Add job information and matching criteria for Maternity Allowance tasks.</p>
+  &nbsp;
+
+
+  {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+  {{ govukTextarea({
+    name: "org-job-roles",
+    id: "org-job-roles",
+    label: {
+      text: "What job roles are on this team?",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    hint: {
+      text: "List full job titles, separated by commas."
+    }
+  }) }}
+
+
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukCheckboxes({
+    name: "org-job-grades", 
+    value: data['org-job-grades'],
+    fieldset: {
+      legend: {
+        text: "Job grades",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "What are your team members' job grades?"
+    },
+    items: [
+      {
+        value: "AA",
+        text: "AA"
+      },
+      {
+        value: "AO",
+        text: "AO"
+      },
+      {
+        value: "EO",
+        text: "EO"
+      },
+      {
+        value: "HEO/SEO",
+        text: "HEO/SEO"
+      },
+      {
+        value: "Grade 7",
+        text: "Grade 7"
+      },
+      {
+        value: "Grade 6",
+        text: "Grade 6"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+    name: "org-welsh",
+    value: data['org-welsh'],
+    fieldset: {
+      legend: {
+        text: "Welsh",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Do you need Welsh speaking team members?"
+    },
+    items: [
+      {
+        value: "Yes",
+        text: "Yes"
+      },
+      {
+        value: "No",
+        text: "No"
+      }
+    ]
+  }) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="add-team-member" method="post">.
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

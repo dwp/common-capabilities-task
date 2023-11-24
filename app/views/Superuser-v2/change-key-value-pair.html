@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  
+
+  <h1 class="govuk-heading-l">
+    Change this key value pair
+  </h1>
+  <p>Edit or delete this key value pair.</p> 
+  &nbsp;
+</div>
+
+  <div class="govuk-width-container">
+
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Name
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+        </div>
+        <div class="govuk-grid-column-one-third">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Value
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div>
+        </div>
+      </div>
+      <div class="govuk-button-group">
+        <a href="service-overview" "=""">
+        <button class="govuk-button" data-module="govuk-button">Confirm</button>
+        <a href="service-overview"</a>
+        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Delete
+        </button> 
+    </div>
+    </main>
+  </div>
+
+</div>
+</div>
+{% endblock %}

@@ -1,0 +1,130 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task information
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-tasks">Back</a>
+
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Maternity Allowance task details
+      </h1>
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Case manager changed to Aiden Jenkins.
+        </h3>
+      </div>
+    </div>
+  
+        <p>View task details and history. Change case manager.</p>
+  
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Claimant name
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Deborah Levy
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Book assessment
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date due
+            </dt>
+            <dd class="govuk-summary-list__value">
+              06 April 2023
+            </dd>
+            <dd class="govuk-table__cell govuk-table__cell--numeric" align="right">
+              <strong class="govuk-tag govuk-tag--red">
+                1 day overdue
+            </strong>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Date received
+            </dt>
+            <dd class="govuk-summary-list__value">
+              05 March 2023
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Priority
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Medium
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="assign-task">
+                Change<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              In progress
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Case manager
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Aiden Jenkins
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="assign-task">
+                Change<span class="govuk-visually-hidden"> contact details</span>
+              </a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Matching criteria
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Scotland, England, Welsh, Longbenton
+            </dd>
+          </div>
+        </dl>
+        <div class="govuk-button-group">
+          <a href="task-history" "=""">
+          <button class="govuk-button" data-module="govuk-button">View history</button>
+          <a href="maternity-tasks.html"</a>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Manage weekly tasks
+          </button>
+      </div>
+      </div>
+
+{% endblock %}
+

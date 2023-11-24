@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check the details are correct before creating this group</h1>
+
+      <h2 class="govuk-heading-m">Group details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Group name"
+            },
+            value: {
+              text: data['group-name']
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "create-group",
+                  text: "Change",
+                  visuallyHiddenText: "job role"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Description"
+            },
+            value: {
+              text: data['group-description']
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-group",
+                  text: "Change",
+                  visuallyHiddenText: "grade"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Members"
+            },
+            value: {
+              text: data['group-members']
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-group",
+                  text: "Change",
+                  visuallyHiddenText: "members"
+                }
+              ]
+            }
+          }
+
+        ]
+      }) }}
+
+      <form action="groups-home" method="post" novalidate>
+
+        <input type="hidden" name="page-page" value="true">
+
+        {{ govukButton({
+          text: "Confirm and save"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

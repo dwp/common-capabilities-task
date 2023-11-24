@@ -1,0 +1,184 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-l">
+    Add task type criteria
+  </h1>
+<p>Choose criteria that apply to task type 'Change a claimant's address.'</p>
+ 
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+        
+        {{ govukCheckboxes({
+          name: "task-type-grade",
+          fieldset: {
+            legend: {
+              text: "Grade",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+            {
+              value: "aa",
+              text: "AA"
+            },
+            {
+              value: "ao",
+              text: "AO"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "task-type-language",
+          fieldset: {
+            legend: {
+              text: "Language",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+            {
+              value: "welsh",
+              text: "Welsh"
+            }
+          ]
+        }) }}
+        
+        {{ govukCheckboxes({
+          name: "task-type-location",
+          fieldset: {
+            legend: {
+              text: "Location",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+         
+            {
+              value: "england",
+              text: "England"
+            },
+            {
+              value: "northern-ireland",
+              text: "Northern Ireland"
+            },
+            {
+              value: "scotland",
+              text: "Scotland"
+            },
+            {
+              value: "wales",
+              text: "Wales"
+            }
+          ]
+        }) }}
+        
+
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {{ govukCheckboxes({
+          name: "task-type-office-id",
+          fieldset: {
+            legend: {
+              text: "Office ID",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+            {
+              value: "bristol",
+              text: "Bristol"
+            },
+            {
+              value: "glasgow",
+              text: "Glasgow"
+            },
+            {
+              value: "leeds",
+              text: "Leeds"
+            },
+            {
+              value: "longbenton",
+              text: "Longbenton"
+            }
+          ]
+        }) }}
+
+        
+      </div>
+      <div class="govuk-grid-column-one-third">
+        {{ govukCheckboxes({
+          name: "task-type-role",
+          fieldset: {
+            legend: {
+              text: "Role",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+            {
+              value: "decision-maker",
+              text: "Decision maker"
+            },
+            {
+              value: "claims-processor",
+              text: "Claims processor"
+            }
+          ]
+        }) }}
+
+        {{ govukCheckboxes({
+          name: "task-type-working-pattern",
+          fieldset: {
+            legend: {
+              text: "Working pattern",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+         
+          items: [
+            {
+              value: "mfpm",
+              text: "M-F PM"
+            }
+          ]
+        }) }}
+     
+        
+      </div>
+
+    </div>
+  </main>
+  <div class="govuk-button-group">
+    <a href="view-edit-task-type" "=""">
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <a href="view-edit-task-type"</a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Skip
+    </button> 
+</div>
+
+{% endblock %}

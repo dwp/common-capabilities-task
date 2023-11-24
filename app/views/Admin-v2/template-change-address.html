@@ -1,0 +1,224 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop" >
+
+      <h1 class="govuk-heading-l">Review task template</h1>
+      <p>Task templates are for tasks regularly done by your team.</p>
+
+      <h2 class="govuk-heading-m">Template details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Template name"
+            },
+            value: {
+              text: "Change a claimant's address"
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "template name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Task description"
+            },
+            value: {
+              text: "Use this task template to change a claimant's address"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "task description"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: "5 days"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "group description"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+
+    
+          <h2 class="govuk-heading-m">Task matching criteria</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Group"
+                },
+                value: {
+                  text: "None of these"
+                },
+                
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "group link"
+                    }
+                  ]
+                }
+              }
+              ,
+              {
+                key: {
+                  text: "Office"
+                },
+                value: {
+                  text: "Longbenton, Newcastle"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "office location"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Job roles"
+                },
+                value: {
+                  text: "Decision maker"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "job roles"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Job grades"
+                },
+                value: {
+                  text: "AA, AO, EO"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "job grades"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Welsh"
+                },
+                value: {
+                  text: "Yes"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "welsh"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Experience"
+                },
+                value: {
+                  text: " "
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "#",
+                      text: "Change",
+                      visuallyHiddenText: "experience"
+                    }
+                  ]
+                }
+              }
+             
+            ]
+          }) }}
+
+      <form action="task-templates-home" method="post" novalidate>
+
+        <input type="hidden" name="task-templates-home" value="true">
+
+
+
+      <button class="govuk-button govuk-button" data-module="govuk-button">
+        Back to templates
+      </button>
+      &nbsp;
+    </form>
+    </div>
+  </div>
+{% endblock %}

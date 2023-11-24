@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  <form class="form" action="create-task-template-more-criteria" method="post">
+
+  <h1 class="govuk-heading-l">
+    Add task matching criteria
+  </h1>
+  <p>This helps match the task to team members.</p>
+  &nbsp;
+
+
+  {{ govukRadios({
+    name: "office-location",
+    value: data['office-location'],
+    fieldset: {
+      legend: {
+        text: "Office",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "If this task needs to be done by a team member at a certain office, please select it."
+    },
+    items: [
+      {
+        value: "Longbenton, Newcastle",
+        text: "Longbenton, Newcastle"
+      },
+      {
+        value: "Newcastle City Jobcentre",
+        text: "Newcastle City Jobcentre"
+      },
+      {
+        value: "No specific office",
+        text: "No specific office"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukCheckboxes({
+    name: "job-roles", 
+    value: data['job-roles'],
+    fieldset: {
+      legend: {
+        text: "Job roles",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Which job roles can do this task?"
+    },
+    items: [
+      {
+        value: "Business support",
+        text: "Business support"
+      },
+      {
+        value: "Decision maker",
+        text: "Decision maker"
+      }
+    ]
+  }) }}
+
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukCheckboxes({
+    name: "job-grades", 
+    value: data['job-grades'],
+    fieldset: {
+      legend: {
+        text: "Job grades",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Which job grades can do this task?"
+    },
+    items: [
+      {
+        value: "AA",
+        text: "AA"
+      },
+      {
+        value: "AO",
+        text: "AO"
+      },
+      {
+        value: "EO",
+        text: "EO"
+      },
+      {
+        value: "HEO/SEO",
+        text: "HEO/SEO"
+      },
+      {
+        value: "Grade 7",
+        text: "Grade 7"
+      },
+      {
+        value: "Grade 6",
+        text: "Grade 6"
+      }
+    ]
+  }) }}
+
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="create-task-template-more-criteria" method="post">.
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

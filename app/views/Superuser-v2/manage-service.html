@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance home
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Maternity Allowance home</h1>
+  <p>Manage the Maternity Allowance service.</p>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="service-overview">Maternity Allowance overview</a></h2>
+    <p>Manage the Maternity Allowance service details.</p>
+  </div>
+</div>
+
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="task-templates-home-add">Task types</a></h2>
+      <p>Create and manage task types.</p>
+    </div>
+  </div>
+&nbsp;
+{% endblock %}

@@ -1,0 +1,346 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review task template
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="spacer1"</div>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Review session data</h1>
+
+      <h2 class="govuk-heading-m">Add team member session details</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Amy Anderson (Andi)
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Groups
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['groups']|length > 0 %} 
+              <ul class="govuk-list">
+                {% for item in data['groups'] %}
+                  <li>
+                    {{ item 
+                    | replace("admin", "Admin")
+                    | replace("decision makers", "Decision Maker") }}
+                  </li>
+                {% endfor %}
+              </ul>
+              {% else %} 
+                None
+              {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-grade']|length > 0 %} 
+              <ul class="govuk-list">
+                {% for item in data['andi-grade'] %}
+                  <li>
+                    {{ item 
+                    | replace("ao", "AO")
+                    | replace("aa", "AA") }}
+                  </li>
+                {% endfor %}
+              </ul>
+              {% else %} 
+                None
+              {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['language'] == 'welsh'%} 
+                Welsh
+              {% else %} 
+                None
+              {% endif %}
+            </p>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['country']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['country'] %}
+                  <li>
+                    {{ item 
+                    | replace("england", "England") 
+                    | replace("northern-ireland", "Northern Ireland") 
+                    | replace("scotland", "Scotland") 
+                    | replace("wales", "Wales") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None 
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['location']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['location'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['andi-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['pattern'] == 'mfpm'%} 
+                M-F PM
+              {% else %} 
+                None
+              {% endif %}
+            </p>
+          </dd>
+        </div>
+      </dl>
+
+          <h2 class="govuk-heading-m">Create a group session details</h2>
+
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Group name
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-name']|length == 0 %}
+                  None
+                {% else %}
+                    {{ data['group-name'] }}
+                {% endif %}
+              </dd>
+            </div>
+    
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Description
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-description']|length == 0 %}
+                  None 
+                {% else %}
+                    {{ data['group-description'] }}
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Members
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-members']|length > 0 %}
+                  <ul class="govuk-list">
+                    {% for item in data['group-members'] %}
+                      <li>
+                        {{ item 
+                        | replace("amy", "Amy Anderson (Andi)") 
+                        | replace("aiden", "Aiden Jenkins") 
+                        | replace("dmitrij", "Dmitrij Ivanov") 
+                        | replace("julia", "Julia Nguyen")
+                        | replace("fiona", "Fiona Murray-Reed") }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Grade
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-grade']|length > 0 %}
+                  <ul class="govuk-list">
+                    {% for item in data['group-grade'] %}
+                      <li>
+                        {{ item 
+                        | replace("ao", "AO")
+                        | replace("aa", "AA") }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Language
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-language']|length > 0 %}
+                  <p class="govuk-body">
+                    {% if data['group-language'] == 'welsh'%} 
+                      Welsh
+                    {% endif %}
+                  </p>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Location
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-location']|length > 0 %}
+                  <ul class="govuk-list">
+                    {% for item in data['group-location'] %}
+                      <li>
+                        {{ item 
+                        | replace("england", "England") 
+                        | replace("northern-ireland", "Northern Ireland") 
+                        | replace("scotland", "Scotland") 
+                        | replace("wales", "Wales") }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Office ID
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-office']|length > 0 %}
+                  <ul class="govuk-list">
+                    {% for item in data['group-office'] %}
+                      <li>
+                        {{ item 
+                        | replace("bristol", "Bristol") 
+                        | replace("glasgow", "Glasgow") 
+                        | replace("leeds", "Leeds") 
+                        | replace("longbenton", "Longbenton") }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Role
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-role']|length > 0 %}
+                  <ul class="govuk-list">
+                    {% for item in data['group-role'] %}
+                      <li>
+                        {{ item 
+                        | replace("decision-maker", "Decision maker") 
+                        | replace("claims-processor", "Claims processor") }}
+                      </li>
+                    {% endfor %}
+                  </ul>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Working pattern
+              </dt>
+              <dd class="govuk-summary-list__value">
+                {% if data['group-pattern']|length > 0 %}
+                  <p class="govuk-body">
+                    {% if data['group-pattern'] == 'mfpm'%} 
+                      M-F PM
+                    {% endif %}
+                  </p>
+                {% else %}
+                  None
+                {% endif %}
+              </dd>
+            </div>
+          </dl>
+        </div>
+    </div>
+  </div>
+{% endblock %}

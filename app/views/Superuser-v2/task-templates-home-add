@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance groups
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <a href="create-task-type"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new task type</button></a>
+  <h1 class="govuk-heading-l">Maternity Allowance task types</h1>
+  
+  <p>Create and manage task types for Maternity Allowance.
+
+    Task types allow a user to view and manage the different kinds of work in the Maternity Allowance service.</p>
+
+
+  <!--<h2 class="blueheading">Your task types</h2>-->
+  &nbsp;
+
+
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box5">
+    <h2 class="govuk-heading-m"><a href="#">Add a claimant's proof of income</a></h2>
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}

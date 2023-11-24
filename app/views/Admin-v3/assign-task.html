@@ -1,0 +1,38 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Assign a task
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="task-info">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Who would you like to reassign this task to?
+      </h1>
+
+      <p>This task is currently assigned to Julia Nguyen.</p>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="event-name"><strong>Search by name</strong>
+          
+        </label>
+        <input class="govuk-input" id="event-name" name="event-name" type="text">
+      </div>
+
+    </div>
+  </div>
+  <div class="govuk-button-group">
+    <a href="task-info-v2" "=""">
+    <button class="govuk-button" data-module="govuk-button">Reassign</button>
+    <a href="task-info"</a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Go back
+    </button>
+{% endblock %}

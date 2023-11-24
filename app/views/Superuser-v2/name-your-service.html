@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  <form class="form" action="add-key-value-pairs" method="post">
+
+  <h1 class="govuk-heading-l">
+    What's the new service called?
+  </h1>
+ 
+  &nbsp;
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukInput({
+  name: "system-id",
+  id: "system id",
+  label: {
+    text: "System ID (example maternity_allowance)",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is the unique technical ID of the calling system. Use lowercase with underscores. Do not use spaces."
+  },
+  value: data['system-id']
+}) }}
+
+
+
+
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukInput({
+  name: "human-readable-name",
+  id: "human readable name",
+  label: {
+    text: "Human-readable name (example Maternity Allowance)",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  hint: {
+    text: "This is what the user will see in the front end. The name of the service should be written in full with capitals, with common acronyms in brackets."
+  },
+  value: data['human-readable-name']
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="add-key-value-pairs" method="post">.
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

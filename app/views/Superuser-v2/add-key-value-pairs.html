@@ -1,0 +1,148 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class=govuk-grid-column-two-thirds>
+    <h1 class="govuk-heading-l">
+      Add key value pairs
+    </h1>
+    <p>Write key value pairs for Maternity Allowance task criteria.</p> 
+    &nbsp;
+  </div>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <form class="form" action="add-key-value-pairs" method="post">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+          </div>
+        </div>
+        {% for index in range(0, data['pair-name'] | length + 1) %}
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              {% from "govuk/components/input/macro.njk" import govukInput %}
+              
+              {{ govukInput({
+                label: {
+                  text: "Name",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                id: "pair-name[]",
+                name: "pair-name[]",
+                value: data['pair-name'][index]
+              }) }}
+            </div>
+
+            <div class="govuk-grid-column-one-third">
+              {{ govukInput({
+                label: {
+                  text: "Value",
+                  classes: "govuk-label--s",
+                  isPageHeading: false
+                },
+                id: "pair-value[]",
+                name: "pair-value[]",
+                value: data['pair-value'][index]
+              }) }}
+            </div>
+          </div>
+          {% endfor %}
+
+            <div class="govuk-button-group">
+              <button class="govuk-button" data-module="govuk-button" formaction="add-service-manager">
+                Continue
+              </button>
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="add-key-value-pairs">
+                Add another
+              </button> 
+            </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- <div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <form class="form" action="add-key-value-pairs2" method="post">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+        </div>
+      </div>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+          
+
+          
+          {% from "govuk/components/input/macro.njk" import govukInput %}
+
+          {{ govukInput({
+            label: {
+              text: "Name",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            id: "pair-name",
+            name: "pair-name",
+            value: data['pair-name']
+          }) }}
+          <!-- <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Name
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div> -->
+        <!-- </div>
+        <div class="govuk-grid-column-one-third">
+          {{ govukInput({
+            label: {
+              text: "Value",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            id: "pair-value",
+            name: "pair-value",
+            value: data['pair-value']
+          }) }}
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="event-name">
+              Value
+            </label>
+            <input class="govuk-input" id="event-name" name="event-name" type="text">
+          </div> -->
+        <!-- </div>
+      </div> --> 
+      <!-- <div class="govuk-button-group">
+        <a href="add-service-manager">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="add-key-value-pairs2">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add another
+        </button> 
+    </div> -->
+    <!-- {% from "govuk/components/button/macro.njk" import govukButton %} -->
+
+    <!-- <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+
+      {{ govukButton({
+        text: "Add another",
+        classes: "govuk-button--secondary",
+        href: "add-key-value-pairs2"
+      }) }}
+    </div>
+  </form>
+    </main>
+  </div> --> 
+
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity dashboard
+{% endblock %}
+
+{% block content %}
+<div class="spacer2"></div>
+
+<div class="govuk-width-container">
+  <a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>
+  <h1 class="govuk-heading-l">Maternity Allowance home</h1>
+  <div class="box4">
+    <h2 class="govuk-heading-m"><a href="maternity-tasks">Tasks</a></h2>
+    <p>View and manage Maternity Allowance tasks for the day or week.</p> 
+    <p>Filter tasks by case manager, task type and date.</p>
+    <p>Reassign tasks to other team members and view the history of individual tasks.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="maternity-manage">Teams</a></h2>
+      <p>Add or remove people from the Maternity Allowance team and manage tasks team members can do. Manage groups.</p>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    &nbsp;
+      <div class="box">
+        <h2 class="govuk-heading-m"><a href="mat-stats">Statistics</a></h2>
+        <p>View all tasks within a date range to see when they were received and completed, overdue tasks, and average task completion time.</p>
+      </div>
+    </div>
+&nbsp;
+{% endblock %}
+
+

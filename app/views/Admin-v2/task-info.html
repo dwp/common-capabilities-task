@@ -1,0 +1,112 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task information
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <div>
+    <section class="dwp-key-details-bar" aria-label="Key details">
+    <div class="dwp-key-details-bar__key-details">
+    <dl class="dwp-key-details-bar__top-block">
+        <dt class="govuk-visually-hidden">Name:</dt>
+        <dd class="dwp-key-details-bar__primary">Kaitlyn Burke (Katie)</dd>
+        <dt class="govuk-visually-hidden">National Insurance Number:</dt>
+        <dd class="dwp-key-details-bar__secondary"></dd>
+        <dd class="dwp-key-details-bar__secondary">SR 12 34 56 C</dd>
+        <dt class="govuk-visually-hidden">Claim status:</dt>
+        <dd class="govuk-table__cell dwp-key-details-bar__status">
+            <strong class="govuk-tag govuk-tag--yellow">
+                1 day overdue
+            </strong>
+        </dd>
+    </dl>
+    <dl class="dwp-key-details-bar__bottom-block">
+        <dt>Date of birth:</dt>
+        <dd>04 June 1988</dd>
+        <dt>Mobile:</dt>
+        <dd>07864 429 900</dd>
+        <dt>Postcode:</dt>
+        <dd>AB1 2CD</dd>
+    </dl>
+    </div>
+    </section>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Task information
+      </h1>
+
+      <p>Maternity claim received, review supporting evidence.</p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            In progress
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            05 March 2023
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            05 April 2023
+          </dd>
+
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Benefit type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Maternity
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Case manager
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Aiden Jenkins
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="assign-task">
+              Change<span class="govuk-visually-hidden"> contact details</span>
+            </a>
+          </dd>
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+        <a href="task-history" "=""">
+        <button class="govuk-button" data-module="govuk-button">View history</button>
+        <a href="maternity-tasks.html"</a>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Manage weekly tasks
+        </button>
+    </div>
+    </div>
+   
+
+{% endblock %}

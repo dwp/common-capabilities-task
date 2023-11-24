@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Home – {{serviceName}} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<div class="spacer2">
+</div>
+
+    <h1 class="govuk-heading-xl">
+      Prototypes
+    </h1>
+    <h2 class="govuk-heading-m">Current and past testing versions</h2>
+    &nbsp;
+</div>
+<div class="govuk-grid-column-full">
+
+    <!-- Alpha iterations -->
+
+      <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Alpha: Agent</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" width="25%">Date</th>
+          <th scope="col" class="govuk-table__header" width="50%">Information</th>
+          <th scope="col" class="govuk-table__header" width="25%">Links</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">15 November 2023</td>
+          <td class="govuk-table__cell">Agent view, with ability to claim a task, work on it, and mark it as finished.</td>
+          <td class="govuk-table__cell"><a href="Agent-v1/tasks-dashboard">Agent version 1</a> </td>
+
+      </tbody>
+      
+    </table>
+    
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Alpha: Service manager</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" width="25%">Date</th>
+          <th scope="col" class="govuk-table__header" width="50%">Information</th>
+          <th scope="col" class="govuk-table__header" width="25%">Links</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">31 August 2023</td>
+          <td class="govuk-table__cell">Service manager view, with task management including returning tasks to queue, teams management including individual matching criteria and groups, and statistics.</td>
+          <td class="govuk-table__cell"><a href="Admin-v4/maternity-dashboard">Team lead version 4</a> </td>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">20 June 2023</td>
+          <td class="govuk-table__cell">Service manager view, with task management including reassigning tasks to other team members, teams management including individual matching criteria and groups, and statistics.</td>
+          <td class="govuk-table__cell"><a href="Admin-v3/maternity-dashboard">Team lead version 3</a> </td>
+        </tr>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">18 May 2023</td>
+          <td class="govuk-table__cell">Service manager view, with org unit setup, task templates, groups, and team management.</td>
+          <td class="govuk-table__cell"><a href="Admin-v2/maternity-dashboard">Team lead version 2</a> </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">05 April 2023</td>
+          <td class="govuk-table__cell">Service manager view, with management information and task management.</td>
+          <td class="govuk-table__cell"><a href="Admin-v1/maternity-dashboard">Team lead version 1</a> </td>
+        </tr>
+
+      </tbody>
+      
+    </table>
+
+    <table class="govuk-table">
+      <caption class="govuk-table__caption govuk-table__caption--m">Alpha: Task admin</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" width="25%">Date</th>
+          <th scope="col" class="govuk-table__header" width="50%">Information</th>
+          <th scope="col" class="govuk-table__header" width="25%">Links</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">31 August 2023</td>
+          <td class="govuk-table__cell">Admin view, with service set-up including service manager, and task type set-up.</td>
+          <td class="govuk-table__cell"><a href="Superuser-v2/task-services-home">Admin version 2</a> </td>
+
+      </tbody>
+      
+    </table>
+
+{% endblock %}

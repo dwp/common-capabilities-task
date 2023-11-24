@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance team
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Maternity Allowance team
+      </h1>
+
+      <p>Add team members and set their matching criteria.</p>
+        <p>When you have set up a team member you can remove them or change their matching criteria.</p>
+        &nbsp;
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+&nbsp;
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Team members
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+      
+            </li>
+            <li>
+              <a href="#">
+                Aiden Jenkins
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Dmitrij Ivanov
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Julia Nguyen
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Fiona Murray-Reed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div> 
+  <a href="add-team-member"</a>
+    <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+Add a team member    </button>
+</div>
+
+  </div>
+{% endblock %}

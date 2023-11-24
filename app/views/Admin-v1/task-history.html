@@ -1,0 +1,50 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task history
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Task history
+      </h1>
+
+      <div class="dwp-timeline">
+        <ul>
+        <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Case manager changed from Aiden Jenkins to Julia Nguyen</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">by Gwen Hudson</p>
+            <p class="govuk-caption-m">21 March 2023</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Status changed to "In progress"</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">by Aiden Jenkins</p>
+          <p class="govuk-caption-m">13 March 2023</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Task assigned to Aiden Jenkins</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">by DWP Task</p>
+          <p class="govuk-caption-m">06 March 2023</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Task added to Maternity queue</h2>
+          <p class="govuk-caption-m">05 March 2023</p>
+        </li>
+        </ul>
+        </div> 
+        <a href="javascript:window.history.back()"</a>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Go back
+          </button>
+    </div>
+  </div>
+
+{% endblock %}

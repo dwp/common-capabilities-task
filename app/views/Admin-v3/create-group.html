@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class=govuk-grid-column-two-thirds>
+    <form class="form" action="create-group2" method="post">
+      <h1 class="govuk-heading-l">
+        Create a group
+      </h1>
+      <p>Create a group of team members.</p> <p>Team members will be able to claim a task as a member of this group.</p>
+      &nbsp;
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+      {{ govukInput({
+        id: "group name",
+        name: "group-name",
+        label: {
+          text: "Group name",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        value: data['group-name']
+      }) }}
+
+      {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+      {{ govukTextarea({
+        name: "group-description",
+        id: "group description",
+        label: {
+          text: "Group description",
+          classes: "govuk-label--s",
+          isPageHeading: true
+        },
+        hint: {
+          text: "Add a description to your group."
+        },
+        value: data['group-description']
+      }) }}
+
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <form class="form" action="create-group2" method="post">
+        {{ govukButton({
+          text: "Choose criteria for group"
+        }) }}
+      </form>
+  </div>
+</div>
+{% endblock %}

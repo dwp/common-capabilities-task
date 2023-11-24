@@ -1,0 +1,42 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance groups
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+
+{% block content %}
+<a href="create-group"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new group</button> </a>
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Maternity Allowance groups</h1>
+  
+  <p>Group your team members by matching criteria. This is something they all have in common like job role or job grade.</p>
+
+
+  <h2 class="blueheading">Your groups</h2>
+
+  
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="group-admin">Admin group</a></h2>
+    <p></p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="#">Decision maker</a></h2>
+    <p></p>
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+

@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-l">
+    Manage team members who can work on task type Change a claimant's address
+  </h1>
+
+  <p>Leave deselected any team members you do not want to work on this task type.</p>
+  
+  &nbsp;
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  {{ govukCheckboxes({
+    name: "waste",
+    fieldset: {
+      legend: {
+        text: "Team members who match to this task",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Choose only the team members you want to work on this task type."
+    },
+    items: [
+      {
+        value: "carcasses",
+        text: "Julia Nguyen"
+      },
+      {
+        value: "mines",
+        text: "Dmitrij Ivanov"
+      }
+    ]
+  }) }}
+
+  {% from "govuk/components/button/macro.njk" import govukButton %}
+  <form class="form" action="template-change-address" method="post">.
+  {{ govukButton({
+    text: "Confirm"
+  }) }}
+</div>
+
+{% endblock %}

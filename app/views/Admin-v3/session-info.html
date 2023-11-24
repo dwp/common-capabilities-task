@@ -1,0 +1,199 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="spacer1"</div>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop" >
+
+      <h1 class="govuk-heading-l">Review task template</h1>
+      <p>Task templates are for tasks regularly done by your team.</p>
+
+      <h2 class="govuk-heading-m">Task template session data</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Template name"
+            },
+            value: {
+              text: data['template-name']
+            },
+            
+            actions: {
+              
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Task description"
+            },
+            value: {
+              text: data['task-description']
+            },
+            actions: {
+              
+            }
+          },
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: data['priority']
+            },
+            actions: {
+              
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: data['must-complete-days']
+            },
+            actions: {
+              
+            }
+          },
+
+              {
+                key: {
+                  text: "Group"
+                },
+                value: {
+                  text: data['group-link']
+                },
+                
+                actions: {
+                  
+                }
+              }
+              ,
+              {
+                key: {
+                  text: "Office"
+                },
+                value: {
+                  text: data['office-location']
+                },
+                actions: {
+                  
+                }
+              },
+              {
+                key: {
+                  text: "Job roles"
+                },
+                value: {
+                  text: data['job-roles']
+                },
+                actions: {
+                  
+                }
+              },
+              {
+                key: {
+                  text: "Job grades"
+                },
+                value: {
+                  text: data['job-grades']
+                },
+                actions: {
+                  
+                }
+              },
+              {
+                key: {
+                  text: "Welsh"
+                },
+                value: {
+                  text: data['welsh-speaker']
+                },
+                actions: {
+                  
+                }
+              },
+              {
+                key: {
+                  text: "Experience"
+                },
+                value: {
+                  text: data['experience-task']
+                },
+                actions: {
+     
+                }
+              }
+             
+            ]
+          }) }}
+
+          <h2 class="govuk-heading-m">Create a group session details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Group name"
+            },
+            value: {
+              text: data['group-name']
+            },
+            
+            actions: {
+              
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Description"
+            },
+            value: {
+              text: data['group-description']
+            },
+            actions: {
+              
+            }
+          },
+          {
+            key: {
+              text: "Members"
+            },
+            value: {
+              text: data['group-members']
+            },
+            actions: {
+              
+            }
+          }
+
+        ]
+      }) }}
+
+      <form action="maternity-dashboard" method="post" novalidate>
+
+        <input type="hidden" name="task-templates-home" value="true">
+
+
+
+      <button class="govuk-button govuk-button" data-module="govuk-button">
+        Maternity dashboard
+      </button>
+      &nbsp;
+    </form>
+    </div>
+  </div>
+{% endblock %}

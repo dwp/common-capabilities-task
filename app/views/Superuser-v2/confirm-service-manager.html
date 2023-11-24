@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Task information
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check this is the right person
+      </h1>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Name
+          </dt>
+          <dd class="govuk-summary-list__value" id="service-manager-name" name="service-manager-name" type="text">
+            Sarah Chandler
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Email
+          </dt>
+          <dd class="govuk-summary-list__value">
+            sarah.chandler@dwp.gov.uk
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Staff number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            0123456789
+          </dd>
+        </div>
+       
+      </dl>
+      <div class="govuk-button-group">
+        <a href="confirm-service-details" "=""">
+        <button class="govuk-button" data-module="govuk-button">Confirm and continue</button>
+        <a href="add-service-manager"</a>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Search again
+        </button> 
+    </div>
+    </div>
+   
+
+{% endblock %}

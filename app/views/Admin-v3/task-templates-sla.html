@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+    Change the completion timeframe
+  </h1>
+
+  <p>Enter a number in hours or days that shows the time in which a task needs to be completed.</p>
+  <p>Leave the field blank if you do not want to give this task a timeframe.</p>
+  &nbsp;
+  <h2 class="govuk-heading-s">Must complete in (optional)</h2>
+  <div class="govuk-grid-column-one-quarter">
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="width-5">
+      </label>
+      <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+    </div>
+</div>
+</div>
+<div class="govuk-grid-column--inline">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+
+      </legend>
+      <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+          <label class="govuk-label govuk-radios__label" for="changed-name">
+            Hours
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+          <label class="govuk-label govuk-radios__label" for="changed-name-2">
+            Days
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="template-change-address" method="post">.
+{{ govukButton({
+  text: "Confirm"
+}) }}
+</form>
+
+
+{% endblock %}
+
+

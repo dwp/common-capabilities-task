@@ -1,0 +1,119 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Report ready for Coleen McDonald
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "All tasks",
+      href: "maternity-tasks#past-week"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Report ready for Coleen McDonald
+      </h1>
+
+      <p>View details of Report ready for Coleen McDonald.</p>
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Coleen McDonald
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Report ready
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date completed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            14 March 2023
+          </dd>
+          <dd class="govuk-table__cell govuk-table__cell--numeric" align="right">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+          </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 March 2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            In progress
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Team member
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Julia Nguyen
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Matching criteria
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Scotland, England, Welsh, Longbenton
+          </dd>
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+        <a href="task-history-done" "=""">
+        <button class="govuk-button" data-module="govuk-button">View history</button>
+      
+    </div>
+    </div>
+   
+
+{% endblock %}

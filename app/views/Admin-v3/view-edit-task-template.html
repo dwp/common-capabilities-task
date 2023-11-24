@@ -1,0 +1,224 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop" >
+
+      <h1 class="govuk-heading-l">Review task template</h1>
+      <p>Task templates are for tasks regularly done by your team.</p>
+
+      <h2 class="govuk-heading-m">Template details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Template name"
+            },
+            value: {
+              text: data['template-name']
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "create-task-template",
+                  text: "Change",
+                  visuallyHiddenText: "template name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Task description"
+            },
+            value: {
+              text: data['task-description']
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-task-template",
+                  text: "Change",
+                  visuallyHiddenText: "task description"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: data['priority']
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-task-template",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: data['must-complete-days']
+            },
+            actions: {
+              items: [
+                {
+                  href: "create-task-template",
+                  text: "Change",
+                  visuallyHiddenText: "group description"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+
+    
+          <h2 class="govuk-heading-m">Task matching criteria</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Group"
+                },
+                value: {
+                  text: data['group-link']
+                },
+                
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template2",
+                      text: "Change",
+                      visuallyHiddenText: "group link"
+                    }
+                  ]
+                }
+              }
+              ,
+              {
+                key: {
+                  text: "Office"
+                },
+                value: {
+                  text: data['office-location']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "office location"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Job roles"
+                },
+                value: {
+                  text: data['job-roles']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "job roles"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Job grades"
+                },
+                value: {
+                  text: data['job-grades']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "job grades"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Welsh"
+                },
+                value: {
+                  text: data['welsh-speaker']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template-more-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "welsh"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Experience"
+                },
+                value: {
+                  text: data['experience-task']
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "create-task-template-more-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "experience"
+                    }
+                  ]
+                }
+              }
+             
+            ]
+          }) }}
+
+      <form action="task-templates-home" method="post" novalidate>
+
+        <input type="hidden" name="task-templates-home" value="true">
+
+
+
+      <button class="govuk-button govuk-button" data-module="govuk-button">
+        Confirm and create
+      </button>
+      &nbsp;
+    </form>
+    </div>
+  </div>
+{% endblock %}

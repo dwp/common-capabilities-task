@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+<div class=govuk-grid-column-two-thirds>
+  <form class="form" action="view-edit-task-template" method="post">
+
+  <h1 class="govuk-heading-l">
+    Add more task matching criteria
+  </h1>
+  <p>This helps match the task to team members.</p>
+  &nbsp;
+
+{{ govukRadios({
+  name: "welsh-speaker",
+  value: data['welsh-speaker'],
+  fieldset: {
+    legend: {
+      text: "Welsh",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "Does this task need a Welsh speaker?"
+  },
+  items: [
+    {
+      value: "Yes",
+      text: "Yes"
+    },
+    {
+      value: "No",
+      text: "No"
+    }
+  ]
+}) }}
+
+{% from "govuk/components/textarea/macro.njk" import govukTextarea %}
+
+{{ govukTextarea({
+  name: "experience-task",
+  id: "experience-task",
+  label: {
+    text: "Experience",
+    classes: "govuk-label--s",
+    isPageHeading: true
+  },
+  value: data['experience-task']
+}) }}
+
+{% from "govuk/components/button/macro.njk" import govukButton %}
+<form class="form" action="view-edit-task-template" method="post">.
+{{ govukButton({
+  text: "Continue"
+}) }}
+
+</form>
+</div>
+</div>
+{% endblock %}

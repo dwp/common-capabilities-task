@@ -1,0 +1,136 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Check the details before completing setup</h1>
+&nbsp;
+      </h1>
+      <h2 class="govuk-heading-m">Service details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "System ID"
+            },
+            value: {
+              text: data['system-id']
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "name-your-service",
+                  text: "Change",
+                  visuallyHiddenText: "system id"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Human-readable name"
+            },
+            value: {
+              text: data['human-readable-name']
+            },
+            actions: {
+              items: [
+                {
+                  href: "name-your-service",
+                  text: "Change",
+                  visuallyHiddenText: "human readable name"
+                }
+              ]
+            }
+          }
+      
+          
+
+        ]
+      }) }}
+      
+
+      <h2 class="govuk-heading-m">Service managers<p class="adminoverviewlinks"><a href="add-service-manager">Add a service manager</a></p></h2>
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Service manager"
+            },
+            value: {
+              text: "Sarah Chandler"
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "add-service-manager",
+                  text: "Change",
+                  visuallyHiddenText: "service manager name"
+                }
+              ]
+            }
+          }
+          
+        ]
+      }) }}
+      
+
+      <h2 class="govuk-heading-m">Key value pairs<p class="adminoverviewlinks"><a href="add-key-value-pairs">Add a key value pair</a></p></h2>
+
+       {% set keyValueRows = [] %}
+
+       {% for index in range(0, data['pair-name'] | length) %}
+        {% set keyValueRows = (keyValueRows.push({
+          key: {
+            text: data['pair-name'][index]
+          },
+          value: {
+            text: data['pair-value'][index]
+          },
+          actions: {
+            items: [
+              {
+                href: "add-key-value-pairs",
+                text: "Change",
+                visuallyHiddenText: "Change key value pair"
+              }
+            ]
+          }
+        }), keyValueRows) %}
+       {% endfor %}
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: keyValueRows
+      }) }}
+
+      <form action="success-next-steps" method="post" novalidate>
+
+        <input type="hidden" name="page-page" value="true">
+
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+      </form>
+
+    </div>
+  </div>
+{% endblock %}

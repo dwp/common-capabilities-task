@@ -1,0 +1,127 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Fiona Murray-Reed</h1>
+      <p>Review and change criteria to help match Fiona to tasks.</p>
+
+      <h2 class="govuk-heading-m">Personal details</h2>
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Office"
+            },
+            value: {
+              text: "Longbenton, Newcastle"
+            },
+            
+            actions: {
+              
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Job role"
+            },
+            value: {
+              text: data['job-role']
+            },
+            
+            actions: {
+              items: [
+                {
+                  href: "team-setup-fiona",
+                  text: "Change",
+                  visuallyHiddenText: "job role"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Job grade"
+            },
+            value: {
+              text: data['grade']
+            },
+            actions: {
+              items: [
+                {
+                  href: "team-setup-fiona",
+                  text: "Change",
+                  visuallyHiddenText: "grade"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Welsh speaker"
+            },
+            value: {
+              text: data['welsh']
+            },
+            actions: {
+              items: [
+                {
+                  href: "team-setup-fiona",
+                  text: "Change",
+                  visuallyHiddenText: "welsh"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Experience"
+            },
+            value: {
+              text: data['experience']
+            },
+            actions: {
+              items: [
+                {
+                  href: "team-setup-fiona",
+                  text: "Change",
+                  visuallyHiddenText: "experience"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+
+      <form action="/form-handler" method="post" novalidate>
+
+        <input type="hidden" name="answers-checked" value="true">
+
+      </form>
+
+      <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+        Remove from team
+      </button>
+      &nbsp;
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Back
+      </button>
+
+    </div>
+  </div>
+{% endblock %}

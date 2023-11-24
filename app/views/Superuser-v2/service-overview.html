@@ -1,0 +1,267 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+   <div class="govuk-grid-column-two-thirds">
+
+    </div>
+
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Maternity Allowance</h1>
+  <p>View and manage the Maternity Allowance service.</p>
+  &nbsp;
+  <h2 class="govuk-heading-m">Service details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Task type name"
+            },
+            value: {
+              text: "Change a claimant's address"
+            },
+            
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "task type name"
+                }
+              ]
+            }
+          }
+          ,
+          
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-templates-priority",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: "5 days"
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-templates-sla",
+                  text: "Change",
+                  visuallyHiddenText: "must complete in"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+      
+      <h2 class="govuk-heading-m">Service managers<p class="adminoverviewlinks"><a href="add-service-manager">Add a service manager</a></p></h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+   
+              {
+                key: {
+                  text: "Service manager"
+                },
+                value: {
+                  text: "Sarah Chandler"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "working pattern"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+          <h2 class="govuk-heading-m">Key value pairs<p class="adminoverviewlinks"><a href="add-service-manager">Add a key value pair</a></p></h2>
+
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Grade"
+                },
+                value: {
+                  text: "AA, AO"
+                },
+                
+                actions: {
+                  items: [
+                    {
+                      href: "change-key-value-pair",
+                      text: "Change",
+                      visuallyHiddenText: "grade"
+                    }
+                  ]
+                }
+              }
+              ,
+              
+              {
+                key: {
+                  text: "Language"
+                },
+                value: {
+                  text: "Welsh"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "language"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Location"
+                },
+                value: {
+                  text: "England, Scotland"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "location"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Office ID"
+                },
+                value: {
+                  text: "Bristol, Longbenton"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "job grades"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Role"
+                },
+                value: {
+                  text: "Decision maker"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "welsh"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Working pattern"
+                },
+                value: {
+                  text: "M-F PM"
+                },
+                actions: {
+                  items: [
+                    {
+                      href: "task-template-criteria",
+                      text: "Change",
+                      visuallyHiddenText: "working pattern"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+        </div>
+        
+
+          <div class="govuk-grid-column-one-third">
+            
+                  <aside class="app-related-items" role="complementary">
+            <h2 class="govuk-heading-m" id="subsection-title">
+              Task types
+            </h2>
+  
+            <nav role="navigation" aria-labelledby="subsection-title">
+              <ul class="govuk-list govuk-!-font-size-16">
+          
+                </li>
+                <li>
+                  <a href="task-type-overview">
+                    Change a claimant's address
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    Add a claimant's proof of income
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </aside>
+        </div>
+      </div>
+ 
+
+      <form action="task-templates-home" method="post" novalidate>
+
+        <input type="hidden" name="task-templates-home" value="true">
+
+
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Maternity Allowance home
+      </button>
+      &nbsp;
+    </form>
+    </div>
+  </div>
+  </div>
+{% endblock %}

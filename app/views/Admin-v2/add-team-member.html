@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance team
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="review-team-member" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Add a team member to the Maternity Allowance profile
+      </h1>
+
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Search by name, email, or staff number"
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "team-member-search",
+        name: "team-member-search"
+      }) }}
+      <p class="govuk-body"><a href="#" class="govuk-link">I cannot find the person I am looking for</a></p>
+&nbsp;
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Team members
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Amy Anderson
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Aiden Jenkins
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Dmitrij Ivanov
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Julia Nguyen
+              </a>
+            </li>
+            <li>
+              <a href="team-setup-fiona">
+                Fiona Murray-Reed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div> 
+  <a href="#"</a>
+    <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+Continue    </button>
+</div>
+</form?
+  </div>
+
+{% endblock %}

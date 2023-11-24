@@ -1,0 +1,396 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check Andi’s details
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Check Andi’s details
+      </h1>
+      <p>Check that Andi’s details are correct.</p>
+
+      <h2 class="govuk-heading-m">
+        Task types
+      </h1>
+      <p>Andi will be able to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Change a customer's address</li>
+        <li>Add a customer's proof of income</li>
+      </ul>
+      &nbsp;
+
+      <h2 class="govuk-heading-m">Individual matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-grade']|length > 0 %} 
+              <ul class="govuk-list">
+                {% for item in data['andi-grade'] %}
+                  <li>
+                    {{ item 
+                    | replace("ao", "AO")
+                    | replace("aa", "AA") }}
+                  </li>
+                {% endfor %}
+              </ul>
+              {% else %} 
+                None
+              {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-andi-grade">
+              {% if data['andi-grade']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> grade</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> name</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['language'] == 'welsh'%} 
+                Welsh
+              {% else %} 
+                None
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="andi-matching-criteria">
+              {% if data['language']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> language</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['country']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['country'] %}
+                  <li>
+                    {{ item 
+                    | replace("england", "England") 
+                    | replace("northern-ireland", "Northern Ireland") 
+                    | replace("scotland", "Scotland") 
+                    | replace("wales", "Wales") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None 
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="andi-matching-criteria">
+              {% if data['country']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> location</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> location</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['location']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['location'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="andi-matching-criteria">
+              {% if data['location']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> office ID</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> office ID</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['andi-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="andi-matching-criteria">
+              {% if data['andi-role']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> role</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> role</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['pattern'] == 'mfpm'%} 
+                M-F PM
+              {% else %} 
+                None
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="andi-matching-criteria">
+              {% if data['pattern']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> working pattern</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> working pattern</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <h2 class="govuk-heading-m">Group matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+              {% if data['groups'] == 'decision makers' or data['groups']|length == 2 %}
+                Decision Maker
+              {% else %} 
+                None
+              {% endif %}
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-andi-groups">
+              {% if data['groups']|length == 1  and data['groups'] != 'decision makers' or data['groups']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> group</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> group</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Show Decision makers matching criteria
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Grade"
+              },
+              value: {
+                text: "AO"
+              }
+            },
+            {
+              key: {
+                text: "Language"
+              },
+              value: {
+                text: "None"
+              }
+            },
+            {
+              key: {
+                text: "Location"
+              },
+              value: {
+                text: "Scotland"
+              }
+            },
+            {
+              key: {
+                text: "Office ID"
+              },
+              value: {
+                text: "Glasgow"
+              }
+            },
+            {
+              key: {
+                text: "Role"
+              },
+              value: {
+                text: "Decision maker"
+              }
+            },
+            {
+              key: {
+                text: "Working pattern"
+              },
+              value: {
+                text: "None"
+              }
+            }]
+          }) }}
+        </div>
+      </details>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <ul class="govuk-list">
+              {% if data['groups']== 'admin' or data['groups']|length == 2 %}
+                Admin
+              {% else %}
+                None
+              {% endif %}
+            </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-andi-groups">
+              {% if data['groups']|length == 1  and data['groups'] != 'admin' or data['groups']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> group</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> group</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Show Admin matching criteria
+          </span>
+        </summary>
+
+        <div class="govuk-details__text">
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+            {
+              key: {
+                text: "Grade"
+              },
+              value: {
+                text: "AO"
+              }
+            },
+            {
+              key: {
+                text: "Language"
+              },
+              value: {
+                text: "None"
+              }
+            },
+            {
+              key: {
+                text: "Location"
+              },
+              value: {
+                text: "Scotland"
+              }
+            },
+            {
+              key: {
+                text: "Office ID"
+              },
+              value: {
+                text: "Glasgow"
+              }
+            },
+            {
+              key: {
+                text: "Role"
+              },
+              value: {
+                text: "Admin"
+              }
+            },
+            {
+              key: {
+                text: "Working pattern"
+              },
+              value: {
+                text: "None"
+              }
+            }
+            ]
+          }) }}
+        </div>
+      </details>
+
+      <div class="govuk-button-group">
+        <a href="add-team-member-success">
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+{% endblock %}

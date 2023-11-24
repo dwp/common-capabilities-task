@@ -1,0 +1,250 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Review – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="template-change-address">Back</a>
+{% endblock %}
+
+{% block content %}
+ <div class="govuk-grid-row">
+  
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Change a claimant's address</h1>
+      <p>Manage the details for task type Change a claimant’s address.</p>
+
+</div>
+<div class="govuk-grid-column-one-third">
+
+        <aside class="app-related-items" role="complementary">
+          <h2 class="govuk-heading-m" id="subsection-title">
+            Team members
+          </h2>
+          
+          <p>Based on the criteria you chose for groups or individuals, these team members match to this task type.</p>
+
+          <nav role="navigation" aria-labelledby="subsection-title">
+            <ul class="govuk-list govuk-!-font-size-16">
+        
+              </li>
+              <li>
+                <a href="#">
+                  Aiden Jenkins
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Dmitrij Ivanov
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Julia Nguyen
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Fiona Murray-Reed
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+<div class="govuk-grid-column-two-thirds">
+  <h2 class="govuk-heading-m">Task type details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Task type name"
+            },
+            value: {
+              text: "Change a claimant's address"
+            },
+            
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "task type name"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Task description"
+            },
+            value: {
+              text: "If a claimant has told you they are moving, update their address with the details they have given you. Make sure you check that the new address is real and complete."
+            },
+            actions: {
+              items: [
+                {
+                  
+                  visuallyHiddenText: "task description"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-templates-priority",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: "5 days"
+            },
+            actions: {
+              items: [
+                {
+                  href: "task-templates-sla",
+                  text: "Change",
+                  visuallyHiddenText: "must complete in"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+
+    
+          <h2 class="govuk-heading-m">Task matching criteria</h2>
+
+          {{ govukSummaryList({
+            classes: 'govuk-!-margin-bottom-9',
+            rows: [
+              {
+                key: {
+                  text: "Grade"
+                },
+                value: {
+                  text: "AA, AO"
+                },
+                
+                actions: {
+                  items: [
+                    {
+                      visuallyHiddenText: "grade"
+                    }
+                  ]
+                }
+              }
+              ,
+              {
+                key: {
+                  text: "Language"
+                },
+                value: {
+                  text: "Welsh"
+                },
+                actions: {
+                  items: [
+                    {
+                      visuallyHiddenText: "language"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Location"
+                },
+                value: {
+                  text: "England, Scotland"
+                },
+                actions: {
+                  items: [
+                    {
+                      visuallyHiddenText: "location"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Office ID"
+                },
+                value: {
+                  text: "Bristol, Longbenton"
+                },
+                actions: {
+                  items: [
+                    {
+                      
+                      visuallyHiddenText: "job grades"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Role"
+                },
+                value: {
+                  text: "Decision maker"
+                },
+                actions: {
+                  items: [
+                    {
+                     
+                      visuallyHiddenText: "welsh"
+                    }
+                  ]
+                }
+              },
+              {
+                key: {
+                  text: "Working pattern"
+                },
+                value: {
+                  text: "M-F PM"
+                },
+                actions: {
+                  items: [
+                    {
+                      visuallyHiddenText: "working pattern"
+                    }
+                  ]
+                }
+              }
+            ]
+          }) }}
+
+
+      <form action="task-templates-home" method="post" novalidate>
+
+        <input type="hidden" name="task-templates-home" value="true">
+
+
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Back to task types
+      </button>
+      &nbsp;
+    </form>
+    </div>
+  </div>
+{% endblock %}

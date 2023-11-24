@@ -1,0 +1,120 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance team
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script>
+    const teamMembers = [
+      "Amy Anderson, 123456789, amy.anderson@dwp.gov.uk",
+      "Amy Adams, 123456789, amy.adams@engineering.digital.dwp.gov.uk",
+      "Amy Johnston, 123456789, amy.johnston@dwp.gov.uk",
+      "Joel Odonnell, 123456789, joel.odonnell@engineering.digital.dwp.gov.uk",
+      "Oliver Logan, 123456789, oliver.logan@dwp.gov.uk",
+      "Dan Hayes, 123456789, dan.hayes@dwp.gov.uk",
+      "Kathleen Lin, 123456789, kathleen.lin@engineering.digital.dwp.gov.uk",
+      "Darren Lowery, 123456789, darren.lowery@engineering.digital.dwp.gov.uk",
+      "Kamran Roth, 123456789, kamran.roth@dwp.gov.uk",
+      "Amaan Hubbard, 123456789, amaan.hubbard@engineering.digital.dwp.gov.uk",
+      "Sally Whitaker, 123456789, sally.whitaker@dwp.gov.uk",
+      "Georgia Duncan, 123456789, georgia.duncan@dwp.gov.uk",
+      "Jean Booker, 123456789, jean.booker@dwp.gov.uk",
+      "Kaine Bell, 123456789, kaine-bell@engineering.digital.dwp.gov.uk",
+      "Arjan Sharp, 123456789, arjan.sharp@dwp.gov.uk",
+      "Bianca Nicholson, 123456789, bianca.nicholson@engineering.digital.dwp.gov.uk",
+      "Brett Henderson, 123456789, brett.henderson@engineering.digital.dwp.gov.uk",
+      "Hassan Young, 123456789, hassan.young@dwp.gov.uk",
+      "Sonia Pruitt, 123456789, sonia.pruitt@dwp.gov.uk",
+      "Erica Fernandez, 123456789, erica.fernandez@dwp.gov.uk"
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#search'),
+      id: 'search', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]} <br> ${parts[2]}`
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="maternity-manage">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="review-team-member" method="post">
+
+      <h1 class="govuk-heading-xl">
+        Add a team member to Maternity Allowance
+      </h1>
+
+      <!-- Accessible autocomplete will hydrate this div -->
+      <label class="govuk-label" for="search">Search by name, email, or staff number</label>
+      <div id="search" class="govuk-input--width-30"></div>
+
+&nbsp;
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Team members
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            
+            <li>
+              <a href="#">
+                Aiden Jenkins
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Dmitrij Ivanov
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Julia Nguyen
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Fiona Murray-Reed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div> 
+  <a href="review-team-member"</a>
+    <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+Continue    </button>
+<p class="govuk-body"><a href="#" class="govuk-link">I cannot find the person I am looking for</a></p>
+</div>
+</form>
+  </div>
+
+{% endblock %}

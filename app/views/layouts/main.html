@@ -1,0 +1,52 @@
+{#
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/index",
+    serviceName: serviceName,
+    serviceUrl: "tasks-dashboard",
+    containerClasses: "govuk-width-container"
+  }) }}
+  
+<div class="govuk-phase-banner">
+    <div class="govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – to help us improve it you can <a class="govuk-link" href="#">report a problem</a>.
+      </span>
+    </p>
+</div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        },
+        {
+        href: "/session-info",
+        text: "Session data"
+      }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}
