@@ -1,6 +1,6 @@
 module.exports = [
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Aiden Jenkins',
     claimant: 'Kaitlyn Burke',
     type: 'Medical evidence needed',
@@ -9,7 +9,7 @@ module.exports = [
     dateCreated: '8 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Julia Nguyen',
     claimant: 'Deborah Levy',
     type: 'Book assessment',
@@ -18,7 +18,7 @@ module.exports = [
     dateCreated: '8 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Dmitrij Ivanov',
     claimant: 'Amy Kim',
     type: 'Report ready',
@@ -27,7 +27,7 @@ module.exports = [
     dateCreated: '9 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Fiona Murray-Reed',
     claimant: 'Andrea Dennison',
     type: 'Awaiting medical evidence',
@@ -36,7 +36,7 @@ module.exports = [
     dateCreated: '9 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Unassigned',
     claimant: 'Georgia Platt',
     type: 'HCP Audit',
@@ -45,16 +45,16 @@ module.exports = [
     dateCreated: '10 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Dmitrij Ivanov',
     claimant: 'Giulia Rossi',
     type: 'Assessment booked',
-    status: 'Suspended',
+    status: 'Unallocated',
     priority: 3,
     dateCreated: '10 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Unassigned',
     claimant: 'Katherine Platt',
     type: 'Paper based review',
@@ -63,7 +63,7 @@ module.exports = [
     dateCreated: '10 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Unassigned',
     claimant: 'Karen Smith',
     type: 'HCP Audit',
@@ -72,7 +72,7 @@ module.exports = [
     dateCreated: '10 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Unassigned',
     claimant: 'Francesca Michel',
     type: 'Create report',
@@ -81,7 +81,7 @@ module.exports = [
     dateCreated: '10 Mar 2023'
   },
   {
-    task: '/Admin-v5/task-info-v4',
+    task: '/Admin-v4/task-info-v4',
     caseManager: 'Unassigned',
     claimant: 'Li Park',
     type: 'HCP Audit',

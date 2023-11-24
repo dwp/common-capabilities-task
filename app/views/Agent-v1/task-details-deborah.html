@@ -12,8 +12,8 @@ Task details
 {{ govukBreadcrumbs({
   items: [
     {
-      text: "My Maternity Allowance tasks",
-      href: "tasks-dashboard-3"
+      text: "My IAG tasks",
+      href: "tasks-dashboard"
     }
   ]
 }) }}
@@ -25,13 +25,13 @@ Task details
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Book assessment for Deborah Levy
+        [task name] for Deborah Levy
       </h1>
 
        
-      <p>View details of Book assessment for Deborah Levy.</p>
+      <p>View details of [task name] for Deborah Levy.</p>
 
-      <p>You can view the task history, suspend it, work on it, return it to the queue, or finish it.</p>
+      <p>You can make changes to who is working on the task and the task priority.</p>
       
     
 
@@ -45,32 +45,27 @@ Task details
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              National insurance number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              DE123456789
-            </dd>
-          </div>
-        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Task
-            </dt>
-            <dd class="govuk-summary-list__value">
-                Book assessment
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
-                View history<span class="govuk-visually-hidden"></span>
-              </a>
-            </dd>
-          </div>
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            [task name]
+          </dd>
+          <dd class="govuk-table__cell govuk-table__cell--numeric" align="right">
+            <a href="return-task-to-queue">Return to queue</a>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Date due
           </dt>
           <dd class="govuk-summary-list__value">
-            9 March 2023
+            6 April 2023
+          </dd>
+          <dd class="govuk-table__cell govuk-table__cell--numeric" align="right">
+            <strong class="govuk-tag govuk-tag--red">
+              1 day overdue
+          </strong>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -78,7 +73,7 @@ Task details
             Date created
           </dt>
           <dd class="govuk-summary-list__value">
-            8 March 2023
+            5 March 2023
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -88,22 +83,57 @@ Task details
           <dd class="govuk-summary-list__value">
             Active
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Suspend<span class="govuk-visually-hidden"></span>
-            </a>
+          <dd class="govuk-table__cell govuk-table__cell--numeric" align="right">
+            <a href="suspend-task">Suspend (BF)</a>
           </dd>
         </div>
         
       </dl>
       <div class="govuk-button-group">
-        <a href="#" "=""">
+        <a href="work-on-task" "=""">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Open task</button>
-        <a href="#" "=""">
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Return task to queue</button>
-        <a href="#" "=""">
+        <a href="finish-task" "=""">
             <button class="govuk-button" data-module="govuk-button">Finish task</button></a>
     </div>
     </div>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="spacer1"></div>
+          <h1 class="govuk-heading-l">
+            History
+          </h1>
+          <p>View the history of [task name] for Deborah Levy.</p>
+    
+          <div class="dwp-timeline">
+            <ul>
+            <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Active</h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1">Deborah Levy</p>
+              <p class="govuk-caption-m">6 March 2023</p>
+            </li>
+            <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Allocated</h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1">Deborah Levy</p>
+              <p class="govuk-caption-m">6 March 2023</p>
+            </li>
+            <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Returned to queue</h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1">Aiden Jenkins</p>
+              <p class="govuk-caption-m">5 March 2023</p>
+            </li>
+            <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Allocated</h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1">Aiden Jenkins</p>
+              <p class="govuk-caption-m">5 March 2023</p>
+            </li>
+            <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Created</h2>
+              <p class="govuk-caption-m">3 March 2023</p>
+            </li>
+            </ul>
+            </div> 
+        </div>
+      </div>
 
 {% endblock %}

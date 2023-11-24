@@ -5,28 +5,7 @@
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-<div class=spacer1></div>
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Task services home",
-      href: "task-services-home"
-    },
-    {
-      text: "What's the new service called",
-      href: "name-your-service"
-    },
-    {
-      text: "Key value pairs",
-      href: "add-key-value-pairs"
-    },
-    {
-      text: "Add a service manager",
-      href: "add-service-manager"
-    }
-  ]
-}) }}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}

@@ -5,12 +5,11 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "^2.7.0",
     "accessible-autocomplete": "^2.0.4",
     "dayjs": "1.11.7",
     "express": "4.18.2",
     "govuk-frontend": "4.4.1",
-    "govuk-prototype-kit": "^13.16.2",
+    "govuk-prototype-kit": "^13.12.1",
     "radio-button-redirect": "1.2.0"
   }
 }

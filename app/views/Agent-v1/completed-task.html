@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  My tasks
+  All tasks
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,6 +14,21 @@
 
 <h1 class="govuk-heading-l">My IAG tasks</h1>
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Task completed successfully
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      Task completed successfully placeholder.
+    </h3>
+    <p class="govuk-body">Undo??? <a class="govuk-notification-banner__link" href="#">placeholder text.</p>
+  </div>
+</div>
 
 <div class="govuk-button-group">
     <a href="#">

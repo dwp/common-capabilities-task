@@ -1,61 +1,52 @@
 {#
-  For guidance on how to use layouts see:
-  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-  #}
-  
-  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-  
-  {% block header %}
+For guidance on how to use layouts see:
+https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+#}
 
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %}
+  {# Set serviceName in config.js. #}
+  {{ govukHeader({
+    homepageUrl: "/index",
+    serviceName: serviceName,
+    serviceUrl: "tasks-dashboard",
+    containerClasses: "govuk-width-container"
+  }) }}
   
-  <header class="dwp-header">
-    <div class="dwp-header__content govuk-width-container">
-    <div class="dwp-header__service-name dwp-header__service-name--with-action">
-      <a href="#" class="dwp-header__link">DWP Task</a>
-    </div>
-    <div class="dwp-header__service-action">
-      <a href="#" class="dwp-header__link">State Pension</a>
-    </div>
-    </div>
-    </header>
-    
-  <div class="govuk-phase-banner">
-      <div class="govuk-width-container">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.
-        </span>
-      </p>
-  </div>
-  </div>
-  
-  {% endblock %}
+<div class="govuk-phase-banner">
+    <div class="govuk-width-container">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        alpha
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new service – to help us improve it you can <a class="govuk-link" href="#">report a problem</a>.
+      </span>
+    </p>
+</div>
+</div>
+
+{% endblock %}
 
 {% block footer %}
-  
-  <footer class="govuk-footer">
-    <div class="govuk-width-container">
-    <h2 class="govuk-visually-hidden">About this website</h2>
-    <ul class="govuk-footer__inline-list">
-      <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="accessibility-statement">Accessibility</a>
-      </li>
-      <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="contact">Contact</a>
-      </li>
-      <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice" target="blank" rel="noopener noreferrer">Privacy</a> (opens in a new tab)
-      </li>
-      <li class="govuk-footer__inline-list-item" style="float: right;"">
-        Version 1.0
-      </li>
-    </ul>
-    
-    </div>
-    </footer>
-  
-  {% endblock %}
-
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/manage-prototype",
+          text: "Manage your prototype"
+        },
+        {
+          href: "/manage-prototype/clear-data",
+          text: "Clear data"
+        },
+        {
+        href: "/session-info",
+        text: "Session data"
+      }
+      ],
+      visuallyHiddenTitle: "Footer links"
+    }
+  }) }}
+{% endblock %}

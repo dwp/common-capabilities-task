@@ -1,4 +1,3 @@
-
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
@@ -25,11 +24,7 @@
   <!--<h2 class="blueheading">Your task types</h2>-->
   &nbsp;
 
-  
-  <div class="box5">
-    <h2 class="govuk-heading-m"><a href="task-type-overview">Change a claimant's address</a></h2>
-  </div>
-</div>
+
 
 <div class="govuk-width-container">
 &nbsp;
@@ -41,4 +36,3 @@
 
 &nbsp;
 {% endblock %}
-
