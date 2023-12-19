@@ -1,0 +1,143 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Book assessment for Deborah Levy
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "All tasks",
+      href: "maternity-tasks"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Book assessment for Deborah Levy
+      </h1>
+
+      <p>View details of Book Assessment for Deborah Levy.</p>
+      <p>You can make changes to who is working on the task, and the task priority.</p>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Deborah Levy
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Book assessment
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 April 2023
+            <strong class="govuk-tag govuk-tag--red">
+              1 day overdue
+          </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-due-date">
+              Change<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            5 March 2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Medium
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-task-priority">
+              Change<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Allocated
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Team member
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Julia Nguyen
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="assign-task">
+              Return to queue<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Blocked
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Dmitrij Ivanov, Amy Anderson (Andi)
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="unblock">
+              Unblock<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Matching criteria
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Scotland, England, Welsh, Longbenton
+          </dd>
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+        <a href="task-history" "=""">
+        <button class="govuk-button" data-module="govuk-button">View history</button>
+      
+    </div>
+    </div>
+   
+
+{% endblock %}

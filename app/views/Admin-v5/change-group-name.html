@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a group
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class=govuk-grid-column-two-thirds>
+      <form class="form" action="review-edit-group" method="post">
+        <h1 class="govuk-heading-l">
+          Change group name
+        </h1>
+        <p>Change the name of Decision makers group.</p> 
+        
+        &nbsp;
+  
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        {{ govukInput({
+          id: "group name",
+          name: "group-name",
+          value: data['group-name'],
+          label: {
+            text: "Group name",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          }
+        }) }}
+  
+  
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+          text: "Review group"
+        }) }}
+      </form>
+    </div>
+  </div>
+{% endblock %}

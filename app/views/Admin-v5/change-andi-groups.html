@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Change groups
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+
+  <h1 class="govuk-heading-l">
+    Change groups
+  </h1>
+
+  <p>Change which groups Andi is a member of. Andi will get tasks as a member of a group.</p>
+
+  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+  <main class="govuk-main-wrapper">
+    <form class="form" action="javascript:window.history.back()" method="post">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          {{ govukCheckboxes({
+            name: "groups",
+            values: data['groups'],
+            fieldset: {
+              legend: {
+                text: "Groups",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Select the groups you want to add Andi to."
+            },
+            items: [
+              {
+                value: "admin",
+                text: "Admin"
+              },
+              {
+                value: "decision makers",
+                text: "Decision makers",
+                checked: true
+              }
+            ]
+          }) }}
+        </div>
+      </div>
+        
+  
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm
+        </button>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Back
+        </button> 
+      </div>
+    </form>
+  </main>
+  
+
+{% endblock %}

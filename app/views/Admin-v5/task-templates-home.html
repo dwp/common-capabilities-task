@@ -1,0 +1,53 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task types
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "Set up and manage team",
+      href: "maternity-manage"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Task types</h1>
+  
+  <p>Manage Maternity Allowance task types. These are common items of routine work.</p>
+
+
+  <!--<h2 class="blueheading">Your task types</h2>-->
+  &nbsp;
+
+  
+  <div class="box5">
+    <h2 class="govuk-heading-m"><a href="template-change-address">Change a customer's address</a></h2>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box5">
+    <h2 class="govuk-heading-m"><a href="#">Add a customer's proof of income</a></h2>
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+

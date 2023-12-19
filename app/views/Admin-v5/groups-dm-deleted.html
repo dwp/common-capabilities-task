@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Groups
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<a href="create-group"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new group</button> </a>
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Groups</h1>
+  
+  <p>Team members can claim a task as a member of this group, in addition to being able to claim a task as individuals.</p>
+
+  <div class="govuk-notification-banner govuk-notification-banner--info" role="alert"
+  aria-labelledby="govuk-notification-banner-title"
+  data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Important!
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+        You deleted the Decision makers group.
+    </h3>
+    <p><a href="groups-decision-makers">Cancel deleting the Decision makers group</a></p>
+  </div>
+</div>
+ <!--<h2 class="blueheading">Your groups</h2>-->
+
+  
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="group-admin">Admin</a></h2>
+    <p>The team members in this group are grade AA. They can process proof of income for Maternity Allowance claimants.</p>
+  </div>
+</div>
+
+
+
+
+&nbsp;
+{% endblock %}
