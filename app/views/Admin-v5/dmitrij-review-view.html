@@ -1,0 +1,220 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Dmitrij’s details
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Dmitrij’s details
+      </h1>
+      <p>Manage Dmitrij’s details.</p>
+
+   &nbsp;
+  
+    <h2 class="govuk-heading-m" id="subsection-title">
+      Task types
+    </h2>
+   <p>Dmitrij can work on:</p>
+   <ul class="govuk-list govuk-list--bullet">
+    <li>Change a claimant's address</li>
+  </ul>
+
+
+   <h2 class="govuk-heading-m">Matching criteria</h2>
+
+   {{ govukSummaryList({
+     classes: 'govuk-!-margin-bottom-9',
+     rows: [
+     {
+       key: {
+         text: "Grade"
+       },
+       value: {
+         text: "AA, AO"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "change-dmitrij-grade",
+             text: "Change",
+             visuallyHiddenText: "grade"
+           }
+         ]
+       }
+     }
+     ,
+     {
+       key: {
+         text: "Language"
+       },
+       value: {
+         text: "Welsh"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "#",
+             text: "Change",
+             visuallyHiddenText: "language"
+           }
+         ]
+       }
+     }
+     ,
+     {
+       key: {
+         text: "Location"
+       },
+       value: {
+         text: "England, Scotland, Wales"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "#",
+             text: "Change",
+             visuallyHiddenText: "location"
+           }
+         ]
+       }
+     }
+     ,
+     {
+       key: {
+         text: "Office ID"
+       },
+       value: {
+         text: "Bristol, Longbenton"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "#",
+             text: "Change",
+             visuallyHiddenText: "office-id"
+           }
+         ]
+       }
+     }
+     ,
+       {
+         key: {
+           text: "Role"
+         },
+         value: {
+           text: data['role']
+         },
+         
+         actions: {
+           items: [
+             {
+               href: "#",
+               text: "Add",
+               visuallyHiddenText: "role"
+             }
+           ]
+         }
+       }
+       ,
+       {
+         key: {
+           text: "Working pattern"
+         },
+         value: {
+           text: data['working-pattern']
+         },
+         actions: {
+           items: [
+             {
+               href: "#",
+               text: "Add",
+               visuallyHiddenText: "working-pattern"
+             }
+           ]
+         }
+       }
+     ]
+   }) }}
+
+   <h2 class="govuk-heading-m">Task management</h2>
+
+   {{ govukSummaryList({
+     classes: 'govuk-!-margin-bottom-9',
+     rows: [
+     {
+       key: {
+         text: "Groups"
+       },
+       value: {
+         text: "Admin"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "#",
+             text: "Change",
+             visuallyHiddenText: "grade"
+           }
+         ]
+       }
+     }
+     ,
+     {
+       key: {
+         text: "Task types"
+       },
+       value: {
+         text: "Change a claimant's address"
+       },
+       
+       actions: {
+         items: [
+           {
+             href: "#",
+             text: "Change",
+             visuallyHiddenText: "language"
+           }
+         ]
+       }
+       }
+     ]
+   }) }}
+
+
+
+
+<form action="javascript:window.history.back()" method="post" novalidate>
+
+  <input type="hidden" name="task-templates-home" value="true">
+
+    <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+      Remove from team
+    </button>
+
+<button class="govuk-button govuk-button--secondary" data-module="govuk-button" >
+  Back
+</button>
+&nbsp;
+</form>
+</div>  
+  </nav>
+  </aside>
+  </div>
+</div>
+</div>
+</div?
+{% endblock %}

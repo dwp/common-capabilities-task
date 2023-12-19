@@ -1,0 +1,432 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  All tasks
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-full">
+
+    <h1 class="govuk-heading-l">
+      All tasks
+    </h1>
+    <h2 class="govuk-heading-m" style="color: grey"> 
+      Tasks 3 April to 7 April 2023
+    </h2>
+    &nbsp;
+<div>
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Filter
+      </span>
+    </summary>
+    <a href="#"
+    <p style="float: right;">Clear filter options</button></a></p>
+    <div class="govuk-details--text">
+      <div class="govuk-grid-column-one-third">
+        <h3>Task</h3>
+        {{ govukCheckboxes({
+          name: "task",
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "book",
+              text: "Book assessement"
+            },
+            {
+              value: "request",
+              text: "Request medical evidence"
+            },
+            {
+              value: "create",
+              text: "Create report"
+            },
+            {
+              value: "hcp",
+              text: "HCP audit"
+            },
+            {
+              value: "paper",
+              text: "Paper-based review"
+            },
+            {
+              value: "threat",
+              text: "Threatening"
+            },
+            {
+              value: "nonthreat",
+              text: "Non-threatening"
+            }
+          ]
+        }) }}
+        
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <h3>Team member</h3>
+      {{ govukCheckboxes({
+        name: "case manager",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "amy",
+            text: "Amy Anderson (andi)"
+          },
+          {
+            value: "aiden",
+            text: "Aiden Jenkins"
+          },
+          {
+            value: "dmitrij",
+            text: "Dmitrij Ivanov"
+          },
+          {
+            value: "fiona",
+            text: "Fiona Murray-Reed"
+          },
+          {
+            value: "julia",
+            text: "Julia Nguyen"
+          }
+        ]
+      }) }}
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+      
+      <h3>Status</h3>
+      {{ govukCheckboxes({
+        name: "status",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "inprogress",
+            text: "Allocated"
+          },
+          {
+            value: "assigned",
+            text: "Active"
+          },
+          {
+            value: "blocked",
+            text: "Unallocated"
+          }
+        ]
+      }) }}
+    </div>
+    </div>   
+    </div>
+    </details>
+  </div>
+    </div>
+
+    <div style="float: right;">
+      <label class="govuk-label" for="sort">
+        Sort by
+      </label>
+      <form method="post">
+        <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
+          <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
+          <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
+          <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to high</option>
+          <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, high to low</option>
+        </select>
+      </form>
+    </div>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#past-day">
+              Tasks
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#past-week">
+              Ended tasks
+            </a>
+          </li>
+        </ul>
+
+        <div class="govuk-tabs__panel" id="past-day">
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <th scope="col" class="govuk-table__header">Date created</th>
+              <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Customer</th>
+                <th scope="col" class="govuk-table__header">Team member</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Priority</th>
+                <th scope="col" class="govuk-table__header">Details</th>
+            </thead>
+
+            <tbody class="govuk-table__body">
+              {% for case in data.caseData %}
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ case.dateCreated }}</td>
+                  <td class="govuk-table__cell">{{ case.type }}</td>
+                  <td class="govuk-table__cell">{{ case.claimant }}</td>
+                  <td class="govuk-table__cell">
+                    {% if case.caseManager == "Unassigned" %}
+                      <p style="color:grey; margin-bottom: 0;">Unassigned</p>
+                    {% else %} 
+                      {{ case.caseManager }}
+                    {% endif %}
+                  </td>
+                  
+                  <td class="govuk-table__cell">{{ case.status }}</td>
+                  <td class="govuk-table__cell">
+                    {% if case.priority == 1 %}
+                      Low
+                    {% elif case.priority == 2 %}
+                      Medium
+                    {% else %} 
+                      High
+                    {% endif %}
+                  </td>
+                  
+                  <td class="govuk-table__cell"><a href={{ case.task }}>View</a></td>
+                </tr>
+              {% endfor %}              
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <th scope="col" class="govuk-table__header">Date ended</th>
+              <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Customer</th>
+                <th scope="col" class="govuk-table__header">Team member</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+                <th scope="col" class="govuk-table__header">Priority</th>
+                <th scope="col" class="govuk-table__header">Details</th>
+
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">13 Mar 2022</td>
+                <td class="govuk-table__cell">Awaiting medical evidence</td>
+                
+                <td class="govuk-table__cell">Catherine O'Connell</td>
+                <td class="govuk-table__cell">Julia Nguyen</td>
+                <td class="govuk-table__cell">Complete</td>
+                <td class="govuk-table__cell">Low</td>
+               
+                <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">13 Mar 2022</td>
+                <td class="govuk-table__cell">Report ready</td>
+                  <td class="govuk-table__cell">Coleen McDonald</td>
+                  <td class="govuk-table__cell">Julia Nguyen</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">Medium</td>
+                  
+                  <td class="govuk-table__cell"><a href="task-info-v3">View</a></td>
+                 </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">14 Mar 2022</td>
+                <td class="govuk-table__cell">HCP Audit</td>
+                  <td class="govuk-table__cell">Sarah Sampson</td>
+                  <td class="govuk-table__cell">Dmitrij Ivanov</td>
+                  <td class="govuk-table__cell">Cancelled</td>
+                  <td class="govuk-table__cell">High</td>
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">14 Mar 2022</td>
+                  <td class="govuk-table__cell">Medical evidence received</td>
+                  <td class="govuk-table__cell">Jessica Hamilton</td>
+                  <td class="govuk-table__cell">Aiden Jenkins</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">Low</td>
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">15 Mar 2022</td>
+                  <td class="govuk-table__cell">Assessment booked</td>
+                
+                  <td class="govuk-table__cell">Chen Huang</td>
+                  <td class="govuk-table__cell">Aiden Jenkins</td>
+                  <td class="govuk-table__cell">Cancelled</td>
+                  <td class="govuk-table__cell">Low</td>
+                  
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">15 Mar 2022</td>
+                  <td class="govuk-table__cell">Paper based review</td>
+                  
+                  <td class="govuk-table__cell">Danica Marino</td>
+                  <td class="govuk-table__cell">Julia Nguyen</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">High</td>
+                
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">16 Mar 2022</td>
+                  <td class="govuk-table__cell">Medical evidence received</td>
+                  <td class="govuk-table__cell">Marie Watts</td>
+                  <td class="govuk-table__cell">Aiden Jenkins</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">Low</td>
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">17 Mar 2022</td>
+                  <td class="govuk-table__cell">Report ready</td>
+                 
+                  <td class="govuk-table__cell">Cassia Valenti</td>
+                  <td class="govuk-table__cell">Fiona Murray-Reed</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">Medium</td>
+                 
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">17 Mar 2022</td>
+                  <td class="govuk-table__cell">Assessment booked</td>
+                  
+                  <td class="govuk-table__cell">Roberta Romano</td>
+                  <td class="govuk-table__cell">Fiona Murray-Reed</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">High</td>
+                
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">17 Mar 2022</td>
+                  <td class="govuk-table__cell">Report ready</td>
+                  
+                  <td class="govuk-table__cell">Alex Smith</td>
+                  <td class="govuk-table__cell">Dmitrij Ivanov</td>
+                  <td class="govuk-table__cell">Completed</td>
+                  <td class="govuk-table__cell">Low</td>
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+               
+                </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+          <h2 class="govuk-heading-l">Past month</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Case manager</th>
+                <th scope="col" class="govuk-table__header">Cases opened</th>
+                <th scope="col" class="govuk-table__header">Cases closed</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">David Francis</td>
+                <td class="govuk-table__cell">98</td>
+                <td class="govuk-table__cell">95</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Paul Farmer</td>
+                <td class="govuk-table__cell">122</td>
+                <td class="govuk-table__cell">131</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Rita Patel</td>
+                <td class="govuk-table__cell">126</td>
+                <td class="govuk-table__cell">142</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+          <h2 class="govuk-heading-l">Past year</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Case manager</th>
+                <th scope="col" class="govuk-table__header">Cases opened</th>
+                <th scope="col" class="govuk-table__header">Cases closed</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">David Francis</td>
+                <td class="govuk-table__cell">1380</td>
+                <td class="govuk-table__cell">1472</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Paul Farmer</td>
+                <td class="govuk-table__cell">1129</td>
+                <td class="govuk-table__cell">1083</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Rita Patel</td>
+                <td class="govuk-table__cell">1539</td>
+                <td class="govuk-table__cell">1265</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        &nbsp;
+        <nav class="govuk-pagination" role="navigation" aria-label="results">
+          <div class="govuk-pagination__prev">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+              <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+              </svg>
+              <span class="govuk-pagination__link-title">Previous</span></a>
+          </div>
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                2
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg></a>
+            
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+<!-- to make a table row clickable using javascript
+   tr onclick="window.location='task-info#'" class = -->
+
