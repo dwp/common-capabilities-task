@@ -32,15 +32,14 @@
       </label>
       <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
         
-        <a href="tasks-dashboard-filtered">
+        <a href="tasks-dashboard-2">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Filter
         </button>
         </a>
-  
     </div>
     </div>
-
+    
   <div style="float: right;">
     <label class="govuk-label" for="sort">
       Sort by
@@ -54,12 +53,12 @@
         <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Due, latest to soonest</option>
         <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Order claimed, newest to oldest</option>
         <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Order claimed, oldest to newest</option>
-
       </select>
     </form>
 </div>
 
 
+<div>
       <table class="govuk-table">
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -72,26 +71,6 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">8 Mar 2022</td>
-            <td class="govuk-table__cell">Request medical evidence</td>
-            <td class="govuk-table__cell">Kaitlyn Burke</td>
-            <td class="govuk-table__cell">AB123456789</td>
-            <td class="govuk-table__cell">
-              <strong class="govuk-tag govuk-tag--red">
-                1 DAY OVERDUE
-              </strong>
-            </td>
-            <td class="govuk-table__cell"><a href="task-details-kaitlyn">View</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">8 Mar 2022</td>
-            <td class="govuk-table__cell">Book assessment</td>
-            <td class="govuk-table__cell">Deborah Levy</td>
-            <td class="govuk-table__cell">DE123456789</td>
-            <td class="govuk-table__cell">Today</td>
-            <td class="govuk-table__cell"><a href="task-details-deborah">View</a></td>
-          </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">9 Mar 2022</td>
             <td class="govuk-table__cell">Create report</td>
@@ -108,48 +87,9 @@
             <td class="govuk-table__cell">2 days</td>
             <td class="govuk-table__cell"><a href="#">View</a></td>
           </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">9 Mar 2022</td>
-            <td class="govuk-table__cell">HCP Audit</td>
-            <td class="govuk-table__cell">James Longbottom-Smith</td>
-            <td class="govuk-table__cell">BW123456789</td>
-            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--blue">
-              SUSPENDED
-            </strong></td>
-            <td class="govuk-table__cell"><a href="#">View</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">7 Mar 2022</td>
-            <td class="govuk-table__cell">Paper-based review</td>
-            <td class="govuk-table__cell">James Longbottom-Smith</td>
-            <td class="govuk-table__cell">BW123456789</td>
-            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--green">
-              COMPLETED
-            </strong></td>
-            <td class="govuk-table__cell"><a href="#">View</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">8 Mar 2022</td>
-            <td class="govuk-table__cell">Request medical evidence</td>
-            <td class="govuk-table__cell">Li Park</td>
-            <td class="govuk-table__cell">QG123456789</td>
-            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--grey">
-              CANCELLED
-            </strong></td>
-            <td class="govuk-table__cell"><a href="#">View</a></td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">8 Mar 2022</td>
-            <td class="govuk-table__cell">Book assessment</td>
-            <td class="govuk-table__cell">Niamh O'Connell</td>
-            <td class="govuk-table__cell">VI123456789</td>
-            <td class="govuk-table__cell">  <strong class="govuk-tag govuk-tag--grey">
-              FAILED
-            </strong></td>
-            <td class="govuk-table__cell"><a href="#">View</a></td>
-          </tr>
         </tbody>
       </table>
+    </div>
+    <p><strong>Showing 2 results for filter term "Amy Kim" </strong><a href="tasks-dashboard">Clear filter</a></p>
 
   {% endblock %}
-

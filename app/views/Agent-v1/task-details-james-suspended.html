@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "My IAG tasks",
+      href: "tasks-dashboard"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Request medical evidence for James Longbottom-Smith.
+      </h1>
+
+       
+      <p>View details of Request medical evidence for James Longbottom-Smith.</p>
+
+      <p>You can view the task history, suspend it, work on it, return it to the queue, or finish it.</p>
+      
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            James Longbottom-Smith
+          </dd>
+        </div>
+       
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Request medical evidence
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="history">
+                View history<span class="govuk-visually-hidden"></span>
+              </a>
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 April 2023
+          </dd>
+          <dd class="govuk-summary-list__actions" align="right">
+            <strong class="govuk-tag govuk-tag--red">
+              1 DAY OVERDUE
+          </strong>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 March 2023
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Suspended
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="suspend-task">
+              Activate<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        
+      </dl>
+      <div class="govuk-button-group">
+        <a href="work-on-task" "=""">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Open task</button>
+        <a href="return-task-to-queue" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Return task to queue</button>
+
+    </div>
+    </div>
+
+{% endblock %}
