@@ -14,12 +14,31 @@
 
 <h1 class="govuk-heading-l">My Maternity Allowance tasks</h1>
 
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Task returned to queue
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <h3 class="govuk-notification-banner__heading">
+      You returned Book assessment for Deborah Levy to the queue.
+    </h3>
+    <p class="govuk-body">This task is now available to be claimed and worked on.</p>
+  </div>
+</div>
+
 <div class="govuk-button-group">
-    <a href="tasks-dashboard-1">
+    <a href="tasks-dashboard-3">
     <button class="govuk-button" data-module="govuk-button">
       Claim new task
     </button></a>
-   
+          <!-- Change service button
+    <a href="select-service"> 
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Change service
+    </button></a>
+    -->
   </div>
 
   <div>
@@ -50,7 +69,6 @@
         <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Date created, oldest to newest</option>
         <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Due, soonest to latest</option>
         <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Due, latest to soonest</option>
-        
         <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Order claimed, oldest to newest</option>
 
       </select>
@@ -68,10 +86,24 @@
             <th scope="col" class="govuk-table__header">Details</th>
           </tr>
         </thead>
-        
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">9 Mar 2022</td>
+            <td class="govuk-table__cell">Create report</td>
+            <td class="govuk-table__cell">Amy Kim</td>
+            <td class="govuk-table__cell">FG123456789</td>
+            <td class="govuk-table__cell">Tomorrow</td>
+            <td class="govuk-table__cell"><a href="#">View</a></td>
+          </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">8 Mar 2022</td>
+            <td class="govuk-table__cell">Book assessment</td>
+            <td class="govuk-table__cell">Deborah Levy</td>
+            <td class="govuk-table__cell">DE123456789</td>
+            <td class="govuk-table__cell">Today</td>
+            <td class="govuk-table__cell"><a href="task-details-deborah">View</a></td>
+          </tr>
+
       </table>
 
-      <p style="text-align: center;"> You haven't claimed any tasks yet.</p>
 
   {% endblock %}
-
