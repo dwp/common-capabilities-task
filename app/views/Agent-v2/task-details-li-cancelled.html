@@ -1,0 +1,106 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "My Maternity Allowance tasks",
+      href: "tasks-dashboard"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Request medical evidence for Li Park
+      </h1>
+
+       
+      <p>View details of this task.</p>
+
+      <p>You can view the task history.</p>
+      
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Li Park
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National Insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                DE123456789
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Request medical evidence
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              View history<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8 March 2024
+          </dd>
+         
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8 March 2024
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--grey">
+              CANCELLED
+          </strong>
+          </dd>
+          
+        </div>
+        
+      </dl>
+      <div class="govuk-button-group">
+        <a href="tasks-dashboard" "=""">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+
+
+    </div>
+    </div>
+
+{% endblock %}

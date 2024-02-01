@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Suspend task
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+            Defer task
+          </h1>
+    
+          <p>Defer Request medical evidence for Kaitlyn Burke until it can be worked on.</p>
+    
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                    Defer and keep
+                  </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        This task will remain in your work area.
+                            </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                  <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                    Defer and return to queue
+                  </label>
+                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                        This task will return to the queue.
+                            </div>
+                </div>
+                <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      Do not defer
+                    </label>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+
+  <div class="govuk-button-group">
+    <a href="deferral-date" "=""">
+    <button class="govuk-button" data-module="govuk-button">Confirm</button>
+    <a href="javascript:window.history.back()"</a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Back
+    </button>
+{% endblock %}
