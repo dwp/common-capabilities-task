@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task history dev example
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+     
+      <h1 class="govuk-heading-l">
+        History
+      </h1>
+      <p>This is an example page for the developers and QA to show every possible history timeline point.</p>
+      <p>View the history of [task name] for [customer name].</p>
+
+      <div class="dwp-timeline">
+        <ul>
+            <li class="dwp-timeline__events--entry">
+                <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Active</h2>
+                <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+                <p class="govuk-caption-m">8 March 2024</p>
+              </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Allocated</h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1">Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2023</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Cancelled</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+            <p class="govuk-caption-m">6 March 2023</p>
+          </li>
+          <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Completed</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Created</h2>
+          <p class="govuk-caption-m">8 March 2023</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Deferred until 22 March 2024 and kept</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+        <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Deferred until 22 March 2024 and returned to queue</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+          <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Failed</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Dmitrij Ivanov</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+          <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Returned to queue</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Fiona Murray-Reed</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+          <li class="dwp-timeline__events--entry">
+            <h2 class="govuk-heading-s govuk-!-margin-bottom-1">Returned to queue and blocked</h2>
+            <p class="govuk-caption-m govuk-!-margin-bottom-1">Fiona Murray-Reed</p>
+            <p class="govuk-caption-m">8 March 2023</p>
+          </li>
+        </ul>
+        </div> 
+        <a href="javascript:window.history.back()" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+            
+    </div>
+  </div>
+
+  {% endblock %}
