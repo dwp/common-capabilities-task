@@ -24,60 +24,183 @@
     <h1 class="govuk-heading-l">
       All tasks
     </h1>
-    
     <h2 class="govuk-heading-m" style="color: grey"> 
       Tasks 3 April to 7 April 2023
     </h2>
     &nbsp;
+<div>
+ 
+<div class="box7">
+<h2 class="govuk-heading-m">Filter</h2>
+    <div class="govuk-details--text">
+      <div class="govuk-grid-column-one-third">
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Task
+            </span>
+          </summary>
+       
+        {{ govukCheckboxes({
+          name: "task",
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "book",
+              text: "Book assessement"
+            },
+            {
+              value: "request",
+              text: "Request medical evidence"
+            },
+            {
+              value: "create",
+              text: "Create report"
+            },
+            {
+              value: "hcp",
+              text: "HCP audit"
+            },
+            {
+              value: "paper",
+              text: "Paper-based review"
+            }
+          ]
+        }) }}
+
+    </div>
+  </details>
+</div>
+
+  <div class="govuk-details--text">
+    <div class="govuk-grid-column-one-third">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Team member
+          </span>
+        </summary>
+ 
+      {{ govukCheckboxes({
+        name: "case manager",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "amy",
+            text: "Amy Anderson (Andi)"
+          },
+          {
+            value: "aiden",
+            text: "Aiden Jenkins"
+          },
+          {
+            value: "dmitrij",
+            text: "Dmitrij Ivanov"
+          },
+          {
+            value: "fiona",
+            text: "Fiona Murray-Reed"
+          },
+          {
+            value: "julia",
+            text: "Julia Nguyen"
+          }
+        ]
+      }) }}
+    </div>
+  </details>
+  </div>
+ 
+  <div class="govuk-details--text">
+    <div class="govuk-grid-column-one-third">
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Status
+          </span>
+        </summary>
+
+      {{ govukCheckboxes({
+        name: "status",
+        classes: "govuk-checkboxes--small",
+        items: [
+          {
+            value: "inprogress",
+            text: "Allocated"
+          },
+          {
+            value: "assigned",
+            text: "Active"
+          },
+          {
+            value: "deferred",
+            text: "Deferred"
+          },
+          {
+            value: "blocked",
+            text: "Unallocated"
+          }
+        ]
+      }) }}
+    </div>
+  </details>
+</div>
+
+  <div class="govuk-grid-column-full">
+  <div class="govuk-button-group">
+    <button class="govuk-button" data-module="govuk-button">
+      Filter
+    </button>
+  </div>
+  </div>
+  
+
+</div>
+</div>
+</div>
+</div>         
+      
+            <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+              <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                  Success
+                </h2>
+              </div>
+              <div class="govuk-notification-banner__content">
+                <p class="govuk-body"><strong>Showing 2 results for filter term "Amy Anderson (Andi)" <a href="tasks-dashboard-claim">Clear filter</strong></a></p>
+              </div>
+            </div>        
+         
+    <div style="float: right;">
+      <label class="govuk-label" for="sort">
+        Sort by
+      </label>
+      <form method="post">
+        <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
+          <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
+          <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
+          <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to high</option>
+          <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, high to low</option>
+        </select>
+      </form>
     </div>
 
 
-    <div class="govuk-form-group" style="float: left;">
-        <label class="govuk-label" for="width-20">
-          Filter your tasks
-        </label>
-        <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
-          <a href="#">
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Filter
-          </button>
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Tasks
           </a>
-      </div>
-      </div>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            Finished tasks
+          </a>
+        </li>
+      </ul>
 
-  
-     </div>
- 
-     <div style="float: right;">
-        <label class="govuk-label" for="sort">
-          Sort by
-        </label>
-  
-        <form method="post">
-          <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
-            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
-            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to high</option>
-            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, high to low</option>
-          </select>
-        </form>
-      </div>
-
-     <div class="govuk-tabs" data-module="govuk-tabs">
-        <ul class="govuk-tabs__list">
-          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
-            <a class="govuk-tabs__tab" href="#tasks">
-              Tasks
-            </a>
-          </li>
-          <li class="govuk-tabs__list-item">
-            <a class="govuk-tabs__tab" href="#finished-tasks">
-              Finished tasks
-            </a>
-          </li>
-        </ul>
-
-        <div class="govuk-tabs__panel" id="tasks">
+        <div class="govuk-tabs__panel" id="past-day">
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <th scope="col" class="govuk-table__header">Details</th>
@@ -159,7 +282,7 @@
                 <td class="govuk-table__cell">High</td>
                 <td class="govuk-table__cell">
                   <strong class="govuk-tag govuk-tag--blue">
-                    SUSPENDED
+                    DEFERRED
                   </strong></td>
               </tr>
               <tr class="govuk-table__row">
@@ -213,7 +336,7 @@
             </tbody>
           </table>
         </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
 
           <table class="govuk-table">
             <thead class="govuk-table__head">
@@ -468,7 +591,7 @@
     </div>
   </div>
 </div>
-</div>
+
     </div>
   </div>
 {% endblock %}
