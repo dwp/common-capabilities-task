@@ -57,8 +57,8 @@
           <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
             <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
             <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
-            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to high</option>
-            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, high to low</option>
+            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to critical</option>
+            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, critical to low</option>
           </select>
         </form>
       </div>
@@ -120,7 +120,7 @@
                 <td class="govuk-table__cell">Create report</td>
                 <td class="govuk-table__cell">Amy Kim</td>
                 <td class="govuk-table__cell">Dmitrij Ivanov</td>
-                <td class="govuk-table__cell">High</td>
+                <td class="govuk-table__cell">Critical</td>
                 <td class="govuk-table__cell">
                   <strong class="govuk-tag govuk-tag--green">
                     ACTIVE
@@ -303,7 +303,7 @@
                   
                   <td class="govuk-table__cell">Danica Marino</td>
                   <td class="govuk-table__cell">Julia Nguyen</td>
-                  <td class="govuk-table__cell">High</td>
+                  <td class="govuk-table__cell">Critical</td>
                   <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--green">
                       COMPLETED

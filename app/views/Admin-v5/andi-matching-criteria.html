@@ -11,22 +11,25 @@ Matching criteria
 
 {% block content %}
 
+<div class="govuk-grid-row">
 <div class="govuk-width-container">
+
+  
   <h1 class="govuk-heading-l">
-    Andi's matching criteria
+    Choose Andi's matching criteria
   </h1>
 
-  <p>You can make sure Andi gets tasks by choosing matching criteria. </p>
+  <p>You can also make sure Andi gets tasks by choosing matching criteria. </p>
 
   <p>Skip this step if you only want Andi to get tasks as a member of a group.</p>
-  
-  <div class="govuk-width-container">
+
     <main class="govuk-main-wrapper">
       <form class="form" action="andi-review" method="post">
-        <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
+
+
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-            
+
+         
             {{ govukCheckboxes({
               name: "andi-grade",
               values: data['andi-grade'],
@@ -37,17 +40,20 @@ Matching criteria
                   classes: "govuk-fieldset__legend--s"
                 }
               },
+
               items: [
                 {
                   value: "aa",
                   text: "AA"
                 },
+        
                 {
                   value: "ao",
                   text: "AO"
                 }
               ]
             }) }}
+&nbsp;
     
             {{ govukCheckboxes({
               name: "language",
@@ -66,6 +72,7 @@ Matching criteria
                 }
               ]
             }) }}
+            &nbsp;
             
             {{ govukCheckboxes({
               name: "country",
@@ -96,9 +103,9 @@ Matching criteria
                 }
               ]
             }) }}
-          </div>
-  
-          <div class="govuk-grid-column-one-third">
+
+            &nbsp;
+
             {{ govukCheckboxes({
               name: "location",
               values: data['location'],
@@ -128,9 +135,7 @@ Matching criteria
                 }
               ]
             }) }} 
-          </div>
-  
-          <div class="govuk-grid-column-one-third">
+            &nbsp;
             {{ govukCheckboxes({
               name: "andi-role",
               values: data['andi-role'],
@@ -152,7 +157,7 @@ Matching criteria
                 }
               ]
             }) }}
-    
+            &nbsp;
             {{ govukCheckboxes({
               name: "pattern",
               values: data['pattern'],
@@ -170,8 +175,9 @@ Matching criteria
                 }
               ]
             }) }}
-          </div>
-        </div>
+
+
+
   
           {% from "govuk/components/button/macro.njk" import govukButton %}
           {{ govukButton({
@@ -184,6 +190,9 @@ Matching criteria
       </form>
     </main>
   </div>
+</div>
+</div>
+</div>
 </div>
 
 {% endblock %}

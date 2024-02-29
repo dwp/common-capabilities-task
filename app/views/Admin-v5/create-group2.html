@@ -22,7 +22,7 @@ Choose criteria for Decision makers group
     <main class="govuk-main-wrapper">
       <form class="form" action="create-group3" method="post">
         <div class="govuk-grid-row">
-          <div class="govuk-grid-column-one-third">
+          <div class="govuk-grid-column-two-thirds">
             {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
             {{ govukCheckboxes({
               name: "group-grade",
@@ -93,9 +93,8 @@ Choose criteria for Decision makers group
                 }
               ]
             }) }}
-          </div>
 
-          <div class="govuk-grid-column-one-third">
+
             {{ govukCheckboxes({
             name: "group-office",
             values: data['group-office'],
@@ -125,9 +124,9 @@ Choose criteria for Decision makers group
               }
               ]
             }) }}
-          </div>
 
-          <div class="govuk-grid-column-one-third">
+
+
             {{ govukCheckboxes({
             name: "group-role",
             values: data['group-role'],
