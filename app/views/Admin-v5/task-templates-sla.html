@@ -9,6 +9,8 @@ Change the completion timeframe
 {% block content %}
 
 <div class="govuk-width-container">
+  <div class="govuk-grid-row">
+
   <h1 class="govuk-heading-l">
     Change the completion timeframe
   </h1>
@@ -21,14 +23,13 @@ Change the completion timeframe
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
 
 
-  <h2 class="govuk-heading-s">Must complete in (optional)</h2>
-
+  <h2 class="govuk-heading-s">Must complete in</h2>
   <div id="must-complete-hint" class="govuk-hint">
-    Optional completion timeframe should be a minimum of 15 minutes.</div>
+     Completion timeframe should be a minimum of 15 minutes.</div>
 
 
-<div class="govuk-grid-column-one-quarter">
-<div class="govuk-form-group">
+     <div class="govuk-grid-column-one-quarter">
+      <div class="govuk-form-group">
       <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
     </div>  
   </div>
@@ -56,23 +57,24 @@ Change the completion timeframe
           <label class="govuk-label govuk-radios__label" for="changed-name-2">
             Days
           </label>
-          
+
         </div>
       </div>
     </div>
       </fieldset>
         </legend>
+      </div>
   </div>
 
+
 {% from "govuk/components/button/macro.njk" import govukButton %}
-<form class="form" action="template-change-address" method="post">
-{{ govukButton({
-  text: "Confirm"
-}) }}
-&nbsp;
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-            Back
-          </button>
+<div class="govuk-button-group">
+  <a href="template-change-address-success" "=""">
+  <button class="govuk-button" data-module="govuk-button">Confirm</button>
+  <a href="javascript:window.history.back()" "=""">
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+</div>
+
 </form>
 </div>
 
