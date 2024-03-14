@@ -47,22 +47,7 @@ Review Admin group
             Group name
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['group-name']|length == 0 %}
-              None
-            {% else %}
-              <p>
-                {{ data['group-name'] }}
-              </p>
-            {% endif %}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group">
-              {% if data['group-name']|length == 0 %} 
-                Add<span class="govuk-visually-hidden"> group name</span>
-              {% else %}
-                Change<span class="govuk-visually-hidden"> group name</span>
-              {% endif %}
-            </a>
+              Admin
           </dd>
         </div>
 
@@ -305,14 +290,27 @@ Review Admin group
         </div>
       </dl>
 
-<a href="groups-dm-deleted">
-
-      <button class="govuk-button govuk-button--warning" data-module="govuk-button">
-        Delete group
-      </button>
-    </a>
-      </form>
+      <div class="govuk-button-group">
+        <a href="groups-dm-deleted">
+          <button class="govuk-button govuk-button" data-module="govuk-button">
+            Confirm changes
+          </button>
+        </a>
+        <a href="groups-dm-deleted">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Delete group
+          </button>
+        </a>
+                <a href="javascript:window.history.back()"</a>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Back
+                  </button> 
+                 
 
     </div>
+    <div>
   </div>
+</div>
+  </div>
+</form>
 {% endblock %}

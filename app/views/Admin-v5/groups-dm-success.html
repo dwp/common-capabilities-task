@@ -22,6 +22,22 @@
 {% endblock %}
 
 {% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <h3 class="govuk-notification-banner__heading">
+    You created Decision makers.
+  </h3>
+</div>
+</div>
+
 <a href="create-group"
   <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new group</button> </a>
 
@@ -30,20 +46,7 @@
   
   <p>Team members will get tasks as a member of this group.</p>
 
-  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You have successfully created Decision makers group.
-    </h3>
-  </div>
-</div>
+ 
  <!--<h2 class="blueheading">Your groups</h2>-->
 
   

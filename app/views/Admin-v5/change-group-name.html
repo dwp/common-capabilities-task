@@ -15,23 +15,23 @@ Create a group
     <div class=govuk-grid-column-two-thirds>
       <form class="form" action="review-edit-group" method="post">
         <h1 class="govuk-heading-l">
-          Change group name
+          Change group description
         </h1>
-        <p>Change the name of Decision makers group.</p> 
+        <p>Change the description of Decision makers.</p> 
         
         &nbsp;
   
-        {% from "govuk/components/input/macro.njk" import govukInput %}
-        {{ govukInput({
-          id: "group name",
-          name: "group-name",
-          value: data['group-name'],
-          label: {
-            text: "Group name",
-            classes: "govuk-label--s",
-            isPageHeading: false
-          }
-        }) }}
+        <div class="govuk-form-group">
+          <h1 class="govuk-label-wrapper">
+            <label class="govuk-label govuk-label--s" for="more-detail">
+              Group description
+            </label>
+          </h1>
+          <div id="more-detail-hint" class="govuk-hint">
+            For example, 'The team members in this group are decision makers. They have responsibility for customer decisions.'
+          </div>
+          <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5" aria-describedby="more-detail-hint"></textarea>
+        </div>
   
   
         {% from "govuk/components/button/macro.njk" import govukButton %}
