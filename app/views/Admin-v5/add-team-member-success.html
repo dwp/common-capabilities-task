@@ -27,36 +27,38 @@
 {% endblock %}
 
 {% block content %}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You have added Andi to the Maternity Allowance team.
+        </h3>
+        
+      </div>
+    </div>
       <h1 class="govuk-heading-xl">
-        Andi has been added to Maternity Allowance
+        Add a team member
       </h1>
       <form class="form" action="review-team-member" method="post">
-        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-        aria-labelledby="govuk-notification-banner-title"
-        data-module="govuk-notification-banner">
-        <div class="govuk-notification-banner__header">
-          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-            Success
-          </h2>
-        </div>
-        <div class="govuk-notification-banner__content">
-          <h3 class="govuk-notification-banner__heading">
-            You have added Andi to the Maternity Allowance team.
-          </h3>
-          
-        </div>
-      </div>
+       
       <h1 class="govuk-heading-l">
-        Add another team member
+        Search
       </h1>
 
       {% from "govuk/components/input/macro.njk" import govukInput %}
 
       {{ govukInput({
         label: {
-          text: "Search by name, email, or staff number."
+          text: "Use name, email, or staff number."
         },
         classes: "govuk-!-width-two-thirds",
         id: "team-member-search",

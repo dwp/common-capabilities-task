@@ -12,6 +12,7 @@ Create a group
 
 {% block content %}
   <div class="govuk-grid-row">
+ 
     <div class=govuk-grid-column-two-thirds>
       <form class="form" action="create-group2" method="post">
         <h1 class="govuk-heading-l">
@@ -32,6 +33,7 @@ Create a group
             isPageHeading: false
           }
         }) }}
+     
   
         {% from "govuk/components/textarea/macro.njk" import govukTextarea %}
         {{ govukTextarea({
@@ -44,7 +46,7 @@ Create a group
             isPageHeading: true
           },
           hint: {
-            text: "For example, 'The team members in this group are decision makers. They have responsibility for strategic decisions.'"
+            text: "For example, 'The team members in this group are decision makers. They have responsibility for customer decisions.'"
           }
         }) }}
   

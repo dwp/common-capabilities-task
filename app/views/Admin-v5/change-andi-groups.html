@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Change groups
+Add Andi to groups
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,60 +11,85 @@ Change groups
 {% endblock %}
 
 {% block content %}
-<div class="govuk-width-container">
 
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
   <h1 class="govuk-heading-l">
     Change groups
   </h1>
 
-  <p>Change which groups Andi is a member of. Andi will get tasks as a member of a group.</p>
-
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
   <main class="govuk-main-wrapper">
-    <form class="form" action="javascript:window.history.back()" method="post">
-      <div class="govuk-grid-row">
+    <div class="govuk-grid-row">
+      <form class="form" action="andi-matching-criteria" method="post">
         <div class="govuk-grid-column-two-thirds">
-          {{ govukCheckboxes({
-            name: "groups",
-            values: data['groups'],
-            fieldset: {
-              legend: {
-                text: "Groups",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--s"
-              }
-            },
-            hint: {
-              text: "Select the groups you want to add Andi to."
-            },
-            items: [
-              {
-                value: "admin",
-                text: "Admin"
-              },
-              {
-                value: "decision makers",
-                text: "Decision makers",
-                checked: true
-              }
-            ]
-          }) }}
+       <h2 class="govuk-heading-m">Groups</h2>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="groups-hint">
+              
+              <div id="groups-hint" class="govuk-hint">
+                Change the groups you want Andi to be in.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="groups" name="groups" type="checkbox" value="admin">
+                  <label class="govuk-label govuk-checkboxes__label" for="groups">
+                    Admin
+                  </label>
+                </div>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Admin task details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>Team members in Admin can work on:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Change a customer's address</li>
+                      <li>Add a customer's proof of income</li>
+                    </ul>
+                  </div>
+                </details>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-2" name="groups" type="checkbox" value="decision makers">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Decision makers
+                  </label>
+                </div>
+              </div>
+              &nbsp;
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Decison makers task details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>Team members in Decision makers can work on:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Change a customer's address</li>
+                    <li>Update a customer's bank details</li>
+                  </ul>
+                </div>
+              </details>
+            </fieldset>
+          </div>
         </div>
-      </div>
-        
-  
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      <div class="govuk-button-group">
-        <button class="govuk-button" data-module="govuk-button">
-          Confirm
-        </button>
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Back
-        </button> 
-      </div>
-    </form>
+
+        <div class="govuk-grid-column-two-thirds">
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Confirm
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Back
+            </button> 
+          </div>
+        </div>
+      </form>
+    </div>
   </main>
-  
+</div>
 
 {% endblock %}

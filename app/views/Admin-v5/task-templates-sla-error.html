@@ -19,19 +19,24 @@ Change the completion timeframe
 
   <fieldset class="govuk-fieldset" role="group" aria-describedby="">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-
+      <div class="govuk-form-group govuk-form-group--error">
 
   <h2 class="govuk-heading-s">Must complete in (optional)</h2>
 
   <div id="must-complete-hint" class="govuk-hint">
     Optional completion timeframe should be a minimum of 15 minutes.</div>
 
+      <p id="sla-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> 
+        Enter 15 minutes or more
+      </p>
 
 <div class="govuk-grid-column-one-quarter">
 <div class="govuk-form-group">
-      <input class="govuk-input govuk-input--width-5" id="width-5" name="width-5" type="text">
+      <input class="govuk-input govuk-input--width-5 govuk-input--error" id="width-5" name="width-5" type="text">
     </div>  
   </div>
+
 
 <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
 <div class="govuk-grid-row">
@@ -61,7 +66,7 @@ Change the completion timeframe
       </div>
     </div>
       </fieldset>
-        </legend>
+      </legend>
   </div>
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -77,5 +82,3 @@ Change the completion timeframe
 </div>
 
 {% endblock %}
-
-
