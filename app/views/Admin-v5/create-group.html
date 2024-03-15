@@ -12,8 +12,8 @@ Create a group
 
 {% block content %}
   <div class="govuk-grid-row">
- 
     <div class=govuk-grid-column-two-thirds>
+          
       <form class="form" action="create-group2" method="post">
         <h1 class="govuk-heading-l">
           Create a group
@@ -31,6 +31,9 @@ Create a group
             text: "Group name",
             classes: "govuk-label--s",
             isPageHeading: false
+          },
+          hint: {
+            text: "Write your group name in sentence case. You can combine letters and numbers. If using an acronym, use capitals."
           }
         }) }}
      
