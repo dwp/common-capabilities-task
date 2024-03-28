@@ -14,19 +14,19 @@ Change due date
 <div class="govuk-width-container">
 
   <h1 class="govuk-heading-l">
-    Change due date
+    Change due date and time
   </h1>
 
-  <p>Change the due date for Book assessment for Deborah Levy.</p>
-  <p>The current due date for this task is 6 April 2023. </p>
+  <p>Change the due date and time for Book assessment for Deborah Levy.</p>
+  <p>The current due date and time for this task is 6 April 2023 at 14:39. </p>
   &nbsp;
   {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h1 class="govuk-fieldset__heading">
-          Change due date to:
+          Date
         </h1>
       </legend>
       <div id="passport-issued-hint" class="govuk-hint">
@@ -56,6 +56,43 @@ Change due date
             </label>
             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
           </div>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h1 class="govuk-fieldset__heading">
+          Time
+        </h1>
+      </legend>
+      <div id="passport-issued-hint" class="govuk-hint">
+        Use 24 hour time, for example, 14:30
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Hours
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="govuk-date-input__item">
+          <p>:</p>
+          </div>
+        
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Minutes
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          </div>
+        </div>
         </div>
       </div>
     </fieldset>
