@@ -57,8 +57,8 @@
   
         <form method="post">
           <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
-            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
+            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date created, earliest to latest</option>
+            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date created, latest to earliest</option>
             <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to critical</option>
             <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, critical to low</option>
           </select>
@@ -108,7 +108,7 @@
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a href="task-info-v4">View</a></td>
                 <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">
-                  OVERDUE
+                   OVERDUE 
                 </strong><br>8 Mar 2024 </td>
                 <td class="govuk-table__cell">Book assessment</td>
                 <td class="govuk-table__cell">Deborah Levy</td>
