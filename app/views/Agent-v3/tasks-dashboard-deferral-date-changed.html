@@ -13,18 +13,30 @@
 {% block content %}
 
 <h1 class="govuk-heading-l">My Maternity Allowance tasks</h1>
-
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You changed the suspension date for HCP audit for James Longbottom-Smith to 28 March 2024.
+      </h3>
+      <p class="govuk-body">You can activate the task any time, or change the suspension date.</p>
+    </div>
+  </div>
 <div class="govuk-button-group">
-    <a href="#">
+    <a href="tasks-dashboard-3">
     <button class="govuk-button" data-module="govuk-button">
       Claim new task
     </button></a>
-
+          
     <a href="select-service"> 
     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Change service
     </button></a>
-
+   
   </div>
 
   <div>
@@ -65,37 +77,41 @@
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Details</th>
-            <th scope="col" class="govuk-table__header">Created</th>
+            <th scope="col" class="govuk-table__header">Date created</th>
             <th scope="col" class="govuk-table__header">Task</th>
             <th scope="col" class="govuk-table__header">Customer</th>
             <th scope="col" class="govuk-table__header">National Insurance number</th>
             <th scope="col" class="govuk-table__header">Due</th>
             <th scope="col" class="govuk-table__header">Status</th>
+            
           </tr>
         </thead>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell"><a href="task-details-kaitlyn">View</a></td>
-          <td class="govuk-table__cell">6 Mar 2024 at 12:09</td>
+          <td class="govuk-table__cell"><a href="#">View</a></td>
+          <td class="govuk-table__cell">6 Mar 2024</td>
           <td class="govuk-table__cell">Request medical evidence</td>
           <td class="govuk-table__cell">Kaitlyn Burke</td>
           <td class="govuk-table__cell">KW123456789</td>
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--red">
-              OVERDUE 
+              1 DAY OVERDUE
             </strong>
-            <br>7 Mar 2024<br>at 16:09</td>
-          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
-              ALLOCATED
-            </strong></td>
+            <p>7 Mar 2024</p></td>
+          <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
+            SUSPENDED
+            </strong>
+            <p>14 Mar 2024</p>
+        </td>
           
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><a href="task-details-amy-2">View</a></td>
-            <td class="govuk-table__cell">7 Mar 2024<br>at 13:19</td>
+
+            <td class="govuk-table__cell">7 Mar 2024</td>
             <td class="govuk-table__cell">Book assessment</td>
             <td class="govuk-table__cell">Deborah Levy</td>
             <td class="govuk-table__cell">DE123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 14:29</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--yellow">
                 ALLOCATED
@@ -103,79 +119,81 @@
           </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell"><a href="#">View</a></td>
-            <td class="govuk-table__cell">6 Mar 2024<br>at 11:45</td>
+            <td class="govuk-table__cell">6 Mar 2024</td>
             <td class="govuk-table__cell">Create report</td>
             <td class="govuk-table__cell">Amy Kim</td>
             <td class="govuk-table__cell">FG123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 12:00</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
               <td class="govuk-table__cell">
                 <strong class="govuk-tag govuk-tag--green">
                   ACTIVE
                 </strong></td>
-            
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">View</a></td>
-            <td class="govuk-table__cell">6 Mar 2024<br>at 00:04</td>
+            <td class="govuk-table__cell">6 Mar 2024</td>
             <td class="govuk-table__cell">Book assessment</td>
             <td class="govuk-table__cell">Amy Kim</td>
             <td class="govuk-table__cell">FG123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 00:54</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--yellow">
                 ALLOCATED
               </strong></td>
-            
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="task-details-james-deferred">View</a></td>
-
-            <td class="govuk-table__cell">7 Mar 2024<br>at 18:17</td>
+            <td class="govuk-table__cell">7 Mar 2024</td>
             <td class="govuk-table__cell">HCP Audit</td>
             <td class="govuk-table__cell">James Longbottom-Smith</td>
             <td class="govuk-table__cell">AB123456789</td>
-            <td class="govuk-table__cell">18 Mar 2024<br>at 22:57</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--blue">
               SUSPENDED
-            </strong></td>
+            </strong>
+            <p>28 Mar 2024</p>
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="task-details-priscilla-completed">View</a></td>
-            <td class="govuk-table__cell">7 Mar 2024<br>at 15:00</td>
+            <td class="govuk-table__cell">7 Mar 2024</td>
             <td class="govuk-table__cell">Paper-based review</td>
             <td class="govuk-table__cell">Priscilla Baker</td>
             <td class="govuk-table__cell">GE123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 16:00</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--green">
                 COMPLETED
               </strong></td>
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="task-details-li-cancelled">View</a></td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 21:38</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">Request medical evidence</td>
             <td class="govuk-table__cell">Li Park</td>
             <td class="govuk-table__cell">DE123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 01:38</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--grey">
                 CANCELLED
               </strong></td>
-            
+
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell"><a href="#">View</a></td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 12:01</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">Book assessment</td>
             <td class="govuk-table__cell">Karen Smith</td>
             <td class="govuk-table__cell">KJ123456789</td>
-            <td class="govuk-table__cell">8 Mar 2024<br>at 14:01</td>
+            <td class="govuk-table__cell">8 Mar 2024</td>
             <td class="govuk-table__cell">
               <strong class="govuk-tag govuk-tag--grey">
                 FAILED
               </strong>
-            
+
           </tr>
       </table>
 

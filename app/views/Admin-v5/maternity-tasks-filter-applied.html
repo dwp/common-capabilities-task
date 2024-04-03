@@ -55,8 +55,8 @@
           </h2>
         </div>
         <div class="govuk-notification-banner__content">
-          <p><strong>0 results for “Amy Kim" in 'Tasks'.</strong></p>
-          <p><strong>4 result for “Amy Kim" in 'Finished tasks'.</strong></p>
+          <p><strong>1 result for “Amy Kim" in 'Tasks'.</strong></p>
+          <p><strong>0 results for “Amy Kim" in 'Finished tasks'.</strong></p>
           <p><a href="maternity-tasks">Clear filter</a></p>
       </div>
         </div>
@@ -68,8 +68,8 @@
   
         <form method="post">
           <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date, earliest to latest</option>
-            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date, latest to earliest</option>
+            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date created, earliest to latest</option>
+            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date created, latest to earliest</option>
             <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to critical</option>
             <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, critical to low</option>
           </select>
@@ -105,11 +105,22 @@
 
             <tbody class="govuk-table__body">
              
-                
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">View</a></td>
+                <td class="govuk-table__cell">9 Mar 2024</td>
+                <td class="govuk-table__cell">Create report</td>
+                <td class="govuk-table__cell">Amy Kim</td>
+                <td class="govuk-table__cell">Dmitrij Ivanov</td>
+                <td class="govuk-table__cell">Critical</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--green">
+                    ACTIVE
+                  </strong></td>
+              </tr>
               
             </tbody>
           </table>
-          <p style="text-align: center;"> No filter results in 'Tasks'.</p>
+          
         </div>
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
 
@@ -124,7 +135,7 @@
                 <th scope="col" class="govuk-table__header">Status</th>
             </thead>
           </table>
-          
+          <p style="text-align: center;"> No filter results in 'Finished tasks'.</p>
         </div>
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
           <h2 class="govuk-heading-l">Past month</h2>
