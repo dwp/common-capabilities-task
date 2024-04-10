@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Set deferral date
+Set suspend date
 {% endblock %}
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -11,17 +11,22 @@ Set deferral date
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 <div class="govuk-width-container-two-thirds">
   <h1 class="govuk-heading-l">
-    Set suspension date
+    Set suspend date and time
   </h1>
-  <p>Set the suspension date for Request medical evidence for Kaitlyn Burke. This task will become available to work on again on this date. </p>
-  <p>The current due date for this task is 6 April 2023.</p>
+  <p>Set the suspend date for Book assessment for Deborah Levy. This task will become available to work on again at the date and time you set. </p>
+ <!--<p>The current due date for this task is 7 March 2024 at 12:04.</p>-->
   &nbsp;
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-        <h1 class="govuk-fieldset__heading">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <!--<h2 class="govuk-fieldset__heading">
             When would you like to suspend the task until?
-        </h1>
+        </h2>
+        &nbsp-->
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading">
+            Date
+        </h3>
       </legend>
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 27 3 2007
@@ -50,12 +55,53 @@ Set deferral date
             </label>
             <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
           </div>
+
+          
+        </div>
+        
+      </div>
+    </fieldset>
+    
+  </div>
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <h3 class="govuk-fieldset__heading">
+          Time
+        </h3>
+        
+      </legend>
+      <div id="passport-issued-hint" class="govuk-hint">
+        Use 24 hour time, for example, 14:30
+      </div>
+      <div class="govuk-date-input" id="passport-issued">
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+              Hours
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+          </div>
+        </div>
+
+        <div class="govuk-date-input__item">
+          <p>:</p>
+          </div>
+        
+        <div class="govuk-date-input__item">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+              Minutes
+            </label>
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+          </div>
+        </div>
         </div>
       </div>
     </fieldset>
   </div>
 {% from "govuk/components/button/macro.njk" import govukButton %}
-<form class="form" action="tasks-dashboard-deferred" method="post">.
+<form class="form" action="tasks-dashboard-5" method="post">.
 {{ govukButton({
   text: "Confirm"
 }) }}
