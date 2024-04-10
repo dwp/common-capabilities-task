@@ -13,18 +13,26 @@
 {% block content %}
 
 <h1 class="govuk-heading-l">My Maternity Allowance tasks</h1>
-
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+      <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Success
+      </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+      <h3 class="govuk-notification-banner__heading">
+        You completed Change address for Amy Kim.
+      </h3>
+      <p class="govuk-body">If you completed this task in error, speak to your team leader.</p>
+    </div>
+  </div>
 <div class="govuk-button-group">
-    <a href="tasks-dashboard-1">
+    <a href="tasks-dashboard-3">
     <button class="govuk-button" data-module="govuk-button">
       Claim new task
     </button></a>
-
-    <!--<a href="select-service"> 
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      Change service
-    </button></a>-->
-
+          
+    
   </div>
 
   <div>
@@ -34,7 +42,7 @@
       </label>
       <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
         
-        <a href="#">
+        <a href="tasks-dashboard-filtered">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Filter
         </button>
@@ -74,10 +82,36 @@
           </tr>
         </thead>
         <tr class="govuk-table__row">
-          
-        </tr>
-        
+            <td class="govuk-table__cell"><a href="task-details-deborah-suspended">View</a></td>
+              <td class="govuk-table__cell">7 Mar 2024<br>at 13:19</td>
+              <td class="govuk-table__cell">Book assessment</td>
+              <td class="govuk-table__cell">Deborah Levy</td>
+              <td class="govuk-table__cell">DE123456789</td>
+              <td class="govuk-table__cell">8 Mar 2024<br>at 14:29</td>
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--blue">
+                    SUSPENDED
+                </strong>
+                <br> until 14 April 2024 at 14:30
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="task-details-kaitlyn-completed">View</a></td>
+                <td class="govuk-table__cell">6 Mar 2024 at 12:09</td>
+                <td class="govuk-table__cell">Request medical evidence</td>
+                <td class="govuk-table__cell">Kaitlyn Burke</td>
+                <td class="govuk-table__cell">KW123456789</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--red">
+                    OVERDUE 
+                  </strong>
+                  <br>7 Mar 2024<br>at 16:09</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                    COMPLETED
+                  </strong></td>
+              </tr>
+    
       </table>
-      <p style="text-align: center;"> You have not claimed any tasks yet.</p>
+
 
   {% endblock %}

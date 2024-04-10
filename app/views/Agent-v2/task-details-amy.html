@@ -13,7 +13,7 @@ Task details
   items: [
     {
       text: "My Maternity Allowance tasks",
-      href: "tasks-dashboard"
+      href: "#"
     }
   ]
 }) }}
@@ -25,12 +25,13 @@ Task details
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Paper-based review for Priscilla Baker
+        Change address for Amy Kim
       </h1>
+
        
       <p>View details of this task.</p>
 
-      <p>You can view the task history.</p>
+      <p>You can suspend it, work on it, return it to the queue, or finish it.</p>
       
     
 
@@ -40,43 +41,42 @@ Task details
             Customer
           </dt>
           <dd class="govuk-summary-list__value">
-            Priscilla Baker
+            Amy Kim
           </dd>
           <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              National insurance number
-            </dt>
-            <dd class="govuk-summary-list__value">
-                GE123456789
-            </dd>
-            <dd class="govuk-summary-list__actions">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            FG123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
             
-            </dd>
-          </div>
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Task
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Paper-based review
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <!--<a class="govuk-link" href="#">
-                View history<span class="govuk-visually-hidden"></span>
-              </a>-->
-            </dd>
-          </div>
-        
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Change address
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="history-kaitlyn">
+              View history<span class="govuk-visually-hidden"></span>
+            </a> -->
+          </dd>
+        </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-            8 March 2024 at 16:00
+            8 March 2024 at 16:09
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -87,7 +87,7 @@ Task details
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            7 March 2024 at 15:00
+            6 March 2024 at 00:04
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -98,29 +98,23 @@ Task details
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--green">
-              Completed
+            <strong class="govuk-tag govuk-tag--yellow">
+              ALLOCATED
           </strong>
           </dd>
           <dd class="govuk-summary-list__actions">
+            <a href="#">Suspend</a>
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Finished
-          </dt>
-          <dd class="govuk-summary-list__value">
-            8 March 2024 at 12:57
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
+        
       </dl>
       <div class="govuk-button-group">
-        <a href="javascript:window.history.back()" "=""">
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
-           </a>
+        <a href="holding-screen" "=""">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Open task</button>
+        <a href="#" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Return task to queue</button>
+        <a href="finish-task" "=""">
+            <button class="govuk-button" data-module="govuk-button">Finish task</button></a>
     </div>
     </div>
 

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Service unavailable
+Return task to queue
 {% endblock %}
 
 
@@ -16,12 +16,15 @@ Service unavailable
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Sorry, this service is unavailable
+        Pause
       </h1>
 
-      <p>You will be able to use the service from 9am on Monday 19 November 2018.
-    </p>
+      <p>At this point you will see the task in your everyday working area.</p>
+      <br>
 
-        <p>Contact the <a href="#">Tax Credits Helpline</a> if you need to make changes to your claim or speak to someone about your tax credits.</p>
-        
-      {% endblock %}
+
+      <a href="javascript:window.history.back()"</a>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Back
+        </button>
+{% endblock %}
