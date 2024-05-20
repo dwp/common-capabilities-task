@@ -1,52 +1,58 @@
 {#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-
-{% block header %}
-  {# Set serviceName in config.js. #}
-  {{ govukHeader({
-    homepageUrl: "/index",
-    serviceName: serviceName,
-    serviceUrl: "#",
-    containerClasses: "govuk-width-container"
-  }) }}
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
   
-<div class="govuk-phase-banner">
-    <div class="govuk-width-container">
-    <p class="govuk-phase-banner__content">
-      <strong class="govuk-tag govuk-phase-banner__content__tag">
-        alpha
-      </strong>
-      <span class="govuk-phase-banner__text">
-        This is a new service – to help us improve it you can <a class="govuk-link" href="#">report a problem</a>.
-      </span>
-    </p>
-</div>
-</div>
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+  {% block header %}
 
-{% endblock %}
+  
+  {# Set serviceName in config.js. #}
+    {{ govukHeader({
+      homepageUrl: "/index",
+      serviceName: serviceName,
+      serviceUrl: "#",
+      containerClasses: "govuk-width-container"
+    }) }}
+    
+  <div class="govuk-phase-banner">
+      <div class="govuk-width-container">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          alpha
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service - help us to improve it by telling us your <a class="govuk-link" href="#">feedback</a>.
+        </span>
+      </p>
+  </div>
+  </div>
+  
+  {% endblock %}
 
 {% block footer %}
-  {{ govukFooter({
-    meta: {
-      items: [
-        {
-          href: "/manage-prototype",
-          text: "Manage your prototype"
-        },
-        {
-          href: "/manage-prototype/clear-data",
-          text: "Clear data"
-        },
-        {
-        href: "/session-info",
-        text: "Session data"
-      }
-      ],
-      visuallyHiddenTitle: "Footer links"
-    }
-  }) }}
-{% endblock %}
+  
+  <footer class="govuk-footer">
+    <div class="govuk-width-container">
+    <h2 class="govuk-visually-hidden">About this website</h2>
+    <ul class="govuk-footer__inline-list">
+      <li class="govuk-footer__inline-list-item">
+        <a class="govuk-footer__link" href="">Accessibility statement</a>
+      </li>
+      <li class="govuk-footer__inline-list-item">
+        <a class="govuk-footer__link" href="">Contact</a>
+      </li>
+      <li class="govuk-footer__inline-list-item">
+        <a class="govuk-footer__link" href="">Privacy</a>
+      </li>
+      <li class="govuk-footer__inline-list-item" style="float: right;"">
+        Version 1.0
+      </li>
+    </ul>
+    
+    </div>
+    </footer>
+  
+  {% endblock %}
+
