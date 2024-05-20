@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Return task to queue
+Finish task
 {% endblock %}
 
 
@@ -16,10 +16,10 @@ Return task to queue
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Return task to queue
+        Finish task
       </h1>
 
-      <p>If you are unable to work on [task name] for [customer name] right now and need another team member to complete it, you should return it to the queue.</p>
+      <p>Finishing the task means it will no longer be available to work on.</p>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -28,33 +28,46 @@ Return task to queue
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                Return
+                Completed
               </label>
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    You may get this task again.
+                    You have successfully completed the task.
                         </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                Return and block
+                Failed
               </label>
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    You will not get this task again.
+                    This task cannot be finished.
                         </div>
             </div>
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
                 <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                  Do not return to queue
+                  Cancelled
                 </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                    This task was created in error or is no longer appropriate.
+                        </div>
               </div>
           </div>
         </fieldset>
+<div class="box6">
+        <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              You will not be able to undo this action.
+            </strong>
+          </div>
+        </div>
+
       </div>
 
   <div class="govuk-button-group">
-    <a href="tasks-dashboard-6" "=""">
+    <a href="tasks-dashboard-completed" "=""">
     <button class="govuk-button" data-module="govuk-button">Confirm</button>
     <a href="javascript:window.history.back()"</a>
     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">

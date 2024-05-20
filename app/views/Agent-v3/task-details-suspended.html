@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "My Maternity Allowance tasks",
+      href: "tasks-dashboard"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Paper based review for Amy Kim
+      </h1>
+
+       
+      <p>View details of this task.</p>
+
+      <p>You can view the task history, change the suspension date, activate it, open it, or return it to the queue.</p>
+      
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Amy Kim
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            FG123456789
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Paper based review
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <!--<a class="govuk-link" href="history">
+                View history<span class="govuk-visually-hidden"></span>
+              </a>-->
+            </dd>
+          </div>
+       
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 March 2024 at 01:15
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 March 2024 at 18:17
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--blue">
+              SUSPENDED
+            </strong></td>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="Activate-task">
+              Activate<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Suspended until
+          </dt>
+          <dd class="govuk-summary-list__value">
+            8 March 2024
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="deferral-date-change">
+              Change<span class="govuk-visually-hidden"></span>
+            </a>
+          </dd>
+         
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+       
+        <a href="return-task-to-queue" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Return task to queue</button>
+
+    </div>
+    </div>
+
+{% endblock %}
