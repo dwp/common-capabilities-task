@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Set suspend date
+Set suspension date
 {% endblock %}
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -34,7 +34,7 @@ Set suspend date
   <p>Set the suspension date for [task name] for [customer name]. This task will become available to work on again on this date. </p>
  <!--<p>The current due date for this task is 7 March 2024 at 12:04.</p>-->
   &nbsp;
-  <div class="govuk-form-group govuk-form-group--error">
+  <div class="govuk-form-group">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <!--<h2 class="govuk-fieldset__heading">
@@ -49,9 +49,9 @@ Set suspend date
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 27 3 2007
       </div>
-      <p id="whereDoYouLive-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Suspension date must include the year
-      </p>
+      <!--<p id="whereDoYouLive-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Suspension date must not be more than 1 year in the future
+      </p>-->
      
       <div class="govuk-date-input" id="passport-issued">
         <div class="govuk-date-input__item">
@@ -75,7 +75,7 @@ Set suspend date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
               Year
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-4 govuk-input--error" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
           </div>
 
           

@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Set suspend date
+Change suspend date
 {% endblock %}
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -9,7 +9,24 @@ Set suspend date
 {% block content %}
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-<div class="govuk-width-container-two-thirds">
+<!--<div class="govuk-width-container-two-thirds">
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Suspension date must include the day</a>
+              </li>
+              <li>
+                <a href="#">Suspension date must not be more than 1 year in the future</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>-->
   <h1 class="govuk-heading-l">
     Change suspension date
   </h1>
@@ -32,6 +49,13 @@ Set suspend date
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 27 3 2007
       </div>
+    <!--<p id="whereDoYouLive-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Suspension date must include the day
+      </p>
+      <p id="whereDoYouLive-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> Suspension date must not be more than 1 year in the future
+      </p>-->
+     
       <div class="govuk-date-input" id="passport-issued">
         <div class="govuk-date-input__item">
           <div class="govuk-form-group">
@@ -46,7 +70,7 @@ Set suspend date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
               Month
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="3">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="3">
           </div>
         </div>
         <div class="govuk-date-input__item">
