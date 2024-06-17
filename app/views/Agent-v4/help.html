@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Contact
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+  <h1 class="govuk-heading-l">
+    Get help with DWP Task
+  </h1>
+   <p>Contact the DWP Task team by raising an issue with <a>DWP Place</a>.</p>
+  <p>We aim to respond within 2 working days.</p>
+  &nbsp;
+  <p>Opening times:</p>
+    <p><strong>Monday to Friday: 9am to 5pm (closed on public holidays)</strong></p>
+ 
+&nbsp;
+    <div class="govuk-button-group">
+        <a href="javascript:window.history.back()"</a>
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Back
+        </button>
+</div>
+</div>
+</div>
+
+{% endblock %}

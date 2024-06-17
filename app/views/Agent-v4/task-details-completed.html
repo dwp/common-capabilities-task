@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "My Personal Independence Payment tasks",
+      href: "my-tasks"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Create report for Danielle Ali
+      </h1>
+       
+      <p>View details of this task. This will remain in your queue until the end of your working day.</p>
+
+      
+      
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Danielle Ali
+          </dd>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              National insurance number
+            </dt>
+            <dd class="govuk-summary-list__value">
+                OA123456789
+            </dd>
+            <dd class="govuk-summary-list__value">
+             
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Task
+            </dt>
+            <dd class="govuk-summary-list__value">
+                Create report
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Due
+            </dt>
+            <dd class="govuk-summary-list__value">
+              8 March 2024 at 00:13
+            </dd>
+            <dd class="govuk-summary-list__actions">
+             
+            </dd>
+          </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 March 2024 at 09:57
+          </dd>
+          <dd class="govuk-summary-list__value">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--green">
+              Completed
+          </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+         
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Finished
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 March 2024
+          </dd>
+          <dd class="govuk-summary-list__actions">
+         
+          </dd>
+        </div>
+      </dl>
+      <div class="govuk-button-group">
+        <a href="javascript:window.history.back()" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+           </a>
+    </div>
+    </div>
+
+{% endblock %}
