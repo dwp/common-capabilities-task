@@ -18,8 +18,9 @@
 {% endblock %}
 
 {% block content %}
-<div>
-  <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
+
+<div> <!--
+  <div class="govuk-error-summary" data-module="govuk-error-summary">
     <div role="alert">
       <h2 class="govuk-error-summary__title">
         There is a problem
@@ -27,15 +28,16 @@
       <div class="govuk-error-summary__body">
         <ul class="govuk-list govuk-error-summary__list">
           <li>
-            <a href="#">Date must be today or in the past</a>
+            <a href="#">'From' date must be today's date or in the past</a>
           </li>
           <li>
-            <a href="#">Date range must be a real date</a>
+            <a href="#">'To' date must be a real date</a>
           </li>
         </ul>
       </div>
     </div>
   </div> -->
+
 <div class="govuk-grid-column-two-thirds">
 <h1 class="govuk-heading-l">
   Statistics
@@ -86,8 +88,16 @@
       </h1>
       <p>Enter the date range you want statistics for, from earliest to latest.</p>
     </legend>
+
     <div class="govuk-date-input" id="passport-issued">
       <p><strong>From</strong></p>
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, 27 3 2007
+      </div>
+       <!--<p id="passport-issued-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> 'From' date must be today's date or in the past
+      </p>-->
+
       <div class="govuk-date-input__item">
         <div class="govuk-form-group">
           <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
@@ -116,7 +126,13 @@
   </fieldset>
 </div>
 <p><strong>to</strong></p>
+<div id="passport-issued-hint" class="govuk-hint">
+  For example, 27 3 2007
+</div>
 
+ <!--<p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 'To' date must be a real date
+    </p>-->
 
 <div class="govuk-form-group">
     <div class="govuk-date-input" id="passport-issued">

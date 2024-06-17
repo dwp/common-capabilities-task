@@ -1,11 +1,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Change service
+  Select a service
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  <div class="spacer1"></div>
 {% endblock %}
 
 {% block content %}
@@ -14,7 +14,7 @@
 <div class="govuk-width-container">
 
   <h1 class="govuk-heading-l">
-    Change service
+    Select a service
   </h1>
    <p> Which service do you want to work on?</p>
 
@@ -39,20 +39,17 @@
             },
             {
               value: "pip",
-              text: "PIP"
+              text: "Personal Independence Payment"
             }
           ]
         }) }}
-    
-
     </div>
   </main>
 
-  {% from "govuk/components/button/macro.njk" import govukButton %}
-  <form class="form" action="tasks-dashboard-claim">.
-  {{ govukButton({
-    text: "Continue"
-  }) }}
+  <div class="govuk-button-group">
+    <a href="my-tasks" "=""">
+    <button class="govuk-button" data-module="govuk-button">Confirm</button>
+
 </div>
 
 {% endblock %}
