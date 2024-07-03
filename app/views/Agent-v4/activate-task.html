@@ -14,18 +14,33 @@ Activate task
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
+      <div class="govuk-width-container-two-thirds">
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+        <div role="alert">
+          <h2 class="govuk-error-summary__title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#">Select yes if you want to resume this task</a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+      </div>
       <h1 class="govuk-heading-l">
         Resume task
       </h1>
 
       <p>Resume this task to continue working on it or finish it.  </p>
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset">
-            <!--<p id="whereDoYouLive-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to activate the task
-              </p>-->
+            <p id="whereDoYouLive-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to resume this task
+              </p>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">

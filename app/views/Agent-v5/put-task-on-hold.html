@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Suspend task
+Put task on hold
 {% endblock %}
 
 
@@ -15,7 +15,7 @@ Suspend task
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
           <h2 class="govuk-error-summary__title">
             There is a problem
@@ -29,7 +29,7 @@ Suspend task
             </ul>
           </div>
         </div>
-      </div>
+      </div>-->
 
         <h1 class="govuk-heading-l">
           Put this task on hold
@@ -37,10 +37,10 @@ Suspend task
     
           <p>Put this task on hold until it can be worked on again.</p>
     
-          <div class="govuk-form-group govuk-form-group--error">
+          <div class="govuk-form-group govuk-form-group">
             <fieldset class="govuk-fieldset">
-               <p id="passport-issued-error" class="govuk-error-message">
-                    <span class="govuk-visually-hidden">Error:</span> Select if you would like to put this task on hold</p>
+               <!--<p id="passport-issued-error" class="govuk-error-message">
+                    <span class="govuk-visually-hidden">Error:</span> Select if you would like to put this task on hold</p>-->
 
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
@@ -66,7 +66,7 @@ Suspend task
           </div>
 
   <div class="govuk-button-group">
-    <a href="suspend-date" "=""">
+    <a href="on-hold-date" "=""">
     <button class="govuk-button" data-module="govuk-button">Confirm</button>
     <a href="javascript:window.history.back()"</a>
     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">

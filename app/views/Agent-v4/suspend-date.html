@@ -10,7 +10,7 @@ Set suspension date
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 <div class="govuk-width-container-two-thirds">
-    <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
           <h2 class="govuk-error-summary__title">
             There is a problem
@@ -18,23 +18,21 @@ Set suspension date
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#">Suspension date must be a real date
+                <a href="#">On hold date must not be more than 1 year in the future
                     </a>
               </li>
-              <li>
-                <a href="#">Suspension date must include the month and year</a>
-              </li>
+             
             </ul>
           </div>
         </div>
-      </div>-->
+      </div>
   <h1 class="govuk-heading-l">
     Set a date to put this task on hold
   </h1>
   <p>This task will become available to work on again on this date.  </p>
  <!--<p>The current due date for this task is 7 March 2024 at 12:04.</p>-->
   &nbsp;
-  <div class="govuk-form-group">
+  <div class="govuk-form-group govuk-form-group--error">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <!--<h2 class="govuk-fieldset__heading">
@@ -49,9 +47,9 @@ Set suspension date
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 27 3 2007
       </div>
-      <!--<p id="whereDoYouLive-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> Suspension date must not be more than 1 year in the future
-      </p>-->
+      <p id="whereDoYouLive-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> On hold date must not be more than 1 year in the future
+      </p>
      
       <div class="govuk-date-input" id="passport-issued">
         <div class="govuk-date-input__item">
@@ -75,7 +73,7 @@ Set suspension date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
               Year
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+            <input class=" govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
           </div>
 
           

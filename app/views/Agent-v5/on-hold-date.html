@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Change suspend date
+Set suspension date
 {% endblock %}
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -9,9 +9,8 @@ Change suspend date
 {% block content %}
 
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
 <div class="govuk-width-container-two-thirds">
-        <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
         <div role="alert">
           <h2 class="govuk-error-summary__title">
             There is a problem
@@ -19,26 +18,30 @@ Change suspend date
           <div class="govuk-error-summary__body">
             <ul class="govuk-list govuk-error-summary__list">
               <li>
-                <a href="#">On hold date must include the day</a>
+                <a href="#">On hold date must not be more than 1 year in the future
+                    </a>
               </li>
-              <li>
-                <a href="#">On hold date must not be more than 1 year in the future</a>
-              </li>
+             
             </ul>
           </div>
         </div>
-      </div>
+      </div>-->
 
   <h1 class="govuk-heading-l">
-    Change on hold date
+    Set a date to put this task on hold
   </h1>
-  <p>This task will become available to work on again on this date. </p>
-  <p>This task is currently on hold until [DD Month YYYY].</p>
-
+  <p>This task will become available to work on again on this date.  </p>
+ <!--<p>The current due date for this task is 7 March 2024 at 12:04.</p>-->
   &nbsp;
-  <div class="govuk-form-group govuk-form-group--error">
+  
+  <div class="govuk-form-group govuk-form-group">
     <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-        
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+        <!--<h2 class="govuk-fieldset__heading">
+            When would you like to suspend the task until?
+        </h2>
+        &nbsp-->
+
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
         <h3 class="govuk-fieldset__heading">
             Date
@@ -47,13 +50,9 @@ Change suspend date
       <div id="passport-issued-hint" class="govuk-hint">
         For example, 27 3 2007
       </div>
-
-    <p id="whereDoYouLive-error" class="govuk-error-message">
-        <span class="govuk-visually-hidden">Error:</span> On hold date must include the day
-      </p>
-      <p id="whereDoYouLive-error" class="govuk-error-message">
+      <!--<p id="whereDoYouLive-error" class="govuk-error-message">
         <span class="govuk-visually-hidden">Error:</span> On hold date must not be more than 1 year in the future
-      </p>
+      </p>-->
      
       <div class="govuk-date-input" id="passport-issued">
         <div class="govuk-date-input__item">
@@ -61,7 +60,7 @@ Change suspend date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
               Day
             </label>
-            <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric" value="27">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
           </div>
         </div>
         <div class="govuk-date-input__item">
@@ -69,7 +68,7 @@ Change suspend date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
               Month
             </label>
-            <input class="govuk-input govuk-date-input__input govuk-input--width-2 govuk-input" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric" value="3">
+            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
           </div>
         </div>
         <div class="govuk-date-input__item">
@@ -77,7 +76,7 @@ Change suspend date
             <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
               Year
             </label>
-            <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric" value="2024">
+            <input class=" govuk-input govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
           </div>
 
           
@@ -85,16 +84,22 @@ Change suspend date
         
       </div>
     </fieldset>
+    
   </div>
-  <div class="govuk-button-group">
-    <a href="#" "=""">
+
+
+       
+  </div>
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+<div class="govuk-button-group">
+    <a href="my-tasks-2" "=""">
         <button class="govuk-button" data-module="govuk-button">Confirm</button></a>
         
     <a href="javascript:window.history.back()" "=""">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
            
-</div> 
-  </div>
+</div>
 
 
 
