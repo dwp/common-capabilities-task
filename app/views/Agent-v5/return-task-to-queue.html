@@ -27,27 +27,109 @@ Return task to queue
                 <span class="govuk-visually-hidden">Error:</span> Select if you would like to return this task to the queue
               </p>-->
           <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                Return
-              </label>
-                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    You may get this task again.
-                        </div>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                Return and block
-              </label>
-                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                    You will not get this task again.
-                        </div>
-            </div>
-            
-        </fieldset>
+              <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-radios__label" for="contact-2">
+            Return
+          </label>
+          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            You may get this task again.
+                </div>
+                  </div>
+        <div class="govuk-radios__conditional govuk-checkboxes__radios--hidden" id="conditional-contact-2">
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                  Reason
+              </h3>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    I'm about to take time off for sickness or leave
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    Customer could not be identified
+                  </label>
+                </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-checkboxes__label" for="contact">
+                        Another reason
+                        <div id="contact-hint" class="govuk-hint">
+                            Talk to your team lead about what this reason is.
+                          </div>
+                    </label>
+                  </div>
+                
+                </div>
+              
+                </div>
+              
+              
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+          <label class="govuk-label govuk-radios__label" for="contact-3">
+            Return and block
+          </label>
+          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            You will not get this task again.
+        </div>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                  Reason
+              </h3>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+            </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-checkboxes__label" for="contact">
+                        I know the customer
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                          I don't have the right skills or training
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                          This task makes me feel unsafe
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                            Another reason
+                            <div id="contact-hint" class="govuk-hint">
+                                Talk to your team lead about what this reason is.
+                              </div>
+                        </label>
+                      </div>
+                    </div>
+                    </div>
       </div>
+    </fieldset>
+  </div>
+</div>
+</div>
+
 
   <div class="govuk-button-group">
     <a href="#" "=""">
