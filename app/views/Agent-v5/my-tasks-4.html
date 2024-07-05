@@ -13,21 +13,7 @@
 
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You cancelled Book assessment for Deborah Levy.
-    </h3>
-    <p class="govuk-body">If you cancelled this task in error, speak to your team leader.</p>
-  </div>
-</div>
-
-<h1 class="govuk-heading-l">My Personal Independence Payment tasks</h1>
+<h1 class="govuk-heading-l">My tasks version A</h1>
 
 <div class="govuk-button-group">
     <a href="#">
@@ -107,45 +93,103 @@
                 <th scope="col" class="govuk-table__header">Status</th>
               </tr>
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="#">Action</a></td>
+                <td class="govuk-table__cell"><a href="#">Start</a></td>
                 <td class="govuk-table__cell">6 Mar 2024</td>
                 <td class="govuk-table__cell">Request medical evidence</td>
                 <td class="govuk-table__cell">Kaitlyn Burke</td>
-                <td class="govuk-table__cell">678N</td>
+                <td class="govuk-table__cell">KW12345678Q</td>
                 <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--red">
                         OVERDUE 
                       </strong>
                     <br>7 Mar 2024<br>at 15:21</td>
                 <td class="govuk-table__cell">
-                  <strong class="govuk-tag govuk-tag--blue">
-                    ON HOLD
-                  </strong>
-                </strong><br> until 1 Sept 2024</td>
-              </tr>
-          
+                  <strong class="govuk-tag govuk-tag--yellow">
+                    ALLOCATED
+                  </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Start</a></td>
+                  <td class="govuk-table__cell">7 Mar 2024</td>
+                  <td class="govuk-table__cell">Book assessment</td>
+                  <td class="govuk-table__cell">Deborah Levy</td>
+                  <td class="govuk-table__cell">DE12345678S</td>
+                  <td class="govuk-table__cell">8 Mar 2024<br>at 12:09</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--yellow">
+                      ALLOCATED
+                    </strong></td>
+                </tr>
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"><a href="#">Action</a></td>
+                    <td class="govuk-table__cell"><a href="task-details-active">Action</a></td>
                       <td class="govuk-table__cell">7 Mar 2024</td>
                       <td class="govuk-table__cell">Book assessment</td>
                       <td class="govuk-table__cell">Priscilla Baker</td>
-                      <td class="govuk-table__cell">364T</td>
+                      <td class="govuk-table__cell">PI12345678I</td>
                       <td class="govuk-table__cell">8 Mar 2024<br>at 17:35</td>
                       <td class="govuk-table__cell">
                         <strong class="govuk-tag govuk-tag--green">
                           ACTIVE
                         </strong></td>
-                    </tr>    
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="#">Action</a></td>
+                          <td class="govuk-table__cell">7 Mar 2024</td>
+                          <td class="govuk-table__cell">Create report</td>
+                          <td class="govuk-table__cell">Danielle Ali</td>
+                          <td class="govuk-table__cell">OA12345678A</td>
+                          <td class="govuk-table__cell">8 Mar 2024<br>at 00:13</td>
+                          <td class="govuk-table__cell">
+                            <strong class="govuk-tag govuk-tag--green">
+                              active
+                            </strong></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell"><a href="#">Action</a></td>
+                              <td class="govuk-table__cell">6 Mar 2024</td>
+                              <td class="govuk-table__cell">HCP Audit</td>
+                              <td class="govuk-table__cell">James Longbottom-Smith</td>
+                              <td class="govuk-table__cell">UX12345678H</td>
+                              <td class="govuk-table__cell">9 Mar 2024<br>at 15:34</td>
+                              <td class="govuk-table__cell">
+                                <strong class="govuk-tag govuk-tag--green">
+                                  active
+                                </strong></td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="#">Action</a></td>
+                                  <td class="govuk-table__cell">6 Mar 2024</td>
+                                  <td class="govuk-table__cell">Paper based review</td>
+                                  <td class="govuk-table__cell">Amy Kim</td>
+                                  <td class="govuk-table__cell">FG12345678K</td>
+                                  <td class="govuk-table__cell">9 Mar 2024<br>at 01:15</td>
+                                  <td class="govuk-table__cell">
+                                    <strong class="govuk-tag govuk-tag--blue">
+                                      ON HOLD
+                                    </strong><br> until 8 Mar 2024</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell"><a href="#">Action</a></td>
+                                      <td class="govuk-table__cell">7 Mar 2024</td>
+                                      <td class="govuk-table__cell">HCP Audit</td>
+                                      <td class="govuk-table__cell">Leah Wallace</td>
+                                      <td class="govuk-table__cell">KD12345678L</td>
+                                      <td class="govuk-table__cell">9 Mar 2024<br>at 18:00</td>
+                                      <td class="govuk-table__cell">
+                                        <strong class="govuk-tag govuk-tag--green">
+                                          active
+                                        </strong></td>
+                                    </tr>
                                     <tr class="govuk-table__row">
-                                      <td class="govuk-table__cell"><a href="# ">Start</a></td>
+                                      <td class="govuk-table__cell"><a href="#">Start</a></td>
                                         <td class="govuk-table__cell">8 Mar 2024</td>
                                         <td class="govuk-table__cell">Book assessment</td>
                                         <td class="govuk-table__cell">Unknown</td>
-                                        <td class="govuk-table__cell">455B</td>
+                                        <td class="govuk-table__cell">YX12345678T</td>
                                         <td class="govuk-table__cell">8 Mar 2024<br>at 13:43</td>
                                         <td class="govuk-table__cell">
                                           <strong class="govuk-tag govuk-tag--yellow">
-                                            ALLOCATED
+                                            Allocated
                                           </strong></td>
                                       </tr>
                                       <tr class="govuk-table__row">
@@ -160,9 +204,22 @@
                                               ACTIVE
                                             </strong></td>
                                         </tr>
+                                        <tr class="govuk-table__row">
+                                          <td class="govuk-table__cell"><a href="#">Start</a></td>
+                                            <td class="govuk-table__cell">9 Mar 2024</td>
+                                            <td class="govuk-table__cell">Create report</td>
+                                            <td class="govuk-table__cell">Unknown</td>
+                                            <td class="govuk-table__cell">Unknown</td>
+                                            <td class="govuk-table__cell">9 Mar 2024<br>at 12:46</td>
+                                            <td class="govuk-table__cell">
+                                              <strong class="govuk-tag govuk-tag--yellow">
+                                                ALLOCATED
+                                              </strong></td>
+                                          </tr>
             </tbody>
           </table>
         </div>
+
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
           <h2 class="govuk-heading-l">Finished tasks</h2>
           <table class="govuk-table">
@@ -183,18 +240,61 @@
                   <td class="govuk-table__cell">7 Mar 2024</td>
                   <td class="govuk-table__cell">Book assessment</td>
                   <td class="govuk-table__cell">Deborah Levy</td>
-                  <td class="govuk-table__cell">789J</td>
+                  <td class="govuk-table__cell">DS12345678N</td>
                   <td class="govuk-table__cell">8 Mar 2024<br>at 12:09</td>
                   <td class="govuk-table__cell">
                     <strong class="govuk-tag govuk-tag--grey">
                       CANCELLED
                     </strong></td>
                 </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell"><a href="#">View</a></td>
+                    <td class="govuk-table__cell">7 Mar 2024</td>
+                    <td class="govuk-table__cell">Create report</td>
+                    <td class="govuk-table__cell">Danielle Ali</td>
+                    <td class="govuk-table__cell">OA12345678J</td>
+                    <td class="govuk-table__cell">8 Mar 2024<br>at 00:13</td>
+                    <td class="govuk-table__cell">
+                      <strong class="govuk-tag govuk-tag--green">
+                        COMPLETED
+                      </strong></td>
+                  </tr>
             </tbody>
           </table>
         </div>
         
         </div>
+
+        <nav class="govuk-pagination" aria-label="Pagination">
+          <ul class="govuk-pagination__list">
+            <li class="govuk-pagination__item govuk-pagination__item--current">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                1
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                2
+              </a>
+            </li>
+            <li class="govuk-pagination__item">
+              <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                3
+              </a>
+            </li>
+          </ul>
+          <div class="govuk-pagination__next">
+            <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+              <span class="govuk-pagination__link-title">
+                Next<span class="govuk-visually-hidden"> page</span>
+              </span>
+              <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+              </svg>
+            </a>
+          </div>
+        </nav>
+
       <div class="box7">
         <h2 class="govuk-heading-m">Testing versions</h2>
       <div class="govuk-button-group">
