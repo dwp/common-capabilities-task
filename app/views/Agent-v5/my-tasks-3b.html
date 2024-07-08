@@ -10,22 +10,10 @@
 
 {% endblock %}
 
+
 {% block content %}
 
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You put Request medical evidence for Kaitlyn Burke on hold and kept it in your queue until 1 September 2024.
-    </h3>
-    <p class="govuk-body">You can resume working on this task any time, or change the date.</p>
-    <p><a href="my-tasks-3b">Close</a></p>
-  </div>
-</div>
+
 
 <h1 class="govuk-heading-l">My Personal Independence Payment tasks</h1>
 
@@ -123,18 +111,7 @@
                   </strong>
                 </strong><br> until 1 Sept 2024</td>
               </tr>
-            <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="task-details-allocated">Start</a></td>
-                  <td class="govuk-table__cell">7 Mar 2024</td>
-                  <td class="govuk-table__cell">Book assessment</td>
-                  <td class="govuk-table__cell">Deborah Levy</td>
-                  <td class="govuk-table__cell">789J</td>
-                  <td class="govuk-table__cell">8 Mar 2024<br>at 12:09</td>
-                  <td class="govuk-table__cell">
-                    <strong class="govuk-tag govuk-tag--yellow">
-                      ALLOCATED
-                    </strong></td>
-                </tr>
+          
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell"><a href="#">Action</a></td>
                       <td class="govuk-table__cell">7 Mar 2024</td>
@@ -189,71 +166,38 @@
               </tr>
             </thead>
             <tbody class="govuk-table__body">
-              
-            </tbody>
-          </table>
-          <p style="text-align: center;"> You have not finished any tasks today.</p>
-        </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
-          <h2 class="govuk-heading-l">Past month</h2>
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
               <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Case manager</th>
-                <th scope="col" class="govuk-table__header">Cases opened</th>
-                <th scope="col" class="govuk-table__header">Cases closed</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">David Francis</td>
-                <td class="govuk-table__cell">98</td>
-                <td class="govuk-table__cell">95</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Paul Farmer</td>
-                <td class="govuk-table__cell">122</td>
-                <td class="govuk-table__cell">131</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Rita Patel</td>
-                <td class="govuk-table__cell">126</td>
-                <td class="govuk-table__cell">142</td>
-              </tr>
+                <td class="govuk-table__cell"><a href="task-details-cancelled">View</a></td>
+                  <td class="govuk-table__cell">7 Mar 2024</td>
+                  <td class="govuk-table__cell">Book assessment</td>
+                  <td class="govuk-table__cell">Deborah Levy</td>
+                  <td class="govuk-table__cell">789J</td>
+                  <td class="govuk-table__cell">8 Mar 2024<br>at 12:09</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--grey">
+                      CANCELLED
+                    </strong></td>
+                </tr>
             </tbody>
           </table>
         </div>
-        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
-          <h2 class="govuk-heading-l">Finished tasks</h2>
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Case manager</th>
-                <th scope="col" class="govuk-table__header">Cases opened</th>
-                <th scope="col" class="govuk-table__header">Cases closed</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">David Francis</td>
-                <td class="govuk-table__cell">1380</td>
-                <td class="govuk-table__cell">1472</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Paul Farmer</td>
-                <td class="govuk-table__cell">1129</td>
-                <td class="govuk-table__cell">1083</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell">Rita Patel</td>
-                <td class="govuk-table__cell">1539</td>
-                <td class="govuk-table__cell">1265</td>
-              </tr>
-            </tbody>
-          </table>
+        
         </div>
-      </div>
+      <div class="box7">
+        <h2 class="govuk-heading-m">Testing versions</h2>
+      <div class="govuk-button-group">
+        <a href="my-tasks-4" "=""">
+            <button class="govuk-button" data-module="govuk-button">Tasks table version A</button></a>
+            
+            <a href="my-tasks-5" "=""">
+              <button class="govuk-button" data-module="govuk-button">Tasks table version B</button></a>
 
+              <a href="my-tasks-6" "=""">
+                <button class="govuk-button" data-module="govuk-button">Tasks table version C</button></a>
+               
+    </div>
+  </div>
+  </div>
 
 
   {% endblock %}
