@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "My Personal Independence Payment tasks",
+      href: "my-tasks"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Request medical evidence for Kaitlyn Burke
+      </h1>
+
+       
+      <p>View details of this task.</p>
+
+      <p>You can put this task on hold, work on it, return it to the queue, or finish it.</p>
+      
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Kaitlyn Burke
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            678N
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Request medical evidence
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <!-- <a class="govuk-link" href="history-kaitlyn">
+              View history<span class="govuk-visually-hidden"></span>
+            </a> -->
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            7 March 2024 at 12:04
+          </dd>
+            <dd class="govuk-summary-list__actions">
+                <strong class="govuk-tag govuk-tag--red">
+                  OVERDUE
+              </strong>
+              </dd>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            6 March 2024 at 6:34
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--green">
+              ACTIVE
+          </strong>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a href="put-task-on-hold">Put on hold</a>
+          </dd>
+        </div>
+        
+      </dl>
+      <div class="govuk-button-group">
+        <a href="#" "=""">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Open task</button>
+        <a href="#" "=""">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Return task to queue</button>
+        <a href="#" "=""">
+            <button class="govuk-button" data-module="govuk-button">Finish task</button></a>
+    </div>
+    </div>
+
+{% endblock %}

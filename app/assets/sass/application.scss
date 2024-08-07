@@ -350,6 +350,11 @@
   background-color: #ffffff;
   height: 100px;
 }
+.spacer4 {
+  width: 100%;
+  background-color: #ffffff;
+  height: 20px;
+}
 
 .govuk-select {
   font-family: "GDS Transport",arial,sans-serif;
@@ -383,5 +388,9 @@
   border-right: 1px solid grey;
   height: 100%;
   position:absolute;
+}
+
+.timeline-list {
+  text-decoration-color: #0561a6;
 }
 

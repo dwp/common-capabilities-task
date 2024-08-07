@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Statistics
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div> 
+  <div class="govuk-error-summary" data-module="govuk-error-summary">
+    <div role="alert">
+      <h2 class="govuk-error-summary__title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#">'From' date must be today's date or in the past</a>
+          </li>
+          <li>
+            <a href="#">'To' month must be a real date</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+<div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">
+  Statistics
+</h1>
+<h1 class="govuk-heading-m" style="color: grey"> 
+  Tasks 3 April to 7 April 2023
+</h1>
+<div>
+<div class="cell cell-1">
+    <p style="color:#0f0f0f;">Created</p>
+    <span class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#0f0f0f;">
+      65
+    </span>
+</div>
+
+<div class="cell cell-2">
+    <p style="color:#0f0f0f;">Completed</p>
+    <span class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#0f0f0f;">
+      56
+    </span>
+</div>
+<div class="cell cell-5">
+  <p style="color:#0f0f0f;">Overdue</p>
+  <span class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#0f0f0f;">
+    21
+  </span>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div class="cell cell-6">
+  <p style="color:#0f0f0f;">Average completion time</p>
+  <span class="govuk-!-font-size-80 govuk-!-font-weight-bold govuk-body" style="color:#0f0f0f;">
+    1 day
+  </span>
+</div>
+</div> 
+</div>
+
+<div class="govuk-grid-column-one-third govuk-form-group govuk-form-group--error">
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        Date range
+      </h1>
+      <p>Enter the date range you want statistics for, from earliest to latest.</p>
+    </legend>
+
+    <div class="govuk-date-input" id="passport-issued">
+      <p><strong>From</strong></p>
+      <div id="passport-issued-hint" class="govuk-hint">
+        For example, 27 3 2007
+      </div>
+       <p id="passport-issued-error" class="govuk-error-message">
+        <span class="govuk-visually-hidden">Error:</span> 'From' date must be today's date or in the past
+      </p>
+
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+<p><strong>to</strong></p>
+<div id="passport-issued-hint" class="govuk-hint">
+  For example, 27 3 2007
+</div>
+
+ <p id="passport-issued-error" class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> 'To' month must be a real date
+    </p>
+
+<div class="govuk-form-group">
+    <div class="govuk-date-input" id="passport-issued">
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+            Day
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+            Month
+          </label>
+          <input class="govuk-input govuk-input--error govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+        </div>
+      </div>
+      <div class="govuk-date-input__item">
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+            Year
+          </label>
+          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+        </div>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+<div class="govuk-button-group">
+  <button class="govuk-button" data-module="govuk-button">
+    Filter
+  </button>
+</div>
+</div>
+
+</div>
+&nbsp;
+
+<div class="govuk-grid-column-full-width spacer1" > 
+  <br>
+   </div>
+
+ {% endblock %}

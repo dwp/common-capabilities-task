@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add team members to Decision makers group
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-width-container">
+
+    <h1 class="govuk-heading-l">
+      Add team members to Decision makers
+    </h1>
+    <p>Choose team members who belong to this group.</p>
+
+    <main class="govuk-main-wrapper">
+      <form class="form" action="review-edit-group" method="post">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+    
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+            {{ govukCheckboxes({
+              name: "group-members",
+              values: data['group-members'],
+              fieldset: {
+                legend: {
+                  text: "Group members",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--s"
+                }
+              },
+              items: [
+                {
+                  value: "amy",
+                  text: "Amy Anderson (Andi)"
+                },
+                {
+                  value: "aiden",
+                  text: "Aiden Jenkins"
+                },
+                {
+                  value: "dmitrij",
+                  text: "Dmitrij Ivanov"
+                },{
+                  value: "julia",
+                  text: "Julia Nguyen"
+                },{
+                  value: "fiona",
+                  text: "Fiona Murray-Reed"
+                }
+              ]
+            }) }}
+    
+            {% from "govuk/components/button/macro.njk" import govukButton %}
+              {{ govukButton({
+                text: "Continue"
+              }) }}
+          </div>
+
+          <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                I do not see the team member I'm looking for
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <p>You may not have added this team member to the Maternity Allowance team yet. You can add them later, then add them to a group.</p>
+            </div>
+          </details>
+        </div>
+      </form>
+    </main>
+  </div>
+{% endblock %}

@@ -1,0 +1,134 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "All tasks",
+      href: "maternity-tasks#past-week"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Assessment booked for 	Chen Huang
+      </h1>
+
+      <p>View details of Assessment booked for 	Chen Huang.</p>
+      <p>You can view the history of the task.</p>
+    
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Chen Huang
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Assessment booked
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date completed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <strong class="govuk-tag govuk-tag--red">
+              Overdue
+          </strong><br>
+            15 March 2023 at 16:11
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            14 March 2023 at 7:01
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9 March 2023 at 7:01
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Priority
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Low
+          </dd>
+          
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <strong class="govuk-tag govuk-tag--grey">
+                Failed
+            </strong>
+            </dd>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Context
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Customer could not be contacted
+          </dd>
+          
+        </div>
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Team member
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Aiden Jenkins
+          </dd>
+          
+        </div>
+        
+      </dl>
+      <div class="govuk-button-group">
+      <a href="#"</a>
+      <button class="govuk-button govuk-button" data-module="govuk-button">
+        View history
+      </button> 
+    </div>
+    </div>
+   
+
+{% endblock %}

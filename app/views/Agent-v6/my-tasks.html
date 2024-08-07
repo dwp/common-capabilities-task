@@ -1,0 +1,244 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  My tasks
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">My Personal Independence Payment tasks</h1>
+
+<div class="govuk-button-group">
+    <a href="#">
+    <button class="govuk-button" data-module="govuk-button">
+      Claim new task
+    </button></a>
+    <a href="#"> 
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Change service
+    </button></a>
+  </div>
+
+  <div>
+    <div class="govuk-form-group" style="float:left;">
+      <label class="govuk-label" for="width-20">
+        Filter your tasks
+      </label>
+      <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
+        
+        <a href="#">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Filter
+        </button>
+        </a>
+    </div>
+    </div>
+    </div>
+
+  <div style="float: right;">
+    <label class="govuk-label" for="sort">
+      Sort by
+    </label>
+
+    <form method="post">
+      <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
+        <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, newest to oldest</option>
+        <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, oldest to newest</option>
+        <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Due, soonest to  latest</option>
+        <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Due, latest to soonest</option>
+        <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Created, newest to oldest</option>
+        <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Created, oldest to newest</option>
+      </select>
+    </form>
+</div>
+
+      <table class="govuk-table">
+        
+      </table>
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#my-tasks">
+              Tasks
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#finished-tasks">
+              Finished tasks
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="my-tasks">
+          <h2 class="govuk-heading-l">Tasks</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Details</th>
+                <th scope="col" class="govuk-table__header">Created</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Customer</th>
+                <th scope="col" class="govuk-table__header">National Insurance number</th>
+                <th scope="col" class="govuk-table__header">Due</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="task-details-allocated-overdue">Start</a></td>
+                <td class="govuk-table__cell">6 Mar 2024</td>
+                <td class="govuk-table__cell">Request medical evidence</td>
+                <td class="govuk-table__cell">Kaitlyn Burke</td>
+                <td class="govuk-table__cell">678N</td>
+                <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--red">
+                        OVERDUE 
+                      </strong>
+                    <br>7 Mar 2024<br>at 15:21</td>
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--yellow">
+                    ALLOCATED
+                  </strong></td>
+            </tr>
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Start</a></td>
+                  <td class="govuk-table__cell">7 Mar 2024</td>
+                  <td class="govuk-table__cell">Book assessment</td>
+                  <td class="govuk-table__cell">Deborah Levy</td>
+                  <td class="govuk-table__cell">789J</td>
+                  <td class="govuk-table__cell">8 Mar 2024<br>at 12:09</td>
+                  <td class="govuk-table__cell">
+                    <strong class="govuk-tag govuk-tag--yellow">
+                      ALLOCATED
+                    </strong></td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="#">Action</a></td>
+                      <td class="govuk-table__cell">7 Mar 2024</td>
+                      <td class="govuk-table__cell">Book assessment</td>
+                      <td class="govuk-table__cell">Priscilla Baker</td>
+                      <td class="govuk-table__cell">364T</td>
+                      <td class="govuk-table__cell">8 Mar 2024<br>at 17:35</td>
+                      <td class="govuk-table__cell">
+                        <strong class="govuk-tag govuk-tag--green">
+                          ACTIVE
+                        </strong></td>
+                    </tr>    
+                                    <tr class="govuk-table__row">
+                                      <td class="govuk-table__cell"><a href="# ">Start</a></td>
+                                        <td class="govuk-table__cell">8 Mar 2024</td>
+                                        <td class="govuk-table__cell">Book assessment</td>
+                                        <td class="govuk-table__cell">Unknown</td>
+                                        <td class="govuk-table__cell">455B</td>
+                                        <td class="govuk-table__cell">8 Mar 2024<br>at 13:43</td>
+                                        <td class="govuk-table__cell">
+                                          <strong class="govuk-tag govuk-tag--yellow">
+                                            ALLOCATED
+                                          </strong></td>
+                                      </tr>
+                                      <tr class="govuk-table__row">
+                                        <td class="govuk-table__cell"><a href="#">Action</a></td>
+                                          <td class="govuk-table__cell">8 Mar 2024</td>
+                                          <td class="govuk-table__cell">Sort white mail</td>
+                                          <td class="govuk-table__cell">Not applicable</td>
+                                          <td class="govuk-table__cell">Not applicable</td>
+                                          <td class="govuk-table__cell">8 Mar 2024<br>at 10:00</td>
+                                          <td class="govuk-table__cell">
+                                            <strong class="govuk-tag govuk-tag--green">
+                                              ACTIVE
+                                            </strong></td>
+                                        </tr>
+            </tbody>
+          </table>
+        </div>
+        
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
+          <h2 class="govuk-heading-l">Finished tasks</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Details</th>
+                <th scope="col" class="govuk-table__header">Created</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Customer</th>
+                <th scope="col" class="govuk-table__header">National Insurance number</th>
+                <th scope="col" class="govuk-table__header">Due</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              
+            </tbody>
+          </table>
+          <p style="text-align: center;"> You have not finished any tasks today.</p>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-month">
+          <h2 class="govuk-heading-l">Past month</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Case manager</th>
+                <th scope="col" class="govuk-table__header">Cases opened</th>
+                <th scope="col" class="govuk-table__header">Cases closed</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">David Francis</td>
+                <td class="govuk-table__cell">98</td>
+                <td class="govuk-table__cell">95</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Paul Farmer</td>
+                <td class="govuk-table__cell">122</td>
+                <td class="govuk-table__cell">131</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Rita Patel</td>
+                <td class="govuk-table__cell">126</td>
+                <td class="govuk-table__cell">142</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-year">
+          <h2 class="govuk-heading-l">Finished tasks</h2>
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Case manager</th>
+                <th scope="col" class="govuk-table__header">Cases opened</th>
+                <th scope="col" class="govuk-table__header">Cases closed</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">David Francis</td>
+                <td class="govuk-table__cell">1380</td>
+                <td class="govuk-table__cell">1472</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Paul Farmer</td>
+                <td class="govuk-table__cell">1129</td>
+                <td class="govuk-table__cell">1083</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Rita Patel</td>
+                <td class="govuk-table__cell">1539</td>
+                <td class="govuk-table__cell">1265</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+
+
+  {% endblock %}
