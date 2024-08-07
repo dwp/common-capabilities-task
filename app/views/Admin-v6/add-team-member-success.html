@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance team
+{% endblock %}
+
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "Set up and manage team",
+      href: "maternity-manage"
+    },
+    {
+      text: "Team members",
+      href: "maternity-team-home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You have added Andi to the Maternity Allowance team.
+        </h3>
+        
+      </div>
+    </div>
+      <h1 class="govuk-heading-xl">
+        Add a team member
+      </h1>
+      <form class="form" action="review-team-member" method="post">
+       
+      <h1 class="govuk-heading-l">
+        Search
+      </h1>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Use name, email, or staff number."
+        },
+        classes: "govuk-!-width-two-thirds",
+        id: "team-member-search",
+        name: "team-member-search"
+      }) }}
+      <p class="govuk-body"><a href="#" class="govuk-link">I cannot find the person I am looking for</a></p>
+&nbsp;
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Maternity Allowance team
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="andi-review-view">
+                Amy Anderson (Andi)
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Aiden Jenkins
+              </a>
+            </li>
+            <li>
+              <a href="dmitrij-review-view">
+                Dmitrij Ivanov
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Julia Nguyen
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Fiona Murray-Reed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div> 
+  <a href="review-team-member"></a>
+    <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+Continue    </button>
+</div>
+
+</form>
+
+  </div>
+
+  
+
+{% endblock %}

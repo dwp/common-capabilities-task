@@ -1,0 +1,70 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Groups
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "Setup and manage team",
+      href: "maternity-manage"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+aria-labelledby="govuk-notification-banner-title"
+data-module="govuk-notification-banner">
+<div class="govuk-notification-banner__header">
+  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+    Success
+  </h2>
+</div>
+<div class="govuk-notification-banner__content">
+  <h3 class="govuk-notification-banner__heading">
+    You created Decision makers.
+  </h3>
+</div>
+</div>
+
+<a href="create-group"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new group</button> </a>
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Groups</h1>
+  
+  <p>Team members will get tasks as a member of this group.</p>
+
+ 
+ <!--<h2 class="blueheading">Your groups</h2>-->
+
+  
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="group-admin">Admin</a></h2>
+    <p>The team members in this group are grade AA. They can process proof of income for Maternity Allowance claimants.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="groups-decision-makers">Decision makers</a></h2>
+    <p>The team members in this group are decision makers. They have responsibility for strategic decisions.</p>
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+
