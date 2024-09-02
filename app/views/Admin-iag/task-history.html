@@ -1,0 +1,180 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  History
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        History
+      </h1>
+      <p>View the history of [task type] for [customer name].</p>
+
+      <div class="dwp-timeline">
+        
+          <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green">Active</strong></h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Opened</strong><br>by Dmitrij Ivanov</p>
+              <p class="govuk-caption-m">8 March 2024</p>
+            </li>
+    <li class="dwp-timeline__events--entry">
+              <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--yellow">
+                ALLOCATED
+              </strong></h2>
+              <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Claimed</strong><br> by Aiden Jenkins</p>
+              <p class="govuk-caption-m">8 March 2024</p>
+            </li>
+      <li class="dwp-timeline__events--entry">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--yellow">
+          ALLOCATED
+        </strong></h2>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>On hold task resumed</strong><br>by Fiona Murray-Reed</p>
+        <p class="govuk-caption-m">8 March 2024</p>
+      </li>
+      <li class="dwp-timeline__events--entry">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--yellow">
+          ALLOCATED
+        </strong></h2>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>On hold ended at 14:30</strong></p>
+        <p class="govuk-caption-m">8 March 2024</p>
+      </li>
+      <li class="dwp-timeline__events--entry">
+        <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">
+          CANCELLED
+        </strong></h2>
+        <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Finished</strong><br>by Dmitrij Ivanov</p>
+        <p class="govuk-caption-m">8 March 2024</p>
+        <p class="govuk-caption-m">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>This task is no longer appropriate</li>
+            </ul>
+          </p>
+      </li>
+      <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Cancelled</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Finished</strong> <br>by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>Customer circumstances have 
+              affected their eligibility</li>
+            <li>This task is no longer 
+              appropriate</li>
+            <li>Another reason</li>
+            </ul>
+          </p>
+          <p class="govuk-caption-m">6 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--green">Completed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Finished</strong><br>by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Failed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Finished</strong><br>by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">6 March 2024</p>
+          <p class="govuk-caption-m">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>Customer could not be contacted</li>
+              <li>Another reason</li>
+              </ul>
+            </p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>New task created</strong></p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>New task created</strong><br> by Susan Snow</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>New task created and put on hold until 22 March 2024</strong><br> by Susan Snow</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>On hold ended at 14:45</strong><br></p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+     
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Returned to queue</strong><br> by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+          <p class="govuk-caption-m">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>I do not have enough 
+                information to work on it</li>
+              </ul>
+            </p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--grey">Unallocated</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Returned to queue and blocked</strong> <br> by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+          <p class="govuk-caption-m">
+            <ul class="govuk-list govuk-list--bullet">
+              <li>I know the customer</li>
+              </ul>
+            </p>
+        </li>
+        
+      <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--blue">On hold</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Put on hold until 22 March 2024 and kept</strong> <br>by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+      <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--blue">On hold</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Put on hold until 22 March 2024 and returned to queue</strong><br> by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--blue">On hold</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>On hold date changed to 22 March 2024</strong><br> by Dmitrij Ivanov</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+       
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--purple">Due date changed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Due date changed to 12 March 2024</strong> <br>by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--purple">Due time changed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Due time changed to 13:00</strong>  <br>by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--purple">Due date and time changed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Due date and time changed to 12 March at 13:00</strong>  <br>by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+       
+        <li class="dwp-timeline__events--entry">
+          <h2 class="govuk-heading-s govuk-!-margin-bottom-1"><strong class="govuk-tag govuk-tag--purple">Priority changed</strong></h2>
+          <p class="govuk-caption-m govuk-!-margin-bottom-1"><strong>Priority changed to medium</strong> <br>by Fiona Murray-Reed</p>
+          <p class="govuk-caption-m">8 March 2024</p>
+        </li>
+      </ul>
+        </div> 
+        <a href="javascript:window.history.back()"</a>
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Back
+          </button>
+    </div>
+  </div>
+
+{% endblock %}

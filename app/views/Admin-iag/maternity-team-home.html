@@ -1,0 +1,178 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Team members
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "maternity-dashboard"
+    },
+    {
+      text: "Set up and manage team",
+      href: "maternity-manage"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<!--
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You made changes to Andi's details.
+        </h3>
+        
+      </div>
+    </div>
+  -->
+  <div class="govuk-grid-row">
+    <div class="govuk-error-summary" data-module="govuk-error-summary">
+      <div role="alert">
+        <h2 class="govuk-error-summary__title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#">Enter a name</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      
+      <h1 class="govuk-heading-xl">
+        Team members
+      </h1>
+      <p>Add team members and set their matching criteria.</p>
+        <p>When you have set up a team member you can 
+          change their group membership, update their 
+          matching criteria, or remove them.</p>
+        <div>
+          <div class="govuk-button-group">
+            <a href="add-team-member" "=""">
+            <button class="govuk-button govuk-button" data-module="govuk-button">Add a team member</button>
+            </a>
+        </div>
+       
+    </div>
+    </div>
+
+
+
+    <div class="govuk-grid-column-one-third">
+      
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Maternity Allowance team
+        </h2>
+        <p>Use the filter to find team members 
+          and update their details.</p>
+          <div class="govuk-form-group govuk-form-group--error">
+          <label class="govuk-label" for="width-20">
+            Filter team members 
+          </label>
+          <p id="passport-issued-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Enter a name
+          </p>
+          <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10 govuk-input--error" type="text" spellcheck="false">
+            <a href="maternity-team-home-filter-applied">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Filter
+            </button>
+            </a>
+          </div>
+        </div>
+        
+          <table class="govuk-table">
+            
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row"></tr>
+              <th scope="col" class="govuk-table__header">Team members</th>
+            </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Aiden Jenkins</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Ben Hoad</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Catriona MacElhinney</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Doris Fuller</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Edward Price</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Fergus Murray</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Grant Hughes</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Harris Perry</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Ishika Patel</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Jia Zhang</a></td>
+              </tr>
+              
+             
+            </tbody>
+          </table>
+          <nav class="govuk-pagination" aria-label="Pagination">
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next<span class="govuk-visually-hidden"> page</span>
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+
+    </div>
+
+  </div> 
+
+</div>
+
+  </div>
+{% endblock %}
