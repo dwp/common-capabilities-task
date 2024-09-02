@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Change due date
+{% endblock %}
+
+{% block beforeContent %}
+<div class="spacer1"></div>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">
+    You have been signed out
+  </h1>
+
+  <p>This helps keep data secure. Any progress you have not 
+    confirmed has been deleted because you did not do 
+    anything for 1 hour.</p>
+ 
+  &nbsp;
+
+  
+        <div class="govuk-button-group">
+            <a href="javascript:window.history.back()"</a>
+          <button class="govuk-button" data-module="govuk-button">
+            Sign back in
+          </button>
+          <a href="javascript:window.history.back()"</a>
+  &nbsp;
+  </div>
+  </div>
+  </div>
+  </main>
+  </div>
+
+{% endblock %}
