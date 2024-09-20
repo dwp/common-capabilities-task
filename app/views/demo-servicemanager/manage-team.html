@@ -1,0 +1,46 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Set up and manage team
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Set up and manage team</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="manage-team-members">Team members</a></h2>
+    <p>Set up and manage your team. When you add a team member, you'll be able to add them to a group, or give them matching criteria as an individual. This will match them to the kinds of tasks they can do.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+&nbsp;
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="groups-home">Groups</a></h2>
+    <p>Create groups for team members who do similar tasks. Team members will get the tasks that match to their group.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="manage-task-types">Task types</a></h2>
+      <p>View and manage your team's task types.</p>
+    </div>
+  </div>
+&nbsp;
+{% endblock %}
+

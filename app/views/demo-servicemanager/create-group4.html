@@ -60,9 +60,55 @@ Add team members to Decision makers group
 {% endblock %}
 
 {% block content %}
+<!--<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      You will be signed out soon
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      This helps keep data secure. If you don't do anything for 1 hour, we'll log you out and 
+any progress you have not confirmed will be deleted.
+    </p>
+  </div>
+</div>-->
+
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
+
+          <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">Andi Anderson has already been added</a>
+                  </li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>-->
+
+           <!--<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+          aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              You have added Andi to the Maternity Allowance team.
+            </h3>
+            
+          </div>
+        </div>--> 
        
     <h1 class="govuk-heading-l">
       Add team members to Decision makers
@@ -71,7 +117,7 @@ Add team members to Decision makers group
   &nbsp;
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="#" method="post">
+        <form class="form" action="review-edit-group" method="post">
   
         <!-- Accessible autocomplete will hydrate this div -->
         <div class="govuk-form-group">
@@ -79,8 +125,10 @@ Add team members to Decision makers group
         <div id="event-name-hint" class="govuk-hint">
           Use their name or staff number.
         </div>
-       
-        <input class="govuk-input" id="national-insurance-number" name="nationalInsuranceNumber" type="text" aria-describedby="national-insurance-number-hint national-insurance-number-error">
+        <!--<p id="national-insurance-number-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Andi Anderson has already been added
+        </p>-->
+        <input class="govuk-input" id="national-insurance-number" name="nationalInsuranceNumber" type="text" aria-describedby="national-insurance-number-hint">
       </div>
 
       </div>
@@ -95,16 +143,17 @@ Add team members to Decision makers group
               <span class="govuk-details__summary-text">
                 I do not see the team member I'm looking for
               </span>
-            </summary> </details>
+            </summary> 
 
-            <!-- <div class="govuk-details__text">
+           <div class="govuk-details__text">
               <p>You may not have added this team member to the Maternity Allowance team yet. You can add them later, then add them to a group.</p>
             </div>
-          </details> -->
+          </details> 
           
           <!--<div class="govuk-inset-text">
           <p><strong>Andi Anderson has been removed from the list of team members you want to add to the group.</strong></p>
         </div>-->
+
           <table class="govuk-table">
             <caption class="govuk-table__caption govuk-table__caption--m">Group members</caption>
             <thead class="govuk-table__head">
@@ -118,7 +167,7 @@ Add team members to Decision makers group
                 <td class="govuk-table__cell">0123456789</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
               </tr>
-              <tr class="govuk-table__row">
+              <!--<tr class="govuk-table__row">
                 <td class="govuk-table__cell">Aiden Jenkins</td>
                 <td class="govuk-table__cell">0123456789</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
@@ -162,10 +211,11 @@ Add team members to Decision makers group
                 <td class="govuk-table__cell">Irena Davies</td>
                 <td class="govuk-table__cell">0123456789</td>
                 <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
-              </tr>
+              </tr>-->
             </tbody>
           </table>
-          <nav class="govuk-pagination" aria-label="Pagination">
+          
+          <!--<nav class="govuk-pagination" aria-label="Pagination">
             <ul class="govuk-pagination__list">
               <li class="govuk-pagination__item govuk-pagination__item--current">
                 <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
@@ -193,7 +243,7 @@ Add team members to Decision makers group
                 </svg>
               </a>
             </div>
-          </nav>
+          </nav>-->
           &nbsp;
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
