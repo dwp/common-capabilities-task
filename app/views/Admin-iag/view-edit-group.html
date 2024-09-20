@@ -1,0 +1,344 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Review Decision makers group
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Decision makers</h1>
+
+      <p>Make any changes if needed, then confirm.</p>
+
+      <h2 class="govuk-heading-m">
+        Task types
+      </h1>
+
+      <p>Decision makers will be able to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Review incident outcomes</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Group details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Decision makers
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+
+   
+                 <span class="govuk-visually-hidden"> group name</span>
+
+            </a>
+          </dd>
+        </div>
+      </dl>
+      &nbsp;
+      <h2 class="govuk-heading-m">Matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-grade']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-grade'] %}
+                  <li>
+                    {{ item 
+                    | replace("ao", "AO")
+                    | replace("aa", "AA") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-grade']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> grade</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> grade</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-language']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-language'] == 'welsh'%} 
+                  Welsh
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-language']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> language</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-location']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-location'] %}
+                  <li>
+                    {{ item 
+                    | replace("england", "England") 
+                    | replace("northern-ireland", "Northern Ireland") 
+                    | replace("scotland", "Scotland") 
+                    | replace("wales", "Wales") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-location']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> location</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> location</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-office']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-office'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-office']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> office ID</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> office ID</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-role']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> role</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> role</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-pattern']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-pattern'] == 'mfpm'%} 
+                  M-F PM
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-pattern']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> working pattern</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> working pattern</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+      &nbsp;
+      
+      <table class="govuk-table"> 
+        <caption class="govuk-table__caption govuk-table__caption--m">Group members
+          <div style="float: right;"><p><a href="#">Add a group member</a></p></div>
+        </caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Staff number</th>
+              <th scope="col" class="govuk-table__header app-custom-class"></th>
+            </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Harris Perry</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Aiden Jenkins</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Ben Hoad</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Catriona MacElhinney</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Amy Anderson (Andi)</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Ishika Patel</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Doris Fuller</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Edward Price</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Fergus Murray</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Grant Hughes</td>
+            <td class="govuk-table__cell">0123456789</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="govuk-pagination" role="navigation" aria-label="results">
+        <div class="govuk-pagination__prev">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+            <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+            </svg>
+            <span class="govuk-pagination__link-title">Previous</span></a>
+        </div>
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+              1
+            </a>
+          </li>
+          <li class="govuk-pagination__item govuk-pagination__item--current">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+              2
+            </a>
+          </li>
+          <li class="govuk-pagination__item">
+            <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+              3
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+              <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+            </svg></a>
+        </div>
+      </nav>
+      &nbsp;
+
+      <div class="govuk-button-group">
+       <!-- <a href="groups-dm-deleted">
+          <button class="govuk-button govuk-button" data-module="govuk-button">
+            Confirm
+          </button>
+        </a>-->
+        <a href="groups-dm-deleted">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Delete group
+          </button>
+        </a>
+                <a href="javascript:window.history.back()"</a>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Back
+                  </button> 
+    </div>
+  </div>
+{% endblock %}

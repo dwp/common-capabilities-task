@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Change address
+Change a claimant's address
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,15 +11,15 @@ Change address
   items: [
     {
       text: "Maternity allowance home",
-      href: "maternity-dashboard"
+      href: "home"
     },
     {
       text: "Set up and manage team",
-      href: "maternity-manage"
+      href: "manage-team"
     },
     {
       text: "Task types",
-      href: "task-templates-home"
+      href: "manage-task-types"
     }
   ]
 }) }}
@@ -32,8 +32,8 @@ Change address
     </div>
 
 <div class="govuk-grid-column-two-thirds">
-  <h1 class="govuk-heading-l">Change address</h1>
-  <p>Manage the details for task type Change a customer’s address.</p>
+  <h1 class="govuk-heading-l">Change a claimant's address</h1>
+  <p>Manage the details for task type Change a claimant’s address.</p>
   &nbsp;
 
   <h2 class="govuk-heading-m" id="subsection-title">
@@ -56,7 +56,7 @@ Change address
               text: "Task type name"
             },
             value: {
-              text: "Change a customer's address"
+              text: "Change a claimant's address"
             },
             
             actions: {
@@ -96,7 +96,7 @@ Change address
             actions: {
               items: [
                 {
-                  href: "task-templates-sla-yn",
+                  href: "task-templates-sla",
                   text: "Change",
                   visuallyHiddenText: "must complete in"
                 }
@@ -155,7 +155,7 @@ Change address
                   text: "Location"
                 },
                 value: {
-                  text: "England"
+                  text: "England, Scotland"
                 },
                 actions: {
                   items: [
@@ -172,7 +172,7 @@ Change address
                   text: "Office ID"
                 },
                 value: {
-                  text: "Bristol"
+                  text: "Bristol, Longbenton"
                 },
                 actions: {
                   items: [
@@ -230,13 +230,9 @@ Change address
 
 
 
-        <div class="govuk-button-group">
-          <a href="task-templates-home" "=""">
-            <button class="govuk-button" data-module="govuk-button">Confirm</button></a>
-          <a href="javascript:window.history.back()" "=""">
-              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
-
-      </div>
+      <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+        Confirm
+      </button>
       &nbsp;
     </form>
     </div>

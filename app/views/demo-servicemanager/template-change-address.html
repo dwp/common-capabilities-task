@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Change address
+Change a claimant's address
 {% endblock %}
 
 {% block beforeContent %}
@@ -11,29 +11,26 @@ Change address
   items: [
     {
       text: "Maternity allowance home",
-      href: "maternity-dashboard"
+      href: "home"
     },
     {
       text: "Set up and manage team",
-      href: "maternity-manage"
+      href: "manage-team"
     },
     {
       text: "Task types",
-      href: "task-templates-home"
+      href: "manage-task-types"
     }
   ]
 }) }}
 {% endblock %}
 
 {% block content %}
- <div class="govuk-grid-row">
-   <div class="govuk-grid-column-two-thirds">
-
-    </div>
-
+ 
+<div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
   <h1 class="govuk-heading-l">Change address</h1>
-  <p>Manage the details for task type Change a customer’s address.</p>
+  <p>Manage the details for task type Change address.</p>
   &nbsp;
 
   <h2 class="govuk-heading-m" id="subsection-title">
@@ -56,7 +53,7 @@ Change address
               text: "Task type name"
             },
             value: {
-              text: "Change a customer's address"
+              text: "Change address"
             },
             
             actions: {
@@ -66,8 +63,7 @@ Change address
                 }
               ]
             }
-          }
-          ,
+          },
           
           {
             key: {
@@ -108,7 +104,7 @@ Change address
       }) }}
 
     
-          <h2 class="govuk-heading-m">Task matching criteria</h2>
+<h2 class="govuk-heading-m">Task matching criteria</h2>
 <p>Tasks that are already in progress will not be affected by changes you make to matching criteria.</p>
           {{ govukSummaryList({
             classes: 'govuk-!-margin-bottom-9',
@@ -224,20 +220,14 @@ Change address
       </div>
  
 
-      <form action="task-templates-home" method="post" novalidate>
-
-        <input type="hidden" name="task-templates-home" value="true">
-
-
-
         <div class="govuk-button-group">
-          <a href="task-templates-home" "=""">
-            <button class="govuk-button" data-module="govuk-button">Confirm</button></a>
+          <!--<a href="manage-task-types" "=""">
+            <button class="govuk-button" data-module="govuk-button">Confirm</button></a>-->
           <a href="javascript:window.history.back()" "=""">
               <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
 
       </div>
-      &nbsp;
+
     </form>
     </div>
   </div>

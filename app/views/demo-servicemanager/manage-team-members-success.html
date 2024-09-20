@@ -11,11 +11,11 @@
   items: [
     {
       text: "Maternity allowance home",
-      href: "maternity-dashboard"
+      href: "home"
     },
     {
       text: "Set up and manage team",
-      href: "maternity-manage"
+      href: "manage-team"
     }
   ]
 }) }}
@@ -40,6 +40,7 @@
     </div>
   -->
   <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
 
     <!--<div class="govuk-error-summary" data-module="govuk-error-summary">
       <div role="alert">
@@ -55,6 +56,22 @@
         </div>
       </div>
     </div>-->
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+        aria-labelledby="govuk-notification-banner-title"
+        data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            You have added Andi to the Maternity Allowance team.
+          </h3>
+        </div>
+</div>
+</div>
 
     <div class="govuk-grid-column-two-thirds">
       
@@ -98,14 +115,15 @@
             </button>
             </a>
           </div>
-
         
           <table class="govuk-table">
             
             <tbody class="govuk-table__body">
-              <tr class="govuk-table__row"></tr>
               <th scope="col" class="govuk-table__header">Team members</th>
-            </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Amy Anderson (Andi)</a></td>
+              </tr>
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a href="#">Aiden Jenkins</a></td>
               </tr>
@@ -133,11 +151,6 @@
               <tr class="govuk-table__row">
                 <td class="govuk-table__cell"><a href="#">Ishika Patel</a></td>
               </tr>
-              <tr class="govuk-table__row">
-                <td class="govuk-table__cell"><a href="#">Jia Zhang</a></td>
-              </tr>
-              
-             
             </tbody>
           </table>
           <nav class="govuk-pagination" aria-label="Pagination">

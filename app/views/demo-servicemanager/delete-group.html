@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Finish task
+Return task to queue
 {% endblock %}
 
 
@@ -11,43 +11,23 @@ Finish task
 {% endblock %}
 
 {% block content %}
-<!--<div class="govuk-error-summary" data-module="govuk-error-summary">
-    <div role="alert">
-      <h2 class="govuk-error-summary__title">
-        There is a problem
-      </h2>
-      <div class="govuk-error-summary__body">
-        <ul class="govuk-list govuk-error-summary__list">
-          <li>
-            <a href="#">Select yes if you want to change the status of this task</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>-->
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Take off hold
+        Delete Decision makers group?
       </h1>
-<p>This will allow a team member to work on it.</p>
-      
+
+      <p>Confirm if you want to delete it.</p>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-            <!--<p id="whereDoYouLive-error" class="govuk-error-message">
-                <span class="govuk-visually-hidden">Error:</span> Select yes if you want to change the status of this task
-              </p>-->
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                <h1 class="govuk-fieldset__heading">
-                    Change the status of this task? 
-                </h1>
-              </legend>
+          
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="completed-1" name="where-do-you-live" type="radio" value="completed">
-              <label class="govuk-label govuk-radios__label" for="completed-1">
+              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
                 Yes
               </label>
                 
@@ -57,14 +37,14 @@ Finish task
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
                 No
               </label>
-                
+               
             </div>
-         
+           
         </fieldset>
       </div>
 
   <div class="govuk-button-group">
-    <a href="#" "=""">
+    <a href="returned-task.html" "=""">
     <button class="govuk-button" data-module="govuk-button">Confirm</button>
     <a href="javascript:window.history.back()"</a>
     <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
