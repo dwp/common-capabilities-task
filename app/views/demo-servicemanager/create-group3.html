@@ -11,6 +11,7 @@ Add team members to Decision makers group
       "Amy Anderson, 123456789",
       "Amy Adams, 123456789",
       "Amy Johnston, 123456789",
+      "Ben Hoad, 123456789",
       "Joel Odonnell, 123456789",
       "Oliver Logan, 123456789",
       "Dan Hayes, 123456789",
@@ -117,26 +118,21 @@ any progress you have not confirmed will be deleted.
   &nbsp;
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="review-edit-group" method="post">
-  
-        <!-- Accessible autocomplete will hydrate this div -->
-        <div class="govuk-form-group">
-        <label class="govuk-label govuk-label--m" for="search">Find a team member</label>
-        <div id="event-name-hint" class="govuk-hint">
-          Use their name or staff number.
-        </div>
-        <!--<p id="national-insurance-number-error" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span> Andi Anderson has already been added
-        </p>-->
-        <input class="govuk-input" id="national-insurance-number" name="nationalInsuranceNumber" type="text" aria-describedby="national-insurance-number-hint">
-      </div>
-
-      </div>
-      
+       
+    
+          <!-- Accessible autocomplete will hydrate this div -->
+          
+          <label class="govuk-label govuk-label--m" for="search">Find a team member</label>
+          <div id="event-name-hint" class="govuk-hint">
+            Use their name or staff number.
           </div>
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button" href="#">
-              Add
-            </button>
+          <div id="search" class="govuk-input--width-30"></div>
+
+    <div class="govuk-button-group" style="margin-top:10px;">
+      <a href="create-group3-ben-added">
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    Add    </button></a>
+      </div>
 
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
@@ -144,11 +140,14 @@ any progress you have not confirmed will be deleted.
                 I do not see the team member I'm looking for
               </span>
             </summary> 
-
            <div class="govuk-details__text">
               <p>You may not have added this team member to the Maternity Allowance team yet. You can add them later, then add them to a group.</p>
             </div>
           </details> 
+          </form>
+          </div>
+          </div>
+          
           
           <!--<div class="govuk-inset-text">
           <p><strong>Andi Anderson has been removed from the list of team members you want to add to the group.</strong></p>
@@ -246,14 +245,12 @@ any progress you have not confirmed will be deleted.
           </nav>-->
           &nbsp;
           <div class="govuk-button-group">
-            <button class="govuk-button" data-module="govuk-button">
-              Continue
-            </button>
-            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Skip
-            </button> 
+            <a href="review-edit-group" "=""">
+              <button class="govuk-button" data-module="govuk-button">Continue</button></a>
+              <a href="review-edit-group" "=""">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Skip</button>  
           </div>
         </div>
-      </form>
+
    
 {% endblock %}

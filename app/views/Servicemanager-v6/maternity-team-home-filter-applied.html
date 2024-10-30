@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Team members
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "home"
+    },
+    {
+      text: "Set up and manage team",
+      href: "manage-team"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+<!--
+<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You made changes to Andi's details.
+        </h3>
+        
+      </div>
+    </div>
+  -->
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Team members
+      </h1>
+      <p>Add team members and set their matching criteria.</p>
+        <p>When you have set up a team member you can 
+          change their group membership, update their 
+          matching criteria, or remove them.</p>
+        <div>
+          <div class="govuk-button-group">
+            <a href="add-team-member" "=""">
+            <button class="govuk-button govuk-button" data-module="govuk-button">Add a team member</button>
+            </a>
+        </div>
+       
+    </div>
+    </div>
+
+
+
+    <div class="govuk-grid-column-one-third">
+      
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Maternity Allowance team
+        </h2>
+        <p>Use the filter to find team members 
+          and update their details.</p>
+          <label class="govuk-label" for="width-20">
+            Filter team members 
+          </label>
+          <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
+            <a href="# ">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Filter
+            </button>
+            </a>
+          </div>
+          <p><strong>3 results for "Aiden" </strong><a href="manage-team-members">Clear filter</a></p>
+        
+          <table class="govuk-table">
+            
+            <tbody class="govuk-table__body">
+              
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Aiden Jenkins</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Aiden McDonald</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="#">Aiden Smith</a></td>
+              </tr>
+              
+             
+            </tbody>
+          </table>
+          
+
+    </div>
+
+  </div> 
+
+</div>
+
+  </div>
+{% endblock %}
