@@ -33,7 +33,7 @@ data-module="govuk-notification-banner">
 </div>
 <div class="govuk-notification-banner__content">
   <h3 class="govuk-notification-banner__heading">
-    You created Decision makers.
+    You created {{ data['groupname'] or "Decision makers" }}.
   </h3>
 </div>
 </div>
@@ -58,7 +58,7 @@ data-module="govuk-notification-banner">
 <div class="govuk-width-container">
 &nbsp;
   <div class="box5">
-    <h2 class="govuk-heading-m"><a href="#">Decision makers</a></h2>
+    <h2 class="govuk-heading-m"><a href="#">{{ data['groupname'] or "Decision makers" }}</a></h2>
   </div>
 </div>
 
