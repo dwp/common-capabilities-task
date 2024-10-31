@@ -9,7 +9,11 @@ Change the completion timeframe
 {% block content %}
 
 <div class="govuk-width-container">
-  <h1 class="govuk-heading-l">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+  
+        <h1 class="govuk-heading-l">
     Change or remove completion timeframe
   </h1>
 
@@ -42,6 +46,8 @@ Change the completion timeframe
       </div>
     </fieldset>
   </div>
+  </div>
+</main>
 
 
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -51,7 +57,7 @@ Change the completion timeframe
     <a href="javascript:window.history.back()" "=""">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
 </div>
-
+</div>
 </form>
 </div>
 

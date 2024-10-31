@@ -1,56 +1,111 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Review Decision makers group
+Change address
 {% endblock %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">
-    Back
-  </a>
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Maternity allowance home",
+      href: "home"
+    },
+    {
+      text: "Set up and manage team",
+      href: "manage-team"
+    },
+    {
+      text: "Task types",
+      href: "manage-task-types"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds-from-desktop">
+ 
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Change address</h1>
+  <p>Manage the details for task type Change address.</p>
+  <p>Changes you make on this page will only apply to tasks that are created from now on.</p>
+  &nbsp;
 
-      <h1 class="govuk-heading-l">Review Decision makers</h1>
+  <h2 class="govuk-heading-m" id="subsection-title">
+    Team members
+  </h2>
+ <p>Based on the criteria you chose for groups or individuals, these team members match to this task type.</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>Amy Anderson (Andi)</li>
+  <li>Dmitrij Ivanov</li>
+  <li>Julia Nguyen</li>
+</ul>
 
-      <p>Check that the details of your new group are correct.</p>
+ 
+  <h2 class="govuk-heading-m">Task type details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Change address"
+            },
+            
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "task type name"
+                }
+              ]
+            }
+          },
+          
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-task-type-priority",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: "5 days"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "must complete in"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
 
-      <p>Make any changes if needed, then confirm.</p>
-
-      <h2 class="govuk-heading-m">
-        Task types
-      </h1>
-
-      <p>Decision makers will be able to:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Review incident outcomes</li>
-      </ul>
-
-      <h2 class="govuk-heading-m">Group details</h2>
-
-      <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Group name
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Decision makers
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-
-   
-                Change<span class="govuk-visually-hidden"> group name</span>
-
-            </a>
-          </dd>
-        </div>
-      </dl>
-      &nbsp;
-      <h2 class="govuk-heading-m">Matching criteria</h2>
+    
+<h2 class="govuk-heading-m">Task matching criteria</h2>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -58,27 +113,18 @@ Review Decision makers group
             Grade
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['group-grade']|length > 0 %}
               <ul class="govuk-list">
-                {% for item in data['group-grade'] %}
                   <li>
-                    {{ item 
-                    | replace("ao", "AO")
-                    | replace("aa", "AA") }}
+                    AA
                   </li>
-                {% endfor %}
+                  <li>
+                    AO
+                  </li>
               </ul>
-            {% else %}
-              None
-            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['group-grade']|length == 0 %} 
-                Add<span class="govuk-visually-hidden"> grade</span>
-              {% else %}
-                Change<span class="govuk-visually-hidden"> grade</span>
-              {% endif %}
+             Change
             </a>
           </dd>
         </div>
@@ -113,31 +159,22 @@ Review Decision makers group
           <dt class="govuk-summary-list__key">
             Location
           </dt>
-          <dd class="govuk-summary-list__value">
-            {% if data['group-location']|length > 0 %}
+
+            <dd class="govuk-summary-list__value">
               <ul class="govuk-list">
-                {% for item in data['group-location'] %}
                   <li>
-                    {{ item 
-                    | replace("england", "England") 
-                    | replace("northern-ireland", "Northern Ireland") 
-                    | replace("scotland", "Scotland") 
-                    | replace("wales", "Wales") }}
+                    England
                   </li>
-                {% endfor %}
+                  <li>
+                    Scotland
+                  </li>
               </ul>
-            {% else %}
-              None
-            {% endif %}
+
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['group-location']|length == 0 %} 
-                Add<span class="govuk-visually-hidden"> location</span>
-              {% else %}
-                Change<span class="govuk-visually-hidden"> location</span>
-              {% endif %}
-            </a>
+              Change
+             </a>
           </dd>
         </div>
 
@@ -228,35 +265,22 @@ Review Decision makers group
             </a>
           </dd>
         </div>
+      </div>
+      </div>
       </dl>
-      &nbsp;
-      
-      <table class="govuk-table"> 
-        <caption class="govuk-table__caption govuk-table__caption--m">Group members
-          <div style="float: right;"><p><a href="create-group4">Add a group member</a></p></div>
-        </caption>
-          <thead class="govuk-table__head">
-            
-              <th scope="col" class="govuk-table__header app-custom-class">Name</th>
-              <th scope="col" class="govuk-table__header app-custom-class">Staff number</th>
-              <th scope="col" class="govuk-table__header app-custom-class"></th>
-            </thead>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">Aiden Jenkins</td>
-            <td class="govuk-table__cell">12345678</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
-          </tr>
-        </tbody>
-      </table>
-      
-      &nbsp;
 
-      <form action="groups-dm-success" method="post" novalidate>
-        <input type="hidden" name="page-page" value="true">
-        {{ govukButton({
-          text: "Confirm"
-        }) }}
-      </form>
+ 
+
+        <div class="govuk-button-group">
+          <!--<a href="manage-task-types" "=""">
+            <button class="govuk-button" data-module="govuk-button">Confirm</button></a>-->
+          <a href="javascript:window.history.back()" "=""">
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+
+      </div>
+
+    </form>
     </div>
+  </div>
   </div>
 {% endblock %}
