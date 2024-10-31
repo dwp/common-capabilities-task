@@ -36,11 +36,11 @@
         </label>
   
         <form method="post">
-          <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Created, earliest to latest</option>
-            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Created, latest to earliest</option>
-            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to critical</option>
-            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, critical to low</option>
+          <select class="govuk-select" id="sort" name="sort">
+            <option>Created, earliest to latest</option>
+            <option>Created, latest to earliest</option>
+            <option>Priority, low to critical</option>
+            <option>Priority, critical to low</option>
           </select>
           <a href="#">
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
