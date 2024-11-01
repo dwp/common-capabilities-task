@@ -32,20 +32,7 @@ Review Decision makers group
       <h2 class="govuk-heading-m">Group details</h2>
 
       <dl class="govuk-summary-list">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            System ID
-          </dt>
-          <dd class="govuk-summary-list__value">
-            <p>{{ data['groupname'] or "None" }}</p>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group">
-                Change<span class="govuk-visually-hidden"> group name</span>
-
-            </a>
-          </dd>
-        </div>
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Group name
@@ -60,6 +47,22 @@ Review Decision makers group
             </a>
           </dd>
         </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            System ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['groupname'] or "None" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="create-group">
+                Change<span class="govuk-visually-hidden"> group name</span>
+
+            </a>
+          </dd>
+        </div>
+
       </dl>
       &nbsp;
       <h2 class="govuk-heading-m">Matching criteria</h2>
@@ -263,7 +266,7 @@ Review Decision makers group
       
       &nbsp;
 
-      <form action="groups-dm-success" method="post" novalidate>
+      <form action="groups-home-success" method="post" novalidate>
         <input type="hidden" name="page-page" value="true">
         {{ govukButton({
           text: "Confirm"
