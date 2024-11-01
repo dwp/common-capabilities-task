@@ -23,8 +23,6 @@
 {% endblock %}
 
 {% block content %}
-<a href="create-group"
-  <button class="govuk-button" data-module="govuk-button" style="float: right;">Create new group</button> </a>
 
 <div class="govuk-width-container">
   <h1 class="govuk-heading-l">Groups</h1>
@@ -32,15 +30,19 @@
   <p>Create and manage groups of team members. Team members will get tasks that match to the criteria of their group.</p>
   &nbsp;
 
-
- <!--<h2 class="blueheading">Your groups</h2>-->
-
+  <div class="govuk-button-group">
+    <a href="create-group" "=""">
+        <button class="govuk-button" data-module="govuk-button">Create group</button></a>
+        </div>
   
+  <div class="govuk-width-container">
+    &nbsp;
   <div class="box5">
     <h2 class="govuk-heading-m"><a href="group-admin">Admin</a></h2>
-    
-  </div>
-</div>
+      </div>
+      </div>
+
+    </div>
 &nbsp;
 {% endblock %}
 
