@@ -13,11 +13,11 @@ Choose criteria for Decision makers group
 {% block content %}
   <div class="govuk-width-container">
     <h1 class="govuk-heading-l">
-      Choose criteria for Decision makers
+      Choose criteria for {{ data['humanreadablename'] or "None" }}
     </h1>
 
     <p>Choose matching criteria for this group.</p>
-    <p>Team members will get tasks that match to Decision makers.</p>
+    <p>Team members will get tasks that match to {{ data['humanreadablename'] or "None" }}.</p>
 
     <main class="govuk-main-wrapper">
       <form class="form" action="create-group3" method="post">
@@ -172,7 +172,6 @@ Choose criteria for Decision makers group
           <button class="govuk-button" data-module="govuk-button">
             Continue
           </button>
-                
             <a class=" govuk-button govuk-button--secondary" href="javascript:window.history.back()" "=""">
                 Back</a>  
         </div> 

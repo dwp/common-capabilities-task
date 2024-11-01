@@ -14,7 +14,7 @@ Review Decision makers group
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-l">Review Decision makers</h1>
+      <h1 class="govuk-heading-l">Review {{ data['humanreadablename'] or "None" }}</h1>
 
       <p>Check that the details of your new group are correct.</p>
 
@@ -24,7 +24,7 @@ Review Decision makers group
         Task types
       </h1>
 
-      <p>Decision makers will be able to:</p>
+      <p>{{ data['humanreadablename'] or "None" }} will be able to:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>Review incident outcomes</li>
       </ul>
