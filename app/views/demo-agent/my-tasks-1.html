@@ -24,24 +24,29 @@
     </button></a>
   </div>
 
-  <div class="govuk-form-group govuk-input__wrapper">
-    <div>
-      <label class="govuk-label" for="sort">
-        Sort by
-      </label>
-      <form method="post">
-        <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-          <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, newest to oldest</option>
-          <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, oldest to newest</option>
-          <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Due, soonest to  latest</option>
-          <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Due, latest to soonest</option>
-          <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Created, newest to oldest</option>
-          <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Created, oldest to newest</option>
-        </select>
-      </form>
-    
-    </div>
-    &nbsp; &nbsp;
+    <div class="govuk-form-group govuk-input__wrapper">
+      <div>
+        <label class="govuk-label" for="sort">
+          Sort by
+        </label>
+  
+        <form method="post">
+          <select class="govuk-select" id="sort" name="sort">
+            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, newest to oldest</option>
+            <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Claimed, oldest to newest</option>
+            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Due, soonest to  latest</option>
+            <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Due, latest to soonest</option>
+            <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Created, newest to oldest</option>
+            <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Created, oldest to newest</option>
+          </select>
+          <a href="#">
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Sort
+            </button>
+            </a>
+        </form>
+      </div>
+      &nbsp; &nbsp;
     <div>
       
       <label class="govuk-label" for="width-20">
