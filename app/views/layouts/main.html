@@ -12,9 +12,23 @@
     {{ govukHeader({
       homepageUrl: "/index",
       serviceName: serviceName,
-      serviceUrl: "#",
+      serviceUrl: "",
+      action: "Maternity Allowance",
+      actionHref: "#",
+      container: true,
       containerClasses: "govuk-width-container"
     }) }}
+
+    <!-- <header class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a class="dwp-header__link">DWP Task</a>
+    </div>
+    <div class="dwp-header__service-action">
+      <a href="" class="dwp-header__link">Maternity Allowance<br>Change service</a>
+    </div>
+    </div>
+    </header>-->
     
   <div class="govuk-phase-banner">
       <div class="govuk-width-container">
@@ -38,13 +52,13 @@
     <h2 class="govuk-visually-hidden">About this website</h2>
     <ul class="govuk-footer__inline-list">
       <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="">Accessibility</a>
+        <a class="govuk-footer__link" href="accessibility-statement">Accessibility</a>
       </li>
       <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="help">Contact</a>
+        <a class="govuk-footer__link" href="contact">Contact</a>
       </li>
       <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="">Privacy</a>
+        <a class="govuk-footer__link" href="https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice" target="blank" rel="noopener noreferrer">Privacy</a> (opens in a new tab)
       </li>
       <li class="govuk-footer__inline-list-item" style="float: right;"">
         Version 1.0
