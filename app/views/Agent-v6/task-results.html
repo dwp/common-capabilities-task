@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task results
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Agent home",
+        href: "agent"
+      },
+      {
+        text: "Find a person",
+        href: "find-person"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+          <!--<div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          You have successfully returned this task to the queue.
+        </h3>
+      </div>
+    </div>-->
+
+      <h1 class="govuk-heading-l">
+        All State Pension tasks for Aisha Hendry
+      </h1>
+  
+      <div class="govuk-button-group">
+        <a href="choose-task-type-dropdown" "=""">
+        <button class="govuk-button" data-module="govuk-button">Create a task</button></a>
+        </div>
+
+        <table class="govuk-table">
+            
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Created</th>
+                <th scope="col" class="govuk-table__header">Task</th>
+                <th scope="col" class="govuk-table__header">Due</th>
+                <th scope="col" class="govuk-table__header">Status</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">9 Nov 2024</td>
+                <td class="govuk-table__cell">Explain an overpayment</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--red">
+                    OVERDUE 
+                 </strong><br>9 Oct 2024<br>at 13:00</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--yellow">
+                    ALLOCATED
+                 </strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">14 Jul 2024</td>
+                <td class="govuk-table__cell">Check progress</td>
+                <td class="govuk-table__cell">19 Jul 2024<br>at 8:00</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                    COMPLETED
+                 </strong></td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">25 May 2024</td>
+                <td class="govuk-table__cell">Check eligibility</td>
+                <td class="govuk-table__cell">1 Jun 2024<br>at 10:12</td>
+                <td class="govuk-table__cell"><strong class="govuk-tag govuk-tag--green">
+                    COMPLETED
+                 </strong></td>
+              </tr>
+            </tbody>
+          </table>
+    
+    </div>
+      </div>
+
+{% endblock %}

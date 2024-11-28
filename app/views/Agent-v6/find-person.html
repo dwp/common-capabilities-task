@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Find a person
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Agent home",
+      href: "agent"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          Find a person
+          </h1>
+
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m">
+                National Insurance number
+              </label>
+            </h1>
+
+            <div id="find-person-hint" class="govuk-hint">
+              For example, ‘QQ 12 34 56 C’            
+            </div>
+            <input class="govuk-input govuk-input--width-20" id="find-a-person" name="findPerson" type="text" aria-describedby="find-a-person">
+          </div>
+          
+       
+            
+           
+
+  <div class="govuk-button-group">
+    <a href="check-person" "=""">
+    <button class="govuk-button" data-module="govuk-button">Search</button>
+    <a href="javascript:window.history.back()"</a>
+   
+  </div>  
+{% endblock %}
