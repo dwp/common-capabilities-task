@@ -8,7 +8,7 @@
   {% block header %}
 
   
-  {# Set serviceName in config.js. #}
+{# Set serviceName in config.js. #}
     {{ govukHeader({
       homepageUrl: "/index",
       serviceName: serviceName,
@@ -17,18 +17,7 @@
       actionHref: "#",
       container: true,
       containerClasses: "govuk-width-container"
-    }) }}
-
-    <!-- <header class="dwp-header">
-    <div class="dwp-header__content govuk-width-container">
-    <div class="dwp-header__service-name">
-      <a class="dwp-header__link">DWP Task</a>
-    </div>
-    <div class="dwp-header__service-action">
-      <a href="" class="dwp-header__link">Maternity Allowance<br>Change service</a>
-    </div>
-    </div>
-    </header>-->
+}) }}
     
   <div class="govuk-phase-banner">
       <div class="govuk-width-container">
