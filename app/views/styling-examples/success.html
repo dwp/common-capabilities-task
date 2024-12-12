@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Find a person
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Breadcrumbs 1",
+      href: "#"
+    },
+    {
+      text: "Breadcrumbs 2",
+      href: "#"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+   
+      <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+        <div class="govuk-notification-banner__header">
+          <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+            Success
+          </h2>
+        </div>
+        <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+            Your soup preferences have been submitted.
+          </h3>
+        
+        </div>
+      </div>
+        <h1 class="govuk-heading-l">
+          The H1 of the page
+          </h1>
+          <p>This is some paragraph text, this page is going to ask you about soup.</p>
+          &nbsp;
+          <div class="govuk-form-group govuk-form-group--error">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--m">
+                What is your favourite soup?
+              </label>
+            </h1>
+
+            <div id="find-person-hint" class="govuk-hint">
+              For example, ‘Butternut squash bisque’.         
+            </div>
+            <p id="passport-issued-error" class="govuk-error-message">
+              <span class="govuk-visually-hidden">Error:</span> The soup that you enter must be your favourite
+            </p>
+        
+            <input class="govuk-input govuk-input--width-20 govuk-input--error" id="find-a-person" name="findPerson" type="text" aria-describedby="find-a-person">
+          </div>
+           
+
+  <div class="govuk-button-group">
+    <a href="#" "=""">
+    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <a href="javascript:window.history.back()"</a>
+   
+  </div>  
+{% endblock %}
