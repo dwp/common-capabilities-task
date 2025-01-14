@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Agent home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    }
+  ]
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">Agent home</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="my-tasks">My tasks</a></h2>
+    <p>Claim and work on tasks.</p> 
+ 
+  </div>
+</div>
+
+<!--<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="find-person">Search and create</a></h2>
+      <p>Search for and create tasks.</p>
+    </div>
+  </div>-->
+
+&nbsp;
+{% endblock %}

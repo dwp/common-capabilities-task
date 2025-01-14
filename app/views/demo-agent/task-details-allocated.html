@@ -12,12 +12,12 @@ Task details
 {{ govukBreadcrumbs({
   items: [
     {
-      text: "Maternity Allowance home",
-      href: "my-tasks"
+      text: "Agent home",
+      href: "Agent"
     },
     {
-      text: "My Maternity Allowance tasks",
-      href: "my-tasks"
+      text: "My tasks",
+      href: "javascript:window.history.back()"
     }
   ]
 }) }}
@@ -31,13 +31,6 @@ Task details
       <h1 class="govuk-heading-l">
         Book assessment for Deborah Levy
       </h1>
-
-       
-      <p>View details of this task.</p>
-
-      <p>You can put this task on hold, work on it, return it to the queue, or finish it.</p>
-      
-    
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -120,7 +113,7 @@ Task details
             <button class="govuk-button govuk-button" data-module="govuk-button">Close task</button></a></div>
             <div class="govuk-button-group">
     <a href="javascript:window.history.back()" "=""">
-      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button> </div>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
     
 
 {% endblock %}

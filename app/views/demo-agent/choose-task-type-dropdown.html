@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a task
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class=govuk-grid-column-two-thirds>
+    <h1 class="govuk-heading-l">
+      Create a task
+    </h1>
+    &nbsp;   
+
+    <div class="govuk-form-group">
+        <form method="post" action="task-context">
+      
+
+    <label class="govuk-label" for="new-task-types">
+      Choose a task type
+    </label>
+    <select class="govuk-select" id="new-task-types" name="tasktype">
+      <option value="Explain an overpayment">Explain an overpayment</option>
+      <option value="Investigate a missing payment" selected>Investigate a missing payment</option>
+      <option value="Check progress">Check progress</option>
+      <option value="Check eligibility">Check eligibility</option>
+      <option value="Send a specialist letter">Send a specialist letter</option>
+      <option value="Answer an award question" selected>Answer an award question</option>
+      <option value="Escalate a sensitive case">Escalate a sensitive case</option>
+    </select>
+  </div>
+
+
+
+    <div style="margin-top:20px;" class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+          
+      <a class=" govuk-button govuk-button--secondary" href="javascript:window.history.back()" "=""">
+          Back</a>  
+  </div> 
+</div>
+</form>
+  </div>
+</div>
+</div>
+{% endblock %}
