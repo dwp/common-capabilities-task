@@ -12,50 +12,50 @@ Task details
 {{ govukBreadcrumbs({
   items: [
     {
-      text: "Service manager home",
-      href: "home"
+      text: "Agent home",
+      href: "agent"
     },
     {
-      text: "All tasks",
-      href: "manage-tasks"
+      text: "Find a person",
+      href: "find-person"
+    },
+    {
+    text: "All State Pension tasks for Aisha Hendry",
+    href: "javascript:window.history.back()"
     }
   ]
 }) }}
 {% endblock %}
+      
+
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <!--  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You returned this task to the queue and blocked the team member from working on it.
-    </h3>
-  </div>
-</div>-->
 
       <h1 class="govuk-heading-l">
-        HCP Audit for Gregory Platt
+        Explain state pension amount for Aisha Hendry
       </h1>
-
-      <p>View details of HCP Audit for Gregory Platt.</p>
-      <p>You can make changes to the due date, priority, and who is working on the task. ??????</p>
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Customer
+            Person
           </dt>
           <dd class="govuk-summary-list__value">
-            Gregory Platt
+            Aisha Hendry
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 C
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -66,7 +66,29 @@ Task details
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            HCP Audit
+            Explain state pension amount
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Contact customer
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Additional details
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Vulnerable
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -77,12 +99,13 @@ Task details
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-            17 October 2024 at 10:15 
+            <strong class="govuk-tag govuk-tag--red">
+              OVERDUE 
+           </strong><br>9 Nov 2024 at 14:12
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
+            <dd class="govuk-summary-list__actions">
+               
+              </dd>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -90,7 +113,7 @@ Task details
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            10 October 2024 at 9:05
+            9 Oct 2024 at 04:12
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -98,25 +121,12 @@ Task details
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Priority
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Low
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--grey">
-              UNALLOCATED
-            </strong></td>
+            <strong class="govuk-tag govuk-tag--green">
+              ACTIVE
+          </strong>
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -127,31 +137,19 @@ Task details
             Team member
           </dt>
           <dd class="govuk-summary-list__value">
-            None
+            Julia Nguyen
           </dd>
           <dd class="govuk-summary-list__actions">
-           
+            
           </dd>
         </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Blocked
-          </dt>
-          <dd class="govuk-summary-list__value">
-            None
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
-        </div>
+        
       </dl>
       <div class="govuk-button-group">
-        <a href="#" "=""">
-        <button class="govuk-button" data-module="govuk-button">View history</button>
+        <a href="javascript:window.history.back()" "=""">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+       
     </div>
     </div>
-   
 
 {% endblock %}
