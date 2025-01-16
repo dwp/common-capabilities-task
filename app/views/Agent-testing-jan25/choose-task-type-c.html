@@ -17,7 +17,7 @@ Create a task
     </h1>
      
     <div class="govuk-form-group">
-        <form method="post" action="review-new-task">
+        <form method="post" action="review-new-task-c">
 
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -32,6 +32,28 @@ Create a task
           </div>
 
           <div class="govuk-radios" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="tasktype" type="radio" value="Evidence query" data-aria-controls="conditional-evidence">
+              <label class="govuk-label govuk-radios__label" for="task-type">
+                  Evidence query
+              </label>
+            </div>
+      
+            <div class="govuk-radios__conditional" id="conditional-evidence">
+              <div class="govuk-form-group">
+                    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value="Contact customer" data-aria-controls="conditional-evidence">
+                          <label class="govuk-label govuk-checkboxes__label" for="task-type">
+                            Check and contact customer
+                          </label>
+                        </div>
+  
+                        
+                      </div>
+                      </div>
+                      </div>
 
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="contact" name="tasktype" type="radio" value="Explain state pension amount" data-aria-controls="conditional-contact">
@@ -50,15 +72,7 @@ Create a task
                             </label>
                           </div>
 
-                          <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value=" Something else" data-aria-controls="conditional-contact">
-                            <label class="govuk-label govuk-checkboxes__label" for="contact">
-                                 Something else
-                                <div id="contact-hint" class="govuk-hint">
-                                    You can add more context on the next page.
-                                  </div>
-                            </label>
-                          </div>
+                         
                         </div>
                     </div>
 
@@ -88,55 +102,12 @@ Create a task
                           </label>
                         </div>
 
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value=" Something else" data-aria-controls="conditional-payment">
-                        <label class="govuk-label govuk-checkboxes__label" for="contact">
-                             Something else
-                            <div id="contact-hint" class="govuk-hint">
-                                You can add more context on the next page.
-                              </div>
-                        </label>
-                      </div>
                     </div>
                     </div>
                     </div>
                     </div>
 
-            
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="contact" name="tasktype" type="radio" value="Evidence query" data-aria-controls="conditional-evidence">
-                        <label class="govuk-label govuk-radios__label" for="task-type">
-                            Evidence query
-                        </label>
-                      </div>
-                
-                      <div class="govuk-radios__conditional" id="conditional-evidence">
-                        <div class="govuk-form-group">
-                              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value="Contact customer" data-aria-controls="conditional-evidence">
-                                    <label class="govuk-label govuk-checkboxes__label" for="task-type">
-                                      Check and contact customer
-                                    </label>
-                                  </div>
-            
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value=" Something else" data-aria-controls="conditional-evidence">
-                                    <label class="govuk-label govuk-checkboxes__label" for="contact">
-                                         Something else
-                                        <div id="contact-hint" class="govuk-hint">
-                                            You can add more context on the next page.
-                                          </div>
-                                    </label>
-                                  </div>
-                                </div>
-                                </div>
-                                </div>
-                    
-
-
-                    
-                    
+  
 
             <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="contact" name="tasktype" type="radio" value="Send letter" data-aria-controls="conditional-letter">
@@ -191,15 +162,7 @@ Create a task
                                     </label>
                                   </div>
             
-                                  <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="contact" name="context" type="checkbox" value=" Something else" data-aria-controls="conditional-letter">
-                                    <label class="govuk-label govuk-checkboxes__label" for="contact">
-                                         Something else
-                                        <div id="contact-hint" class="govuk-hint">
-                                            You can add more context on the next page.
-                                          </div>
-                                    </label>
-                                  </div>
+                                  
                                 </div>
                                 </div>
 
