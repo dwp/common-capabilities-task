@@ -47,13 +47,12 @@ Task details
         Request medical evidence
       </h1>
   
-    <p>View details of Request medical evidence.</p>
-    <p>You can make changes to the due date, priority, and who is working on the task.</p>
+    
   
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Customer
+          Person
         </dt>
         <dd class="govuk-summary-list__value">
           Unknown        </dd>
@@ -74,7 +73,7 @@ Task details
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Date due
+          Due
         </dt>
         <dd class="govuk-summary-list__value">
           15 October 2023 at 13:30
@@ -87,7 +86,7 @@ Task details
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Date created
+          Created
         </dt>
         <dd class="govuk-summary-list__value">
           10 October 2023 at 13:30
@@ -146,10 +145,13 @@ Task details
       </div>
       
     </dl>
-        <div class="govuk-button-group">
-          <a href="#" "=""">
-          <button class="govuk-button" data-module="govuk-button">View history</button>
-      </div>
+    <div class="govuk-button-group">
+      <a href="#" "=""">
+          <button class="govuk-button govuk-button" data-module="govuk-button">View history</button></a></div>
+          <div class="govuk-button-group">
+  <a href="javascript:window.history.back()" "=""">
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
+    </div>
       </div>
 
 {% endblock %}

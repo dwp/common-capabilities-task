@@ -5,7 +5,20 @@ Check Aiden's details
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    },
+    {
+      text: "Set up and manage team",
+      href: "manage-team"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -254,12 +267,12 @@ Check Aiden's details
       </dl>
 
       <div class="govuk-button-group">
-        <a href="return-aiden-tasks">
+        <a href="remove-all-tasks">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Return tasks to queue
         </button>
  
-        <a href="#">
+        <a href="confirm-removal">
         <button class="govuk-button govuk-button--warning" data-module="govuk-button">
           Remove from team
         </button>
