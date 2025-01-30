@@ -41,7 +41,7 @@ Review Decision makers group
             <p> {{ data['humanreadablename'] or "None" }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group">
+            <a class="govuk-link" href="change-group-name">
                 Change<span class="govuk-visually-hidden"> group name</span>
 
             </a>
@@ -56,7 +56,7 @@ Review Decision makers group
             <p>{{ data['groupname'] or "None" }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group">
+            <a class="govuk-link" href="#">
                 Change<span class="govuk-visually-hidden"> group name</span>
 
             </a>
@@ -88,7 +88,7 @@ Review Decision makers group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="change-group-grade">
               {% if data['group-grade']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> grade</span>
               {% else %}
@@ -248,7 +248,7 @@ Review Decision makers group
       
       <table class="govuk-table"> 
         <caption class="govuk-table__caption govuk-table__caption--m">Group members
-          <div style="float: right;"><p><a href="create-group4">Add a group member</a></p></div>
+          <div style="float: right;"><p><a href="change-group-members">Add a group member</a></p></div>
         </caption>
           <thead class="govuk-table__head">
             

@@ -17,18 +17,16 @@ Change grade
     Change grade
   </h1>
 
-  <p>Change matching criteria for Decision Makers group.</p>
+  <p>Change matching criteria for {{ data['humanreadablename'] or "None" }}.</p>
 
-  {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
-
-  <div class="govuk-width-container">
     <main class="govuk-main-wrapper">
-      <form class="form" action="andi-review" method="post">
+      <form class="form" action="review-group" method="post">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-third">
+            {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
             {{ govukCheckboxes({
-              name: "andi-grade",
-              values: data['andi-grade'],
+              name: "group-grade",
+              values: data['group-grade'],
               fieldset: {
                 legend: {
                   text: "Grade",
