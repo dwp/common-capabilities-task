@@ -10,16 +10,16 @@ Review Admin group
 {{ govukBreadcrumbs({
   items: [
     {
-      text: "Maternity allowance home",
+      text: "Service manager home",
       href: "home"
     },
     {
-      text: "Setup and manage team",
+      text: "Set up and manage team",
       href: "manage-team"
     },
     {
       text: "Groups",
-      href: "groups-home"
+      href: "manage-groups"
     }
   ]
 }) }}
@@ -74,7 +74,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group3">
+            <a class="govuk-link" href="#">
               {% if data['group-members']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> members</span>
               {% else %}
@@ -109,7 +109,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-grade']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> grade</span>
               {% else %}
@@ -135,7 +135,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-language']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> language</span>
               {% else %}
@@ -167,7 +167,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-location']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> location</span>
               {% else %}
@@ -199,7 +199,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-office']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> office ID</span>
               {% else %}
@@ -229,7 +229,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-role']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> role</span>
               {% else %}
@@ -255,7 +255,7 @@ Review Admin group
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="create-group2">
+            <a class="govuk-link" href="#">
               {% if data['group-pattern']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> working pattern</span>
               {% else %}
@@ -267,12 +267,8 @@ Review Admin group
       </dl>
 
       
-        <a href="groups-dm-deleted">
-          <button class="govuk-button govuk-button" data-module="govuk-button">
-            Confirm
-          </button>
-        </a>
-        <a href="groups-dm-deleted">
+        
+        <a href="#">
           <button class="govuk-button govuk-button--warning" data-module="govuk-button">
             Delete group
           </button>
@@ -292,4 +288,4 @@ Review Admin group
 </div>
   </div>
 </form>
-{% endblock %}
+{% endblock %}'['
