@@ -49,12 +49,17 @@
             </label>
       
             <form method="post">
-              <select class="govuk-select" id="sort" name="sort" onchange="this.form.submit()">
-                <option value="date-earliest" {{ "selected" if data.sort == "date-earliest" }}>Date created, earliest to latest</option>
-                <option value="date-latest" {{ "selected" if data.sort == "date-latest" }}>Date created, latest to earliest</option>
-                <option value="priority-low" {{ "selected" if data.sort == "priority-low" }}>Priority, low to critical</option>
-                <option value="priority-high" {{ "selected" if data.sort == "priority-high" }}>Priority, critical to low</option>
+              <select class="govuk-select" id="sort" name="sort">
+                <option>Created, earliest to latest</option>
+                <option>Created, latest to earliest</option>
+                <option>Priority, low to critical</option>
+                <option>Priority, critical to low</option>
               </select>
+              <a href="#">
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Sort
+                </button>
+                </a>
             </form>
           </div>
           &nbsp; &nbsp;
@@ -64,8 +69,8 @@
               Filter your team's tasks
             </label>
             <div class="govuk-input__wrapper"><input class="govuk-input govuk-input--width-10" type="text" spellcheck="false">
-              &nbsp;
-              <a href="maternity-tasks-filter-applied">
+          
+              <a href="manage-tasks-filter-applied">
               <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Filter
               </button>
@@ -73,6 +78,7 @@
             </div>
         </div>
           </div>
+          
 
      <div class="govuk-tabs" data-module="govuk-tabs">
       <ul class="govuk-tabs__list">
@@ -167,12 +173,12 @@
                 <th scope="col" class="govuk-table__header">Status</th>
             </thead>
           </table>
-          <p style="text-align: left;"> No filter results in 'On hold tasks'.</p>
+          <p style="text-align: left;"> 0 filter results in 'On hold tasks'.</p>
         </div>
         
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
           <h2 class="govuk-heading-l">Closed tasks
-            <p class="govuk-body govuk-!-font-tabular-numbers">15 results for “Julia" in 'Closed tasks'.</p></h2>
+            <p class="govuk-body govuk-!-font-tabular-numbers">0 results for “Julia" in 'Closed tasks'.</p></h2>
           <table class="govuk-table">
             <thead class="govuk-table__head">
               <th scope="col" class="govuk-table__header">Details</th>
@@ -183,128 +189,9 @@
                 <th scope="col" class="govuk-table__header">Priority</th>
                 <th scope="col" class="govuk-table__header">Status</th>
             </thead>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">8 Oct 2024</td>
-              <td class="govuk-table__cell">Book assessment</td>
-              <td class="govuk-table__cell">NJ 83 67 44 K</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Critical</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">8 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">HD 53 87 22 U</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">8 Oct 2024</td>
-              <td class="govuk-table__cell">Book assessment</td>
-              <td class="govuk-table__cell">CV 67 80 32 G</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Critical</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">8 Oct 2024</td>
-              <td class="govuk-table__cell">Book assessment</td>
-              <td class="govuk-table__cell">AZ 72 66 91 T</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Critical</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">8 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">AX 56 09 12 Q</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">9 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">WK 66 88 73 O</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">9 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">RE 77 09 24 D</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">9 Oct 2024</td>
-              <td class="govuk-table__cell">Book assessment</td>
-              <td class="govuk-table__cell">IT 44 61 30 L</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Critical</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">9 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">YC 37 92 01 P</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell"><a href="#">View</a></td>
-              <td class="govuk-table__cell">9 Oct 2024</td>
-              <td class="govuk-table__cell">Create report</td>
-              <td class="govuk-table__cell">BU 10 99 72 Y</td>
-              <td class="govuk-table__cell">Julia Nguyen</td>
-              <td class="govuk-table__cell">Medium</td>
-              <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--green">
-                  Completed
-                </strong></td>
-            </tr>
-          </table>
           
+          </table>
+          <p style="text-align: left;"> 0 filter results in 'Closed tasks'.</p>
         </div>
     
         </div>
