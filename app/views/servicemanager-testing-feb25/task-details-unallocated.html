@@ -43,7 +43,7 @@ Task details
 </div>-->
 
       <h1 class="govuk-heading-l">
-        {{ data['tasktypechange'] or "Book assessment" }}
+        Paper based review
       </h1>
 
       <dl class="govuk-summary-list">
@@ -52,7 +52,7 @@ Task details
             Person
           </dt>
           <dd class="govuk-summary-list__value">
-            Deborah Levy
+            Gregory Platt
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -64,24 +64,22 @@ Task details
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            LH 12 88 76 D
+            QQ 53 00 09 C
           </dd>
           <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
-        
+
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>{{ data['tasktypechange'] or "Book assessment" }}</p>
+            Paper based review
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-task-type">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
+            
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -89,12 +87,10 @@ Task details
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--red">
-              OVERDUE 
-           </strong><br>13 October 2024 at 14:39 
+            17 October 2024 at 10:15 
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-due-date">
+            <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"></span>
             </a>
           </dd>
@@ -104,7 +100,7 @@ Task details
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            9 October 2024 at 14:39
+            10 October 2024 at 9:05
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -115,10 +111,10 @@ Task details
             Priority
           </dt>
           <dd class="govuk-summary-list__value">
-            Medium
+            Low
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-task-priority">
+            <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"></span>
             </a>
           </dd>
@@ -128,8 +124,8 @@ Task details
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--green">
-              ACTIVE
+            <strong class="govuk-tag govuk-tag--grey">
+              UNALLOCATED
             </strong></td>
           </dd>
           <dd class="govuk-summary-list__actions">
@@ -141,12 +137,10 @@ Task details
             Team member
           </dt>
           <dd class="govuk-summary-list__value">
-            Julia Nguyen
+            None
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="return-task">
-              Return to queue<span class="govuk-visually-hidden"></span>
-            </a>
+           
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -154,24 +148,23 @@ Task details
             Blocked
           </dt>
           <dd class="govuk-summary-list__value">
-            Aiden Jenkins<br> Amy Anderson (Andi)
+            None
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="unblock">
+            <a class="govuk-link" href="#">
               Change<span class="govuk-visually-hidden"></span>
             </a>
           </dd>
         </div>
       </dl>
-    
-    <div class="govuk-button-group">
-      <a href="task-history-deborah" "=""">
-          <button class="govuk-button govuk-button" data-module="govuk-button">View history</button></a></div>
-          <div class="govuk-button-group">
-  <a href="javascript:window.history.back()" "=""">
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
+      <div class="govuk-button-group">
+        <a href="#" "=""">
+            <button class="govuk-button govuk-button" data-module="govuk-button">View history</button></a></div>
+            <div class="govuk-button-group">
+    <a href="javascript:window.history.back()" "=""">
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
+      </div>
     </div>
-  </div>
    
 
 {% endblock %}

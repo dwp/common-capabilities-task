@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a group
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class=govuk-grid-column-two-thirds>
+      <h1 class="govuk-heading-l">
+        Create a group
+      </h1>
+      <p>Create a group of team members.</p> 
+      <p>Team members will get tasks that match to this group.</p>
+      &nbsp;   
+
+      <div class="govuk-form-group">
+
+          <form method="post" action="choose-group-criteria">
+
+          <label class="govuk-label govuk-label--s" for="humanreadablename">
+            Group name
+          </label>
+        </h1>
+        <div id="event-name-hint" class="govuk-hint">
+          For example, Decision makers.
+        </div>
+        <input class="govuk-input" id="humanreadablename" name="humanreadablename" type="text" aria-describedby="humanreadable-name-hint">
+      </div>
+        <label class="govuk-label govuk-label--s" for="groupname">
+          System ID
+        </label>
+      </h1>
+      <div id="event-name-hint" class="govuk-hint">
+        For example, decision-makers.
+      </div>
+      <input class="govuk-input" id="groupname" name="groupname" type="text" aria-describedby="group-name-hint">
+
+
+
+      <div style="margin-top:20px;" class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+            
+        <a class=" govuk-button govuk-button--secondary" href="javascript:window.history.back()" "=""">
+            Back</a>  
+    </div> 
+  </div>
+  </form>
+    </div>
+  </div>
+</div>
+
+
+{% endblock %}

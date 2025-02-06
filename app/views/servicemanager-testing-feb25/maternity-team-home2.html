@@ -1,0 +1,79 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Maternity Allowance team
+{% endblock %}
+
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Maternity Allowance team
+      </h1>
+
+      <p>In this team area you can:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>view your team members</li>
+        <li>choose a team member to review</li>
+        <li>change their matching criteria</li>
+        <li>add or remove a team member</li>
+      </ul>
+
+
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Maternity Allowance team
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Amy Anderson
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Aiden Jenkins
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Dmitrij Ivanov
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Julia Nguyen
+              </a>
+            </li>
+            <li>
+              <a href="view-edit-fiona">
+                Fiona Murray-Reed
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+
+  </div> 
+  <a href="javascript:window.history.back()"</a>
+    <button class="govuk-button govuk-button--primary" data-module="govuk-button">
+Add a team member    </button>
+</div>
+
+  </div>
+{% endblock %}

@@ -1,106 +1,81 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Check Aiden's details
+Review Decision makers group
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-<div class=spacer1></div>
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Service manager home",
-      href: "home"
-    },
-    {
-      text: "Set up and manage team",
-      href: "manage-team"
-    }
-  ]
-}) }}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
 {% endblock %}
 
 {% block content %}
-
   <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-l">
-        Aiden Jenkin’s details
-      </h1>
-      
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Review {{ data['humanreadablename'] or "None" }}</h1>
+
+      <p>Check that the details of your new group are correct.</p>
+
+      <p>Make any changes if needed, then confirm.</p>
 
       <h2 class="govuk-heading-m">
-        Aiden's task types
+        Task types
       </h1>
-      <p>Aiden can work on:</p>
-      
+
+      <p>{{ data['humanreadablename'] or "None" }} will be able to:</p>
       <ul class="govuk-list govuk-list--bullet">
-        
-        <li>Add a customer's proof of income</li>
-        <li>Update a customer's bank details</li>
+        <li>Review incident outcomes</li>
       </ul>
-      <p>You can change the tasks that Aiden can work on by adding or removing them from groups or changing their matching criteria.</p>
-      &nbsp;
 
-      <h2 class="govuk-heading-m">
-        Return all of Aiden's tasks to the queue
-      </h1>
-      <p>Check with Aiden before doing this, as it will return tasks that are in progress.</p>
-      <div class="govuk-button-group">
-        <a href="remove-all-tasks">
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Return tasks to queue
-        </button>
-        </a>
-        </div>
-
-      &nbsp;
-
-      
-      
-      &nbsp;
-      <h3 class="govuk-heading-m">Groups</h3>
-
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-        </thead>
-        <tbody class="govuk-table__body">
-       
-          <tr class="govuk-table__row">
-
-            <td class="govuk-table__cell govuk-table__cell">Admin</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">
-            <a class="govuk-link" href="change-andi-groups">Add</td></a>
-          </tr>
-          <tr class="govuk-table__row">
-
-            <td class="govuk-table__cell govuk-table__cell">Decision makers</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">
-              <a class="govuk-link" href="change-andi-groups">Remove</td></a>
-          </tr>
-        </tbody>
-      </table>
-      
-
-      &nbsp;
-
-
-  
-      <h3 class="govuk-heading-m">Individual matching criteria</h3>
+      <h2 class="govuk-heading-m">Group details</h2>
 
       <dl class="govuk-summary-list">
+        
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group name
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p> {{ data['humanreadablename'] or "None" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-group-name">
+                Change<span class="govuk-visually-hidden"> group name</span>
+
+            </a>
+          </dd>
+        </div>
 
         <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            System ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p>{{ data['groupname'] or "None" }}</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+                Change<span class="govuk-visually-hidden"> group name</span>
 
+            </a>
+          </dd>
+        </div>
+
+      </dl>
+      &nbsp;
+      <h2 class="govuk-heading-m">Matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Grade
           </dt>
-
           <dd class="govuk-summary-list__value">
-            {% if data['andi-grade']|length > 0 %} 
+            {% if data['group-grade']|length > 0 %}
               <ul class="govuk-list">
-                {% for item in data['andi-grade'] %}
+                {% for item in data['group-grade'] %}
                   <li>
                     {{ item 
                     | replace("ao", "AO")
@@ -108,61 +83,55 @@ Check Aiden's details
                   </li>
                 {% endfor %}
               </ul>
-              {% else %} 
-                AA <br> AO
-              {% endif %}
+            {% else %}
+              None
+            {% endif %}
           </dd>
-
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-andi-grade">
-              {% if data['andi-grade']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> grade</span>
+            <a class="govuk-link" href="change-group-grade">
+              {% if data['group-grade']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> grade</span>
               {% else %}
-                Change<span class="govuk-visually-hidden"> name</span>
+                Change<span class="govuk-visually-hidden"> grade</span>
               {% endif %}
             </a>
           </dd>
-
         </div>
 
         <div class="govuk-summary-list__row">
-
           <dt class="govuk-summary-list__key">
             Language
           </dt>
-
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">
-              {% if data['language'] == 'welsh'%} 
-                Welsh
-              {% else %} 
-                Welsh
-              {% endif %}
-            </p>
+            {% if data['group-language']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-language'] == 'welsh'%} 
+                  Welsh
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
           </dd>
-
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['language']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> language</span>
+              {% if data['group-language']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> language</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> language</span>
               {% endif %}
             </a>
           </dd>
-
         </div>
 
         <div class="govuk-summary-list__row">
-
           <dt class="govuk-summary-list__key">
             Location
           </dt>
-
           <dd class="govuk-summary-list__value">
-            {% if data['country']|length > 0 %}
+            {% if data['group-location']|length > 0 %}
               <ul class="govuk-list">
-                {% for item in data['country'] %}
+                {% for item in data['group-location'] %}
                   <li>
                     {{ item 
                     | replace("england", "England") 
@@ -172,33 +141,29 @@ Check Aiden's details
                   </li>
                 {% endfor %}
               </ul>
-            {% else %} 
-              Northern Ireland
+            {% else %}
+              None
             {% endif %}
           </dd>
-
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['country']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> location</span>
+              {% if data['group-location']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> location</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> location</span>
               {% endif %}
             </a>
           </dd>
-
         </div>
 
         <div class="govuk-summary-list__row">
-
           <dt class="govuk-summary-list__key">
             Office ID
           </dt>
-
           <dd class="govuk-summary-list__value">
-            {% if data['location']|length > 0 %}
+            {% if data['group-office']|length > 0 %}
               <ul class="govuk-list">
-                {% for item in data['location'] %}
+                {% for item in data['group-office'] %}
                   <li>
                     {{ item 
                     | replace("bristol", "Bristol") 
@@ -208,21 +173,19 @@ Check Aiden's details
                   </li>
                 {% endfor %}
               </ul>
-            {% else %} 
+            {% else %}
               None
             {% endif %}
           </dd>
-
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['location']|length == 0 %} 
+              {% if data['group-office']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> office ID</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> office ID</span>
               {% endif %}
             </a>
           </dd>
-
         </div>
 
         <div class="govuk-summary-list__row">
@@ -230,9 +193,9 @@ Check Aiden's details
             Role
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['andi-role']|length > 0 %}
+            {% if data['group-role']|length > 0 %}
               <ul class="govuk-list">
-                {% for item in data['andi-role'] %}
+                {% for item in data['group-role'] %}
                   <li>
                     {{ item 
                     | replace("decision-maker", "Decision maker") 
@@ -240,13 +203,13 @@ Check Aiden's details
                   </li>
                 {% endfor %}
               </ul>
-            {% else %} 
+            {% else %}
               None
             {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['andi-role']|length == 0 %} 
+              {% if data['group-role']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> role</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> role</span>
@@ -260,17 +223,19 @@ Check Aiden's details
             Working pattern
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">
-              {% if data['pattern'] == 'mfpm'%} 
-                M-F PM
-              {% else %} 
-                None
-              {% endif %}
-            </p>
+            {% if data['group-pattern']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-pattern'] == 'mfpm'%} 
+                  M-F PM
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['pattern']|length == 0 %} 
+              {% if data['group-pattern']|length == 0 %} 
                 Add<span class="govuk-visually-hidden"> working pattern</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> working pattern</span>
@@ -279,20 +244,34 @@ Check Aiden's details
           </dd>
         </div>
       </dl>
+      &nbsp;
+      
+      <table class="govuk-table"> 
+        <caption class="govuk-table__caption govuk-table__caption--m">Group members
+          <div style="float: right;"><p><a href="change-group-members">Add a group member</a></p></div>
+        </caption>
+          <thead class="govuk-table__head">
+            
+              <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Staff number</th>
+              <th scope="col" class="govuk-table__header app-custom-class"></th>
+            </thead>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Aiden Jenkins</td>
+            <td class="govuk-table__cell">12345678</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      &nbsp;
 
-      <div class="govuk-button-group">
- 
-        <a href="confirm-removal">
-        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
-          Remove from team
-        </button>
+      <form action="groups-home-success" method="post" novalidate>
+        <input type="hidden" name="page-page" value="true">
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      </form>
     </div>
-
-    <div class="govuk-button-group">
-      <a href="javascript:window.history.back()" "=""">
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>  
-  </div> 
   </div>
-
-
 {% endblock %}
