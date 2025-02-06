@@ -11,21 +11,19 @@ Change the completion timeframe
 {% block content %}
 
 <div class="govuk-width-container">
-
+  <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
   
-<h1 class="govuk-heading-l">Change or remove completion timeframe</h1>
+<h1 class="govuk-heading-l">Take off hold</h1>
     
-  <p>An optional completion timeframe indicates when a task should be completed by.</p>
-  <p>Do not give a timeframe if you do not need due dates for this task type.</p>
-  <br>
+  <p>This will allow a team member to work on it.</p>
   
   <div class="govuk-form-group">
     <fieldset class="govuk-fieldset">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
         <h1 class="govuk-fieldset__heading">
-          Do you want this task type to have a completion timeframe?
+            Do you want to take this task off hold? 
         </h1>
       </legend>
       <div class="govuk-radios" data-module="govuk-radios">
@@ -45,20 +43,19 @@ Change the completion timeframe
       </div>
     </fieldset>
   </div>
+ 
 
-
-  {% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 <div class="govuk-button-group">
-    <a href="change-timeframe" "=""">
-    <button class="govuk-button" data-module="govuk-button">Continue</button>
+    <a href="#" "=""">
+    <button class="govuk-button" data-module="govuk-button">Confirm</button>
     <a href="javascript:window.history.back()" "=""">
         <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
 </div>
-</main>
 </div>
-
-
-
-
+</form>
+</div>
+</div>
+</main>
 
 {% endblock %}

@@ -15,19 +15,23 @@ Add Andi to groups
 {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 <div class="govuk-width-container">
   <h1 class="govuk-heading-l">
-    Change groups
+    Add Andi to groups
   </h1>
+
+  <p>Andi will get tasks that match.</p>
+
+  <p>You can also give Andi individual matching criteria. Skip this step if you do not want to put Andi in a group.</p>
 
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
-      <form class="form" action="review-team-member-aiden" method="post">
+      <form class="form" action="choose-individual-criteria" method="post">
         <div class="govuk-grid-column-two-thirds">
        <h2 class="govuk-heading-m">Groups</h2>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="groups-hint">
               
               <div id="groups-hint" class="govuk-hint">
-                Change the groups you want Aiden to be in.
+                Select the groups you want to add Andi to.
               </div>
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
@@ -39,7 +43,7 @@ Add Andi to groups
                 <details class="govuk-details">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                      Admin task details
+                      Admin task types
                     </span>
                   </summary>
                   <div class="govuk-details__text">
@@ -61,7 +65,7 @@ Add Andi to groups
               <details class="govuk-details">
                 <summary class="govuk-details__summary">
                   <span class="govuk-details__summary-text">
-                    Decison makers task details
+                    Decison makers task types
                   </span>
                 </summary>
                 <div class="govuk-details__text">
@@ -80,10 +84,10 @@ Add Andi to groups
           {% from "govuk/components/button/macro.njk" import govukButton %}
           <div class="govuk-button-group">
             <button class="govuk-button" data-module="govuk-button">
-              Confirm
+              Continue
             </button>
             <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Back
+              Skip
             </button> 
           </div>
         </div>

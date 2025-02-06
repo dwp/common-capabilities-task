@@ -17,7 +17,7 @@ Task details
     },
     {
       text: "All tasks",
-      href: "manage-tasks"
+      href: " manage-tasks#past-week"
     }
   ]
 }) }}
@@ -27,24 +27,11 @@ Task details
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-    <!--  <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-  aria-labelledby="govuk-notification-banner-title"
-  data-module="govuk-notification-banner">
-  <div class="govuk-notification-banner__header">
-    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-      Success
-    </h2>
-  </div>
-  <div class="govuk-notification-banner__content">
-    <h3 class="govuk-notification-banner__heading">
-      You returned this task to the queue and blocked the team member from working on it.
-    </h3>
-  </div>
-</div>-->
 
       <h1 class="govuk-heading-l">
-        {{ data['tasktypechange'] or "Book assessment" }}
+        Book assessment
       </h1>
+
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -52,37 +39,37 @@ Task details
             Person
           </dt>
           <dd class="govuk-summary-list__value">
-            Deborah Levy
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
+            Chen Huang
           </dd>
         </div>
-
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            LH 12 88 76 D
+            LR 54 92 84 D
           </dd>
           <dd class="govuk-summary-list__actions">
             
           </dd>
         </div>
-        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            <p>{{ data['tasktypechange'] or "Book assessment" }}</p>
+            Paper based review
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-task-type">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Closed
+          </dt>
+          <dd class="govuk-summary-list__value">
+            
+            15 October 2023 at 16:11
           </dd>
+          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -90,13 +77,9 @@ Task details
           </dt>
           <dd class="govuk-summary-list__value">
             <strong class="govuk-tag govuk-tag--red">
-              OVERDUE 
-           </strong><br>13 October 2024 at 14:39 
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-due-date">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
+              Overdue
+          </strong><br>
+            14 October 2023 at 7:01
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -104,10 +87,7 @@ Task details
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            9 October 2024 at 14:39
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
+            9 October 2023 at 7:01
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -115,27 +95,23 @@ Task details
             Priority
           </dt>
           <dd class="govuk-summary-list__value">
-            Medium
+            Low
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-task-priority">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
+          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            <strong class="govuk-tag govuk-tag--green">
-              ACTIVE
-            </strong></td>
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
+              <strong class="govuk-tag govuk-tag--grey">
+                Failed
+            </strong>
+            </dd>
           </dd>
         </div>
+        
+        
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Team member
@@ -143,35 +119,30 @@ Task details
           <dd class="govuk-summary-list__value">
             Julia Nguyen
           </dd>
-          <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="return-task">
-              Return to queue<span class="govuk-visually-hidden"></span>
-            </a>
-          </dd>
+          
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Blocked
           </dt>
           <dd class="govuk-summary-list__value">
-            Aiden Jenkins<br> Amy Anderson (Andi)
+            None
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="unblock">
-              Change<span class="govuk-visually-hidden"></span>
-            </a>
+            
           </dd>
         </div>
+        
+        
       </dl>
-    
-    <div class="govuk-button-group">
-      <a href="task-history-deborah" "=""">
-          <button class="govuk-button govuk-button" data-module="govuk-button">View history</button></a></div>
-          <div class="govuk-button-group">
-  <a href="javascript:window.history.back()" "=""">
-    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
+      <div class="govuk-button-group">
+        <a href="#" "=""">
+            <button class="govuk-button govuk-button" data-module="govuk-button">View history</button></a></div>
+            <div class="govuk-button-group">
+    <a href="javascript:window.history.back()" "=""">
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
+      </div>
     </div>
-  </div>
    
 
 {% endblock %}

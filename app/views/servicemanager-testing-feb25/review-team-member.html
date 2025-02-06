@@ -1,24 +1,11 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Check Aiden's details
+Check Andi’s details
 {% endblock %}
 
 {% block beforeContent %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-<div class=spacer1></div>
-{{ govukBreadcrumbs({
-  items: [
-    {
-      text: "Service manager home",
-      href: "home"
-    },
-    {
-      text: "Set up and manage team",
-      href: "manage-team"
-    }
-  ]
-}) }}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
 
 {% block content %}
@@ -26,35 +13,21 @@ Check Aiden's details
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">
-        Aiden Jenkin’s details
+        Check Andi’s details
       </h1>
-      
+      <p>Check that Andi’s details are correct.</p>
 
       <h2 class="govuk-heading-m">
-        Aiden's task types
+        Andi's task types
       </h1>
-      <p>Aiden can work on:</p>
+      <p>Andi can work on:</p>
       
       <ul class="govuk-list govuk-list--bullet">
-        
+        <li>Change a customer's address</li>
         <li>Add a customer's proof of income</li>
         <li>Update a customer's bank details</li>
       </ul>
-      <p>You can change the tasks that Aiden can work on by adding or removing them from groups or changing their matching criteria.</p>
-      &nbsp;
-
-      <h2 class="govuk-heading-m">
-        Return all of Aiden's tasks to the queue
-      </h1>
-      <p>Check with Aiden before doing this, as it will return tasks that are in progress.</p>
-      <div class="govuk-button-group">
-        <a href="remove-all-tasks">
-        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
-          Return tasks to queue
-        </button>
-        </a>
-        </div>
-
+      <p>You can change the tasks that Andi can work on by adding or removing them from groups or changing their matching criteria.</p>
       &nbsp;
 
       
@@ -109,14 +82,14 @@ Check Aiden's details
                 {% endfor %}
               </ul>
               {% else %} 
-                AA <br> AO
+                None
               {% endif %}
           </dd>
 
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="change-andi-grade">
+            <a class="govuk-link" href="#">
               {% if data['andi-grade']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> grade</span>
+                Add<span class="govuk-visually-hidden"> grade</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> name</span>
               {% endif %}
@@ -136,7 +109,7 @@ Check Aiden's details
               {% if data['language'] == 'welsh'%} 
                 Welsh
               {% else %} 
-                Welsh
+                None
               {% endif %}
             </p>
           </dd>
@@ -144,7 +117,7 @@ Check Aiden's details
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
               {% if data['language']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> language</span>
+                Add<span class="govuk-visually-hidden"> language</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> language</span>
               {% endif %}
@@ -173,14 +146,14 @@ Check Aiden's details
                 {% endfor %}
               </ul>
             {% else %} 
-              Northern Ireland
+              None 
             {% endif %}
           </dd>
 
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
               {% if data['country']|length == 0 %} 
-                Change<span class="govuk-visually-hidden"> location</span>
+                Add<span class="govuk-visually-hidden"> location</span>
               {% else %}
                 Change<span class="govuk-visually-hidden"> location</span>
               {% endif %}
@@ -281,17 +254,12 @@ Check Aiden's details
       </dl>
 
       <div class="govuk-button-group">
- 
-        <a href="confirm-removal">
-        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
-          Remove from team
+        <a href="manage-team-members-success">
+        <button class="govuk-button" data-module="govuk-button">
+          Confirm
         </button>
+      </div>
     </div>
-
-    <div class="govuk-button-group">
-      <a href="javascript:window.history.back()" "=""">
-          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>  
-  </div> 
   </div>
 
 
