@@ -43,7 +43,7 @@ Task details
 </div>-->
 
       <h1 class="govuk-heading-l">
-        Paper based review
+        {{ data['tasktypechange'] or "Paper based review" }}
       </h1>
 
       <dl class="govuk-summary-list">
@@ -76,12 +76,23 @@ Task details
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            Paper based review
+            <p>{{ data['tasktypechange'] or "Paper based review" }}</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="change-task-type">
               Change<span class="govuk-visually-hidden"></span>
             </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            66f150c7813d735cabfae4be
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            
           </dd>
         </div>
         <div class="govuk-summary-list__row">

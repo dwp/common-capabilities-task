@@ -51,13 +51,15 @@ data-module="govuk-notification-banner">
   
  
     &nbsp;
-  <div class="box5">
-    <h2 class="govuk-heading-m"><a href="#">Admin</a></h2>
-      </div>
+    <div class="box3">
+      <h2 class="govuk-heading-m"><a href="group-details">Admin</a></h2>
+      <p>Administrators manage day to day office operations.</p>
+        </div>
 
-      <div class="box5" style="margin-top:20px;">
+      <div class="box3" style="margin-top:20px;">
         <h2 class="govuk-heading-m"><a href="#">
           {{ data['humanreadablename'] or "Decision makers" }}</a></h2>
+          <p>{{ data['groupname'] or "" }}</p>
           </div>
 
 
