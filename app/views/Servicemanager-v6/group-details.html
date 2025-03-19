@@ -53,33 +53,18 @@ Review Admin group
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Members
+            Description
           </dt>
           <dd class="govuk-summary-list__value">
-            {% if data['group-members']|length > 0 %}
-              <ul class="govuk-list">
-                {% for item in data['group-members'] %}
-                  <li>
-                    {{ item 
-                    | replace("amy", "Amy Anderson (Andi)") 
-                    | replace("aiden", "Aiden Jenkins") 
-                    | replace("dmitrij", "Dmitrij Ivanov") 
-                    | replace("julia", "Julia Nguyen")
-                    | replace("fiona", "Fiona Murray-Reed") }}
-                  </li>
-                {% endfor %}
-              </ul>
-            {% else %}
-              None
-            {% endif %}
+            Admin group members are level AO or higher. 
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="#">
-              {% if data['group-members']|length == 0 %} 
-                Add<span class="govuk-visually-hidden"> members</span>
-              {% else %}
-                Change<span class="govuk-visually-hidden"> members</span>
-              {% endif %}
+               
+               
+              
+                Change<span class="govuk-visually-hidden"></span>
+              
             </a>
           </dd>
         </div>
@@ -266,7 +251,24 @@ Review Admin group
         </div>
       </dl>
 
-      
+      <table class="govuk-table"> 
+        <caption class="govuk-table__caption govuk-table__caption--m">Group members
+          <div style="float: right;"><p><a href="change-group-members">Add a group member</a></p></div>
+        </caption>
+          <thead class="govuk-table__head">
+            
+              <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Staff number</th>
+              <th scope="col" class="govuk-table__header app-custom-class"></th>
+            </thead>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Aiden Jenkins</td>
+            <td class="govuk-table__cell">12345678</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+
         
         <a href="#">
           <button class="govuk-button govuk-button--warning" data-module="govuk-button">
@@ -280,12 +282,12 @@ Review Admin group
                     Back
                   </button> 
                   </div>
-                 
-                </div>
-    </div>
-    <div>
-  </div>
-</div>
-  </div>
+                
+                </div> 
+              </div>
+   
+ 
+
+ 
 </form>
 {% endblock %}'['

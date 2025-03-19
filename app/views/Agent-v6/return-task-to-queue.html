@@ -1,0 +1,141 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Return task to queue
+{% endblock %}
+
+
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Return task to queue
+      </h1>
+
+      <p>If you are unable to work on Missing payment for Deborah Levy right now and need another team member to complete it, you should return it to the queue.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+            <!--<p id="whereDoYouLive-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> Select if you would like to return this task to the queue
+              </p>-->
+          <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+          <label class="govuk-label govuk-radios__label" for="contact-2">
+            Return
+          </label>
+          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            You may get this task again.
+                </div>
+                  </div>
+        <div class="govuk-radios__conditional govuk-checkboxes__radios--hidden" id="conditional-contact-2">
+          <div class="govuk-form-group">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                  Reason
+              </h3>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    I'm about to take time off for sickness or leave
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                  <label class="govuk-label govuk-checkboxes__label" for="contact">
+                    Customer could not be identified
+                  </label>
+                </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                    <label class="govuk-label govuk-checkboxes__label" for="contact">
+                        Another reason
+                        <div id="contact-hint" class="govuk-hint">
+                            Talk to your team lead about what this reason is.
+                          </div>
+                    </label>
+                  </div>
+                
+                </div>
+              
+                </div>
+              
+              
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
+          <label class="govuk-label govuk-radios__label" for="contact-3">
+            Return and block
+          </label>
+          <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+            You will not get this task again.
+        </div>
+        </div>
+        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-3">
+            <div class="govuk-form-group">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              <h3 class="govuk-fieldset__heading">
+                  Reason
+              </h3>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+            </legend>
+                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                      <label class="govuk-label govuk-checkboxes__label" for="contact">
+                        I know the customer
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                          I don't have the right skills or training
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                          This task makes me feel unsafe
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                        <label class="govuk-label govuk-checkboxes__label" for="contact">
+                            Another reason
+                            <div id="contact-hint" class="govuk-hint">
+                                Talk to your team lead about what this reason is.
+                              </div>
+                        </label>
+                      </div>
+                    </div>
+                    </div>
+      </div>
+    </fieldset>
+  </div>
+</div>
+</div>
+
+
+  <div class="govuk-button-group">
+    <a href="#" "=""">
+    <button class="govuk-button" data-module="govuk-button">Confirm</button>
+    <a href="javascript:window.history.back()"</a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Back
+    </button>
+{% endblock %}
