@@ -1,0 +1,48 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Create a task
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class=govuk-grid-column-two-thirds>
+    <h1 class="govuk-heading-l">
+      Create a task
+    </h1>
+        
+            <div class="govuk-form-group">
+                <form method="post" action="review-new-task">
+
+                <h1 class="govuk-label-wrapper">
+                  <label class="govuk-label govuk-label--m" for="more-context">
+                    Notes
+                  </label>
+                </h1>
+                <div id="more-context-hint" class="govuk-hint">
+                  Add any necessary information that was not on the previous page here. Do not include personal or financial information, like the customer's National Insurance number.
+                </div>
+                <textarea class="govuk-textarea" id="more-detail" name="moreContext" rows="5" aria-describedby="more-context-hint"></textarea>
+              </div>
+
+
+      <div style="margin-top:20px;" class="govuk-button-group">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+          
+      <a class=" govuk-button govuk-button--secondary" href="javascript:window.history.back()" "=""">
+          Back</a>  
+  </div> 
+</form>
+</div>
+
+
+
+
+{% endblock %}

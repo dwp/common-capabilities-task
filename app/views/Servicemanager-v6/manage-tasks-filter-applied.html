@@ -19,6 +19,7 @@
 
 {% block content %}
 
+<!-- Filter success message -->
 
   <div class="govuk-grid-full">
     <div class="govuk-notification-banner govuk-notification-banner--success" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
@@ -34,6 +35,9 @@
         <p><a href="manage-tasks">Clear filter</a></p>
     </div>
       </div>
+
+      <!-- Sort and filter -->
+
     <h1 class="govuk-heading-l">
       All tasks
     </h1>
@@ -79,7 +83,8 @@
         </div>
           </div>
           
-
+    <!-- Filtered table results -->
+          
      <div class="govuk-tabs" data-module="govuk-tabs">
       <ul class="govuk-tabs__list">
         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
@@ -98,6 +103,8 @@
           </a>
         </li>
       </ul>
+
+      <!-- Tasks tab filtered -->
 
         <div class="govuk-tabs__panel" id="tasks">
           <h2 class="govuk-heading-l">Tasks
@@ -158,6 +165,8 @@
           </table>
           
         </div>
+
+        <!-- On hold tasks tab filtered -->
         
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="on-hold-tasks">
           <h2 class="govuk-heading-l">On hold tasks
@@ -175,6 +184,8 @@
           </table>
           <p style="text-align: left;"> 0 filter results in 'On hold tasks'.</p>
         </div>
+
+        <!-- Closed tasks tab filtered -->
         
         <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="finished-tasks">
           <h2 class="govuk-heading-l">Closed tasks
@@ -196,6 +207,9 @@
     
         </div>
         &nbsp;
+
+        <!-- Pagination -->
+
         <nav class="govuk-pagination" role="navigation" aria-label="results">
           <div class="govuk-pagination__prev">
             <a class="govuk-link govuk-pagination__link" href="#" rel="prev">

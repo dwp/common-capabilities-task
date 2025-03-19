@@ -10,21 +10,17 @@ Task details
 <div class=spacer1></div>
 
 {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Agent home",
-        href: "agent"
-      },
-      {
-        text: "Find a person",
-        href: "find-person"
-      },
-      {
-        text: "All State Pension tasks for Aisha Hendry",
-        href: "task-results"
-      }
-    ]
-  }) }}
+  items: [
+    {
+      text: "Agent home",
+      href: "Agent"
+    },
+    {
+      text: "My tasks",
+      href: "javascript:window.history.back()"
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -33,9 +29,8 @@ Task details
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Explain an overpayment for Aisha Hendry
+        Book assessment
       </h1>
-    
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -43,7 +38,7 @@ Task details
             Person
           </dt>
           <dd class="govuk-summary-list__value">
-            Aisha Hendry
+            Sylvia Cuevas
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -54,7 +49,7 @@ Task details
             National Insurance number
           </dt>
           <dd class="govuk-summary-list__value">
-            DE 12 34 56 C
+            PW 82 00 91 D
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -65,10 +60,12 @@ Task details
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            Explain an overpayment
+            Book assessment
           </dd>
           <dd class="govuk-summary-list__actions">
-            
+            <a class="govuk-link" href="return-task-to-queue">
+              Return to queue<span class="govuk-visually-hidden"></span>
+            </a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -76,12 +73,10 @@ Task details
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-            9 November 2024 at 13:12
+            8 Mar 2024 at 17:35
           </dd>
             <dd class="govuk-summary-list__actions">
-              <strong class="govuk-tag govuk-tag--red">
-                OVERDUE 
-             </strong>
+               
               </dd>
           </dd>
         </div>
@@ -90,7 +85,7 @@ Task details
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            9 October 2024 at 14:12
+            7 Mar 2025 at 14:12
           </dd>
           <dd class="govuk-summary-list__actions">
             
@@ -106,26 +101,19 @@ Task details
           </strong>
           </dd>
           <dd class="govuk-summary-list__actions">
-            
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Team member
-          </dt>
-          <dd class="govuk-summary-list__value">
-            Julia Nguyen
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            
+            <a href="put-on-hold">Put on hold</a>
           </dd>
         </div>
         
       </dl>
       <div class="govuk-button-group">
-        
+        <a href="#" "=""">
+        <button class="govuk-button govuk-button" data-module="govuk-button">Open</button>
+        <a href="close-task" "=""">
+            <button class="govuk-button govuk-button" data-module="govuk-button">Close task</button></a></div>
+            <div class="govuk-button-group">
     <a href="javascript:window.history.back()" "=""">
       <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button></div>
-    </div>
+    
 
 {% endblock %}
