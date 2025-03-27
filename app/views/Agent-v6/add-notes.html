@@ -13,20 +13,25 @@ Create a task
 <div class="govuk-grid-row">
   <div class=govuk-grid-column-two-thirds>
     <h1 class="govuk-heading-l">
-      Create a task
+      Add notes
     </h1>
-        
+    <p>Any person could ask to read notes about themselves in a freedom of information request. When you write a note, please:
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Keep it short</li>
+        <li>Keep it kind</li>
+        <li>Do not include any personal information</li>
+      </ul>
+      </p>
             <div class="govuk-form-group">
                 <form method="post" action="review-new-task">
 
                 <h1 class="govuk-label-wrapper">
                   <label class="govuk-label govuk-label--m" for="more-context">
-                    Notes
+                    Notes (optional)
                   </label>
                 </h1>
-                <div id="more-context-hint" class="govuk-hint">
-                  Add any necessary information that was not on the previous page here. Do not include personal or financial information, like the person's National Insurance number.
-                </div>
+
+                
                 <textarea class="govuk-textarea" id="more-detail" name="moreContext" rows="5" aria-describedby="more-context-hint"></textarea>
               </div>
 
@@ -36,7 +41,7 @@ Create a task
             Continue
           </button>
           
-      <a class=" govuk-button govuk-button--secondary" href="javascript:window.history.back()" "=""">
+      <a class=" govuk-button govuk-button--secondary" href="review-new-task" "=""">
           Back</a>  
   </div> 
 </form>
