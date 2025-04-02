@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Add Andi to groups
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+{% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">
+    Change groups
+  </h1>
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <form class="form" action="review-team-member-aiden" method="post">
+        <div class="govuk-grid-column-two-thirds">
+       <h2 class="govuk-heading-m">Groups</h2>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="groups-hint">
+              
+              <div id="groups-hint" class="govuk-hint">
+                Change the groups you want Aiden to be in.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="groups" name="groups" type="checkbox" value="admin">
+                  <label class="govuk-label govuk-checkboxes__label" for="groups">
+                    Admin
+                  </label>
+                </div>
+                <details class="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Admin task details
+                    </span>
+                  </summary>
+                  <div class="govuk-details__text">
+                    <p>Team members in Admin can work on:</p>
+                    <ul class="govuk-list govuk-list--bullet">
+                      <li>Change a person's address</li>
+                      <li>Add a person's proof of income</li>
+                    </ul>
+                  </div>
+                </details>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste-2" name="groups" type="checkbox" value="decision makers">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                    Decision makers
+                  </label>
+                </div>
+              </div>
+              &nbsp;
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Decison makers task details
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>Team members in Decision makers can work on:</p>
+                  <ul class="govuk-list govuk-list--bullet">
+                    <li>Change a person's address</li>
+                    <li>Update a person's bank details</li>
+                  </ul>
+                </div>
+              </details>
+            </fieldset>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-two-thirds">
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+              Confirm
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Back
+            </button> 
+          </div>
+        </div>
+      </form>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

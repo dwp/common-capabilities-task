@@ -1,0 +1,283 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Change address
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    },
+    
+    {
+      text: "Task types",
+      href: "manage-task-types"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+ 
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+  <h1 class="govuk-heading-l">Change address</h1>
+  &nbsp;
+
+  <!-- Note: This should come back in when the concept of teams is implemented.
+  
+  <h2 class="govuk-heading-m" id="subsection-title">
+    Team members
+  </h2>
+ <p>Based on the criteria you chose for groups or individuals, these team members match to this task type:</p>
+ <ul class="govuk-list govuk-list--bullet">
+  <li>Amy Anderson (Andi)</li>
+  <li>Dmitrij Ivanov</li>
+  <li>Julia Nguyen</li>
+</ul>
+-->
+ 
+  <h2 class="govuk-heading-m">Task type details</h2>
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Change address"
+            },
+            
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "task type name"
+                }
+              ]
+            }
+          },
+          
+          {
+            key: {
+              text: "Priority level"
+            },
+            value: {
+              text: "Medium"
+            },
+            actions: {
+              items: [
+                {
+                  href: "change-task-type-priority",
+                  text: "Change",
+                  visuallyHiddenText: "priority level"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Must complete in"
+            },
+            value: {
+              text: "5 days"
+            },
+            actions: {
+              items: [
+                {
+                  href: "manage-timeframe",
+                  text: "Change",
+                  visuallyHiddenText: "must complete in"
+                }
+              ]
+            }
+          }
+         
+        ]
+      }) }}
+
+    
+<h2 class="govuk-heading-m">Task matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                  <li>
+                    AA
+                  </li>
+                  <li>
+                    AO
+                  </li>
+              </ul>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+             Change
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-language']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-language'] == 'welsh'%} 
+                  Welsh
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-language']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> language</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+
+            <dd class="govuk-summary-list__value">
+              <ul class="govuk-list">
+                  <li>
+                    England
+                  </li>
+                  <li>
+                    Scotland
+                  </li>
+              </ul>
+
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change
+             </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-office']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-office'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-office']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> office ID</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> office ID</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-role']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> role</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> role</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-pattern']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-pattern'] == 'mfpm'%} 
+                  M-F PM
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-pattern']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> working pattern</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> working pattern</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </div>
+      </div>
+      </dl>
+
+ 
+
+        <div class="govuk-button-group">
+          <!--<a href="manage-task-types" "=""">
+            <button class="govuk-button" data-module="govuk-button">Confirm</button></a>-->
+          <a href="javascript:window.history.back()" "=""">
+              <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>
+
+      </div>
+
+    </form>
+    </div>
+  </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,298 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Check Aiden's details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    },
+    {
+      text: "Set up and manage team",
+      href: "manage-team"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">
+        Aiden Jenkin’s details
+      </h1>
+      
+
+      <h2 class="govuk-heading-m">
+        Aiden's task types
+      </h1>
+      <p>Aiden can work on:</p>
+      
+      <ul class="govuk-list govuk-list--bullet">
+        
+        <li>Add a person's proof of income</li>
+        <li>Update a person's bank details</li>
+      </ul>
+      <p>You can change the tasks that Aiden can work on by adding or removing them from groups or changing their matching criteria.</p>
+      &nbsp;
+
+      <h2 class="govuk-heading-m">
+        Return all of Aiden's tasks to the queue
+      </h1>
+      <p>Check with Aiden before doing this, as it will return tasks that are in progress.</p>
+      <div class="govuk-button-group">
+        <a href="remove-all-tasks">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Return tasks to queue
+        </button>
+        </a>
+        </div>
+
+      &nbsp;
+
+      
+      
+      &nbsp;
+      <h3 class="govuk-heading-m">Groups</h3>
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+        </thead>
+        <tbody class="govuk-table__body">
+       
+          <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell govuk-table__cell">Admin</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link" href="change-andi-groups">Add</td></a>
+          </tr>
+          <tr class="govuk-table__row">
+
+            <td class="govuk-table__cell govuk-table__cell">Decision makers</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">
+              <a class="govuk-link" href="change-andi-groups">Remove</td></a>
+          </tr>
+        </tbody>
+      </table>
+      
+
+      &nbsp;
+
+
+  
+      <h3 class="govuk-heading-m">Individual matching criteria</h3>
+
+      <dl class="govuk-summary-list">
+
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-grade']|length > 0 %} 
+              <ul class="govuk-list">
+                {% for item in data['andi-grade'] %}
+                  <li>
+                    {{ item 
+                    | replace("ao", "AO")
+                    | replace("aa", "AA") }}
+                  </li>
+                {% endfor %}
+              </ul>
+              {% else %} 
+                AA <br> AO
+              {% endif %}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-andi-grade">
+              {% if data['andi-grade']|length == 0 %} 
+                Change<span class="govuk-visually-hidden"> grade</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> name</span>
+              {% endif %}
+            </a>
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['language'] == 'welsh'%} 
+                Welsh
+              {% else %} 
+                Welsh
+              {% endif %}
+            </p>
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['language']|length == 0 %} 
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% endif %}
+            </a>
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            {% if data['country']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['country'] %}
+                  <li>
+                    {{ item 
+                    | replace("england", "England") 
+                    | replace("northern-ireland", "Northern Ireland") 
+                    | replace("scotland", "Scotland") 
+                    | replace("wales", "Wales") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              Northern Ireland
+            {% endif %}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['country']|length == 0 %} 
+                Change<span class="govuk-visually-hidden"> location</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> location</span>
+              {% endif %}
+            </a>
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+
+          <dd class="govuk-summary-list__value">
+            {% if data['location']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['location'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['location']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> office ID</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> office ID</span>
+              {% endif %}
+            </a>
+          </dd>
+
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['andi-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['andi-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %} 
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['andi-role']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> role</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> role</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">
+              {% if data['pattern'] == 'mfpm'%} 
+                M-F PM
+              {% else %} 
+                None
+              {% endif %}
+            </p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['pattern']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> working pattern</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> working pattern</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <div class="govuk-button-group">
+ 
+        <a href="confirm-removal">
+        <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+          Remove from team
+        </button>
+    </div>
+
+    <div class="govuk-button-group">
+      <a href="javascript:window.history.back()" "=""">
+          <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Back</button>  
+  </div> 
+  </div>
+
+
+{% endblock %}

@@ -1,0 +1,154 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Task details
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">
+  Back
+</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">
+  {{ data['tasktypechange'] or "Paper based review" }}
+</h1>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Person
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Gregory Platt
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National Insurance number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ 53 00 09 C
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Task
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p>{{ data['tasktypechange'] or "Paper based review" }}</p>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="change-task-type">
+        Change<span class="govuk-visually-hidden"></span>
+      </a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      ID
+    </dt>
+    <dd class="govuk-summary-list__value">
+      66f150c7813d735cabfae4be
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Due
+    </dt>
+    <dd class="govuk-summary-list__value">
+      17 October 2024 at 10:15 
+    </dd>
+    <dd class="govuk-summary-list__actions">
+       
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Created
+    </dt>
+    <dd class="govuk-summary-list__value">
+      10 October 2024 at 9:05
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Priority
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Low
+    </dd>
+    <dd class="govuk-summary-list__actions">
+       
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <strong class="govuk-tag govuk-tag--grey">
+        UNALLOCATED
+      </strong></td>
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Team member
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+    <dd class="govuk-summary-list__actions">
+     
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Blocked
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+    <dd class="govuk-summary-list__actions">
+       
+    </dd>
+  </div>
+</dl>
+    
+      <div class="govuk-button-group">
+        <a href="task-details-unallocated"</a>
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm
+      </button>
+      <a href="javascript:window.history.back()"</a>
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Back
+      </button> 
+    </div>
+  </div>
+   
+
+{% endblock %}
