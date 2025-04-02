@@ -1,0 +1,46 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Groups
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Groups</h1>
+  
+  <p>Create and manage groups of team members. Team members will get tasks that match to the criteria of their group.</p>
+  &nbsp;
+
+  <div class="govuk-button-group" style="float;left:">
+    <a href="create-group" "=""">
+        <button class="govuk-button" data-module="govuk-button">Create group</button></a>
+        </div>
+
+    &nbsp;
+  <div class="box3">
+    <h2 class="govuk-heading-m"><a href="group-details">Admin</a></h2>
+    <p>Administrators manage day to day office operations.</p>
+      </div>
+
+      
+      
+          </div>
+
+&nbsp;
+{% endblock %}
+

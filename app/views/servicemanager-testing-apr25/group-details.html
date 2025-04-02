@@ -1,0 +1,289 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Review Admin group
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<div class=spacer1></div>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Service manager home",
+      href: "home"
+    },
+    {
+      text: "Groups",
+      href: "manage-groups"
+    }
+  ]
+}) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds-from-desktop">
+
+      <h1 class="govuk-heading-l">Admin</h1>
+
+      <h2 class="govuk-heading-m">
+        Task types
+      </h1>
+      <p>Team members in this group will be able to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Review incident outcomes</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Group details</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Group name
+          </dt>
+          <dd class="govuk-summary-list__value">
+              Admin
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Description
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Admin group members are level AO or higher. 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+               
+               
+              
+                Change<span class="govuk-visually-hidden"></span>
+              
+            </a>
+          </dd>
+        </div>
+      </dl>
+      
+
+      <h2 class="govuk-heading-m">Matching criteria</h2>
+
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Grade
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-grade']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-grade'] %}
+                  <li>
+                    {{ item 
+                    | replace("ao", "AO")
+                    | replace("aa", "AA") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-grade']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> grade</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> grade</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Language
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-language']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-language'] == 'welsh'%} 
+                  Welsh
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-language']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> language</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> language</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Location
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-location']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-location'] %}
+                  <li>
+                    {{ item 
+                    | replace("england", "England") 
+                    | replace("northern-ireland", "Northern Ireland") 
+                    | replace("scotland", "Scotland") 
+                    | replace("wales", "Wales") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-location']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> location</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> location</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Office ID
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-office']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-office'] %}
+                  <li>
+                    {{ item 
+                    | replace("bristol", "Bristol") 
+                    | replace("glasgow", "Glasgow") 
+                    | replace("leeds", "Leeds") 
+                    | replace("longbenton", "Longbenton") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-office']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> office ID</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> office ID</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Role
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-role']|length > 0 %}
+              <ul class="govuk-list">
+                {% for item in data['group-role'] %}
+                  <li>
+                    {{ item 
+                    | replace("decision-maker", "Decision maker") 
+                    | replace("claims-processor", "Claims processor") }}
+                  </li>
+                {% endfor %}
+              </ul>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-role']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> role</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> role</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Working pattern
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {% if data['group-pattern']|length > 0 %}
+              <p class="govuk-body">
+                {% if data['group-pattern'] == 'mfpm'%} 
+                  M-F PM
+                {% endif %}
+              </p>
+            {% else %}
+              None
+            {% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              {% if data['group-pattern']|length == 0 %} 
+                Add<span class="govuk-visually-hidden"> working pattern</span>
+              {% else %}
+                Change<span class="govuk-visually-hidden"> working pattern</span>
+              {% endif %}
+            </a>
+          </dd>
+        </div>
+      </dl>
+
+      <table class="govuk-table"> 
+        <caption class="govuk-table__caption govuk-table__caption--m">Group members
+          <div style="float: right;"><p><a href="change-group-members">Add a group member</a></p></div>
+        </caption>
+          <thead class="govuk-table__head">
+            
+              <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Staff number</th>
+              <th scope="col" class="govuk-table__header app-custom-class"></th>
+            </thead>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Aiden Jenkins</td>
+            <td class="govuk-table__cell">12345678</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+        
+        <a href="delete-group">
+          <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+            Delete group
+          </button>
+        </a>
+        
+        <div class="govuk-button-group">
+                <a href="javascript:window.history.back()"</a>
+                  <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Back
+                  </button> 
+                  </div>
+                
+                </div> 
+              </div>
+   
+ 
+
+ 
+</form>
+{% endblock %}'['
