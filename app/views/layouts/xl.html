@@ -1,0 +1,128 @@
+{# Example that changes every setting in the template #}
+
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+{% from "govuk/components/skip-link/macro.njk" import govukSkipLink %}
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% set htmlClasses = "app-html-class" %}
+{% set htmlLang = "en" %}
+{% set assetUrl = "YOUR-DOMAIN" %}
+{% set themeColor = "blue" %}
+
+{% set bodyAttributes = {
+  "data-test": "My value",
+  "data-other": "report:details"
+} %}
+{% set containerClasses = "app-width-container" %}
+
+{% block pageTitle %}GOV.UK - Customised page template{% endblock %}
+
+{% block headIcons %}
+
+{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="/public/stylesheets/application.css">
+
+{% endblock %}
+
+{% block bodyStart %}
+{% set bodyClasses = "body" %}
+{% endblock %}
+
+
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "#",
+    containerClasses: "app2-width-container",
+    serviceName: "DWP task",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "#",
+        text: "Navigation item 1",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Navigation item 2"
+      },
+      {
+        href: "#",
+        text: "Navigation item 3"
+      }
+    ]
+  }) }}
+  <div class="govuk-grid-row govuk-width-container govuk-!-margin-bottom-6">
+    <div class="govuk-grid-column-full ">
+      <div class="govuk-phase-banner">
+        <p class="govuk-phase-banner__content">
+          <strong class="govuk-tag govuk-phase-banner__content__tag">
+            Beta
+          </strong>
+          <span class="govuk-phase-banner__text">
+            This is a new service. Help us improve it and <a class="govuk-link" href="#">give your feedback (opens in new tab)</a>.
+          </span>
+        </p>
+      </div>
+    </div>
+ 
+  </div>
+  
+{% endblock %}
+
+{% set mainClasses = "app-main-class" %}
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-m">Service manager view</h1>
+</div>
+
+<div class="team-picker-panel">
+  <div class="govuk-width-container"> 
+  <div class=" govuk-grid-row ">
+    <div class="govuk-grid-column-one-half ">
+      <h2>Team 3</h2>
+    </div>
+    <div class="govuk-grid-column-one-half ">
+      <label class="govuk-label" for="sort">
+        Sort by
+      </label>
+      <select class="govuk-select" id="sort" name="sort">
+        <option value="published">Recently published</option>
+        <option value="updated" selected>Recently updated</option>
+        <option value="views">Most views</option>
+        <option value="comments">Most comments</option>
+      </select>
+    </div>
+  </div>
+  </div>
+</div>
+
+{% block beforeContent %}
+
+
+
+  {{ govukBackLink({
+    href: "#",
+    text: "Back"
+  }) }}
+{% endblock %}
+
+{% block main %}
+  
+{% endblock %}
+
+{% block content %}
+ 
+{% endblock %}
+
+
+
+{% block bodyEnd %}
+
+  <script type="module" src="/public/javascripts/custom.js"></script>
+
+{% endblock %}

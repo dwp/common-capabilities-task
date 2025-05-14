@@ -395,3 +395,184 @@
   text-decoration-color: #0561a6;
 }
 
+.app-body-class {
+  margin:0;
+  max-width: 100vw;
+}
+.app-body-class-large {
+  @media (min-width: 1440px) {
+    @supports (margin: max(calc(0px))) {
+      .app-width-container,
+      .govuk-width-container {
+        max-width: 98vw;
+        margin-right: auto;
+        margin-left: auto;
+       
+      }
+    }
+  }
+}
+
+  @media (min-width: 1200px) {
+    .app-width-container {
+      max-width: 98vw;
+      margin-right: auto;
+      margin-left: auto;
+     
+    }
+  }
+.page-container {
+  display:flex;
+}
+
+.table-rows {
+  display: flex;
+  align-items: baseline;
+  :nth-child(1) {
+    padding-right: 10px;
+  }
+}
+
+  .sidebar {
+    border-right: 1px solid #b1b4b6;
+    max-width: 20vw;
+    display: block;
+    box-sizing: border-box;
+    padding: 0 20px;
+
+    .title-label {
+      font-weight: 800;
+    }
+  }
+
+  .filter-dd {
+    
+    background-color:#b1b4b6 ;
+  }
+
+  .data-table {
+    min-width: 80vw;
+    display: block;
+    padding: 0px 20px;
+    box-sizing: border-box;
+
+
+  }
+
+  .govuk-table__body {
+    font-size: medium;
+  }
+  .govuk-table__header {
+    //color:#1d70b8;
+  }
+
+
+.filter-tag {
+  margin:10px;
+}
+.team-picker-panel {
+  background-color: #0561a6;
+  margin: 16px 0;
+  color:white;
+
+  
+  .container {
+    margin: 20px 0px;
+  }
+  :nth-child(2) {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding:18px;
+    color:#d4d4d4
+  }
+}
+.spacer20{
+  padding:16px;
+}
+.stats-panel-container {
+  margin: 20px 0px;
+  box-sizing: border-box;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+}
+.filter-count {
+  display:block;
+  color:#171717 !important;
+
+}
+.govuk-details__text {
+  background-color: #eee;
+
+}
+
+.govuk-details__summary {
+  display:flex;
+  justify-content: space-between;
+}
+
+.accordion {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: 0.4s;
+  border-bottom: 1px solid #171717;
+
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.fw{
+  width:100%;
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 18px;
+  background-color: #eee;
+  display: none;
+  overflow: hidden;
+
+}
+
+.stats-panel {
+  background-color:govuk-colour("light-grey");
+  padding:16px;
+
+
+  .title-label {
+    font-weight: 800;
+  }
+
+
+  
+  ul {
+    margin:0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-inline-start: 0;
+
+    li {
+      list-style-type: none;
+      :nth-child(1) {
+        font-size: 1.8rem;
+        font-weight: 600;
+      }
+      :nth-child(2) {
+        font-size: medium;
+        font-weight: 600;
+      }
+    }
+  }
+}
+

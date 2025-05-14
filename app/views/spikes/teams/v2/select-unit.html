@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Select unit
+{% endblock %}
+
+{% block pageScripts %}
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script>
+    const teamMembers = [
+      "Unit 1",
+      "Unit 2",
+      "Unit 3",
+      "Unit 4",
+      "Unit 5",
+      "Unit 6",
+      "Unit 7",
+      "Unit 8",
+      "Unit 9",
+      "Unit 10",
+
+     
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#search'),
+      id: 'search', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]}`
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+       
+    <h1 class="govuk-heading-l">
+      which org unit
+    </h1>
+  
+  &nbsp;
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+      
+          <!-- Accessible autocomplete will hydrate this div -->
+          
+          <label class="govuk-label govuk-label--m" for="search">Find a unit</label>
+          <div id="event-name-hint" class="govuk-hint">
+            Enter a team name.
+          </div>
+          <div id="search" class="govuk-input--width-30">
+
+          </div>
+
+    <div class="govuk-button-group" style="margin-top:10px;">
+      <a href="enter-team-name" class="govuk-button">
+      
+        Select
+     
+    </a>
+      </div>
+          </form>
+          </div>
+          </div>
+          
+          
+    
+      
+        </div>
+
+   
+{% endblock %}
