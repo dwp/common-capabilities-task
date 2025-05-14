@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Enter team name
+{% endblock %}
+
+{% block pageScripts %}
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script type="text/javascript" src="/public/javascripts/teams.js"></script>
+<script>
+  const teamMembers = [
+    "Aiden Jenkins, 12345678",
+    "Amy Anderson, 12345678",
+    "Amy Adams, 12345678",
+    "Amy Johnston, 12345678",
+    "Ben Hoad, 12345678",
+    "Joel Odonnell, 12345678",
+    "Oliver Logan, 12345678",
+    "Dan Hayes, 12345678",
+    "Kathleen Lin, 12345678",
+    "Darren Lowery, 12345678",
+    "Kamran Roth, 12345678",
+    "Amaan Hubbard, 12345678",
+    "Sally Whitaker, 12345678",
+    "Georgia Duncan, 12345678",
+    "Jean Booker, 12345678",
+    "Kaine Bell, 12345678",
+    "Arjan Sharp, 12345678",
+    "Bianca Nicholson, 12345678",
+    "Brett Henderson, 12345678",
+    "Hassan Young, 12345678",
+    "Sonia Pruitt, 12345678",
+    "Erica Fernandez, 12345678"
+  ]
+
+  accessibleAutocomplete({
+    element: document.querySelector('#searchb'),
+    id: 'searchb', // To match it to the existing <label>.
+    CSSNamespace: 'test',
+    source: teamMembers,
+    templates: {
+      inputValue: function (suggestion) {
+        return suggestion
+      },
+      suggestion: function (suggestion) {
+        const parts = suggestion.split(", ");
+        return `${parts[0]}, ${parts[1]}`
+     
+      }
+    }
+  })
+
+  accessibleAutocomplete({
+    element: document.querySelector('#searchc'),
+    id: 'searchb', // To match it to the existing <label>.
+    CSSNamespace: 'test',
+    source: teamMembers,
+    templates: {
+      inputValue: function (suggestion) {
+        return suggestion
+      },
+      suggestion: function (suggestion) {
+        const parts = suggestion.split(", ");
+        return `${parts[0]}, ${parts[1]}`
+     
+      }
+    }
+  })
+</script>
+
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">
+    Back
+  </a>
+{% endblock %}
+
+{% block content %}
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="govuk-form-group">
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--l" for="event-name">
+                What is the name of the team?
+              </label>
+            </h1>
+            <span class=" govuk-hint govuk-!-padding-bottom-6">Enter the name of your team.</span>
+            
+            <input class="govuk-input govuk-!-padding-bottom-6" id="event-name" name="eventName" type="text">
+           
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="more-detail">
+                Description
+              </label>
+              <textarea class="govuk-textarea" id="more-detail" name="moreDetail" rows="5"></textarea>
+            </div>
+
+            <label class="govuk-label govuk-label--m" for="searchb">Team leader</label>
+            <div id="event-name-hint" class="govuk-hint">
+              Use their name or staff number.
+            </div>
+            <div id="searchb" class="govuk-input--width-30"></div>
+
+            <label class="govuk-label govuk-label--m" for="searchb">Function</label>
+            <div id="event-name-hint" class="govuk-hint">
+              Use their name or staff number.
+            </div>
+            <div id="searchc" class="govuk-input--width-30"></div>
+          </div>
+          <a href="team-created" class="govuk-button">
+            Continue
+         </a>
+        </div>
+        </div>
+
+   
+{% endblock %}
