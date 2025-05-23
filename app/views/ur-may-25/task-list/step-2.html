@@ -1,0 +1,496 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Agent home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">View and manage tasks</h1>
+  <details class="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Filter tasks or change date range
+      </span>
+      <span class="filter-count">300 Tasks</span>
+    </summary>
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label title-label" for="startDate">From</label>
+          <div class="govuk-date-input" id="startDate">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label title-label" for="endDate">To</label>
+          <div class="govuk-date-input" id="endDate">
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-day">
+                  Day
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-month">
+                  Month
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+              </div>
+            </div>
+            <div class="govuk-date-input__item">
+              <div class="govuk-form-group">
+                <label class="govuk-label govuk-date-input__label" for="dob-year">
+                  Year
+                </label>
+                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-form-group">
+          <label class="govuk-label title-label" for="taskType">Task type</label>
+          <p class="govuk-hint">Select the task type you want to view</p>
+          <select class="govuk-select" id="taskType" name="taskType">
+            <option value="">-- Select --</option>
+            <option>Onboarding</option><option>Payroll Setup</option><option>Exit Interview</option><option>IT Access</option><option>Compliance Training</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label title-label" for="teamMember">Team</label>
+          <select class="govuk-select" id="teamMember" name="teamMember">
+            <option value="">-- Select --</option>
+            <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
+          </select>
+        </div>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <label class="govuk-label title-label" for="teamMember">Team member</label>
+          <select class="govuk-select" id="teamMember" name="teamMember">
+            <option value="">-- Select --</option>
+            <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <label class="govuk-label title-label" for="taskType">Priority</label>
+          <p class="govuk-hint">Select the task type you want to view</p>
+          <select class="govuk-select" id="taskType" name="taskType">
+            <option value="">-- Select --</option>
+            <option>high</option><option>low</option><option>medium</option><option>Urgent</option>
+          </select>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <label class="govuk-label title-label" for="taskType">Status</label>
+            <p class="govuk-hint">Select the task type you want to view</p>
+            <select class="govuk-select" id="taskType" name="taskType">
+              <option value="">-- Select --</option>
+              <option>Closed</option><option>Paused </option><option>Allocated</option><option>Unallocated</option>
+            </select>
+          </fieldset>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-coloumn-two-thirds">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            National insurance number
+          </label>
+          <div class="govuk-hint">
+            Enter a customer's National Insurance number to view ttasks raised against this customer 
+          </div>
+          <input class="govuk-input govuk-input--width-10" id="event-name" name="eventName" type="text">
+        </div>
+      </div>
+    </div>
+    </div>
+    </div>
+  </details>
+  <table class="govuk-table" id="taskTable">
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th class="govuk-table__header" data-column="created" tabindex="0">Created</th>
+        <th class="govuk-table__header" data-column="created" tabindex="0">Due</th>
+        <th class="govuk-table__header" data-column="type" tabindex="0">Task Type</th>
+        <th class="govuk-table__header">NI Number</th>
+        <th class="govuk-table__header" data-column="member" tabindex="0">Agent</th>
+        <th class="govuk-table__header" data-column="priority" tabindex="0">Priority</th>
+        <th class="govuk-table__header">Status</th>
+        <th class="govuk-table__header">View</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+
+<tr
+data-created="2022-08-09"
+data-type="it access"
+data-member="michael brown"
+data-priority="high">
+<td class="govuk-table__cell" >9 Aug 2022</td>
+<td class="govuk-table__cell" >
+  9 Sep 2022<br>
+  <span class="govuk-tag govuk-tag--red ">overdue</span>
+</td>
+<td class="govuk-table__cell" >IT Access</td>
+<td class="govuk-table__cell" >D999948D</td>
+<td class="govuk-table__cell" >Michael Brown</td>
+<td class="govuk-table__cell" >High</td>
+<td class="govuk-table__cell" >Active</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-1">View</a></td>
+</tr>
+
+<tr
+data-created="2023-03-05"
+data-type="exit interview"
+data-member="olivia clark"
+data-priority="urgent"
+class="govuk-table__row">
+<td class="govuk-table__cell" >5 Mar 2023</td>
+<td class="govuk-table__cell" >5 Apr 2023</td>
+<td class="govuk-table__cell" >Exit Interview</td>
+<td class="govuk-table__cell" >B956629D</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-2">View</a></td>
+</tr>
+
+<tr
+data-created="2023-09-15"
+data-type="compliance training"
+data-member="sara white"
+data-priority="medium">
+<td class="govuk-table__cell" >15 Sep 2023</td>
+<td class="govuk-table__cell" >15 Oct 2023</td>
+<td class="govuk-table__cell" >Compliance Training</td>
+<td class="govuk-table__cell" >C900169A</td>
+<td class="govuk-table__cell" >Sara White</td>
+<td class="govuk-table__cell" >Medium</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-3">View</a></td>
+</tr>
+
+<tr
+data-created="2023-09-03"
+data-type="exit interview"
+data-member="alex lee"
+data-priority="urgent">
+<td class="govuk-table__cell" >3 Sep 2023</td>
+<td class="govuk-table__cell" >3 Oct 2023</td>
+<td class="govuk-table__cell" >Exit Interview</td>
+<td class="govuk-table__cell" >B575670D</td>
+<td class="govuk-table__cell" >Alex Lee</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Closed</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-4">View</a></td>
+</tr>
+
+<tr
+data-created="2023-05-16"
+data-type="payroll setup"
+data-member="olivia clark"
+data-priority="medium">
+<td class="govuk-table__cell" >16 May 2023</td>
+<td class="govuk-table__cell" >16 Jun 2023</td>
+<td class="govuk-table__cell" >Payroll Setup</td>
+<td class="govuk-table__cell" >C294838A</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Medium</td>
+<td class="govuk-table__cell" >Active</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-5">View</a></td>
+</tr>
+
+<tr
+data-created="2023-11-21"
+data-type="onboarding"
+data-member="olivia clark"
+data-priority="low">
+<td class="govuk-table__cell" >21 Nov 2023</td>
+<td class="govuk-table__cell" >21 Dec 2022</td>
+<td class="govuk-table__cell" >Onboarding</td>
+<td class="govuk-table__cell" >D350484B</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Low</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-6">View</a></td>
+</tr>
+
+<tr
+data-created="2022-12-02"
+data-type="payroll setup"
+data-member="olivia clark"
+data-priority="low">
+<td class="govuk-table__cell" >2 Dec 2022</td>
+<td class="govuk-table__cell" >2 Jan 2023</td>
+<td class="govuk-table__cell" >Payroll Setup</td>
+<td class="govuk-table__cell" >B782488A</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Low</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-7">View</a></td>
+</tr>
+
+<tr
+data-created="2022-12-26"
+data-type="onboarding"
+data-member="olivia clark"
+data-priority="urgent">
+<td class="govuk-table__cell" >26 Dec 2022</td>
+<td class="govuk-table__cell" >26 Jan 2023</td>
+<td class="govuk-table__cell" >Onboarding</td>
+<td class="govuk-table__cell" >A683416C</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-8">View</a></td>
+</tr>
+
+<tr
+data-created="2024-08-29"
+data-type="it access"
+data-member="emily green"
+data-priority="low">
+<td class="govuk-table__cell" >29 Aug 2024</td>
+<td class="govuk-table__cell" >29 Sep 2024</td>
+<td class="govuk-table__cell" >IT Access</td>
+<td class="govuk-table__cell" >A654909C</td>
+<td class="govuk-table__cell" >Emily Green</td>
+<td class="govuk-table__cell" >Low</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-9">View</a></td>
+</tr>
+
+<tr
+data-created="2023-12-24"
+data-type="payroll setup"
+data-member="michael brown"
+data-priority="low">
+<td class="govuk-table__cell" >24 Dec 2023</td>
+<td class="govuk-table__cell" >24 Jan 2024</td>
+<td class="govuk-table__cell" >Payroll Setup</td>
+<td class="govuk-table__cell" >D494754D</td>
+<td class="govuk-table__cell" >Michael Brown</td>
+<td class="govuk-table__cell" >Low</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-10">View</a></td>
+</tr>
+
+<tr
+data-created="2023-03-22"
+data-type="it access"
+data-member="james adams"
+data-priority="high">
+<td class="govuk-table__cell" >22 Mar 2023</td>
+<td class="govuk-table__cell" >22 Apr 2023</td>
+<td class="govuk-table__cell" >IT Access</td>
+<td class="govuk-table__cell" >A613517A</td>
+<td class="govuk-table__cell" >James Adams</td>
+<td class="govuk-table__cell" >High</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-11">View</a></td>
+</tr>
+
+<tr
+data-created="2022-11-06"
+data-type="compliance training"
+data-member="michael brown"
+data-priority="urgent">
+<td class="govuk-table__cell" >6 Nov 2022</td>
+<td class="govuk-table__cell" >9 Dec 2023</td>
+<td class="govuk-table__cell" >Compliance Training</td>
+<td class="govuk-table__cell" >A738386D</td>
+<td class="govuk-table__cell" >Michael Brown</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-12">View</a></td>
+</tr>
+
+<tr
+data-created="2022-12-25"
+data-type="onboarding"
+data-member="olivia clark"
+data-priority="medium">
+<td class="govuk-table__cell" >25 Dec 2022</td>
+<td class="govuk-table__cell" >25 Jan 2023</td>
+<td class="govuk-table__cell" >Onboarding</td>
+<td class="govuk-table__cell" >B267275D</td>
+<td class="govuk-table__cell" >Olivia Clark</td>
+<td class="govuk-table__cell" >Medium</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-13">View</a></td>
+</tr>
+
+<tr
+data-created="2024-04-21"
+data-type="it access"
+data-member="jane smith"
+data-priority="high">
+<td class="govuk-table__cell" >21 Apr 2024</td>
+<td class="govuk-table__cell" >21 May 2024</td>
+<td class="govuk-table__cell" >IT Access</td>
+<td class="govuk-table__cell" >D193753D</td>
+<td class="govuk-table__cell" >Jane Smith</td>
+<td class="govuk-table__cell" >High</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-14">View</a></td>
+</tr>
+
+<tr
+data-created="2024-11-08"
+data-type="exit interview"
+data-member="john doe"
+data-priority="medium">
+<td class="govuk-table__cell" >8 Nov 2024</td>
+<td class="govuk-table__cell" >9 Dec 2024</td>
+<td class="govuk-table__cell" >Exit Interview</td>
+<td class="govuk-table__cell" >C372768D</td>
+<td class="govuk-table__cell" >John Doe</td>
+<td class="govuk-table__cell" >Medium</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-15">View</a></td>
+</tr>
+
+<tr
+data-created="2023-08-12"
+data-type="payroll setup"
+data-member="sophia turner"
+data-priority="low">
+<td class="govuk-table__cell" >12 Aug 2023</td>
+<td class="govuk-table__cell" >12 Sep 2023</td>
+<td class="govuk-table__cell" >Payroll Setup</td>
+<td class="govuk-table__cell" >D638432B</td>
+<td class="govuk-table__cell" >Sophia Turner</td>
+<td class="govuk-table__cell" >Low</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-16">View</a></td>
+</tr>
+
+<tr
+data-created="2024-09-10"
+data-type="it access"
+data-member="sophia turner"
+data-priority="urgent">
+<td class="govuk-table__cell" >10 Sep 2024</td>
+<td class="govuk-table__cell" >10 Oct 2024</td>
+<td class="govuk-table__cell" >IT Access</td>
+<td class="govuk-table__cell" >C472699C</td>
+<td class="govuk-table__cell" >Sophia Turner</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-17">View</a></td>
+</tr>
+
+<tr
+data-created="2023-04-19"
+data-type="compliance training"
+data-member="alex lee"
+data-priority="urgent">
+<td class="govuk-table__cell" >19 Apr 2023</td>
+<td class="govuk-table__cell" >19 May 2023</td>
+<td class="govuk-table__cell" >Compliance Training</td>
+<td class="govuk-table__cell" >D759374A</td>
+<td class="govuk-table__cell" >Alex Lee</td>
+<td class="govuk-table__cell" >Urgent</td>
+<td class="govuk-table__cell" >Allocated</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-18">View</a></td>
+</tr>
+
+<tr
+data-created="2023-04-05"
+data-type="payroll setup"
+data-member="michael brown"
+data-priority="high">
+<td class="govuk-table__cell" >5 Apr 2023</td>
+<td class="govuk-table__cell" >5 May 2023</td>
+<td class="govuk-table__cell" >Payroll Setup</td>
+<td class="govuk-table__cell" >B765865B</td>
+<td class="govuk-table__cell" >Michael Brown</td>
+<td class="govuk-table__cell" >High</td>
+<td class="govuk-table__cell" >Paused</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-19">View</a></td>
+</tr>
+
+<tr
+data-created="2022-08-18"
+data-type="compliance training"
+data-member="michael brown"
+data-priority="high">
+<td class="govuk-table__cell" >18 Aug 2022</td>
+<td class="govuk-table__cell" >18 Aug 2022</td>
+<td class="govuk-table__cell" >Compliance Training</td>
+<td class="govuk-table__cell" >B190388A</td>
+<td class="govuk-table__cell" >Michael Brown</td>
+<td class="govuk-table__cell" >High</td>
+<td class="govuk-table__cell" >Closed</td>
+<td class="govuk-table__cell" ><a class="govuk-link" href="#task-20">View</a></td>
+</tr>
+
+    </tbody>
+  </table>
+  
+{% endblock %}

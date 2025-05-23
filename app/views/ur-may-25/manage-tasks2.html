@@ -70,21 +70,8 @@
 </div>
 
 <!-- main wrapper-->
-<div class=" app-width-container">
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full-width stats-panel-container">
-      
-    </div>
-  <div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full-width stats-panel-container">
-          results stuff here
-      </div>
-    <div>
-
-</div>
-  </div>
-  <div class=" filter-area">
+<div class="page-container app-width-container">
+  <div class=" sidebar">
     <h2 class="govuk-heading-m">Filters</h2>
         <form id="filter-form">
           <div class="govuk-form-group">
@@ -102,7 +89,7 @@
               </div>
             </fieldset>
           </div>
-  
+
           <div class="govuk-form-group">
             <label class="govuk-label title-label" for="startDate">Start date</label>
             <div class="govuk-date-input" id="startDate">
@@ -132,7 +119,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="govuk-form-group">
             <label class="govuk-label title-label" for="endDate">End date</label>
             <div class="govuk-date-input" id="endDate">
@@ -162,7 +149,7 @@
               </div>
             </div>
           </div>
-  
+
           <div class="govuk-form-group">
             <label class="govuk-label title-label" for="taskType">Task type</label>
             <select class="govuk-select" id="taskType" name="taskType">
@@ -170,7 +157,7 @@
               <option>Onboarding</option><option>Payroll Setup</option><option>Exit Interview</option><option>IT Access</option><option>Compliance Training</option>
             </select>
           </div>
-  
+
           <div class="govuk-form-group">
             <label class="govuk-label title-label" for="teamMember">Team member</label>
             <select class="govuk-select" id="teamMember" name="teamMember">
@@ -178,7 +165,7 @@
               <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
             </select>
           </div>
-  
+
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Priority</legend>
@@ -216,9 +203,9 @@
           <button class="govuk-button govuk-button--secondary" type="button" id="resetFilters">Reset</button>
         </div>
         </form>
-  
+
   </div>
-  <div class=" results-area">
+  <div class=" data-table">
     <h2 class="govuk-heading-m">Task list</h2>
     <div id="activeFilters" class="govuk-body govuk-!-margin-top-3">
       <span>Active filters</span>
@@ -235,7 +222,7 @@
                     </label>
                   </div>
                   </div>
-              
+              </div>
               </th>
               <th class="govuk-table__header" data-column="created" tabindex="0">Created</th>
               <th class="govuk-table__header" data-column="created" tabindex="0">Due</th>
