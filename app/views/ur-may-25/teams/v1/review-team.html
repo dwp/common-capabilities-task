@@ -65,17 +65,14 @@ Add team members to Decision makers group
            
           </tbody>
         </table>
-        <p class="govuk-body">
-        <a href="add-team-members" class="govuk-link" >
-          Add another team member
-        </a>
-      </p>
-
-      
+        <h2 class="govuk-heading-m">Save this team</h2>
+        <p class="govuk-body">This will make this team visibile and you will be able to manage tasks via this team.</p>
+        <form action="/form-handler" method="post" novalidate>
+          <input type="hidden" name="answers-checked" value="true">
           <a href="my-teams-2.html" class="govuk-button" >
             Save team
           </a>
-      
+        </form>
       </div>
     </div>
   </main>

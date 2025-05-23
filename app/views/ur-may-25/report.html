@@ -1,0 +1,71 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Agent home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">Report</h1>
+
+  <table class="govuk-table govuk-table--small-text-until-tablet">
+    <caption class="govuk-table__caption govuk-table__caption--m">Team stats 1 May 2025 to 31 May 2025</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Team Member</th>
+        <th scope="col" class="govuk-table__header">Open</th>
+        <th scope="col" class="govuk-table__header">Allocated</th>
+        <th scope="col" class="govuk-table__header">Closed</th>
+        <th scope="col" class="govuk-table__header">Overdue</th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">John Doe</th>
+        <td class="govuk-table__cell">5</td>
+        <td class="govuk-table__cell">5</td>
+        <td class="govuk-table__cell">12</td>
+        <td class="govuk-table__cell">0</td>
+      </tr>
+      <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Jane Doe</th>
+      <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">12</td>
+      <td class="govuk-table__cell">0</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">John Doe</th>
+      <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">5</td>
+      <td class="govuk-table__cell">12</td>
+      <td class="govuk-table__cell">1</td>
+    </tr>
+    <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Jane Doe</th>
+    <td class="govuk-table__cell">5</td>
+    <td class="govuk-table__cell">5</td>
+    <td class="govuk-table__cell">12</td>
+    <td class="govuk-table__cell">0</td>
+  </tr>
+  <tr class="govuk-table__row">
+    <th scope="row" class="govuk-table__header">Totals</th>
+    <td class="govuk-table__cell">20</td>
+    <td class="govuk-table__cell">20</td>
+    <td class="govuk-table__cell">48</td>
+    <td class="govuk-table__cell">1</td>
+  </tr>
+    </tbody>
+  </table>
+  
+{% endblock %}
