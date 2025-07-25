@@ -22,6 +22,3 @@ heroku-site-publish:
   variables:
     HEROKU_APP_NAME: common-capabilities-task
 
- commitlint:
-    rules:
-      - when: never   
