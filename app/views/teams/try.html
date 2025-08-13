@@ -24,6 +24,11 @@
    transition: all 0.3s ease;
 }
 
+#task-table {
+    width:100%;
+    display:block;
+}
+
 .filters-panel {
    width: 300px; /* Fixed minimum width */
    min-width: 300px; /* Ensures it never gets smaller */
@@ -295,7 +300,18 @@
                           </div>
                         </div>
                       </div>
+
                       <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">By completion date </label>
+                            </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <!-- <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">How would you like to see tasks</legend>
                           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
@@ -313,7 +329,7 @@
                             </div>
                           </div>
                         </fieldset>
-                      </div>
+                      </div> -->
                       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
@@ -360,7 +376,7 @@
                       <div class="govuk-form-group">
                         <label class="govuk-label title-label govuk-!-font-weight-bold" for="teamMember">National Insurance Number</label>
                         <div id="location-hint" class="govuk-hint">
-                          Enter customers national insurance number
+                          Enter customers National Insurance Number
                         </div>
                         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
                       </div>
@@ -437,6 +453,8 @@
                               </div>
                           </div>
                         </fieldset>
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                        
                       </div>
                       
                     
@@ -472,7 +490,9 @@
                                         <select class="govuk-select" id="sort" name="sort">
                                           <option value="published">Oldest to newest</option>
                                           <option value="updated" selected>Newest to oldest</option>
-                                        
+                                          <option value="updated" >sort option 3</option>
+                                          <option value="updated" >sort option 4</option>
+                                          <option value="updated" >sort option 5</option>
                                         </select>
                                       </div>
                                 </div>
@@ -496,7 +516,7 @@
                           </div>
                            <div class="moj-scrollable-pane">
                             
-                            <table class="govuk-table" data-module="">
+                            <table id="task-table" class="govuk-table" data-module="">
                   
                               <caption class="govuk-table__caption"></caption>
                             
@@ -505,9 +525,9 @@
                                   <th scope="col" class="govuk-table__header" aria-sort="none">Details</th>
                                   <th scope="col" class="govuk-table__header" aria-sort="none">Created</th>
                                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Due</th>
-                                  <th scope="col" class="govuk-table__header" aria-sort="none">Task</th>
-                                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Customer </th>
-                                  <th scope="col" class="govuk-table__header" aria-sort="ascending">National Insurance number</th>
+                                  <th scope="col" class="govuk-table__header" aria-sort="none"  style="min-width:150px !important">Task type</th>
+                                  <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none" style="min-width:120px !important">Customer </th>
+                                  <th scope="col" class="govuk-table__header" aria-sort="ascending" style="min-width:200px !important">National Insurance number</th>
                                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Agent</th>
                                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Priority</th>
                                   <th scope="col" class="govuk-table__header" aria-sort="ascending">Status</th>  
@@ -520,7 +540,7 @@
                                   <td class="govuk-table__cell"><a href="#">View</a></td>
                                   <td class="govuk-table__cell" data-sort-value="4884">24 Apr 2025</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">20 Jun 2025 <span class="govuk-tag govuk-tag--red">Overdue</span></td>
-                                  <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
+                                  <td class="govuk-table__cell " data-sort-value="4884" >Nil-claim</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
