@@ -306,7 +306,7 @@
                           <div class="govuk-checkboxes--small">
                             <div class="govuk-checkboxes__item">
                               <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
-                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">By completion date </label>
+                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Due by date</label>
                             </div>
                           </div>
                         </fieldset>
@@ -331,6 +331,34 @@
                         </fieldset>
                       </div> -->
                       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+                    
+                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
+                              <label class="govuk-label govuk-radios__label" for="changedName">
+                                Closed
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                              <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                Paused
+                              </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
+                                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                  Allocated
+                                </label>
+                              </div>
+                          </div>
+                        </fieldset>
+                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                        
+                      </div>
                       <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Team</legend>
@@ -376,7 +404,7 @@
                       <div class="govuk-form-group">
                         <label class="govuk-label title-label govuk-!-font-weight-bold" for="teamMember">National Insurance Number</label>
                         <div id="location-hint" class="govuk-hint">
-                          Enter customers National Insurance Number
+                          Enter customers National Insurance number
                         </div>
                         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
                       </div>
@@ -384,7 +412,7 @@
                       <div class="govuk-form-group">
                         <label class="govuk-label title-label govuk-!-font-weight-bold" for="teamMember">Task Number</label>
                         <div id="location-hint" class="govuk-hint">
-                          Enter task number
+                          Enter Task number
                         </div>
                         <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
                       </div>
@@ -422,40 +450,7 @@
                         </fieldset>
                       </div>
                       <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
                     
-                          <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
-                              <label class="govuk-label govuk-radios__label" for="changedName">
-                                Closed
-                              </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-                              <label class="govuk-label govuk-radios__label" for="changedName-2">
-                                Paused
-                              </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-                                <label class="govuk-label govuk-radios__label" for="changedName-2">
-                                  Allocated
-                                </label>
-                              </div>
-                              <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-                                <label class="govuk-label govuk-radios__label" for="changedName-2">
-                                  Unallocated
-                                </label>
-                              </div>
-                          </div>
-                        </fieldset>
-                        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                        
-                      </div>
                       
                     
                       
@@ -488,11 +483,14 @@
                                           Sort by
                                         </label>
                                         <select class="govuk-select" id="sort" name="sort">
-                                          <option value="published">Oldest to newest</option>
-                                          <option value="updated" selected>Newest to oldest</option>
-                                          <option value="updated" >sort option 3</option>
-                                          <option value="updated" >sort option 4</option>
-                                          <option value="updated" >sort option 5</option>
+                                          <option value="published">Completed earliest to latest</option>
+                                          <option value="published">Completed latest to earliest</option>
+                                          <option value="published" selected>Created earliest to latest</option>
+                                          <option value="published">Created latest to earliest</option>
+                                          <option value="published">Due earliest to latest</option>
+                                          <option value="published">Due latest to earliest</option>
+                                          <option value="updated" >Priority critical to low</option>
+                                          <option value="updated" >Priority low to critical</option>
                                         </select>
                                       </div>
                                 </div>
@@ -544,7 +542,7 @@
                                   <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                   <td class="govuk-table__cell " data-sort-value="4884" >Nil-claim</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                  <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                  <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                   <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -557,7 +555,7 @@
                                   <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                  <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                  <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                   <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -570,7 +568,7 @@
                                   <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                  <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                  <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                   <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -583,7 +581,7 @@
                                   <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                  <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                  <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                   <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                   <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -596,7 +594,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -609,7 +607,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -622,7 +620,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -635,7 +633,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -648,7 +646,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -661,7 +659,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">NH781204F</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -674,7 +672,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -687,7 +685,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -700,7 +698,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -713,7 +711,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -726,7 +724,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -739,7 +737,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -752,7 +750,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -765,7 +763,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">BH 668845 f</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
@@ -778,7 +776,7 @@
                                     <td class="govuk-table__cell" data-sort-value="4884">24 Jul 2025</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">Nil-claim</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">HG784532A</td>
-                                    <td class="govuk-table__cell" data-sort-value="4884">Not-applicable</td>
+                                    <td class="govuk-table__cell" data-sort-value="4884">Not applicable</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">001122889</td>
                                     <td class="govuk-table__cell" data-sort-value="4884">None</td>
                                     <td class="govuk-table__cell" data-sort-value="4884"><span class="govuk-tag govuk-tag--green">Completed</span></td>
