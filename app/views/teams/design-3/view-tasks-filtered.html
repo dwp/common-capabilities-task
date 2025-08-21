@@ -242,60 +242,60 @@
                       <h3 class="govuk-heading-s">Date range</h3>
                      
                       <div class="govuk-form-group">
-                        <label class="govuk-label title-label" for="fromDate">From</label>
-                        <div class="govuk-date-input" id="fromDate">
+                        <label class="govuk-label title-label" for="startDate">From</label>
+                        <div class="govuk-date-input" id="startDate">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="from-day">
+                              <label class="govuk-label govuk-date-input__label" for="dob-day">
                                 Day
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="from-month">
+                              <label class="govuk-label govuk-date-input__label" for="dob-month">
                                 Month
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" autocomplete="from-month" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="from-year">
+                              <label class="govuk-label govuk-date-input__label" for="dob-year">
                                 Year
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" autocomplete="from-year" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
                             </div>
                           </div>
                         </div>
                       </div>
               
                       <div class="govuk-form-group">
-                        <label class="govuk-label title-label" for="toDate">To</label>
-                        <div class="govuk-date-input" id="toDate">
+                        <label class="govuk-label title-label" for="endDate">To</label>
+                        <div class="govuk-date-input" id="endDate">
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="to-day">
+                              <label class="govuk-label govuk-date-input__label" for="dob-day">
                                 Day
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" autocomplete="to-day" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="to-month">
+                              <label class="govuk-label govuk-date-input__label" for="dob-month">
                                 Month
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" autocomplete="to-month" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
                             </div>
                           </div>
                           <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="to-year">
+                              <label class="govuk-label govuk-date-input__label" for="dob-year">
                                 Year
                               </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" autocomplete="to-year" inputmode="numeric">
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
                             </div>
                           </div>
                         </div>
@@ -307,19 +307,19 @@
                     
                           <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="created">
+                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
                               <label class="govuk-label govuk-radios__label" for="changedName">
                                 Created date
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="completion">
+                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
                               <label class="govuk-label govuk-radios__label" for="changedName-2">
                                 Completion date
                               </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="due">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
                                 <label class="govuk-label govuk-radios__label" for="changedName-2">
                                   Due by date
                                 </label>
@@ -475,7 +475,7 @@
                     
                       
                       <div class="govuk-button-group">
-                      <a href="view-tasks-filtered" class="govuk-button" type="button" id="applyFilters">Apply filters</a>
+                      <button class="govuk-button" type="button" id="applyFilters">Apply filters</button>
                       <button class="govuk-button govuk-button--secondary" type="button" id="resetFilters">Reset</button>
                     </div>
                 </form>
