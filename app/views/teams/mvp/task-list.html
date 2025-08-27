@@ -47,165 +47,180 @@ for (i = 0; i < acc.length; i++) {
 
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-full-width">
+
           <details class="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Filter and sort
+                Filter tasks and and change date
               </span>
-              <span class="filter-count">300 Tasks</span>
             </summary>
-            
-            <div class="govuk-details__text"> 
-              <button class="accordion">Sort by</button>
-            <div class="panel">
-              <form id="filter-form">
-                <div class="govuk-form-group">
-                  <fieldset class="govuk-fieldset">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s ">Sort by date created</legend>
-                    <div class="govuk-radios--small">
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="sort-asc" name="sort" type="radio" value="asc">
-                        <label class="govuk-label govuk-radios__label govuk-body-s" for="sort-asc">Oldest first</label>
+            <div class="govuk-details__text" style="background-color: white !important">
+              <p class="govuk-body">To view any tasks, you must enter a date range </p>
+              <span class="govuk-hint">Enter from and to dates to view tasks created in this date range (optional)</span>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label title-label govuk-label--s" for="startDate">From</label>
+                    <div class="govuk-date-input" id="startDate">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                        </div>
                       </div>
-                      <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="sort-desc" name="sort" type="radio" value="desc">
-                        <label class="govuk-label govuk-radios__label" for="sort-desc">Newest first</label>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                        </div>
                       </div>
-                    </div>
-                  </fieldset>
-                </div>
-              </form>
-            </div>
-            <button class="accordion">Date range</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <label class="govuk-label title-label" for="startDate">Start date</label>
-                <div class="govuk-date-input" id="startDate">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-              </div>
-      
-              <div class="govuk-form-group">
-                <label class="govuk-label title-label" for="endDate">End date</label>
-                <div class="govuk-date-input" id="endDate">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="dob-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                <div class="govuk-grid-column-one-half">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label title-label govuk-label--s" for="endDate">To</label>
+                    <div class="govuk-date-input" id="endDate">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <button class="accordion">Task Type</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <label class="govuk-label title-label" for="taskType">Task type</label>
-                <select class="govuk-select" id="taskType" name="taskType">
-                  <option value="">-- Select --</option>
-                  <option>Onboarding</option><option>Payroll Setup</option><option>Exit Interview</option><option>IT Access</option><option>Compliance Training</option>
-                </select>
+              <div class="govuk-grid-row"><!-- status -->
+                <div class="govuk-form-group govuk-!-static-padding-left-3">
+                  <label class="govuk-label title-label govuk-label--s" for="status">Status</label>
+                  <span class="govuk-hint">Select the status of the tasks you want to view (optional)</span><br>
+                  <select class="govuk-select" id="status" name="status">
+                    <option value="">-- Select --</option>
+                    <option>Unallocated</option>
+                    <option>Allocated</option>
+                    <option>Active</option>
+                    <option>On hold</option>
+                    <option>Failed</option>
+                    <option>Cancelled</option>
+                    <option>Completed</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <button class="accordion">Team</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <label class="govuk-label title-label" for="teamMember">Team</label>
-                <select class="govuk-select" id="teamMember" name="teamMember">
-                  <option value="">-- Select --</option>
-                  <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
-                </select>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3">
+                  <label class="govuk-label title-label govuk-label--s" for="teamMember">Team</label>
+                  <span class="govuk-hint">Select the teams tasks you would like to view</span><br>
+                  <select class="govuk-select" id="teamMember" name="teamMember">
+                    <option value="">-- Select --</option>
+                    <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <button class="accordion">Team member</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <label class="govuk-label title-label" for="teamMember">Team member</label>
-                <select class="govuk-select" id="teamMember" name="teamMember">
-                  <option value="">-- Select --</option>
-                  <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
-                </select>
+              <div class="govuk-grid-row"><!-- task type -->
+                <div class="govuk-form-group govuk-!-static-padding-left-3">
+                  <label class="govuk-label title-label govuk-label--s" for="task-type">Task Type</label>
+                  <span class="govuk-hint">Select the task type you want to view (optional)</span><br>
+                  <select class="govuk-select" id="task-type" name="task-type">
+                    <option value="">-- Select --</option>
+                    <option>John Doe</option>
+                    <option>Jane Smith</option>
+                    <option>Alex Lee</option>
+                    <option>Emily Green</option>
+                    <option>Michael Brown</option>
+                    <option>Sara White</option>
+                    <option>Chris Black</option>
+                    <option>Olivia Clark</option>
+                    <option>James Adams</option>
+                    <option>Sophia Turner</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <button class="accordion">Priority</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Priority</legend>
-                  <div class="govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low"><label class="govuk-label govuk-checkboxes__label" for="priority-Low">Low</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium"><label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Medium</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High"><label class="govuk-label govuk-checkboxes__label" for="priority-High">High</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent"><label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">Urgent</label></div>
-                  </div>
-                </fieldset>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3"> <!-- priority -->
+                  <label class="govuk-label title-label govuk-label--s" for="priority">Priority</label>
+                  <span class="govuk-hint">Select the priority of the tasks you want to view (optional)</span><br>
+                  <select class="govuk-select" id="priority" name="priority">
+                    <option value="">-- Select --</option>
+                    <option>None</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>EHigh</option>
+                    <option>Critical</option>
+                  </select>
+                </div>
               </div>
-            </div>
-            <button class="accordion">Status</button>
-            <div class="panel">
-              <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset">
-                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
-                  <div class="govuk-checkboxes--small">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
-                      <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Closed</label>
-                    </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
-                        <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Paused</label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
-                        <label class="govuk-label govuk-checkboxes__label" for="priority-High">Allocated</label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
-                        <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">Unallocated</label>
-                      </div>
-                  </div>
-                </fieldset>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3"> <!-- agent -->
+                  <label class="govuk-label govuk-label--s" for="event-name">
+                    Agent
+                  </label>
+                  <span class="govuk-hint">Enter name, staff number or email of the agent whose tasks you want to view (optional)</span><br>
+                  <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text">
+                </div>
               </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3"> <!-- national insurance number -->
+                  <label class="govuk-label govuk-label--s" for="event-name">
+                    National Insurance number
+                  </label>
+                  <span class="govuk-hint">Enter a customer's National Insurance number to view tasks raised against this customer (optional)</span><br>
+                  <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3"> <!-- Task number -->
+                  <label class="govuk-label govuk-label--s" for="event-name">
+                    Task number
+                  </label>
+                  <span class="govuk-hint">Enter the task number to view a specificsk  (optional)</span><br>
+                  <input class="govuk-input govuk-input--width-20" id="event-name" name="eventName" type="text">
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-form-group govuk-!-static-padding-left-3">
+                  <label class="govuk-label title-label govuk-label--s" for="teamMember">Sort by</label>
+                  <select class="govuk-select" id="teamMember" name="teamMember">
+                    <option value="">-- Select --</option>
+                    <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
+                  </select>
+                </div>
+              </div>
+
+              <a type="submit" class="govuk-button" data-module="govuk-button">
+                View tasks
+              </a>
             </div>
-            <button class="govuk-button fw" type="button" id="applyFilters">Apply filters</button>
           </details>
           
         </div>
