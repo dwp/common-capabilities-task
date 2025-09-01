@@ -1,0 +1,841 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}{% endblock %}
+
+{% block stylesheets %}
+{{ super() }}
+<link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% endblock %}
+
+{% block content %}
+
+<!doctype html>
+<html lang="en" class="govuk-template">
+<head>
+  <meta charset="utf-8" />
+  <title>View and manage tasks</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    .layout-container{display:flex;gap:24px}
+    .filters-panel{width:320px;flex-shrink:0}
+    .moj-scrollable-pane{overflow:auto}
+    #tasksPerPage{width:80px}
+    .visually-hidden{position:absolute!important;clip:rect(1px,1px,1px,1px);padding:0;border:0;height:1px;width:1px;overflow:hidden}
+    @media (max-width:768px){.layout-container{flex-direction:column}.filters-panel{width:100%}}
+    .tag--overdue{margin-left:.5rem}
+  </style>
+</head>
+
+<style>
+/* (kept your custom styles as-is) */
+.layout-container{display:flex;gap:24px;transition:all .3s ease}
+#task-table{width:100%;display:block}
+.filters-panel{width:300px;min-width:300px;flex-shrink:0;overflow:hidden;transition:all .3s ease;padding-left:10px}
+.layout-container.filters-hidden .filters-panel{width:0;min-width:0;opacity:0;pointer-events:none;margin-right:-24px}
+.main-content-area{flex:1;min-width:0}
+#tasksPerPage{width:80px!important;min-width:80px!important}
+/* … (rest of your CSS unchanged) … */
+</style>
+
+<body class="govuk-template__body js-enabled">
+  <a class="govuk-skip-link" href="#main-content">Skip to main content</a>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <h1 class="govuk-heading-xl">View and manage tasks</h1>
+      <p class="govuk-body">
+        This displays tasks created in a given date range. You can view tasks completed or due in this date range by selecting the date option under Filters.
+      </p>
+      <h2 id="resultsHeading" class="govuk-heading-l" tabindex="-1">date 1</h2>
+      <div id="resultsStatus" class="govuk-visually-hidden" role="status" aria-live="polite"></div>
+
+      <!-- Toggle button -->
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <button class="govuk-button govuk-button--secondary toggle-filters-button"
+                  id="toggleFilters" aria-expanded="true" aria-controls="filtersPanel"
+                  type="button" data-module="govuk-button">
+            Hide filters
+            <span class="govuk-visually-hidden" id="buttonStatus">Filters are currently visible</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="layout-container" id="layoutContainer">
+        <!-- Filters -->
+        <aside class="filters-panel" id="filtersPanel" aria-label="Filters">
+          <h3 class="govuk-heading-m">Filters</h3>
+          <form id="filterForm" class="govuk-!-margin-bottom-6" autocomplete="off">
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <h3 class="govuk-heading-s">Date range</h3>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="from-day">From</label>
+              <div class="govuk-date-input" id="fromDate">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="from-day">Day</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="from-day" type="text" inputmode="numeric" placeholder="25">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="from-month">Month</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="from-month" type="text" inputmode="numeric" placeholder="07">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="from-year">Year</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="from-year" type="text" inputmode="numeric" placeholder="2025">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="to-day">To</label>
+              <div class="govuk-date-input" id="toDate">
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="to-day">Day</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric" placeholder="27">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="to-month">Month</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" placeholder="07">
+                  </div>
+                </div>
+                <div class="govuk-date-input__item">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label govuk-date-input__label" for="to-year">Year</label>
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" placeholder="2025">
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Date range option</legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dateKind-created" name="dateKind" type="radio" value="created">
+                  <label class="govuk-label govuk-radios__label" for="dateKind-created">Created date</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dateKind-completion" name="dateKind" type="radio" value="completion" checked>
+                  <label class="govuk-label govuk-radios__label" for="dateKind-completion">Completion date</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="dateKind-due" name="dateKind" type="radio" value="due">
+                  <label class="govuk-label govuk-radios__label" for="dateKind-due">Due by date</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-any" name="status" type="radio" value="" checked>
+                  <label class="govuk-label govuk-radios__label" for="status-any">Any</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-closed" name="status" type="radio" value="Closed">
+                  <label class="govuk-label govuk-radios__label" for="status-closed">Closed</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-onhold" name="status" type="radio" value="On hold">
+                  <label class="govuk-label govuk-radios__label" for="status-onhold">On hold</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-allocated" name="status" type="radio" value="Allocated">
+                  <label class="govuk-label govuk-radios__label" for="status-allocated">Allocated</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="status-completed" name="status" type="radio" value="Completed">
+                  <label class="govuk-label govuk-radios__label" for="status-completed">Completed</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Team</legend>
+              <span class="govuk-hint">Open tasks against team</span>
+              <div class="govuk-checkboxes govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="team" value="Processing team 1" id="team-pt1" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="team-pt1">Processing team 1</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="team" value="Processing team 2" id="team-pt2" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="team-pt2">Processing team 2</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="team" value="Input team" id="team-input" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="team-input">Input team</label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="team" value="Telephony" id="team-tele" checked>
+                  <label class="govuk-label govuk-checkboxes__label" for="team-tele">Telephony</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="taskType">Task type</label>
+              <select class="govuk-select" id="taskType">
+                <option value="">-- Any --</option>
+                <option>Initial-review</option>
+                <option>Nil-claim</option>
+                <option>Call-back</option>
+              </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="agentQuery">Agent</label>
+              <div class="govuk-hint">Enter agent's name or staff ID</div>
+              <input class="govuk-input govuk-input--width-10" id="agentQuery" type="text" />
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="ninoQuery">National Insurance Number</label>
+              <div class="govuk-hint">Enter customer's National Insurance number</div>
+              <input class="govuk-input govuk-input--width-10" id="ninoQuery" type="text" />
+            </div>
+
+            <div class="govuk-form-group">
+              <label class="govuk-label govuk-!-font-weight-bold" for="taskNoQuery">Task number</label>
+              <div class="govuk-hint">Enter task number</div>
+              <input class="govuk-input govuk-input--width-10" id="taskNoQuery" type="text" />
+            </div>
+
+            <fieldset class="govuk-fieldset govuk-!-margin-bottom-4">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Priority</legend>
+              <div class="govuk-radios govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="priority-any" name="priority" type="radio" value="" checked>
+                  <label class="govuk-label govuk-radios__label" for="priority-any">Any</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="priority-high" name="priority" type="radio" value="High">
+                  <label class="govuk-label govuk-radios__label" for="priority-high">High</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="priority-med" name="priority" type="radio" value="Medium">
+                  <label class="govuk-label govuk-radios__label" for="priority-med">Medium</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="priority-low" name="priority" type="radio" value="Low">
+                  <label class="govuk-label govuk-radios__label" for="priority-low">Low</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="priority-urgent" name="priority" type="radio" value="Urgent">
+                  <label class="govuk-label govuk-radios__label" for="priority-urgent">Urgent</label>
+                </div>
+              </div>
+            </fieldset>
+
+            <div class="govuk-button-group">
+              <button class="govuk-button" type="button" id="applyFilters">Apply filters</button>
+              <button class="govuk-button govuk-button--secondary" type="button" id="resetFilters">Reset</button>
+            </div>
+          </form>
+        </aside>
+
+        <!-- Results -->
+        <section class="main-content-area" aria-label="Results">
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="sortSelect">Sort by</label>
+                <select class="govuk-select" id="sortSelect">
+                  <option value="completion-asc">Completed earliest to latest</option>
+                  <option value="completion-desc">Completed latest to earliest</option>
+                  <option value="created-asc" selected>Created earliest to latest</option>
+                  <option value="created-desc">Created latest to earliest</option>
+                  <option value="due-asc">Due earliest to latest</option>
+                  <option value="due-desc">Due latest to earliest</option>
+                  <option value="priority-desc">Priority critical to low</option>
+                  <option value="priority-asc">Priority low to critical</option>
+                </select>
+              </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+              <div class="govuk-!-text-align-right">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="tasksPerPage">Tasks per page</label>
+                  <select class="govuk-select" id="tasksPerPage">
+                    <option value="20">20</option>
+                    <option value="30" selected>30</option>
+                    <option value="50">50</option>
+                    <option value="100">100</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="moj-scrollable-pane">
+            <table id="taskTable" class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header">Details</th>
+                  <th scope="col" class="govuk-table__header">Created</th>
+                  <th scope="col" class="govuk-table__header">Due</th>
+                  <th scope="col" class="govuk-table__header">Task type</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">Customer</th>
+                  <th scope="col" class="govuk-table__header">National Insurance number</th>
+                  <th scope="col" class="govuk-table__header">Agent</th>
+                  <th scope="col" class="govuk-table__header">Priority</th>
+                  <th scope="col" class="govuk-table__header">Status</th>
+                  <th scope="col" class="govuk-table__header">Team</th>
+                </tr>
+              </thead>
+
+              <tbody class="govuk-table__body" id="taskBody">
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>24 Apr 2025</td>
+                  <td>25 Aug 2025 <span class="govuk-tag govuk-tag--red tag--overdue">Overdue</span></td>
+                  <td>Nil-claim</td>
+                  <td>DE568833V</td>
+                  <td>Not applicable</td>
+                  <td>239856</td>
+                  <td>None</td>
+                  <td><span>12 Aug 2025 9:25</span> <span class="govuk-tag govuk-tag--yellow">On hold</span></td>
+                  <td>Processing team 2</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>24 Apr 2025</td>
+                  <td>20 Jun 2025</td>
+                  <td>initial-review</td>
+                  <td>BH668845F</td>
+                  <td>Not applicable</td>
+                  <td>001122</td>
+                  <td>None</td>
+                  <td><span>21 Jul 2025 9:25</span> <span class="govuk-tag govuk-tag--blue">Allocated</span></td>
+                  <td>Input team</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>24 Apr 2025</td>
+                  <td>20 Jun 2025</td>
+                  <td>Call-back</td>
+                  <td>NH781204F</td>
+                  <td>Not applicable</td>
+                  <td>553321</td>
+                  <td>None</td>
+                  <td><span>12 Aug 2025 9:25</span> <span class="govuk-tag govuk-tag--green">Completed</span></td>
+                  <td>Telephony</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>2 Dec 2024</td>
+                  <td>4 Jan 2025</td>
+                  <td>Nil-claim</td>
+                  <td>NH781204F</td>
+                  <td>Not applicable</td>
+                  <td>227789</td>
+                  <td>None</td>
+                  <td><span>4 Jan 2025 10:25</span> <span class="govuk-tag govuk-tag--grey">Closed</span></td>
+                  <td>Processing team 2</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>24 Apr 2025</td>
+                  <td>3 Feb 2025</td>
+                  <td>Nil-claim</td>
+                  <td>HG784532A</td>
+                  <td>Not applicable</td>
+                  <td>123321</td>
+                  <td>None</td>
+                  <td><span>12 Aug 2025 9:25</span> <span class="govuk-tag govuk-tag--green">Completed</span></td>
+                  <td>Input team</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>10 May 2025</td>
+                  <td>15 May 2025</td>
+                  <td>Initial-review</td>
+                  <td>ZX123456A</td>
+                  <td>Not applicable</td>
+                  <td>777001</td>
+                  <td>High</td>
+                  <td><span>14 May 2025 10:15</span> <span class="govuk-tag govuk-tag--blue">Allocated</span></td>
+                  <td>Processing team 1</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>18 Mar 2025</td>
+                  <td>28 Mar 2025</td>
+                  <td>Call-back</td>
+                  <td>AB990011C</td>
+                  <td>Not applicable</td>
+                  <td>777002</td>
+                  <td>Medium</td>
+                  <td><span>29 Mar 2025 11:20</span> <span class="govuk-tag govuk-tag--green">Completed</span></td>
+                  <td>Processing team 2</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>07 Jan 2025</td>
+                  <td>20 Jan 2025</td>
+                  <td>Nil-claim</td>
+                  <td>CD112233D</td>
+                  <td>Not applicable</td>
+                  <td>777003</td>
+                  <td>Low</td>
+                  <td><span>19 Jan 2025 15:45</span> <span class="govuk-tag govuk-tag--yellow">On hold</span></td>
+                  <td>Telephony</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>30 Nov 2024</td>
+                  <td>20 Dec 2024</td>
+                  <td>Initial-review</td>
+                  <td>EF445566E</td>
+                  <td>Not applicable</td>
+                  <td>777004</td>
+                  <td>Urgent</td>
+                  <td><span>18 Dec 2024 10:00</span> <span class="govuk-tag govuk-tag--blue">Allocated</span></td>
+                  <td>Input team</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>12 Jun 2025</td>
+                  <td>30 Jun 2025</td>
+                  <td>Nil-claim</td>
+                  <td>GH778899F</td>
+                  <td>Not applicable</td>
+                  <td>777005</td>
+                  <td>High</td>
+                  <td><span>05 Jul 2025 14:05</span> <span class="govuk-tag govuk-tag--grey">Closed</span></td>
+                  <td>Processing team 2</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>01 Feb 2025</td>
+                  <td>14 Feb 2025</td>
+                  <td>Call-back</td>
+                  <td>IJ334455G</td>
+                  <td>Not applicable</td>
+                  <td>777006</td>
+                  <td>Medium</td>
+                  <td><span>14 Feb 2025 17:35</span> <span class="govuk-tag govuk-tag--green">Completed</span></td>
+                  <td>Processing team 1</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>22 Apr 2025</td>
+                  <td>10 May 2025</td>
+                  <td>Initial-review</td>
+                  <td>KL667788H</td>
+                  <td>Not applicable</td>
+                  <td>777007</td>
+                  <td>Low</td>
+                  <td><span>11 May 2025 09:05</span> <span class="govuk-tag govuk-tag--green">Completed</span></td>
+                  <td>Telephony</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>15 Aug 2024</td>
+                  <td>29 Aug 2024</td>
+                  <td>Nil-claim</td>
+                  <td>MN123987J</td>
+                  <td>Not applicable</td>
+                  <td>777008</td>
+                  <td>Urgent</td>
+                  <td><span>30 Aug 2024 12:00</span> <span class="govuk-tag govuk-tag--grey">Closed</span></td>
+                  <td>Input team</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>05 Jul 2025</td>
+                  <td>20 Jul 2025</td>
+                  <td>Call-back</td>
+                  <td>PQ564738K</td>
+                  <td>Not applicable</td>
+                  <td>777009</td>
+                  <td>High</td>
+                  <td><span>19 Jul 2025 16:10</span> <span class="govuk-tag govuk-tag--yellow">On hold</span></td>
+                  <td>Processing team 1</td>
+                </tr>
+                <tr>
+                  <td><a href="#">View</a></td>
+                  <td>28 May 2025</td>
+                  <td>02 Jun 2025</td>
+                  <td>Initial-review</td>
+                  <td>RS918273L</td>
+                  <td>Not applicable</td>
+                  <td>777010</td>
+                  <td>Medium</td>
+                  <td><span>31 May 2025 08:40</span> <span class="govuk-tag govuk-tag--blue">Allocated</span></td>
+                  <td>Processing team 2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <nav class="govuk-pagination govuk-!-static-margin-top-6" role="navigation" aria-label="Pagination">
+            <ul class="govuk-pagination__list" id="pager"></ul>
+          </nav>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <script>
+  (function(){
+    'use strict';
+
+    const monthMap = {jan:0,feb:1,mar:2,apr:3,may:4,jun:5,jul:6,aug:7,sep:8,sept:8,oct:9,nov:10,dec:11};
+    function parseDateLoose(text){
+      if(!text) return null;
+      const t = text.toString().trim().replace(/,+/g,'');
+      const m = t.match(/^(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})(?:\s+(\d{1,2}):(\d{2}))?$/);
+      if(!m) return null;
+      const day=parseInt(m[1],10);
+      const mon=monthMap[m[2].slice(0,3).toLowerCase()];
+      const year=parseInt(m[3],10);
+      const hh=m[4]?parseInt(m[4],10):0;
+      const mm=m[5]?parseInt(m[5],10):0;
+      if(isNaN(day)||mon==null||isNaN(year)) return null;
+      return new Date(year,mon,day,hh,mm,0,0);
+    }
+    function normaliseText(s){ return (s||'').toString().trim().toLowerCase(); }
+    const priorityRank = { urgent:4, high:3, medium:2, low:1, none:0 };
+
+    const form = document.getElementById('filterForm');
+    const bodyEl = document.getElementById('taskBody');
+    const rows = Array.from(bodyEl.querySelectorAll('tr'));
+    const sortSelect = document.getElementById('sortSelect');
+    const tasksPerPageEl = document.getElementById('tasksPerPage');
+    const resultsHeading = document.getElementById('resultsHeading');
+    const pager = document.getElementById('pager');
+
+    function readDate(prefix){
+      const d=document.getElementById(prefix+'-day').value.trim();
+      const m=document.getElementById(prefix+'-month').value.trim();
+      const y=document.getElementById(prefix+'-year').value.trim();
+      if(!(d&&m&&y)) return null;
+      const day=parseInt(d,10), mon=parseInt(m,10)-1, yr=parseInt(y,10);
+      if([day,mon,yr].some(isNaN)) return null;
+      const dt=new Date(yr,mon,day);
+      return isNaN(dt.getTime())?null:dt;
+    }
+
+    // Build data model
+    const data = rows.map((tr, idx) => {
+      const tds = tr.querySelectorAll('td');
+      const createdTxt = tds[1]?.textContent || '';
+      const dueTxt = (tds[2]?.childNodes[0]?.textContent) || tds[2]?.textContent || '';
+      const completionCell = tds[8];
+      const completionDateTxt = completionCell ? (completionCell.querySelector('span')?.textContent || '') : '';
+      const statusTxt = completionCell ? (completionCell.querySelector('.govuk-tag')?.textContent || '').trim() : '';
+      const teamTxt = tds[9]?.textContent || '';
+      const typeTxt = tds[3]?.textContent || '';
+      const customerTxt = tds[4]?.textContent || '';
+      const ninoTxt = tds[5]?.textContent || '';
+      const agentTxt = tds[6]?.textContent || '';
+      const priorityTxt = tds[7]?.textContent || 'None';
+      return {
+        idx, tr,
+        createdText: createdTxt.trim(),
+        dueText: dueTxt.trim(),
+        completionText: completionDateTxt.trim(),
+        status: statusTxt,
+        team: teamTxt.trim(),
+        type: typeTxt.trim(),
+        customer: customerTxt.trim(),
+        nino: ninoTxt.trim(),
+        agent: agentTxt.trim(),
+        priority: priorityTxt.trim(),
+        created: parseDateLoose(createdTxt),
+        due: parseDateLoose(dueTxt),
+        completion: parseDateLoose(completionDateTxt),
+        priorityScore: priorityRank[normaliseText(priorityTxt)] ?? 0
+      };
+    });
+
+    let currentPage = 1;
+    function setPage(n){ currentPage=n; render(); }
+
+    function readFilters(){
+      const from = readDate('from') || null; if(from){from.setHours(0,0,0,0);}
+      const to = readDate('to') || null; if(to){to.setHours(23,59,59,999);}
+      const dateKind = (form.querySelector('input[name="dateKind"]:checked')?.value) || 'created';
+      const status = form.querySelector('input[name="status"]:checked')?.value || '';
+      const priority = form.querySelector('input[name="priority"]:checked')?.value || '';
+      const teamChecked = Array.from(form.querySelectorAll('input[name="team"]:checked')).map(i=>i.value);
+      const taskType = document.getElementById('taskType').value.trim();
+      const agentQ = document.getElementById('agentQuery').value.trim().toLowerCase();
+      const ninoQ  = document.getElementById('ninoQuery').value.trim().toLowerCase();
+      const taskNoQ  = document.getElementById('taskNoQuery').value.trim().toLowerCase();
+      return { from,to,dateKind,status,priority,teamChecked,taskType,agentQ,ninoQ,taskNoQ };
+    }
+
+    function inRange(date, from, to){
+      if(!from && !to) return true;
+      if(!date) return false;
+      const t = date.getTime();
+      if(from && t < from.getTime()) return false;
+      if(to && t > to.getTime()) return false;
+      return true;
+    }
+
+    function applyFiltersToData(filters){
+      const { from,to,dateKind,status,priority,teamChecked,taskType,agentQ,ninoQ,taskNoQ } = filters;
+      return data.filter(item=>{
+        const dateField = dateKind==='created'?item.created : (dateKind==='due'?item.due : item.completion);
+        if(!inRange(dateField, from, to)) return false;
+        if(status && normaliseText(item.status)!==normaliseText(status)) return false;
+        if(priority && normaliseText(item.priority)!==normaliseText(priority)) return false;
+        if(teamChecked.length && !teamChecked.includes(item.team)) return false;
+        if(taskType && normaliseText(item.type)!==normaliseText(taskType)) return false;
+        if(agentQ && !normaliseText(item.agent).includes(agentQ)) return false;
+        if(ninoQ && !normaliseText(item.nino).includes(ninoQ)) return false;
+        if(taskNoQ && !normaliseText(item.customer).includes(taskNoQ)) return false;
+        return true;
+      });
+    }
+
+    function sortData(list){
+      const v = sortSelect.value;
+      const [key, dir] = v.split('-');
+      const mult = dir==='desc' ? -1 : 1;
+      if(key==='priority'){
+        return list.slice().sort((a,b)=> (a.priorityScore - b.priorityScore) * mult);
+      }
+      const keyMap = { created:'created', due:'due', completion:'completion' };
+      const k = keyMap[key] || 'created';
+      return list.slice().sort((a,b)=>{
+        const at = a[k] ? a[k].getTime() : -Infinity;
+        const bt = b[k] ? b[k].getTime() : -Infinity;
+        if(at===bt) return 0;
+        return at < bt ? -1*mult : 1*mult;
+      });
+    }
+
+    function updatePager(total, perPage){
+      const totalPages = Math.max(1, Math.ceil(total/perPage));
+      currentPage = Math.min(currentPage, totalPages);
+      pager.innerHTML = '';
+      for(let i=1;i<=totalPages;i++){
+        const li = document.createElement('li');
+        li.className = 'govuk-pagination__item' + (i===currentPage ? ' govuk-pagination__item--current' : '');
+        const a = document.createElement('a');
+        a.className = 'govuk-link govuk-pagination__link';
+        a.href = '#';
+        a.textContent = String(i);
+        a.setAttribute('aria-label', `Page ${i}`);
+        if(i===currentPage) a.setAttribute('aria-current','page');
+        a.addEventListener('click', e=>{ e.preventDefault(); setPage(i); });
+        li.appendChild(a);
+        pager.appendChild(li);
+      }
+    }
+
+    function updateHeading(count, filters){
+      const {from,to,dateKind} = filters;
+      const kindLabel = {created:'created', due:'due', completion:'completed'}[dateKind] || 'created';
+      function fmt(d){
+        if(!d) return '—';
+        const day = d.getDate().toString().padStart(2,'0');
+        const month = d.toLocaleString('en-GB',{month:'short'});
+        const year = d.getFullYear();
+        return `${day} ${month} ${year}`;
+      }
+      resultsHeading.textContent = `${count} task${count===1?'':'s'} ${kindLabel} between ${fmt(from)} and ${fmt(to)}`;
+    }
+
+    function render(){
+      const filters = readFilters();
+      const filtered = applyFiltersToData(filters);
+      const sorted = sortData(filtered);
+
+      const perPage = parseInt(tasksPerPageEl.value,10) || 30;
+      updatePager(sorted.length, perPage);
+      const startIdx = (currentPage-1)*perPage;
+      const endIdx = startIdx + perPage;
+
+      // Reorder rows in DOM to match sort order AND apply pagination visibility.
+      // First hide everything:
+      rows.forEach(r => r.style.display = 'none');
+
+      // Append in sorted order and show only current page range:
+      const frag = document.createDocumentFragment();
+      sorted.forEach((item, i) => {
+        item.tr.style.display = (i>=startIdx && i<endIdx) ? '' : 'none';
+        frag.appendChild(item.tr); // moves row to new order
+      });
+      bodyEl.appendChild(frag);
+
+      updateHeading(filtered.length, filters);
+    }
+
+    document.getElementById('applyFilters').addEventListener('click', ()=>{ currentPage=1; render(); });
+    document.getElementById('resetFilters').addEventListener('click', ()=>{
+      form.reset();
+      form.querySelectorAll('input[name="team"]').forEach(cb=> cb.checked = true);
+      form.querySelector('#dateKind-completion').checked = true;
+      form.querySelector('#status-any').checked = true;
+      form.querySelector('#priority-any').checked = true;
+      currentPage = 1;
+      render();
+    });
+    sortSelect.addEventListener('change', ()=>{ currentPage=1; render(); });
+    tasksPerPageEl.addEventListener('change', ()=>{ currentPage=1; render(); });
+
+    ['agentQuery','ninoQuery','taskNoQuery','from-day','from-month','from-year','to-day','to-month','to-year'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener('keydown', e=>{ if(e.key==='Enter'){ e.preventDefault(); currentPage=1; render(); }});
+    });
+
+    function getPlaceholderDate(prefix) {
+        const get = (id) => {
+            const el = document.getElementById(id);
+            const val = (el?.value || '').trim();
+            const ph  = (el?.getAttribute('placeholder') || '').trim();
+            return val || ph; // prefer typed value; otherwise use placeholder
+        };
+        const d = get(prefix + '-day');
+        const m = get(prefix + '-month');
+        const y = get(prefix + '-year');
+        if (!(d && m && y)) return null;
+        const day = parseInt(d, 10);
+        const mon = parseInt(m, 10) - 1; // numeric placeholder like "07"
+        const yr  = parseInt(y, 10);
+        const dt = new Date(yr, mon, day);
+        return isNaN(dt.getTime()) ? null : dt;
+        }
+
+        function updateHeading(count, filters){
+            const { from, to, dateKind } = filters;
+            const kindLabel = {created:'created', due:'due', completion:'completed'}[dateKind] || 'created';
+
+            // Fallback to placeholders if inputs are empty
+            const fromDisplay = from || getPlaceholderDate('from');
+            const toDisplay   = to   || getPlaceholderDate('to');
+
+            function fmt(d){
+                if (!d) return '—';
+                const day = d.getDate().toString().padStart(2,'0');
+                const month = d.toLocaleString('en-GB',{month:'short'});
+                const year = d.getFullYear();
+                return `${day} ${month} ${year}`;
+            }
+
+            resultsHeading.textContent =
+                `${count} task${count===1?'':'s'} ${kindLabel} between ${fmt(fromDisplay)} and ${fmt(toDisplay)}`;
+            }
+
+            function moveFocusToResults() {
+  const h = document.getElementById('resultsHeading');
+  if (!h) return;
+  // Make it programmatically focusable, then focus it
+  h.setAttribute('tabindex', '-1');
+  h.focus(); // scrolling to heading is expected/predictable
+  // Clean up so it isn't in the tab order permanently
+  setTimeout(() => h.removeAttribute('tabindex'), 0);
+}
+
+function announceResults() {
+  const live = document.getElementById('resultsStatus');
+  if (live) live.textContent = document.getElementById('resultsHeading').textContent;
+}
+
+document.getElementById('applyFilters').addEventListener('click', () => {
+  currentPage = 1;
+  render();
+  announceResults();
+  moveFocusToResults();
+});
+
+document.getElementById('resetFilters').addEventListener('click', () => {
+  form.reset();
+  form.querySelectorAll('input[name="team"]').forEach(cb => cb.checked = true);
+  form.querySelector('#dateKind-completion').checked = true;
+  form.querySelector('#status-any').checked = true;
+  form.querySelector('#priority-any').checked = true;
+  currentPage = 1;
+  render();
+  announceResults();
+  moveFocusToResults();
+});
+
+    render();
+  })();
+  </script>
+
+  <script>
+  (function(){
+    'use strict';
+    const toggleButton = document.getElementById('toggleFilters');
+    const layoutContainer = document.getElementById('layoutContainer');
+    const filtersPanel = document.getElementById('filtersPanel');
+    const buttonStatus = document.getElementById('buttonStatus');
+    let filtersVisible = true;
+
+
+    function moveFocusToResults() {
+  const h = document.getElementById('resultsHeading');
+  if (!h) return;
+  // Make it programmatically focusable, then focus it
+  h.setAttribute('tabindex', '-1');
+  h.focus(); // scrolling to heading is expected/predictable
+  // Clean up so it isn't in the tab order permanently
+  setTimeout(() => h.removeAttribute('tabindex'), 0);
+}
+
+
+
+    function toggleFilters(){
+      filtersVisible = !filtersVisible;
+      if(filtersVisible){
+        layoutContainer.classList.remove('filters-hidden');
+        toggleButton.textContent = 'Hide filters';
+        toggleButton.setAttribute('aria-expanded','true');
+        buttonStatus.textContent = 'Filters are currently visible';
+        filtersPanel.querySelectorAll('input, select').forEach(i=> i.removeAttribute('tabindex'));
+      } else {
+        layoutContainer.classList.add('filters-hidden');
+        toggleButton.textContent = 'Show filters';
+        toggleButton.setAttribute('aria-expanded','false');
+        buttonStatus.textContent = 'Filters are currently hidden';
+        filtersPanel.querySelectorAll('input, select').forEach(i=> i.setAttribute('tabindex','-1'));
+      }
+      const announcement = document.createElement('div');
+      announcement.setAttribute('aria-live','polite');
+      announcement.setAttribute('aria-atomic','true');
+      announcement.className = 'govuk-visually-hidden';
+      announcement.textContent = filtersVisible ? 'Filters shown' : 'Filters hidden';
+      document.body.appendChild(announcement);
+      setTimeout(()=>{ if(document.body.contains(announcement)) document.body.removeChild(announcement); }, 1000);
+    }
+
+    toggleButton.addEventListener('click', toggleFilters);
+    toggleButton.addEventListener('keydown', function(event){
+      if(event.key==='Enter' || event.key===' '){ event.preventDefault(); toggleFilters(); }
+    });
+    document.addEventListener('keydown', function(event){
+      if(event.key==='Escape' && !filtersVisible){ toggleFilters(); toggleButton.focus(); }
+    });
+    toggleButton.setAttribute('aria-expanded', filtersVisible.toString());
+  })();
+  </script>
+</body>
+</html>
+
+{% endblock %}
