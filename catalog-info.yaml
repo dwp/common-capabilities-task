@@ -2,7 +2,7 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: prototype.interface.common-capabilities-task-prototype
-  title: common-capabilities-task-prototype
+  title: Common-Capabilities-Task-Prototype
   description: Task prototypes
 
   annotations:
