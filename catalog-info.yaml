@@ -3,8 +3,7 @@ kind: Component
 metadata:
   name: prototype.interface.common-capabilities-task-prototype
   title: common-capabilities-task-prototype
-  description: |
-    TODO: add description for common-capabilities-task-prototype.
+  description: Task prototypes
 
   annotations:
     gitlab.com/project-slug: dwp/user-centred-design/common-capabilities-task-prototype
