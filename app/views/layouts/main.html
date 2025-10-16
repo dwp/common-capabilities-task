@@ -3,36 +3,36 @@
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   #}
   
-  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
-  {% block header %}
+{% block header %}
 
-  
+
   <header class="dwp-header">
     <div class="dwp-header__content govuk-width-container">
-    <div class="dwp-header__service-name dwp-header__service-name--with-action">
-      <a href="#" class="dwp-header__link">DWP Task</a>
+      <div class="dwp-header__service-name dwp-header__service-name--with-action">
+        <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
+      </div>
+      <div class="dwp-header__service-action">
+        <a href="/" class="dwp-header__link">State Pension</a>
+      </div>
     </div>
-    <div class="dwp-header__service-action">
-      <a href="#" class="dwp-header__link">State Pension</a>
-    </div>
-    </div>
-    </header>
+  </header> 
     
   <div class="govuk-phase-banner">
-      <div class="govuk-width-container">
+    <div class="govuk-width-container">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
-          Beta
+        Beta
         </strong>
         <span class="govuk-phase-banner__text">
-          This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.
+        This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.
         </span>
       </p>
-  </div>
+    </div>
   </div>
   
-  {% endblock %}
+{% endblock %}
 
 {% block footer %}
   
