@@ -10,6 +10,18 @@ const fakeCaseData = require('./data/generate-case-data')
 
 // Add your routes here
 
+// Routes for bulk change
+
+
+router.post('/select-version', (req, res) => {
+
+	if (req.body.teams.selectVersion == 'Version 1'){
+		res.redirect("teams/bulkChanges/version-1/home")
+	} else {
+		res.redirect("teams/bulkChanges/version-2/home")
+	}
+})
+
 const express = require('express')
 const dayjs = require('dayjs')
 var objectSupport = require("dayjs/plugin/objectSupport");
