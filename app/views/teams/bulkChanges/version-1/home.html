@@ -1,8 +1,7 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-Team leader home
-{% endblock %}
+
+{% set pageName = "DWP Task dashboard" %}
 
 {% block beforeContent %}
 
@@ -12,42 +11,35 @@ Team leader home
 
 {% block content %}
 
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-<div class="govuk-width-container">
-  <!--<a href="org-unit-selection"
-  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
-  <h1 class="govuk-heading-l">Team leader home</h1>
-  <div class="box">
-    <h2 class="govuk-heading-m"><a href="view-tasks">Tasks</a></h2>
-    <p>View and manage tasks.</p> 
-  </div>
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <div class="box govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m"><a href="view-tasks">Add an organisation unit</a></h2>
+        <p>Add an organisation unit, attributes and permissions.</p> 
+      </div>
+      
+      <div class="box govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m"><a href="view-tasks">View and manage tasks</a></h2>
+        <p>View and manage tasks for Apply For Pension Credit over a given date range.</p> 
+      </div>
+
+      <div class="box govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m"><a href="view-tasks">Tasks</a></h2>
+        <p>View and manage tasks.</p> 
+      </div>
+
+      <div class="box govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-m"><a href="view-tasks">Tasks</a></h2>
+        <p>View and manage tasks.</p> 
+      </div>
+      
+    </div>
 </div>
 
-<div class="govuk-width-container">
-  &nbsp;
-    <div class="box">
-      <h2 class="govuk-heading-m"><a href="manage-team">Set up and manage team</a></h2>
-      <p>Add or remove people from the team. Manage groups and task matching criteria.</p>
-    </div>
-  </div>
 
-  <div class="govuk-width-container">
-    &nbsp;
-      <div class="box">
-        <h2 class="govuk-heading-m"><a href="view-statistics">Statistics</a></h2>
-        <p>Filter statistics by date range to view average completion time, created, completed, and overdue tasks.</p>
-      </div>
-    </div>
-
-    <div class="govuk-width-container">
-      &nbsp;
-        <div class="box">
-          <h2 class="govuk-heading-m"><a href="agent">Agent home</a></h2>
-          <p>Work as an agent.</p>
-        </div>
-      </div>
-
-&nbsp;
 {% endblock %}
 
 
