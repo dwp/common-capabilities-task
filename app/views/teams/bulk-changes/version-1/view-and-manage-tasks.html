@@ -5,7 +5,10 @@
 
 {% block beforeContent %}
 
-<div class=spacer1></div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 
 {% endblock %}
 
@@ -17,10 +20,10 @@
       <h1 class="govuk-heading-l">{{pageName}}</h1>
       <p class="govuk-body">To view any tasks, you must enter a date range. Enter from and to dates below.</p>
 
-      <form novalidate method="get" action="">
+      <form novalidate method="post">
 
       {{ govukDateInput({
-        id: "date",
+        id: "[teams][from]",
         fieldset: {
           legend: {
             text: "From",
@@ -92,7 +95,7 @@
       </p>
 
       {{ govukRadios({
-        name: "date-range-option",
+        name: "[teams][v1][DateRangeOption]",
         fieldset: {
           legend: {
             text: "Date range option",
@@ -100,7 +103,7 @@
             classes: "govuk-fieldset__legend--s"
           }
         },
-        value: data.date-range-option,
+        value: data.teams.v1.DateRangeOption,
         items: [
           {
             value: "Created date",
@@ -114,8 +117,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "status",
-        name: "status",
+        id: "[teams][status]",
+        name: "[teams][status]",
         label: {
           text: "Status",
           isPageHeading: false,
@@ -124,10 +127,10 @@
         hint: {
           text: "Select the status of the tasks you want to view (optional)"
         },
-        value: data.status,
+        value: data.teams.status,
         items: [
           {
-            value: "Select",
+            value: "",
             text: "Select"
           },
           {
@@ -158,8 +161,8 @@
       }) }}
 
       {{ govukSelect({
-        id: "team",
-        name: "team",
+        id: "[teams][Team]",
+        name: "[teams][Team]",
         label: {
           text: "Team",
           isPageHeading: false,
@@ -168,7 +171,7 @@
         hint: {
           text: "Select the team you want to view (optional)"
         },
-        value: data.team,
+        value: data.teams.Team,
         items: [
           {
             value: "Select",
@@ -184,46 +187,56 @@
           }
         ]
       }) }}
-            
-      {{ govukSelect({
-        id: "taskType",
-        name: "taskType",
-        label: {
-          text: "Task type",
-          isPageHeading: false,
-          classes: "govuk-label--s"
-        },
-        hint: {
-          text: "Select the priority of the tasks you want to view (optional)"
-        },
-        value: data.taskType,
-        items: [
-          {
-            value: "Select",
-            text: "Select"
-          },
-          {
-            value: "admin role release 19-08-25 Tasktype",
-            text: "admin role release 19-08-25 Tasktype"
-          },
-          {
-            value: "ASC task type staging Release testing 04092024",
-            text: "ASC task type staging Release testing 04092024"
-          },
-          {
-            value: "ASC task type staging Release testing 24092024",
-            text: "ASC task type staging Release testing 24092024"
-          },
-          {
-            value: "Benefit Amount 26 09 2024",
-            text: "Benefit Amount 26 09 2024"
-          }
-        ]
-      }) }}
+
+      {# Autocomplete start #}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds"> 
+
+          {{ govukSelect({
+            id: "[teams][v1][taskType]",
+            name: "[teams][v1][taskType]",
+            classes: "taskTypeAutocomplete",
+            label: {
+              text: "Task type",
+              isPageHeading: false,
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: "Select the priority of the tasks you want to view (optional)"
+            },
+            value: data.teams.v1.taskType,
+            items: [
+              {
+                value: "",
+                text: "Select"
+              },
+              {
+                value: "Admin role release 19-08-25 Tasktype",
+                text: "Admin role release 19-08-25 Tasktype"
+              },
+              {
+                value: "ASC task type staging Release testing 04092024",
+                text: "ASC task type staging Release testing 04092024"
+              },
+              {
+                value: "ASC task type staging Release testing 24092024",
+                text: "ASC task type staging Release testing 24092024"
+              },
+              {
+                value: "Benefit Amount 26 09 2024",
+                text: "Benefit Amount 26 09 2024"
+              }
+            ]
+          }) }}
+
+        </div>
+      </div>
+      {# Autocomplete ends #}
+     
 
       {{ govukSelect({
-        id: "priority",
-        name: "priority",
+        id: "[teams][priority]",
+        name: "[teams][priority]",
         label: {
           text: "Priority",
           isPageHeading: false,
@@ -232,10 +245,10 @@
         hint: {
           text: "Select the priority of the tasks you want to view (optional)"
         },
-        value: data.priority,
+        value: data.teams.priority,
         items: [
           {
-            value: "Select",
+            value: "",
             text: "Select"
           },
           {
@@ -262,8 +275,8 @@
       }) }}
 
       {{ govukInput({
-        id: "agent",
-        name: "agent",
+        id: "[teams][agent]",
+        name: "[teams][agent]",
         label: {
           text: "Agent",
           isPageHeading: false,
@@ -273,12 +286,12 @@
         hint: {
           html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
         },
-        value: data.agent
+        value: data.teams.agent
       }) }}
 
       {{ govukInput({
-        id: "nino",
-        name: "nino",
+        id: "[teams][nino]",
+        name: "[teams][nino]",
         label: {
           text: "National Insurance number",
           isPageHeading: false,
@@ -288,12 +301,12 @@
         hint: {
           html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
         },
-        value: data.nino
+        value: data.teams.nino
       }) }}
 
-       {{ govukInput({
-        id: "taskNumber",
-        name: "taskNumber",
+      {{ govukInput({
+        id: "[teams][taskNumber]",
+        name: "[teams][taskNumber]",
         label: {
           text: "Task number",
           isPageHeading: false,
@@ -303,21 +316,21 @@
         hint: {
           html: "Enter the task number to view a specific task (optional)"
         },
-        value: data.nino
+        value: data.teams.taskNumber
       }) }}
 
       {{ govukSelect({
-        id: "sortBy",
-        name: "sortBy",
+        id: "[teams][sortBy]",
+        name: "[teams][sortBy]",
         label: {
           text: "Sort by",
           isPageHeading: false,
           classes: "govuk-label--s"
         },
-        value: data.sortBy,
+        value: data.teams.sortBy,
         items: [
           {
-            value: "Select",
+            value: "",
             text: "Select"
           },
           {
@@ -354,14 +367,12 @@
           }
         ]
       }) }}
-
      
 
       <div class="govuk-button-group">
         {{ govukButton({
           text: "View tasks"
         }) }}
-      
         <a href="#" class="govuk-link">Clear filters</a>
       </div>
       
@@ -370,7 +381,15 @@
     </div>
 </div>
 
+{% endblock %}
 
+{% block scripts %}
+  {{super()}}
+  <script>
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('.taskTypeAutocomplete')
+    })
+  </script>
 {% endblock %}
 
 
