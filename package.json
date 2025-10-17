@@ -6,6 +6,7 @@
   },
   "dependencies": {
     "@dwp/dwp-frontend": "^2.7.0",
+    "@govuk-prototype-kit/common-templates": "2.0.1",
     "@ministryofjustice/frontend": "^5.1.5",
     "accessible-autocomplete": "^2.0.4",
     "body-parser": "^2.2.0",
