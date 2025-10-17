@@ -16,9 +16,9 @@ const fakeCaseData = require('./data/generate-case-data')
 router.post('/select-version', (req, res) => {
 
 	if (req.body.teams.selectVersion == 'Version 1'){
-		res.redirect("teams/bulkChanges/version-1/home")
+		res.redirect("teams/bulk-changes/version-1/home")
 	} else {
-		res.redirect("teams/bulkChanges/version-2/home")
+		res.redirect("teams/bulk-changes/version-2/home")
 	}
 })
 
