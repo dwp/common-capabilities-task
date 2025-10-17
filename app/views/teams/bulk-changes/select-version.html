@@ -1,13 +1,14 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/new-main.html" %}
 
 {% set pageName = "Select a version" %}
 
-
 {% block beforeContent %}
+
   {{ govukBackLink({
     text: "Back",
     href: "javascript:window.history.back()"
   }) }}
+
 {% endblock %}
 
 
@@ -26,7 +27,7 @@
               classes: "govuk-fieldset__legend--l"
             }
           },
-          value: data.select-version,
+          value: data.teams.selectVersion,
           items: [
             {
               value: "Version 1",
