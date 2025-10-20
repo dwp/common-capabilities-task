@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 
-{% set pageName = "View and manage tasks" %}
+{% set pageName = "Find tasks" %}
 
 {% block beforeContent %}
 
@@ -371,7 +371,8 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "View tasks"
+          text: "View tasks",
+          href: "tasks"
         }) }}
         <a href="#" class="govuk-link">Clear filters</a>
       </div>
