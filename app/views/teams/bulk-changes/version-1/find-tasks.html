@@ -116,23 +116,18 @@
         ]
       }) }}
 
-      {{ govukSelect({
-        id: "[teams][status]",
-        name: "[teams][status]",
-        label: {
-          text: "Status",
-          isPageHeading: false,
-          classes: "govuk-label--s"
+      {{ govukRadios({
+        name: "[teams][v2][statusOption]",
+        fieldset: {
+          legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
         },
-        hint: {
-          text: "Select the status of the tasks you want to view (optional)"
-        },
-        value: data.teams.status,
+        value: data.teams.v2.statusOption,
+        hint: {text: "Select the status of the tasks you want to view (optional)"},
         items: [
-          {
-            value: "",
-            text: "Select"
-          },
           {
             value: "Allocated",
             text: "Allocated"
@@ -159,6 +154,8 @@
           }
         ]
       }) }}
+
+      
 
       {{ govukSelect({
         id: "[teams][Team]",

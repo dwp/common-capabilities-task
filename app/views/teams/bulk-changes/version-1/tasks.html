@@ -40,7 +40,7 @@
             <td class="govuk-table__cell">Alan Smith</td>
             <td class="govuk-table__cell">None</td>
             <td class="govuk-table__cell">
-              {{govukTag({text: "ALLOCATED", classes: "govuk-tag--yellow" })}}
+              {{govukTag({text: "IN PROGRESS", classes: "govuk-tag--yellow" })}}
             </td>
             <td class="govuk-table__cell"><a href="task">View</a></td>
           </tr>
@@ -52,7 +52,7 @@
             <td class="govuk-table__cell">Alan Carr</td>
             <td class="govuk-table__cell">None</td>
             <td class="govuk-table__cell">
-              {{govukTag({text: "UNALLOCATED", classes: "govuk-tag--grey" })}}
+              {{govukTag({text: "ACTIVE", classes: "govuk-tag--green" })}}
             </td>
             <td class="govuk-table__cell"><a href="#">View</a></td>
           </tr>
@@ -64,7 +64,7 @@
             <td class="govuk-table__cell">Unknown</td>
             <td class="govuk-table__cell">None</td>
             <td class="govuk-table__cell">
-              {{govukTag({text: "ACTIVE", classes: "govuk-tag--green" })}}
+              {{govukTag({text: "ON HOLD", classes: "govuk-tag--grey" })}}
             </td>
             <td class="govuk-table__cell"><a href="#">View</a></td>
           </tr>
@@ -72,7 +72,8 @@
       </table>
 
       {{ govukButton({
-        text: "Bulk update tasks"
+        text: "Bulk update tasks",
+        href: "bulk-update-tasks"
       }) }}
       
     </div>
