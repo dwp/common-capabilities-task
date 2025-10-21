@@ -1,0 +1,115 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<style>
+ 
+
+  .card {
+    border: 1px solid #b1b4b6;
+    background-color: #ffffff;
+    box-sizing: border-box;
+    padding: .8rem;
+    margin-bottom: 2rem;
+   
+  }
+
+
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">Team leader home</h1>
+  
+</div>
+
+<div class="govuk-width-container">
+  <div class="govuk-grid-row govuk-!-static-padding-bottom-2">
+    <div class="govuk-grid-column-one-third">
+
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Set up and manage team
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Add or remove people from the team. Manage groups and task matching criteria.
+              </dt>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Add or remove people from the team. Manage groups and task matching criteria.<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+            </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+     
+      <div class="card">
+        <h2 class="govuk-heading-m"><a href="manage-team">Set up and manage team</a></h2>
+        <p>Add or remove people from the team. Manage groups and task matching criteria.</p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">
+            Tasks
+          </h2>
+        </div>
+        <div class="govuk-summary-card__content">
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                View and manage tasks
+              </dt><dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+      <div class="card">
+        <h2 class="govuk-heading-m"><a href="manage-team">Tasks</a></h2>
+        <p>View and manage tasks.</p> 
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="card">
+        <h2 class="govuk-heading-m"><a href="manage-team">Statistics</a></h2>
+        <p>View Team and agent statistical information.</p>
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="card">
+        <h2 class="govuk-heading-m"><a href="manage-team">Agent home</a></h2>
+        <p>Work as an agent.</p>
+      </div>
+    </div>
+    </div>
+    </div>
+
+    
+
+
+
+{% endblock %}
+
+

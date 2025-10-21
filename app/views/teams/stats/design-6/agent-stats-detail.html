@@ -1,0 +1,277 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+
+{% endblock %}
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% endblock %}
+
+{% block content %}
+
+  
+<style>
+
+
+
+
+
+</style>
+
+<body class="govuk-template__body">
+   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+   <!-- Skip link -->
+   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+   <!-- Main content -->
+   <div class="govuk-width-container">
+       <main class="govuk-main-wrapper" id="main-content" role="main">
+
+           <!-- Page heading -->
+           <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                   <h1 class="govuk-heading-l">Agent statistics</h1>
+                   <div>
+                    total tasks completd 100
+                   </div>
+               </div>
+           </div>
+
+    
+           <div class="govuk-grid-row">
+            <!-- Column one -->
+            <div class="govuk-grid-column-full">
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Task statistics<br><span class="govuk-hint">From [DATE] to [DATE]</span></caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header " style="width: 300px">Date</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Allocated</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Active </th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Returned to queue</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Completed</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">1 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">1 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">2 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">2 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">3 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">3 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">4 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">4 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">5 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">5 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">6 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">6 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                  </tr>
+                </tbody>
+              </table>
+              <nav class="govuk-pagination" aria-label="Pagination">
+                <ul class="govuk-pagination__list">
+                  <li class="govuk-pagination__item govuk-pagination__item--current">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                      1
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                      2
+                    </a>
+                  </li>
+                  <li class="govuk-pagination__item">
+                    <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                      3
+                    </a>
+                  </li>
+                </ul>
+                <div class="govuk-pagination__next">
+                  <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                    <span class="govuk-pagination__link-title">
+                      Next<span class="govuk-visually-hidden"> page</span>
+                    </span>
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                      <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                    </svg>
+                  </a>
+                </div>
+              </nav>
+            </div>
+            
+            </div>
+          </div>
+       </main>
+   </div>
+
+
+   <!-- GOV.UK Frontend JavaScript -->
+
+   <script>
+      
+
+       // Custom toggle functionality
+       (function() {
+           'use strict';
+
+           // Get DOM elements
+           const toggleButton = document.getElementById('toggleFilters');
+           const layoutContainer = document.getElementById('layoutContainer');
+           const filtersPanel = document.getElementById('filtersPanel');
+           const buttonStatus = document.getElementById('buttonStatus');
+
+           // State management
+           let filtersVisible = true;
+
+           // Button click handler
+           function toggleFilters() {
+               filtersVisible = !filtersVisible;
+
+               if (filtersVisible) {
+                   // Show filters
+                   layoutContainer.classList.remove('filters-hidden');
+                   toggleButton.textContent = 'Hide filters';
+                   toggleButton.setAttribute('aria-expanded', 'true');
+                   buttonStatus.textContent = 'Filters are currently visible';
+
+                   // Restore focus management for filter inputs
+                   const filterInputs = filtersPanel.querySelectorAll('input, select');
+                   filterInputs.forEach(input => {
+                       input.removeAttribute('tabindex');
+                   });
+               } else {
+                   // Hide filters
+                   layoutContainer.classList.add('filters-hidden');
+                   toggleButton.textContent = 'Show filters';
+                   toggleButton.setAttribute('aria-expanded', 'false');
+                   buttonStatus.textContent = 'Filters are currently hidden';
+
+                   // Remove filter inputs from tab order when hidden
+                   const filterInputs = filtersPanel.querySelectorAll('input, select');
+                   filterInputs.forEach(input => {
+                       input.setAttribute('tabindex', '-1');
+                   });
+               }
+
+               // Announce the change to screen readers
+               const announcement = document.createElement('div');
+               announcement.setAttribute('aria-live', 'polite');
+               announcement.setAttribute('aria-atomic', 'true');
+               announcement.className = 'govuk-visually-hidden';
+               announcement.textContent = filtersVisible ? 'Filters shown' : 'Filters hidden';
+               document.body.appendChild(announcement);
+
+               // Remove the announcement after it's been read
+               setTimeout(() => {
+                   if (document.body.contains(announcement)) {
+                       document.body.removeChild(announcement);
+                   }
+               }, 1000);
+           }
+
+           // Event listeners
+           toggleButton.addEventListener('click', toggleFilters);
+
+           // Keyboard support
+           toggleButton.addEventListener('keydown', function(event) {
+               // Handle Enter and Space keys (though GOV.UK button handles this)
+               if (event.key === 'Enter' || event.key === ' ') {
+                   event.preventDefault();
+                   toggleFilters();
+               }
+           });
+
+           // Handle escape key to show filters if hidden
+           document.addEventListener('keydown', function(event) {
+               if (event.key === 'Escape' && !filtersVisible) {
+                   toggleFilters();
+                   toggleButton.focus();
+               }
+           });
+
+           // Initialize proper ARIA states
+           toggleButton.setAttribute('aria-expanded', filtersVisible.toString());
+
+       })();
+   </script>
+</body>
+{% endblock %}

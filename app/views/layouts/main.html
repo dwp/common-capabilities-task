@@ -3,23 +3,24 @@
   https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
   #}
   
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
-{% block header %}
+  {% block header %}
 
+  
   <header class="dwp-header">
     <div class="dwp-header__content govuk-width-container">
-      <div class="dwp-header__service-name dwp-header__service-name--with-action">
-        <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
-      </div>
-      <div class="dwp-header__service-action">
-        <a href="/" class="dwp-header__link">State Pension</a>
-      </div>
+    <div class="dwp-header__service-name dwp-header__service-name--with-action">
+      <a href="#" class="dwp-header__link">DWP Task</a>
     </div>
-  </header> 
+    <div class="dwp-header__service-action">
+      <a href="#" class="dwp-header__link">State Pension</a>
+    </div>
+    </div>
+    </header>
     
   <div class="govuk-phase-banner">
-    <div class="govuk-width-container">
+      <div class="govuk-width-container">
       <p class="govuk-phase-banner__content">
         <strong class="govuk-tag govuk-phase-banner__content__tag">
           Beta
@@ -28,10 +29,10 @@
           This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.
         </span>
       </p>
-    </div>
+  </div>
   </div>
   
-{% endblock %}
+  {% endblock %}
 
 {% block footer %}
   
@@ -48,24 +49,13 @@
       <li class="govuk-footer__inline-list-item">
         <a class="govuk-footer__link" href="https://intranet.dwp.gov.uk/page/dwp-employee-privacy-notice" target="blank" rel="noopener noreferrer">Privacy</a> (opens in a new tab)
       </li>
-      <li class="govuk-footer__inline-list-item" style="float: right;">
+      <li class="govuk-footer__inline-list-item" style="float: right;"">
         Version 1.0
-      </li>
-      <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="/manage-prototype">Manage your prototype</a>
-      </li>
-      <li class="govuk-footer__inline-list-item">
-        <a class="govuk-footer__link" href="/manage-prototype/clear-data">Clear data</a>
       </li>
     </ul>
     
     </div>
-  </footer>
+    </footer>
   
-  {% endblock %}
-
-  {% block scripts %}
-    {{ super() }}
-    <script src="/public/javascripts/components/accessible-autocomplete.min.js"></script>
   {% endblock %}
 
