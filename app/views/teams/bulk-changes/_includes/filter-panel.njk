@@ -74,7 +74,7 @@
 
   {{ govukRadios({
     classes: "govuk-radios--small",
-    name: "[teams][v2][DateRangeOption]",
+    name: "[teams][v2][dateRangeOption]",
     fieldset: {
       legend: {
         text: "Date range option",
@@ -82,7 +82,30 @@
         classes: "govuk-fieldset__legend--s"
       }
     },
-    value: data.teams.v2.DateRangeOption,
+    value: data.teams.v2.dateRangeOption,
+    items: [
+      {
+        value: "Created date",
+        text: "Created date"
+      },
+      {
+        value: "Completed date",
+        text: "Completed date"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "[teams][v2][statusOption]",
+    fieldset: {
+      legend: {
+        text: "Status",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    value: data.teams.v2.statusOption,
     hint: {text: "Select the status of the tasks you want to view (optional)"},
     items: [
       {
@@ -111,73 +134,195 @@
       }
     ]
   }) }}
+  
+   {# Task type start #}
+
+  {{ govukSelect({
+      id: "[teams][v1][taskType]",
+      name: "[teams][v1][taskType]",
+      classes: "taskTypeAutocomplete",
+      label: {
+        text: "Task type",
+        isPageHeading: false,
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Select the priority of the tasks you want to view (optional)"
+      },
+      value: data.teams.v1.taskType,
+      items: [
+        {
+          value: "",
+          text: "Select"
+        },
+        {
+          value: "Admin role release 19-08-25 Tasktype",
+          text: "Admin role release 19-08-25 Tasktype"
+        },
+        {
+          value: "ASC task type staging Release testing 04092024",
+          text: "ASC task type staging Release testing 04092024"
+        },
+        {
+          value: "ASC task type staging Release testing 24092024",
+          text: "ASC task type staging Release testing 24092024"
+        },
+        {
+          value: "Benefit Amount 26 09 2024",
+          text: "Benefit Amount 26 09 2024"
+        }
+      ]
+    }) }}
 
   {{ govukRadios({
     classes: "govuk-radios--small",
-    name: "[teams][v2][DateRangeOption]",
+    name: "[teams][v2][statusOption]",
     fieldset: {
       legend: {
-        text: "Date range option",
+        text: "Task type",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--s"
       }
     },
-    value: data.teams.v2.DateRangeOption,
-    hint: {text: "Select the team you want to view (optional)"},
+    value: data.teams.v2.statusOption,
+    hint: {text: "Select task type you want to view (optional)"},
     items: [
       {
-        value: "Newcastle Team One",
-        text: "Newcastle Team One"
+        value: "Call customer",
+        text: "Call customer"
       },
       {
-        value: "Newcastle Team Two",
-        text: "Newcastle Team Two"
+        value: "New task 12345",
+        text: "New task 12345"
+      },
+      {
+        value: "gbclaim",
+        text: "gbclaim"
+      },
+      {
+        value: "nil-claim",
+        text: "nil-claim"
+      },
+      {
+        value: "nil-claim-sme",
+        text: "nil-claim-sme"
+      },
+      {
+        value: "Positive Claim SME",
+        text: "Positive Claim SME"
       }
     ]
   }) }}
 
-  {{ govukCheckboxes({
-    idPrefix: "filters[statuses]",
-    name: "filters[statuses]",
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: "Status",
-        classes: "govuk-fieldset__legend--s"
-      }
+  {{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "[teams][v2][DateRangeOption]",
+  fieldset: {
+    legend: {
+      text: "Priority",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  value: data.teams.v2.DateRangeOption,
+  hint: {text: "Select the priority of the task you want to view (optional)"},
+  items: [
+    {
+      value: "None",
+      text: "None"
     },
-    items: [{
-      value: 'Received',
-      text: 'Received'
-    }, {
-      value: 'Approved',
-      text: 'Approved'
-    }, {
-      value: 'Rejected',
-      text: 'Rejected'
-    }],
-    values: data.filters.statuses
+    {
+      value: "Low",
+      text: "Low"
+    },
+    {
+      value: "Medium",
+      text: "Medium"
+    },
+    {
+      value: "High",
+      text: "High"
+    },
+    {
+      value: "Critical",
+      text: "Critical"
+    }
+  ]
+}) }}
+
+{{ govukInput({
+    id: "[teams][agent]",
+    name: "[teams][agent]",
+    label: {
+      text: "Agent",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-20",
+    hint: {
+      html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
+    },
+    value: data.teams.agent
+}) }}
+
+{{ govukInput({
+    id: "[teams][nino]",
+    name: "[teams][nino]",
+    label: {
+      text: "National Insurance number",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    hint: {
+      html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
+    },
+    value: data.teams.nino
+}) }}
+
+  {{ govukInput({
+    id: "[teams][taskNumber]",
+    name: "[teams][taskNumber]",
+    label: {
+      text: "Task number",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    hint: {
+      html: "Enter the task number to view a specific task (optional)"
+    },
+    value: data.teams.taskNumber
   }) }}
 
-  {{ govukCheckboxes({
-    idPrefix: "filters[numberOfBalls]",
-    name: "filters[numberOfBalls]",
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: "Number of balls",
-        classes: "govuk-fieldset__legend--s"
-      }
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "[teams][v2][DateRangeOption]",
+  fieldset: {
+    legend: {
+      text: "Date range option",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  value: data.teams.v2.DateRangeOption,
+  hint: {text: "Select the team you want to view (optional)"},
+  items: [
+    {
+      value: "Newcastle Team One",
+      text: "Newcastle Team One"
     },
-    items: [{
-      value: '1 or 2',
-      text: '1 or 2'
-    }, {
-      value: '3 or more',
-      text: '3 or more'
-    }],
-    values: data.filters.numberOfBalls
-  }) }}
+    {
+      value: "Newcastle Team Two",
+      text: "Newcastle Team Two"
+    }
+  ]
+}) }}
+
+  
+
+
+
 
 {% endset %}
 
