@@ -21,49 +21,8 @@
 
       {% include "teams/bulk-changes/_includes/search-form.njk" %}
 
-      <div class="app-action-bar">
-        <div class="app-action-bar__filter"></div>
-      </div>
-
-   
-        <div class="app-list">
-
-            <div class="app-list__item">
-              <h2 class="govuk-heading-m">
-                <a href="/applications/{{application.id}}">
-                 
-                </a>
-              </h2>
-
-              {{ govukTag({
-                text: application.status,
-                classes: application.status 
-              }) }}
-
-              {{ govukSummaryList({
-                classes: "govuk-summary-list--no-border",
-                rows: [
-                  {
-                    key: {
-                      text: "Email address"
-                    },
-                    value: {
-                      text: application.personalDetails.emailAddress
-                    }
-                  },
-                  {
-                    key: {
-                      text: "Sent date"
-                    },
-                    value: {
-                      text: "some text"
-                    }
-                  }
-                ]
-              }) }}
-            </div>
-         
-        </div>
+     
+  
      
         <p>There are no results.</p>
  
