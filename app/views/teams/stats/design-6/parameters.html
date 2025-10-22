@@ -121,8 +121,138 @@
 
            <!-- Two column layout -->
            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds">
                 <div class="govuk-grid-column-full">
-                  
+                  <form id="filter-form">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-label--m" for="searchb">Agent</label>
+                      <div id="event-name-hint" class="govuk-hint">
+                        Enter agent's name or staff ID 
+                      </div>
+                      <div id="searchb" class="govuk-input--width-20"></div>
+                    </div>
+                    <form id="filter-form">
+                      <h3 class="govuk-heading-s">Date range</h3>
+                     
+                      <div class="govuk-form-group">
+                        <label class="govuk-label title-label" for="startDate">From</label>
+                        <div class="govuk-date-input" id="startDate">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+              
+                      <div class="govuk-form-group">
+                        <label class="govuk-label title-label" for="endDate">To</label>
+                        <div class="govuk-date-input" id="endDate">
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-day">
+                                Day
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-month">
+                                Month
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                            </div>
+                          </div>
+                          <div class="govuk-date-input__item">
+                            <div class="govuk-form-group">
+                              <label class="govuk-label govuk-date-input__label" for="dob-year">
+                                Year
+                              </label>
+                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Task type</legend>
+                          <span class="govuk-hint">Select task types you would like to report against</span>
+                          <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Initial call </label>
+                            </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Call back </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-High">Data entry </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">General admin</label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">All </label>
+                              </div>
+                          </div>
+                        </fieldset>
+                      </div>
+                      <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+                          <span class="govuk-hint">Select statuses you would like to report against</span>
+                          <div class="govuk-checkboxes--small">
+                            <div class="govuk-checkboxes__item">
+                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Active </label>
+                            </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Completed </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-High">Allocated </label>
+                              </div>
+                              <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
+                                <label class="govuk-label govuk-checkboxes__label" for="priority-High">All </label>
+                              </div>
+                              
+                          </div>
+                        </fieldset>
+                      </div>
+                </form>
+                    <div class="govuk-button-group">
+                    <a href="report" class="govuk-button" type="button" id="applyFilters">Generate report</a>
+                  </div>
+              </form>
+              </div>
+             
               </div>
             </div>
             
@@ -134,92 +264,6 @@
 
    <!-- GOV.UK Frontend JavaScript -->
 
-   <script>
-      
-
-       // Custom toggle functionality
-       (function() {
-           'use strict';
-
-           // Get DOM elements
-           const toggleButton = document.getElementById('toggleFilters');
-           const layoutContainer = document.getElementById('layoutContainer');
-           const filtersPanel = document.getElementById('filtersPanel');
-           const buttonStatus = document.getElementById('buttonStatus');
-
-           // State management
-           let filtersVisible = true;
-
-           // Button click handler
-           function toggleFilters() {
-               filtersVisible = !filtersVisible;
-
-               if (filtersVisible) {
-                   // Show filters
-                   layoutContainer.classList.remove('filters-hidden');
-                   toggleButton.textContent = 'Hide filters';
-                   toggleButton.setAttribute('aria-expanded', 'true');
-                   buttonStatus.textContent = 'Filters are currently visible';
-
-                   // Restore focus management for filter inputs
-                   const filterInputs = filtersPanel.querySelectorAll('input, select');
-                   filterInputs.forEach(input => {
-                       input.removeAttribute('tabindex');
-                   });
-               } else {
-                   // Hide filters
-                   layoutContainer.classList.add('filters-hidden');
-                   toggleButton.textContent = 'Show filters';
-                   toggleButton.setAttribute('aria-expanded', 'false');
-                   buttonStatus.textContent = 'Filters are currently hidden';
-
-                   // Remove filter inputs from tab order when hidden
-                   const filterInputs = filtersPanel.querySelectorAll('input, select');
-                   filterInputs.forEach(input => {
-                       input.setAttribute('tabindex', '-1');
-                   });
-               }
-
-               // Announce the change to screen readers
-               const announcement = document.createElement('div');
-               announcement.setAttribute('aria-live', 'polite');
-               announcement.setAttribute('aria-atomic', 'true');
-               announcement.className = 'govuk-visually-hidden';
-               announcement.textContent = filtersVisible ? 'Filters shown' : 'Filters hidden';
-               document.body.appendChild(announcement);
-
-               // Remove the announcement after it's been read
-               setTimeout(() => {
-                   if (document.body.contains(announcement)) {
-                       document.body.removeChild(announcement);
-                   }
-               }, 1000);
-           }
-
-           // Event listeners
-           toggleButton.addEventListener('click', toggleFilters);
-
-           // Keyboard support
-           toggleButton.addEventListener('keydown', function(event) {
-               // Handle Enter and Space keys (though GOV.UK button handles this)
-               if (event.key === 'Enter' || event.key === ' ') {
-                   event.preventDefault();
-                   toggleFilters();
-               }
-           });
-
-           // Handle escape key to show filters if hidden
-           document.addEventListener('keydown', function(event) {
-               if (event.key === 'Escape' && !filtersVisible) {
-                   toggleFilters();
-                   toggleButton.focus();
-               }
-           });
-
-           // Initialize proper ARIA states
-           toggleButton.setAttribute('aria-expanded', filtersVisible.toString());
-
-       })();
-   </script>
+  
 </body>
 {% endblock %}
