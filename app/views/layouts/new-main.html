@@ -1,0 +1,30 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
+  
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+  {% include "_includes/header.html" %}
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container'
+      }) }}
+  </div>
+{% endblock %}
+ 
+
+{% block footer %}
+  {% include "_includes/footer.html" %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/components/accessible-autocomplete.min.js"></script>
+{% endblock %}
+

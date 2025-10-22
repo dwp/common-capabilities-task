@@ -10,6 +10,22 @@ const fakeCaseData = require('./data/generate-case-data')
 
 // Add your routes here
 
+// Routes for bulk change
+// it is posting to itself and after redirected to v1 or v2
+router.post('/teams/bulk-changes/select-version', (req, res) => {
+	if (req.session.data.teams.selectVersion == 'Version 1'){
+		res.redirect("version-1/home")
+	} else {
+		res.redirect("version-2/home")
+	}
+})
+
+
+router.post('/teams/bulk-changes/version-1/view-and-manage-tasks', (req, res) => {
+		res.redirect("results")
+})
+
+
 const express = require('express')
 const dayjs = require('dayjs')
 var objectSupport = require("dayjs/plugin/objectSupport");
