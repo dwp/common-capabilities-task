@@ -15,6 +15,7 @@
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
+      <form method="post" novalidate>
 
       {{ govukRadios({
           name: "[teams][v2][statusOption]",
@@ -52,10 +53,10 @@
         }) }}
 
         {{ govukButton({
-          text: "Continue",
-          href: "change-due-date"
+          text: "Continue"
         }) }}
-     
+        
+     </form>
     </div>
 </div>
 
