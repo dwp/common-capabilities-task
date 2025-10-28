@@ -155,25 +155,18 @@
         ]
       }) }}
 
-      
-
-      {{ govukSelect({
-        id: "[teams][Team]",
-        name: "[teams][Team]",
-        label: {
-          text: "Team",
-          isPageHeading: false,
-          classes: "govuk-label--s"
+      {{ govukRadios({
+        name: "[teams][v2][selectTeam]",
+        fieldset: {
+          legend: {
+            text: "Team",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
         },
-        hint: {
-          text: "Select the team you want to view (optional)"
-        },
-        value: data.teams.Team,
+        value: data.teams.v2.selectTeam,
+        hint: {text: "Select the team you want to view (optional)"},
         items: [
-          {
-            value: "Select",
-            text: "Select"
-          },
           {
             value: "Newcastle Team One",
             text: "Newcastle Team One"
@@ -185,9 +178,11 @@
         ]
       }) }}
 
+      
+
       {# Autocomplete start #}
       <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds"> 
+        <div class="govuk-grid-column-one-half"> 
 
           {{ govukSelect({
             id: "[teams][v1][taskType]",
@@ -229,47 +224,43 @@
         </div>
       </div>
       {# Autocomplete ends #}
-     
 
-      {{ govukSelect({
-        id: "[teams][priority]",
-        name: "[teams][priority]",
-        label: {
+      {{ govukRadios({
+      name: "[teams][v2][priority]",
+      fieldset: {
+        legend: {
           text: "Priority",
           isPageHeading: false,
-          classes: "govuk-label--s"
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      value: data.teams.v2.priority,
+      hint: {text: "Select the priority of the tasks you want to view (optional)"},
+      items: [
+        {
+          value: "None",
+          text: "None"
         },
-        hint: {
-          text: "Select the priority of the tasks you want to view (optional)"
+        {
+          value: "Low",
+          text: "Low"
         },
-        value: data.teams.priority,
-        items: [
-          {
-            value: "",
-            text: "Select"
-          },
-          {
-            value: "None",
-            text: "None"
-          },
-          {
-            value: "Low",
-            text: "Low"
-          },
-          {
-            value: "Medium",
-            text: "Medium"
-          },
-          {
-            value: "High",
-            text: "High"
-          },
-          {
-            value: "Critical",
-            text: "Critical"
-          }
-        ]
-      }) }}
+        {
+          value: "Medium",
+          text: "Medium"
+        },
+        {
+          value: "High",
+          text: "High"
+        },
+        {
+          value: "Critical",
+          text: "Critical"
+        }
+      ]
+    }) }}
+     
+
 
       {{ govukInput({
         id: "[teams][agent]",
@@ -316,54 +307,6 @@
         value: data.teams.taskNumber
       }) }}
 
-      {{ govukSelect({
-        id: "[teams][sortBy]",
-        name: "[teams][sortBy]",
-        label: {
-          text: "Sort by",
-          isPageHeading: false,
-          classes: "govuk-label--s"
-        },
-        value: data.teams.sortBy,
-        items: [
-          {
-            value: "",
-            text: "Select"
-          },
-          {
-            value: "Created, earliest to latest",
-            text: "Created, earliest to latest"
-          },
-          {
-            value: "Created, latest to earliest",
-            text: "Created, latest to earliest"
-          },
-          {
-            value: "Priority, low to critical",
-            text: "Priority, low to critical"
-          },
-          {
-            value: "Priority critical to low",
-            text: "Priority critical to low"
-          },
-          {
-            value: "Due, earliest to latest",
-            text: "Due, earliest to latest"
-          },
-          {
-            value: "Due, latest to earliest",
-            text: "Due, latest to earliest"
-          },
-          {
-            value: "Completed, earliest to latest",
-            text: "Completed, earliest to latest"
-          },
-          {
-            value: "Completed, latest to earliest",
-            text: "Completed, latest to earliest"
-          }
-        ]
-      }) }}
      
 
       <div class="govuk-button-group">

@@ -16,9 +16,57 @@
     <div class="govuk-grid-column-full">
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
+      {{ govukSelect({
+        id: "[teams][sortBy]",
+        name: "[teams][sortBy]",
+        label: {
+          text: "Sort by",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        value: data.teams.sortBy,
+        items: [
+          {
+            value: "",
+            text: "Select"
+          },
+          {
+            value: "Created, earliest to latest",
+            text: "Created, earliest to latest"
+          },
+          {
+            value: "Created, latest to earliest",
+            text: "Created, latest to earliest"
+          },
+          {
+            value: "Priority, low to critical",
+            text: "Priority, low to critical"
+          },
+          {
+            value: "Priority critical to low",
+            text: "Priority critical to low"
+          },
+          {
+            value: "Due, earliest to latest",
+            text: "Due, earliest to latest"
+          },
+          {
+            value: "Due, latest to earliest",
+            text: "Due, latest to earliest"
+          },
+          {
+            value: "Completed, earliest to latest",
+            text: "Completed, earliest to latest"
+          },
+          {
+            value: "Completed, latest to earliest",
+            text: "Completed, latest to earliest"
+          }
+        ]
+      }) }}
 
       <table class="govuk-table">
-        <caption class="govuk-table__caption govuk-table__caption--s">3 tasks between 1 October 2025 and 25 October 2025</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">3 tasks between 1 October 2025 and 25 October 2025</caption>
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Select</th>

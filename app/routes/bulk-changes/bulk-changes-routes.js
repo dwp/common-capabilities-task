@@ -15,16 +15,15 @@ router.post('/teams/bulk-changes/version-1/bulk-update-tasks', (req, res) => {
 		res.redirect("change-due-date/change-due-date")
 
 	} else if (req.session.data.teams.v2.statusOption == 'Change priority') {
-        res.redirect("change-due-date/change-priority")
+        res.redirect("change-priority/change-priority")
         
     } else if (req.session.data.teams.v2.statusOption == 'Return to queue') {
-        res.redirect("change-due-date/return-to-queue")  
+        res.redirect("return-task-to-queue/return-task-to-queue")  
     }
      else {
 		res.redirect("change-due-date/complete")
 	}
 })
-
 
 
 }
