@@ -88,3 +88,4 @@ router.post('/test/date-test-answer', function (req, res) {
 module.exports = router
 
 require('./routes/bulk-changes/bulk-changes-routes')(router)
+require('./routes/stats-for-agents-and-teams/stats-routes')(router)

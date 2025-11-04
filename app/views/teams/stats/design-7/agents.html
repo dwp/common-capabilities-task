@@ -1,0 +1,74 @@
+{% extends "layouts/new-main.html" %}
+
+{% set pageName = "Would you like to compare statistics by agents or teams?" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" novalidate>
+
+  
+       {{ govukCheckboxes({
+        name: "stats[agent]",
+        fieldset: {
+          legend: {
+            text: "Which task types do you need to report on?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply"
+        },
+        values: data.stats.agent,
+        items: [
+          {
+            value: "Completion time",
+            text: "Completion time"
+          },
+          {
+            value: "Task outcome",
+            text: "Task outcome"
+          },
+          {
+            value: "Rational if unable to complete",
+            text: "Rational if unable to complete"
+          }
+        ]
+       }) }}
+  
+    
+
+       {{ govukInput({
+          label: {
+            text: "Enter agent's name or staff ID?",
+            classes: "govuk-label--s",
+            isPageHeading: false
+          },
+          classes: "govuk-!-width-one-half",
+          id: "event-name",
+          name: "eventName"
+        }) }}
+
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
+    </div>
+  </div>
+{% endblock %}
+
+
+
