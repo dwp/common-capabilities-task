@@ -78,7 +78,7 @@
                 <div class="govuk-grid-column-full">
                 
                 
-                    <form id="filter-form">
+                    <form method="post" action="team-stats-all" novalidate>
                      
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--s " for="startDate">From</label>
@@ -142,71 +142,81 @@
                         </div>
                       </div>
 
+                      {{ govukRadios({
+                        name: "mvp[stats][taskTypes]",
+                        fieldset: {
+                          legend: {
+                            text: "Task types",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--s"
+                          }
+                        },
+                        hint: {
+                          text: "Select the task you want to view, or 'All' for total tasks"
+                        },
+                        value: data.mvp.stats.taskTypes,
+                        items: [
+                          {
+                            value: "All",
+                            text: "All"
+                          },
+                          {
+                            value: "Call back",
+                            text: "Call back"
+                          },
+                          {
+                            value: "Data entry",
+                            text: "Data entry"
+                          },
+                          {
+                            value: "General admin",
+                            text: "General admin"
+                          },
+                          {
+                            value: "Initial call",
+                            text: "Initial call"
+                          }
+                        ]
+                      }) }}
 
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Task types</legend>
-                          <span class="govuk-hint">Select the task types you want to view</span>
-                          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                            <div class="govuk-checkboxes__item">
-                                <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
-                                <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">All</label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
-                              <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Call back</label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
-                              <label class="govuk-label govuk-checkboxes__label" for="priority-High">Data entry</label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
-                              <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">General admin</label>
-                            </div>
-                            <div class="govuk-checkboxes__item">
-                              <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
-                              <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Initial call</label>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-
-                      <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Team</legend>
-                          <span class="govuk-hint">Select the team you want to view MI for</span>
-                          <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="month">
-                              <label class="govuk-label govuk-radios__label" for="changedName">
-                                Team Purple
-                              </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-                              <label class="govuk-label govuk-radios__label" for="changedName-2">
-                                Team Amber
-                              </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                              <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="year">
-                              <label class="govuk-label govuk-radios__label" for="changedName-2">
-                                Triage Team
-                              </label>
-                            </div>
-                          </div>
-                        </fieldset>
-                      </div>
-
+                      {{ govukRadios({
+                        name: "mvp[stats][team]",
+                        fieldset: {
+                          legend: {
+                            text: "Team",
+                            isPageHeading: false,
+                            classes: "govuk-fieldset__legend--s"
+                          }
+                        },
+                        hint: {
+                          text: "Select the team you want to view MI for"
+                        },
+                        value: data.mvp.stats.team,
+                        items: [
+                          {
+                            value: "Team Purple",
+                            text: "Team Purple"
+                          },
+                          {
+                            value: "Team Amber",
+                            text: "Team Amber"
+                          },
+                          {
+                            value: "Triage Team",
+                            text: "Triage Team"
+                          }
+                        ]
+                      }) }}
                  
-                    <div class="govuk-button-group">
-                    <a href="team-stats-5" class="govuk-button" type="button" id="applyFilters">View MI</a>
-                  </div>
-              </form>
+                      {{ govukButton({
+                        text: "View MI"
+                      }) }}
+                 
+                 
+                </form>
               </div>
              
-              </div>
+              </div> 
             </div>
             
             </div>
