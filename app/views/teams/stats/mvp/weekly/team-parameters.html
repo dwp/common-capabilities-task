@@ -1,228 +1,165 @@
 {% extends "layouts/main.html" %}
 
+{% set pageName = "View Management Information (MI)" %}
 
-{% block pageTitle %}
 
-{% endblock %}
-{% block stylesheets %}
-  {{ super() }}
-  <link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
-  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css" />
-{% endblock %}
 {% block beforeContent %}
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
 {% endblock %}
-
-{% block pageScripts %}
- 
-    <style>
-      #searchContainer {
-        display: inline-block;
-      }
-  
-      .stat {
-        border: 1px solid #b1b4b6;
-        background-color: #1d70b8;
-        box-sizing: border-box;
-        padding: .2rem .52rem;;
-        margin-bottom: 2rem;
-        color:#ffffff;
-      }
-  
-      .stat_number {
-        font-size: 3rem;
-        font-weight: 600;
-      }
-  
-      .stat_cat {
-        font-size: medium;
-        font-weight: 300;
-      }
-    </style>
-{% endblock %}
-
-
 
 {% block content %}
 
-  
- 
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
 
-<body class="govuk-template__body">
-   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-   <!-- Skip link -->
-   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+      <p>To view MI, you must enter a data range. Enter from and to dates below.</p> 
 
-
-   <!-- Main content -->
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-
-           <!-- Page heading -->
-           <div class="govuk-grid-row govuk-!-static-padding-bottom-2">
-               <div class="govuk-grid-column-full">
-                  <h1 class="govuk-heading-xl">View Management Information (MI)</h1>
-                  <p>To view MI, you must enter a data range. Enter from and to dates below.</p> 
-               </div>
-           </div>
-           
-           
-          </div>
-     
-
-           <!-- Two column layout -->
-           <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-grid-column-full">
-                
-                
-                    <form method="post" action="team-stats-all" novalidate>
-                     
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--s " for="startDate">From</label>
-                        <div class="govuk-hint">For example 12 06 2025</div>
-                        <div class="govuk-date-input" id="startDate">
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-day">
-                                Day
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-month">
-                                Month
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-year">
-                                Year
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-              
-                      <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--s" for="endDate">To</label>
-                        <div class="govuk-hint">For example 12 06 2025</div>
-                        <div class="govuk-date-input" id="endDate">
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-day">
-                                Day
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-month">
-                                Month
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
-                            </div>
-                          </div>
-                          <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                              <label class="govuk-label govuk-date-input__label" for="dob-year">
-                                Year
-                              </label>
-                              <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                      {{ govukRadios({
-                        name: "mvp[stats][taskTypes]",
-                        fieldset: {
-                          legend: {
-                            text: "Task types",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--s"
-                          }
-                        },
-                        hint: {
-                          text: "Select the task you want to view, or 'All' for total tasks"
-                        },
-                        value: data.mvp.stats.taskTypes,
-                        items: [
-                          {
-                            value: "All",
-                            text: "All"
-                          },
-                          {
-                            value: "Call back",
-                            text: "Call back"
-                          },
-                          {
-                            value: "Data entry",
-                            text: "Data entry"
-                          },
-                          {
-                            value: "General admin",
-                            text: "General admin"
-                          },
-                          {
-                            value: "Initial call",
-                            text: "Initial call"
-                          }
-                        ]
-                      }) }}
-
-                      {{ govukRadios({
-                        name: "mvp[stats][team]",
-                        fieldset: {
-                          legend: {
-                            text: "Team",
-                            isPageHeading: false,
-                            classes: "govuk-fieldset__legend--s"
-                          }
-                        },
-                        hint: {
-                          text: "Select the team you want to view MI for"
-                        },
-                        value: data.mvp.stats.team,
-                        items: [
-                          {
-                            value: "Team Purple",
-                            text: "Team Purple"
-                          },
-                          {
-                            value: "Team Amber",
-                            text: "Team Amber"
-                          },
-                          {
-                            value: "Triage Team",
-                            text: "Triage Team"
-                          }
-                        ]
-                      }) }}
-                 
-                      {{ govukButton({
-                        text: "View MI"
-                      }) }}
-                 
-                 
-                </form>
-              </div>
-             
-              </div> 
-            </div>
+      <form method="post" novalidate>
             
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s " for="startDate">From</label>
+            <div class="govuk-hint">For example 12 06 2025</div>
+            <div class="govuk-date-input" id="startDate">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                </div>
+              </div>
             </div>
           </div>
-      
-   </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-label--s" for="endDate">To</label>
+            <div class="govuk-hint">For example 12 06 2025</div>
+            <div class="govuk-date-input" id="endDate">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
 
-</body>
+          {{ govukRadios({
+            name: "mvp[stats][taskTypes]",
+            fieldset: {
+              legend: {
+                text: "Task types",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Select the task you want to view, or 'All' for total tasks"
+            },
+            value: data.mvp.stats.taskTypes,
+            items: [
+              {
+                value: "All",
+                text: "All"
+              },
+              {
+                value: "Call back",
+                text: "Call back"
+              },
+              {
+                value: "Data entry",
+                text: "Data entry"
+              },
+              {
+                value: "General admin",
+                text: "General admin"
+              },
+              {
+                value: "Initial call",
+                text: "Initial call"
+              }
+            ]
+          }) }}
+
+          {{ govukRadios({
+            name: "mvp[stats][team]",
+            fieldset: {
+              legend: {
+                text: "Team",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--s"
+              }
+            },
+            hint: {
+              text: "Select the team you want to view MI for"
+            },
+            value: data.mvp.stats.team,
+            items: [
+              {
+                value: "Team Purple",
+                text: "Team Purple"
+              },
+              {
+                value: "Team Amber",
+                text: "Team Amber"
+              },
+              {
+                value: "Triage Team",
+                text: "Triage Team"
+              }
+            ]
+          }) }}
+      
+          {{ govukButton({
+            text: "View MI"
+          }) }}
+        
+        
+      </form>
+
+    </div>
+  </div>
+            
+  
+
+
 {% endblock %}
