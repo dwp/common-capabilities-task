@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "View Management Information (MI)" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+{{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter correct time period",
+        href: "#"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>To view MI, you must enter a data range. Enter from and to dates below.</p> 
+
+      <form method="post" novalidate>
+
+
+      {{ govukDateInput({
+        id: "mvp[stats][startDate]",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "Enter correct time period"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "mvp[stats][startDate]",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "Enter correct time period"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+       
+          
+      {{ govukRadios({
+        name: "mvp[stats][taskTypes]",
+        fieldset: {
+          legend: {
+            text: "Task types",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Select the task you want to view, or 'All' for total tasks"
+        },
+        value: data.mvp.stats.taskTypes,
+        items: [
+          {
+            value: "All",
+            text: "All",
+            checked: true
+          },
+          {
+            value: "Call back",
+            text: "Call back"
+          },
+          {
+            value: "Data entry",
+            text: "Data entry"
+          },
+          {
+            value: "General admin",
+            text: "General admin"
+          },
+          {
+            value: "Initial call",
+            text: "Initial call"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "mvp[stats][team]",
+        fieldset: {
+          legend: {
+            text: "Team",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Select the team you want to view MI for"
+        },
+        value: data.mvp.stats.team,
+        items: [
+          {
+            value: "Team Purple",
+            text: "Team Purple",
+            checked: true
+          },
+          {
+            value: "Team Amber",
+            text: "Team Amber"
+          },
+          {
+            value: "Triage Team",
+            text: "Triage Team"
+          }
+        ]
+      }) }}
+  
+      {{ govukButton({
+        text: "View MI"
+      }) }}
+        
+        
+      </form>
+
+
+    </div>
+  </div>
+            
+  
+
+
+{% endblock %}
