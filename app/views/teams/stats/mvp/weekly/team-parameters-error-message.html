@@ -11,15 +11,96 @@
 {% endblock %}
 
 {% block content %}
+
+<p>Scenario 1 - no date entered</p>
+
 {{ govukErrorSummary({
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Enter correct time period",
-        href: "#"
+        text: "Enter a ‘From’ date and or Enter a ‘To’ date",
+        href: "#ScenarioOne"
       }
     ]
   }) }}
+
+<p>Scenario 2 - date is incomplete</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ date must include the month and or ‘To’ date must include the month",
+      href: "#ScenarioTwo"
+    }
+  ]
+}) }}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ date must include the day and or ‘To’ date must include the day",
+      href: "#ScenarioTwoTwo"
+    }
+  ]
+}) }}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ date must include the year and or ‘To’ date must include the year",
+      href: "#ScenarioTwoThree"
+    }
+  ]
+}) }}
+
+<p>Scenario 3 - the date entered cannot be correct</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ day must be a real date and or ‘To’ day must be a real date",
+      href: "#ScenarioThree"
+    }
+  ]
+}) }}
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ month must be a real date and or ‘From’ month must be a real date",
+      href: "#ScenarioThreeOne"
+    }
+  ]
+}) }}
+
+<p>Scenario 4 - date is in the future when it should be today’s date or in the past</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ date must be today’s date or in the past and or ‘To’ date must be today’s date or in the past",
+      href: "#ScenarioFour"
+    }
+  ]
+}) }}
+
+<p>Scenario 5 - ‘To’ date is before ‘From' date</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "‘From’ date needs to be earlier than the ‘to’ date",
+      href: "#ScenarioFive"
+    }
+  ]
+}) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
@@ -30,9 +111,10 @@
 
       <form method="post" novalidate>
 
+      <p>Scenario 1 - no date entered</p>
 
       {{ govukDateInput({
-        id: "mvp[stats][startDate]",
+        id: "ScenarioOne",
         fieldset: {
           legend: {
             text: "From",
@@ -44,7 +126,46 @@
           text: "For example, 12 06 2025"
         },
         errorMessage: {
-        text: "Enter correct time period"       
+        text: "Enter a ‘From’ date and or Enter a ‘To’ date"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <p>Scenario 2 - date is incomplete</p>
+      
+      {{ govukDateInput({
+        id: "ScenarioTwo",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "‘From’ date must include the month and or ‘To’ date must include the month"       
         },
         items: [
           {
@@ -69,10 +190,10 @@
       }) }}
 
       {{ govukDateInput({
-        id: "mvp[stats][startDate]",
+        id: "ScenarioTwoTwo",
         fieldset: {
           legend: {
-            text: "To",
+            text: "From",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
@@ -81,7 +202,44 @@
           text: "For example, 12 06 2025"
         },
         errorMessage: {
-        text: "Enter correct time period"       
+        text: "‘From’ date must include the day and or ‘To’ date must include the day"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "ScenarioTwoThree",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "‘From’ date must include the year and or ‘To’ date must include the year"       
         },
         items: [
           {
@@ -105,6 +263,159 @@
         ]
       }) }}
        
+      <p>Scenario 3 - the date entered cannot be correct</p>
+
+      {{ govukDateInput({
+        id: "ScenarioThree",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "‘From’ day must be a real date and or ‘To’ day must be a real date"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "ScenarioThreeOne",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "‘From’ month must be a real date and or ‘From’ month must be a real date"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <p>Scenario 4 -  date is in the future when it should be today’s date or in the past</p>
+
+      {{ govukDateInput({
+        id: "ScenarioFour",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: " ‘From’ date must be today’s date or in the past and or ‘To’ date must be today’s date or in the past"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <p>Scenario 5 - ‘To’ date is before ‘From' date</p>
+
+      {{ govukDateInput({
+        id: "ScenarioFive",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        errorMessage: {
+        text: "‘From’ date needs to be earlier than the ‘to’ date"       
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
           
       {{ govukRadios({
         name: "mvp[stats][taskTypes]",
