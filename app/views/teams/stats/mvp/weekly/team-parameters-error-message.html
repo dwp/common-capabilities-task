@@ -102,6 +102,30 @@
   ]
 }) }}
 
+<p>Scenario 6 - The task type is not selected</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select the task you want to view",
+      href: "#ScenarioSix"
+    }
+  ]
+}) }}
+
+<p>Scenario 6 - Select the team you want to view MI for</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select the team you want to view MI for",
+      href: "#ScenarioSeven"
+    }
+  ]
+}) }}
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -416,6 +440,8 @@
           }
         ]
       }) }}
+
+      <p>Scenario 6 - The task type is not selected</p>
           
       {{ govukRadios({
         name: "mvp[stats][taskTypes]",
@@ -428,6 +454,9 @@
         },
         hint: {
           text: "Select the task you want to view, or 'All' for total tasks"
+        },
+        errorMessage: {
+        text: "Select the task type you want to view"       
         },
         value: data.mvp.stats.taskTypes,
         items: [
@@ -455,6 +484,8 @@
         ]
       }) }}
 
+      <p>Scenario 7 - Select the team you want to view MI for</p>
+
       {{ govukRadios({
         name: "mvp[stats][team]",
         fieldset: {
@@ -466,6 +497,9 @@
         },
         hint: {
           text: "Select the team you want to view MI for"
+        },
+        errorMessage: {
+        text: "Select the team you want to view MI for"       
         },
         value: data.mvp.stats.team,
         items: [
