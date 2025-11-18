@@ -87,5 +87,6 @@ router.post('/test/date-test-answer', function (req, res) {
 
 module.exports = router
 
+require('./routes/view-and-manage-tasks/view-and-manage-tasks')(router)
 require('./routes/bulk-changes/bulk-changes-routes')(router)
 require('./routes/stats-for-agents-and-teams/stats-routes')(router)

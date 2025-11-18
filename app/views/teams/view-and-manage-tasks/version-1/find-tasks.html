@@ -1,0 +1,336 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "View and manage tasks" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p class="govuk-body">To view any tasks, you must enter a date range. Enter from and to dates below.</p>
+
+      <form novalidate method="post">
+
+      {{ govukDateInput({
+        id: "[teams][from]",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2024"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "date",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2024"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body">
+        This will display tasks created in this date range.<br> Select an option below if you want to change this.
+      </p>
+
+      {{ govukRadios({
+        name: "[teams][v1][DateRangeOption]",
+        fieldset: {
+          legend: {
+            text: "Date range option",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.teams.v1.DateRangeOption,
+        items: [
+          {
+            value: "Created date",
+            text: "Created date"
+          },
+          {
+            value: "Completed date",
+            text: "Completed date"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "[teams][v2][statusOption]",
+        fieldset: {
+          legend: {
+            text: "Status",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.teams.v2.statusOption,
+        hint: {text: "Select the status of the tasks you want to view (optional)"},
+        items: [
+          {
+            value: "Allocated",
+            text: "Allocated"
+          },
+          {
+            value: "Active",
+            text: "Active"
+          },
+          {
+            value: "On hold",
+            text: "On hold"
+          },
+          {
+            value: "Failed",
+            text: "Failed"
+          },
+          {
+            value: "Cancelled",
+            text: "Cancelled"
+          },
+          {
+            value: "Completed",
+            text: "Completed"
+          }
+        ]
+      }) }}
+
+      {{ govukRadios({
+        name: "[teams][v2][selectTeam]",
+        fieldset: {
+          legend: {
+            text: "Team",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.teams.v2.selectTeam,
+        hint: {text: "Select the team you want to view (optional)"},
+        items: [
+          {
+            value: "Newcastle Team One",
+            text: "Newcastle Team One"
+          },
+          {
+            value: "Newcastle Team Two",
+            text: "Newcastle Team Two"
+          }
+        ]
+      }) }}
+
+      
+
+      {# Autocomplete start #}
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half"> 
+
+          {{ govukSelect({
+            id: "[teams][v1][taskType]",
+            name: "[teams][v1][taskType]",
+            classes: "taskTypeAutocomplete",
+            label: {
+              text: "Task type",
+              isPageHeading: false,
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: "Select the priority of the tasks you want to view (optional)"
+            },
+            value: data.teams.v1.taskType,
+            items: [
+              {
+                value: "",
+                text: "Select"
+              },
+              {
+                value: "Admin role release 19-08-25 Tasktype",
+                text: "Admin role release 19-08-25 Tasktype"
+              },
+              {
+                value: "ASC task type staging Release testing 04092024",
+                text: "ASC task type staging Release testing 04092024"
+              },
+              {
+                value: "ASC task type staging Release testing 24092024",
+                text: "ASC task type staging Release testing 24092024"
+              },
+              {
+                value: "Benefit Amount 26 09 2024",
+                text: "Benefit Amount 26 09 2024"
+              }
+            ]
+          }) }}
+
+        </div>
+      </div>
+      {# Autocomplete ends #}
+
+      {{ govukRadios({
+      name: "[teams][v2][priority]",
+      fieldset: {
+        legend: {
+          text: "Priority",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      value: data.teams.v2.priority,
+      hint: {text: "Select the priority of the tasks you want to view (optional)"},
+      items: [
+        {
+          value: "None",
+          text: "None"
+        },
+        {
+          value: "Low",
+          text: "Low"
+        },
+        {
+          value: "Medium",
+          text: "Medium"
+        },
+        {
+          value: "High",
+          text: "High"
+        },
+        {
+          value: "Critical",
+          text: "Critical"
+        }
+      ]
+    }) }}
+     
+
+
+      {{ govukInput({
+        id: "[teams][agent]",
+        name: "[teams][agent]",
+        label: {
+          text: "Agent",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        hint: {
+          html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
+        },
+        value: data.teams.agent
+      }) }}
+
+      {{ govukInput({
+        id: "[teams][nino]",
+        name: "[teams][nino]",
+        label: {
+          text: "National Insurance number",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
+        },
+        value: data.teams.nino
+      }) }}
+
+      {{ govukInput({
+        id: "[teams][taskNumber]",
+        name: "[teams][taskNumber]",
+        label: {
+          text: "Task number",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter the task number to view a specific task (optional)"
+        },
+        value: data.teams.taskNumber
+      }) }}
+
+     
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "View tasks",
+          href: "tasks"
+        }) }}
+        <a href="#" class="govuk-link">Clear filters</a>
+      </div>
+      
+      </form>
+
+    </div>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+  {{super()}}
+  <script>
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('.taskTypeAutocomplete')
+    })
+  </script>
+{% endblock %}
+
+
