@@ -95,7 +95,7 @@
       </p>
 
       {{ govukRadios({
-        name: "[teams][v1][DateRangeOption]",
+        name: "viewAndManageTasks[v1][DateRangeOption]",
         fieldset: {
           legend: {
             text: "Date range option",
@@ -103,7 +103,7 @@
             classes: "govuk-fieldset__legend--s"
           }
         },
-        value: data.teams.v1.DateRangeOption,
+        value: data.viewAndManageTasks.v1.DateRangeOption,
         items: [
           {
             value: "Created date",
@@ -112,12 +112,16 @@
           {
             value: "Completed date",
             text: "Completed date"
+          },
+          {
+            value: "Due by date",
+            text: "Due by date"
           }
         ]
       }) }}
 
       {{ govukRadios({
-        name: "[teams][v2][statusOption]",
+        name: "viewAndManageTasks[v1][status]",
         fieldset: {
           legend: {
             text: "Status",
@@ -125,7 +129,7 @@
             classes: "govuk-fieldset__legend--s"
           }
         },
-        value: data.teams.v2.statusOption,
+        value: data.viewAndManageTasks.v1.status,
         hint: {text: "Select the status of the tasks you want to view (optional)"},
         items: [
           {
@@ -133,30 +137,52 @@
             text: "Allocated"
           },
           {
-            value: "Active",
-            text: "Active"
-          },
-          {
-            value: "On hold",
-            text: "On hold"
-          },
-          {
-            value: "Failed",
-            text: "Failed"
-          },
-          {
-            value: "Cancelled",
-            text: "Cancelled"
+            value: "Closed",
+            text: "Closed"
           },
           {
             value: "Completed",
             text: "Completed"
+          },
+          {
+            value: "On hold",
+            text: "On hold"
           }
         ]
       }) }}
 
       {{ govukRadios({
-        name: "[teams][v2][selectTeam]",
+        name: "viewAndManageTasks[v1][priority]",
+        fieldset: {
+          legend: {
+            text: "Priority",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.viewAndManageTasks.v1.priority,
+        items: [
+          {
+            value: "High",
+            text: "High"
+          },
+          {
+            value: "Medium",
+            text: "Medium"
+          },
+          {
+            value: "Low",
+            text: "Low"
+          },
+          {
+            value: "Urgent",
+            text: "Urgent"
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "viewAndManageTasks[v1][team]",
         fieldset: {
           legend: {
             text: "Team",
@@ -164,28 +190,37 @@
             classes: "govuk-fieldset__legend--s"
           }
         },
-        value: data.teams.v2.selectTeam,
-        hint: {text: "Select the team you want to view (optional)"},
+        hint: {
+          text: "Open tasks against team"
+        },
+        values: data.viewAndManageTasks.v1.team,
         items: [
           {
-            value: "Newcastle Team One",
-            text: "Newcastle Team One"
+            value: "Processing team 1",
+            text: "Processing team 1"
           },
           {
-            value: "Newcastle Team Two",
-            text: "Newcastle Team Two"
+            value: "Processing team 2",
+            text: "Processing team 2"
+          },
+          {
+            value: "Input team",
+            text: "Input team"
+          },
+          {
+            value: "Telephony",
+            text: "Telephony"
           }
         ]
       }) }}
-
-      
+ 
 
       {# Autocomplete start #}
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half"> 
 
           {{ govukSelect({
-            id: "[teams][v1][taskType]",
+            id: "viewAndManageTasks[v1][taskType]",
             name: "[teams][v1][taskType]",
             classes: "taskTypeAutocomplete",
             label: {
@@ -196,27 +231,23 @@
             hint: {
               text: "Select the priority of the tasks you want to view (optional)"
             },
-            value: data.teams.v1.taskType,
+            value: data.viewAndManageTasks.v1.taskType,
             items: [
               {
                 value: "",
                 text: "Select"
               },
               {
-                value: "Admin role release 19-08-25 Tasktype",
-                text: "Admin role release 19-08-25 Tasktype"
+                value: "Initial-review",
+                text: "Initial-review"
               },
               {
-                value: "ASC task type staging Release testing 04092024",
-                text: "ASC task type staging Release testing 04092024"
+                value: "Nil-claim",
+                text: "Nil-claim"
               },
               {
-                value: "ASC task type staging Release testing 24092024",
-                text: "ASC task type staging Release testing 24092024"
-              },
-              {
-                value: "Benefit Amount 26 09 2024",
-                text: "Benefit Amount 26 09 2024"
+                value: "Call-back",
+                text: "Call-back"
               }
             ]
           }) }}
@@ -225,42 +256,7 @@
       </div>
       {# Autocomplete ends #}
 
-      {{ govukRadios({
-      name: "[teams][v2][priority]",
-      fieldset: {
-        legend: {
-          text: "Priority",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--s"
-        }
-      },
-      value: data.teams.v2.priority,
-      hint: {text: "Select the priority of the tasks you want to view (optional)"},
-      items: [
-        {
-          value: "None",
-          text: "None"
-        },
-        {
-          value: "Low",
-          text: "Low"
-        },
-        {
-          value: "Medium",
-          text: "Medium"
-        },
-        {
-          value: "High",
-          text: "High"
-        },
-        {
-          value: "Critical",
-          text: "Critical"
-        }
-      ]
-    }) }}
-     
-
+    
 
       {{ govukInput({
         id: "[teams][agent]",
