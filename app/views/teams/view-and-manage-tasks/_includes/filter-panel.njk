@@ -1,7 +1,7 @@
 {% set filterOptionsHtml %}
 
  {{ govukDateInput({
-    id: "[teams][v2][from]",
+    id: "viewAndManageTasks[v1][from]",
     fieldset: {
       legend: {
         text: "From",
@@ -16,26 +16,26 @@
       {
         name: "date",
         label: "Day",
-        value: data.day,
+        value: data.viewAndManageTasks.v1.from.day,
         classes: "govuk-input--width-2"
       },
       {
         name: "date",
         label: "Month",
-        value: data.month,
+        value: data.viewAndManageTasks.v1.from.month,
         classes: "govuk-input--width-2"
       },
       {
         name: "date",
         label: "Year",
-        value: data.teams.v2.date,
+        value: data.viewAndManageTasks.v1.from.year,
         classes: "govuk-input--width-4"
       }
     ]
   }) }}
 
   {{ govukDateInput({
-    id: "[teams][v2][to]",
+    id: "viewAndManageTasks[v1][to]",
     fieldset: {
       legend: {
         text: "To",
@@ -50,19 +50,19 @@
       {
         name: "date",
         label: "Day",
-        value: data.teams.v2.to,
+        value: data.viewAndManageTasks.v1.to.day,
         classes: "govuk-input--width-2"
       },
       {
         name: "date",
         label: "Month",
-        value: data.month,
+        value: data.viewAndManageTasks.v1.to.month,
         classes: "govuk-input--width-2"
       },
       {
         name: "date",
         label: "Year",
-        value: data.year,
+        value: data.viewAndManageTasks.v1.to.year,
         classes: "govuk-input--width-4"
       }
     ]
@@ -91,6 +91,10 @@
       {
         value: "Completed date",
         text: "Completed date"
+      },
+      {
+        value: "Due by date",
+        text: "Due by date"
       }
     ]
   }) }}
@@ -108,217 +112,174 @@
     value: data.teams.v2.statusOption,
     hint: {text: "Select the status of the tasks you want to view (optional)"},
     items: [
-      {
-        value: "Allocated",
-        text: "Allocated"
-      },
-      {
-        value: "Active",
-        text: "Active"
-      },
-      {
-        value: "On hold",
-        text: "On hold"
-      },
-      {
-        value: "Failed",
-        text: "Failed"
-      },
-      {
-        value: "Cancelled",
-        text: "Cancelled"
-      },
-      {
-        value: "Completed",
-        text: "Completed"
-      }
-    ]
+          {
+            value: "Allocated",
+            text: "Allocated"
+          },
+          {
+            value: "Closed",
+            text: "Closed"
+          },
+          {
+            value: "Completed",
+            text: "Completed"
+          },
+          {
+            value: "On hold",
+            text: "On hold"
+          }
+        ]
   }) }}
-  
-   {# Task type start #}
-
-  {{ govukSelect({
-      id: "[teams][v1][taskType]",
-      name: "[teams][v1][taskType]",
-      classes: "taskTypeAutocomplete",
-      label: {
-        text: "Task type",
-        isPageHeading: false,
-        classes: "govuk-label--s"
-      },
-      hint: {
-        text: "Select the priority of the tasks you want to view (optional)"
-      },
-      value: data.teams.v1.taskType,
-      items: [
-        {
-          value: "",
-          text: "Select"
-        },
-        {
-          value: "Admin role release 19-08-25 Tasktype",
-          text: "Admin role release 19-08-25 Tasktype"
-        },
-        {
-          value: "ASC task type staging Release testing 04092024",
-          text: "ASC task type staging Release testing 04092024"
-        },
-        {
-          value: "ASC task type staging Release testing 24092024",
-          text: "ASC task type staging Release testing 24092024"
-        },
-        {
-          value: "Benefit Amount 26 09 2024",
-          text: "Benefit Amount 26 09 2024"
-        }
-      ]
-    }) }}
 
   {{ govukRadios({
     classes: "govuk-radios--small",
-    name: "[teams][v2][statusOption]",
+    name: "viewAndManageTasks[v1][priority]",
     fieldset: {
       legend: {
-        text: "Task type",
+        text: "Priority",
         isPageHeading: false,
         classes: "govuk-fieldset__legend--s"
       }
     },
-    value: data.teams.v2.statusOption,
-    hint: {text: "Select task type you want to view (optional)"},
+    value: data.viewAndManageTasks.v1.priority,
     items: [
       {
-        value: "Call customer",
-        text: "Call customer"
+        value: "High",
+        text: "High"
       },
       {
-        value: "New task 12345",
-        text: "New task 12345"
+        value: "Medium",
+        text: "Medium"
       },
       {
-        value: "gbclaim",
-        text: "gbclaim"
+        value: "Low",
+        text: "Low"
       },
       {
-        value: "nil-claim",
-        text: "nil-claim"
-      },
-      {
-        value: "nil-claim-sme",
-        text: "nil-claim-sme"
-      },
-      {
-        value: "Positive Claim SME",
-        text: "Positive Claim SME"
+        value: "Urgent",
+        text: "Urgent"
       }
     ]
   }) }}
 
-  {{ govukRadios({
-  classes: "govuk-radios--small",
-  name: "[teams][v2][DateRangeOption]",
-  fieldset: {
-    legend: {
-      text: "Priority",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  value: data.teams.v2.DateRangeOption,
-  hint: {text: "Select the priority of the task you want to view (optional)"},
-  items: [
-    {
-      value: "None",
-      text: "None"
-    },
-    {
-      value: "Low",
-      text: "Low"
-    },
-    {
-      value: "Medium",
-      text: "Medium"
-    },
-    {
-      value: "High",
-      text: "High"
-    },
-    {
-      value: "Critical",
-      text: "Critical"
-    }
-  ]
-}) }}
-
-{{ govukInput({
-    id: "[teams][agent]",
-    name: "[teams][agent]",
-    label: {
-      text: "Agent",
-      isPageHeading: false,
-      classes: "govuk-label--s"
-    },
-    classes: "govuk-input--width-20",
-    hint: {
-      html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
-    },
-    value: data.teams.agent
-}) }}
-
-{{ govukInput({
-    id: "[teams][nino]",
-    name: "[teams][nino]",
-    label: {
-      text: "National Insurance number",
-      isPageHeading: false,
-      classes: "govuk-label--s"
-    },
-    classes: "govuk-input--width-10",
-    hint: {
-      html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
-    },
-    value: data.teams.nino
-}) }}
-
-  {{ govukInput({
-    id: "[teams][taskNumber]",
-    name: "[teams][taskNumber]",
-    label: {
-      text: "Task number",
-      isPageHeading: false,
-      classes: "govuk-label--s"
-    },
-    classes: "govuk-input--width-10",
-    hint: {
-      html: "Enter the task number to view a specific task (optional)"
-    },
-    value: data.teams.taskNumber
+  {{ govukCheckboxes({
+    classes: "govuk-checkboxes--small",
+      name: "viewAndManageTasks[v1][team]",
+      fieldset: {
+        legend: {
+          text: "Team",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "Open tasks against team"
+      },
+      values: data.viewAndManageTasks.v1.team,
+      items: [
+        {
+          value: "Processing team 1",
+          text: "Processing team 1"
+        },
+        {
+          value: "Processing team 2",
+          text: "Processing team 2"
+        },
+        {
+          value: "Input team",
+          text: "Input team"
+        },
+        {
+          value: "Telephony",
+          text: "Telephony"
+        }
+      ]
   }) }}
+  
+  {# Task type start #}
 
-{{ govukRadios({
-  classes: "govuk-radios--small",
-  name: "[teams][v2][DateRangeOption]",
-  fieldset: {
-    legend: {
-      text: "Date range option",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  value: data.teams.v2.DateRangeOption,
-  hint: {text: "Select the team you want to view (optional)"},
-  items: [
-    {
-      value: "Newcastle Team One",
-      text: "Newcastle Team One"
-    },
-    {
-      value: "Newcastle Team Two",
-      text: "Newcastle Team Two"
-    }
-  ]
-}) }}
+{# Autocomplete start #}
+    
 
+          {{ govukSelect({
+            id: "viewAndManageTasks[v1][taskType]",
+            name: "[teams][v1][taskType]",
+            classes: "taskTypeAutocomplete",
+            label: {
+              text: "Task type",
+              isPageHeading: false,
+              classes: "govuk-label--s"
+            },
+            hint: {
+              text: "Select the priority of the tasks you want to view (optional)"
+            },
+            value: data.viewAndManageTasks.v1.taskType,
+            items: [
+              {
+                value: "",
+                text: "Select"
+              },
+              {
+                value: "Initial-review",
+                text: "Initial-review"
+              },
+              {
+                value: "Nil-claim",
+                text: "Nil-claim"
+              },
+              {
+                value: "Call-back",
+                text: "Call-back"
+              }
+            ]
+          }) }}
+
+      {# Autocomplete ends #}
+
+    {{ govukInput({
+        id: "[teams][agent]",
+        name: "[teams][agent]",
+        label: {
+          text: "Agent",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        hint: {
+          html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
+        },
+        value: data.teams.agent
+      }) }}
+
+      {{ govukInput({
+        id: "[teams][nino]",
+        name: "[teams][nino]",
+        label: {
+          text: "National Insurance number",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
+        },
+        value: data.teams.nino
+      }) }}
+
+      {{ govukInput({
+        id: "[teams][taskNumber]",
+        name: "[teams][taskNumber]",
+        label: {
+          text: "Task number",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter the task number to view a specific task (optional)"
+        },
+        value: data.teams.taskNumber
+      }) }}
   
 
 
