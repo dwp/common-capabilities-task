@@ -1,13 +1,24 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Alternative Payment Arrangements" %}
+{% set pageName = "Call customer for Sarah Philips" %}
 
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
-  }) }}
+  {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "DWP Task dashboard",
+          href: "tasks"
+        },
+        {
+          text: "View and manage tasks",
+          href: "task"
+        }
+      ]
+    }) }}
 {% endblock %}
 
 {% block content %}
@@ -17,7 +28,7 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p class="govuk-body">View details of Alternative Payment Arrangements</p>
+     
       <p class="govuk-body">You can make changes to the due date, priority, and who is working on the task.</p>
 
       
@@ -43,7 +54,7 @@
             Task
           </dt>
           <dd class="govuk-summary-list__value">
-            gbclaim
+            1 for orgunit_b
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -69,6 +80,9 @@
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">None</p>
           </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
+            </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -91,7 +105,7 @@
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            {{govukTag({text: "IN PROGRESS",classes: "govuk-tag--yellow"})}}
+            {{govukTag({text: "On hold",classes: "govuk-tag--yellow"})}}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
