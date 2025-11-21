@@ -1,7 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
-{% set pageName = data['mvp']['stats']['team'] %}
+{% set pageName = data['mvp']['stats']['team'] or "Team Purple" %}
 
 
 {% block beforeContent %}
