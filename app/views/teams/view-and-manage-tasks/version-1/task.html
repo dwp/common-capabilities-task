@@ -78,11 +78,11 @@
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">None</p>
+            <p class="govuk-body">20 Oct 2025</p>
           </dd>
           <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> contact details</span></a>
-            </dd>
+              <a class="govuk-link" href="change-due-date-and-time">Change<span class="govuk-visually-hidden">Due</span></a>
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -99,6 +99,9 @@
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">Low</p>
           </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden">Priority</span></a>
+          </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
@@ -113,7 +116,10 @@
             Agent
           </dt>
           <dd class="govuk-summary-list__value">
-            Pencred-Workflow<br>Processor-GB
+            John Doe
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Return to queue<span class="govuk-visually-hidden">Agent</span></a>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -135,7 +141,8 @@
       </dl>
 
       {{ govukButton({
-        text: "View history"
+        text: "View history",
+        href: "view-history"
       }) }}
       
     </div>

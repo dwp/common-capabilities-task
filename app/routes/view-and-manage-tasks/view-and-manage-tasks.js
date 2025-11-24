@@ -26,5 +26,9 @@ router.post('/teams/view-and-manage-tasks/version-1/bulk-update-tasks', (req, re
 	}
 })
 
+router.post('/teams/view-and-manage-tasks/version-1/change-due-date-and-time', (req, res) => {
+		res.redirect("task")
+})
+
 
 }
