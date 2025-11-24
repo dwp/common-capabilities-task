@@ -1,12 +1,31 @@
-{{ govukPagination({
-  classes: "govuk-!-margin-top-4 govuk-!-margin-bottom-2",
-  previous: {
-    href: pagination.previousPage.href
-  },
-  next: {
-    href: pagination.nextPage.href
-  },
-  items: pagination.pageItems
-}) }}
-
-<p class="govuk-!-margin-bottom-0">Showing {{pagination.firstResultNumber}} to {{pagination.lastResultNumber}} of {{pagination.totalCount}} results</p>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-half">
+            {{ govukPagination({
+              next: {
+                href: "#"
+              },
+              classes: "govuk-!-margin-top-3",
+              items: [
+                {
+                  number: 1,
+                  current: true,
+                  href: "#"
+                },
+                {
+                  number: 2,
+                  href: "#"
+                },
+                {
+                  number: 3,
+                  href: "#"
+                }
+              ]
+            }) }}
+          </div>
+    
+          <div class="govuk-grid-column-one-half">
+            <p class="govuk-body govuk-!-margin-top-3 govuk-!-margin-bottom-0 govuk-!-text-align-right">Showing 1 - 10 of 15 results</p>
+          </div>
+        </div>
+        
+ 

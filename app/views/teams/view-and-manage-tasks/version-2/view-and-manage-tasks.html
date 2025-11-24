@@ -11,14 +11,17 @@
 
 {% block content %}
 
-  <h1 class="govuk-heading-l">{{ pageName }}</h1>
-
-  <div class="app-filter-layout">
-    <div class="app-filter-layout__filter">
-      {% include "teams/view-and-manage-tasks/_includes/filter-panel-v2.njk" %}
-    </div>
-    <div class="app-filter-layout__content">
-
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    {% include "teams/view-and-manage-tasks/_includes/filter-panel-v2.njk" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
       <!-- {% include "teams/view-and-manage-tasks/_includes/search-form.njk" %} -->
 
       {# {% include "teams/view-and-manage-tasks/_includes/sorting.njk" %} #}
@@ -26,11 +29,11 @@
 
      
 
-      {% include "teams/bulk-changes/_includes/pagination.njk" %}
+      {% include "teams/view-and-manage-tasks/_includes/pagination.njk" %}
 
-
-    </div>
   </div>
+</div>
+   
 {% endblock %}
 
 
