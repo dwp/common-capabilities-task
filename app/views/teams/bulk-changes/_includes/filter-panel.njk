@@ -1,0 +1,366 @@
+{% set filterOptionsHtml %}
+
+ {{ govukDateInput({
+    id: "[teams][v2][from]",
+    fieldset: {
+      legend: {
+        text: "From",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "For example, 27 3 2024"
+    },
+    items: [
+      {
+        name: "date",
+        label: "Day",
+        value: data.day,
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "date",
+        label: "Month",
+        value: data.month,
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "date",
+        label: "Year",
+        value: data.teams.v2.date,
+        classes: "govuk-input--width-4"
+      }
+    ]
+  }) }}
+
+  {{ govukDateInput({
+    id: "[teams][v2][to]",
+    fieldset: {
+      legend: {
+        text: "To",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "For example, 27 3 2024"
+    },
+    items: [
+      {
+        name: "date",
+        label: "Day",
+        value: data.teams.v2.to,
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "date",
+        label: "Month",
+        value: data.month,
+        classes: "govuk-input--width-2"
+      },
+      {
+        name: "date",
+        label: "Year",
+        value: data.year,
+        classes: "govuk-input--width-4"
+      }
+    ]
+  }) }}
+
+  <p class="govuk-body">
+    This will display tasks created in this date range.<br> Select an option below if you want to change this.
+  </p>
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "[teams][v2][dateRangeOption]",
+    fieldset: {
+      legend: {
+        text: "Date range option",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    value: data.teams.v2.dateRangeOption,
+    items: [
+      {
+        value: "Created date",
+        text: "Created date"
+      },
+      {
+        value: "Completed date",
+        text: "Completed date"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "[teams][v2][statusOption]",
+    fieldset: {
+      legend: {
+        text: "Status",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    value: data.teams.v2.statusOption,
+    hint: {text: "Select the status of the tasks you want to view (optional)"},
+    items: [
+      {
+        value: "Allocated",
+        text: "Allocated"
+      },
+      {
+        value: "Active",
+        text: "Active"
+      },
+      {
+        value: "On hold",
+        text: "On hold"
+      },
+      {
+        value: "Failed",
+        text: "Failed"
+      },
+      {
+        value: "Cancelled",
+        text: "Cancelled"
+      },
+      {
+        value: "Completed",
+        text: "Completed"
+      }
+    ]
+  }) }}
+  
+   {# Task type start #}
+
+  {{ govukSelect({
+      id: "[teams][v1][taskType]",
+      name: "[teams][v1][taskType]",
+      classes: "taskTypeAutocomplete",
+      label: {
+        text: "Task type",
+        isPageHeading: false,
+        classes: "govuk-label--s"
+      },
+      hint: {
+        text: "Select the priority of the tasks you want to view (optional)"
+      },
+      value: data.teams.v1.taskType,
+      items: [
+        {
+          value: "",
+          text: "Select"
+        },
+        {
+          value: "Admin role release 19-08-25 Tasktype",
+          text: "Admin role release 19-08-25 Tasktype"
+        },
+        {
+          value: "ASC task type staging Release testing 04092024",
+          text: "ASC task type staging Release testing 04092024"
+        },
+        {
+          value: "ASC task type staging Release testing 24092024",
+          text: "ASC task type staging Release testing 24092024"
+        },
+        {
+          value: "Benefit Amount 26 09 2024",
+          text: "Benefit Amount 26 09 2024"
+        }
+      ]
+    }) }}
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "[teams][v2][statusOption]",
+    fieldset: {
+      legend: {
+        text: "Task type",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    value: data.teams.v2.statusOption,
+    hint: {text: "Select task type you want to view (optional)"},
+    items: [
+      {
+        value: "Call customer",
+        text: "Call customer"
+      },
+      {
+        value: "New task 12345",
+        text: "New task 12345"
+      },
+      {
+        value: "gbclaim",
+        text: "gbclaim"
+      },
+      {
+        value: "nil-claim",
+        text: "nil-claim"
+      },
+      {
+        value: "nil-claim-sme",
+        text: "nil-claim-sme"
+      },
+      {
+        value: "Positive Claim SME",
+        text: "Positive Claim SME"
+      }
+    ]
+  }) }}
+
+  {{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "[teams][v2][DateRangeOption]",
+  fieldset: {
+    legend: {
+      text: "Priority",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  value: data.teams.v2.DateRangeOption,
+  hint: {text: "Select the priority of the task you want to view (optional)"},
+  items: [
+    {
+      value: "None",
+      text: "None"
+    },
+    {
+      value: "Low",
+      text: "Low"
+    },
+    {
+      value: "Medium",
+      text: "Medium"
+    },
+    {
+      value: "High",
+      text: "High"
+    },
+    {
+      value: "Critical",
+      text: "Critical"
+    }
+  ]
+}) }}
+
+{{ govukInput({
+    id: "[teams][agent]",
+    name: "[teams][agent]",
+    label: {
+      text: "Agent",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-20",
+    hint: {
+      html: "Enter name, staff number or email of the agent<br> whose tasks you want to view (optional)"
+    },
+    value: data.teams.agent
+}) }}
+
+{{ govukInput({
+    id: "[teams][nino]",
+    name: "[teams][nino]",
+    label: {
+      text: "National Insurance number",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    hint: {
+      html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer (optional)"
+    },
+    value: data.teams.nino
+}) }}
+
+  {{ govukInput({
+    id: "[teams][taskNumber]",
+    name: "[teams][taskNumber]",
+    label: {
+      text: "Task number",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-10",
+    hint: {
+      html: "Enter the task number to view a specific task (optional)"
+    },
+    value: data.teams.taskNumber
+  }) }}
+
+{{ govukRadios({
+  classes: "govuk-radios--small",
+  name: "[teams][v2][DateRangeOption]",
+  fieldset: {
+    legend: {
+      text: "Date range option",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  value: data.teams.v2.DateRangeOption,
+  hint: {text: "Select the team you want to view (optional)"},
+  items: [
+    {
+      value: "Newcastle Team One",
+      text: "Newcastle Team One"
+    },
+    {
+      value: "Newcastle Team Two",
+      text: "Newcastle Team Two"
+    }
+  ]
+}) }}
+
+  
+
+
+
+
+{% endset %}
+
+<div class="app-filter">
+  <div class="app-filter__header">
+    <div class="app-filter__header-title">
+      <h2 class="govuk-heading-m">Filter</h2>
+    </div>
+    <div class="app-filter__header-action">
+
+    </div>
+  </div>
+  <div class="app-filter__content">
+    {% if selectedFilters.categories.length %}
+      <div class="app-filter__selected">
+        <div class="app-filter__selected-heading">
+          <div class="app-filter__heading-title">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Selected filters</h2>
+            <p class="govuk-body"><a class="govuk-link govuk-link--no-visited-state" href="/applications/clear-filters">Clear filters</a></p>
+          </div>
+        </div>
+        {% for category in selectedFilters.categories %}
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-0">{{ category.heading.text }}</h3>
+          <ul class="app-filter-tags">
+            {% for item in category.items %}
+              <li><a class="app-filter__tag" href="{{item.href}}"><span class="govuk-visually-hidden">Remove this filter</span> {{item.text}}</a></li>
+            {% endfor %}
+          </ul>
+        {% endfor %}
+      </div>
+    {% endif %}
+    <div class="app-filter__options">
+      <form method="get" action="/applications" novalidate>
+        <button class="govuk-button" data-module="govuk-button">
+          Apply filters
+        </button>
+        {{filterOptionsHtml | safe}}
+      </form>
+    </div>
+  </div>
+</div>

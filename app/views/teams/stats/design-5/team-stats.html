@@ -1,0 +1,402 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+
+{% endblock %}
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% endblock %}
+
+{% block content %}
+
+  
+   <style>
+       /* Custom styles for the toggle functionality */
+       .layout-container {
+   display: flex;
+   gap: 24px; /* govuk-spacing(6) equivalent */
+   transition: all 0.3s ease;
+}
+
+#task-table {
+    width:100%;
+    display:block;
+}
+
+.filters-panel {
+   width: 300px; /* Fixed minimum width */
+   min-width: 300px; /* Ensures it never gets smaller */
+   flex-shrink: 0; /* Prevents shrinking */
+   overflow: hidden;
+   transition: all 0.3s ease;
+   padding-left:10px;
+}
+
+.layout-container.filters-hidden .filters-panel {
+   width: 0;
+   min-width: 0;
+   opacity: 0;
+   pointer-events: none;
+   margin-right: -24px; /* Compensate for gap */
+}
+
+.main-content-area {
+   flex: 1; /* Takes remaining space */
+   min-width: 0; /* Allows shrinking if needed */
+}
+#tasksPerPage {
+    width:80px !important;
+    min-width: 80px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 40.0625em) {
+   .layout-container {
+       flex-direction: column;
+       gap: 16px;
+   }
+
+   .filters-panel {
+       width: 100%;
+       min-width: 0;
+   }
+
+   .layout-container.filters-hidden .filters-panel {
+       display: none;
+       margin-right: 0;
+   }
+}
+
+/* Different minimum widths for different screen sizes */
+@media (min-width: 1024px) {
+   .filters-panel {
+       width: 350px;
+       min-width: 350px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .filters-panel {
+       width: 29%;
+       min-width: 29%;
+   }
+}
+
+       /* Custom button styling for toggle */
+       .toggle-filters-button {
+           margin-bottom: govuk-spacing(4);
+       }
+
+       /* Content cards using GOV.UK styling */
+       .content-card {
+           border-left: 4px solid #1d70b8;
+           padding: govuk-spacing(3);
+           margin-bottom: govuk-spacing(3);
+           background-color: #f3f2f1;
+       }
+
+       .content-card:last-child {
+           margin-bottom: 0;
+       }
+
+       .content-hero {
+           background: linear-gradient(135deg, #1d70b8 0%, #003078 100%);
+           color: #ffffff;
+           padding: govuk-spacing(6);
+           margin-bottom: govuk-spacing(6);
+           text-align: center;
+       }
+
+       .content-hero h2 {
+           color: #ffffff;
+           margin-bottom: govuk-spacing(3);
+       }
+
+       /* Responsive adjustments */
+       @media (max-width: 40.0625em) {
+           .layout-container {
+               grid-template-columns: 1fr;
+               gap: govuk-spacing(4);
+           }
+
+           .layout-container.filters-hidden {
+               grid-template-columns: 1fr;
+           }
+
+           .layout-container.filters-hidden .filters-panel {
+               display: none;
+           }
+       }
+
+       /* Reduced motion support */
+       @media (prefers-reduced-motion: reduce) {
+           .layout-container,
+           .filters-panel {
+               transition: none;
+           }
+       }
+
+       /* High contrast mode */
+       @media (prefers-contrast: high) {
+           .content-card {
+               border-left-width: 6px;
+           }
+       }
+
+       .layout-grid {
+   display: grid;
+   grid-template-columns: minmax(250px, 1fr) 2fr;
+   gap: 20px;
+   min-height: 500px;
+   transition: grid-template-columns 0.3s ease;
+}
+
+.layout-grid.filters-hidden {
+   grid-template-columns: minmax(0px, 0fr) 1fr;
+}
+
+/* Responsive minimum widths */
+@media (min-width: 1024px) {
+   .layout-grid {
+       grid-template-columns: minmax(320px, 1fr) 2fr;
+   }
+}
+
+@media (min-width: 1200px) {
+   .layout-grid {
+       grid-template-columns: minmax(380px, 1fr) 2fr;
+   }
+}
+
+/* Mobile - remove minimum to allow stacking */
+@media (max-width: 768px) {
+   .layout-grid {
+       grid-template-columns: 1fr;
+       gap: 16px;
+   }
+
+   .layout-grid.filters-hidden {
+       grid-template-columns: 1fr;
+   }
+
+   .layout-grid.filters-hidden .filters-column {
+       display: none;
+   }
+}
+   </style>
+
+<body class="govuk-template__body">
+   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+   <!-- Skip link -->
+   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+   <!-- Main content -->
+   <div class="govuk-width-container">
+       <main class="govuk-main-wrapper" id="main-content" role="main">
+
+           <!-- Page heading -->
+           <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                   <h1 class="govuk-heading-xl">Statistics between [date] and [date]</h1>
+                   <p class="govuk-body">Manage and filter your content using the panel on the left.</p>
+                   
+               </div>
+           </div>
+
+     
+
+           <!-- Two column layout -->
+           <div class="govuk-grid-row">
+            <!-- Column one -->
+            <div class="govuk-grid-column-one-third">
+              <div class="filters-panel-content">
+
+                <h3 class="govuk-heading-m">Filters</h3>
+                <form id="filter-form">
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                  <h3 class="govuk-heading-s">Date range</h3>
+                 
+                  <div class="govuk-form-group">
+                    <label class="govuk-label title-label" for="startDate">From</label>
+                    <div class="govuk-date-input" id="startDate">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+          
+                  <div class="govuk-form-group">
+                    <label class="govuk-label title-label" for="endDate">To</label>
+                    <div class="govuk-date-input" id="endDate">
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-day">
+                            Day
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-month">
+                            Month
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                        </div>
+                      </div>
+                      <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                          <label class="govuk-label govuk-date-input__label" for="dob-year">
+                            Year
+                          </label>
+                          <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <div class="govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                          <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Due by date</label>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                
+                  
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                  <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Team</legend>
+                      <span class="govuk-hint">Open tasks against team</span>
+                      <div class="govuk-checkboxes--small">
+                        <div class="govuk-checkboxes__item">
+                          <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                          <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Processing team 1 </label>
+                        </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
+                            <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Processing team 2 </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
+                            <label class="govuk-label govuk-checkboxes__label" for="priority-High">Input team </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
+                            <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">Telephony </label>
+                          </div>
+                          <div class="govuk-checkboxes__item">
+                            <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
+                            <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">All </label>
+                          </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label title-label govuk-!-font-weight-bold" for="taskType">Task type</label>
+                    <select class="govuk-select" id="taskType" name="taskType">
+                      <option value="">-- Select --</option>
+                      <option>Onboarding</option><option>Payroll Setup</option><option>Exit Interview</option><option>IT Access</option><option>Compliance Training</option>
+                    </select>
+                  </div>
+                 
+                  <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                 
+               
+                  <div class="govuk-button-group">
+                  <button class="govuk-button" type="button" id="applyFilters">Create report</button>
+                  <button class="govuk-button govuk-button--secondary" type="button" id="resetFilters">Reset</button>
+                </div>
+            </form>
+               </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Team</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">Team name</p>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">All tasks</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">100</p>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Task type</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">Intital-review</p>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Allocated</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">100</p>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Completed</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">100</p>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Cancelled</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">100</p>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Suspended</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">100</p>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <p class="govuk-hint govuk-!-static-margin-bottom-0">Average time to complete</p>
+                  <p class="govuk-heading-xl govuk-!-static-padding-top-0">5.28 Minutes</p>
+                </div>
+              </div>
+                
+              
+                
+                
+              </div>
+            </div>
+          </div>
+       </main>
+   </div>
+
+
+</body>
+{% endblock %}

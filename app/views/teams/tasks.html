@@ -1,0 +1,958 @@
+{% extends "layouts/xl.html" %}
+
+
+{% block pageTitle %}
+
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% endblock %}
+
+{% block content %}
+<body class="app-body-class-large">
+
+  <div class="moj-filter" data-module="moj-filter">
+
+    <div class="moj-filter__header">
+  
+      <div class="moj-filter__header-title">
+        <h2 class="govuk-heading-m">Filter</h2>
+      </div>
+  
+      <div class="moj-filter__header-action">
+  
+      </div>
+  
+    </div>
+  
+    <div class="moj-filter__content">
+  
+      <div class="moj-filter__selected">
+  
+        <div class="moj-filter__selected-heading">
+  
+          <div class="moj-filter__heading-title">
+            <h2 class="govuk-heading-m">Selected filters</h2>
+          </div>
+  
+          <div class="moj-filter__heading-action">
+            <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+          </div>
+  
+        </div>
+  
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+  
+        <ul class="moj-filter-tags">
+  
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Blue</a></li>
+  
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Yellow</a></li>
+  
+        </ul>
+  
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Status</h3>
+  
+        <ul class="moj-filter-tags">
+  
+          <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Completed</a></li>
+  
+        </ul>
+  
+      </div>
+  
+      <div class="moj-filter__options">
+  
+        <button type="submit" class="govuk-button" data-module="govuk-button" data-test-id="submit-button">
+          Apply filters
+        </button>
+  
+        <div class="govuk-form-group">
+          <label class="govuk-label govuk-label--m" for="keywords">
+            Keywords
+          </label>
+  
+          <input class="govuk-input" id="keywords" name="keywords" type="text">
+  
+        </div>
+  
+        <div class="govuk-form-group">
+  
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Type
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type">
+                  Blue (18)
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                  Yellow (5)
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                  Red (2)
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+        <div class="govuk-form-group">
+  
+          <fieldset class="govuk-fieldset">
+  
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+  
+              Status
+  
+            </legend>
+  
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status" name="status" type="checkbox" value="complete" checked>
+                <label class="govuk-label govuk-checkboxes__label" for="status">
+                  Completed (2)
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-2" name="status" type="checkbox" value="incomplete">
+                <label class="govuk-label govuk-checkboxes__label" for="status-2">
+                  Incomplete (5)
+                </label>
+  
+              </div>
+  
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="status-3" name="status" type="checkbox" value="inprogress">
+                <label class="govuk-label govuk-checkboxes__label" for="status-3">
+                  In progress (3)
+                </label>
+  
+              </div>
+  
+            </div>
+  
+          </fieldset>
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  </div>
+<!--stats bars-->
+
+  <div class="govuk-grid-row">
+    <div class="app-width-container">
+    <div class="govuk-grid-column-one-half stats-panel-container">
+      <div class="stats-panel">
+        <p class="title-label">Stats group title</p>
+        <ul>
+          <li>
+            <div>20</div>
+            <div>team members</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>tasks in queue</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>active tasks</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>closed tasks</div>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+    <div class="govuk-grid-column-one-half stats-panel-container">
+      <div class="stats-panel">
+        <p class="title-label">Stats group title</p>
+        <ul>
+          <li>
+            <div>20</div>
+            <div>team members</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>tasks in queue</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>active tasks</div>
+          </li>
+          <li>
+            <div>20</div>
+            <div>closed tasks</div>
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- main wrapper-->
+<div class=" app-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width stats-panel-container">
+      
+    </div>
+  <div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full-width stats-panel-container">
+          results stuff here
+      </div>
+    <div>
+
+</div>
+  </div>
+  <div class=" filter-area">
+    <h2 class="govuk-heading-m">Filters</h2>
+        <form id="filter-form">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s ">Sort by date created</legend>
+              <div class="govuk-radios--small">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sort-asc" name="sort" type="radio" value="asc">
+                  <label class="govuk-label govuk-radios__label govuk-body-s" for="sort-asc">Oldest first</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sort-desc" name="sort" type="radio" value="desc">
+                  <label class="govuk-label govuk-radios__label" for="sort-desc">Newest first</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label title-label" for="startDate">Start date</label>
+            <div class="govuk-date-input" id="startDate">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label title-label" for="endDate">End date</label>
+            <div class="govuk-date-input" id="endDate">
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-day">
+                    Day
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-month">
+                    Month
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
+                </div>
+              </div>
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="dob-year">
+                    Year
+                  </label>
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label title-label" for="taskType">Task type</label>
+            <select class="govuk-select" id="taskType" name="taskType">
+              <option value="">-- Select --</option>
+              <option>Onboarding</option><option>Payroll Setup</option><option>Exit Interview</option><option>IT Access</option><option>Compliance Training</option>
+            </select>
+          </div>
+  
+          <div class="govuk-form-group">
+            <label class="govuk-label title-label" for="teamMember">Team member</label>
+            <select class="govuk-select" id="teamMember" name="teamMember">
+              <option value="">-- Select --</option>
+              <option>John Doe</option><option>Jane Smith</option><option>Alex Lee</option><option>Emily Green</option><option>Michael Brown</option><option>Sara White</option><option>Chris Black</option><option>Olivia Clark</option><option>James Adams</option><option>Sophia Turner</option>
+            </select>
+          </div>
+  
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Priority</legend>
+              <div class="govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low"><label class="govuk-label govuk-checkboxes__label" for="priority-Low">Low</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium"><label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Medium</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High"><label class="govuk-label govuk-checkboxes__label" for="priority-High">High</label></div><div class="govuk-checkboxes__item"><input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent"><label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">Urgent</label></div>
+              </div>
+            </fieldset>
+          </div>
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Status</legend>
+              <div class="govuk-checkboxes--small">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Low" id="priority-Low">
+                  <label class="govuk-label govuk-checkboxes__label" for="priority-Low">Closed</label>
+                </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Medium" id="priority-Medium">
+                    <label class="govuk-label govuk-checkboxes__label" for="priority-Medium">Paused</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="High" id="priority-High">
+                    <label class="govuk-label govuk-checkboxes__label" for="priority-High">Allocated</label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" type="checkbox" name="priority" value="Urgent" id="priority-Urgent">
+                    <label class="govuk-label govuk-checkboxes__label" for="priority-Urgent">Unallocated</label>
+                  </div>
+              </div>
+            </fieldset>
+          </div>
+          
+          <div class="govuk-button-group">
+          <button class="govuk-button" type="button" id="applyFilters">Apply filters</button>
+          <button class="govuk-button govuk-button--secondary" type="button" id="resetFilters">Reset</button>
+        </div>
+        </form>
+  
+  </div>
+  <div class=" results-area">
+    <h2 class="govuk-heading-m">Task list</h2>
+    <div id="activeFilters" class="govuk-body govuk-!-margin-top-3">
+      <span>Active filters</span>
+    </div>
+        <table class="govuk-table" id="taskTable">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+                    <label class="govuk-label govuk-checkboxes__label" for="D999948D">
+                      select all  
+                    </label>
+                  </div>
+                  </div>
+              
+              </th>
+              <th class="govuk-table__header" data-column="created" tabindex="0">Created</th>
+              <th class="govuk-table__header" data-column="created" tabindex="0">Due</th>
+              <th class="govuk-table__header" data-column="type" tabindex="0">Task Type</th>
+              <th class="govuk-table__header">NI Number</th>
+              <th class="govuk-table__header" data-column="member" tabindex="0">Team Member</th>
+              <th class="govuk-table__header" data-column="priority" tabindex="0">Priority</th>
+              <th class="govuk-table__header">Status</th>
+              <th class="govuk-table__header">View</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+    <tr
+      data-created="2022-08-09"
+      data-type="it access"
+      data-member="michael brown"
+      data-priority="high">
+      <td class="govuk-table__cell" >
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+            <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+            </label>
+          </div>
+          </div>
+      </div>
+      </td>
+      <td class="govuk-table__cell" >9 Aug 2022</td>
+      <td class="govuk-table__cell" >
+        9 Sep 2022<br>
+        <span class="govuk-tag govuk-tag--red ">overdue</span>
+      </td>
+      <td class="govuk-table__cell" >IT Access</td>
+      <td class="govuk-table__cell" >D999948D</td>
+      <td class="govuk-table__cell" >Michael Brown</td>
+      <td class="govuk-table__cell" >High</td>
+      <td class="govuk-table__cell" >Active</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-1">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-03-05"
+      data-type="exit interview"
+      data-member="olivia clark"
+      data-priority="urgent"
+      class="govuk-table__row">
+      <td class="govuk-table__cell" >
+       <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+            <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+            </label>
+          </div>
+          </div>
+      </td>
+      <td class="govuk-table__cell" >5 Mar 2023</td>
+      <td class="govuk-table__cell" >5 Apr 2023</td>
+      <td class="govuk-table__cell" >Exit Interview</td>
+      <td class="govuk-table__cell" >B956629D</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-2">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-09-15"
+      data-type="compliance training"
+      data-member="sara white"
+      data-priority="medium">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div>
+      </td>
+      <td class="govuk-table__cell" >15 Sep 2023</td>
+      <td class="govuk-table__cell" >15 Oct 2023</td>
+      <td class="govuk-table__cell" >Compliance Training</td>
+      <td class="govuk-table__cell" >C900169A</td>
+      <td class="govuk-table__cell" >Sara White</td>
+      <td class="govuk-table__cell" >Medium</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-3">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-09-03"
+      data-type="exit interview"
+      data-member="alex lee"
+      data-priority="urgent">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >3 Sep 2023</td>
+      <td class="govuk-table__cell" >3 Oct 2023</td>
+      <td class="govuk-table__cell" >Exit Interview</td>
+      <td class="govuk-table__cell" >B575670D</td>
+      <td class="govuk-table__cell" >Alex Lee</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Closed</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-4">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-05-16"
+      data-type="payroll setup"
+      data-member="olivia clark"
+      data-priority="medium">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >16 May 2023</td>
+      <td class="govuk-table__cell" >16 Jun 2023</td>
+      <td class="govuk-table__cell" >Payroll Setup</td>
+      <td class="govuk-table__cell" >C294838A</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Medium</td>
+      <td class="govuk-table__cell" >Active</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-5">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-11-21"
+      data-type="onboarding"
+      data-member="olivia clark"
+      data-priority="low">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >21 Nov 2023</td>
+      <td class="govuk-table__cell" >21 Dec 2022</td>
+      <td class="govuk-table__cell" >Onboarding</td>
+      <td class="govuk-table__cell" >D350484B</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Low</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-6">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2022-12-02"
+      data-type="payroll setup"
+      data-member="olivia clark"
+      data-priority="low">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >2 Dec 2022</td>
+      <td class="govuk-table__cell" >2 Jan 2023</td>
+      <td class="govuk-table__cell" >Payroll Setup</td>
+      <td class="govuk-table__cell" >B782488A</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Low</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-7">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2022-12-26"
+      data-type="onboarding"
+      data-member="olivia clark"
+      data-priority="urgent">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >26 Dec 2022</td>
+      <td class="govuk-table__cell" >26 Jan 2023</td>
+      <td class="govuk-table__cell" >Onboarding</td>
+      <td class="govuk-table__cell" >A683416C</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-8">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2024-08-29"
+      data-type="it access"
+      data-member="emily green"
+      data-priority="low">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >29 Aug 2024</td>
+      <td class="govuk-table__cell" >29 Sep 2024</td>
+      <td class="govuk-table__cell" >IT Access</td>
+      <td class="govuk-table__cell" >A654909C</td>
+      <td class="govuk-table__cell" >Emily Green</td>
+      <td class="govuk-table__cell" >Low</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-9">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-12-24"
+      data-type="payroll setup"
+      data-member="michael brown"
+      data-priority="low">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >24 Dec 2023</td>
+      <td class="govuk-table__cell" >24 Jan 2024</td>
+      <td class="govuk-table__cell" >Payroll Setup</td>
+      <td class="govuk-table__cell" >D494754D</td>
+      <td class="govuk-table__cell" >Michael Brown</td>
+      <td class="govuk-table__cell" >Low</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-10">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-03-22"
+      data-type="it access"
+      data-member="james adams"
+      data-priority="high">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >22 Mar 2023</td>
+      <td class="govuk-table__cell" >22 Apr 2023</td>
+      <td class="govuk-table__cell" >IT Access</td>
+      <td class="govuk-table__cell" >A613517A</td>
+      <td class="govuk-table__cell" >James Adams</td>
+      <td class="govuk-table__cell" >High</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-11">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2022-11-06"
+      data-type="compliance training"
+      data-member="michael brown"
+      data-priority="urgent">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >6 Nov 2022</td>
+      <td class="govuk-table__cell" >9 Dec 2023</td>
+      <td class="govuk-table__cell" >Compliance Training</td>
+      <td class="govuk-table__cell" >A738386D</td>
+      <td class="govuk-table__cell" >Michael Brown</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-12">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2022-12-25"
+      data-type="onboarding"
+      data-member="olivia clark"
+      data-priority="medium">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >25 Dec 2022</td>
+      <td class="govuk-table__cell" >25 Jan 2023</td>
+      <td class="govuk-table__cell" >Onboarding</td>
+      <td class="govuk-table__cell" >B267275D</td>
+      <td class="govuk-table__cell" >Olivia Clark</td>
+      <td class="govuk-table__cell" >Medium</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-13">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2024-04-21"
+      data-type="it access"
+      data-member="jane smith"
+      data-priority="high">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >21 Apr 2024</td>
+      <td class="govuk-table__cell" >21 May 2024</td>
+      <td class="govuk-table__cell" >IT Access</td>
+      <td class="govuk-table__cell" >D193753D</td>
+      <td class="govuk-table__cell" >Jane Smith</td>
+      <td class="govuk-table__cell" >High</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-14">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2024-11-08"
+      data-type="exit interview"
+      data-member="john doe"
+      data-priority="medium">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >8 Nov 2024</td>
+      <td class="govuk-table__cell" >9 Dec 2024</td>
+      <td class="govuk-table__cell" >Exit Interview</td>
+      <td class="govuk-table__cell" >C372768D</td>
+      <td class="govuk-table__cell" >John Doe</td>
+      <td class="govuk-table__cell" >Medium</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-15">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-08-12"
+      data-type="payroll setup"
+      data-member="sophia turner"
+      data-priority="low">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >12 Aug 2023</td>
+      <td class="govuk-table__cell" >12 Sep 2023</td>
+      <td class="govuk-table__cell" >Payroll Setup</td>
+      <td class="govuk-table__cell" >D638432B</td>
+      <td class="govuk-table__cell" >Sophia Turner</td>
+      <td class="govuk-table__cell" >Low</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-16">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2024-09-10"
+      data-type="it access"
+      data-member="sophia turner"
+      data-priority="urgent">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >10 Sep 2024</td>
+      <td class="govuk-table__cell" >10 Oct 2024</td>
+      <td class="govuk-table__cell" >IT Access</td>
+      <td class="govuk-table__cell" >C472699C</td>
+      <td class="govuk-table__cell" >Sophia Turner</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-17">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-04-19"
+      data-type="compliance training"
+      data-member="alex lee"
+      data-priority="urgent">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >19 Apr 2023</td>
+      <td class="govuk-table__cell" >19 May 2023</td>
+      <td class="govuk-table__cell" >Compliance Training</td>
+      <td class="govuk-table__cell" >D759374A</td>
+      <td class="govuk-table__cell" >Alex Lee</td>
+      <td class="govuk-table__cell" >Urgent</td>
+      <td class="govuk-table__cell" >Allocated</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-18">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2023-04-05"
+      data-type="payroll setup"
+      data-member="michael brown"
+      data-priority="high">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >5 Apr 2023</td>
+      <td class="govuk-table__cell" >5 May 2023</td>
+      <td class="govuk-table__cell" >Payroll Setup</td>
+      <td class="govuk-table__cell" >B765865B</td>
+      <td class="govuk-table__cell" >Michael Brown</td>
+      <td class="govuk-table__cell" >High</td>
+      <td class="govuk-table__cell" >Paused</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-19">View</a></td>
+    </tr>
+
+    <tr
+      data-created="2022-08-18"
+      data-type="compliance training"
+      data-member="michael brown"
+      data-priority="high">
+      <td class="govuk-table__cell" ><div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="D999948D" name="D999948D" type="checkbox" value="D999948D">
+          <label class="govuk-label govuk-checkboxes__label" for="D999948D">  
+          </label>
+        </div>
+        </div></td>
+      <td class="govuk-table__cell" >18 Aug 2022</td>
+      <td class="govuk-table__cell" >18 Aug 2022</td>
+      <td class="govuk-table__cell" >Compliance Training</td>
+      <td class="govuk-table__cell" >B190388A</td>
+      <td class="govuk-table__cell" >Michael Brown</td>
+      <td class="govuk-table__cell" >High</td>
+      <td class="govuk-table__cell" >Closed</td>
+      <td class="govuk-table__cell" ><a class="govuk-link" href="#task-20">View</a></td>
+    </tr>
+
+          </tbody>
+        </table>
+        <div class="pagination-container">
+          <nav class="govuk-pagination" aria-label="Pagination">
+            <div class="govuk-pagination__prev">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+                </svg>
+                <span class="govuk-pagination__link-title">
+                  Previous<span class="govuk-visually-hidden"> page</span>
+                </span>
+              </a>
+            </div>
+            <ul class="govuk-pagination__list">
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1">
+                  1
+                </a>
+              </li>
+              <li class="govuk-pagination__item govuk-pagination__item--current">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" aria-current="page">
+                  2
+                </a>
+              </li>
+              <li class="govuk-pagination__item">
+                <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                  3
+                </a>
+              </li>
+            </ul>
+            <div class="govuk-pagination__next">
+              <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                <span class="govuk-pagination__link-title">
+                  Next<span class="govuk-visually-hidden"> page</span>
+                </span>
+                <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                  <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                </svg>
+              </a>
+            </div>
+          </nav>
+        </div>
+  </div>
+</div>
+</body>
+<footer class="govuk-footer">
+  <div class="govuk-width-container">
+    <div class="govuk-footer__meta">
+      <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
+        <h2 class="govuk-visually-hidden">Support links</h2>
+        <ul class="govuk-footer__inline-list">
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Item 1
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Item 2
+            </a>
+          </li>
+          <li class="govuk-footer__inline-list-item">
+            <a class="govuk-footer__link" href="#">
+              Item 3
+            </a>
+          </li>
+        </ul>
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          class="govuk-footer__licence-logo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 483.2 195.7"
+          height="17"
+          width="41">
+          <path
+            fill="currentColor"
+            d="M421.5 142.8V.1l-50.7 32.3v161.1h112.4v-50.7zm-122.3-9.6A47.12 47.12 0 0 1 221 97.8c0-26 21.1-47.1 47.1-47.1 16.7 0 31.4 8.7 39.7 21.8l42.7-27.2A97.63 97.63 0 0 0 268.1 0c-36.5 0-68.3 20.1-85.1 49.7A98 98 0 0 0 97.8 0C43.9 0 0 43.9 0 97.8s43.9 97.8 97.8 97.8c36.5 0 68.3-20.1 85.1-49.7a97.76 97.76 0 0 0 149.6 25.4l19.4 22.2h3v-87.8h-80l24.3 27.5zM97.8 145c-26 0-47.1-21.1-47.1-47.1s21.1-47.1 47.1-47.1 47.2 21 47.2 47S123.8 145 97.8 145" />
+        </svg>
+        <span class="govuk-footer__licence-description">
+          All content is available under the
+          <a
+            class="govuk-footer__link"
+            href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+            rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+        </span>
+      </div>
+      <div class="govuk-footer__meta-item">
+        <a
+          class="govuk-footer__link govuk-footer__copyright-logo"
+          href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">
+          © Crown copyright
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+{% endblock %}
+
+
+<!-- to make a table row clickable using javascript
+   tr onclick="window.location='task-info#'" class = -->
+

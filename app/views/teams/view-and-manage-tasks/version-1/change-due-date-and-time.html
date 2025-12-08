@@ -1,0 +1,122 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Change due date and time" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "DWP Task dashboard",
+          href: "tasks"
+        },
+        {
+          text: "View and manage tasks",
+          href: "task"
+        },
+        {
+          text: "Change due date and time",
+          href: "change-due-date-and-time"
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+     
+      <p class="govuk-body">Change due date and time for 20 Oct 2025 Release Task Type for John Doe</p>
+
+      <form method="post" novalidate>
+
+       {{ govukDateInput({
+        id: "viewAndManageTasks[v1][date]",
+        fieldset: {
+          legend: {
+            text: "Date",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2024"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.viewAndManageTasks.v1.date.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.viewAndManageTasks.v1.date.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.viewAndManageTasks.v1.date.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "viewAndManageTasks[v1][time]",
+        fieldset: {
+          legend: {
+            text: "Time",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "Use 24 hours time, for example, 14:30"
+        },
+        items: [
+          {
+            name: "Hours",
+            label: "Hours",
+            value: data.viewAndManageTasks.v1.time.hours,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "Minutes",
+            label: "Minutes",
+            value: data.viewAndManageTasks.v1.time.minutes,
+            classes: "govuk-input--width-2"
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task"
+        }) }}
+      </div>
+
+      </form>
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+

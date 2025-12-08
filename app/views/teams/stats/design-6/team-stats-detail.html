@@ -1,0 +1,354 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+
+{% endblock %}
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+
+{% endblock %}
+
+{% block content %}
+
+  
+   <style>
+       /* Custom styles for the toggle functionality */
+       .layout-container {
+   display: flex;
+   gap: 24px; /* govuk-spacing(6) equivalent */
+   transition: all 0.3s ease;
+}
+
+#task-table {
+    width:100%;
+    display:block;
+}
+
+.filters-panel {
+   width: 300px; /* Fixed minimum width */
+   min-width: 300px; /* Ensures it never gets smaller */
+   flex-shrink: 0; /* Prevents shrinking */
+   overflow: hidden;
+   transition: all 0.3s ease;
+   padding-left:10px;
+}
+
+.layout-container.filters-hidden .filters-panel {
+   width: 0;
+   min-width: 0;
+   opacity: 0;
+   pointer-events: none;
+   margin-right: -24px; /* Compensate for gap */
+}
+
+.main-content-area {
+   flex: 1; /* Takes remaining space */
+   min-width: 0; /* Allows shrinking if needed */
+}
+#tasksPerPage {
+    width:80px !important;
+    min-width: 80px !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 40.0625em) {
+   .layout-container {
+       flex-direction: column;
+       gap: 16px;
+   }
+
+   .filters-panel {
+       width: 100%;
+       min-width: 0;
+   }
+
+   .layout-container.filters-hidden .filters-panel {
+       display: none;
+       margin-right: 0;
+   }
+}
+
+/* Different minimum widths for different screen sizes */
+@media (min-width: 1024px) {
+   .filters-panel {
+       width: 350px;
+       min-width: 350px;
+   }
+}
+
+@media (min-width: 1200px) {
+   .filters-panel {
+       width: 29%;
+       min-width: 29%;
+   }
+}
+
+       /* Custom button styling for toggle */
+       .toggle-filters-button {
+           margin-bottom: govuk-spacing(4);
+       }
+
+       /* Content cards using GOV.UK styling */
+       .content-card {
+           border-left: 4px solid #1d70b8;
+           padding: govuk-spacing(3);
+           margin-bottom: govuk-spacing(3);
+           background-color: #f3f2f1;
+       }
+
+       .content-card:last-child {
+           margin-bottom: 0;
+       }
+
+       .content-hero {
+           background: linear-gradient(135deg, #1d70b8 0%, #003078 100%);
+           color: #ffffff;
+           padding: govuk-spacing(6);
+           margin-bottom: govuk-spacing(6);
+           text-align: center;
+       }
+
+       .content-hero h2 {
+           color: #ffffff;
+           margin-bottom: govuk-spacing(3);
+       }
+
+       /* Responsive adjustments */
+       @media (max-width: 40.0625em) {
+           .layout-container {
+               grid-template-columns: 1fr;
+               gap: govuk-spacing(4);
+           }
+
+           .layout-container.filters-hidden {
+               grid-template-columns: 1fr;
+           }
+
+           .layout-container.filters-hidden .filters-panel {
+               display: none;
+           }
+       }
+
+       /* Reduced motion support */
+       @media (prefers-reduced-motion: reduce) {
+           .layout-container,
+           .filters-panel {
+               transition: none;
+           }
+       }
+
+       /* High contrast mode */
+       @media (prefers-contrast: high) {
+           .content-card {
+               border-left-width: 6px;
+           }
+       }
+
+       .layout-grid {
+   display: grid;
+   grid-template-columns: minmax(250px, 1fr) 2fr;
+   gap: 20px;
+   min-height: 500px;
+   transition: grid-template-columns 0.3s ease;
+}
+
+.layout-grid.filters-hidden {
+   grid-template-columns: minmax(0px, 0fr) 1fr;
+}
+
+/* Responsive minimum widths */
+@media (min-width: 1024px) {
+   .layout-grid {
+       grid-template-columns: minmax(320px, 1fr) 2fr;
+   }
+}
+
+@media (min-width: 1200px) {
+   .layout-grid {
+       grid-template-columns: minmax(380px, 1fr) 2fr;
+   }
+}
+
+/* Mobile - remove minimum to allow stacking */
+@media (max-width: 768px) {
+   .layout-grid {
+       grid-template-columns: 1fr;
+       gap: 16px;
+   }
+
+   .layout-grid.filters-hidden {
+       grid-template-columns: 1fr;
+   }
+
+   .layout-grid.filters-hidden .filters-column {
+       display: none;
+   }
+}
+   </style>
+
+<body class="govuk-template__body">
+   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+   <!-- Skip link -->
+   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+   <!-- Main content -->
+   <div class="govuk-width-container">
+       <main class="govuk-main-wrapper" id="main-content" role="main">
+
+           <!-- Page heading -->
+           <div class="govuk-grid-row">
+               <div class="govuk-grid-column-full">
+                   <h1 class="govuk-heading-xl">Team statistics</h1>
+                   <p class="govuk-body">Statistics true as of [DATE TIMESTAMP].</p>
+                   <a href="" class="govuk-link">Download as csv</a>
+               </div>
+           </div>
+
+     
+
+           <!-- Two column layout -->
+           <div class="govuk-grid-row govuk-!-static-padding-top-6">
+            <!-- Column one -->
+            
+            <div class="govuk-grid-column-full">
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Task statistics<br><span class="govuk-hint">From [DATE] to [DATE]</span></caption>
+                    <thead class="govuk-table__head">
+                      <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header " style="width: 300px">Date</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Allocated</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Active </th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Returned to queue</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Completed</th>
+                      </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">1 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">1 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">2 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">2 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">3 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">3 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">4 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">4 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">5 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">5 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">6 Aug 2025 <br><span class="govuk-hint">Task type: Intial call</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                      <tr class="govuk-table__row">
+                        <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">6 Aug 2025 <br><span class="govuk-hint">Task type: Call back</span></td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">25</td> 
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <nav class="govuk-pagination" aria-label="Pagination">
+                    <ul class="govuk-pagination__list">
+                      <li class="govuk-pagination__item govuk-pagination__item--current">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+                          1
+                        </a>
+                      </li>
+                      <li class="govuk-pagination__item">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+                          2
+                        </a>
+                      </li>
+                      <li class="govuk-pagination__item">
+                        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+                          3
+                        </a>
+                      </li>
+                    </ul>
+                    <div class="govuk-pagination__next">
+                      <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+                        <span class="govuk-pagination__link-title">
+                          Next<span class="govuk-visually-hidden"> page</span>
+                        </span>
+                        <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                        </svg>
+                      </a>
+                    </div>
+                  </nav>
+            </div>
+            
+            </div>
+          </div>
+       </main>
+   </div>
+{% endblock %}

@@ -3,22 +3,24 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+@import "components/accessible-autocomplete.min.scss";
+@import "components/filter-layout.scss";
+@import "components/filter-panel.scss";
+@import "components/search-form.scss";
+
 // Add extra styles here
 .govuk-header__logo {
     display: none;
   }
   
-  .govuk-heading-xl, .govuk-heading-l, .govuk-heading-m, .govuk-heading-s, .govuk-table, .govuk-table__caption--m, .govuk-link, p, a, .govuk-body, .govuk-body-m, .govuk-footer__link, .govuk-footer, .govuk-header__service-name, .govuk-list, .app-task-list__items, .govuk-caption-m, .govuk-button, .govuk-fieldset__heading, .govuk-back-link, .govuk-radios__label, .govuk-hint, .govuk-label, .govuk-body-l, .govuk-details, {
-      font-family: Helvetica, Arial, sans-serif;
-  }
 
-  .govuk-phase-banner {
-    font-family: Helvetica, Arial, sans-serif;
-    padding-top: 0px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #d4d4d4;
-    margin-top: 10px;
-  }
+.govuk-phase-banner {
+  font-family: Helvetica, Arial, sans-serif;
+  padding-top: 0px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #d4d4d4;
+  margin-top: 10px;
+}
 
 
   /* Dashboard tile styling */
@@ -574,5 +576,26 @@
       }
     }
   }
+}
+
+.govuk-tag {
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.note {
+  position: absolute;
+  bottom: -40%;
+  left: 50%;
+  background-color: #feed7f;
+  width: 150px;
+  height: auto;
+  padding: 24px 24px;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), 0 4px 16px 0 rgba(0, 0, 0, 0.12);
+}
+
+.app-width-container--wide {
+  max-width: 1280px;
 }
 

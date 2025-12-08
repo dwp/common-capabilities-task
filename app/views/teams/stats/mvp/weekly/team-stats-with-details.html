@@ -1,0 +1,151 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = data['mvp']['stats']['team'] %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}} MI</h1>
+
+     <p class="govuk-body">
+        All tasks completed between 13 October and 20 October 2025, and any tasks in progress (active) at the end of this period.
+      </p>
+
+      <p>
+        Completed tasks include any cancelled or failed tasks.
+      </p>
+
+      <!-- Table one - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">All tasks completed and in progress (active) by task type</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header " style="width: 300px">Task type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Active</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Call back</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">250</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Data entry</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">260</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">General admin</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">241</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">16</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Initial call</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">238</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
+          </tr>
+        </tbody>
+        <tfoot class="govuk-table__row">
+          <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">989</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">61</td>
+        </tfoot>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+    
+
+    <!-- Table two - agent -->  
+      <table class="govuk-table govuk-!-static-margin-top-8 govuk-!-static-margin-bottom-3">
+        <caption class="govuk-table__caption govuk-table__caption--m">All tasks completed and in progress (active), by agent</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 300px">Agent</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Active</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Oliver Logan
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876800</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">88</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">23</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="oliver-logan-details">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Georgia Duncan
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876801</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">87</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Hassan Young
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876802</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">110</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Aiden Jenkins
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876803</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">60</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Amy Anderson
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876804</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">67</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Amy Adams
+              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876805</p>
+            </td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">80</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
+          </tr>
+        </tbody>
+        <tfoot class="govuk-table__row">
+          <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">492</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">70</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"></td>
+        </tfoot>
+      </table>
+
+      
+      <a href="#" class="govuk-link">Download as csv</a>
+      
+
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}

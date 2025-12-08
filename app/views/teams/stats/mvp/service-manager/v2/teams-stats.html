@@ -1,0 +1,288 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+
+{% endblock %}
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/filters.css" rel="stylesheet" type="text/css" />
+{% endblock %}
+
+{% block beforeContent %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  
+   <style>
+    .stats-card {
+      border: 1px solid black; 
+      box-sizing: border-box;
+      
+    }
+    .stats-params {
+      display: block;
+      flex-direction: row;
+    }
+    
+   </style>
+
+<body class="govuk-template__body">
+   <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+   <!-- Skip link -->
+   <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+
+
+   <!-- Main content -->
+   <div class="govuk-width-container">
+       <main class="govuk-main-wrapper" id="main-content" role="main">
+
+           <!-- Page heading -->
+           <div class="govuk-grid-row govuk-!-static-padding-bottom-6">
+               <div class="govuk-grid-column-two-thirds">
+                   <h1 class="govuk-heading-l">Service statistics [FROM DATE] to [TO DATE] </h1>
+                   <p class="govuk-body">These statistics represent task statuses for [TEAM NAME ] as of [DATE timestamp].</p>
+                   
+               </div>
+           </div>
+           <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-half">
+              <h2 class="govuk-heading-m">Overview</h2>
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Allocated
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    7000
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Active
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    5000
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Completed
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    6300
+                  </dd>
+                </div>
+              </dl>
+            
+            </div>
+          </div>
+           <div class="govuk-grid-row">
+            <h2 class="govuk-heading-m">Breakdown by team</h2>
+            <div class="govuk-grid-column-one-half">
+              
+              <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">
+                    Team Purple
+                  </h2>
+                  <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action">
+                      <a class="govuk-link" href="team-stats">Details<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+                    </li>
+                   
+                  </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                  <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Allocated
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        10000
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Active
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                       765
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Completed
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        1287
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                      Team Yellow
+                    </h2>
+                    <ul class="govuk-summary-card__actions">
+                      <li class="govuk-summary-card__action">
+                        <a class="govuk-link" href="team-stats">Details<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+                      </li>
+                     
+                    </ul>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Allocated
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          10000
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Active
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                         765
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Completed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1287
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+              <div class="govuk-grid-column-one-half">
+                <div class="govuk-summary-card">
+                  <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">
+                      Team Amber
+                    </h2>
+                    <ul class="govuk-summary-card__actions">
+                      <li class="govuk-summary-card__action">
+                        <a class="govuk-link" href="team-stats">Details<span class="govuk-visually-hidden"> of University of Gloucestershire (University of Gloucestershire)</span></a>
+                      </li>
+                     
+                    </ul>
+                  </div>
+                  <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Allocated
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          10000
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Active
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                         765
+                        </dd>
+                      </div>
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Completed
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          1287
+                        </dd>
+                      </div>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+           </div>
+         
+
+          
+      
+      <!-- <div class="govuk-grid-row govuk-!-static-padding-top-6">
+        <div class="govuk-grid-column-full">
+        <table class="govuk-table govuk-!-static-margin-top-8 govuk-!-static-margin-bottom-1">
+          <caption class="govuk-table__caption govuk-table__caption--m">Agent statistics <br><span class="govuk-hint">Individual agents</span></caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header " style="width: 300px">Agent</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Allocated</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Active </th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric ">Completed </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Oliver Logan</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">100</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">23</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">88</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Georgia Duncan</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">90</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">87</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Hassan Young</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">120</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">110</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Aiden Jenkins</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">44</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">60</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Amy Anderson</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">79</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">67</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Amy Adams</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">95</td> 
+              <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">80</td>
+            </tr>
+          </tbody>
+          <tfoot class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">528</td> 
+            <td class="govuk-table__cell govuk-table__cell--numeric">71</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">492</td>
+          </tfoot>
+        </table>
+        <a href="team-stats-detail">Download as csv</a>
+      </div>
+    </div> -->
+
+         
+          </div>
+       </main>
+   </div>
+</body>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "View and manage tasks" %}
+
+{% block beforeContent %} 
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    {% include "teams/view-and-manage-tasks/_includes/filter-panel-v2.njk" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+      <!-- {% include "teams/view-and-manage-tasks/_includes/search-form.njk" %} -->
+
+      {# {% include "teams/view-and-manage-tasks/_includes/sorting.njk" %} #}
+      {% include "teams/view-and-manage-tasks/_includes/search-results.njk" %}
+
+     
+
+      {% include "teams/view-and-manage-tasks/_includes/pagination.njk" %}
+
+  </div>
+</div>
+   
+{% endblock %}
+
+
+{% block scripts %}
+  {{super()}}
+  <script>
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('.taskTypeAutocomplete')
+    })
+  </script>
+{% endblock %}

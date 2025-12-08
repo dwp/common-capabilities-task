@@ -1,0 +1,66 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Change tasks priority to" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+
+    {{ govukRadios({
+      name: "[teams][v2][changePriority]",
+      fieldset: {
+        legend: {
+          html: pageName,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      value: data.teams.v2.changePriority,
+      items: [
+        {
+          value: "None",
+          text: "None"
+        },
+        {
+          value: "Low",
+          text: "Low"
+        },
+        {
+          value: "Medium",
+          text: "Medium"
+        },
+        {
+          value: "High",
+          text: "High"
+        },
+        {
+          value: "Critical",
+          text: "Critical"
+        }
+      ]
+    }) }}
+     
+    
+   
+    {{ govukButton({
+      text: "Confirm",
+      href: "../tasks"
+    }) }}
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+
