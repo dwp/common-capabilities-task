@@ -213,11 +213,10 @@
           }
         ]
       }) }}
- 
+
 
       {# Autocomplete start #}
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half"> 
+     
 
           {{ govukSelect({
             id: "viewAndManageTasks[v1][taskType]",
@@ -252,12 +251,10 @@
             ]
           }) }}
 
-        </div>
-      </div>
+    
       {# Autocomplete ends #}
 
-    
-
+   
       {{ govukInput({
         id: "[teams][agent]",
         name: "[teams][agent]",
@@ -317,6 +314,8 @@
 
     </div>
 </div>
+
+<a href="find-tasks-v2" class="govuk-link">Version 2</a>
 
 {% endblock %}
 

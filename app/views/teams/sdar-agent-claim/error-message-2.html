@@ -1,0 +1,96 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = 'Is this the right customer?' %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "You need to select an option",
+      href: "#selectOption"
+    }
+  ]
+}) }}
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Simon Alexander"
+            }
+          },
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              text: "HP 12 68 23 B"
+            }
+          }
+        ]
+      }) }}
+
+      <form method="post" novalidate>
+
+      {{ govukRadios({
+        name: "selectOption",
+        fieldset: {
+          legend: {
+            html: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        errorMessage: {
+        text: "You need to select an option"
+        },
+        value: data.sdarAgentClaim.customer,
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+
+      <div class="govuk-button-group">
+        
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "find-a-customer"
+        }) }}
+    
+      </div>
+    </form>
+
+    {% endblock %}

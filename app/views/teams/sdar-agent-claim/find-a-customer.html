@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Find a customer" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <form method="post" novalidate>
+            
+        {{ govukInput({
+          id: "nino",
+          name: "nino",
+          label: {
+            html: "National insurance number",
+            isPageHeading: true,
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "For example, ‘QQ 12 34 56 C’."
+          },
+          value: data.nino,
+          classes: "govuk-input--width-10"
+        }) }}
+    
+        {{ govukButton({
+          text: "Search",
+          href: "check-this-is-the-right-customer"
+        }) }}
+        
+      </form>
+
+      <a style="color: #d4351c;" href="error-message">Error message</a><br><br>
+      <a style="color: #d4351c;" href="error-page">Error page</a>
+
+    </div>
+  </div>
+            
+  
+
+
+{% endblock %}

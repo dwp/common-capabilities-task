@@ -1,0 +1,130 @@
+
+{% extends "layouts/new-main.html" %}
+
+
+{% set pageName = 'All tasks for Simon Alexander' %}
+
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Find a customer",
+        href: "find-a-customer"
+      },
+      {
+        text: "All tasks",
+        href: "tasks"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+{% if (data['showBanner'] == "yes") %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have claimed 	New task 123 task
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <p>Completed, failed and cancelled tasks are not shown.</p>
+
+      {{ govukTable({
+        caption: "",
+        captionClasses: "govuk-table__caption--l",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Created"
+          },
+          {
+            text: "Task type"
+          },
+          {
+            text: "Due"
+          },
+          {
+            text: "Status"
+          },
+          {
+            text: "Action"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "24 Dec 2025"
+            },
+            {
+              text: "New task 123"
+            },
+            {
+              html: "29 Dec 2025" + "<br>" + govukTag({ text: "Overdue",classes: "govuk-tag--red govuk-!-margin-top-1" })
+            },
+            {
+              html: govukTag({ text: "Unallocated",classes: "govuk-tag--grey govuk-!-margin-top-1" }) 
+            },
+            {
+              html: '<a href="tasks-details" class="govuk-link">Details</a>'
+            }
+          ],
+          [
+            {
+              text: "25 Dec 2025"
+            },
+            {
+              text: "New task 122"
+            },
+            {
+              html: "29 Dec 2025" + "<br>" + govukTag({ text: "Overdue",classes: "govuk-tag--red govuk-!-margin-top-1" })
+            },
+            {
+              text: govukTag({ text: "On hold",classes: "govuk-tag--yellow govuk-!-margin-top-1" })
+            },
+            {
+              html: '<a href="tasks-details-no-claim" class="govuk-link">Details</a>'
+            }
+          ],
+          [
+            {
+              text: "26 Dec 2025"
+            },
+            {
+              text: "New task 121"
+            },
+            {
+              html: "29 Dec 2025" + "<br>" + govukTag({ text: "Overdue",classes: "govuk-tag--red govuk-!-margin-top-1" })
+            },
+            {
+              text: govukTag({ text: "Unallocated",classes: "govuk-tag--grey govuk-!-margin-top-1" })
+            },
+            {
+              html: '<a href="#" class="govuk-link">Details</a>'
+            }
+          ]
+        ]
+      }) }}
+
+  
+    </div>
+  </div>
+ 
+ 
+  
+  <a href="home" class="govuk-link">Go back to the dashboard</a>   
+      
+{% endblock %}

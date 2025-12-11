@@ -1,0 +1,82 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = 'Is this the right customer?' %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Simon Alexander"
+            }
+          },
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              text: "HP 12 68 23 B"
+            }
+          }
+        ]
+      }) }}
+
+      <form method="post" novalidate>
+
+      {{ govukRadios({
+        name: "[sdarAgentClaim][customer]",
+        fieldset: {
+          legend: {
+            html: "",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        value: data.sdarAgentClaim.customer,
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+        
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+     
+    
+    </form>
+     
+    <a style="color: #d4351c;" href="error-message-2">Error message</a><br><br>
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}

@@ -599,3 +599,10 @@
   max-width: 1280px;
 }
 
+.searchable-collection-component--only-scrollable {
+  margin-left: -10px;
+  max-height: 200px;
+  overflow-y: auto;
+  padding-left: 10px;
+}
+

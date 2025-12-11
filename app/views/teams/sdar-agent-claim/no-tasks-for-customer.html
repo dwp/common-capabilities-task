@@ -1,0 +1,77 @@
+
+{% extends "layouts/new-main.html" %}
+
+{% set pageName = 'All tasks for Simon Alexander' %}
+
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Find a customer",
+        href: "find-a-customer"
+      },
+      {
+        text: "All tasks",
+        href: "tasks"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      {# <h1 class="govuk-heading-l">{{pageName}}</h1> #}
+
+      {{ govukTable({
+        caption: "All tasks for Simon Alexander",
+        captionClasses: "govuk-table__caption--l",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Created"
+          },
+          {
+            text: "Task type"
+          },
+          {
+            text: "Due"
+          },
+          {
+            text: "Status"
+          },
+          {
+            text: "Action"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "No tasks found"
+            },
+            { 
+            },
+            {
+            },
+            {  
+            },
+            { 
+            }
+          ]   
+        ]
+      }) }}
+
+  
+    </div>
+  </div>
+ 
+
+      
+{% endblock %}

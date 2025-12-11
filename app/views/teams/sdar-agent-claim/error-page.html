@@ -1,0 +1,29 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = 'All apply for pension credit tasks for Simon Alexander' %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">No tasks found for this National Insurance number</h1>
+        
+        <p class="govuk-body">
+          Go back to <a href="find-a-customer" class="govuk-link">Find a customer</a> and search using a different National Insurance number.
+        </p>
+    </div>
+  </div>
+ 
+  
+          
+      
+{% endblock %}
