@@ -37,6 +37,25 @@
 
 
 
+
+{# Build the conditional tag once, then reuse in the table rows #}
+
+{% set unallocatedOrAllocatedTag %}
+  {% if data.showBanner == "yes" %}
+    {{ govukTag({
+      text: "Allocated",
+      classes: "govuk-tag--yellow govuk-!-margin-top-1"
+    }) }}
+  {% else %}
+    {{ govukTag({
+      text: "Unallocated",
+      classes: "govuk-tag--grey govuk-!-margin-top-1"
+    }) }}
+  {% endif %}
+{% endset %}
+
+
+
   
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -76,7 +95,9 @@
             {
               html: govukTag({ text: "Overdue",classes: "govuk-tag--red govuk-!-margin-top-1" }) + "<br>" + "29 Dec 2025"
             },
-            { html: govukTag({ text: "Unallocated",classes: "govuk-tag--grey govuk-!-margin-top-1" }) },
+            { 
+              html: unallocatedOrAllocatedTag 
+            },
             {
               html: '<a href="tasks-details" class="govuk-link">Details</a>'
             }
