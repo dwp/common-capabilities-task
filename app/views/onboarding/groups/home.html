@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">DWP Task dashboard</h1>
+  <a href="#" class="govuk-button govuk-button--secondary">Change organisation unit</a>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="task-list">View and manage tasks</a></h2>
+    <p>View and manage tasks for Benefits One QA over a given date range.</p> 
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="manage-organisation-unit">Manage [org unit name] setup </a></h2>
+      <p>Add or manage agents and groups, or view tasks and attributes in Benefits One QA.</p>
+    </div>
+  </div>
+
+  <div class="govuk-width-container">
+    &nbsp;
+      <div class="box">
+        <h2 class="govuk-heading-m"><a href="view-statistics">Statistics</a></h2>
+        <p>Filter statistics by date range to view average completion time, created, completed, and overdue tasks.</p>
+      </div>
+    </div>
+
+    <div class="govuk-width-container">
+      &nbsp;
+        <div class="box">
+          <h2 class="govuk-heading-m"><a href="agent">Agent home</a></h2>
+          <p>Work as an agent.</p>
+        </div>
+      </div>
+
+&nbsp;
+{% endblock %}
+
+
