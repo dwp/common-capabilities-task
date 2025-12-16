@@ -162,64 +162,88 @@
           ]
         }) }}
 
+     <h2 class="govuk-heading-l">Optional filters</h2>
+
       
 
-       {{ govukInput({
-        id: "[teams][agent]",
-        name: "[teams][agent]",
-        label: {
-          text: "Agent (optional)",
-          isPageHeading: false,
-          classes: "govuk-label--s"
-        },
-        classes: "govuk-input--width-20",
-        hint: {
-          html: "Enter name, staff number or email of the agent<br> whose tasks you want to view"
-        },
-        value: data.teams.agent
-      }) }}
-
-      {{ govukCheckboxes({
-        name: "viewAndManageTasks[v1][status]",
-        fieldset: {
-          legend: {
-            text: "Status (optional)",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        hint: {
-          text: "Select the status of the tasks you want to view"
-        },
-        values: data.viewAndManageTasks.v1.status,
+      {{ govukAccordion({
+        id: "filters-accordion",
         items: [
           {
-            value: "Allocated",
-            text: "Allocated"
+            heading: {
+              text: "Agent (optional)"
+            },
+            content: {
+              html: govukInput({
+                id: "teams-agent",
+                name: "teams[agent]",
+                label: {
+                  text: "Agent (optional)",
+                  isPageHeading: false,
+                  classes: "govuk-label--s"
+                },
+                classes: "govuk-input--width-20",
+                hint: {
+                  html: "Enter name, staff number or email of the agent<br>whose tasks you want to view"
+                },
+                value: data.teams and data.teams.agent
+              })
+            }
           },
           {
-            value: "Closed",
-            text: "Closed"
+            heading: { text: "Status (optional)" },
+            content: {
+              html:  govukCheckboxes({
+                name: "viewAndManageTasks[v1][status]",
+                fieldset: {
+                  legend: {
+                    text: "Status (optional)",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--s"
+                  }
+                },
+                hint: {
+                  text: "Select the status of the tasks you want to view"
+                },
+                values: data.viewAndManageTasks.v1.status,
+                items: [
+                  {
+                    value: "Allocated",
+                    text: "Allocated"
+                  },
+                  {
+                    value: "Closed",
+                    text: "Closed"
+                  },
+                  {
+                    value: "Completed",
+                    text: "Completed"
+                  },
+                  {
+                    value: "On hold",
+                    text: "On hold"
+                  }
+                ]
+              }) 
+              }
           },
           {
-            value: "Completed",
-            text: "Completed"
+            heading: { text: "Task type (optional)" },
+            content: { 
+              html: "Content three HTML" }
           },
           {
-            value: "On hold",
-            text: "On hold"
+            heading: { text: "Heading four" },
+            content: { html: "Content four HTML" }
           }
         ]
       }) }}
 
-  </div> {# grid col close #}
-</div> {# grid row close #}
+      
 
-
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-third">
+ 
     
-      <div class="govuk-form-group" style="margin-bottom: 10px;">
+      {# <div class="govuk-form-group" style="margin-bottom: 10px;">
 
           {{ govukInput({
             label: {
@@ -234,9 +258,9 @@
             id: "event-name",
             name: "eventName"
           }) }}
-      </div>
+      </div> #}
 
-      <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+      {# <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="" checked>
@@ -275,11 +299,10 @@
             </label>
           </div>
         </div>
-      </div>
+      </div> #}
         
-     
-
-
+  
+{# 
       {{ govukCheckboxes({
         name: "viewAndManageTasks[v1][priority]",
         fieldset: {
@@ -311,11 +334,11 @@
             text: "Urgent"
           }
         ]
-      }) }}
+      }) }} #}
 
      
       
-     <div class="govuk-form-group" style="margin-bottom: 10px;">
+     {# <div class="govuk-form-group" style="margin-bottom: 10px;">
 
           {{ govukInput({
             label: {
@@ -330,9 +353,9 @@
             id: "event-name",
             name: "eventName"
           }) }}
-      </div>
+      </div> #}
 
-      <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+      {# <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="" checked>
@@ -371,7 +394,7 @@
             </label>
           </div>
         </div>
-      </div>
+      </div> #}
 
     </div> {# grid col close #}
 </div> {# grid row close #}
@@ -379,7 +402,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-      {{ govukInput({
+      {# {{ govukInput({
         id: "[teams][nino]",
         name: "[teams][nino]",
         label: {
@@ -392,9 +415,9 @@
           html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer"
         },
         value: data.teams.nino
-      }) }}
+      }) }} #}
 
-      {{ govukInput({
+      {# {{ govukInput({
         id: "[teams][taskNumber]",
         name: "[teams][taskNumber]",
         label: {
@@ -407,7 +430,7 @@
           html: "Enter a task number to view that task"
         },
         value: data.teams.taskNumber
-      }) }}
+      }) }} #}
 
      
 
@@ -420,7 +443,7 @@
       </div>
       
       </form>
-      <a href="find-tasks-v3" class="govuk-link">Version with optional filters</a>
+      <a href="find-tasks-v2" class="govuk-link">Version with all filters on one page</a>
     </div> {# grid col close #}
 </div> {# grid row close #}
 
