@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 
-{% set pageName = "Filter tasks" %}
+{% set pageName = "View and manage tasks" %}
 
 {% block beforeContent %}
 
@@ -18,35 +18,9 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
-      <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
+      <p class="govuk-body">To view any tasks, you must enter a date range. Enter from and to dates below.</p>
 
       <form novalidate method="post">
-
-      {{ govukRadios({
-        name: "viewAndManageTasks[v1][DateRangeOption]",
-        fieldset: {
-          legend: {
-            text: "Date range option",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--s"
-          }
-        },
-        value: data.viewAndManageTasks.v1.DateRangeOption,
-        items: [
-          {
-            value: "Created date",
-            text: "Created date"
-          },
-          {
-            value: "Completed date",
-            text: "Completed date"
-          },
-          {
-            value: "Due by date",
-            text: "Due by date"
-          }
-        ]
-      }) }}
 
 
         {% set customePeriodHtml %}
@@ -124,7 +98,7 @@
           name: "dataRange",
           fieldset: {
             legend: {
-              text: "Data",
+              text: "Data range",
               isPageHeading: false,
               classes: "govuk-fieldset__legend--s"
             }
@@ -142,11 +116,11 @@
               text: "Yesterday"
             },
             {
-              value: "Last seven days",
-              text: "Last seven days"
+              value: "last week",
+              text: "Last week"
             },
              {
-              value: "Last month",
+              value: "last month",
               text: "Last month"
             },
             {
@@ -154,7 +128,7 @@
             },
             {
               value: "custome period",
-              text: "Other",
+              text: "Custome period",
               conditional: {
                 html: customePeriodHtml
               }
@@ -162,7 +136,9 @@
           ]
         }) }}
 
-      
+      <p class="govuk-body">
+        This will display tasks created in this date range.<br> Select an option below if you want to change this.
+      </p>
 
        {{ govukInput({
         id: "[teams][agent]",
@@ -228,7 +204,7 @@
               isPageHeading: false
             },
             hint: {
-              text: "Select the type of tasks you want to view"
+              text: "3 selected"
             },
             classes: "govuk-!-margin-bottom-0",
             id: "event-name",
@@ -280,19 +256,45 @@
      
 
 
+      {{ govukRadios({
+        name: "viewAndManageTasks[v1][DateRangeOption]",
+        fieldset: {
+          legend: {
+            text: "Date range option",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.viewAndManageTasks.v1.DateRangeOption,
+        items: [
+          {
+            value: "Created date",
+            text: "Created date"
+          },
+          {
+            value: "Completed date",
+            text: "Completed date"
+          },
+          {
+            value: "Due by date",
+            text: "Due by date"
+          }
+        ]
+      }) }}
+
+     
+      
+
       {{ govukCheckboxes({
         name: "viewAndManageTasks[v1][priority]",
         fieldset: {
           legend: {
-            text: "Priority (optional)",
+            text: "Priority",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--s"
           }
         },
         values: data.viewAndManageTasks.v1.priority,
-        hint: {
-          text: "Select the priorities of the tasks you want to view"
-        },
         items: [
           {
             value: "High",
@@ -319,12 +321,12 @@
 
           {{ govukInput({
             label: {
-              text: "Team (optional)",
+              text: "Team",
               classes: "govuk-label--s",
               isPageHeading: false
             },
             hint: {
-              text: "Select one or more teams to view tasks those teams can work on"
+              text: "2 selected"
             },
             classes: "govuk-!-margin-bottom-0",
             id: "event-name",
@@ -404,7 +406,7 @@
         },
         classes: "govuk-input--width-10",
         hint: {
-          html: "Enter a task number to view that task"
+          html: "Enter the task number to view a specific task"
         },
         value: data.teams.taskNumber
       }) }}
@@ -420,7 +422,7 @@
       </div>
       
       </form>
-      <a href="find-tasks-v3" class="govuk-link">Version with optional filters</a>
+
     </div> {# grid col close #}
 </div> {# grid row close #}
 

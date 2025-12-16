@@ -10,11 +10,11 @@
   {{ govukBreadcrumbs({
       items: [
         {
-          text: "View and manage tasks",
+          text: "DWP Task dashboard",
           href: "tasks"
         },
         {
-          text: "Task",
+          text: "View and manage tasks",
           href: "task"
         }
       ]
@@ -51,7 +51,7 @@
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Task type
+            Task
           </dt>
           <dd class="govuk-summary-list__value">
             1 for orgunit_b
@@ -78,11 +78,7 @@
             Due
           </dt>
           <dd class="govuk-summary-list__value">
-             {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}
-            <p class="govuk-body">20 Nov 2025 12:34</p>
+            <p class="govuk-body">20 October 2024</p>
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="change-due-date-and-time">Change<span class="govuk-visually-hidden">Due</span></a>
@@ -93,7 +89,7 @@
             Created
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">19 Nov 2025 at 09:11</p>
+            <p class="govuk-body">23 October 2024 at 09:11</p>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -112,15 +108,15 @@
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            {{govukTag({text: "On hold",classes: "govuk-tag--yellow"})}}<br>
-            20 Nov 2025 9:25
+            {{govukTag({text: "On hold",classes: "govuk-tag--yellow"})}}
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Agent
           </dt>
-          <dd class="govuk-summary-list__value">239856</dd>
+          <dd class="govuk-summary-list__value">
+          </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Return to queue<span class="govuk-visually-hidden">Agent</span></a>
           </dd>
