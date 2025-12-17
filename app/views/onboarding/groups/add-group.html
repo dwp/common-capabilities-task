@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Create a group</h1>
+    <p class="govuk-body-m">Create a group of agents.</p>
+    <p class="govuk-body-m">Agents will get tasks that match to this group.</p>
+    <form class="form" action="add-attributes-to-group" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <label class="govuk-label govuk-label--s" for="group-name">Group ID</label>
+          <p class="govuk-hint">For example, my-group</p>
+          <input class="govuk-input" id="group-name" name="name" type="text" value="">
+        </div>
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <label class="govuk-label govuk-label--s" for="group-name">Group name</label>
+          <p class="govuk-hint">For example, my-group</p>
+          <input class="govuk-input" id="group-name" name="name" type="text" value="">
+        </div>
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <label class="govuk-label govuk-label--s" for="group-description">Group description (optional)</label>
+          <p class="govuk-hint">For example, 'The agents in this group are decision makers. They have responsibility for customer decisions.'</p>
+          <textarea class="govuk-textarea" id="group-description" name="description" rows="5" aria-label="group-description" aria-describedby="group-description"></textarea>
+        </div>
+      </div>
+      <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Continue</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+

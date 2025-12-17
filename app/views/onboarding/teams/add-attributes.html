@@ -1,0 +1,33 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Change matching criteria for [Agent Name]</h1>
+    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">vulnerable</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="vulnerable" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="vulnerable" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
+    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">urgent</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="urgent" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="urgent" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
+    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">escalate</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="escalate" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="escalate" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
+    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">country-subdivision</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="gb-nir" name="country-subdivision" type="checkbox" value="gb-nir"><label class="govuk-label govuk-checkboxes__label " for="gb-nir" data-testid="checkbox-label-id">gb-nir</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="gb-gbn" name="country-subdivision" type="checkbox" value="gb-gbn"><label class="govuk-label govuk-checkboxes__label " for="gb-gbn" data-testid="checkbox-label-id">gb-gbn</label></div></div></fieldset></div>
+    <form class="form" action="/agent-details" method="get" role="form">
+      <div class="govuk-button-group" data-testid="button-group-id">
+        <button class="govuk-button" type="submit" value="delete" data-module="govuk-button">Confirm</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Cancel</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
