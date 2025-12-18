@@ -70,7 +70,11 @@
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Confirm",
-          href: "task"
+          href: "task",
+          attributes: {
+            name: "ReturnTaskToQueue",
+            value: "yes"
+          }
         }) }}
       
         {{ govukButton({

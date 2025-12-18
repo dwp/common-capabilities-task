@@ -23,6 +23,24 @@
 
 {% block content %}
 
+
+{% if data['ChangeDueDate'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have changed the due date.</h3>" | safe
+  }) }}
+{% elif data['ChangePriorityLevel'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have changed the priority level.</h3>" | safe
+  }) }}
+{% elif data['ReturnTaskToQueue'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have returned task to the queue.</h3>" | safe
+   }) }}
+{% endif %}
+
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 

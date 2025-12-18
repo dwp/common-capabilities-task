@@ -77,7 +77,11 @@
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Confirm",
-          href: "task"
+          href: "task",
+          attributes: {
+            name: "ChangePriorityLevel",
+            value: "yes"
+          }
         }) }}
       
         {{ govukButton({

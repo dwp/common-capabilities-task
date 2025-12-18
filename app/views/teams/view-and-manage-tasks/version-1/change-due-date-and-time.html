@@ -102,7 +102,11 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Confirm"
+          text: "Confirm",
+          attributes: {
+            name: "ChangeDueDate",
+            value: "yes"
+          }
         }) }}
       
         {{ govukButton({
