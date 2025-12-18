@@ -162,6 +162,17 @@
           ]
         }) }}
 
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "View tasks",
+          href: "tasks"
+        }) }}
+        <a href="#" class="govuk-link">Clear filters</a>
+      </div>
+
+      <h2 class="govuk-heading-m">Optional filters</h2>
+      <p class="govuk-!-margin-bottom-6">You can select other optional filters to reduce the list of tasks you will see.</p>
       
 
        {{ govukInput({
@@ -214,6 +225,7 @@
 
   </div> {# grid col close #}
 </div> {# grid row close #}
+
 
 
 <div class="govuk-grid-row">
@@ -420,9 +432,7 @@
       </div>
       
       </form>
-      <a href="find-tasks-v4" class="govuk-link">Version with additional CTA</a><br><br>
       <a href="find-tasks-v3" class="govuk-link">Version with optional filters</a>
-  
     </div> {# grid col close #}
 </div> {# grid row close #}
 
