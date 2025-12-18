@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Return task to queue" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+   {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "View and manage tasks",
+          href: "tasks"
+        },
+        {
+          text: "Task",
+          href: "task"
+        },
+         {
+          text: "Change priority",
+          href: "#"
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+     
+      <p class="govuk-body">This task is being worked on by Sumi, if Sumi is unable to work on it right now, you should return it to the queue. </p>
+
+      {{ govukRadios({
+        name: "[teams][changePriority]",
+        fieldset: {
+          legend: {
+            text: "Would you like to put this task back in the queue?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.teams.changePriority,
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            hint: {text: "Sumi will be able to claim this task again."}
+          },
+          {
+            value: "Yes, and block this agent",
+            text: "Yes, and block this agent",
+            hint: {text: "Sumi will not get thistask again until you unblock them."}
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+      <form method="post" novalidate>
+
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm",
+          href: "task"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task"
+        }) }}
+      </div>
+
+      </form>
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,98 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Change priority level" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+   {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "View and manage tasks",
+          href: "tasks"
+        },
+        {
+          text: "Task",
+          href: "task"
+        },
+         {
+          text: "Change priority",
+          href: "#"
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+     
+      <p class="govuk-body">Change priority level for 20 Nov 2025 Release Task Type for Sarah Philips</p>
+      <p>Current priority is low</p>
+
+      {{ govukRadios({
+        name: "[teams][changePriority]",
+        fieldset: {
+          legend: {
+            text: "Priority level",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.teams.changePriority,
+        items: [
+          {
+            value: "None",
+            text: "Nove"
+          },
+          {
+            value: "Low",
+            text: "Low"
+          },
+          {
+            value: "Medium",
+            text: "Medium"
+          },
+          {
+            value: "High",
+            text: "High"
+          },
+          {
+            value: "Critical",
+            text: "Critical"
+          }
+        ]
+      }) }}
+
+      <form method="post" novalidate>
+
+      
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm",
+          href: "task"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task"
+        }) }}
+      </div>
+
+      </form>
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+
