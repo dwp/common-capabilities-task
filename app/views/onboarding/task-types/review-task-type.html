@@ -1,0 +1,111 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<main class="govuk-main-wrapper" id="main-content" role="main">
+  <div class="govuk-grid-row" data-testid="grid-row">
+    <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Review Ash task type</h1>
+      <p class="govuk-body-m">Change any details that are not correct.</p>
+      <form class="form" action="/task-types" method="get" role="form">
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <h2 class="govuk-heading-m">Task type details</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="Task type ID">Task type ID</dt>
+              <dd class="govuk-summary-list__value">ash-test-task</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change task type ID" href="/tasks-ui/admin/create-task-type">Change
+                  <span class="govuk-visually-hidden"> task type ID</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="Task type name">Task type name</dt>
+              <dd class="govuk-summary-list__value">Ash task type</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change task type name" href="/tasks-ui/admin/create-task-type">Change
+                  <span class="govuk-visually-hidden"> task type name</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="Execution URL">Execution URL</dt>
+              <dd class="govuk-summary-list__value"></dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change execution URL" href="/tasks-ui/admin/create-task-type">Change
+                  <span class="govuk-visually-hidden"> execution URL</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="Priority">Priority</dt>
+              <dd class="govuk-summary-list__value">None</dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change priority" href="/tasks-ui/admin/create-task-type">Change
+                  <span class="govuk-visually-hidden"> priority</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="Must complete in">Must complete in</dt>
+              <dd class="govuk-summary-list__value"> </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change must complete in" href="/tasks-ui/admin/create-task-type">Change
+                  <span class="govuk-visually-hidden"> must complete in</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+          <h2 class="govuk-heading-m">Task type matching criteria</h2>
+          <dl class="govuk-summary-list">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="location">location</dt>
+              <dd class="govuk-summary-list__value">
+                <div>newcastle</div>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Change location" href="/tasks-ui/admin/add-criteria">Change</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="roles">roles</dt>
+              <dd class="govuk-summary-list__value">
+                <div>None</div>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Add roles" href="/tasks-ui/admin/add-criteria">Add</a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+              <dd class="govuk-summary-list__value">
+                <div>None</div>
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" aria-label="Add country-subdivision" href="/tasks-ui/admin/add-criteria">Add</a>
+              </dd>
+            </div>
+          </dl>
+        </div>
+        <div class="govuk-button-group" data-testid="button-group-id">
+          <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Confirm</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>
+{% endblock %}
+
+

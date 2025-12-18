@@ -1,0 +1,88 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Add Attributes</h1>
+    <p class="govuk-body-m">Add common attributes</p>
+    <form class="form" action="common-attributes" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <h2 class="govuk-heading-m">Add an attribute</h2>
+        <p class="govuk-hint">For example, role, decision-maker.</p>
+        <div class="govuk-grid-row" data-testid="grid-row">
+          <div data-testid="column-one-third" class="govuk-grid-column-one-third">
+            <div class="govuk-form-group" data-testid="form-group-id">
+              <label class="govuk-label" for="key">Name</label>
+              <input class="govuk-input" id="key" name="key" type="text" value="">
+            </div>
+          </div>
+          <div data-testid="column-one-third" class="govuk-grid-column-one-third">
+            <div class="govuk-form-group" data-testid="form-group-id">
+              <label class="govuk-label" for="value">Value</label>
+              <input class="govuk-input" id="value" name="value" type="text" value="">
+            </div>
+          </div>
+        </div>
+        <div class="govuk-!-padding-bottom-6"></div>
+        <div class="govuk-button-group" data-testid="button-group-id">
+          <button class="govuk-button govuk-button--secondary" type="button" value="add" data-module="govuk-button">Add</button>
+          <button class="govuk-button govuk-button--secondary" type="button" value="add" data-module="govuk-button">Clear</button>
+        </div>
+        <div class="govuk-grid-row" data-testid="grid-row">
+          <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Attributes</h2>
+            <table class="govuk-table">
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header ">Name</th>
+                  <th scope="col" class="govuk-table__header ">Value</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell " data-testid="table-cell">lot <span class="govuk-tag govuk-tag--green">added</span></td>
+                  <td class="govuk-table__cell " data-testid="table-cell">100</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell " data-testid="table-cell">lot</td>
+                  <td class="govuk-table__cell " data-testid="table-cell">2</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell " data-testid="table-cell">assessment-type</td>
+                  <td class="govuk-table__cell " data-testid="table-cell">esa</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell " data-testid="table-cell">assessment-type</td>
+                  <td class="govuk-table__cell " data-testid="table-cell">pip</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell " data-testid="table-cell">assessment-type</td>
+                  <td class="govuk-table__cell " data-testid="table-cell">uc</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="govuk-button-group" data-testid="button-group-id">
+        <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Confirm</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="back" data-module="govuk-button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+
