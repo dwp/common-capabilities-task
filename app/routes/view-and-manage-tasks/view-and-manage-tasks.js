@@ -6,8 +6,10 @@ module.exports = router => {
 router.post('/teams/view-and-manage-tasks/select-version', (req, res) => {
 	if (req.session.data.teams.selectVersion == 'Version 1'){
 		res.redirect("version-1/home")
-	} else {
+	} else if (req.session.data.teams.selectVersion == 'Version 2') {
 		res.redirect("version-2/home")
+	} else {
+		res.redirect("version-3/home")
 	}
 })
 
