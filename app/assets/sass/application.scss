@@ -620,3 +620,46 @@
   padding-left: 10px;
 }
 
+// Styles for the filter panel
+.moj-filter__options, .moj-filter__header {
+  background-color: #f3f2f1;
+}
+
+.moj-filter__header {
+  box-shadow:
+    inset 0 1px 0 0 #b1b4b6,   /* top */
+    inset 1px 0 0 0 #b1b4b6,   /* left */
+    inset -1px 0 0 0 #b1b4b6;  /* right */
+}
+
+
+
+/* Make the radio’s outer circle white */
+.govuk-radios--small .govuk-radios__input + .govuk-radios__label::before {
+  background-color: #fff;
+}
+
+
+/* Small checkboxes: white box background */
+.govuk-checkboxes--small .govuk-checkboxes__input + .govuk-checkboxes__label::before {
+  background-color: #fff;            /* white fill */
+}
+
+
+/* Adjust the selector to match your DOM; the following works with typical MOJ markup */
+.moj-filter__tag::before {
+  content: "×";
+  display: inline-block;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #1d70b8;       /* GOV.UK blue */
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1;
+}
+
+.moj-filter__tag {
+  border-radius: 4px;
+}
+
+

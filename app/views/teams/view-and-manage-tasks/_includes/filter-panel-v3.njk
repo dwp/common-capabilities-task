@@ -4,117 +4,124 @@
 
   <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
 
-  <div class="govuk-form-group govuk-!-margin-bottom-2">
-    <fieldset class="govuk-fieldset">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-        <h1 class="govuk-fieldset__heading">
-          Data
-        </h1>
-      </legend>
-      <div id="changedName-hint" class="govuk-hint">
-        Select one option
-      </div>
-      <div class="govuk-radios" data-module="govuk-radios">
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="data" name="dataRange" type="radio" value="today">
-          <label class="govuk-label govuk-radios__label" for="Today">
-            Today
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="data-2" name="dataRange" type="radio" value="yesterday">
-          <label class="govuk-label govuk-radios__label" for="Yesterday">
-            Yesterday
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="data-3" name="dataRange" type="radio" value="lastSevenDays">
-          <label class="govuk-label govuk-radios__label" for="lastSevenDays">
-            Last seven days
-          </label>
-        </div>
-        <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="data-4" name="dataRange" type="radio" value="northern-ireland">
-          <label class="govuk-label govuk-radios__label" for="lastMonth">
-            Last month
-          </label>
-        </div>
-        <div class="govuk-radios__divider">or</div>
-      </div>
-    </fieldset>
-  </div>
+ 
+    {% set customePeriodHtml %}
+      {{ govukDateInput({
+          id: "[teams][from]",
+          fieldset: {
+            legend: {
+              text: "From",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2024"
+          },
+          items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
 
+      {{ govukDateInput({
+        id: "date",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2024"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+    {% endset -%}
+    
 
-
-  {{ govukDateInput({
-    id: "[teams][from]",
-    fieldset: {
-      legend: {
-        text: "From",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      }
-    },
-    hint: {
-      text: "For example, 27 3 2024"
-    },
-    items: [
-    {
-      name: "date",
-      label: "Day",
-      value: data.day,
-      classes: "govuk-input--width-2"
-    },
-    {
-      name: "date",
-      label: "Month",
-      value: data.month,
-      classes: "govuk-input--width-2"
-    },
-    {
-      name: "date",
-      label: "Year",
-      value: data.year,
-      classes: "govuk-input--width-4"
-    }
-  ]
-  }) }}
-
-  {{ govukDateInput({
-    id: "date",
-    fieldset: {
-      legend: {
-        text: "To",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      }
-    },
-    hint: {
-      text: "For example, 27 3 2024"
-    },
-    items: [
-      {
-        name: "date",
-        label: "Day",
-        value: data.day,
-        classes: "govuk-input--width-2"
+    {{ govukRadios({
+      name: "dataRange",
+      classes: "govuk-radios--small",
+      fieldset: {
+        legend: {
+          text: "Data",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
       },
-      {
-        name: "date",
-        label: "Month",
-        value: data.month,
-        classes: "govuk-input--width-2"
+      hint: {
+        text: "Select one option"
       },
-      {
-        name: "date",
-        label: "Year",
-        value: data.year,
-        classes: "govuk-input--width-4"
-      }
-    ]
-  }) }}
+      items: [
+        {
+          value: "today",
+          text: "Today"
+        },
+        {
+          value: "yesterday",
+          text: "Yesterday"
+        },
+        {
+          value: "Last seven days",
+          text: "Last seven days"
+        },
+          {
+          value: "Last month",
+          text: "Last month"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "custome period",
+          text: "Other",
+          conditional: {
+            html: customePeriodHtml
+          }
+        }
+      ]
+    }) }}
+
 
   {{ govukRadios({
+    classes: "govuk-radios--small",
     name: "viewAndManageTasks[v1][DateRangeOption]",
     fieldset: {
       legend: {
@@ -157,6 +164,7 @@
 
   {{ govukCheckboxes({
     name: "viewAndManageTasks[v1][status]",
+    classes: "govuk-checkboxes--small",
     fieldset: {
       legend: {
         text: "Status (optional)",
@@ -250,6 +258,7 @@
 
   {{ govukCheckboxes({
     name: "viewAndManageTasks[v1][priority]",
+    classes: "govuk-checkboxes--small",
     fieldset: {
       legend: {
         text: "Priority (optional)",
@@ -421,3 +430,8 @@
   },
   optionsHtml: filterOptionsHtml
 }) }}
+
+
+
+
+
