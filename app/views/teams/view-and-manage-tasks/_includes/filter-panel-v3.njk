@@ -100,7 +100,8 @@
         },
         {
           value: "Last seven days",
-          text: "Last seven days"
+          text: "Last seven days",
+          checked: true
         },
           {
           value: "Last month",
@@ -384,7 +385,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "View tasks",
+          text: "Apply filters",
           href: "tasks"
         }) }}
         <a href="#" class="govuk-link">Clear filters</a>
@@ -418,11 +419,11 @@
     categories: [
       {
         heading: {
-          text: "Type"
+          text: "Data"
         },
         items: [{
-          href: "/path/to/remove/this",
-          text: "Created date"
+          href: "#",
+          text: "Last seven days"
         }
         ]
       }
