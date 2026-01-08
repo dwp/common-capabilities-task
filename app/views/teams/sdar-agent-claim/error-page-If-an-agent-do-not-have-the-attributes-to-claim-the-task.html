@@ -1,40 +1,139 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layouts/new-main.html" %}
 
-{% set pageName = 'You cannot claim this task' %}
+{% set pageName = 'Task details' %}
 
 
 {% block beforeContent %}
-  {{ govukBackLink({
-    text: "Back",
-    href: "javascript:window.history.back()"
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Find a customer",
+        href: "find-a-customer"
+      },
+      {
+        text: "All tasks",
+        href: "tasks"
+      },
+      {
+        text: "Task details",
+        href: "tasks-details"
+      }
+    ]
   }) }}
 {% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">{{pageName}}</h1>
+<div class="govuk-notification-banner govuk-notification-banner--error" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Error
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You cannot claim this task because you don’t have attributes that match the task. Select ‘Back’ and choose a different task from the list.  
+    </p>
+  </div>
+</div>
 
-        <p>You can only claim tasks:</p>
 
-        <ul class="govuk-list govuk-list--bullet">
-          <li>
-            for which you have the correct attributes
-          </li>
-          <li>
-            that are unallocated or on hold (and unclaimed)
-          </li>
-        </ul>
-        
-        <p class="govuk-body">
-          Go back to <a href="tasks" class="govuk-link">all tasks</a> and choose a different task from the list.
-        </p>
-        
+<div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+      <p>You cannot claim this task because you don’t have attributes that match the task. Select ‘Back’ and choose a different task from the list.</p>
     </div>
   </div>
- 
+</div>
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Customer"
+            },
+            value: {
+              text: "Simon Alexander"
+            }
+          },
+          {
+            key: {
+              text: "National insurance number"
+            },
+            value: {
+              text: "HP 12 34 56 B"
+            }
+          },
+          {
+            key: {
+              text: "Task type"
+            },
+            value: {
+              text: "New task 123"
+            }
+          },
+          {
+          key: {
+            text: "Due"
+          },
+          value: {
+            html: "29 Dec 2025 at 08:32" + "<br>" + govukTag({ text: "Overdue",classes: "govuk-tag--red govuk-!-margin-top-1" })
+          }
+        },
+        {
+          key: {
+            text: "Created"
+          },
+          value: {
+            text: "24 Dec 2025 at 08:32"
+          }
+        },
+        {
+          key: {
+            text: "Status"
+          },
+          value: {
+            html: govukTag({ text: "Unallocated",classes: "govuk-tag--grey govuk-!-margin-top-1" })
+          }
+        },
+        {
+          key: {
+            text: "Agent"
+          },
+          value: {
+            html: "None"
+          }
+        }
+        ]
+      }) }}
+
+    <form method="post" novalidate>
+
+      <div class="govuk-button-group">  
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "tasks"
+        }) }}
+      </div>
+
+    
+    </form>
+  
+
+    </div>
+  </div>
+
   
           
       

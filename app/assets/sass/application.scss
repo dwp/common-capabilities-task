@@ -663,3 +663,17 @@
 }
 
 
+// Assuming GOV.UK Frontend is imported so $govuk-error-colour is available.
+
+.govuk-notification-banner--error {
+  // Left border and header bar in error colour
+  border-color: $govuk-error-colour;
+
+.govuk-notification-banner__header {
+  background-color: $govuk-error-colour;
+}
+
+}
+
+
+
