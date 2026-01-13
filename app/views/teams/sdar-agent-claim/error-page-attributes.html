@@ -25,7 +25,21 @@
 
 {% block content %}
 
-
+<div class="govuk-notification-banner govuk-notification-banner--error" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+  <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+      Error
+    </h2>
+  </div>
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      You cannot claim this task. This is because you do not have attributes that match the task.  
+    </p>
+    <p class="govuk-notification-banner__heading">
+      If you need to work on this task, speak to a user with service manager access: they can change your attributes.
+    </p>
+  </div>
+</div>
 
   
   <div class="govuk-grid-row">
@@ -104,19 +118,15 @@
             value: "yes"
           }
         }) }}
-      
+
         {{ govukButton({
           text: "Back",
           classes: "govuk-button--secondary",
           href: "tasks"
         }) }}
       </div>
- 
-      <a style="color:#d4351c" href="error-page-already-claimed" class="govuk-link">Already claimed</a><br>
-      <a style="color:#d4351c" href="error-page-attributes" class="govuk-link">Attributes</a><br>
-      <a style="color:#d4351c" href="error-page-blocked" class="govuk-link">Blocked</a><br>
-      <a style="color:#d4351c" href="error-page-generic" class="govuk-link">Generic</a><br>
 
+    
     </form>
   
 
