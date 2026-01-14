@@ -662,6 +662,27 @@
   border-radius: 4px;
 }
 
+.moj-filter__no-cross::before {
+  content: " ";
+}
+
+// .moj-filter__no-cross {
+//     font-size: 1rem;
+//     border-radius: 4px;
+//     line-height: 1.25;
+//     display: inline-block;
+//     margin-top: 5px;
+//     padding: 8px;
+//     border: 1px solid #0b0c0c;
+//     color: #0b0c0c;
+//     background-color: #ffffff;
+//     text-decoration: none;
+//     font-weight: 400;
+//     font-size: 0.875rem;
+//     line-height: 1.1428571429;
+// }
+
+
 
 // Assuming GOV.UK Frontend is imported so $govuk-error-colour is available.
 
