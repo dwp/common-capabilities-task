@@ -161,7 +161,19 @@
         </div>
       </dl>
 
-      <a href="view-history" class="govuk-link">View history</a>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "View history",
+          href: "view-history"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "tasks"
+        }) }}
+      </div>
+
       
     </div>
 </div>
