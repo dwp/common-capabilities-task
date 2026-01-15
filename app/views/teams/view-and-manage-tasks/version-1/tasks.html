@@ -27,18 +27,40 @@
       </div>
     </div>
 
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Selected filters</h3>
-    <ul class="moj-filter-tags govuk-!-margin-bottom-0">   
-      <li>
-        <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Last seven days</a>
-      </li>  
-      <li>
-        <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Due by date</a>
-      </li> 
-      <li>
-        <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>On hold</a>
-      </li>   
-    </ul>
+    <div class="govuk-grid-row">
+      
+      <div class="govuk-grid-column-one-half">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Selected filters</h3>
+        <ul class="moj-filter-tags govuk-!-margin-bottom-0">   
+          <li>
+            <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Last seven days</a>
+          </li>  
+          <li>
+            <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>Due by date</a>
+          </li> 
+          <li>
+            <a class="moj-filter__tag moj-filter__no-cross" href="#"><span class="govuk-visually-hidden">Remove this filter</span>On hold</a>
+          </li>   
+        </ul>
+      </div>
+
+      <div class="govuk-grid-column-one-half">
+        <div class="govuk-form-group" style="float: right;">
+            <label class="govuk-label" for="sort">
+              Sort by
+            </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option value="published">Select</option>
+              <option value="published">Created date</option>
+              <option value="updated">Completed date</option>
+              <option value="views">Due by date</option>
+            </select>
+        </div>
+      </div>
+
+    </div>
+
+  
 
 
     <table class="govuk-table" data-module="moj-sortable-table">
