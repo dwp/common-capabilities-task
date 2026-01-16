@@ -5,8 +5,8 @@ Team leader home
 {% endblock %}
 
 {% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
-<div class=spacer1></div>
 
 {% endblock %}
 
@@ -14,101 +14,37 @@ Team leader home
 
 <div class="govuk-grid-row" data-testid="grid-row">
   <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Performance Team-Lead (performance.team-lead1)'s details</h1>
-    <h2 class="govuk-heading-m">performance.team-lead1’s Task types</h2>
-    <p class="govuk-body-m">performance.team-lead1 can work on:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>jmeter-test-task-18257</li><li>jmeter-test-task-18256</li><li>jmeter-test-task-18255</li>
-    </ul>
-    <p class="govuk-body-m">You can change the tasks that performance.team-lead1 can work on by adding or removing them from groups or changing their matching criteria.</p>
-    <h2 class="govuk-heading-m">Groups</h2>
-    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
-      <div class="govuk-summary-list__row">
-        
-        <dd class="govuk-summary-list__value">This agent isn't part of any groups yet</dd>
-        
-      </div>
-    </dl>
-    <div class="govuk-!-static-margin-bottom-6">
-      <a href="#" class="govuk-link ">Add agent to groups</a>
+    <h1 class="govuk-heading-l">Add or remove access to groups for [Agent Name]</h1>
+    <div class="govuk-form-group" data-testid="form-group-id">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
+          <h2 class="govuk-fieldset__heading">Available groups list</h2>
+          <span class="gov-hint"></span>
+        </legend>
+        <div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id">
+          <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+            <input class="govuk-checkboxes__input" id="true" name="vulnerable" type="checkbox" value="true" checked>
+            <label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">15-10-2025-agent-group</label>
+          </div>
+          <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+            <input class="govuk-checkboxes__input" id="false" name="vulnerable" type="checkbox" value="false" checked>
+            <label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">new-agent-group</label>
+          </div>
+          <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+            <input class="govuk-checkboxes__input" id="false" name="vulnerable" type="checkbox" value="false">
+            <label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">Group name</label>
+          </div>
+          <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+            <input class="govuk-checkboxes__input" id="false" name="vulnerable" type="checkbox" value="false">
+            <label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">Group name</label>
+          </div>
+        </div>
+      </fieldset>
     </div>
-    <h2 class="govuk-heading-m">Individual matching criteria</h2>
-    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
-        <dd class="govuk-summary-list__value">
-          <div>weekends</div>
-          <div>evenings</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Change working-pattern" href="/tasks-ui/admin/change-agents-criteria">Change</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
-        <dd class="govuk-summary-list__value">
-          <div>aa</div>
-          <div>g6</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Change grade" href="/tasks-ui/admin/change-agents-criteria">Change</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="language">language</dt>
-        <dd class="govuk-summary-list__value">
-          <div>spanish</div>
-          <div>welsh</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Change language" href="/tasks-ui/admin/change-agents-criteria">Change</a>
-        </dd>
-      </div>
-      <!-- <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
-        <dd class="govuk-summary-list__value">
-          <div>None</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Add vulnerable" href="/tasks-ui/admin/change-agents-criteria">Add</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
-        <dd class="govuk-summary-list__value">
-          <div>None</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Add urgent" href="/tasks-ui/admin/change-agents-criteria">Add</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
-        <dd class="govuk-summary-list__value">
-          <div>None</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Add escalate" href="/tasks-ui/admin/change-agents-criteria">Add</a>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
-        <dd class="govuk-summary-list__value">
-          <div>None</div>
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" aria-label="Add country-subdivision" href="/tasks-ui/admin/change-agents-criteria">Add</a>
-        </dd>
-      </div> -->
-    </dl>
-    <div class="govuk-!-static-margin-bottom-6">
-      <a href="#" class="govuk-link ">Add matching criteria</a>
-    </div>
-    
-    <form class="form" action="/agent-details" method="get" role="form">
+    <form class="form" action="agent-details-2" method="get" role="form">
       <div class="govuk-button-group" data-testid="button-group-id">
-        <button class="govuk-button govuk-button--warning" type="submit" value="delete" data-module="govuk-button">Remove from team</button>
-        <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Back</button>
+        <button class="govuk-button" type="submit" value="delete" data-module="govuk-button">Confirm</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Cancel</button>
       </div>
     </form>
   </div>
