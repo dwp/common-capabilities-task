@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">Agent dashboard</h1>
+  
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="task-list">My tasks</a></h2>
+    <p>Claim and work on tasks.</p> 
+  </div>
+</div>
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="agent-details-2">My profile</a></h2>
+      <p>View details of groups, teams and attributes.</p>
+    </div>
+  </div>
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="manage-organisation-unit">Search and create</a></h2>
+      <p>Search for and create tasks.</p>
+    </div>
+  </div>
+
+
+  <div class="govuk-width-container">
+    &nbsp;
+      <div class="box">
+        <h2 class="govuk-heading-m"><a href="view-statistics">Task history</a></h2>
+        <p>View details of task you have worked on previously.</p>
+      </div>
+    </div>
+
+
+&nbsp;
+{% endblock %}
+
+
