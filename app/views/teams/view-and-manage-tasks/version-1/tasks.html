@@ -83,7 +83,12 @@
           {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">DE568833V</td> #}
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">QQ 12 34 56 B8</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239851">239851</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
+          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td> #}
+           {% if data.changePriorityLevel == "yes" %}
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
+            {% else %}
+               <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Low</td>
+            {% endif %}
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
             {{govukTag({
               text: "On hold",

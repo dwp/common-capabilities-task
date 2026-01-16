@@ -21,7 +21,9 @@
     }) }}
 {% endblock %}
 
+
 {% block content %}
+
 
 
 {% if data['ChangeDueDate'] == "yes" %}
@@ -29,7 +31,7 @@
     type: "success",
     html: "<h3 class='govuk-notification-banner__heading'>You have changed the due date.</h3>" | safe
   }) }}
-{% elif data['ChangePriorityLevel'] == "yes" %}
+{% elif data['changePriorityLevel'] == "yes" %}
   {{ govukNotificationBanner({
     type: "success",
     html: "<h3 class='govuk-notification-banner__heading'>You have changed the priority level.</h3>" | safe
@@ -119,7 +121,11 @@
             Priority
           </dt>
           <dd class="govuk-summary-list__value">
-            <p class="govuk-body">Low</p>
+            {% if data.changePriorityLevel == "yes" %}
+              <p class="govuk-body">High</p>
+            {% else %}
+               <p class="govuk-body">Low</p>
+            {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="change-priority">Change<span class="govuk-visually-hidden">Priority</span></a>
