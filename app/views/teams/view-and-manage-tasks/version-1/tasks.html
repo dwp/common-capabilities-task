@@ -78,7 +78,12 @@
           <td class="govuk-table__cell">Type A</td>
           {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">DE568833V</td> #}
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">QQ 12 34 56 B8</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239851">239851</td>
+            {% if data.returnTaskToQueue == "yes" %}
+                  <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="844444"></td>
+            {% else %}
+                   <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="844444">844444</td>
+            {% endif %}
+      
            {% if data.changePriorityLevel == "yes" %}
               <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
             {% else %}

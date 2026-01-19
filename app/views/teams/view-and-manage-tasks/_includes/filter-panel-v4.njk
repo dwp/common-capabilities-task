@@ -1,0 +1,461 @@
+ <form method="post" novalidate>
+
+{%- set filterOptionsHtml %}
+
+  <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
+
+ 
+ 
+    {% set customePeriodHtml %}
+      {{ govukDateInput({
+          id: "[teams][from]",
+          fieldset: {
+            legend: {
+              text: "From",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 27 3 2024"
+          },
+          items: [
+          {
+            name: "date",
+            label: "Day",
+            value: "3",
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: "Dec",
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: "2025",
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "date",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 27 3 2024"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: "7",
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: "Dec",
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: "2025",
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+    {% endset -%}
+    
+
+    {{ govukRadios({
+      name: "dataRange",
+      classes: "govuk-radios--small",
+      fieldset: {
+        legend: {
+          text: "Data",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "Select one option"
+      },
+      items: [
+        {
+          value: "today",
+          text: "Today"
+        },
+        {
+          value: "yesterday",
+          text: "Yesterday"
+        },
+        {
+          value: "Last seven days",
+          text: "Last seven days"
+        },
+          {
+          value: "Last month",
+          text: "Last month"
+        },
+        {
+          divider: "or"
+        },
+        {
+          value: "custome period",
+          text: "Other",
+          checked: true,
+          conditional: {
+            html: customePeriodHtml
+          }
+        }
+      ]
+    }) }}
+
+
+  {{ govukRadios({
+    classes: "govuk-radios--small",
+    name: "viewAndManageTasks[v1][DateRangeOption]",
+    fieldset: {
+      legend: {
+        text: "Date range option",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    value: data.viewAndManageTasks.v1.DateRangeOption,
+    items: [
+      {
+        value: "Created date",
+        text: "Created date",
+        checked: true
+      },
+      {
+        value: "Completed date",
+        text: "Completed date"
+      },
+      {
+        value: "Due by date",
+        text: "Due by date"
+      }
+    ]
+  }) }}     
+
+  {{ govukInput({
+    id: "[teams][agent]",
+    name: "[teams][agent]",
+    label: {
+      text: "Agent (optional)",
+      isPageHeading: false,
+      classes: "govuk-label--s"
+    },
+    classes: "govuk-input--width-20",
+    hint: {
+      html: "Enter the name, staff number or email of the agent<br> whose tasks you want to view"
+    },
+    value: data.teams.agent
+  }) }}
+
+  {{ govukCheckboxes({
+    name: "viewAndManageTasks[v1][status]",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "Status (optional)",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    hint: {
+      text: "Select the status of the tasks you want to view"
+    },
+    values: data.viewAndManageTasks.v1.status,
+    items: [
+      {
+        value: "Allocated",
+        text: "Allocated"
+      },
+      {
+        value: "Closed",
+        text: "Closed"
+      },
+      {
+        value: "Completed",
+        text: "Completed"
+      },
+      {
+        value: "On hold",
+        text: "On hold"
+      }
+    ]
+  }) }}
+
+    
+  <div class="govuk-form-group" style="margin-bottom: 10px;">
+
+      {{ govukInput({
+        label: {
+          text: "Task type (optional)",
+          classes: "govuk-label--s",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Select the type of tasks you want to view"
+        },
+        classes: "govuk-!-margin-bottom-0",
+        id: "event-name",
+        name: "eventName"
+      }) }}
+  </div>
+
+  <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="" checked>
+        <label class="govuk-label govuk-checkboxes__label" for="organisation">
+          Type A
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+          Type B
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+          Type C
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+          Type D
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+          Type E
+        </label>
+      </div>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+        <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+          Type F
+        </label>
+      </div>
+    </div>
+  </div>
+        
+
+  {{ govukCheckboxes({
+    name: "viewAndManageTasks[v1][priority]",
+    classes: "govuk-checkboxes--small",
+    fieldset: {
+      legend: {
+        text: "Priority (optional)",
+        isPageHeading: false,
+        classes: "govuk-fieldset__legend--s"
+      }
+    },
+    values: data.viewAndManageTasks.v1.priority,
+    hint: {
+      text: "Select the priorities of the tasks you want to view"
+    },
+    items: [
+      {
+        value: "High",
+        text: "High"
+      },
+      {
+        value: "Medium",
+        text: "Medium"
+      },
+      {
+        value: "Low",
+        text: "Low"
+      },
+      {
+        value: "Urgent",
+        text: "Urgent"
+      }
+    ]
+  }) }}
+
+     <div class="govuk-form-group" style="margin-bottom: 10px;">
+
+          {{ govukInput({
+            label: {
+              text: "Team (optional)",
+              classes: "govuk-label--s",
+              isPageHeading: false
+            },
+            hint: {
+              text: "Select one or more teams to view tasks those teams can work on"
+            },
+            classes: "govuk-!-margin-bottom-0",
+            id: "event-name",
+            name: "eventName"
+          }) }}
+      </div>
+
+      <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              Team one
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+              Team two
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+              Team three
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+              Team four
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+              Team five
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+            <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+              Team six
+            </label>
+          </div>
+        </div>
+      </div>
+
+    
+
+      {{ govukInput({
+        id: "[teams][nino]",
+        name: "[teams][nino]",
+        label: {
+          text: "National Insurance number (optional)",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer"
+        },
+        value: data.teams.nino
+      }) }}
+
+      {{ govukInput({
+        id: "[teams][taskNumber]",
+        name: "[teams][taskNumber]",
+        label: {
+          text: "Task number (optional)",
+          isPageHeading: false,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-10",
+        hint: {
+          html: "Enter a task number to view that task"
+        },
+        value: data.teams.taskNumber
+      }) }}
+
+     
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Apply filters"
+        }) }}
+        <a href="#" class="govuk-link">Clear filters</a>
+      </div>
+      
+
+{%- endset %}
+  
+
+{{ mojFilter({
+  heading: {
+    text: "Filter"
+  },
+
+  submit: {
+    attributes: {
+        "data-test-id": "submit-button"
+    }
+  },
+
+  selectedFilters: {
+
+    heading: {
+      text: "Selected filters"
+    },
+
+    clearLink: {
+      text: "Clear filters"
+    },
+
+    categories: [
+      {
+        heading: {
+          text: "Data"
+        },
+        items: [{
+          text: "Other"
+        }
+        ]
+      },
+      {
+      heading: {
+        text: "Date range option"
+      },
+      items: [{
+        text: "Created date"
+      }
+      ]
+      },
+      {
+      heading: {
+        text: "Task type"
+      },
+      items: [{
+        text: "Type A"
+      }
+      ]
+      }
+    ]
+  },
+  optionsHtml: filterOptionsHtml
+}) }}
+
+
+{# Created date #}
+
+</form>
+
+
+
+
+
