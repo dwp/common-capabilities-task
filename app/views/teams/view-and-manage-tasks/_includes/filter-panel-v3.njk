@@ -1,9 +1,10 @@
-
+ <form method="post" novalidate>
 
 {%- set filterOptionsHtml %}
 
   <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
 
+ 
  
     {% set customePeriodHtml %}
       {{ govukDateInput({
@@ -385,8 +386,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "Apply filters",
-          href: "tasks"
+          text: "Apply filters"
         }) }}
         <a href="#" class="govuk-link">Clear filters</a>
       </div>
@@ -431,6 +431,8 @@
   },
   optionsHtml: filterOptionsHtml
 }) }}
+
+</form>
 
 
 
