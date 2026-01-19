@@ -40,6 +40,14 @@ router.post('/teams/view-and-manage-tasks/version-3/view-and-manage-tasks', (req
 		res.redirect("view-and-manage-tasks-different-resultes")
 })
 
+router.post('/teams/view-and-manage-tasks/version-1/find-tasks-v4', (req, res) => {
+		res.redirect("tasks")
+})
+
+router.post('/teams/view-and-manage-tasks/version-1/return-to-the-queue', (req, res) => {
+		res.redirect("task")
+})
+
 
 
 }

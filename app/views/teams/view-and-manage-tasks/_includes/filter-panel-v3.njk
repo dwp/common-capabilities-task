@@ -136,7 +136,8 @@
     items: [
       {
         value: "Created date",
-        text: "Created date"
+        text: "Created date",
+        checked: true
       },
       {
         value: "Completed date",
@@ -422,8 +423,16 @@
           text: "Data"
         },
         items: [{
-          href: "#",
           text: "Last seven days"
+        }
+        ]
+      },
+       {
+        heading: {
+          text: "Date range option"
+        },
+        items: [{
+          text: "Created date"
         }
         ]
       }
@@ -431,6 +440,9 @@
   },
   optionsHtml: filterOptionsHtml
 }) }}
+
+
+{# Created date #}
 
 </form>
 

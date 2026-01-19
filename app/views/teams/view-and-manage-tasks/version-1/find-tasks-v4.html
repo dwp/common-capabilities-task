@@ -13,6 +13,7 @@
 {% endblock %}
 
 {% block content %}
+   <form novalidate method="post">
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -39,19 +40,16 @@
             {
               name: "date",
               label: "Day",
-              value: data.day,
               classes: "govuk-input--width-2"
             },
             {
               name: "date",
               label: "Month",
-              value: data.month,
               classes: "govuk-input--width-2"
             },
             {
               name: "date",
               label: "Year",
-              value: data.year,
               classes: "govuk-input--width-4"
             }
           ]
@@ -73,19 +71,16 @@
             {
               name: "date",
               label: "Day",
-              value: data.day,
               classes: "govuk-input--width-2"
             },
             {
               name: "date",
               label: "Month",
-              value: data.month,
               classes: "govuk-input--width-2"
             },
             {
               name: "date",
               label: "Year",
-              value: data.year,
               classes: "govuk-input--width-4"
             }
           ]
@@ -94,7 +89,7 @@
     
 
       {{ govukRadios({
-        name: "dataRange",
+        name: "viewAndManageTasks[v1][date]",
         fieldset: {
           legend: {
             text: "Data",
@@ -126,17 +121,17 @@
             divider: "or"
           },
           {
-            value: "custome period",
             text: "Other",
             conditional: {
               html: customePeriodHtml
             }
           }
-        ]
+        ],
+        value: "data.viewAndManageTasks.v1.date"
       }) }}
 
         {{ govukRadios({
-        name: "viewAndManageTasks[v1][DateRangeOption]",
+        name: "viewAndManageTasks[v1][dateRangeOption]",
         fieldset: {
           legend: {
             text: "Date range option",
@@ -144,7 +139,7 @@
             classes: "govuk-fieldset__legend--s"
           }
         },
-        value: data.viewAndManageTasks.v1.DateRangeOption,
+        value: data.viewAndManageTasks.v1.dateRangeOption,
         items: [
           {
             value: "Created date",
@@ -164,8 +159,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "View tasks",
-          href: "tasks"
+          text: "View tasks"
         }) }}
         <a href="#" class="govuk-link">Clear filters</a>
       </div>
@@ -243,7 +237,8 @@
             },
             classes: "govuk-!-margin-bottom-0",
             id: "event-name",
-            name: "eventName"
+            name: "eventName",
+            values: data.viewAndManageTasks.v1.taskType
           }) }}
       </div>
 
@@ -424,8 +419,7 @@
 
       <div class="govuk-button-group">
         {{ govukButton({
-          text: "View tasks",
-          href: "tasks"
+          text: "View tasks"
         }) }}
         <a href="#" class="govuk-link">Clear filters</a>
       </div>
@@ -434,6 +428,8 @@
       <a href="find-tasks-v3" class="govuk-link">Version with optional filters</a>
     </div> {# grid col close #}
 </div> {# grid row close #}
+
+</form>
 
 {% endblock %}
 

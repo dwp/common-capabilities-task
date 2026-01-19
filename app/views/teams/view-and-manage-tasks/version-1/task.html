@@ -35,6 +35,11 @@
     type: "success",
     html: "<h3 class='govuk-notification-banner__heading'>You have changed the priority level.</h3>" | safe
   }) }}
+{% elif data['returnTaskToQueue'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have returned task to the queue.</h3>" | safe
+  }) }}
 {% elif data['ReturnTaskToQueue'] == "yes" %}
   {{ govukNotificationBanner({
     type: "success",
@@ -135,8 +140,13 @@
             Status
           </dt>
           <dd class="govuk-summary-list__value">
-            {{govukTag({text: "On hold",classes: "govuk-tag--yellow"})}}<br>
-            20 Nov 2025 9:25
+            {% if data.returnTaskToQueue == "yes" %}
+              {{govukTag({text: "Unallocate",classes: "govuk-tag--grey"})}}<br>
+              17 Jan 2026 9:25
+            {% else %}
+              {{govukTag({text: "On hold",classes: "govuk-tag--yellow"})}}<br>
+              14 Jan 2026 9:25
+            {% endif %}
           </dd>
         </div>
         <div class="govuk-summary-list__row">

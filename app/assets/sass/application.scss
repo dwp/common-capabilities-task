@@ -658,9 +658,15 @@
   line-height: 1;
 }
 
-.moj-filter__tag {
+.moj-filter__no-cross {
   border-radius: 4px;
+  border-color: #b1b4b6;
 }
+
+.moj-filter__tag:link, .moj-filter__tag:visited {
+    color:#505a5f;
+}
+
 
 .moj-filter__no-cross::before {
   content: " ";
@@ -671,6 +677,7 @@
   background-color: inherit;
   cursor:default;
 }
+
 
 
 
