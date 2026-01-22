@@ -1,0 +1,110 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "Confirm that you want to remove Amelia Taylor from team one" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <h2 class="govuk-heading-s">Amelia Taylor has five active tasks</h2>
+
+       {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Tasks"
+        },
+        {
+          text: "Action",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Task A"
+          },
+          {
+            html: '<a href="delete" class="govuk-link">Details</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Task B"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Details</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Task C"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Details</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Task D"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Details</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Task E"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Details</a>',
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}
+  
+   <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Remove agent",
+        classes: "govuk-button--warning"
+      }) }}
+   
+    {{ govukButton({
+      text: "Back",
+      classes: "govuk-button--secondary",
+      href: "list-of-agents"
+    }) }}
+   </div>
+
+    
+
+      
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+

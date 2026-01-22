@@ -1,0 +1,94 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "List of agents in team one" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+   
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Agents"
+        },
+        {
+          text: "Action",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Amelia Taylor"
+          },
+          {
+            html: '<a href="delete" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Charlotte Brown"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "George Davies"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "James Wilson"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Oliver Smith"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}  
+
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+
