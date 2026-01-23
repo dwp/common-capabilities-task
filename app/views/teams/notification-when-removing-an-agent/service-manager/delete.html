@@ -23,6 +23,10 @@
 
       <h2 class="govuk-heading-s">Amelia Taylor has five active tasks</h2>
 
+      <p>
+        All tasks will be unallocated and returned to the queue.
+      </p>
+
        {{ govukTable({
       caption: "",
       captionClasses: "govuk-table__caption--l",
@@ -84,11 +88,17 @@
         ]
       ]
     }) }}
+
+   <form method="post" novalidate>
   
    <div class="govuk-button-group">
       {{ govukButton({
-        text: "Remove agent",
-        classes: "govuk-button--warning"
+        text: "Remove agent and tasks",
+        classes: "govuk-button--warning",
+        attributes: {
+            name: "removeAgent",
+            value: "yes"
+          }
       }) }}
    
     {{ govukButton({
@@ -98,8 +108,7 @@
     }) }}
    </div>
 
-    
-
+   </form>
       
      
     </div> {# grid col close #}

@@ -13,5 +13,9 @@ router.post('/teams/notification-when-removing-an-agent/select-user', (req, res)
 	}
 })
 
+router.post('/teams/notification-when-removing-an-agent/service-manager/delete', (req, res) => {
+	res.redirect("list-of-agents")
+})
+
 
 }
