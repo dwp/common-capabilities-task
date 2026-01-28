@@ -12,6 +12,21 @@
 
 {% block content %}
 
+
+
+{% if data['agents'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have remove Oliver from the organisation unit.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
   
   <div class="govuk-grid-row govuk-!-margin-bottom-4">
     <div class="govuk-grid-column-two-thirds">
@@ -70,12 +85,18 @@
           </tr>
         </thead>
         <tbody class="govuk-table__body">
-          <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Oliver Logan
-              <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876800</p>
-            </td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details">Details</a></td>
-          </tr>
+
+          
+          {# Only render the table row when banner is NOT shown #}
+          {% if data['agents'] != "yes" %}
+            <tr class="govuk-table__row">
+              <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Oliver Logan
+                <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876800</p>
+              </td>
+              <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details">Details</a></td>
+            </tr>
+          {% endif %}
+
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Georgia Duncan
               <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">46876801</p>

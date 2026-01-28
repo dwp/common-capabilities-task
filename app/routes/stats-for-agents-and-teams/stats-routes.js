@@ -11,7 +11,7 @@ router.post('/teams/stats/design-7/agents-or-teams', (req, res) => {
 })
 
 router.post('/teams/stats/mvp/weekly/team-parameters', (req, res) => {
-	if (req.session.data.mvp.stats.taskTypes == 'All'){
+	if (req.session.data.mvp.stats.taskType == 'All'){
 		res.redirect("team-stats-with-details")
 	} else if (req.session.data.mvp.stats.taskTypes == 'Call back') {
 		res.redirect("team-stats-call-back_mvp_plus")
