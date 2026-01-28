@@ -7,14 +7,17 @@ Team leader home
 
 {% block beforeContent %}
 
-<div class=spacer1></div>
+  {{ govukBackLink({
+    text: "Back",
+    href: "home"
+  }) }}
 
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <h2 class="govuk-heading-l">DWP Task dashboard</h2>
+  <h1 class="govuk-heading-l">Manage Org B</h1>
   <div class="box">
     <h2 class="govuk-heading-m"><a href="#">View and manage details</a></h2>
     <p>View and manage details for Org B, including name, attributes and permissions.</p> 
@@ -24,7 +27,7 @@ Team leader home
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="#">Add and manage agents</a></h2>
+      <h2 class="govuk-heading-m"><a href="agents">Add and manage agents</a></h2>
       <p>Add and manage agents, the groups they are in or their individual attributes. Agent must be added to Org B before they can be added to their team.</p>
     </div>
 </div>
@@ -32,7 +35,7 @@ Team leader home
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="manage-teams">Add and manage groups</a></h2>
+      <h2 class="govuk-heading-m"><a href="#">Add and manage groups</a></h2>
       <p>Add and manage groups for agents who do the same task. Agents is the same group will be able to claim the same task types.</p>
     </div>
 </div>
