@@ -1,0 +1,122 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Oliver Logan's details" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+{% block content %}
+
+  
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      <h2 class="govuk-heading-m">Oliver's task types</h2>
+
+      <p class="govuk-body">
+        Add an agent set their matching criteria.
+      </p>
+
+      <p class="govuk-body">
+        Oliver can work on:
+      </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          admin role release 19-08-25 tasktype
+        </li>
+        <li>
+          callbacks
+        </li>
+      </ul>
+
+      <p class="govuk-body">
+        You can change the tasks that Oliver can work on by adding or removing them from the groups or changing their mathching criteria.
+      </p>
+   
+
+    <!-- Table one - groups -->  
+      <table class="govuk-table govuk-!-static-margin-top-6 govuk-!-static-margin-bottom-3">
+        <caption class="govuk-table__caption govuk-table__caption--m">Groups</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Groups</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">24-sep-newgroup</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="oliver-logan-details">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Ggroup A</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="oliver-logan-details">Remove</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Ggroup B</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="oliver-logan-details">Add</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Ggroup C</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="oliver-logan-details">Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+    <!-- Table two - Individual matching criteria -->  
+      <table class="govuk-table govuk-!-static-margin-top-6 govuk-!-static-margin-bottom-6">
+        <caption class="govuk-table__caption govuk-table__caption--m">Individual matching criteria</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Individual matching criteria</th>
+            <th scope="col" class="govuk-table__header app-custom-class">?</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">role</th>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Add</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">grade</th>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Add</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">language</th>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Add</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">location</th>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Add</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">location</th>
+            <td class="govuk-table__cell">None</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="">Add</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      {{ govukButton({
+        text: "Remove from team",
+        href: "remove-user"
+      }) }}
+
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}

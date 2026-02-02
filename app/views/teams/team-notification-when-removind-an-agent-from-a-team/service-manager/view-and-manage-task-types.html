@@ -1,0 +1,99 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "Manage teams" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {# {{ mojSearch({
+          action: "#",
+          method: "post",
+          classes: "govuk-!-margin-bottom-4",
+          input: {
+            id: "search",
+            name: "search"
+          },
+          label: {
+            text: "Find a team",
+            classes: "govuk-!-font-weight-bold"
+          },
+          button: {
+            text: "Search",
+            classes: "govuk-button--secondary"
+          }
+        }) }} #}
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+   
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Team name"
+        },
+        {
+          text: "Agents"
+        },
+        {
+          text: "Action",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Decision Making Team"
+          },
+          {
+            text: "2"
+          },
+          {
+            html: '<a href="decision-making-team" class="govuk-link">Manage</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Processing Agent Team"
+          },
+          {
+            text: "3"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Manage</a>',
+            format: "numeric"
+          }
+        ]
+      ]
+    }) }}  
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+

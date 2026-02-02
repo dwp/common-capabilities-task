@@ -1,0 +1,61 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "Decision Making Team" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+   
+
+    {{ govukTable({
+      caption: "Team details",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Team ID"
+        },
+        {
+          text: "Team name"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "decision making team"
+          },
+          {
+            text: "2"
+          }
+        ],
+        [
+          {
+            text: "Processing Agent Team"
+          },
+          {
+            text: "3"
+          }
+        ]
+      ]
+    }) }}  
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+
