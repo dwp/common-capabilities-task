@@ -22,7 +22,7 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-        {# {{ mojSearch({
+        {{ mojSearch({
           action: "#",
           method: "post",
           classes: "govuk-!-margin-bottom-4",
@@ -38,7 +38,7 @@
             text: "Search",
             classes: "govuk-button--secondary"
           }
-        }) }} #}
+        }) }}
 
     </div>
   </div>
@@ -66,25 +66,27 @@
       rows: [
         [
           {
-            text: "Decision Making Team"
+            text: "Decision Making Team",
+            classes: "govuk-table__header"
           },
           {
             text: "2"
           },
           {
-            html: '<a href="decision-making-team" class="govuk-link">Manage</a>',
+            html: '<a href="decision-making-team" class="govuk-link">Manage</a>' + ' | ' + '<a href="#" class="govuk-link">Delete</a>',
             format: "numeric"
           }
         ],
         [
           {
-            text: "Processing Agent Team"
+            text: "Processing Agent Team",
+            classes: "govuk-table__header"
+          },  
+          {
+            text: "0"
           },
           {
-            text: "3"
-          },
-          {
-            html: '<a href="#" class="govuk-link">Manage</a>',
+            html: '<a href="#" class="govuk-link">Manage</a> | <a href="#" class="govuk-link">Delete</a>',
             format: "numeric"
           }
         ]

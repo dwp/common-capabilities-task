@@ -1,7 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Oliver Logan's details" %}
+{% set pageName = "Oliver Logan's profile" %}
 
   {% block beforeContent %}
     {{ govukBackLink({
@@ -109,8 +109,8 @@
       </table>
 
       {{ govukButton({
-        text: "Remove from team",
-        href: "remove-user"
+        text: "Remove from org unit",
+        href: "remove-user-v2"
       }) }}
 
     </div>

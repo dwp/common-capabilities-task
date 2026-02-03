@@ -1,6 +1,6 @@
 {% extends "layouts/new-main.html" %}
 
-{% set pageName = "Remove Oliver Logan from the organisation unit?" %}
+{% set pageName = "Remove Oliver Logan" %}
 
 {% block beforeContent %}
 
@@ -20,7 +20,7 @@
 
       <p>You're about to remove John Smith (staff number 1110022) from Org A.</p>
 
-      <p>They will be removed from the following groups:</p>
+      <p>They will be removed from these groups:</p>
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -31,7 +31,7 @@
         </li>
       </ul>
 
-      <p>They will be removed from the following teams:</p>   
+      <p>They will be removed from these teams:</p>   
 
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -39,7 +39,7 @@
         </li>
       </ul>
 
-      <p>They have the following tasks, which will be returned to the queue:</p>   
+      <p>Oliver Logan currently has tasks in their queue, which may be allocated / active / on hold. If you remove them from Org B, these tasks will be returned to the queue:</p>   
       
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -53,7 +53,7 @@
 
       <form method="post" novalidate>
 
-        {{ govukRadios({
+        {# {{ govukRadios({
           id: "notificationWhenRemovingAgent[sm]",
           name: "notificationWhenRemovingAgent[sm]",
           fieldset: {
@@ -73,16 +73,29 @@
               text: "No"
             }
           ]
-        }) }}
+        }) }} #}
 
-        {{ govukButton({
+        <div class="govuk-button-group">
+
+          {{ govukButton({
           text: "Remove",
-          classes: "govuk-button--warning"
-        }) }}
+          classes: "govuk-button--warning",
+          attributes: {
+            name: "agents",
+            value: "yes"
+          }
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "agent-details"
+          }) }}
+        
+        </div>
         
       </form>
 
-      <a href="" class="govuk-link">Version two</a>
 
     </div>
   </div>
