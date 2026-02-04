@@ -31,11 +31,11 @@
             name: "search"
           },
           label: {
-            text: "Find a team",
+            text: "Filter teams",
             classes: "govuk-!-font-weight-bold"
           },
           button: {
-            text: "Search",
+            text: "Filter",
             classes: "govuk-button--secondary"
           }
         }) }}
@@ -66,7 +66,7 @@
       rows: [
         [
           {
-            text: "Decision Making Team",
+            text: "Team A",
             classes: "govuk-table__header"
           },
           {
@@ -79,7 +79,7 @@
         ],
         [
           {
-            text: "Processing Agent Team",
+            text: "Team B",
             classes: "govuk-table__header"
           },  
           {
@@ -89,7 +89,20 @@
             html: '<a href="#" class="govuk-link">Manage</a> | <a href="#" class="govuk-link">Delete</a>',
             format: "numeric"
           }
-        ]
+        ],
+        [
+        {
+          text: "Team C",
+          classes: "govuk-table__header"
+        },  
+        {
+          text: "5"
+        },
+        {
+          html: '<a href="#" class="govuk-link">Manage</a> | <a href="#" class="govuk-link">Delete</a>',
+          format: "numeric"
+        }
+      ]
       ]
     }) }}  
      
