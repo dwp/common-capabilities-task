@@ -1,0 +1,57 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Manage Benefits One QA</h1>
+    <div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/organisation-unit-details">View and manage details</a>
+      </h2>
+      <p class="govuk-body-m">View and manage details for Benefits One QA, including name, attributes and permissions.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="agents-home">View and manage agents</a>
+      </h2>
+      <p class="govuk-body-m">Add and manage agents, the groups they are in or their individual attributes. Agents must be added to Benefits One QA before they can be added to their team.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/groups-home">Add and manage groups</a>
+      </h2>
+      <p class="govuk-body-m">Add and manage groups for agents who do the same tasks. Agents in the same group will be able to claim the same task types.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/task-types">View and manage task types</a>
+      </h2>
+      <p class="govuk-body-m">View and change types of tasks in Benefits One QA, for example, change task type names.</p>
+    </div><div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/add-a-team">Add a team</a>
+      </h2>
+      <p class="govuk-body-m">Add a new team to Benefits One QA.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="view-and-manage-teams">View and manage teams</a>
+      </h2>
+      <p class="govuk-body-m">Add or remove agents and team leaders in Benefits One QA.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

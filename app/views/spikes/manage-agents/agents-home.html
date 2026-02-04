@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">View and manage agents
+  </h1>
+  <h2 class="govuk-heading-m"> Add Agent to org unit</h2>
+
+  <p>Create and add agents. Agents will get tasks that match to the criteria of their group. <br>
+    <a href="add-agents" class="govuk-button govuk-button--secondary">Add agent to org unit</a></p>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Agents in org unit</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Agent</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">James Burton<br><span class="govuk-hint">0987654</span></th>
+        <td class="govuk-table__cell"><a href="agent-details-2">View</a> | <a href="remove-agent">Delete</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Oliver Logan<br><span class="govuk-hint">0987654</span></th>
+        <td class="govuk-table__cell"><a href="agent-details">Manage</a> | <a href="remove-agent">Delete</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Paula Haynes<br><span class="govuk-hint">0987654</span></th>
+        <td class="govuk-table__cell"><a href="agent-details">Manage</a> | <a href="remove-agent">Delete</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+&nbsp;
+{% endblock %}
+
+

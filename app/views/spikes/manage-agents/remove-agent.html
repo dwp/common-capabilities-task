@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Remove agent screen</h1>
+
+    <form class="form" action="agent-home" method="get" role="form">
+      <div class="govuk-button-group" data-testid="button-group-id">
+        <button class="govuk-button govuk-button--warning" type="submit" value="delete" data-module="govuk-button">Remove from team</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}
+
+
