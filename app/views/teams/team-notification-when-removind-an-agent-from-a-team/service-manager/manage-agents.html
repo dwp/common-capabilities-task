@@ -14,6 +14,19 @@
 
 {% block content %}
 
+{% if data['agentRemove'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have remove agent 01 from the team A.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -21,16 +34,13 @@
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
 
-      {{ govukInput({
-        label: {
-          text: "Find an agent",
-          classes: "govuk-!-font-weight-bold"
-        },
-        classes: "govuk-!-width-one-half",
-        hint: {text: "Enter name, staff number oe email"},
-        id: "one-half",
-        name: "oneHalf"
-      }) }}
+      <div class="govuk-form-group govuk-!-margin-bottom-2">
+        <label class="govuk-label govuk-!-font-weight-bold" for="one-half">
+          Find an agent
+        </label>
+        <div id="one-half-hint" class="govuk-hint">Enter name, staff number or email</div>
+        <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+      </div>
 
       {{ govukButton({
         text: "Add",
@@ -38,61 +48,7 @@
       }) }}
 
 
-   
 
-    {{ govukTable({
-      caption: "Team details",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      rows: [
-        [
-          {
-            text: "Team ID",
-            classes: "govuk-table__header"
-          },
-          {
-            text: "decision-making-team"
-          }
-        ],
-        [
-          {
-            text: "Team name"
-          },
-          {
-            text: "Team A"
-          }
-        ]
-      ]
-    }) }}  
-
-    {{ govukTable({
-      caption: "Team leaders",
-      captionClasses: "govuk-table__caption--m",
-      firstCellIsHeader: false,
-      classes: "govuk-!-margin-bottom-3",
-      head: [
-        {
-          text: "Name"
-        },
-        {
-          text: "Staff number"
-        }
-      ],
-      rows: [
-        [
-          {
-            html: 'shared agent2 <br> <span style="color:	#505a5f;">shared agent2@dwp.gov.uk</span>'
-          },
-          {
-            text: "100100106"
-          }
-        ]
-      ]
-    }) }}
-
-    <a href="#" class="govuk-link">Add or remove a team leader</a>
-
-    
 
     {{ govukTable({
       caption: "Agents",
@@ -105,29 +61,56 @@
         },
         {
           text: "Staff number"
+        },
+        {
+          text: "Action",
+          format: "numeric"
         }
       ],
       rows: [
         [
           {
-            html: 'shared agent2 <br> <span style="color:	#505a5f;">shared agent2@dwp.gov.uk</span>'
+            html: 'agent 01 <br> <span style="color:	#505a5f;">agent_01@dwp.gov.uk</span>'
           },
           {
-            text: "100100106"
+            text: "100100101"
+          },
+          {
+            html: '<a href="remove-agent-01" class="govuk-link">Remove</a>',
+            format: "numeric"
           }
-        ]
+        ] if not data.agentRemove,
+        [
+          {
+            html: 'shared 02 <br> <span style="color:	#505a5f;">agent_02@dwp.gov.uk</span>'
+          },
+          {
+            text: "100100102"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ]       
       ]
     }) }}
 
-    <a href="#" class="govuk-link">Add or remove an agent</a>
+    
 
     
+
     
-    <div class="govuk-button-group govuk-!-margin-top-6">
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    
       {{ govukButton({
         text: "Cancel",
         classes: "govuk-button--secondary"
       }) }}
+    
     </div>
     
      

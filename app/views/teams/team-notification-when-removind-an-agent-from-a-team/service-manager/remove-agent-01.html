@@ -1,0 +1,70 @@
+{% extends "layouts/new-main.html" %}
+
+{% set pageName = "Remove agent 01 from Team A?" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>You're about to remove agent 01 (staff number 1110001) from team.</p>
+
+      
+
+      <p>Do we need to list her task here?</p>   
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          task A
+        </li>
+        <li>
+          task B
+        </li>
+      </ul>
+      
+
+      <form method="post" novalidate>
+
+     
+
+        <div class="govuk-button-group">
+
+          {{ govukButton({
+          text: "Remove",
+          classes: "govuk-button--warning",
+          attributes: {
+            name: "agentRemove",
+            value: "yes"
+          }
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "manage-agents"
+          }) }}
+        
+        </div>
+        
+      </form>
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
