@@ -1,0 +1,232 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "View and manage agents" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+  {% block pageScripts %}
+
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/teams.js"></script>
+  <script>
+    const teamMembers = [
+      "Aiden Jenkins, 12345678",
+      "Amy Anderson, 12345678",
+      "Amy Adams, 12345678",
+      "Amy Johnston, 12345678",
+      "Ben Hoad, 12345678",
+      "Joel Odonnell, 12345678",
+      "Oliver Logan, 12345678",
+      "Dan Hayes, 12345678",
+      "Kathleen Lin, 12345678",
+      "Darren Lowery, 12345678",
+      "Kamran Roth, 12345678",
+      "Amaan Hubbard, 12345678",
+      "Sally Whitaker, 12345678",
+      "Georgia Duncan, 12345678",
+      "Jean Booker, 12345678",
+      "Kaine Bell, 12345678",
+      "Arjan Sharp, 12345678",
+      "Bianca Nicholson, 12345678",
+      "Brett Henderson, 12345678",
+      "Hassan Young, 12345678",
+      "Sonia Pruitt, 12345678",
+      "Erica Fernandez, 12345678"
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#searchb'),
+      id: 'searchb', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]}`
+       
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p class="govuk-body">
+      Add an agent set their matching criteria.
+    </p>
+
+    <p>
+      When you have set up an agent you can change thier group membership, update their matching criteria, or remove them.
+    </p>
+        
+    <label class="govuk-label govuk-label--m" for="searchb">Find a team member</label>
+      <div id="event-name-hint" class="govuk-hint">
+        Use their name or staff number
+      </div>
+    <div id="searchb" class="govuk-input--width-30"></div>
+
+    <div class="govuk-button-group govuk-!-static-margin-top-2">
+      {{ govukButton({
+        text: "Add an agent to org unit",
+        id: "addTeamMember"
+      }) }}
+    </div>
+
+    {{ govukDetails({
+        summaryText: "I cannot find the agent I'm looking for",
+        html: '<h2 class="govuk-heading-m">Get help with your search</h2>
+        <p>If you cannot find the agent you are looking for:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Check their details and try again - search by email or staff number if their name does not show results
+          </li>
+          <li>
+            If they are a new starter, wait 24 hours and try again
+          </li>
+          <li>
+            If they are not a new starter, or if they are and you’ve waited 24 hours,<a href="#"> report an incident on Tech Place</a>
+          </li>
+        </ul>
+        '
+    }) }}
+ 
+
+    <table class="govuk-table govuk-!-static-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">Org B team members</caption>
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Staff number</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+      </thead>
+      <tbody id="TeamMembersTable" class="govuk-table__body">
+      </tbody>
+    </table>
+
+    <p id="tablePlaceholder">You have not added any team members to {{ data['humanreadablename'] or "None" }} yet.</p>
+
+     
+    <h2 class="govuk-heading-m">Org B</h2>
+
+    <p>Use the filter to find agents and update their details.</p>
+
+    {{ mojSearch({
+      action: "#",
+      method: "post",
+      classes: "govuk-!-width-one-half",
+      input: {
+        id: "search",
+        name: "search"
+      },
+      label: {
+        text: "Filter agents",
+        classes: "govuk-!-font-weight-bold"
+      },
+      button: {
+        text: "Filter",
+        classes: "govuk-button--secondary"
+      }
+    }) }}
+
+  
+
+    <!-- Table two - agent -->  
+    <table class="govuk-table govuk-!-static-margin-top-6 govuk-!-static-margin-bottom-3">
+      <caption class="govuk-table__caption govuk-table__caption--m">Agents</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width: 300px">Name</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+
+        
+        {# Only render the table row when banner is NOT shown #}
+ 
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="agent-details">Oliver Logan</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876800</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="#">Georgia Duncan</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876801</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="#">Hassan Young</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876802</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="#">Aiden Jenkins</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876803</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="#">Amy Anderson</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876804</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td scope="row" class="govuk-table__header"><a href="#">Amy Adams</a>
+            <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876805</p>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+    
+    {{ govukPagination({
+      next: {
+        href: "#"
+      },
+      items: [
+        {
+          number: 1,
+          href: "#",
+          current: true
+        },
+        {
+          number: 2,
+          href: "#"
+        },
+        {
+          number: 3,
+          href: "#"
+        }
+      ]
+    }) }}
+
+        
+    </div>
+  </div>
+  
+{% endblock %}

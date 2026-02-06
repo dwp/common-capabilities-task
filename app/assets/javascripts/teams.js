@@ -102,23 +102,22 @@ teamsAddMemberButton.addEventListener("click", function(e){
     let tm = document.querySelectorAll('#searchb')
     console.log(tm[0].childNodes[0]._component.state.query, "y")
     const memberDetails = tm[0].childNodes[0]._component.state.query;
-    createTeamMemberObject(memberDetails)
+    createTeamMemberObject(memberDetails);
     //searchb[0].value="";
-
-    
+  
 })
+
 }
 if(TeamMembersList) {
     console.log(STML)
     for (const x of STML) {
         
-        TeamMembersList.innerHTML += `
-        <tr class="govuk-table__row">
+    TeamMembersList.innerHTML += `
+    <tr class="govuk-table__row">
     <td class="govuk-table__cell">${x.name}</td>
     <td class="govuk-table__cell">${x.staffNo}</td>
     <td class="govuk-table__cell govuk-!-text-align-right"><a class="govuk-link " href="#">Remove</a></td>
-
-  </tr>`
+    </tr>`
         
        
         // TeamMembersList.innerHTML += `
@@ -159,7 +158,7 @@ function createTeamMemberObject(data){
     teamTableBody.innerHTML += `<tr class="govuk-table__row">
     <td class="govuk-table__cell">${parts[0]}</td>
     <td class="govuk-table__cell">${parts[1]}</td>
-    <td class="govuk-table__cell"><a class="govuk-link" href="#">Remove</a></td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Remove</a></td>
 
   </tr>`;
 

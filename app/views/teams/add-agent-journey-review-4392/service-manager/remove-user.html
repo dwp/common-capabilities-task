@@ -1,0 +1,64 @@
+{% extends "layouts/new-main.html" %}
+
+{% set pageName = "Remove Oliver Logan from the organisation unit?" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>
+        You're about to remove Oliver Logan (staff number 1110022) from org A. 
+        They will be removed from 3 groups and 2 teams, and they have 6 tasks.
+      </p>
+
+      <form method="post" novalidate>
+
+        {{ govukRadios({
+          id: "notificationWhenRemovingAgent[sm]",
+          name: "notificationWhenRemovingAgent[sm]",
+          fieldset: {
+            legend: {
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--l"
+            }
+          },
+          value: data.notificationWhenRemovingAgent.sm,
+          items: [
+            {
+              value: "Yes",
+              text: "Yes"
+            },
+            {
+              value: "No",
+              text: "No"
+            }
+          ]
+        }) }}
+
+        {{ govukButton({
+          text: "Remove",
+          classes: "govuk-button--warning"
+        }) }}
+        
+      </form>
+
+      <a href="remove-user-v2" class="govuk-link">Version two of this page</a>
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
