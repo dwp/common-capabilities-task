@@ -1,0 +1,66 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "What would you like to do next?" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+  {% block pageScripts %}
+
+  
+
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+
+<form method="post" novalidate>
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+
+    {# <h1 class="govuk-heading-l">{{pageName}}</h1> #}
+
+    {{ govukRadios({
+      name: "addAgentJourneyReview[question]",
+      fieldset: {
+        legend: {
+          html: pageName,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      value: data.addAgentJourneyReview.question,
+      items: [
+        {
+          value: "Add agents",
+          text: "Add agents"
+        },
+        {
+          value: "Manage agents",
+          text: "Manage agents"
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+
+        
+    </div>
+  </div>
+  
+{% endblock %}

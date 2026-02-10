@@ -20,3 +20,7 @@
 //     }
 //   )
 // })
+
+import { initAll } from '@x-govuk/govuk-prototype-components'
+
+initAll()

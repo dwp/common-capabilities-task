@@ -22,10 +22,18 @@ router.post('/teams/notification-when-removing-an-agent/service-manager/remove-u
 })
 
 
-// team-notification-when-removind-an-agent-from-a-team
 
 router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service-manager/remove-agent-01', (req, res) => {
 	res.redirect("manage-agents")
+})
+
+
+router.post('/teams/add-agent-journey-review-4392/service-manager/question', (req, res) => {
+	if (req.session.data.addAgentJourneyReview.question == 'Add agents'){
+		res.redirect("add-agents")
+	} else {
+		res.redirect("manage-agents")
+	}
 })
 
 
