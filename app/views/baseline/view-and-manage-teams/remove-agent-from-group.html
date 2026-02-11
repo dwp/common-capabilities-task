@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Remove agent from group</h1>
+    
+    <p class="govuk-body-m">You can change the tasks that performance.team-lead1 can work on by adding or removing them from groups or changing their matching criteria.</p>
+    <h2 class="govuk-heading-m">Groups</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-two-thirds" aria-label="15-10-2025-agent-group">
+          15-10-2025-agent-group
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                View group attributes
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <ul class="govuk-list">
+                <li>Attribute 1</li>
+                <li>Attribute 2</li>
+                <li>Attribute 3</li>
+              </ul>
+            </div>
+          </details>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add 15-10-2025-agent-group" href="/tasks-ui/admin/change-agents-group">Remove</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="new-agent-group">
+          new-agent-group
+
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add new-agent-group" href="/tasks-ui/admin/change-agents-group">Add</a>
+        </dd>
+      </div>
+    </dl>
+    
+    <h2 class="govuk-heading-m">Groups</h2>
+    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
+      <div class="govuk-summary-list__row">
+        
+        <dd class="govuk-summary-list__value">This agent isn't part of any groups yet</dd>
+        
+      </div>
+    </dl>
+    <div class="govuk-!-static-margin-bottom-6">
+      <a href="#" class="govuk-link ">Add agent to groups</a>
+    </div>
+    <h2 class="govuk-heading-m">Teams</h2>
+    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
+      <div class="govuk-summary-list__row">
+        verifyaddress-01
+        <dd class="govuk-summary-list__value">This agent isn't part of any teams yet</dd>
+      </div>
+    </dl>
+    <div class="govuk-!-static-margin-bottom-6">
+      <a href="#" class="govuk-link ">Add agent to teams</a>
+    </div>
+    <h2 class="govuk-heading-m">Individual matching criteria</h2>
+    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
+        <dd class="govuk-summary-list__value">
+          <div>weekends</div>
+          <div>evenings</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Change working-pattern" href="/tasks-ui/admin/change-agents-criteria">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
+        <dd class="govuk-summary-list__value">
+          <div>aa</div>
+          <div>g6</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Change grade" href="/tasks-ui/admin/change-agents-criteria">Change</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="language">language</dt>
+        <dd class="govuk-summary-list__value">
+          <div>spanish</div>
+          <div>welsh</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Change language" href="/tasks-ui/admin/change-agents-criteria">Change</a>
+        </dd>
+      </div>
+      <!-- <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+        <dd class="govuk-summary-list__value">
+          <div>None</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add vulnerable" href="/tasks-ui/admin/change-agents-criteria">Add</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+        <dd class="govuk-summary-list__value">
+          <div>None</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add urgent" href="/tasks-ui/admin/change-agents-criteria">Add</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+        <dd class="govuk-summary-list__value">
+          <div>None</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add escalate" href="/tasks-ui/admin/change-agents-criteria">Add</a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+        <dd class="govuk-summary-list__value">
+          <div>None</div>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" aria-label="Add country-subdivision" href="/tasks-ui/admin/change-agents-criteria">Add</a>
+        </dd>
+      </div> -->
+    </dl>
+    <div class="govuk-!-static-margin-bottom-6">
+      <a href="#" class="govuk-link ">Add matching criteria</a>
+    </div>
+    
+    <form class="form" action="/agent-details" method="get" role="form">
+      <div class="govuk-button-group" data-testid="button-group-id">
+        <button class="govuk-button govuk-button--warning" type="submit" value="delete" data-module="govuk-button">Remove from team</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Back</button>
+      </div>
+    </form>
+  </div>
+  
+</div>
+
+{% endblock %}
+
+

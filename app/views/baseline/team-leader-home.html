@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">DWP Task dashboard</h1>
+   
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/view-and-manage-tasks">View and manage tasks</a>
+      </h2>
+      <p class="govuk-body-m">View and manage tasks for Benefits One QA over a given date range.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="view-and-manage-teams/">View and manage teams</a>
+      </h2>
+      <p class="govuk-body-m">View and manage tasks for Benefits One QA over a given date range.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/management-information">Management Information (MI)</a>
+      </h2><p class="govuk-body-m">View MI for Benefits One QA.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="agent/">Agent dashboard</a>
+      </h2>
+      <p class="govuk-body-m">Work as an agent.</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+

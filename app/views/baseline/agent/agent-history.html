@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Profile history</h1>
+<div class="dwp-timeline">
+  <ol class="dwp-timeline__items">
+    
+    <li class="dwp-timeline__item">
+      <p class="dwp-timeline__datetime">16 April 2024 at 9:00am</p>
+      <h2 class="dwp-timeline__heading">Added to group evenings</h2>
+      <p class="dwp-timeline__by-line">by Jane Doe</p>
+      <p class="dwp-timeline__content">new task type added</p>
+    </li>
+    <li class="dwp-timeline__item">
+      <p class="dwp-timeline__datetime">28 March 2024 at 9:12am</p>
+      <h2 class="dwp-timeline__heading">New matching criteria added</h2>
+      <p class="dwp-timeline__by-line">by Jane Doe</p>
+    </li>
+    <li class="dwp-timeline__item">
+      <p class="dwp-timeline__datetime">12 March 2024 at 3:00pm</p>
+      <h2 class="dwp-timeline__heading">AAdded to team one</h2>
+    </li>
+  </ol>
+</div>
+<a class="govuk-button govuk-button--secondary govuk-!-static-margin-top-6"  href="agent-details-2">close</a>
+  </div>
+
+   
+  </div>
+
+
+{% endblock %}
+
+

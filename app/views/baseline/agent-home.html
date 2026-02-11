@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">DWP Task dashboard</h1>
+   
+    <div class="card">
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="/tasks-ui/admin/add-name">My tasks</a></h2>
+      <p class="govuk-body-m">Claim and work on tasks.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/view-and-manage-tasks">My profile</a>
+      </h2>
+      <p class="govuk-body-m">View details of groups, teams and attributes.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="manage-org-unit">Search and create</a>
+      </h2>
+      <p class="govuk-body-m">Search for and create tasks</p>
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+
