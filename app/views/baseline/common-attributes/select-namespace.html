@@ -1,0 +1,45 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <form class="form" action="add-attributes" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <h1 class="govuk-heading-l">Select Namespace</h1>
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <fieldset class="govuk-fieldset">
+            <div data-testid="radios" class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="dwp" name="namespace" type="radio" value="dwp">
+                <label class="govuk-label govuk-radios__label" for="dwp">DWP</label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="health" name="namespace" type="radio" value="health">
+                <label class="govuk-label govuk-radios__label" for="health">Health</label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </div>
+      <div class="govuk-button-group" data-testid="button-group-id">
+        <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Confirm</button>
+        <button class="govuk-button govuk-button--secondary" type="submit" value="back" data-module="govuk-button">Back</button>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+
