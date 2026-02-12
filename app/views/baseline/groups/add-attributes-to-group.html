@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Add attributes to group [Group name]</h1>
+    <p class="govuk-body-m">Choose matching criteria for this group.</p>
+    <p class="govuk-body-m">Agents will get tasks that match to test-id.</p>
+    <div class="govuk-!-padding-bottom-6"></div>
+    <h2 class="govuk-heading-m">Attributes</h2>
+    <p class="govuk-hint">Select all that apply.</p>
+    <form class="form" action="add-agents-to-group" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <div class="govuk-grid-row" data-testid="grid-row">
+          <div data-testid="column-full" class="govuk-grid-column-full">
+            <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+              <fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
+                <h2 class="govuk-fieldset__heading">vulnerable</h2>
+              </legend>
+              <div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id">
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-vulnerable-true" name="attribute-vulnerable-true" type="checkbox" value="true">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-vulnerable-true" data-testid="checkbox-label-id">true</label>
+                </div>
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-vulnerable-false" name="attribute-vulnerable-false" type="checkbox" value="false">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-vulnerable-false" data-testid="checkbox-label-id">false</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div data-testid="column-full" class="govuk-grid-column-full">
+          <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
+                <h2 class="govuk-fieldset__heading">urgent</h2>
+              </legend>
+              <div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id">
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-urgent-true" name="attribute-urgent-true" type="checkbox" value="true">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-urgent-true" data-testid="checkbox-label-id">true</label>
+                </div>
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-urgent-false" name="attribute-urgent-false" type="checkbox" value="false">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-urgent-false" data-testid="checkbox-label-id">false</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div data-testid="column-full" class="govuk-grid-column-full">
+          <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
+                <h2 class="govuk-fieldset__heading">escalate</h2>
+              </legend>
+              <div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id">
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-escalate-true" name="attribute-escalate-true" type="checkbox" value="true">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-escalate-true" data-testid="checkbox-label-id">true</label>
+                </div>
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-escalate-false" name="attribute-escalate-false" type="checkbox" value="false">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-escalate-false" data-testid="checkbox-label-id">false</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+        <div data-testid="column-full" class="govuk-grid-column-full">
+          <div class="govuk-!-margin-top-3 govuk-!-margin-bottom-3">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
+                <h2 class="govuk-fieldset__heading">country-subdivision</h2>
+              </legend>
+              <div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id">
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-country-subdivision-gb-nir" name="attribute-country-subdivision-gb-nir" type="checkbox" value="gb-nir">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-country-subdivision-gb-nir" data-testid="checkbox-label-id">gb-nir</label>
+                </div>
+                <div class="govuk-checkboxes__item" data-testid="checkbox-item-id">
+                  <input class="govuk-checkboxes__input" id="attribute-country-subdivision-gb-gbn" name="attribute-country-subdivision-gb-gbn" type="checkbox" value="gb-gbn">
+                  <label class="govuk-label govuk-checkboxes__label " for="attribute-country-subdivision-gb-gbn" data-testid="checkbox-label-id">gb-gbn</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-button-group" data-testid="button-group-id">
+      <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Continue</button>
+      <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Skip</button>
+    </div>
+  </form>
+</div>
+</div>
+
+{% endblock %}
+
+

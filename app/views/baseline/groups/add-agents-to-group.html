@@ -1,0 +1,69 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Add agents to group</h1>
+    <form class="form" action="review-group" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <label class="govuk-label govuk-label--s" for="search-autocomplete">Find an agent</label>
+          <p class="govuk-hint">Enter name, staff number or email</p>
+          <div id="search" class="govuk-input--width-30 autocomplete-input">
+            <div class="autocomplete__wrapper">
+              <div class="autocomplete__status" style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;">
+                <div id="search-autocomplete__status--A" role="status" aria-atomic="true" aria-live="polite"></div>
+                <div id="search-autocomplete__status--B" role="status" aria-atomic="true" aria-live="polite"></div>
+              </div>
+              <input aria-describedby="search-autocomplete__assistiveHint" aria-expanded="false" aria-controls="search-autocomplete__listbox" aria-autocomplete="list" autocomplete="off" class="autocomplete__input autocomplete__input--default" id="search-autocomplete" name="input-autocomplete" placeholder="" type="text" role="combobox" value="">
+              <ul aria-labelledby="search-autocomplete" id="search-autocomplete__listbox" role="listbox" class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden"></ul>
+              <span id="search-autocomplete__assistiveHint" style="display: none;">When autocomplete results are available use up and down arrows to review and enter to select.  Touch device users, explore by touch or with swipe gestures.</span>
+            </div>
+          </div>
+          <div class="govuk-button-group" data-testid="button-group-id">
+            <button class="govuk-button govuk-button--secondary" type="button" value="add" data-module="govuk-button">Add</button>
+          </div>
+        </div>
+        <a class="govuk-link govuk-body-m" href="/tasks-ui/admin/cannot-find-in-organisation-unit">I cannot find who I am looking for</a>
+        <div class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"></div>
+        <div aria-live="polite"></div>
+        <div class="govuk-!-margin-top-5 govuk-!-margin-bottom-5"></div>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Agents</caption>
+          <thead class="govuk-table__head"><tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header ">Name</th>
+            <th scope="col" class="govuk-table__header ">Staff number</th>
+            <th scope="col" class="govuk-table__header table-text-right">
+              <span class="govuk-visually-hidden">Action</span>
+            </th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " colspan="3" data-testid="table-cell">There are no agents in 15 10 2025 Awesome QA Team.</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-button-group" data-testid="button-group-id">
+      <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Continue</button>
+      <button class="govuk-button govuk-button--secondary" type="submit" value="back" data-module="govuk-button">Cancel</button>
+    </div>
+  </form>
+</div>
+</div>
+{% endblock %}
+
+

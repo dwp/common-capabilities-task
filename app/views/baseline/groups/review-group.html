@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <form class="form" action="groups-home" method="get" role="form">
+      <div class="govuk-form-group" data-testid="form-group-id">
+        <h1 class="govuk-heading-l">Review [Group Name]</h1>
+        <p class="govuk-body-m">Check that the details of your new group are correct.</p>
+        <p class="govuk-body-m">Make any changes if needed, then confirm.</p>
+        <h2 class="govuk-heading-m">Task types</h2>
+        <p class="govuk-body-m">test-id will be able to:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>new-onw</li>
+          <li>Test 5 aug</li>
+          <li>15 10 tasktype updated</li>
+        </ul>
+        <h2 class="govuk-heading-m">Group details</h2>
+        <dl class="govuk-summary-list"><div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="Group ID">Group ID</dt>
+          <dd class="govuk-summary-list__value">test-id</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Change group ID" href="/tasks-ui/admin/create-group">Change<span class="govuk-visually-hidden"> group ID</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="Group name">Group name</dt>
+          <dd class="govuk-summary-list__value">testing test</dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Change group name" href="/tasks-ui/admin/create-group">Change<span class="govuk-visually-hidden"> group name</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="Members">Members</dt>
+          <dd class="govuk-summary-list__value">
+            <div>Performance Tester (00090001)</div>
+            <div>Performance Tester (00090002)</div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Change members" href="/tasks-ui/admin/add-group-members">Change<span class="govuk-visually-hidden"> members</span></a>
+          </dd>
+        </div>
+      </dl>
+      <h2 class="govuk-heading-m">Matching criteria</h2>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+          <dd class="govuk-summary-list__value">
+            <div>None</div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Add vulnerable" href="/tasks-ui/admin/choose-group-criteria">Add</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+          <dd class="govuk-summary-list__value">
+            <div>None</div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Add urgent" href="/tasks-ui/admin/choose-group-criteria">Add</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+          <dd class="govuk-summary-list__value">
+            <div>false</div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Change escalate" href="/tasks-ui/admin/choose-group-criteria">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+          <dd class="govuk-summary-list__value">
+            <div>gb-gbn</div>
+            <div>gb-nir</div>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" aria-label="Change country-subdivision" href="/tasks-ui/admin/choose-group-criteria">Change</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+    <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Confirm</button>
+  </form>
+</div>
+</div>
+{% endblock %}
+
+
