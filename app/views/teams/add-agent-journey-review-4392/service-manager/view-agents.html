@@ -1,0 +1,127 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Manage agents in Org B" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+  {% block pageScripts %}
+
+ 
+{% endblock %}
+
+
+{% block content %}
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p>Use the filter to find agents and update their details.</p>
+
+    {{ mojSearch({
+      action: "#",
+      method: "post",
+      classes: "govuk-!-width-one-half",
+      input: {
+        id: "search",
+        name: "search"
+      },
+      label: {
+        text: "Filter agents",
+        classes: "govuk-!-font-weight-bold"
+      },
+      button: {
+        text: "Filter",
+        classes: "govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-left-2"
+      }
+    }) }}
+
+  
+
+    <!-- Table two - agent -->  
+    <table class="govuk-table govuk-!-static-margin-top-6 govuk-!-static-margin-bottom-3">
+      <caption class="govuk-table__caption govuk-table__caption--m">Agents</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" style="width: 300px">Name</th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        
+        {# Only render the table row when banner is NOT shown #}
+
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Oliver Logan
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876800</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="placeholder">View</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Georgia Duncan
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876801</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Hassan Young
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876802</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Aiden Jenkins
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876803</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Amy Anderson
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876804</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Amy Adams
+          <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876805</p>
+        </td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a></td>
+      </tr>
+    </tbody>
+  </table>
+
+    
+    {{ govukPagination({
+      next: {
+        href: "#"
+      },
+      items: [
+        {
+          number: 1,
+          href: "#",
+          current: true
+        },
+        {
+          number: 2,
+          href: "#"
+        },
+        {
+          number: 3,
+          href: "#"
+        }
+      ]
+    }) }}
+
+        
+    </div>
+  </div>
+  
+{% endblock %}

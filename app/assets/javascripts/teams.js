@@ -116,7 +116,7 @@ if(TeamMembersList) {
     <tr class="govuk-table__row">
     <td class="govuk-table__cell">${x.name}</td>
     <td class="govuk-table__cell">${x.staffNo}</td>
-    <td class="govuk-table__cell govuk-!-text-align-right"><a class="govuk-link " href="#">Remove</a></td>
+    <td class="govuk-table__cell govuk-!-text-align-right"><a class="govuk-link" href="#">Remove</a></td>
     </tr>`
         
        
@@ -145,7 +145,9 @@ function createTeamMemberObject(data){
     let teamMember = {
         "id": `${idNo +1}`, 
         "name":`${parts[0]}`, 
-        "staffNo": `${parts[1]}`
+        "staffNo": `${parts[1]}`,
+        "email": `${parts[2]}`,
+        "office": `${parts[3]}`
     }
     TeamMembers.push(teamMember)
 
@@ -158,7 +160,9 @@ function createTeamMemberObject(data){
     teamTableBody.innerHTML += `<tr class="govuk-table__row">
     <td class="govuk-table__cell">${parts[0]}</td>
     <td class="govuk-table__cell">${parts[1]}</td>
-    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Remove</a></td>
+    <td class="govuk-table__cell">${parts[2]}</td>
+    <td class="govuk-table__cell">${parts[3]}</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Add agent to groups</a></td>
 
   </tr>`;
 

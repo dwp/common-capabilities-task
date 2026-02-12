@@ -18,6 +18,19 @@
 
 {% block content %}
 
+{% if data['agentRemove'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have remove Oliver Logan from the organisation B.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
 
   <div class="govuk-grid-row govuk-!-margin-bottom-4">
     <div class="govuk-grid-column-two-thirds">
@@ -57,43 +70,45 @@
       </thead>
       <tbody class="govuk-table__body">
         
-        {# Only render the table row when banner is NOT shown #}
-
+        
+      {% if not data['agentRemove'] %}
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="agent-details">Oliver Logan</a>
+        <td scope="row" class="govuk-table__header">Oliver Logan
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876800</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="remove-oliver-logan">Remove</a></td>
       </tr>
+      {% endif %}
+
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="#">Georgia Duncan</a>
+        <td scope="row" class="govuk-table__header">Georgia Duncan
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876801</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="#">Hassan Young</a>
+        <td scope="row" class="govuk-table__header">Hassan Young
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876802</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="#">Aiden Jenkins</a>
+        <td scope="row" class="govuk-table__header">Aiden Jenkins
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876803</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="#">Amy Anderson</a>
+        <td scope="row" class="govuk-table__header">Amy Anderson
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876804</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
       </tr>
       <tr class="govuk-table__row">
-        <td scope="row" class="govuk-table__header"><a href="#">Amy Adams</a>
+        <td scope="row" class="govuk-table__header">Amy Adams
           <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876805</p>
         </td>
-        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">View</a> | <a href="#">Delete</a></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Remove</a></td>
       </tr>
     </tbody>
   </table>

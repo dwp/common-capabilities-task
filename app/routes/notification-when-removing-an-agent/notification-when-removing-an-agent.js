@@ -31,9 +31,15 @@ router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service
 router.post('/teams/add-agent-journey-review-4392/service-manager/question', (req, res) => {
 	if (req.session.data.addAgentJourneyReview.question == 'Add agents'){
 		res.redirect("add-agents")
+	} else if (req.session.data.addAgentJourneyReview.question == 'View agents') {
+		res.redirect("view-agents")
 	} else {
-		res.redirect("manage-agents")
+		res.redirect("remove-agents")
 	}
+})
+
+router.post('/teams/add-agent-journey-review-4392/service-manager/remove-oliver-logan', (req, res) => {
+	res.redirect("remove-agents")
 })
 
 

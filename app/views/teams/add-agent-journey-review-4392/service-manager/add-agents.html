@@ -16,28 +16,28 @@
   <script type="text/javascript" src="/public/javascripts/teams.js"></script>
   <script>
     const teamMembers = [
-      "Aiden Jenkins, 12345678",
-      "Amy Anderson, 12345678",
-      "Amy Adams, 12345678",
-      "Amy Johnston, 12345678",
-      "Ben Hoad, 12345678",
-      "Joel Odonnell, 12345678",
-      "Oliver Logan, 12345678",
-      "Dan Hayes, 12345678",
-      "Kathleen Lin, 12345678",
-      "Darren Lowery, 12345678",
-      "Kamran Roth, 12345678",
-      "Amaan Hubbard, 12345678",
-      "Sally Whitaker, 12345678",
-      "Georgia Duncan, 12345678",
-      "Jean Booker, 12345678",
-      "Kaine Bell, 12345678",
-      "Arjan Sharp, 12345678",
-      "Bianca Nicholson, 12345678",
-      "Brett Henderson, 12345678",
-      "Hassan Young, 12345678",
-      "Sonia Pruitt, 12345678",
-      "Erica Fernandez, 12345678"
+      "Aiden Jenkins, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Anderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Adams, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Johnston, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Ben Hoad, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Joel Odonnell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Oliver Logan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Dan Hayes, 12345678, G4S DWP Contact Center",
+      "Kathleen Lin, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Darren Lowery, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kamran Roth, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amaan Hubbard, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sally Whitaker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Georgia Duncan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Jean Booker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kaine Bell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Arjan Sharp, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Bianca Nicholson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Brett Henderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Hassan Young, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sonia Pruitt, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Erica Fernandez, 12345678, email@dwp.gov.uk, G4S DWP Contact Center"
     ]
 
     accessibleAutocomplete({
@@ -51,7 +51,7 @@
         },
         suggestion: function (suggestion) {
           const parts = suggestion.split(", ");
-          return `${parts[0]}, ${parts[1]}`
+          return `${parts[0]}, ${parts[1]}, ${parts[2]}, ${parts[3]}`
        
         }
       }
@@ -110,6 +110,13 @@
         </ul>
         '
     }) }}
+
+     </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
  
 
     <table class="govuk-table govuk-!-static-margin-bottom-2">
@@ -117,6 +124,8 @@
       <thead class="govuk-table__head">
         <th scope="col" class="govuk-table__header">Name</th>
         <th scope="col" class="govuk-table__header">Staff number</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header">Office</th>
         <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
       </thead>
       <tbody id="TeamMembersTable" class="govuk-table__body">
