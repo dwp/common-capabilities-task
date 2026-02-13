@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">DWP Task dashboard</h1>
+    <button class="govuk-button govuk-button--secondary" type="submit" value="Change organisation unit" data-module="govuk-button">Change organisation unit</button>
+    <div class="card" >
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="/tasks-ui/admin/add-name">Add an organisation unit</a></h2>
+      <p class="govuk-body-m">Add an organisation unit, attributes and permissions.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/view-and-manage-tasks">View and manage tasks</a>
+      </h2>
+      <p class="govuk-body-m">View and manage tasks for Benefits One QA over a given date range.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="manage-org-unit">Manage Benefits One QA setup</a>
+      </h2>
+      <p class="govuk-body-m">Add or manage agents and groups, or view tasks and attributes in Benefits One QA.</p>
+    </div>
+    <div class="card" >
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/select-namespace">Common task attributes</a>
+      </h2>
+      <p class="govuk-body-m">Add and manage common task attributes.</p>
+    </div>
+    <div class="card" >
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/application-management">Application management</a>
+      </h2>
+      <p class="govuk-body-m">View ADUS, claim and agent diagnostics.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/management-information">Management Information (MI)</a>
+      </h2><p class="govuk-body-m">View MI for Benefits One QA.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/agent/home">Agent dashboard</a>
+      </h2>
+      <p class="govuk-body-m">Work as an agent.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+
