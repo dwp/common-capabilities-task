@@ -1,0 +1,63 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  
+    <div class=" govuk-grid-column-two-thirds govuk-form-group">
+      <h1 class="govuk-heading-l">Change teams and roles </h1>
+      <p class="govuk-hint">A single user can have both agent access and team leader access in DWP Task. 
+        They can only work as an agent in one team at a time. However, they can be a team leader in multiple teams.</p>
+       
+        <h2 class="govuk-heading-m">Admin team</h2>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Team
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Admin team
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-team">Change<span class="govuk-visually-hidden"> previous application number</span></a>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Role
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Team leader
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="change-role-in-team">Change<span class="govuk-visually-hidden"> licence type</span></a>
+            </dd>
+          </div>
+         
+         
+        </dl>
+      <!-- <form class="form" action="agent-details" method="get" role="form">
+        <div class="govuk-button-group" data-testid="button-group-id">
+          <button class="govuk-button" type="submit" value="delete" data-module="govuk-button">Confirm</button>
+          <button class="govuk-button govuk-button--secondary" type="submit" value="skip" data-module="govuk-button">Cancel</button>
+        </div>
+      </form> -->
+    </div>
+  </div>
+   
+  </div>
+</div>
+
+{% endblock %}
+
+
