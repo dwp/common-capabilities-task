@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">View and manage teams</h1>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Teams in Benefits One QA</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Team name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Agents</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Team leaders</th>
+        <th scope="col" class="govuk-table__header"></th>
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Admin team</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="manage-a-team">Manage</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Triage team</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Manage</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">Closures team</th>
+        <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Manage</a></td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+&nbsp;
+{% endblock %}
+
+
