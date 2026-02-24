@@ -1,6 +1,6 @@
 {% extends "layouts/new-main.html" %}
 
-{% set pageName = "Remove Oliver Logan" %}
+{% set pageName = "Remove Oliver Logan from org unit name" %}
 
 {% block beforeContent %}
 
@@ -16,7 +16,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      {# <h1 class="govuk-heading-l">{{pageName}}</h1>
 
       <p>You're about to remove John Smith (staff number 1110022) from Org A.</p>
 
@@ -39,7 +39,8 @@
         </li>
       </ul>
 
-      <p>Oliver Logan currently has tasks in their queue, which may be allocated / active / on hold. If you remove them from Org B, these tasks will be returned to the queue:</p>   
+      <p>Oliver Logan currently has tasks in their queue, which may be allocated or active or on hold.</p>
+      <p>If you remove this person from org name, these tasks will be unallocated and returned to the queue for another agent to claim:</p>   
       
       <ul class="govuk-list govuk-list--bullet">
         <li>
@@ -49,52 +50,37 @@
           task B
         </li>
       </ul>
-      
+       #}
 
       <form method="post" novalidate>
 
-        {# {{ govukRadios({
-          id: "notificationWhenRemovingAgent[sm]",
-          name: "notificationWhenRemovingAgent[sm]",
-          fieldset: {
-            legend: {
-              isPageHeading: false,
-              classes: "govuk-fieldset__legend--l"
-            }
-          },
-          value: data.notificationWhenRemovingAgent.sm,
-          items: [
-            {
-              value: "Yes",
-              text: "Yes"
+  
+          {{ govukRadios({
+            name: "notificationWhenRemovingAgent[sm]",
+            fieldset: {
+              legend: {
+                text: "Are you sure you want to remove Olover Logan from org unit name?",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--l"
+              }
             },
-            {
-              value: "No",
-              text: "No"
-            }
-          ]
-        }) }} #}
-
-        <h2 class="govuk-heading-m">Do you want to remove Oliver Logan from org B?</h2>
-
-        <div class="govuk-button-group">
+            value: data.notificationWhenRemovingAgent.sm,
+            items: [
+              {
+                value: "Yes",
+                text: "Yes, remove"
+              },
+              {
+                value: "No",
+                text: "No"
+              }
+            ]
+          }) }}
 
           {{ govukButton({
-          text: "Remove",
-          classes: "govuk-button--warning",
-          attributes: {
-            name: "agents",
-            value: "yes"
-          }
+            text: "Continue"
           }) }}
-        
-          {{ govukButton({
-            text: "Back",
-            classes: "govuk-button--secondary",
-            href: "agent-details"
-          }) }}
-        
-        </div>
+
         
       </form>
 
