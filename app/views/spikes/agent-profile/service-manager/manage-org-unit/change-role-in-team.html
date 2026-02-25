@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds-from-desktop">
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Change James Burton's role in the Admin team
+        </h1>
+      </legend>
+      <div id="contact-hint" class="govuk-hint">
+        Select one option
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england" checked>
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+            Agent
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+          <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+            Team leader
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+  <div class="govuk-button-group" data-testid="button-group-id">
+    <a class="govuk-button" href="change-role-and-team">Confirm</a>
+    <a class="govuk-button govuk-button--secondary" href="change-role-and-team">Cancel</a>
+  </div>
+</div>
+</div>
+</div>
+
+{% endblock %}
+
+

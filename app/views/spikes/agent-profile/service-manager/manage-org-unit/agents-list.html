@@ -1,0 +1,53 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">Manage Users</h1>
+
+  <table class="govuk-table">
+    <caption class="govuk-table__caption govuk-table__caption--m">Users in [Org Unit Name]</caption>
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+       
+      </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Oliver Logan<br><span class="govuk-hint">00987655443</span></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details-sm">Manage</a></td>
+      </tr>
+      <tr class="govuk-table__row">
+        <td scope="row" class="govuk-table__header">Paula Hayles<br><span class="govuk-hint">128946214673</span></td>
+        <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details-sm">Manage</a></td>
+      </tr>
+      <tr>
+      <td scope="row" class="govuk-table__header">Robert Peters<br><span class="govuk-hint govuk-body-s">9752357899</span></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details-sm">Manage</a></td>
+    </tr>
+    <tr>
+      <td scope="row" class="govuk-table__header">Sean O'Neil<br><span class="govuk-hint govuk-body-s">9752357899</span></td>
+      <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent-details-sm">Manage</a></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+&nbsp;
+{% endblock %}
+
+
