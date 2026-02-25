@@ -1,0 +1,39 @@
+{#
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
+  
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+   <header class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div class="dwp-header__service-name dwp-header__service-name--with-action">
+        <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
+      </div>
+      <div class="dwp-header__service-action">
+        <a href="/" class="dwp-header__link">Logged in as: Team leader</a>
+      </div>
+    </div>
+  </header> 
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container govuk-!-margin-bottom-3'
+      }) }}
+  </div>
+{% endblock %}
+ 
+
+{% block footer %}
+  {% include "_includes/footer.html" %}
+{% endblock %}
+
+{% block scripts %}
+  {{ super() }}
+  <script src="/public/javascripts/components/accessible-autocomplete.min.js"></script>
+{% endblock %}
+

@@ -93,3 +93,5 @@ require('./routes/bulk-changes/bulk-changes-routes')(router)
 require('./routes/stats-for-agents-and-teams/stats-routes')(router)
 require('./routes/agents-attached-to-a-team/agents-attached-to-a-team-routes')(router)
 require('./routes/notification-when-removing-an-agent/notification-when-removing-an-agent')(router)
+require('./routes/end-to-end-prototype/end-to-end-prototype')(router)
+
