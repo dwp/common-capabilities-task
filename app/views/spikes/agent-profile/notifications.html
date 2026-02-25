@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Team leader home
+Notifications
 {% endblock %}
 
 {% block beforeContent %}
@@ -16,59 +16,60 @@ Team leader home
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      User profile 
-    </h1>
+Notifications    </h1>
 
 
-    <p class="govuk-body-m">Prototypes for the work on adding user profiles to DWP Task, te user profile serves Agents, team leaders and service managers, journeys for the 
-      different roles are detailed below.
+    <p class="govuk-body-m">
     </p>
 
-    <table class="govuk-table">
-      <caption class="govuk-table__caption govuk-table__caption--m">User profile prototypes</caption>
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Role</th>
-          <th scope="col" class="govuk-table__header">prototype</th>
-        </tr>
-      </thead>
-      <tbody class="govuk-table__body">
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Agent</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="agent/agent-home">view</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Team leader</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="team-leader/dashboard">view</a></td>
-        </tr>
-        <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Service manager</th>
-          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="service-manager">view</a></td>
-        </tr>
-      </tbody>
-    </table>
-    <h2 class="govuk-heading-m">Agent view</h2>
-    <p class="govuk-body-m"> Accessing the user profile screen as an agent.  <a href="agent/agent-home">view</a></p>
+    <h2 class="govuk-heading-m">Change of group</h2>
+
+    <p class="govuk-body-m"> To be displayed on user profile when an agents greoup has been changed. </p>
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          James Burton is now a member of the following groups: group1, group2
+        </h3>
+      </div>
+    </div>
    
   
-    <h2 class="govuk-heading-m">Team leader view</h2>
-    <p class="govuk-body-m"> Accessing the user profile screen as a team leader.  <a href="team-leader/dashboard">view</a></p>
-  
-    <h2 class="govuk-heading-m">Service manager</h2>
-    <p class="govuk-body-m"> Accessing the user profile screen as a service manager  <a href="service-manager">view</a></p>
+    <h2 class="govuk-heading-m">Change of team </h2>
+    <p class="govuk-body-m"> To be displayed on the change team and roles page after  a user has changed the teams of a user.</p>
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          James Burton is now a member of the [new team name] team
+        </h3>
+      </div>
+    </div>
+
+    <h2 class="govuk-heading-m">Change of role</h2>
+    <p class="govuk-body-m"> To be displayed on the change team and roles page after a user has changed the roles of a user.</p>
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          James Burton is now a [ team leader/Agent ] in the [team name] team
+        </h3>
+      </div>
+    </div>
   
     
-    <p class="govuk-body-m"></p>
-    <ul class="govuk-list">
-      <li>
-        <p class="govuk-body-m"></p>
-        <a class="govuk-link" href="change-role-in-team-error">view</a></li>
-    </ul>
-  </div>
-  <div class="govuk-grid-column-one-third">
-    <h2 class="govuk-heading-m">Supporting info</h2>
-    <a class="govuk-link" href="change-role-in-team-error">change role in team error state</a></li>
-  </div>
 </div>
 
 {% endblock %}
