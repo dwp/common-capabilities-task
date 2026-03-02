@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="service-manager-home">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">Manage Claims One QA</h1>
+    <div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/organisation-unit-details">View and manage details</a>
+      </h2>
+      <p class="govuk-body-m">View and manage details for Claims One QA, including name, attributes and permissions.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="manage-agents">Add and manage agents</a>
+      </h2>
+      <p class="govuk-body-m">Add users, the groups they are in or their individual attributes. Agents must be added to Claims One QA before they can be added to their team.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="groups/groups-home">Add and manage groups</a>
+      </h2>
+      <p class="govuk-body-m">Add and manage groups for agents who do the same tasks. Agents in the same group will be able to claim the same task types.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="task-types/task-types-home">View and manage task types</a>
+      </h2>
+      <p class="govuk-body-m">View and change types of tasks in Claims One QA, for example, change task type names.</p>
+    </div>
+    <div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/add-a-team">Add a team</a>
+      </h2>
+      <p class="govuk-body-m">Add a new team to Claims One QA.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="teams/teams-home">View and manage teams</a>
+      </h2>
+      <p class="govuk-body-m">Add or remove agents and team leaders in Claims One QA.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

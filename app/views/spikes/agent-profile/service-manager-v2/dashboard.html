@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<div class=spacer1></div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div data-testid="column-full" class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l">DWP Task dashboard</h1>
+    <div class="card" >
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="view-and-manage-teams">View and manage your teams</a></h2>
+      <p class="govuk-body-m">Add or remove agents and team leaders to or from your teams.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="">View and manage tasks</a>
+      </h2>
+      <p class="govuk-body-m">View and manage tasks for Benefits One QA over a given date range.</p>
+    </div>
+    <div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/select-namespace">Common task attributes</a>
+      </h2>
+      <p class="govuk-body-m">Add and manage common task attributes.</p>
+    </div>
+    <div class="card" hidden="">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/application-management">Application management</a>
+      </h2>
+      <p class="govuk-body-m">View ADUS, claim and agent diagnostics.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/admin/management-information">Management Information (MI)</a>
+      </h2><p class="govuk-body-m">View MI for Benefits One QA.</p>
+    </div>
+    <div class="card">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link" href="/tasks-ui/agent/home">Agent dashboard</a>
+      </h2>
+      <p class="govuk-body-m">Work as an agent.</p>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+

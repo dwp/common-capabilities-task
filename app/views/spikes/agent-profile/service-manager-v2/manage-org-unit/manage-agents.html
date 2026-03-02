@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+ 
+
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row" data-testid="grid-row">
+      <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Agents</h1>
+        <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
+        <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p>
+        <form class="form" action="add-agent" method="get" role="form">
+          <button class="govuk-button govuk-button--primary" type="submit" value="submit" data-module="govuk-button">Add an agent</button>
+        </form>
+      </div>
+      <div data-testid="column-one-third" class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Benefits One QA</h2>
+        <p class="govuk-body-m">Use the filter to find agents and update their details.</p>
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <label class="govuk-label" for="input-filter">Filter agents</label>
+          <div class="govuk-input__wrapper" data-testid="input-wrapper">
+            <input class="govuk-input govuk-input--width-10" id="input-filter" name="inputFilter" type="text" value="">
+            <button class="govuk-button govuk-button--secondary" type="submit" value="Filter" data-module="govuk-button">Filter</button>
+          </div>
+        </div>
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Benefits One QA</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header ">Agents</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell " data-testid="table-cell">
+                <a href="agent-details-sm" id="100100200" class="govuk-link">Performance Team-Lead (performance.team-lead1)</a>
+                <br><span class="govuk-hint">Staff number: 100100200</span>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell " data-testid="table-cell">
+                <a href="agent-details-sm" id="00090001" class="govuk-link">Performance Tester (00090001)</a>
+                <br><span class="govuk-hint">Staff number: 00090001</span>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell " data-testid="table-cell">
+                <a href="agent-details-sm" id="00090002" class="govuk-link">Performance Tester (00090002)</a>
+                <br><span class="govuk-hint">Staff number: 00090002</span>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell " data-testid="table-cell">
+                <a href="agent-details-sm" id="00090003" class="govuk-link">Performance Tester (00090003)</a>
+                <br><span class="govuk-hint">Staff number: 00090003</span>
+              </td>
+            </tr>
+            <tr class="govuk-table__row"><td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090004" class="govuk-link">Performance Tester (00090004)</a>
+              <br><span class="govuk-hint">Staff number: 00090004</span>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090005" class="govuk-link">Performance Tester (00090005)</a>
+              <br><span class="govuk-hint">Staff number: 00090005</span>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090006" class="govuk-link">Performance Tester (00090006)</a>
+              <br><span class="govuk-hint">Staff number: 00090006</span>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090007" class="govuk-link">Performance Tester (00090007)</a>
+              <br><span class="govuk-hint">Staff number: 00090007</span>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090008" class="govuk-link">Performance Tester (00090008)</a>
+              <br><span class="govuk-hint">Staff number: 00090008</span>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell " data-testid="table-cell">
+              <a href="agent-details-sm" id="00090009" class="govuk-link">Performance Tester (00090009)</a>
+              <br><span class="govuk-hint">Staff number: 00090009</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <nav class="govuk-pagination" role="navigation" aria-label="results">
+        <ul class="govuk-pagination__list">
+          <li class="govuk-pagination__item govuk-pagination__item--current"><a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">1</a>
+          </li>
+          <li class="govuk-pagination__item"><a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">2</a>
+          </li>
+          <li class="govuk-pagination__item"><a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">3</a>
+          </li>
+        </ul>
+        <div class="govuk-pagination__next">
+          <a class="govuk-link govuk-pagination__link" href="#" rel="next"><span class="govuk-pagination__link-title">Next</span><svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13"><path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path></svg>
+          </a>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </main>
+</div>
+&nbsp;
+{% endblock %}
+
+
