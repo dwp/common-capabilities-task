@@ -14,10 +14,10 @@
 
 {% block content %}
 
-{% if data.removindAgentFromTeam.agentRemove == "Yes" %}
+{% if data.removindAgentFromTeam.agentRemove == "yes" %}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
-      You have remove agent 01 from the team A.
+      You have removed agent 01 from the team A.
     </h3>
   {% endset %}
 
@@ -34,21 +34,18 @@
     <h1 class="govuk-heading-l">{{pageName}}</h1>
 
 
-      <div class="govuk-form-group govuk-!-margin-bottom-2">
-        <label class="govuk-label govuk-!-font-weight-bold" for="one-half">
-          Find an agent
-        </label>
-        <div id="one-half-hint" class="govuk-hint">Enter name, staff number or email</div>
-        <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
-      </div>
+    <div class="govuk-form-group govuk-!-margin-bottom-2">
+      <label class="govuk-label govuk-!-font-weight-bold" for="one-half">
+        Find an agent
+      </label>
+      <div id="one-half-hint" class="govuk-hint">Enter name, staff number or email</div>
+      <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+    </div>
 
-      {{ govukButton({
-        text: "Add",
-        classes: "govuk-button--secondary"
-      }) }}
-
-
-
+    {{ govukButton({
+      text: "Add",
+      classes: "govuk-button--secondary"
+    }) }}
 
     {{ govukTable({
       caption: "Agents",
@@ -79,7 +76,7 @@
             html: '<a href="remove-agent-01" class="govuk-link">Remove</a>',
             format: "numeric"
           }
-        ] if not data.agentRemove,
+        ] if not data.removindAgentFromTeam.agentRemove,
         [
           {
             html: 'shared 02 <br> <span style="color:	#505a5f;">agent_02@dwp.gov.uk</span>'
@@ -95,10 +92,7 @@
       ]
     }) }}
 
-    
-
-    
-
+  
     
 
     <div class="govuk-button-group">

@@ -13,16 +13,15 @@
 {% block content %}
 
 
-
-{% if data['agents'] == "yes" %}
-  {% set html %}
+{% if data.notificationWhenRemovingAgent.sm == "yes" %}
+  {% set bannerHtml %}
     <h3 class="govuk-notification-banner__heading">
-      You have remove Oliver from the organisation unit.
+      You have removed Oliver from the organisation unit.
     </h3>
   {% endset %}
 
   {{ govukNotificationBanner({
-    html: html,
+    html: bannerHtml,
     type: "success"
   }) }}
 {% endif %}
@@ -85,7 +84,7 @@
 
             
             {# Only render the table row when banner is NOT shown #}
-            {% if data['agents'] != "yes" %}
+            {% if data.notificationWhenRemovingAgent.sm != "yes" %}
               <tr class="govuk-table__row">
                 <td scope="row" class="govuk-table__header" style="width:100%;"><a href="agent-details">Oliver Logan</a>
                   <p class="govuk-body-s govuk-!-static-margin-bottom-0" style="color: #505a5f;">Staff number: 46876800</p>

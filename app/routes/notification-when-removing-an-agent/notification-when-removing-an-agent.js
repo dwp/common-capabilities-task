@@ -17,11 +17,22 @@ router.post('/teams/notification-when-removing-an-agent/service-manager/delete',
 	res.redirect("list-of-agents")
 })
 
+
+
+// 4419 new
 router.post('/teams/notification-when-removing-an-agent/service-manager/remove-user-v2', (req, res) => {
-	res.redirect("agents")
+  const choice = req.session.data.notificationWhenRemovingAgent?.sm
+
+  if (choice === 'yes') {
+    // set a one-time flag for showing banner on the next page
+    req.session.data.removalSuccessBanner = 'yes'
+    return res.redirect('/teams/notification-when-removing-an-agent/service-manager/agents')
+  }
+
+  // user chose "no" - ensure banner doesn't show
+  req.session.data.removalSuccessBanner = null
+  return res.redirect('/teams/notification-when-removing-an-agent/service-manager/agents')
 })
-
-
 
 
 router.post('/teams/add-agent-journey-review-4392/service-manager/question', (req, res) => {
@@ -40,12 +51,14 @@ router.post('/teams/add-agent-journey-review-4392/service-manager/remove-oliver-
 
 
 router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service-manager/remove-agent-01', (req, res) => {
-	if (req.session.data.removindAgentFromTeam.agentRemove == 'Yes'){
+	if (req.session.data.removindAgentFromTeam.agentRemove == 'yes'){
 		res.redirect("manage-agents")
 	} else {
 		res.redirect("manage-agents")
 	}
 })
+
+
 
 
 }
