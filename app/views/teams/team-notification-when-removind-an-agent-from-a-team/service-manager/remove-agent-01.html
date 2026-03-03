@@ -16,6 +16,21 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>Removing a user from a team will unallocate all of their allocated, active and on hold tasks, and put those tasks back into the general queue for another agent to claim.</p>    
+
+      <p>The affected taks are:</p>   
+      
+      <ul class="govuk-list govuk-list--bullet">
+        <li>
+          task A
+        </li>
+        <li>
+          task B
+        </li>
+      </ul>
+      
 
       <form method="post" novalidate>
 
@@ -24,16 +39,16 @@
             name: "removindAgentFromTeam[agentRemove]",
             fieldset: {
               legend: {
-                html: pageName,
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
+                text: "",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--xl"
               }
             },
             value: data.removindAgentFromTeam.agentRemove,
             items: [
               {
                 value: "Yes",
-                text: "Yes, remove them from team"
+                text: "Yes, remove"
               },
               {
                 value: "No",
