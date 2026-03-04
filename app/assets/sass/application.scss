@@ -17,10 +17,13 @@
 
 .govuk-phase-banner {
   font-family: Helvetica, Arial, sans-serif;
-  padding-top: 0px;
+  padding-top: 0;
   padding-bottom: 10px;
   border-bottom: 1px solid #d4d4d4;
   margin-top: 10px;
+  background-color: #fff;
+  width: 100%;
+  // Avoid float; GOV.UK containers are already block-level & full-width.
 }
 
 
@@ -174,11 +177,6 @@
   }
   } 
 
-  .govuk-phase-banner {
-      background-color: white;
-      width: 100%;
-      float: left;
-  }
 
 /* Table mouse highlight styling */   
 
@@ -495,7 +493,7 @@
   :nth-child(2) {
     display: flex;
     align-items: center;
-    justify-content: right;
+    justify-content: flex-end;
     padding:18px;
     color:#d4d4d4
   }
@@ -705,5 +703,13 @@
   box-sizing: border-box;
   margin-bottom: 20px;
 }
+
+
+.app-right-align {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
 
 
