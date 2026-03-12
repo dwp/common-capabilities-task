@@ -6,7 +6,47 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
 {% block header %}
-   <header class="dwp-header">
+  <header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="#" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <a href="/" class="dwp-header__link">Logged in as: Service manager</a>
+    </div>
+    <nav class="dwp-header-navigation"
+      aria-label="Primary">
+      <button type="button" class="dwp-header-navigation__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
+        Menu
+      </button>
+      <ul id="navigation" class="dwp-header-navigation__list">
+        <li class="dwp-header-navigation__item">
+          <a style="color: #ffffff;" href="#">View and manage tasks</a>
+        </li>
+        <li class="dwp-header-navigation__item">
+          <a style="color: #ffffff;" href="#"> Manage Claims Org B setup</a>
+        </li>
+        <li class="dwp-header-navigation__item">
+          <a style="color: #ffffff;" href="#"> Management Information (MI)</a>
+        </li>
+        <li class="dwp-header-navigation__item">
+          <a style="color: #ffffff;" href="#">Agent dashboard</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+   {# <header class="dwp-header">
     <div class="dwp-header__content govuk-width-container">
       <div class="dwp-header__service-name dwp-header__service-name--with-action">
         <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
@@ -24,7 +64,7 @@
         html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
         classes: 'govuk-width-container govuk-!-margin-bottom-3'
       }) }}
-  </div>
+  </div> #}
 {% endblock %}
  
 
