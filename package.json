@@ -6,6 +6,7 @@
     "heroku-prebuild": "rm -rf package-lock.json"
   },
   "engines": {
+    "node": "22.x",
     "npm": "10.x"
   },
 
