@@ -12,9 +12,9 @@
       <a href="#" class="dwp-header__link">{{serviceName}}</a>
     </div>
     <div class="dwp-header__service-action">
-        <a href="/" class="dwp-header__link">Logged in as: Service manager</a>
+        <p class="header_right-panel">National Mailbox: working as a Service Manager</p>
     </div>
-    <nav class="dwp-header-navigation"
+    {# <nav class="dwp-header-navigation"
       aria-label="Primary">
       <button type="button" class="dwp-header-navigation__menu-button govuk-js-header-toggle" aria-controls="navigation" hidden>
         Menu
@@ -33,7 +33,7 @@
           <a style="color: #ffffff;" href="#">Agent dashboard</a>
         </li>
       </ul>
-    </nav>
+    </nav> #}
   </div>
 </header>
 <div class="govuk-width-container">
@@ -46,25 +46,6 @@
     }) }} 
 </div> 
 
-   {# <header class="dwp-header">
-    <div class="dwp-header__content govuk-width-container">
-      <div class="dwp-header__service-name dwp-header__service-name--with-action">
-        <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
-      </div>
-      <div class="dwp-header__service-action">
-        <a href="/" class="dwp-header__link">Logged in as: Service manager</a>
-      </div>
-    </div>
-  </header> 
-  <div class="govuk-width-container">
-    {{ govukPhaseBanner({
-        tag: {
-          text: "Beta"
-        },
-        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
-        classes: 'govuk-width-container govuk-!-margin-bottom-3'
-      }) }}
-  </div> #}
 {% endblock %}
  
 

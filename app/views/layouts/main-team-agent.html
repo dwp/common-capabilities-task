@@ -8,11 +8,12 @@
 {% block header %}
    <header class="dwp-header">
     <div class="dwp-header__content govuk-width-container">
-      <div class="dwp-header__service-name dwp-header__service-name--with-action">
-        <a href="/" class="dwp-header__link"> {{ serviceName }}</a>
-      </div>
+      <di style="flex-basis: 50%;"  class="dwp-header__service-name dwp-header__service-name--with-action">
+        <a href="/" class="dwp-header__link">{{ serviceName }}</a>
+      </di>
       <div class="dwp-header__service-action">
-        <a href="/" class="dwp-header__link">Logged in as: Agent</a>
+        {# <a href="/" class="dwp-header__link">National Mailbox: working as an Agent</a> #}
+        <p class="header_right-panel">National Mailbox: working as an Agent</p>
       </div>
     </div>
   </header> 
