@@ -1,7 +1,7 @@
 {% extends "layouts/main-team-agent.html" %}
 
 
-{% set pageName = "My org name tasks" %}
+{% set pageName = "My Claims One QA tasks" %}
 
  {% block beforeContent %}
   {{ govukBackLink({
@@ -69,20 +69,90 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Details</th>
             <th scope="col" class="govuk-table__header">Created</th>
-            <th scope="col" class="govuk-table__header">Task</th>
+            <th scope="col" class="govuk-table__header" style="width: 20%;">Task</th>
             <th scope="col" class="govuk-table__header">Customer</th>
-            <th scope="col" class="govuk-table__header">National Insurance number</th>
+            <th scope="col" class="govuk-table__header">National Insurance<br> number</th>
             <th scope="col" class="govuk-table__header">Due</th>
             <th scope="col" class="govuk-table__header">Status</th>
           </tr>
         </thead>
 
         <tbody class="govuk-table__body">
-              
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="task" class="govuk-link">Start</a></td>
+            <td class="govuk-table__cell">27 Jan 2026</td>
+            <td class="govuk-table__cell">Eligible Employment Status GB</td>
+            <td class="govuk-table__cell">Oliver Bennett</td>
+            <td class="govuk-table__cell">AE 01 01 01 A</td>
+            <td class="govuk-table__cell">Eligible Employment Status GB</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Allocated",
+                classes: "govuk-tag--yellow"
+              })}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Action</a></td>
+            <td class="govuk-table__cell">19 Feb 2026</td>
+            <td class="govuk-table__cell">Benefits Amount 04</td>
+            <td class="govuk-table__cell">Emily Carter</td>
+            <td class="govuk-table__cell">AE 01 01 02 A</td>
+            <td class="govuk-table__cell">19 Feb 2027 at 09:08</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Active",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Action</a></td>
+            <td class="govuk-table__cell">16 Feb 2026</td>
+            <td class="govuk-table__cell">2026 Eligible Employment Status Wales</td>
+            <td class="govuk-table__cell">Chloe Dawson</td>
+            <td class="govuk-table__cell">AE 01 01 03 A</td>
+            <td class="govuk-table__cell">
+               {{govukTag({
+                text: "Overdue",
+                classes: "govuk-tag--red"
+              })}}<br>
+              16 Feb 2027 at 22:39</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "Active",
+                classes: "govuk-tag--green"
+              })}}
+            </td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="#" class="govuk-link">Action</a></td>
+            <td class="govuk-table__cell">16 Feb 2026</td>
+            <td class="govuk-table__cell">2026 Eligible Employment Status Wales</td>
+            <td class="govuk-table__cell">Amelia Foster</td>
+            <td class="govuk-table__cell">AE 01 01 04 A</td>
+            <td class="govuk-table__cell">
+               {{govukTag({
+                text: "Overdue",
+                classes: "govuk-tag--red"
+              })}}<br>
+              16 Feb 2027 at 22:39</td>
+            <td class="govuk-table__cell">
+              {{govukTag({
+                text: "On hold",
+                classes: "govuk-tag--blue"
+              })}}
+            </td>
+          </tr>
+    
         </tbody>
 
       </table>
-      <p style="text-align: left;"> You have not claimed any tasks yet.</p>
+      {# <p style="text-align: left;"> You have not claimed any tasks yet.</p> #}
     </div>
 
   </div>
