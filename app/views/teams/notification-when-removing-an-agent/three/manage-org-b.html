@@ -1,0 +1,56 @@
+
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "home"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Manage Org B setup</h1>
+  <div class="box">
+      <h2 class="govuk-heading-m"><a href="agents">Add and manage agents</a></h2>
+      <p>Add and manage agents, the groups they are in or their individual attributes. Agent must be added to Org B before they can be added to their team.</p>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add and manage groups</a></h2>
+      <p>Add and manage groups for agents who do the same task. Agents is the same group will be able to claim the same task types.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add and manage task types</a></h2>
+      <p>Add and manage task types in Org B.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">View and manage teams</a></h2>
+      <p>Add or remove agents and team leaders, or delete teams in Org B.</p>
+    </div>
+</div>
+
+
+&nbsp;
+
+{% endblock %}
+
+

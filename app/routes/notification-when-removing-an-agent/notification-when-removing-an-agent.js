@@ -4,12 +4,12 @@ module.exports = router => {
 // it is posting to itself and after redirected to v1 or v2
 
 router.post('/teams/notification-when-removing-an-agent/select-user', (req, res) => {
-	if (req.session.data.teams.selectUser == 'Admin'){
-		res.redirect("admin/home")
-	} else if (req.session.data.teams.selectUser == 'Service manager') {
-		res.redirect("service-manager/home")
+	if (req.session.data.teams.selectUser == 'one'){
+		res.redirect("one/home")
+	} else if (req.session.data.teams.selectUser == 'two') {
+		res.redirect("two/home")
 	} else {
-		res.redirect("team-leader/home")
+		res.redirect("three/home")
 	}
 })
 
@@ -19,19 +19,49 @@ router.post('/teams/notification-when-removing-an-agent/service-manager/delete',
 
 
 
-// 4419 new
-router.post('/teams/notification-when-removing-an-agent/service-manager/remove-user-v2', (req, res) => {
+// 4419 new (one)
+router.post('/teams/notification-when-removing-an-agent/one/remove-user-v2', (req, res) => {
   const choice = req.session.data.notificationWhenRemovingAgent?.sm
 
   if (choice === 'yes') {
     // set a one-time flag for showing banner on the next page
     req.session.data.removalSuccessBanner = 'yes'
-    return res.redirect('/teams/notification-when-removing-an-agent/service-manager/agents')
+    return res.redirect('/teams/notification-when-removing-an-agent/one/agents')
   }
 
   // user chose "no" - ensure banner doesn't show
   req.session.data.removalSuccessBanner = null
-  return res.redirect('/teams/notification-when-removing-an-agent/service-manager/agents')
+  return res.redirect('/teams/notification-when-removing-an-agent/one/agents')
+})
+
+// 4419 new (two)
+router.post('/teams/notification-when-removing-an-agent/two/remove-user-v2', (req, res) => {
+  const choice = req.session.data.notificationWhenRemovingAgentTwo?.sm
+
+  if (choice === 'yes') {
+    // set a one-time flag for showing banner on the next page
+    req.session.data.removalSuccessBanner = 'yes'
+    return res.redirect('/teams/notification-when-removing-an-agent/two/agents')
+  }
+
+  // user chose "no" - ensure banner doesn't show
+  req.session.data.removalSuccessBanner = null
+  return res.redirect('/teams/notification-when-removing-an-agent/two/agents')
+})
+
+// 4419 new (three)
+router.post('/teams/notification-when-removing-an-agent/three/remove-user-v2', (req, res) => {
+  const choice = req.session.data.notificationWhenRemovingAgentTwo?.sm
+
+  if (choice === 'yes') {
+    // set a one-time flag for showing banner on the next page
+    req.session.data.removalSuccessBanner = 'yes'
+    return res.redirect('/teams/notification-when-removing-an-agent/three/agents')
+  }
+
+  // user chose "no" - ensure banner doesn't show
+  req.session.data.removalSuccessBanner = null
+  return res.redirect('/teams/notification-when-removing-an-agent/three/agents')
 })
 
 
