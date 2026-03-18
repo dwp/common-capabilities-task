@@ -5,7 +5,6 @@
   <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
 
  
- 
     {% set customePeriodHtml %}
       {{ govukDateInput({
           id: "[teams][from]",
@@ -93,7 +92,8 @@
       items: [
         {
           value: "today",
-          text: "Today"
+          text: "Today",
+          checked: true
         },
         {
           value: "yesterday",
@@ -101,8 +101,7 @@
         },
         {
           value: "Last seven days",
-          text: "Last seven days",
-          checked: true
+          text: "Last seven days"
         },
           {
           value: "Last month",
@@ -423,7 +422,7 @@
           text: "Date"
         },
         items: [{
-          text: "Last seven days"
+          text: "Today"
         }
         ]
       },

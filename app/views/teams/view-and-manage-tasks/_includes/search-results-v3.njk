@@ -1,17 +1,39 @@
 
   <div class="moj-scrollable-pane">
+    
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-half">
+        <p style="margin-top: 38px;">50 tasks created between 14 Jan 2026 and 21 Jan 2026</p>
+      </div>
+
+      <div class="govuk-grid-column-one-half app-right-align">
+        <div>
+          <label class="govuk-label" for="sort">
+            Show rows
+          </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option>10 per page</option>
+              <option>20 per page</option>
+              <option>30 per page</option>
+            </select>
+        </div>
+      </div>
+
+    </div>
+     
     <table class="govuk-table" data-module="moj-sortable-table">
-      <caption class="govuk-table__caption">50 tasks created between 14 Jan 2026 and 21 Jan 2026</caption>
+      {# <caption class="govuk-table__caption">50 tasks created between 14 Jan 2026 and 21 Jan 2026</caption> #}
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="High">Created</th>
+          <th scope="col" class="govuk-table__header" aria-sort="High">Created</th>
           <th scope="col" class="govuk-table__header" aria-sort="High">Due date</th>
-          <th scope="col" class="govuk-table__header" aria-sort="High">Task type</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">NINo</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="High">Agent</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="High">Priority</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="High">Status</th>
-          <th scope="col" class="govuk-table__header govuk-table__header--numeric">Team</th>
+          <th scope="col" class="govuk-table__header" aria-sort="High" style="width: 105px;">Task type</th>
+          <th scope="col" class="govuk-table__header">NINo</th>
+          <th scope="col" class="govuk-table__header" aria-sort="High">Agent</th>
+          <th scope="col" class="govuk-table__header" aria-sort="High">Priority</th>
+          <th scope="col" class="govuk-table__header" aria-sort="High">Status</th>
+          <th scope="col" class="govuk-table__header">Team</th>
           <th scope="col" class="govuk-table__header">Action</th>
         </tr>
       </thead>
