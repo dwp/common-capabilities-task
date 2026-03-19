@@ -4,9 +4,13 @@
   Admin home
 {% endblock %}
 
+
 {% block beforeContent %}
 
-{# <div class=spacer1></div> #}
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../select-user-admin"
+  }) }}
 
 {% endblock %}
 
@@ -60,13 +64,13 @@
     </div>
 </div>
 
-<div class="govuk-width-container">
+{# <div class="govuk-width-container">
   &nbsp;
     <div class="box">
       <h2 class="govuk-heading-m"><a href="#">Agent dashboard</a></h2>
       <p>Work as an agent.</p>
     </div>
-</div>
+</div> #}
 
 &nbsp;
 

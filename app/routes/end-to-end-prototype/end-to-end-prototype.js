@@ -2,7 +2,7 @@ module.exports = router => {
 
 // End-to-end prototype 
 
-router.post('/end-to-end-prototype/select-user', (req, res) => {
+router.post('/end-to-end-prototype/select-user-admin', (req, res) => {
 	if (req.session.data.endToEndPrototype.selectYourRole == 'Admin'){
 		res.redirect("v1/admin/home-admin")
 	} else if (req.session.data.endToEndPrototype.selectYourRole == 'Service manager'){
