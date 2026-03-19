@@ -75,7 +75,7 @@
       }) }}
     {% endset -%}
     
-
+  <div class="filter_border-bottom"> 
     {{ govukRadios({
       name: "dataRange",
       classes: "govuk-radios--small",
@@ -119,8 +119,9 @@
         }
       ]
     }) }}
+  </div>
 
-
+<div class="filter_border-bottom"> 
   {{ govukRadios({
     classes: "govuk-radios--small",
     name: "viewAndManageTasks[v1][DateRangeOption]",
@@ -147,8 +148,10 @@
         text: "Due by date"
       }
     ]
-  }) }}     
+  }) }}  
+</div>   
 
+<div class="filter_border-bottom"> 
   {{ govukInput({
     id: "[teams][agent]",
     name: "[teams][agent]",
@@ -163,7 +166,9 @@
     },
     value: data.teams.agent
   }) }}
+</div>
 
+<div class="filter_border-bottom"> 
   {{ govukCheckboxes({
     name: "viewAndManageTasks[v1][status]",
     classes: "govuk-checkboxes--small",
@@ -184,10 +189,6 @@
         text: "Allocated"
       },
       {
-        value: "Closed",
-        text: "Closed"
-      },
-      {
         value: "Completed",
         text: "Completed"
       },
@@ -197,7 +198,7 @@
       }
     ]
   }) }}
-
+</div>
     
   <div class="govuk-form-group" style="margin-bottom: 10px;">
 
@@ -216,7 +217,8 @@
       }) }}
   </div>
 
-  <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+<div class="filter_border-bottom"> 
+  <div class="searchable-collection-component--only-scrollable">
     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
       <div class="govuk-checkboxes__item">
         <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
@@ -256,41 +258,43 @@
       </div>
     </div>
   </div>
+</div>
         
-
-  {{ govukCheckboxes({
-    name: "viewAndManageTasks[v1][priority]",
-    classes: "govuk-checkboxes--small",
-    fieldset: {
-      legend: {
-        text: "Priority (optional)",
-        isPageHeading: false,
-        classes: "govuk-fieldset__legend--s"
-      }
-    },
-    values: data.viewAndManageTasks.v1.priority,
-    hint: {
-      text: "Select the priorities of the tasks you want to view"
-    },
-    items: [
-      {
-        value: "High",
-        text: "High"
+<div class="filter_border-bottom"> 
+    {{ govukCheckboxes({
+      name: "viewAndManageTasks[v1][priority]",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "Priority (optional)",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
       },
-      {
-        value: "Medium",
-        text: "Medium"
+      values: data.viewAndManageTasks.v1.priority,
+      hint: {
+        text: "Select the priorities of the tasks you want to view"
       },
-      {
-        value: "Low",
-        text: "Low"
-      },
-      {
-        value: "Urgent",
-        text: "Urgent"
-      }
-    ]
-  }) }}
+      items: [
+        {
+          value: "High",
+          text: "High"
+        },
+        {
+          value: "Medium",
+          text: "Medium"
+        },
+        {
+          value: "Low",
+          text: "Low"
+        },
+        {
+          value: "Urgent",
+          text: "Urgent"
+        }
+      ]
+    }) }}
+  </div>
 
      <div class="govuk-form-group" style="margin-bottom: 10px;">
 
@@ -309,7 +313,8 @@
           }) }}
       </div>
 
-      <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
+    <div class="filter_border-bottom"> 
+      <div class="searchable-collection-component--only-scrollable">
         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
           <div class="govuk-checkboxes__item">
             <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
@@ -349,9 +354,9 @@
           </div>
         </div>
       </div>
-
+    </div>
     
-
+    <div class="filter_border-bottom"> 
       {{ govukInput({
         id: "[teams][nino]",
         name: "[teams][nino]",
@@ -360,12 +365,14 @@
           isPageHeading: false,
           classes: "govuk-label--s"
         },
-        classes: "govuk-input--width-10",
         hint: {
           html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer"
         },
         value: data.teams.nino
       }) }}
+    </div>
+
+      
 
       {{ govukInput({
         id: "[teams][taskNumber]",
@@ -375,13 +382,11 @@
           isPageHeading: false,
           classes: "govuk-label--s"
         },
-        classes: "govuk-input--width-10",
         hint: {
           html: "Enter a task number to view that task"
         },
         value: data.teams.taskNumber
       }) }}
-
      
 
       <div class="govuk-button-group">
