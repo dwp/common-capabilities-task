@@ -3,13 +3,13 @@
     
     <div class="govuk-grid-row" style="display: flex; align-items: flex-end;">
       <div class="govuk-grid-column-one-half">
-        <p class="govuk-!-margin-bottom-2">40 tasks created at 14 Jan 2026 | Showing 1 - 10 of 40 results</p>
+        <p class="govuk-!-margin-bottom-2">10 of 40 tasks between 1 January 2025 and 24 March 2026</p>
       </div>
 
       <div class="govuk-grid-column-one-half app-right-align">
         <div>
           <label class="govuk-label" for="sort">
-            Show rows
+            Show results
           </label>
             <select class="govuk-select" id="sort" name="sort">
               <option>10 per page</option>
@@ -28,7 +28,7 @@
           <th scope="col" class="govuk-table__header" aria-sort="High">Created</th>
           <th scope="col" class="govuk-table__header" aria-sort="High">Due date</th>
           <th scope="col" class="govuk-table__header" style="width: 105px;">Task type</th>
-          <th scope="col" class="govuk-table__header">NINo</th>
+          <th scope="col" class="govuk-table__header" style="width: 115px;">NINo</th>
           <th scope="col" class="govuk-table__header">Agent</th>
           <th scope="col" class="govuk-table__header">Priority</th>
           <th scope="col" class="govuk-table__header">Status</th>
@@ -48,24 +48,24 @@
             17 Jan 2026
           </td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">DE568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">QQ 12 34 56 B8</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239851">239851</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td> #}
+       
+          <td class="govuk-table__cell">QQ 12 34 56 B8</td>
+          <td class="govuk-table__cell">Alice Bennett</td>
+          
            {% if data.changePriorityLevel == "yes" %}
-              <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
+              <td class="govuk-table__cell">High</td>
             {% else %}
-               <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Low</td>
+               <td class="govuk-table__cell">Low</td>
             {% endif %}
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             15 Jan 2026 9:25
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="task" class="govuk-link">View</a></td>
+          <td class="govuk-table__cell">Processing team 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="task" class="govuk-link">View</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -77,18 +77,17 @@
             })}}<br>
             18 Jan 2026 10:14</td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">GH568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239852">239852</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          <td class="govuk-table__cell" data-sort-value="">QQ 12 34 12 G5</td>
+          <td class="govuk-table__cell">Charlotte Davies</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Jan 2026 9:25
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
+          <td class="govuk-table__cell" data-sort-value="">Processing team 2</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
         </tr>
 
@@ -101,18 +100,18 @@
             })}}<br>
             19 Jan 2026  09:28</td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">HG568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239853">239853</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          {# <td class="govuk-table__cell " data-sort-value="">HG568833V</td> #}
+          <td class="govuk-table__cell">GH 12 34 56 B8</td>
+          <td class="govuk-table__cell">Daniel Foster</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
              {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Jan 2026 9:25
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
+          <td class="govuk-table__cell" data-sort-value="">Processing team 2</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
         </tr>
 
@@ -126,18 +125,17 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239854">239854</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">Edward Gray</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
+          <td class="govuk-table__cell" data-sort-value="">Processing team 2</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
         </tr>
 
@@ -151,24 +149,24 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239855">239855</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
+          <td class="govuk-table__cell">HT 24 34 12 G5</td>
+          <td class="govuk-table__cell">George Harris</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 1</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
+          <td class="govuk-table__cell">Processing team 1</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">16 Jan 2026</td>
-          <td class="govuk-table__cell" data-sort-value="">
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "Overdue",
               classes: "govuk-tag--red govuk-!-margin-top-1"
@@ -176,18 +174,42 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239856">239856</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">Henry Mitchell</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 4</td>
+          <td class="govuk-table__cell">Processing team 4</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">17 Jan 2026 </td>
+          <td class="govuk-table__cell" data-sort-value="">
+            {{govukTag({
+              text: "Overdue",
+              classes: "govuk-tag--red govuk-!-margin-top-1"
+            })}}<br>
+            19 Jan 2026 16:27
+          </td>
+          <td class="govuk-table__cell">Type A</td>
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">James Palmer</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
+            {{govukTag({
+              text: "On hold",
+              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+            })}}<br>
+            17 Nov 2025 9:25<br>
+          </td>
+          <td class="govuk-table__cell" data-sort-value="">Processing team 2</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
         </tr>
 
@@ -201,19 +223,19 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239857">239857</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">Oliver Reed</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
+          <td class="govuk-table__cell">Processing team 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -226,19 +248,18 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239858">239858</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">Sophie Turner</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
+          <td class="govuk-table__cell">Processing team 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
         </tr>
 
         <tr class="govuk-table__row">
@@ -251,44 +272,18 @@
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239859">239859</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
+          <td class="govuk-table__cell">Not applicable</td>
+          <td class="govuk-table__cell">Thomas Walker</td>
+          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
               classes: "govuk-tag--yellow govuk-!-margin-top-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
-        </tr>
-
-        <tr class="govuk-table__row">
-          <td class="govuk-table__cell">17 Jan 2026 </td>
-          <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
-            19 Jan 2026 16:27
-          </td>
-          <td class="govuk-table__cell">Type A</td>
-          {# <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">JC568833V</td> #}
-          <td class="govuk-table__cell" data-sort-value="">Not applicable</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="239860">239860</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">High</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">
-            {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
-            })}}<br>
-            17 Nov 2025 9:25<br>
-          </td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="">Processing team 2</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
+          <td class="govuk-table__cell">Processing team 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
         </tr>
 
         {# 10 #}

@@ -2,7 +2,7 @@
 
 {%- set filterOptionsHtml %}
 
-  <p class="govuk-body">Select a data range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
+  <p class="govuk-body">Select a date range to view tasks that were created or completed between these dates, or that are due between these dates.</p>
 
  
     {% set customePeriodHtml %}
@@ -87,7 +87,7 @@
         }
       },
       hint: {
-        text: "Select one option"
+        text: ""
       },
       items: [
         {
@@ -162,7 +162,7 @@
     },
     classes: "govuk-input--width-20",
     hint: {
-      html: "Enter the name, staff number or email of the agent<br> whose tasks you want to view"
+      html: ""
     },
     value: data.teams.agent
   }) }}
@@ -180,7 +180,7 @@
       }
     },
     hint: {
-      text: "Select the status of the tasks you want to view"
+      text: ""
     },
     values: data.viewAndManageTasks.v1.status,
     items: [
@@ -224,14 +224,16 @@
           classes: "govuk-label--s",
           isPageHeading: false
         },
-        hint: {
-          text: "Select the type of tasks you want to view"
-        },
         classes: "govuk-!-margin-bottom-0",
         id: "event-name",
-        name: "eventName"
+        name: "eventName",      
+        attributes: {
+            placeholder: "Enter task type"
+          }
+
       }) }}
   </div>
+  
 
 <div class="filter_border-bottom"> 
   <div class="searchable-collection-component--only-scrollable">
@@ -289,24 +291,28 @@
       },
       values: data.viewAndManageTasks.v1.priority,
       hint: {
-        text: "Select the priorities of the tasks you want to view"
+        text: ""
       },
       items: [
         {
-          value: "High",
-          text: "High"
-        },
-        {
-          value: "Medium",
-          text: "Medium"
+          value: "None",
+          text: "None"
         },
         {
           value: "Low",
           text: "Low"
         },
         {
-          value: "Urgent",
-          text: "Urgent"
+          value: "Medium",
+          text: "Medium"
+        },
+        {
+          value: "High",
+          text: "High"
+        },
+        {
+          value: "Critical",
+          text: "Critical"
         }
       ]
     }) }}
@@ -321,11 +327,14 @@
               isPageHeading: false
             },
             hint: {
-              text: "Select one or more teams to view tasks those teams can work on"
+              text: ""
             },
             classes: "govuk-!-margin-bottom-0",
             id: "event-name",
-            name: "eventName"
+            name: "eventName",
+             attributes: {
+              placeholder: "Enter team"
+          }
           }) }}
       </div>
 
@@ -382,7 +391,7 @@
           classes: "govuk-label--s"
         },
         hint: {
-          html: "Enter a customer's National Insurance number to view tasks<br> raised against this customer"
+          html: ""
         },
         value: data.teams.nino
       }) }}
@@ -399,7 +408,7 @@
           classes: "govuk-label--s"
         },
         hint: {
-          html: "Enter a task number to view that task"
+          html: ""
         },
         value: data.teams.taskNumber
       }) }}
