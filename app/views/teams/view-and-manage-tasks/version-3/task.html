@@ -6,19 +6,11 @@
   {% include "_includes/header.html" %}
 {% endblock %}
 
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-      items: [
-        {
-          text: "View and manage tasks",
-          href: "view-and-manage-tasks"
-        },
-        {
-          text: "Task",
-          href: "task"
-        }
-      ]
-    }) }}
+{% block beforeContent %} 
+  {{ govukBackLink({
+    text: "Back",
+    href: "view-and-manage-tasks"
+  }) }}
 {% endblock %}
 
 {% block content %}
