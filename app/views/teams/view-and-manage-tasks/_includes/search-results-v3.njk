@@ -2,11 +2,12 @@
   {# <div class="moj-scrollable-pane"> #}
     
     <div class="govuk-grid-row" style="display: flex; align-items: flex-end;">
-      <div class="govuk-grid-column-one-half">
-        <p class="govuk-!-margin-bottom-2">10 of 40 tasks between 1 January 2025 and 24 March 2026</p>
+
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-!-margin-bottom-2">Showing 10 of 40 tasks created between 1 January 2025 and 24 March 2026</p>
       </div>
 
-      <div class="govuk-grid-column-one-half app-right-align">
+      <div class="govuk-grid-column-one-third app-right-align">
         <div>
           <label class="govuk-label" for="sort">
             Show results
@@ -27,7 +28,7 @@
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header" aria-sort="High">Created</th>
           <th scope="col" class="govuk-table__header" aria-sort="High">Due date</th>
-          <th scope="col" class="govuk-table__header" style="width: 105px;">Task type</th>
+          <th scope="col" class="govuk-table__header" style="text-wrap: nowrap;">Task type</th>
           <th scope="col" class="govuk-table__header" style="width: 115px;">NINo</th>
           <th scope="col" class="govuk-table__header">Agent</th>
           <th scope="col" class="govuk-table__header">Priority</th>
@@ -49,7 +50,7 @@
           </td>
           <td class="govuk-table__cell">Type A</td>
        
-          <td class="govuk-table__cell">QQ 12 34 56 B8</td>
+          <td class="govuk-table__cell" style="text-wrap: nowrap;">QQ 12 34 56 B8</td>
           <td class="govuk-table__cell">Alice Bennett</td>
           
            {% if data.changePriorityLevel == "yes" %}
@@ -77,7 +78,7 @@
             })}}<br>
             18 Jan 2026 10:14</td>
           <td class="govuk-table__cell">Type A</td>
-          <td class="govuk-table__cell" data-sort-value="">QQ 12 34 12 G5</td>
+          <td class="govuk-table__cell" style="text-wrap: nowrap;">QQ 12 34 12 G5</td>
           <td class="govuk-table__cell">Charlotte Davies</td>
           <td class="govuk-table__cell">High</td>
           <td class="govuk-table__cell">

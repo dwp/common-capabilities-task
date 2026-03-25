@@ -9,7 +9,7 @@ metadata:
     gitlab.com/project-slug: dwp/user-centred-design/common-capabilities-task-prototype
 
   labels:
-    dwp.gov.uk/version: 1.2.7
+    dwp.gov.uk/version: 1.2.8
     dwp.gov.uk/license: unknown
 
     dwp.gov.uk/last-verified.by: Kirill Titov
