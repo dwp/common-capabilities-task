@@ -1,0 +1,77 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+   <header class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div style="flex-basis: 50%;" class="dwp-header__service-name dwp-header__service-name--with-action">
+        <a href="/" class="dwp-header__link">{{ serviceName }}</a>
+      </div>
+      <div class="dwp-header__service-action">
+        {# <a href="/" class="dwp-header__link">National Mailbox: working as a Team Leader</a> #}
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Team Leader</a></p>
+      </div>
+    </div>
+  </header> 
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container govuk-!-margin-bottom-3'
+      }) }}
+  </div>
+{% endblock %}
+
+{% block pageTitle %}
+  Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "../../select-user-admin"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Team Leader dashboard</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="#">View and manage your team</a></h2>
+    <p>Add or remove agents and team leaders to or from your teams.</p> 
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="team-parameters">Management information (MI)</a></h2>
+      <p>View MI for your teams.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">View and manage tasks</a></h2>
+      <p>View and manage tasks for your team.</p>
+    </div>
+</div>
+
+  {# <div class="govuk-width-container">
+    &nbsp;
+      <div class="box">
+        <h2 class="govuk-heading-m"><a href="#">Agent dashboard</a></h2>
+        <p>Work as an agent.</p>
+      </div>
+  </div> #}
+
+&nbsp;
+
+{% endblock %}
+
+

@@ -2,15 +2,26 @@ module.exports = router => {
 
 // End-to-end prototype 
 
-router.post('/end-to-end-prototype/select-user-admin', (req, res) => {
+router.post('/end-to-end-prototype/v1/admin/select-user-admin', (req, res) => {
 	if (req.session.data.endToEndPrototype.selectYourRole == 'Admin'){
-		res.redirect("v1/admin/home-admin")
+		res.redirect("home-admin")
 	} else if (req.session.data.endToEndPrototype.selectYourRole == 'Service manager'){
-		res.redirect("v1/service-manager/home-service-manager")
+		res.redirect("../service-manager/home-service-manager")
 	} else if (req.session.data.endToEndPrototype.selectYourRole == 'Team leader') {
-		res.redirect("v1/team-leader/home-team-leader")
+		res.redirect("../team-leader/home-team-leader")
 	} else {
-		res.redirect("v1/agents/home-agent")
+		res.redirect("../agents/home-agent")
+	}
+})
+
+
+router.post('/end-to-end-prototype/v1/service-manager/select-user-sr', (req, res) => {
+	if (req.session.data.endToEndPrototype.selectYourRole.sr == 'Service manager'){
+		res.redirect("home-service-manager_as_sr")
+	} else if (req.session.data.endToEndPrototype.selectYourRole.sr == 'Team leader') {
+		res.redirect("home-team-leader_as_sr")
+	} else {
+		res.redirect("home-agent_as_sr")
 	}
 })
 

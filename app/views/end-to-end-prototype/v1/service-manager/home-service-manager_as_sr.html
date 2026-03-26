@@ -1,0 +1,79 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+  <header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+    </div>
+ 
+  </div>
+</header>
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+{% endblock %}
+
+{% block pageTitle %}
+  Service manager home
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../select-user-admin"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Service Manager dashboard</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="#">View and manage tasks</a></h2>
+    <p>View and manage tasks for Claims Org B over a given date range.</p> 
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="manage-org-b">Manage Claims Org B setup</a></h2>
+      <p>Add or manage agents and groups, or view tasks and attributes in Claim Org B.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Management Information (MI)</a></h2>
+      <p>View MI for Org B.</p>
+    </div>
+</div>
+
+{# <div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Agent dashboard</a></h2>
+      <p>Work as an agent.</p>
+    </div>
+</div> #}
+
+
+&nbsp;
+
+{% endblock %}
+
+
