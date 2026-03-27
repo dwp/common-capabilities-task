@@ -11,11 +11,25 @@ Team leader home
 
 {% block content %}
 
-<div class="govuk-grid-row" data-testid="grid-row">
+{% if data['changeAttributes'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have changed James Burton's individual attributes.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+<div class="govuk-grid-row">
+
   <div class="govuk-grid-column-one-third">
-    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" aria-label="Quick reference">
+
+    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" style="margin-left: 0;" aria-label="Quick reference">
       <dl class="dwp-quick-reference__block">
-        
           <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
           <dd class="dwp-quick-reference__primary">James Burton<br><span class="dwp-quick-reference__secondary">Staff number: 0987654</span></dd>
             <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">email:</dt>
@@ -38,8 +52,10 @@ Team leader home
           </dd>
       </dl>
     </section>
+
   </div>
-  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+
+  <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">User profile</h1>
     
     <p class="govuk-body-m">
@@ -179,16 +195,6 @@ Team leader home
       <a href="change-groups" class="govuk-link ">Change the groups James Burton belongs to</a>
     </div>
     
-    <!-- <h2 class="govuk-heading-m">Groups</h2>
-    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
-      <div class="govuk-summary-list__row">
-        <dd class="govuk-summary-list__value">This agent isn't part of any groups yet</dd>
-      </div>
-    </dl>
-    <div class="govuk-!-static-margin-bottom-9">
-      <a href="add-groups" class="govuk-link ">Add agent to groups</a>
-    </div> 
-    <h2 class="govuk-heading-m">Team<br><span class="govuk-hint">An agent can only be in one team</span></h2> -->
     <table class="govuk-table govuk-!-static-margin-bottom-2">
       <caption class="govuk-table__caption govuk-table__caption--m">Teams and roles <br>
         <span class="govuk-hint">A single user can have both agent access and team leader access in DWP Task. 
@@ -246,14 +252,13 @@ Team leader home
     <div class="govuk-!-static-margin-bottom-6">
       <a href="change-attributes" class="govuk-link ">Change individual matching criteria</a>
     </div>
-  </div>
-    
-      <div class="govuk-button-group" data-testid="button-group-id">
-        <a class="govuk-button govuk-button--warning" href="remove-agent" >Remove from org unit</a>
-        <a class="govuk-button govuk-button--secondary" href="manage-a-team" >Back</a>
-      </div>
-    
-  </div>
+
+    <div class="govuk-button-group" data-testid="button-group-id">
+      <a class="govuk-button govuk-button--warning" href="remove-agent">Remove from org unit</a>
+      <a class="govuk-button govuk-button--secondary" href="manage-a-team" >Back</a>
+    </div>
+
+  </div> {# end of two thirds #}
   
 </div>
 
