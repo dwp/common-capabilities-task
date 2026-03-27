@@ -1,0 +1,206 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div class="govuk-grid-column-one-third">
+
+    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" aria-label="Quick reference">
+      <dl class="dwp-quick-reference__block">
+        
+          <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-quick-reference__primary">James Burton<br><span class="dwp-quick-reference__secondary">Staff number: 0987654</span></dd>
+            <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">email:</dt>
+            <dd class="dwp-quick-reference__secondary">james.burton@dwp.gov.uk</dd>
+            <dt class="dwp-quick-reference__label">You can work on these tasks:</dt>
+            <dd class="dwp-quick-reference__status">
+              <strong class="govuk-tag dwp-quick-reference__status--white">
+                jmeter-test-task-18255
+              </strong>
+            </dd>
+          <dd class="dwp-quick-reference__status">
+           <strong class="govuk-tag dwp-quick-reference__status--white">
+              jmeter-test-task-18256
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              jmeter-test-task-18257
+            </strong>
+          </dd>
+          {# <dd class="dwp-quick-reference__secondary">No tasks are available due to your current profile setup. Speak to your team leader.</dd> #}
+      </dl>
+  </section>
+  </div>
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">My profile</h1>
+    
+    <p>The attributes of the groups you belong to, plus your individual attributes, determine which tasks you can claim.</p>
+    <p>
+      If your groups or teams look wrong on this screen, speak to your team leader. 
+    </p>
+
+    <h2 class="govuk-heading-m">Groups</h2>
+    <p>These are the groups that you belong to.</p>
+    
+    <dl class="govuk-summary-list govuk-!-static-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-full" aria-label="15-10-2025-agent-group">
+          15-10-2025-agent-group
+          <details class="govuk-details govuk-!-margin-bottom-1 govuk-!-margin-top-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Attributes of this group
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-!-static-margin-bottom-0">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>weekends</div>
+                    <div>evenings</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>aa</div>
+                    <div>g6</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="language">language</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>spanish</div>
+                    <div>welsh</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="new-agent-group">
+          new-agent-group
+          <details class="govuk-details govuk-!-margin-bottom-1 govuk-!-margin-top-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Attributes of this group
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-!-static-margin-bottom-0">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>weekends</div>
+                    <div>evenings</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>aa</div>
+                    <div>g6</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="language">language</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>spanish</div>
+                    <div>welsh</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+       
+      </div>
+    </dl>
+    
+
+    <table class="govuk-table govuk-!-static-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">Team and role 
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Team</th>
+          <th scope="col" class="govuk-table__header">Role</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Admin team</th>
+          <td class="govuk-table__cell">Agent</td>
+        </tr>
+      </tbody>
+    </table>
+   
+    <a class="govuk-button govuk-button--secondary" href="home-agent">Back</a>
+
+{% endblock %}
+
+
