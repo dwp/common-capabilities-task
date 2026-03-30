@@ -1,0 +1,62 @@
+{% extends "layouts/main.html" %}
+
+{% set containerClasses = "app-width-container--even-wide" %}
+
+{% set pageName = "View and manage tasks" %}
+
+{% block beforeContent %} 
+  {{ govukBackLink({
+    text: "Back",
+    href: "home"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ pageName }}</h1>
+  </div>
+</div>
+  
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-quarter">
+    {% include "teams/view-and-manage-tasks/_includes/filter-panel-filters-not-selected.njk" %}
+  </div>
+  <div class="govuk-grid-column-three-quarters">
+    
+    <div class="govuk-grid-row" style="display: flex; align-items: flex-end;">
+
+      <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-!-margin-bottom-2">Showing no tasks, select filters to see...</p>
+      </div>
+
+      <div class="govuk-grid-column-one-third app-right-align">
+        <div>
+          <label class="govuk-label" for="sort">
+            Show results
+          </label>
+            <select class="govuk-select" id="sort" name="sort">
+              <option>10 per page</option>
+              <option>20 per page</option>
+              <option>30 per page</option>
+            </select>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+   
+{% endblock %}
+
+
+{% block scripts %}
+  {{super()}}
+  <script>
+    accessibleAutocomplete.enhanceSelectElement({
+      selectElement: document.querySelector('.taskTypeAutocomplete')
+    })
+  </script>
+{% endblock %}

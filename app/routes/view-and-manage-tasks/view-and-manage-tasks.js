@@ -36,8 +36,8 @@ router.post('/teams/view-and-manage-tasks/version-1/change-priority', (req, res)
 		res.redirect("task")
 })
 
-router.post('/teams/view-and-manage-tasks/version-3/view-and-manage-tasks', (req, res) => {
-		res.redirect("view-and-manage-tasks-different-resultes")
+router.post('/teams/view-and-manage-tasks/version-3/view-and-manage-tasks-no-results', (req, res) => {
+		res.redirect("view-and-manage-tasks")
 })
 
 router.post('/teams/view-and-manage-tasks/version-1/find-tasks-v4', (req, res) => {
