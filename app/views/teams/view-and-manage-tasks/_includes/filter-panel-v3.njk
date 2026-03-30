@@ -184,13 +184,25 @@
     },
     values: data.viewAndManageTasks.v1.status,
     items: [
-      {
-          value: "Active",
-          text: "Active"
+        {
+          value: "Unallocated",
+          text: "Unallocated"
         },
         {
           value: "Allocated",
           text: "Allocated"
+        },
+        {
+          value: "Active",
+          text: "Active"
+        },
+        {
+          value: "On hold",
+          text: "On hold"
+        },
+        {
+          value: "Failed",
+          text: "Failed"
         },
         {
           value: "Cancelled",
@@ -199,18 +211,6 @@
         {
           value: "Completed",
           text: "Completed"
-        },
-        {
-          value: "Failed",
-          text: "Failed"
-        },
-        {
-          value: "On hold",
-          text: "On hold"
-        },
-        {
-          value: "Unallocated",
-          text: "Unallocated"
         }
     ]
   }) }}
@@ -456,14 +456,14 @@
         }
         ]
       },
-       {
+      {
         heading: {
           text: "Date range option"
         },
         items: [{
           text: "Created date"
         }
-        ]
+      ]
       }
     ]
   },
