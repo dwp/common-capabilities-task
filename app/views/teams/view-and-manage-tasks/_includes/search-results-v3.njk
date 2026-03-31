@@ -29,10 +29,10 @@
           <th scope="col" class="govuk-table__header" aria-sort="High">Created</th>
           <th scope="col" class="govuk-table__header" aria-sort="High">Due date</th>
           <th scope="col" class="govuk-table__header" style="text-wrap: nowrap;">Task type</th>
-          <th scope="col" class="govuk-table__header" style="width: 115px;">NINo</th>
+          <th scope="col" class="govuk-table__header" style="text-wrap: nowrap;">NINo</th>
           <th scope="col" class="govuk-table__header">Agent</th>
-          <th scope="col" class="govuk-table__header">Priority</th>
-          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header sortabl" aria-sort="none" data-sort="priority">Priority</th>
+          <th scope="col" class="govuk-table__header sortabl" aria-sort="none" data-sort="status">Status</th>
           <th scope="col" class="govuk-table__header">Team</th>
           <th scope="col" class="govuk-table__header">Action</th>
         </tr>
@@ -40,11 +40,11 @@
       <tbody class="govuk-table__body">
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">14 Jan 2026 </td>
+          <td class="govuk-table__cell">14 Jan 2026</td>
           <td class="govuk-table__cell" data-sort-value="">
             {{govukTag({
               text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
+              classes: "govuk-tag--red govuk-!-margin-bottom-1"
             })}}<br>
             17 Jan 2026 10:11
           </td>
@@ -61,7 +61,7 @@
           <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
             })}}<br>
             15 Jan 2026 9:25
           </td>
@@ -74,41 +74,37 @@
           <td class="govuk-table__cell" data-sort-value="">
             {{govukTag({
               text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
+              classes: "govuk-tag--red govuk-!-margin-bottom-1"
             })}}<br>
             18 Jan 2026 10:14</td>
-          <td class="govuk-table__cell">Type A</td>
+          <td class="govuk-table__cell">Very long name of a task type</td>
           <td class="govuk-table__cell" style="text-wrap: nowrap;">QQ 12 34 12 G5</td>
           <td class="govuk-table__cell">Charlotte Davies</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell" data-sort-value="2">High</td>
           <td class="govuk-table__cell">
             {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Completed",
+              classes: "govuk-tag--green govuk-!-margin-bottom-1"
             })}}<br>
             17 Jan 2026 9:25
           </td>
-          <td class="govuk-table__cell" data-sort-value="">Processing team 2</td>
+          <td class="govuk-table__cell" data-sort-value="">Super very long name of a team</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value=""><a href="#" class="govuk-link">View</a></td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">16 Jan 2026</td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026  09:28</td>
           <td class="govuk-table__cell">Type A</td>
           {# <td class="govuk-table__cell " data-sort-value="">HG568833V</td> #}
           <td class="govuk-table__cell">GH 12 34 56 B8</td>
           <td class="govuk-table__cell">Daniel Foster</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell"data-sort-value="1">Critical</td>
           <td class="govuk-table__cell">
              {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Active",
+              classes: "govuk-tag--green govuk-!-margin-bottom-1"
             })}}<br>
             17 Jan 2026 9:25
           </td>
@@ -119,20 +115,16 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">16 Jan 2026</td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
           <td class="govuk-table__cell">Not applicable</td>
           <td class="govuk-table__cell">Edward Gray</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell"data-sort-value="3">Medium</td>
           <td class="govuk-table__cell">
             {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Allocated",
+              classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -143,21 +135,17 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">16 Jan 2026</td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
           {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
           <td class="govuk-table__cell">HT 24 34 12 G5</td>
           <td class="govuk-table__cell">George Harris</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell"data-sort-value="4">Low</td>
           <td class="govuk-table__cell">
             {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Unnallocated",
+              classes: "govuk-tag--grey govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -168,21 +156,17 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">16 Jan 2026</td>
           <td class="govuk-table__cell">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type F</td>
           {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
           <td class="govuk-table__cell">Not applicable</td>
           <td class="govuk-table__cell">Henry Mitchell</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell"data-sort-value="5">None</td>
           <td class="govuk-table__cell">
             {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Failed",
+              classes: "govuk-tag--grey govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -191,22 +175,18 @@
         </tr>
 
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">17 Jan 2026 </td>
+          <td class="govuk-table__cell">17 Jan 2026</td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
           <td class="govuk-table__cell">Not applicable</td>
           <td class="govuk-table__cell">James Palmer</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell" data-sort-value="2">High</td>
           <td class="govuk-table__cell">
             {{govukTag({
-              text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              text: "Cancelled",
+              classes: "govuk-tag--grey govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -217,21 +197,17 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">17 Jan 2026 </td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
           {# <td class="govuk-table__cell " data-sort-value="">JC568833V</td> #}
           <td class="govuk-table__cell">Not applicable</td>
           <td class="govuk-table__cell">Oliver Reed</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell" data-sort-value="2">High</td>
           <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -242,20 +218,16 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">17 Jan 2026 </td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
           <td class="govuk-table__cell">Not applicable</td>
           <td class="govuk-table__cell">Sophie Turner</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell" data-sort-value="2">High</td>
           <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
@@ -266,24 +238,20 @@
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">17 Jan 2026 </td>
           <td class="govuk-table__cell" data-sort-value="">
-            {{govukTag({
-              text: "Overdue",
-              classes: "govuk-tag--red govuk-!-margin-top-1"
-            })}}<br>
             19 Jan 2026 16:27
           </td>
           <td class="govuk-table__cell">Type A</td>
           <td class="govuk-table__cell">Not applicable</td>
-          <td class="govuk-table__cell">Thomas Walker</td>
-          <td class="govuk-table__cell">High</td>
+          <td class="govuk-table__cell">None</td>
+          <td class="govuk-table__cell" data-sort-value="5">None</td>
           <td class="govuk-table__cell">
             {{govukTag({
               text: "On hold",
-              classes: "govuk-tag--yellow govuk-!-margin-top-1"
+              classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
             })}}<br>
             17 Nov 2025 9:25<br>
           </td>
-          <td class="govuk-table__cell">Processing team 2</td>
+          <td class="govuk-table__cell">None</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#" class="govuk-link">View</a></td>
         </tr>
 
