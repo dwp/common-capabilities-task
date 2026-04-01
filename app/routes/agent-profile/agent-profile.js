@@ -7,5 +7,9 @@ router.post('/spikes/agent-profile/service-manager-v2/manage-org-unit/change-att
 	res.redirect("agent-details-sm")
 })
 
+router.post('/spikes/agent-profile/team-leader/change-groups', (req, res) => {
+	res.redirect("agent-details-mt")
+})
+
 
 }

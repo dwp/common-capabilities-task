@@ -11,15 +11,28 @@ Team leader home
 
 {% block content %}
 
+{% if data['changeGroups'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have changed the groups Tim Cook belongs to.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "info"
+  }) }}
+{% endif %}
+
 <div class="govuk-grid-row" data-testid="grid-row">
   <div class="govuk-grid-column-one-third">
-    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" aria-label="Quick reference">
+    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" style="margin-left: 0;">
       <dl class="dwp-quick-reference__block">
         
           <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
-          <dd class="dwp-quick-reference__primary">James Burton<br><span class="dwp-quick-reference__secondary">Staff number: 0987654</span></dd>
+          <dd class="dwp-quick-reference__primary">Tim Cook<br><span class="dwp-quick-reference__secondary">Staff number: 0987654</span></dd>
             <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">email:</dt>
-            <dd class="dwp-quick-reference__secondary">james.burton@dwp.gov.uk</dd>
+            <dd class="dwp-quick-reference__secondary">tim.cook@dwp.gov.uk</dd>
             <dt class="dwp-quick-reference__label">Can work on these tasks:</dt>
             <dd class="dwp-quick-reference__status">
             <strong class="govuk-tag dwp-quick-reference__status--white">
@@ -43,9 +56,8 @@ Team leader home
     <h1 class="govuk-heading-l">User profile</h1>
     
     <p class="govuk-body-m">
-      You can change the groups that James Burton belongs to.
- 
-The attributes of the groups, plus individual attributes, determine which tasks James Burton can claim.
+      You can change the groups that Tim Cook belongs to. 
+      The attributes of the groups, plus individual attributes, determine which tasks Tim Cook can claim.
     </p>
     <h2 class="govuk-heading-m">Groups<br><span class="govuk-hint">These are the groups that James Burton currently belongs to. </span></h2>
     
@@ -178,7 +190,7 @@ The attributes of the groups, plus individual attributes, determine which tasks 
       </div>
     </dl>
     <div class="govuk-!-static-margin-bottom-9 govuk-!-static-margin-top-2">
-      <a href="change-groups" class="govuk-link ">Change the groups James Burton belongs to</a>
+      <a href="change-groups" class="govuk-link ">Change the groups Tim Cook belongs to</a>
     </div>
     
     <!-- <h2 class="govuk-heading-m">Groups</h2>
@@ -212,41 +224,25 @@ The attributes of the groups, plus individual attributes, determine which tasks 
     <div class="govuk-!-static-margin-bottom-9">
       {# <a href="change-team-tm" class="govuk-link ">Change team and role</a> #}
     </div>
-    <!-- <div>
-    <h2 class="govuk-heading-m">Individual attributes of James Burton</h2>
-    <dl class="govuk-summary-list govuk-!-static-margin-bottom-3">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
-        <dd class="govuk-summary-list__value">
-          <div>weekends</div>
-          <div>evenings</div>
-        </dd>
-        
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
-        <dd class="govuk-summary-list__value">
-          <div>aa</div>
-          <div>g6</div>
-        </dd>
-        
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key" aria-label="language">language</dt>
-        <dd class="govuk-summary-list__value">
-          <div>spanish</div>
-          <div>welsh</div>
-        </dd>
-      </div>
-    </dl>
-    <div class="govuk-!-static-margin-bottom-6">
-      <a href="change-attributes" class="govuk-link ">Change individual matching criteria</a>
-    </div>
-  </div> -->
     
-      <div class="govuk-button-group" data-testid="button-group-id">
-        <a class="govuk-button govuk-button--warning" href="remove-agent" >Remove from team</a>
-        <a class="govuk-button govuk-button--secondary" href="manage-a-team" >Back</a>
+   
+
+      <div class="govuk-button-group">
+        {% if data['changeGroups'] == "yes" %}
+          {{ govukButton({
+            text: "Confirm changes"
+          }) }}
+        {% endif %}
+        {{ govukButton({
+          text: "Remove from team",
+          classes: "govuk-button--warning"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary"
+        }) }}
+      
       </div>
     
   </div>

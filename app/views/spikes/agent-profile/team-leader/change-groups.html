@@ -14,11 +14,11 @@ Team leader home
 
 <div class="govuk-grid-row" data-testid="grid-row">
   <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">Change the groups James Burton belongs to</h1>
+    <h1 class="govuk-heading-l">Change the groups Tim Cook belongs to</h1>
     <div class="govuk-form-group" data-testid="form-group-id">
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id">
-          <h2 class="govuk-fieldset__heading">Groups in Benefits One QA<br><span class="govuk-hint">Select only the groups you want James Burton to belong to. This will change which tasks they can claim. </span></h2>
+          <h2 class="govuk-fieldset__heading">Groups in Benefits One QA<br><span class="govuk-hint">Select only the groups you want Tim Cook to belong to. This will change which tasks they can claim. </span></h2>
           <span class="gov-hint"></span>
         </legend>
         <div class="govuk-hint"></div>
@@ -43,11 +43,23 @@ Team leader home
       </fieldset>
     </div>
     
-      <div class="govuk-button-group" data-testid="button-group-id">
-        <a class="govuk-button"  href="agent-details-mt">Confirm</a>
-        <a class="govuk-button govuk-button--secondary" href="agent-details-mt.html">Cancel</a>
+    <form method="post" novalidate>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          attributes: {
+              name: "changeGroups",
+              value: "yes"
+            }
+        }) }}
+      
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary"
+        }) }}
       </div>
-   
+   </form>
+
   </div>
 </div>
 
