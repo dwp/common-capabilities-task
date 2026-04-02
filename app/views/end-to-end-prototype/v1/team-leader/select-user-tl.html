@@ -1,4 +1,4 @@
-{% extends "layouts/main-team-admin.html" %}
+{% extends "layouts/main-team-service-manager.html" %}
 
 {% set pageName = "Select the role you want to work as" %}
 
@@ -20,8 +20,8 @@
       <form method="post" novalidate>
 
         {{ govukRadios({
-          id: "endToEndPrototype[selectYourRole]",
-          name: "endToEndPrototype[selectYourRole]",
+          id: "endToEndPrototype[selectYourRole][sr]",
+          name: "endToEndPrototype[selectYourRole][sr]",
           fieldset: {
             legend: {
               text: pageName,
@@ -29,16 +29,8 @@
               classes: "govuk-fieldset__legend--l"
             }
           },
-          value: data.endToEndPrototype.selectYourRole,
+          value: data.endToEndPrototype.selectYourRole.sr,
           items: [
-            {
-              value: "Admin",
-              text: "Admin"
-            },
-            {
-              value: "Service manager",
-              text: "Service manager"
-            },
             {
               value: "Team leader",
               text: "Team leader"
