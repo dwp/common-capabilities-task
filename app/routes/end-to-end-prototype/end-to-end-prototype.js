@@ -26,4 +26,13 @@ router.post('/end-to-end-prototype/v1/service-manager/select-user-sr', (req, res
 })
 
 
+router.post('/end-to-end-prototype/v1/team-leader/select-user-tl', (req, res) => {
+	if (req.session.data.endToEndPrototype.selectYourRole.tlOrAg == 'team leader'){
+		res.redirect("home-team-leader")
+	} else {
+		res.redirect("../agents/home-agent")
+	}
+})
+
+
 }

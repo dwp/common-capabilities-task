@@ -1,0 +1,77 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Close task
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+           Finish task
+        </h1>
+      </legend>
+      <p>Finishing the task means it will no longer be available to work on.</p>
+
+      {{ govukRadios({
+        name: "",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        value: data.add.later,
+        items: [
+          {
+            value: "Completed",
+            text: "Completed",
+            hint: {
+            text: "You have successfully completed the task."
+            }
+          },
+          {
+            value: "Failed",
+            text: "Failed",
+            hint: {
+            text: "This task cannot be closed."
+            }
+          },
+          {
+            value: "Cancelled",
+            text: "Cancelled",
+            hint: {
+            text: "This task was created in error or is no longer appropriate."
+            }
+          }
+        ]
+      }) }}
+      
+    </fieldset>
+    
+  </div>
+</div>
+</div>
+
+  {{ govukWarningText({
+    text: "Warning You will not be able to undo this action.",
+    iconFallbackText: "Warning"
+  }) }}
+
+<div class="govuk-button-group">
+    <a href="#" "=""">
+    <button class="govuk-button" data-module="govuk-button">Confirm</button>
+    <a href="javascript:window.history.back()"</a>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Back
+    </button>
+  {% endblock %}
+

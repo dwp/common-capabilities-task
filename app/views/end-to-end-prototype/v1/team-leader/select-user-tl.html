@@ -20,8 +20,8 @@
       <form method="post" novalidate>
 
         {{ govukRadios({
-          id: "endToEndPrototype[selectYourRole][sr]",
-          name: "endToEndPrototype[selectYourRole][sr]",
+          id: "endToEndPrototype[selectYourRole][tlOrAg]",
+          name: "endToEndPrototype[selectYourRole][tlOrAg]",
           fieldset: {
             legend: {
               text: pageName,
@@ -29,14 +29,14 @@
               classes: "govuk-fieldset__legend--l"
             }
           },
-          value: data.endToEndPrototype.selectYourRole.sr,
+          value: data.endToEndPrototype.selectYourRole.tlOrAg,
           items: [
             {
-              value: "Team leader",
+              value: "team leader",
               text: "Team leader"
             },
             {
-              value: "Agent",
+              value: "agent",
               text: "Agent"
             }
           ]
