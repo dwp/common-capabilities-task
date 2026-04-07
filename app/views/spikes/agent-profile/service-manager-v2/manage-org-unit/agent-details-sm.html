@@ -11,6 +11,19 @@ Team leader home
 
 {% block content %}
 
+{% if data['changeGroupsJames'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have changed James Burton's groups.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "info"
+  }) }}
+{% endif %}
+
 {% if data['changeAttributes'] == "yes" %}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
@@ -23,6 +36,8 @@ Team leader home
     type: "info"
   }) }}
 {% endif %}
+
+
 
 <div class="govuk-grid-row">
 
@@ -250,13 +265,28 @@ Team leader home
       </div>
     </dl>
     <div class="govuk-!-static-margin-bottom-6">
-      <a href="change-attributes" class="govuk-link ">Change individual matching criteria</a>
+      <a href="change-attributes" class="govuk-link">Change individual matching criteria</a>
     </div>
 
-    <div class="govuk-button-group" data-testid="button-group-id">
-      <a class="govuk-button govuk-button--warning" href="remove-agent">Remove from org unit</a>
-      <a class="govuk-button govuk-button--secondary" href="manage-a-team" >Back</a>
-    </div>
+    
+     <div class="govuk-button-group">
+        {% if data['changeGroupsJames'] == "yes" or data['changeAttributes'] %}
+          {{ govukButton({
+            text: "Confirm changes"
+          }) }}
+        {% endif %}
+
+        {{ govukButton({
+          text: "Remove from org unit",
+          classes: "govuk-button--warning"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary"
+        }) }}
+      
+      </div>
 
   </div> {# end of two thirds #}
   

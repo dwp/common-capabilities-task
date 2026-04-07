@@ -42,11 +42,26 @@ Team leader home
         </div>
       </fieldset>
     </div>
-    
-      <div class="govuk-button-group" data-testid="button-group-id">
-        <a class="govuk-button"  href="agent-details-sm">Continue</a>
-        <a class="govuk-button govuk-button--secondary" href="agent-details-sm.html">Cancel</a>
+
+     <form method="post" novalidate>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          attributes: {
+              name: "changeGroupsJames",
+              value: "yes"
+            }
+        }) }}
+      
+        {{ govukButton({
+          text: "Cancel",
+          classes: "govuk-button--secondary",
+          href: "agent-details-sm"
+        }) }}   
       </div>
+
+    </form>
    
   </div>
 </div>

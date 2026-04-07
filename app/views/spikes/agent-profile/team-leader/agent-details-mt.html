@@ -225,7 +225,6 @@ Team leader home
       {# <a href="change-team-tm" class="govuk-link ">Change team and role</a> #}
     </div>
     
-   
 
       <div class="govuk-button-group">
         {% if data['changeGroups'] == "yes" %}
@@ -233,10 +232,11 @@ Team leader home
             text: "Confirm changes"
           }) }}
         {% endif %}
-        {{ govukButton({
+
+        {# {{ govukButton({
           text: "Remove from team",
           classes: "govuk-button--warning"
-        }) }}
+        }) }} #}
       
         {{ govukButton({
           text: "Back",
