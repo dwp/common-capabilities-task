@@ -1,0 +1,116 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "Manage agents on Team A" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+{% if data.removindAgentFromTeam.agentRemoveAndTasks == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have removed agent 01 from the team A.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+    <div class="govuk-form-group govuk-!-margin-bottom-2">
+      <label class="govuk-label govuk-!-font-weight-bold" for="one-half">
+        Find an agent
+      </label>
+      <div id="one-half-hint" class="govuk-hint">Enter name, staff number or email</div>
+      <input class="govuk-input govuk-!-width-one-half" id="one-half" name="oneHalf" type="text">
+    </div>
+
+    {{ govukButton({
+      text: "Add",
+      classes: "govuk-button--secondary"
+    }) }}
+
+    {{ govukTable({
+      caption: "Agents",
+      captionClasses: "govuk-table__caption--m",
+      firstCellIsHeader: false,
+      classes: "govuk-!-margin-top-6 govuk-!-margin-bottom-3",
+      head: [
+        {
+          text: "Name"
+        },
+        {
+          text: "Staff number"
+        },
+        {
+          text: "Action",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            html: 'agent 01 <br> <span style="color:	#505a5f;">agent_01@dwp.gov.uk</span>'
+          },
+          {
+            text: "100100101"
+          },
+          {
+            html: '<a href="remove-agent-01" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ] if not data.removindAgentFromTeam.agentRemoveAndTasks,
+        [
+          {
+            html: 'shared 02 <br> <span style="color:	#505a5f;">agent_02@dwp.gov.uk</span>'
+          },
+          {
+            text: "100100102"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Remove</a>',
+            format: "numeric"
+          }
+        ]       
+      ]
+    }) }}
+
+  
+    
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary"
+      }) }}
+    
+    </div>
+    
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+

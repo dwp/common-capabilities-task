@@ -18,8 +18,8 @@
       <form method="post" novalidate>
 
         {{ govukRadios({
-          id: "teams[selectUser]",
-          name: "teams[selectUser]",
+          id: "teams[selectJourney]",
+          name: "teams[selectJourney]",
           fieldset: {
             legend: {
               text: pageName,
@@ -27,7 +27,7 @@
               classes: "govuk-fieldset__legend--l"
             }
           },
-          value: data.teams.selectUser,
+          value: data.teams.selectJourney,
           items: [
             {
               value: "one",

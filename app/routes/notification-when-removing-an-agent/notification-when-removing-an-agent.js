@@ -88,6 +88,22 @@ router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service
 	}
 })
 
+router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service-manager/select-journey', (req, res) => {
+	if (req.session.data.selectJourney == 'one'){
+		res.redirect("home")
+	} else {
+		res.redirect("has-tasks/home")
+	}
+})
+
+router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service-manager/has-tasks/remove-agent-01', (req, res) => {
+	if (req.session.data.removindAgentFromTeam.agentRemoveAndTasks == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("manage-agents")
+	}
+})
+
 
 
 

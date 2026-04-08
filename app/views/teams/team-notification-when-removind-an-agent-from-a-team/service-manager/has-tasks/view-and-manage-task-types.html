@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "Manage teams" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {{ mojSearch({
+          action: "#",
+          method: "post",
+          classes: "govuk-!-margin-bottom-4",
+          input: {
+            id: "search",
+            name: "search"
+          },
+          label: {
+            text: "Filter teams",
+            classes: "govuk-!-font-weight-bold"
+          },
+          button: {
+            text: "Filter",
+            classes: "govuk-button--secondary govuk-!-margin-bottom-0 govuk-!-margin-left-1"
+          }
+        }) }}
+
+    </div>
+  </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+   
+
+    {{ govukTable({
+      caption: "",
+      captionClasses: "govuk-table__caption--l",
+      firstCellIsHeader: false,
+      head: [
+        {
+          text: "Team name"
+        },
+        {
+          text: "Agents"
+        },
+        {
+          text: "Action",
+          format: "numeric"
+        }
+      ],
+      rows: [
+        [
+          {
+            text: "Team A",
+            classes: "govuk-table__header"
+          },
+          {
+            text: "2"
+          },
+          {
+            html: '<a href="decision-making-team" class="govuk-link">Manage</a>' + ' | ' + '<a href="#" class="govuk-link">Delete</a>',
+            format: "numeric"
+          }
+        ],
+        [
+          {
+            text: "Team B",
+            classes: "govuk-table__header"
+          },  
+          {
+            text: "0"
+          },
+          {
+            html: '<a href="#" class="govuk-link">Manage</a> | <a href="#" class="govuk-link">Delete</a>',
+            format: "numeric"
+          }
+        ],
+        [
+        {
+          text: "Team C",
+          classes: "govuk-table__header"
+        },  
+        {
+          text: "5"
+        },
+        {
+          html: '<a href="#" class="govuk-link">Manage</a> | <a href="#" class="govuk-link">Delete</a>',
+          format: "numeric"
+        }
+      ]
+      ]
+    }) }}  
+     
+    </div> {# grid col close #}
+</div> {# grid row close #}
+
+{% endblock %}
+
+
