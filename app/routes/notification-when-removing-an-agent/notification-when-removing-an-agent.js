@@ -89,10 +89,10 @@ router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service
 })
 
 router.post('/teams/team-notification-when-removind-an-agent-from-a-team/service-manager/select-journey', (req, res) => {
-	if (req.session.data.selectJourney == 'one'){
-		res.redirect("home")
-	} else {
+	if (req.session.data.teams.selectJourney == 'one'){
 		res.redirect("has-tasks/home")
+	} else {
+		res.redirect("home")
 	}
 })
 
