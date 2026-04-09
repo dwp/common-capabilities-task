@@ -20,6 +20,8 @@
       </legend>
       <p>If you are unable to work on this task right now and need another agent to complete it, you should return it to the queue.</p>
 
+      <form method="post" novalidate>
+        
       {{ govukRadios({
         name: "agent[returnTaskToQueue]",
         fieldset: {
@@ -74,7 +76,7 @@
   </div>
 </div>
 </div>
-  <form method="post" novalidate>
+
     <div class="govuk-button-group">
 
       {{ govukButton({
