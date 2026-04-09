@@ -34,5 +34,11 @@ router.post('/end-to-end-prototype/v1/team-leader/select-user-tl', (req, res) =>
 	}
 })
 
+// Agent
+
+router.post('/end-to-end-prototype/v1/agents/return-to-queue', (req, res) => {
+	res.redirect("agent-tasks")
+})
+
 
 }

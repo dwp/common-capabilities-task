@@ -1,0 +1,95 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Return task to queue
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+           Return task to queue
+        </h1>
+      </legend>
+      <p>If you are unable to work on this task right now and need another agent to complete it, you should return it to the queue.</p>
+
+      {{ govukRadios({
+        name: "agent[returnTaskToQueue]",
+        fieldset: {
+          legend: {
+            text: "Would you like to put this task back in the queue?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.agent.returnTaskToQueue,
+        items: [
+          {
+            value: "Return",
+            text: "Return",
+            hint: {
+            text: "You may get this task again"
+            }
+          },
+          {
+            value: "Put on hold",
+            text: "Put on hold",
+            hint: {
+            text: "Further work required"
+            }
+          },
+          {
+            value: "Return and block",
+            text: "Return and block",
+            hint: {
+            text: "I do not have the right skills or training. You will not get this task again"
+            }
+          },
+          {
+            value: "Return and block",
+            text: "Return and block",
+            hint: {
+            text: "Categorised under wrong workstream"
+            }
+          },
+          {
+            value: "Return and block",
+            text: "Return and block",
+            hint: {
+            text: "Should be treated as a complaint"
+            }
+          }
+        ]
+      }) }}
+      
+    </fieldset>
+    
+  </div>
+</div>
+</div>
+  <form method="post" novalidate>
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-button--secondary",
+        href: "task"
+      }) }}
+
+    </div>
+  </form>
+
+
+{% endblock %}
+

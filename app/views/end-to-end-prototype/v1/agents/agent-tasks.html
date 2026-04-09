@@ -13,6 +13,19 @@
 
 {% block content %}
 
+{% if data['agentRemove'] == "yes" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Confirmation message
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
 <h1 class="govuk-heading-l">{{pageName}}</h1>
 
 <div class="govuk-button-group">
