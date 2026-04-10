@@ -10,13 +10,19 @@
   }) }}
 {% endblock %}
 
+ 
 
 {% block content %}
 
-{% if data['agentRemove'] == "yes" %}
+{% if data.agent.returnTaskToQueue %}
+
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
-      Confirmation message
+      {% if data.agent.returnTaskToQueue == "hold" %}
+        Task put on hold
+      {% else %}
+        Task returned to queue
+      {% endif %}
     </h3>
   {% endset %}
 
@@ -24,7 +30,9 @@
     html: html,
     type: "success"
   }) }}
+
 {% endif %}
+
 
 <h1 class="govuk-heading-l">{{pageName}}</h1>
 

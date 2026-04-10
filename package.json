@@ -3,13 +3,11 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start"
-    },
+  },
   "engines": {
     "node": "22.x",
     "npm": "10.x"
   },
-
-
   "dependencies": {
     "@dwp/dwp-frontend": "3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -19,6 +17,7 @@
     "accessible-autocomplete": "^2.0.4",
     "body-parser": "^2.2.0",
     "braces": "^3.0.3",
+    "connect-flash": "^0.1.1",
     "cross-spawn": "^7.0.6",
     "dayjs": "1.11.7",
     "eazy-logger": "^4.1.0",
