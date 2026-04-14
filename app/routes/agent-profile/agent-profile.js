@@ -16,5 +16,12 @@ router.post('/spikes/agent-profile/service-manager-v2/manage-org-unit/change-gro
 })
 
 
+router.post('/agent-details-mt', function (req, res) {
+	req.session.data.showBanner = req.body.showBanner
+res.redirect('/agent-details-mt')
+})
+
+
+
 
 }

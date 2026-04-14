@@ -11,7 +11,7 @@ Team leader home
 
 {% block content %}
 
-{% if data['changeGroups'] == "yes" %}
+{% if data['showBanner']%}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
       You have changed the groups Tim Cook belongs to.
@@ -225,18 +225,20 @@ Team leader home
       {# <a href="change-team-tm" class="govuk-link ">Change team and role</a> #}
     </div>
     
-
+    <form method="post">
       <div class="govuk-button-group">
         {% if data['changeGroups'] == "yes" %}
           {{ govukButton({
-            text: "Confirm changes"
+            text: "Confirm changes",
+            attributes: {
+              name: "showBanner",
+              value: "yes"
+            }
           }) }}
         {% endif %}
+    </form>
 
-        {# {{ govukButton({
-          text: "Remove from team",
-          classes: "govuk-button--warning"
-        }) }} #}
+
       
         {{ govukButton({
           text: "Back",

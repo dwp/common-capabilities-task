@@ -11,10 +11,10 @@ Team leader home
 
 {% block content %}
 
-{% if data['changeGroupsJames'] == "yes" %}
+{% if data['showBanner']%}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
-      You have changed James Burton's groups.
+      You have changed the groups James Burton belongs to.
     </h3>
   {% endset %}
 
@@ -268,7 +268,7 @@ Team leader home
       <a href="change-attributes" class="govuk-link">Change individual matching criteria</a>
     </div>
 
-    
+    <form method="post">
      <div class="govuk-button-group">
         {% if data['changeGroupsJames'] == "yes" or data['changeAttributes'] %}
           {{ govukButton({
@@ -284,9 +284,9 @@ Team leader home
         {{ govukButton({
           text: "Back",
           classes: "govuk-button--secondary"
-        }) }}
-      
+        }) }}  
       </div>
+    </form>
 
   </div> {# end of two thirds #}
   
