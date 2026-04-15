@@ -22,6 +22,11 @@ res.redirect('/agent-details-mt')
 })
 
 
+router.post('/agent-details-sm', function (req, res) {
+	req.session.data.showBanner = req.body.showBanner
+res.redirect('/agent-details-sm')
+})
+
 
 
 }

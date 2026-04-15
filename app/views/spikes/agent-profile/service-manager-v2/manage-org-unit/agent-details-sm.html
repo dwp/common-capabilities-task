@@ -11,7 +11,7 @@ Team leader home
 
 {% block content %}
 
-{% if data['showBanner']%}
+{% if data['showBannerTwo']%}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
       You have changed the groups James Burton belongs to.
@@ -270,9 +270,14 @@ Team leader home
 
     <form method="post">
      <div class="govuk-button-group">
-        {% if data['changeGroupsJames'] == "yes" or data['changeAttributes'] %}
+   
+        {% if data['changeGroups'] == "yes" %}
           {{ govukButton({
-            text: "Confirm changes"
+            text: "Confirm changes",
+            attributes: {
+              name: "showBannerTwo",
+              value: "yes"
+            }
           }) }}
         {% endif %}
 
