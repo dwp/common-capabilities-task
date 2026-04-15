@@ -24,7 +24,7 @@ Team leader home
   }) }}
 {% endif %}
 
-{% if data['changeAttributes'] == "yes" %}
+{% if data['changeAttributesTwo'] == "yes" %}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
       You have changed James Burton's individual attributes.
@@ -271,7 +271,7 @@ Team leader home
     <form method="post">
      <div class="govuk-button-group">
    
-        {% if data['changeGroups'] == "yes" %}
+        {% if data['changeGroupsJames'] == "yes" %}
           {{ govukButton({
             text: "Confirm changes",
             attributes: {
