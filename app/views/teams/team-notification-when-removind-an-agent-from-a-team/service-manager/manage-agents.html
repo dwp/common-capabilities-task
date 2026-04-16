@@ -14,7 +14,7 @@
 
 {% block content %}
 
-{% if data['showBanner']%}
+{% if data['showBannerTwo']%}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
       You have made changes to Amy Adams's details
@@ -100,7 +100,7 @@
         {{ govukButton({
           text: "Confirm changes",
           attributes: {
-            name: "showBanner",
+            name: "showBannerTwo",
             value: "yes"
           }
         }) }}
