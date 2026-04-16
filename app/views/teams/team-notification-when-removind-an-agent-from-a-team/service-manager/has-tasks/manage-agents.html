@@ -24,7 +24,7 @@
 
   {{ govukNotificationBanner({
     html: html,
-    type: "info"
+    type: "success"
   }) }}
 {% endif %}
 
@@ -93,36 +93,23 @@
       ]
     }) }}
 
-  
-    
-<form method="post">
-          
-      <div class="govuk-button-group">
-
-        {% if data['removindAgentFromTeam.agentRemoveAndTasks'] == "yes" %}
-          {{ govukButton({
-            text: "Confirm changes"
-          }) }}
-        {% endif %}
-        
+    <form method="post">
+      {% if data.removindAgentFromTeam.agentRemoveAndTasks == "yes" %}
+        {{ govukButton({
+          text: "Confirm changes",
+          attributes: {
+            name: "showBanner",
+            value: "yes"
+          }
+        }) }}
+      {% endif %}
 
         {{ govukButton({
-          text: "Continue"
+            text: "Continue"
         }) }}
+    </form>
 
-    </div>
-</form>
-    
-      {# {{ govukButton({
-        text: "Cancel",
-        classes: "govuk-button--secondary"
-      }) }} #}
-
-       {# attributes: {
-              name: "showBanner",
-              value: "yes"
-            } #}
-    
+   
     </div>
     
      

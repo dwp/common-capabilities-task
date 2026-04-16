@@ -21,7 +21,7 @@
 
   
           {{ govukRadios({
-            name: "removindAgentFromTeam[agentRemove]",
+            name: "removindAgentFromTeam[agentRemoveAndTasks]",
             fieldset: {
               legend: {
                 html: pageName,
@@ -29,7 +29,7 @@
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            value: data.removindAgentFromTeam.agentRemove,
+            value: data.removindAgentFromTeam.agentRemoveAndTasks,
             items: [
               {
                 value: "yes",
@@ -45,6 +45,8 @@
           {{ govukButton({
             text: "Continue"
           }) }}
+
+          
 
         
       </form>

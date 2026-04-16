@@ -14,10 +14,10 @@
 
 {% block content %}
 
-{% if data.removindAgentFromTeam.agentRemove == "yes" %}
+{% if data['showBanner']%}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
-      You have removed agent 01 from the team A.
+      You have made changes to Amy Adams's details
     </h3>
   {% endset %}
 
@@ -67,7 +67,7 @@
       rows: [
         [
           {
-            html: 'agent 01 <br> <span style="color:	#505a5f;">agent_01@dwp.gov.uk</span>'
+            html: 'Amy Adams <br> <span style="color:	#505a5f;">amy.adams@dwp.gov.uk</span>'
           },
           {
             text: "100100101"
@@ -93,19 +93,34 @@
     }) }}
 
   
-    
+  <form method="post">
 
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Continue"
-      }) }}
-    
-      {{ govukButton({
+  <div class="govuk-button-group">
+      {% if data.removindAgentFromTeam.agentRemoveAndTasks == "yes" %}
+        {{ govukButton({
+          text: "Confirm changes",
+          attributes: {
+            name: "showBanner",
+            value: "yes"
+          }
+        }) }}
+      {% endif %}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+        {{ govukButton({
         text: "Cancel",
         classes: "govuk-button--secondary"
       }) }}
-    
-    </div>
+  </div>
+
+  </form>
+
+
+
+ 
     
      
     </div> {# grid col close #}
