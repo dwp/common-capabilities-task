@@ -19,7 +19,9 @@
         </h1>
   
       </legend>
-      <p>If you are unable to work on this task right now and need another agent to complete it, you should return it to the queue.</p>
+      <p>
+        If you are unable to to work on this task right now and need another agent to complete it, you should return it to the queue.
+      </p>
 
       <form method="post" novalidate>
         
@@ -27,7 +29,7 @@
         name: "agent[returnTaskToQueue]",
         fieldset: {
           legend: {
-            text: "Select an option",
+            text: "Select a reason",
             isPageHeading: false,
             classes: "govuk-fieldset__legend--m"
           }
@@ -35,31 +37,28 @@
         value: data.agent.returnTaskToQueue,
         items: [
           {
-            value: "return",
-            text: "Return",
+            value: "Further work is required",
+            text: "Further work is required"
+          },
+          {
+            value: "I do not have the right skills or training",
+            text: "I do not have the right skills or training",
             hint: {
-            text: "You may get this task again."
+            text: "This will return and block the task "
             }
           },
           {
-            value: "return",
-            text: "Return and block",
+            value: "The task does not reflect the work",
+            text: "The task does not reflect the work",
             hint: {
-            text: "Skills or training do not match the task. You will not get this task again."
+            text: "This will return and block the task"
             }
           },
           {
-            value: "return",
-            text: "Return and block",
+            value: "Should be treated as a complaint",
+            text: "Should be treated as a complaint",
             hint: {
-            text: "Categorised under wrong workstream. You will not get this task again."
-            }
-          },
-          {
-            value: "return",
-            text: "Return and block",
-            hint: {
-            text: "Should be treated as a complaint. You will not get this task again."
+            text: "This will return and block the task"
             }
           }
         ]
