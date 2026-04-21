@@ -1,8 +1,9 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Return task to queue
+  Put this task on hold
 {% endblock %}
+{% set pageName = "Put this task on hold" %}
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -15,11 +16,11 @@
     <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
       <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
         <h1 class="govuk-fieldset__heading">
-           Return task to queue
+           {{pageName}}
         </h1>
-  
       </legend>
-      <p>If you are unable to work on this task right now and need another agent to complete it, you should return it to the queue.</p>
+
+      <p>Put this task on hold until it can be worked on again.</p>
 
       <form method="post" novalidate>
         
@@ -35,31 +36,17 @@
         value: data.agent.returnTaskToQueue,
         items: [
           {
-            value: "return",
-            text: "Return",
+            value: "Put on hold and keep",
+            text: "Put on hold and keep",
             hint: {
-            text: "You may get this task again."
+            text: "This task will remain in your work area."
             }
           },
           {
-            value: "return",
-            text: "Return and block",
+            value: "Put on hold and return to queue",
+            text: "Put on hold and return to queue",
             hint: {
-            text: "Skills or training do not match the task. You will not get this task again."
-            }
-          },
-          {
-            value: "return",
-            text: "Return and block",
-            hint: {
-            text: "Categorised under wrong workstream. You will not get this task again."
-            }
-          },
-          {
-            value: "return",
-            text: "Return and block",
-            hint: {
-            text: "Should be treated as a complaint. You will not get this task again."
+            text: "This task will return to the queue."
             }
           }
         ]
