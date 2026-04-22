@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Review Eligible Employment Status Oliver Bennett" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      {# <p class="govuk-body">You can change the due date, the priority, and return the task to the queue.</p> #}
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Oliver Bennett
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Eligible Employment Status GB
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="change-task-type">Change</a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">19 Nov 2025 at 09:11</p>
+          </dd>
+        </div>
+      </dl>
+
+      {{ govukWarningText({
+        text: "If you match to this task, it will remain in your working area. Otherwise it will be returned to the queue.",
+        iconFallbackText: "Fallback text"
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm",
+          href: "agent-task"
+        }) }}
+      </div>
+
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+

@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Change task type
+{% endblock %}
+{% set pageName = "Change task type" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+           {{pageName}}
+        </h1>
+      </legend>
+
+      <p>The current task type is Issue Benefits Amount 04.</p>
+
+      <form method="post" novalidate>
+        
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" style="width: 20rem;" id="sort" name="sort">
+            <option value="published" selected>Verify Citizen Address Details 01</option>
+            <option value="updated">Verify Employment Details 02</option>
+            <option value="views">Benefits Amount 01</option>
+            <option value="views">Benefits Amount 02</option>
+            <option value="views">Eligible Employment Status GB</option>
+            
+          </select>
+        </div>
+        
+      </form>
+        
+      
+    </fieldset>
+    
+  </div>
+</div>
+</div>
+
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Continue",
+        href: "review-task-type-change"
+      }) }}
+
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-button--secondary",
+        href: "task"
+      }) }}
+
+    </div>
+  </form>
+
+
+{% endblock %}
+
