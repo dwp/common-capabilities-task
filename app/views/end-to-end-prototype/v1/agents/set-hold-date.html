@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Put this task on hold
+{% endblock %}
+{% set pageName = "This page is in progres" %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+<div class="govuk-form-group">
+    <div class="govuk-grid-column-two-thirds">
+
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+           {{pageName}}
+        </h1>
+      </legend>
+
+      <p>This page is in progres</p>
+
+     
+      
+    </fieldset>
+    
+  </div>
+</div>
+</div>
+
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Confirm",
+        href: "agent-tasks"
+      }) }}
+
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-button--secondary",
+        href: "put-on-hold"
+      }) }}
+
+    </div>
+  </form>
+
+
+{% endblock %}
+

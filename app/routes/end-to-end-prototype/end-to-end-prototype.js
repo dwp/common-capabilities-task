@@ -40,5 +40,21 @@ router.post('/end-to-end-prototype/v1/agents/return-to-queue', (req, res) => {
   res.redirect('agent-tasks')
 })
 
+router.post('/end-to-end-prototype/v1/agents/put-on-hold', (req, res) => {
+	if (req.session.data.agent.returnTaskToQueue == 'put on hold and keep'){
+		res.redirect("set-hold-date")
+	} else {
+		res.redirect("set-hold-date")
+	}
+})
+
+router.post('/end-to-end-prototype/v1/agents/is-it-the-right-customer', (req, res) => {
+	if (req.session.data.agent.isThisTheRightCustomer == 'Yes'){
+		res.redirect("task-results")
+	} else {
+		res.redirect("find-person")
+	}
+})
+
 
 }

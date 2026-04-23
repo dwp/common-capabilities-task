@@ -20,7 +20,7 @@ Find a person
 
         <h1 class="govuk-heading-l">
           Find a person
-          </h1>
+        </h1>
 
           <div class="govuk-form-group">
             <h1 class="govuk-label-wrapper">
@@ -36,13 +36,20 @@ Find a person
           </div>
           
        
-            
-           
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Search",
+            href: "is-it-the-right-customer"
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "home-agent"
+          }) }}
+        </div>
 
-  <div class="govuk-button-group">
-    <a href="check-information" "=""">
-    <button class="govuk-button" data-module="govuk-button">Search</button>
-    <a href="javascript:window.history.back()"</a>
-   
-  </div>  
+    </div>
+  </div>
+             
 {% endblock %}
