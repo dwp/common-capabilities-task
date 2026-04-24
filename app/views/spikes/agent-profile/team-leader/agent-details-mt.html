@@ -11,18 +11,6 @@ Team leader home
 
 {% block content %}
 
-{% if data['showBanner']%}
-  {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      You have made changes to Tim Cook's details
-    </h3>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: "success"
-  }) }}
-{% endif %}
 
 <div class="govuk-grid-row" data-testid="grid-row">
   <div class="govuk-grid-column-one-third">
@@ -36,17 +24,17 @@ Team leader home
             <dt class="dwp-quick-reference__label">Can work on these tasks:</dt>
             <dd class="dwp-quick-reference__status">
             <strong class="govuk-tag dwp-quick-reference__status--white">
-              jmeter-test-task-18255
+              task one
             </strong>
           </dd>
           <dd class="dwp-quick-reference__status">
            <strong class="govuk-tag dwp-quick-reference__status--white">
-              jmeter-test-task-18256
+              task two
             </strong>
           </dd>
           <dd class="dwp-quick-reference__status">
             <strong class="govuk-tag dwp-quick-reference__status--white">
-              jmeter-test-task-18257
+              task three
             </strong>
           </dd>
       </dl>
@@ -59,13 +47,15 @@ Team leader home
       You can change the groups that Tim Cook belongs to. 
       The attributes of the groups, plus individual attributes, determine which tasks Tim Cook can claim.
     </p>
-    <h2 class="govuk-heading-m">Groups<br><span class="govuk-hint">These are the groups that James Burton currently belongs to. </span></h2>
-    
+
+    <h2 class="govuk-heading-m">Groups</h2>
+    <p>These are the groups that James Burton currently belongs to.</p>
+
     <dl class="govuk-summary-list govuk-!-static-margin-bottom-1">
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key govuk-!-width-full" aria-label="15-10-2025-agent-group">
-          15-10-2025-agent-group
-          <details class="govuk-details govuk-!-static-margin-bottom-0">
+        <dt class="govuk-summary-list__key govuk-!-width-full" aria-label="Group one">
+          Group one
+          <details class="govuk-details govuk-!-static-margin-bottom-0 govuk-!-static-margin-top-1">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                 Attributes of this group
@@ -127,8 +117,8 @@ Team leader home
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key" aria-label="new-agent-group">
-          new-agent-group
-          <details class="govuk-details govuk-!-static-margin-bottom-0">
+          Group two
+          <details class="govuk-details govuk-!-static-margin-bottom-0 govuk-!-static-margin-top-1">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
                 Attributes of this group
@@ -189,8 +179,8 @@ Team leader home
        
       </div>
     </dl>
-    <div class="govuk-!-static-margin-bottom-9 govuk-!-static-margin-top-2">
-      <a href="change-groups" class="govuk-link ">Change the groups Tim Cook belongs to</a>
+    <div class="govuk-!-static-margin-bottom-9 govuk-!-static-margin-top-3">
+      <a href="change-groups" class="govuk-link">Change the groups Tim Cook belongs to</a>
     </div>
     
     <!-- <h2 class="govuk-heading-m">Groups</h2>
@@ -221,32 +211,32 @@ Team leader home
       </tbody>
     </table>
    
-    <div class="govuk-!-static-margin-bottom-9">
+    <div class="govuk-!-static-margin-bottom-3">
       {# <a href="change-team-tm" class="govuk-link ">Change team and role</a> #}
     </div>
     
     <form method="post">
+
       <div class="govuk-button-group">
-        {% if data['changeGroups'] == "yes" %}
+        {% if data['changeGroupsTl'] == "yes" %}
           {{ govukButton({
             text: "Confirm changes",
             attributes: {
-              name: "showBanner",
+              name: "showBannerOneTl",
               value: "yes"
             }
           }) }}
         {% endif %}
+
     </form>
 
-
-      
         {{ govukButton({
           text: "Back",
-          classes: "govuk-button--secondary"
+          classes: "govuk-button--secondary",
+          href: "manage-a-team"
         }) }}
-      
       </div>
-    
+
   </div>
   
 </div>
