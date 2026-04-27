@@ -24,10 +24,64 @@ Team leader home
     </div>
     <!-- <h1 class="govuk-heading-l">Change individual attributes for James Burton </h1>
     <h2>Select a value for each attribute. James Burton will only be able to claim tasks that match these attributes.</h2> -->
-    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">vulnerable</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="vulnerable" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="vulnerable" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
-    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">urgent</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="urgent" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="urgent" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
-    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">escalate</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="true" name="escalate" type="checkbox" value="true"><label class="govuk-label govuk-checkboxes__label " for="true" data-testid="checkbox-label-id">true</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="false" name="escalate" type="checkbox" value="false"><label class="govuk-label govuk-checkboxes__label " for="false" data-testid="checkbox-label-id">false</label></div></div></fieldset></div>
-    <div class="govuk-form-group" data-testid="form-group-id"><fieldset class="govuk-fieldset"><legend class="govuk-fieldset__legend govuk-fieldset__legend--s" data-testid="legend-id"><h2 class="govuk-fieldset__heading">country-subdivision</h2></legend><div class="govuk-checkboxes " data-module="govuk-checkboxes" data-testid="checkboxes-id"><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="gb-nir" name="country-subdivision" type="checkbox" value="gb-nir"><label class="govuk-label govuk-checkboxes__label " for="gb-nir" data-testid="checkbox-label-id">gb-nir</label></div><div class="govuk-checkboxes__item" data-testid="checkbox-item-id"><input class="govuk-checkboxes__input" id="gb-gbn" name="country-subdivision" type="checkbox" value="gb-gbn"><label class="govuk-label govuk-checkboxes__label " for="gb-gbn" data-testid="checkbox-label-id">gb-gbn</label></div></div></fieldset></div>
+
+    {{ govukCheckboxes({
+      name: "",
+      fieldset: {
+        legend: {
+          text: "vulnerable",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      values: data.manager,
+      items: [
+        {
+          value: "true",
+          text: "true"
+        }
+      ]
+    }) }}
+
+  {{ govukCheckboxes({
+      name: "",
+      fieldset: {
+        legend: {
+          text: "urgent",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+    },
+    values: data.manager,
+    items: [
+      {
+        value: "true",
+        text: "true"
+      }
+    ]
+  }) }}
+
+  {{ govukCheckboxes({
+      name: "",
+      fieldset: {
+        legend: {
+          text: "escalate",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--s"
+        }
+    },
+    values: data.manager,
+    items: [
+      {
+        value: "true",
+        text: "true"
+      },
+      {
+        value: "false",
+        text: "false"
+      }
+    ]
+  }) }}
 
 
     <form method="post" novalidate>
