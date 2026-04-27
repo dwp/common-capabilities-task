@@ -11,32 +11,6 @@ Team leader home
 
 {% block content %}
 
-{% if data['showBannerTwo']%}
-  {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      You have made changes to James Burton's details
-    </h3>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: "success"
-  }) }}
-{% endif %}
-
-{% if data['changeAttributesTwo'] == "yes" %}
-  {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      You have changed James Burton's individual attributes.
-    </h3>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: "info"
-  }) }}
-{% endif %}
-
 
 
 <div class="govuk-grid-row">
@@ -271,7 +245,7 @@ Team leader home
     <form method="post">
      <div class="govuk-button-group">
    
-        {% if data['changeGroupsJames'] == "yes" %}
+        {% if data['changeGroupsJames'] == "yes" or data['changeAttributesJames'] == "yes" %}
           {{ govukButton({
             text: "Confirm changes",
             attributes: {
@@ -280,6 +254,7 @@ Team leader home
             }
           }) }}
         {% endif %}
+    </form>
 
         {{ govukButton({
           text: "Remove from org unit",
@@ -291,7 +266,7 @@ Team leader home
           classes: "govuk-button--secondary"
         }) }}  
       </div>
-    </form>
+
 
   </div> {# end of two thirds #}
   

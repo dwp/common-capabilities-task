@@ -12,6 +12,19 @@ Team leader home
 
 {% block content %}
 
+{% if data['showBannerTwo']%}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have made changes to James Burton's details
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
 
 <div class="govuk-width-container">
   <!--<a href="org-unit-selection"
