@@ -56,5 +56,17 @@ router.post('/end-to-end-prototype/v1/agents/is-it-the-right-customer', (req, re
 	}
 })
 
+// MI team leader
+
+router.post('/end-to-end-prototype/v1/team-leader/mi/mi-filters', (req, res) => {
+	if (req.session.data.mi.tl.taskTypes == 'All'){
+		res.redirect("team-stats-with-details")
+	} else if (req.session.data.mi.tl.taskTypes == 'Type A') {
+		res.redirect("team-stats-call-back")
+	} else {
+		res.redirect("Type A")
+	}
+})
+
 
 }

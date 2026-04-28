@@ -1,0 +1,117 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Amy Anderson" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p class="govuk-body">
+        All completed tasks between 13 October 2025 and 20 October 2025, 
+        and tasks that remain in progress (active) at the end of 20 October 2025. 
+      </p> 
+
+      <!-- Table one - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">All tasks completed and in progress (active), by task type</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header " style="width: 300px">Task type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Returned</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Active</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type B</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">26</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type C</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type D</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">21</td>
+          </tr>
+        </tbody>
+        <tfoot class="govuk-table__row">
+          <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">60</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">79</td>
+        </tfoot>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+
+      <!-- Table two - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-5">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Reasons of return</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header " style="width: 300px">Task type</th>
+            <th scope="col" class="govuk-table__header">Reason of return</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td class="govuk-table__cell">Further work is required</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td class="govuk-table__cell">I do not have the right skills or training</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type B</td>
+            <td class="govuk-table__cell">I do not have the right skills or training</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type C</td>
+            <td class="govuk-table__cell">The task does not reflect the work</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type D</td>
+            <td class="govuk-table__cell">Further work is required</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+      
+
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}
