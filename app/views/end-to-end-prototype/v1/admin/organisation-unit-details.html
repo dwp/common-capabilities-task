@@ -1,0 +1,182 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Apply for Org B details" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p class="govuk-body">
+        View and manage Org B.
+      </p>
+
+      <h2 class="govuk-heading-m">Details</h2>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Organisation unit ID"
+            },
+            value: {
+              text: "organisationID"
+            }
+          },
+          {
+            key: {
+              text: "Organisation unit name"
+            },
+            value: {
+              text: "Apply for Org B"
+            },
+            actions: {
+              items: [
+                {
+                  href: "Item URL",
+                  text: "Change",
+                  visuallyHiddenText: "Item label"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+      <p class="govuk-body">
+        You can only edit or remove attributes that have not yet been matched to a task type.
+      </p>
+
+
+      <!-- Table one - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Attributes</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 300px">Name</th>
+            <th scope="col" class="govuk-table__header">Value</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+      </table>
+
+      <!-- Table two - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-8">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Inherited Attributes</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 300px">Namespace</th>
+            <th scope="col" class="govuk-table__header" style="width: 300px">Names</th>
+            <th scope="col" class="govuk-table__header">Value</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell">something</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell">something</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+      </table>
+
+       <!-- Table three - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-8">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Inherited Extended Attributes</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 300px">Namespace</th>
+            <th scope="col" class="govuk-table__header" style="width: 300px">Names</th>
+            <th scope="col" class="govuk-table__header">Value</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell">something</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">roles</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell">something</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"></td>
+          </tr>
+      </table>
+
+       <!-- Table four - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-8">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Permissions</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header">Value</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Agent</td>
+            <td class="govuk-table__cell">create-task</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Agent</td>
+            <td class="govuk-table__cell">pencred-new-claims</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="#">Change</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Agent</td>
+            <td class="govuk-table__cell">Resons for return</td>
+            <td class="govuk-table__cell govuk-table__header--numeric"><a class="govuk-link" href="change-permissions">Change</a></td>
+          </tr>
+      </table>
+    
+
+      
+
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}

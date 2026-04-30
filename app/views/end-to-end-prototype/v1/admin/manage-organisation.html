@@ -1,0 +1,77 @@
+{% extends "layouts/main-team-admin.html" %}
+
+{% block pageTitle %}
+  Admin home
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../../select-user-admin"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Manage Org B</h1>
+
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="organisation-unit-details">View and manage details</a></h2>
+      <p>View and manage details for Apply For Pension Credit, including name, attributes and permissions.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add and manage agents</a></h2>
+      <p>Add and manage agents, the groups they are in or their individual attributes. Agents must be added to Apply For Pension Credit before they can be added to their team.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add and manage groups</a></h2>
+      <p>Add and manage groups for agents who do the same tasks. Agents in the same group will be able to claim the same task types.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add and manage task types</a></h2>
+      <p>Add and manage types of tasks in Apply For Pension Credit.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Add a team</a></h2>
+      <p>Add a new team to Apply For Pension Credit.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">View and manage teams</a></h2>
+      <p>Add or remove agents and team leaders, or delete teams in Apply For Pension Credit.</p>
+    </div>
+</div>
+
+
+
+&nbsp;
+
+{% endblock %}
+
+

@@ -68,5 +68,14 @@ router.post('/end-to-end-prototype/v1/team-leader/mi/mi-filters', (req, res) => 
 	}
 })
 
+// Admin
+
+router.post('/end-to-end-prototype/v1/admin/change-permissions', (req, res) => {
+	if (req.session.data.admin.changePermissios == 'on'){
+		res.redirect("organisation-unit-details")
+	} else {
+		res.redirect("organisation-unit-details")
+	}
+})
 
 }
