@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Decision Making Team" %}
+
+{% block pageTitle %}
+    {{pageName}}
+{% endblock %}
+
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+{% if data['showBannerOneTl']%}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have made changes to Tim Cook's details
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+
+<div class="govuk-width-container">
+  <!--<a href="org-unit-selection"
+  <button class="govuk-button" data-module="govuk-button" style="float: right;">Manage another service</button></a>-->
+  <h1 class="govuk-heading-l">{{pageName}}</h1>
+  <!-- <p>Create and manage groups of agents. Agents will get tasks that match to the criteria of their group. <a href="#" class="govuk-link">Add a new group</a></p> -->
+
+  <div class="govuk-form-group" data-testid="form-group-id">
+    <h2 class="govuk-heading-m">Team details</h2>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="Team ID">Team ID</dt>
+        <dd class="govuk-summary-list__value" aria-label="15-10-2025-awesome-qa-team">decision-making-team</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="Team name">Team name</dt>
+        <dd class="govuk-summary-list__value" aria-label="15 10 2025 Awesome QA Team">Decision Making Team</dd>
+      </div>
+    </dl>
+    <table class="govuk-table govuk-!-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">Team leaders</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Name</th>
+          <th scope="col" class="govuk-table__header">Staff number</th>
+          <th scope="col" class="govuk-table__header">Details</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">Tim Cook<br>
+            <span class="govuk-hint">tim.cook@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">100100101</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="agent-details-mt">View and manage profile</a>
+          </td>
+        </tr>
+         <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">John Ternus<br>
+            <span class="govuk-hint">john.ternus@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">100100102</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="agent-details-mt">View and manage profile</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class=" govuk-!-margin-bottom-9">
+      <p class="govuk-body-m">
+        <a href="manage-team-leaders" id="add-another-team-leader" class="govuk-link">Add or remove a team leaderss</a>
+      </p>
+    </div>
+    <table class="govuk-table govuk-!-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">Agents</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-third">Name</th>
+          <th scope="col" class="govuk-table__header ">Staff number</th>
+          <th scope="col" class="govuk-table__header ">Details</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">Emily Adams<br>
+            <span class="govuk-hint">emily.adams@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">000999884</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="#">View and manage profile</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">Oliver Baker<br>
+            <span class="govuk-hint">oliver.baker@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">000999885</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="#">View and manage profile</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">Charlotte Carter<br>
+            <span class="govuk-hint">charlotte.carter@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">000999886</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="#">View and manage profile</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">James Davies<br>
+            <span class="govuk-hint">james.davies@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">000999887</td>
+          <td class="govuk-table__cell" data-testid="table-cell"><a href="#">View and manage profile</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-testid="table-cell">William Evans<br>
+            <span class="govuk-hint">william.evans@dwp.gov.uk</span>
+          </td>
+          <td class="govuk-table__cell" data-testid="table-cell">000999888
+          </td>
+          <td class="govuk-table__cell " data-testid="table-cell"><a href="#">View and manage profile</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="govuk-!-margin-bottom-5">
+      <p class="govuk-body-m">
+        <a href="#" id="add-an-agent" class="govuk-link">Add or remove an agent</a>
+      </p>
+    </div>  
+    
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary"
+      }) }}
+    
+  </div>
+</div>
+&nbsp;
+{% endblock %}
+
+
