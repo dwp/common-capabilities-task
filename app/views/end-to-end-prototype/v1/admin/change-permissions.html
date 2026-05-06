@@ -16,7 +16,6 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
  
-    <h1 class="govuk-heading-l">Change permissions</h1>
 
       <form method="post" novalidate>
 
@@ -27,8 +26,11 @@
             legend: {
               text: pageName,
               isPageHeading: true,
-              classes: "govuk-fieldset__legend--s"
+              classes: "govuk-fieldset__legend--l"
             }
+          },
+          hint: {
+            text: "Select an option to change the feature permissions for this organisation."
           },
           value: data.admin.changePermissios,
           items: [
@@ -42,6 +44,7 @@
             }
           ]
         }) }}
+        
 
         <div class="govuk-button-group">
           {{ govukButton({
