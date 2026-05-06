@@ -13,6 +13,13 @@
 
 {% block content %}
 
+{% if data.admin.changePermissions == "on" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>The permission has been updated</h3>" | safe
+  }) }}
+{% endif %}
+
   
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">

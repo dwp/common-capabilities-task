@@ -21,8 +21,8 @@
       <form method="post" novalidate>
 
         {{ govukRadios({
-          id: "admin[changePermissios]",
-          name: "admin[changePermissios]",
+          id: "admin[changePermissions]",
+          name: "admin[changePermissions]",
           fieldset: {
             legend: {
               text: pageName,
@@ -45,8 +45,7 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Continue",
-            href: "organisation-unit-details"
+            text: "Continue"
           }) }}
         
           {{ govukButton({
