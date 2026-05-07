@@ -10,18 +10,17 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-<div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-           Return task to queue
-        </h1>
+
+ 
+      <h1 class="govuk-heading-l">
+          Return task to queue
+      </h1>
   
-      </legend>
       <p>
         If you are unable to to work on this task right now and need another agent to complete it, you should return it to the queue.
       </p>
+      
 
       <form method="post" novalidate>
         
@@ -64,14 +63,30 @@
         ]
       }) }}
       
-    </fieldset>
+
+    {{ govukCheckboxes({
+      name: "",
+      fieldset: {
+        legend: {
+          text: "Match this task to the right agent (optional).",
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      hint: {
+        text: "Select all that apply"
+      },
+      values: data.agent.escalate,
+      items: [
+        {
+          value: "escalate",
+          text: "Escalate"
+        }
+      ]
+    }) }}
     
-  </div>
-</div>
-</div>
-
+  
     <div class="govuk-button-group">
-
       {{ govukButton({
         text: "Confirm"
       }) }}
@@ -81,9 +96,11 @@
         classes: "govuk-button--secondary",
         href: "task"
       }) }}
-
     </div>
   </form>
+
+  </div>
+</div>
 
 
 {% endblock %}
