@@ -1,0 +1,80 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "History" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "My Claims One QA tasks",
+          href: "task"
+        },
+        {
+          text: "History",
+          href: "View history"
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p class="govuk-body govuk-!-margin-bottom-6">View the history of Eligible Employment Status GB completed for	Oliver Bennett.</p>
+
+      {{
+        dwpTimeline({ 
+          items: [
+            {
+              title: "Further work is required",
+              byline: "Oliver Hughes",
+              date: (
+                govukTag({
+                  text: "Returned",
+                  classes: "govuk-tag--orange govuk-!-margin-bottom-1"
+                })
+                + '<br><span class="govuk-body-s">7 November 2025</span>'
+              ) | safe
+            },
+            {
+              title: "Claimed",
+              byline: "James Whitaker",
+              date: (
+                govukTag({
+                  text: "Allocated",
+                  classes: "govuk-tag--yellow govuk-!-margin-bottom-1"
+                })
+                + '<br><span class="govuk-body-s">5 November 2025</span>'
+              ) | safe
+            },
+            {
+              title: "New task created",
+              byline: "Emily Thompson",
+              date: (
+                govukTag({
+                  text: "Unnalocated",
+                  classes: "govuk-tag--grey govuk-!-margin-bottom-1"
+                })
+                + '<br><span class="govuk-body-s">1 November 2025</span>'
+              ) | safe
+            }
+          ]
+        })
+      }}
+
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+
