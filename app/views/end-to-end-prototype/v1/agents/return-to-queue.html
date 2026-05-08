@@ -68,13 +68,13 @@
       name: "",
       fieldset: {
         legend: {
-          text: "Match this task to the right agent (optional).",
+          text: "Add 'escalate' as an attribute to this task (optional).",
           isPageHeading: true,
           classes: "govuk-fieldset__legend--m"
         }
       },
       hint: {
-        text: "Select all that apply"
+        text: "Selecting 'escalate'  will make this task available only to agents who have an 'escalate' attribute in their profile"
       },
       values: data.agent.escalate,
       items: [
