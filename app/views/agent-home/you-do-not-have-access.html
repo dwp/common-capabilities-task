@@ -4,14 +4,15 @@
  {{pageName}}
 {% endblock %}
 
-{% block beforeContent %}
 
+
+{% block beforeContent %}
   {{ govukBackLink({
     text: "Back",
-    href: "home-agent"
+    href: "javascript:window.history.back()"
   }) }}
-
 {% endblock %}
+
 {% set pageName = "You do not have access to any organisation units" %}
 
 {% block content %}
@@ -30,6 +31,11 @@
         <p>
           Please ask your service manager to add you to at least one organisation unit.
         </p>
+
+        <p>
+          If you are a service manager, <a href="https://dwp.service-now.com/">contact DWP Place</a> and request to be added to an organisation unit.
+        </p>
+          
 
     </div>
   </div>
