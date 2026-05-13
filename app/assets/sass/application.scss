@@ -3,20 +3,25 @@
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 // 
 
+
 @import "components/accessible-autocomplete.min.scss";
 @import "components/filter-layout.scss";
 @import "components/filter-panel.scss";
 @import "components/search-form.scss";
 @import "node_modules/@x-govuk/govuk-prototype-components/src/x-govuk";
 
+
+
 // Add extra styles here
+
+
 .govuk-header__logo {
     display: none;
   }
   
 
 .govuk-phase-banner {
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   padding-top: 0;
   padding-bottom: 10px;
   border-bottom: 1px solid #d4d4d4;
@@ -188,7 +193,7 @@
 /* Timeline styling */
 
   .dwp-timeline {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Helvetica, sans-serif;
       border-left: 6px solid #1d70b8;
       list-style-type: none;
       padding: 0;
@@ -216,7 +221,7 @@
       .dwp-key-details-bar {
           background-color: #1d70b8;
           color: #fff;
-          font-family: Arial, sans-serif;
+          font-family: Arial, Helvetica, sans-serif;
           }
           
           .dwp-key-details-bar dt,
@@ -369,7 +374,7 @@
 }
 
 .govuk-select {
-  font-family: "GDS Transport",arial,sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: 400;
@@ -737,5 +742,54 @@
   margin-bottom: 20px;
   padding-bottom: 20px;
 }
+
+// This ovverides GDS Transport font
+
+body,
+.govuk-body,
+
+// Headings
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+
+// Text + labels
+.govuk-label,
+.govuk-hint,
+.govuk-caption-m,
+.govuk-caption-l,
+
+// Links
+.govuk-link,
+a,
+
+// Form elements
+.govuk-input,
+.govuk-textarea,
+.govuk-select,
+.govuk-fieldset__legend--l,
+.govuk-fieldset__legend--m,
+.govuk-fieldset__legend--s,
+.govuk-fieldset__legend,
+
+// Tables
+.govuk-table,
+.govuk-table__header,
+.govuk-table__cell,
+
+// Lists
+.govuk-list {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+
+
+
+
+
+
+
+
 
 
