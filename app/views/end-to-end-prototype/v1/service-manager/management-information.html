@@ -1,3 +1,4 @@
+
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
 {% block header %}
@@ -27,8 +28,10 @@
 
 {% endblock %}
 
+{% set pageName = "Management Information" %}
+
 {% block pageTitle %}
-  Service manager home
+  {{pageName}}
 {% endblock %}
 
 {% block beforeContent %}
@@ -43,29 +46,20 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <h1 class="govuk-heading-l">Service Manager dashboard</h1>
+  <h1 class="govuk-heading-l">{{pageName}}</h1>
   <div class="box">
-    <h2 class="govuk-heading-m"><a href="#">View and manage tasks</a></h2>
-    <p>View and manage tasks for Claims Org B over a given date range.</p> 
+    <h2 class="govuk-heading-m"><a href="#">Organisation unit statistics</a></h2>
+    <p>Filter organisation unit statistics by date range to view average completion time, created, completed and overdue tasks.</p> 
   </div>
 </div>
 
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="manage-org-b">Manage Claims Org B setup</a></h2>
-      <p>Add or manage agents and groups, or view tasks and attributes in Claim Org B.</p>
+      <h2 class="govuk-heading-m"><a href="agent-statistics">Agent statistics</a></h2>
+      <p>View agent statistics.</p>
     </div>
 </div>
-
-<div class="govuk-width-container">
-  &nbsp;
-    <div class="box">
-      <h2 class="govuk-heading-m"><a href="management-information">Management Information (MI)</a></h2>
-      <p>View MI for Org B.</p>
-    </div>
-</div>
-
 
 &nbsp;
 
