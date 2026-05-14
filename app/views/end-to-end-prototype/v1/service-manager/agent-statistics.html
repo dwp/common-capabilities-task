@@ -150,19 +150,20 @@
         </div>
       <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
 
-      {{ govukRadios({
-        name: "mvp[stats][taskTypes]",
+
+      {{ govukCheckboxes({
+        name: "sm[agentStats][status]",
         fieldset: {
           legend: {
             text: "Status",
-            isPageHeading: false,
+            isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
           text: ""
         },
-        value: data.mvp.stats.taskTypes,
+        values: data.sm.agentStats.status,
         items: [
           {
             value: "Allocated",
@@ -173,31 +174,32 @@
             text: "Active"
           },
           {
-            value: "",
+            value: "Completed",
             text: "Completed"
           }
         ]
       }) }}
 
+      {{ govukButton({
+        text: "Search"
+      }) }}
+
+      {# {{ govukButton({
+        text: "Search",
+        id: "addTeamMember"
+      }) }} #}
+
       <table class="govuk-table govuk-!-static-margin-bottom-2">
         <caption class="govuk-table__caption govuk-table__caption--m">Results</caption>
         <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header">Name</th>
-          <th scope="col" class="govuk-table__header">Staff number</th>
-          <th scope="col" class="govuk-table__header">Email</th>
+          <th scope="col" class="govuk-table__header">Data range</th>
+          <th scope="col" class="govuk-table__header">Count</th>
         </thead>
         <tbody id="TeamMembersTable" class="govuk-table__body">
         </tbody>
       </table>
 
       <p id="tablePlaceholder">{{ data['humanreadablename'] or "None" }} results found yet.</p>
-
-     
-  
-      {{ govukButton({
-        text: "Filter",
-        id: "addTeamMember"
-      }) }}
 
         
         
