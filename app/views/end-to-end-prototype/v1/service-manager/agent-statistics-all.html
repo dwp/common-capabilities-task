@@ -180,17 +180,57 @@
           }
         ]
       }) }}
-      
+
       {{ govukButton({
         text: "Search"
-      }) }}
-
- 
+      }) }}   
         
       </form>
 
-      {# <a style="color: #d4351c;" href="team-parameters-error-message">Error messages</a> #}
+      {{ govukTable({
+        caption: "Results for 1 January 2025 to 1 May 2026",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Status"
+          },
+          {
+            text: "Total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Allocated"
+            },
+            {
+              text: "1",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Active"
+            },
+            {
+              text: "4",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Completed"
+            },
+            {
+              text: "2",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
 
+    <div id="results-end"></div>
     </div>
   </div>
             
