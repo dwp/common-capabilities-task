@@ -186,32 +186,54 @@
       }) }}
 
       {{ govukButton({
-        text: "Search",
-        href: "agent-statistics-results"
-      }) }}
-
-      {# {{ govukButton({
-        text: "Search",
-        id: "addTeamMember"
-      }) }} #}
-
-      {# <table class="govuk-table govuk-!-static-margin-bottom-2">
-        <caption class="govuk-table__caption govuk-table__caption--m">Results</caption>
-        <thead class="govuk-table__head">
-          <th scope="col" class="govuk-table__header">Date range</th>
-          <th scope="col" class="govuk-table__header">Total</th>
-        </thead>
-        <tbody id="TeamMembersTable" class="govuk-table__body">
-        </tbody>
-      </table> #}
-
-      {# <p id="tablePlaceholder">{{ data['humanreadablename'] or "No" }} results found</p> #}
-
-        
+        text: "Search"
+      }) }}   
         
       </form>
 
-      {# <a style="color: #d4351c;" href="team-parameters-error-message">Error messages</a> #}
+      {{ govukTable({
+        caption: "Results for 1 January 2025 to 1 May 2026",
+        firstCellIsHeader: false,
+        head: [
+          {
+            text: "Status"
+          },
+          {
+            text: "Total",
+            format: "numeric"
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Allocated"
+            },
+            {
+              text: "1",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Active"
+            },
+            {
+              text: "4",
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Completed"
+            },
+            {
+              text: "2",
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
 
     </div>
   </div>
