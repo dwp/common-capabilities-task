@@ -11,7 +11,11 @@
 {% endblock %}
 
   {% block pageScripts %}
-
+  <script>
+    if (window.location.hash === '#results') {
+      document.getElementById('results')?.scrollIntoView({ behavior: 'smooth' });
+    }
+  </script>
   <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
   <script type="text/javascript" src="/public/javascripts/teams.js"></script>
   <script>
@@ -75,7 +79,7 @@
       <h2 class="govuk-heading-m">Date range</h2>
       <p>Enter a date range you want statistics for.</p>
 
-      <form method="post" novalidate>
+      <form method="post" action="#results" novalidate>
             
       {{ govukDateInput({
         id: "mvp[stats][startDate]",
@@ -184,12 +188,53 @@
       {{ govukButton({
         text: "Search"
       }) }}
-
- 
         
       </form>
 
-      {# <a style="color: #d4351c;" href="team-parameters-error-message">Error messages</a> #}
+    <div id="results"></div>
+
+
+   {# Tables #}
+   {% if showResults and selectedStatuses %}
+
+    {% set rows = [] %}
+
+    {% if selectedStatuses.includes('Allocated') %}
+      {% set rows = (rows.push([
+        { text: "Allocated" },
+        { text: "1", format: "numeric" }
+      ]), rows) %}
+    {% endif %}
+
+    {% if selectedStatuses.includes('Active') %}
+      {% set rows = (rows.push([
+        { text: "Active" },
+        { text: "4", format: "numeric" }
+      ]), rows) %}
+    {% endif %}
+
+    {% if selectedStatuses.includes('Completed') %}
+      {% set rows = (rows.push([
+        { text: "Completed" },
+        { text: "2", format: "numeric" }
+      ]), rows) %}
+    {% endif %}
+
+    {{ govukTable({
+      caption: "Results for 1 January 2025 to 1 May 2026",
+      firstCellIsHeader: false,
+      head: [
+        { text: "Status" },
+        { text: "Total", format: "numeric" }
+      ],
+      rows: rows
+    }) }}
+
+  {% endif %}
+
+
+
+    {# <a style="color: #d4351c;" href="team-parameters-error-message">Error messages</a> #}
 
     </div>
   </div>

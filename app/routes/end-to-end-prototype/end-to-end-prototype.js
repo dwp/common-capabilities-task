@@ -80,15 +80,16 @@ router.post('/end-to-end-prototype/v1/admin/change-permissions', (req, res) => {
 
 // Service Manager
 
+
 router.post('/end-to-end-prototype/v1/service-manager/agent-statistics', (req, res) => {
-	if (req.session.data.sm.agentStats.status == 'Allocated'){
-		res.redirect("agent-statistics-allocated#results-end")
-	} else if (req.session.data.sm.agentStats.status == 'Active') {
-		res.redirect("agent-statistics-all#results-end")
-	} else {
-		res.redirect("agent-statistics-all#results-end")
-	}
-})
+  const status = req.session.data.sm.agentStats.status;
+  const selected = Array.isArray(status) ? status : [status];
+
+  res.render('end-to-end-prototype/v1/service-manager/agent-statistics', {
+    selectedStatuses: selected,
+    showResults: true   // important
+  });
+});
 
 
 
