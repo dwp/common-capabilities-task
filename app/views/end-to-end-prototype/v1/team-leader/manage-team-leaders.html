@@ -25,6 +25,9 @@
         id: "",
         name: "",
         classes: "govuk-!-width-two-thirds",
+        formGroup: {
+          classes: "govuk-!-margin-bottom-2"
+        },
         label: {
           text: "Who do you want to add?",
           isPageHeading: false,
@@ -43,10 +46,30 @@
         }) }}
       </div>
 
-      <div class="govuk-button-group">
-        <a href="#" class="govuk-link">I cannot find who I am looking for</a>
-      </div>
+    {{ govukDetails({
+      summaryText: "I cannot find who I'm looking for",
+      html: "
+        <h3 class='govuk-heading-s'>Get help with your search</h3>
 
+        <p class='govuk-body'>
+          If you cannot find who you're looking for:
+        </p>
+
+        <ul class='govuk-list govuk-list--bullet'>
+          <li>Check their details and try again – search by email or staff number if their name does not return results</li>
+          <li>Check they are not already on this team, either as team leader or agent</li>
+          <li>
+            If they have been added elsewhere or not added to Claims One QA, they will not appear. You should:
+            <ul class='govuk-list govuk-list--number govuk-!-margin-top-2'>
+              <li>Select ‘Back’ and finish your changes</li>
+              <li>Save and check if they have been added</li>
+              <li>If not, add them or ask for access</li>
+            </ul>
+          </li>
+        </ul>
+      "
+    }) }}
+   
        <table class="govuk-table govuk-!-margin-bottom-2">
         <caption class="govuk-table__caption govuk-table__caption--m">Team leaders</caption>
         <thead class="govuk-table__head">
@@ -62,7 +85,7 @@
               <span class="govuk-hint">tim.cook@dwp.gov.uk</span>
             </td>
             <td class="govuk-table__cell" data-testid="table-cell">100100101</td>
-            <td class="govuk-table__cell" data-testid="table-cell"><a href="agent-details-mt">Remove</a>
+            <td class="govuk-table__cell" data-testid="table-cell"><a href="#">Remove</a>
             </td>
           </tr>
           <tr class="govuk-table__row">
@@ -70,7 +93,7 @@
               <span class="govuk-hint">john.ternus@dwp.gov.uk</span>
             </td>
             <td class="govuk-table__cell" data-testid="table-cell">100100102</td>
-            <td class="govuk-table__cell" data-testid="table-cell"><a href="agent-details-mt">Remove</a>
+            <td class="govuk-table__cell" data-testid="table-cell"><a href="#">Remove</a>
             </td>
           </tr>
         </tbody>
