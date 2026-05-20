@@ -234,20 +234,20 @@
     {% if selectedStatuses.includes('Allocated') %}
       {% set rows = (rows.push([
         { text: "Type A" },
-        { text: "2", format: "numeric" },
+        { text: "4", format: "numeric" },
         { text: "1", format: "numeric" },
         { text: "4", format: "numeric" },
-        { text: "1", format: "numeric" }
+        { text: "9", format: "numeric" }
       ]), rows) %}
     {% endif %}
 
     {% if selectedStatuses.includes('Active') %}
       {% set rows = (rows.push([
         { text: "Type B" },
-        { text: "2", format: "numeric" },
+        { text: "5", format: "numeric" },
         { text: "1", format: "numeric" },
         { text: "4", format: "numeric" },
-        { text: "1", format: "numeric" }
+        { text: "10", format: "numeric" }
       ]), rows) %}
     {% endif %}
 
@@ -257,7 +257,7 @@
         { text: "2", format: "numeric" },
         { text: "1", format: "numeric" },
         { text: "4", format: "numeric" },
-        { text: "1", format: "numeric" }
+        { text: "7", format: "numeric" }
       ]), rows) %}
     {% endif %}
 

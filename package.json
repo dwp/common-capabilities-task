@@ -9,7 +9,7 @@
     "npm": "10.x"
   },
   "dependencies": {
-    "@dwp/dwp-frontend": "3.4.0",
+    "@dwp/dwp-frontend": "^3.4.0",
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@ministryofjustice/frontend": "7.1.0",
     "@x-govuk/govuk-prototype-components": "^5.0.2",
