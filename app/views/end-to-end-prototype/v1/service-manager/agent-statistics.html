@@ -156,7 +156,7 @@
       <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
 
       {{ govukRadios({
-        name: "mi[tl][taskTypes]",
+        name: "sm[agentStats][taskType]",
         fieldset: {
           legend: {
             text: "Task types",
@@ -167,7 +167,7 @@
         hint: {
           text: "Select the task you want to view, or 'All' for total tasks"
         },
-        value: data.mi.tl.taskTypes,
+        value: data.sm.agentStats.taskTypes,
         items: [
           {
             value: "All",
@@ -178,11 +178,11 @@
             text: "Type A"
           },
           {
-            value: "Data entry",
+            value: "Type B",
             text: "Type B"
           },
           {
-            value: "General admin",
+            value: "Type C",
             text: "Type C"
           }
         ]
@@ -244,10 +244,10 @@
     {% if selectedStatuses.includes('Active') %}
       {% set rows = (rows.push([
         { text: "Type B" },
-        { text: "5", format: "numeric" },
+        { text: "7", format: "numeric" },
         { text: "1", format: "numeric" },
-        { text: "4", format: "numeric" },
-        { text: "10", format: "numeric" }
+        { text: "3", format: "numeric" },
+        { text: "11", format: "numeric" }
       ]), rows) %}
     {% endif %}
 
@@ -255,9 +255,9 @@
       {% set rows = (rows.push([
         { text: "Type C" },
         { text: "2", format: "numeric" },
-        { text: "1", format: "numeric" },
+        { text: "2", format: "numeric" },
         { text: "4", format: "numeric" },
-        { text: "7", format: "numeric" }
+        { text: "8", format: "numeric" }
       ]), rows) %}
     {% endif %}
 
