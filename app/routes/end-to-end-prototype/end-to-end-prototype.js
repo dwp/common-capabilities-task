@@ -68,6 +68,18 @@ router.post('/end-to-end-prototype/v1/team-leader/mi/mi-filters', (req, res) => 
 	}
 })
 
+// with on hold
+
+router.post('/end-to-end-prototype/v1/team-leader/mi/mi-filters-with-on-hold', (req, res) => {
+	if (req.session.data.mi.tl.taskTypes == 'All'){
+		res.redirect("team-stats-with-details-with-on-hold")
+	} else if (req.session.data.mi.tl.taskTypes == 'Type A') {
+		res.redirect("team-stats-call-back-with-on-hold")
+	} else {
+		res.redirect("Type A")
+	}
+})
+
 // Admin
 
 router.post('/end-to-end-prototype/v1/admin/change-permissions', (req, res) => {
@@ -93,6 +105,16 @@ router.post('/end-to-end-prototype/v1/service-manager/agent-statistics', (req, r
     selectedTaskType: taskType,
     showResults: true
   })
+})
+
+// Team leader
+
+router.post('/end-to-end-prototype/v1/team-leader/mi/select', (req, res) => {
+	if (req.session.data.mi.tl.select == 'Version without on hold'){
+		res.redirect("mi-filters")
+	} else {
+		res.redirect("mi-filters-with-on-hold")
+	}
 })
 
 
