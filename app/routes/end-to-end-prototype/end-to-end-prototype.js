@@ -82,14 +82,19 @@ router.post('/end-to-end-prototype/v1/admin/change-permissions', (req, res) => {
 
 
 router.post('/end-to-end-prototype/v1/service-manager/agent-statistics', (req, res) => {
-  const status = req.session.data.sm.agentStats.status;
-  const selected = Array.isArray(status) ? status : [status];
+  const status = req.session.data?.sm?.agentStats?.status
+  const taskType = req.session.data?.sm?.agentStats?.taskType
+
+  // Status can be undefined, string, or array
+  const selectedStatuses = (Array.isArray(status) ? status : [status]).filter(Boolean)
 
   res.render('end-to-end-prototype/v1/service-manager/agent-statistics', {
-    selectedStatuses: selected,
-    showResults: true   // important
-  });
-});
+    selectedStatuses,
+    selectedTaskType: taskType,
+    showResults: true
+  })
+})
+
 
 
 

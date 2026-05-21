@@ -167,7 +167,7 @@
         hint: {
           text: "Select the task you want to view, or 'All' for total tasks"
         },
-        value: data.sm.agentStats.taskTypes,
+        value: data.sm.agentStats.taskType,
         items: [
           {
             value: "All",
@@ -227,55 +227,84 @@
 
 
    {# Tables #}
-   {% if showResults and selectedStatuses %}
+   {# -------------------- Results table -------------------- #}
 
-    {% set rows = [] %}
+  {% if showResults %}
 
-    {% if selectedStatuses.includes('Allocated') %}
-      {% set rows = (rows.push([
-        { text: "Type A" },
-        { text: "4", format: "numeric" },
-        { text: "1", format: "numeric" },
-        { text: "4", format: "numeric" },
-        { text: "9", format: "numeric" }
-      ]), rows) %}
+    {# 1) Define the canonical order for statuses (so columns are consistent) #}
+    {% set statusOrder = ["Allocated", "Active", "Completed"] %}
+
+    {# 2) Keep only statuses that were selected, in the order above #}
+    {% set visibleStatuses = [] %}
+    {% for s in statusOrder %}
+      {% if selectedStatuses and selectedStatuses.indexOf(s) > -1 %}
+        {% set visibleStatuses = (visibleStatuses.push(s), visibleStatuses) %}
+      {% endif %}
+    {% endfor %}
+
+    {# 3) Decide which task types (rows) to show based on radio selection #}
+    {% set allTaskTypes = ["Type A", "Type B", "Type C"] %}
+    {% set visibleTaskTypes = [] %}
+
+    {% if selectedTaskType == "All" %}
+      {% set visibleTaskTypes = allTaskTypes %}
+    {% elseif selectedTaskType %}
+      {% set visibleTaskTypes = [selectedTaskType] %}
     {% endif %}
 
-    {% if selectedStatuses.includes('Active') %}
-      {% set rows = (rows.push([
-        { text: "Type B" },
-        { text: "7", format: "numeric" },
-        { text: "1", format: "numeric" },
-        { text: "3", format: "numeric" },
-        { text: "11", format: "numeric" }
-      ]), rows) %}
-    {% endif %}
+    {# 4) If either nothing selected for task type OR no statuses ticked -> show nothing #}
+    {% if visibleTaskTypes.length and visibleStatuses.length %}
+    
 
-    {% if selectedStatuses.includes('Completed') %}
-      {% set rows = (rows.push([
-        { text: "Type C" },
-        { text: "2", format: "numeric" },
-        { text: "2", format: "numeric" },
-        { text: "4", format: "numeric" },
-        { text: "8", format: "numeric" }
-      ]), rows) %}
-    {% endif %}
+      {# 5) Prototype data (replace with real data later) #}
+      {% set stats = {
+        "Type A": { "Allocated": 4, "Active": 1, "Completed": 4 },
+        "Type B": { "Allocated": 3, "Active": 1, "Completed": 7 },
+        "Type C": { "Allocated": 4, "Active": 2, "Completed": 2 }
+      } %}
 
-    {{ govukTable({
-      caption: "Results for 1 January 2025 to 1 May 2026",
-      firstCellIsHeader: false,
-      head: [
-        { text: "Task type" },
-        { text: "Completed", format: "numeric" },
-        { text: "Active", format: "numeric" },
-        { text: "Allocated", format: "numeric" },
-        { text: "Total", format: "numeric" }
-      ],
-      rows: rows
-    }) }}
+      {# 6) Build dynamic table head #}
+      {% set head = [{ text: "Task type" }] %}
+      {% for s in visibleStatuses %}
+        {% set head = (head.push({ text: s, format: "numeric" }), head) %}
+      {% endfor %}
+      {% set head = (head.push({ text: "Total", format: "numeric" }), head) %}
+
+      {# 7) Build dynamic rows #}
+      {% set rows = [] %}
+
+      {% for t in visibleTaskTypes %}
+        {% set row = [{ text: t }] %}
+        {% set total = 0 %}
+
+        {% for s in visibleStatuses %}
+          {% set value = stats[t][s] %}
+          {% set total = total + value %}
+          {% set row = (row.push({ text: value, format: "numeric" }), row) %}
+        {% endfor %}
+
+        {% set row = (row.push({ text: total, format: "numeric" }), row) %}
+        {% set rows = (rows.push(row), rows) %}
+      {% endfor %}
+
+      {{ govukTable({
+        caption: "Results for 1 January 2025 to 1 May 2026",
+        firstCellIsHeader: false,
+        head: head,
+        rows: rows
+      }) }}
+
+
+      {% else %}
+
+        {{ govukInsetText({
+          text: "Select a task type and at least one status to see results."
+        }) }}
+
 
   {% endif %}
 
+{% endif %}
 
 
     {# <a style="color: #d4351c;" href="team-parameters-error-message">Error messages</a> #}
