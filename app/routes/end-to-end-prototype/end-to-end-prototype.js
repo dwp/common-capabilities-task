@@ -107,6 +107,14 @@ router.post('/end-to-end-prototype/v1/service-manager/agent-statistics', (req, r
   })
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/select', (req, res) => {
+	if (req.session.data.mi.sm.select == 'Filters and results on the same page'){
+		res.redirect("agent-statistics")
+	} else {
+		res.redirect("agent-statistics-no-results")
+	}
+})
+
 // Team leader
 
 router.post('/end-to-end-prototype/v1/team-leader/mi/select', (req, res) => {

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "View Management Information (MI)" %}
+{% set pageName = "Select" %}
 
 
 {% block beforeContent %}
@@ -19,26 +19,26 @@
     <form method="post" novalidate>
 
       {{ govukRadios({
-        name: "mi[tl][select]",
+        name: "mi[sm][select]",
         fieldset: {
           legend: {
-            text: "Select",
+            text: "Select journey (internal page)",
             isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
+            classes: "govuk-fieldset__legend--l"
           }
         },
         hint: {
           text: ""
         },
-        value: data.mi.tl.select,
+        value: data.mi.sm.select,
         items: [
           {
-            value: "Version without on hold",
-            text: "Version without 'on hold'"
+            value: "Filters and results on the same page",
+            text: "Filters and results on the same page"
           },
           {
-            value: "Version with on hold",
-            text: "Version with 'on hold'"
+            value: "Filters and results on the diferent page",
+            text: "Filters and results on the diferent page"
           }
         ]
       }) }}
