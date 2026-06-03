@@ -24,37 +24,7 @@
 
       <form method="post" novalidate>
         
-      {# {{ govukRadios({
-        name: "agent[returnTaskToQueue]",
-        fieldset: {
-          legend: {
-            text: "Select a reason",
-            isPageHeading: false,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        value: data.agent.returnTaskToQueue,
-        items: [
-          {
-            value: "Further work is required",
-            text: "Further work is required"
-          },
-          {
-            value: "I do not have the right skills or training",
-            text: "I do not have the right skills or training",
-            hint: {
-            text: "You will not get this task again"
-            }
-          },
-          {
-            value: "The task does not reflect the work",
-            text: "The task does not reflect the work",
-            hint: {
-            text: "You will not get this task again"
-            }
-          }
-        ]
-      }) }} #}
+   
 
       {% set returnReason %}
         {{ govukRadios({
@@ -79,6 +49,30 @@
           ]
         }) }}
       {% endset -%}
+
+      {# {% set returnAndBlockReason %}
+        {{ govukRadios({
+          name: "agent[returnTaskToQueue][reason]",
+          classes: "govuk-radios--small",
+          values: data.agent.returnTaskToQueue.reason,
+          items: [
+            {
+              value: "Further work is required",
+              text: "Further work is required"
+            },
+            {
+              value: "I do not have the right skills or training",
+              text: "I do not have the right skills or training",
+              hint: {text: "You will not get this task again"}
+            },
+            {
+              value: "The task does not reflect the work",
+              text: "The task does not reflect the work",
+              hint: {text: "You will not get this task again"}
+            }
+          ]
+        }) }}
+      {% endset -%} #}
       
       {{ govukRadios({
         name: "agent[returnTaskToQueue]",
@@ -100,7 +94,8 @@
           {
             value: "Return and block",
             text: "Return and block",
-            hint: {text: "You will not get this task again."}
+            hint: {text: "You will not get this task again."},
+            conditional: {html: returnReason}
           }
         ]
       }) }}
