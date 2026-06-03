@@ -24,7 +24,7 @@
 
       <form method="post" novalidate>
         
-      {{ govukRadios({
+      {# {{ govukRadios({
         name: "agent[returnTaskToQueue]",
         fieldset: {
           legend: {
@@ -54,30 +54,78 @@
             }
           }
         ]
+      }) }} #}
+
+      {% set returnReason %}
+        {{ govukRadios({
+          name: "agent[returnTaskToQueue][reason]",
+          classes: "govuk-radios--small",
+          values: data.agent.returnTaskToQueue.reason,
+          items: [
+            {
+              value: "Further work is required",
+              text: "Further work is required"
+            },
+            {
+              value: "I do not have the right skills or training",
+              text: "I do not have the right skills or training",
+              hint: {text: "You will not get this task again"}
+            },
+            {
+              value: "The task does not reflect the work",
+              text: "The task does not reflect the work",
+              hint: {text: "You will not get this task again"}
+            }
+          ]
+        }) }}
+      {% endset -%}
+      
+      {{ govukRadios({
+        name: "agent[returnTaskToQueue]",
+        fieldset: {
+          legend: {
+            text: "Select an option",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.agent.returnTaskToQueue,
+        items: [
+          {
+            value: "Return",
+            text: "Return",
+            hint: {text: "Select a reason for returning the task"},
+            conditional: {html: returnReason}
+          },
+          {
+            value: "Return and block",
+            text: "Return and block",
+            hint: {text: "You will not get this task again."}
+          }
+        ]
+      }) }}
+
+      {{ govukCheckboxes({
+        name: "",
+        fieldset: {
+          legend: {
+            text: "Add 'escalate' as an attribute to this task (optional)",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Selecting 'escalate'  will make this task available only to agents who have an 'escalate' attribute in their profile"
+        },
+        values: data.agent.escalate,
+        items: [
+          {
+            value: "escalate",
+            text: "Escalate"
+          }
+        ]
       }) }}
       
-
-    {{ govukCheckboxes({
-      name: "",
-      fieldset: {
-        legend: {
-          text: "Add 'escalate' as an attribute to this task (optional)",
-          isPageHeading: true,
-          classes: "govuk-fieldset__legend--m"
-        }
-      },
-      hint: {
-        text: "Selecting 'escalate'  will make this task available only to agents who have an 'escalate' attribute in their profile"
-      },
-      values: data.agent.escalate,
-      items: [
-        {
-          value: "escalate",
-          text: "Escalate"
-        }
-      ]
-    }) }}
-    
   
     <div class="govuk-button-group">
       {{ govukButton({

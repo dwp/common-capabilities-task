@@ -115,6 +115,16 @@ router.post('/end-to-end-prototype/v1/service-manager/select', (req, res) => {
 	}
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/agent-statistics-no-results', (req, res) => {
+	if (req.session.data.sm.agentStats.taskType == 'All'){
+		res.redirect("team-stats-with-details-with-on-hold")
+	} else {
+		res.redirect("team-stats-type-a")
+	}
+})
+
+
+
 // Team leader
 
 router.post('/end-to-end-prototype/v1/team-leader/mi/select', (req, res) => {

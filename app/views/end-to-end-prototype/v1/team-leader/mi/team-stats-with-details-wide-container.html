@@ -1,6 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
+{% set containerClasses = "govuk-width-container-1320" %}
 {% set pageName = data['mvp']['stats']['team'] %}
 
 
@@ -33,10 +34,14 @@
         
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width: 300px">Task type</th>
+            <th scope="col" class="govuk-table__header" style="width: auto;">Task type</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Active</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">On hold</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Returned</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Put on hold and keep</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Put on hold and return to queue</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Return and block</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -44,32 +49,52 @@
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">250</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
           </tr>
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type B</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">260</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
           </tr>
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type C</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">241</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">16</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
           </tr>
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type D</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">238</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">15</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
           </tr>
         </tbody>
         <tfoot class="govuk-table__row">
           <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">989</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">61</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">9</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
         </tfoot>
       </table>
       <a href="#" class="govuk-link">Download as csv</a>
@@ -84,6 +109,10 @@
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Active</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Returned</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">On hold</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Put on hold and keep</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Put on hold and return to queue</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Return and block</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
           </tr>
         </thead>
@@ -95,7 +124,11 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">80</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="amy-anderson-details">Details</a></td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric"><a href="amy-anderson-detailswith-on-hold">Details</a></td>
           </tr>
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Georgia Duncan
@@ -104,6 +137,10 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">87</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
           </tr>
           <tr class="govuk-table__row">
@@ -113,6 +150,10 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">110</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">20</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
           </tr>
           <tr class="govuk-table__row">
@@ -121,6 +162,10 @@
             </td>
             <td class="govuk-table__cell govuk-table__cell--numeric">60</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
           </tr>
@@ -131,6 +176,10 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">67</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">12</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
           </tr>
           <tr class="govuk-table__row">
@@ -140,6 +189,10 @@
             <td class="govuk-table__cell govuk-table__cell--numeric">88</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">23</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric"><a href="#">Details</a></td>
           </tr>
         </tbody>
@@ -148,6 +201,10 @@
           <td class="govuk-table__cell govuk-table__cell--numeric">492</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">70</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">9</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
+           <td class="govuk-table__cell govuk-table__cell--numeric">6</td>
           <td class="govuk-table__cell govuk-table__cell--numeric"></td>
         </tfoot>
       </table>
@@ -206,9 +263,7 @@
           {# <td class="govuk-table__cell govuk-table__cell--numeric">1</td> #}
         </tfoot>
       </table>
-      <a href="#" class="govuk-link">Download as csv</a><br><br>
-      <a href="team-stats-with-put-on-hold-separate" class="govuk-link">Version with the put on hold reasons in a separate table</a><br><br>
-      <a href="team-stats-with-details-wide-container" class="govuk-link">Version with the wider table</a>
+      <a href="#" class="govuk-link">Download as csv</a>
       
 
     </div>
