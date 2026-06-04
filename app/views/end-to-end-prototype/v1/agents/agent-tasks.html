@@ -18,10 +18,12 @@
 
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
-      {% if data.agent.returnTaskToQueue == "hold" %}
-        Task put on hold
+      {% if data.agent.returnTaskToQueue == "Return" %}
+        You returned Call customer for Oliver Bennett to the queue.
+        <p class="govuk-!-margin-top-2">This task is now avaliable to be claimed and worked on by right agent.</p>
       {% else %}
-        Task returned to queue
+        Task returned and blocket Call customer for Oliver Bennett.
+        <p class="govuk-!-margin-top-2">This task is now avaliable to be claimed and worked on by right agent.</p>
       {% endif %}
     </h3>
   {% endset %}

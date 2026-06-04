@@ -1,7 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
-{% set pageName = data['mvp']['stats']['team'] %}
+{% set pageName = "Type A" %}
 
 
 {% block beforeContent %}
@@ -12,11 +12,10 @@
 {% endblock %}
 
 {% block content %}
-
   
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <h1 class="govuk-heading-l">{{pageName}} MI</h1>
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
 
       <p class="govuk-body">
         All tasks completed or returned between 13 October and 20 October 2025, and any tasks in progress (active) at the end of this period.
@@ -27,10 +26,10 @@
       </p>
 
 
-      <!-- Table three - team -->
+      <!-- Table one - team -->
       <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-8">
         
-        <caption class="govuk-table__caption govuk-table__caption--m">Reasons for return by task across team</caption>
+        <caption class="govuk-table__caption govuk-table__caption--m">Reasons for return by task across team (version 1)</caption>
         
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
@@ -77,6 +76,39 @@
           <td class="govuk-table__cell govuk-table__cell--numeric">23</td>
           <td class="govuk-table__cell govuk-table__cell--numeric">25</td>
           {# <td class="govuk-table__cell govuk-table__cell--numeric">1</td> #}
+        </tfoot>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+
+
+      <!-- Table two - team -->
+      <table class="govuk-table govuk-!-static-margin-bottom-3 govuk-!-static-margin-top-8">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Reasons for return by task across team (version 2)</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header" style="width: 300px">Reasons of return</th>
+            <th scope="col" class="govuk-table__header govuk-table__cell--numeric" style="width: 300px">Task A</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Further work is required</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">I do not have the right skills or training	The task does not reflect</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">The task does not reflect the work</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+          </tr>
+        </tbody>
+        <tfoot class="govuk-table__row">
+          <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Total</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
         </tfoot>
       </table>
       <a href="#" class="govuk-link">Download as csv</a>
