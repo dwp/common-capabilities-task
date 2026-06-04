@@ -27,7 +27,21 @@
    
 
       {% set returnReason %}
-        {{ govukRadios({
+        {{ govukCheckboxes({
+          name: "",
+          classes: "govuk-checkboxes--small",
+          fieldset: {
+          },
+          values: data.agent.returnTaskToQueue.reason,
+          items: [
+            {
+              value: "Further work is required",
+              text: "Further work is required"
+            }
+          ]
+        }) }}
+
+        {# {{ govukRadios({
           name: "agent[returnTaskToQueue][reason]",
           classes: "govuk-radios--small",
           values: data.agent.returnTaskToQueue.reason,
@@ -45,34 +59,29 @@
               value: "The task does not reflect the work",
               text: "The task does not reflect the work",
               hint: {text: "You will not get this task again"}
+            }
+          ]
+        }) }} #}
+
+      {% endset -%}
+
+      {% set returnAndBlockReason %}
+        {{ govukRadios({
+          name: "agent[returnTaskToQueue][reason]",
+          classes: "govuk-radios--small",
+          values: data.agent.returnTaskToQueue.reason,
+          items: [
+            {
+              value: "I do not have the right skills or training",
+              text: "I do not have the right skills or training"
+            },
+            {
+              value: "The task does not reflect the work",
+              text: "The task does not reflect the work"
             }
           ]
         }) }}
       {% endset -%}
-
-      {# {% set returnAndBlockReason %}
-        {{ govukRadios({
-          name: "agent[returnTaskToQueue][reason]",
-          classes: "govuk-radios--small",
-          values: data.agent.returnTaskToQueue.reason,
-          items: [
-            {
-              value: "Further work is required",
-              text: "Further work is required"
-            },
-            {
-              value: "I do not have the right skills or training",
-              text: "I do not have the right skills or training",
-              hint: {text: "You will not get this task again"}
-            },
-            {
-              value: "The task does not reflect the work",
-              text: "The task does not reflect the work",
-              hint: {text: "You will not get this task again"}
-            }
-          ]
-        }) }}
-      {% endset -%} #}
       
       {{ govukRadios({
         name: "agent[returnTaskToQueue]",
@@ -95,7 +104,7 @@
             value: "Return and block",
             text: "Return and block",
             hint: {text: "You will not get this task again."},
-            conditional: {html: returnReason}
+            conditional: {html: returnAndBlockReason}
           }
         ]
       }) }}
