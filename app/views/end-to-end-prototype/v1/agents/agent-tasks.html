@@ -14,8 +14,9 @@
 
 {% block content %}
 
-{% if data.agent.returnTaskToQueue %}
+{# --- Return task banner --- #}
 
+{% if data.agent.returnTaskToQueue %}
   {% set html %}
     <h3 class="govuk-notification-banner__heading">
       {% if data.agent.returnTaskToQueue == "Return" %}
@@ -36,7 +37,28 @@
 {% endif %}
 
 
+{# --- Close task banners --- #}
+{% if data.agent.closeTask == "Completed" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You completed Process Benefit GB for Simon Oliver Bennett.</h3><p>If you completed this task in error, speak to your team leader.</p>" | safe
+  }) }}
+
+{% elif data.agent.closeTask == "Failed" %}
+  {{ govukNotificationBanner({
+    type: "error",
+    html: "<h3 class='govuk-notification-banner__heading'>You failed Process Benefit GB for Simon Oliver Bennett.</h3><p>If you failed this task in error, speak to your team leader.</p>" | safe
+  }) }}
+
+{% elif data.agent.closeTask == "Cancelled" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You cancelled Process Benefit GB for Simon Oliver Bennett.</h3><p>If you cancelled this task in error, speak to your team leader.</p>" | safe
+  }) }}
+{% endif %}
+
 <h1 class="govuk-heading-l">{{pageName}}</h1>
+<p>DEBUG: {{ data.agent.closeTask }}</p>
 
 <div class="govuk-button-group">
 

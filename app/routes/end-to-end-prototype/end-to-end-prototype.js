@@ -56,6 +56,16 @@ router.post('/end-to-end-prototype/v1/agents/is-it-the-right-customer', (req, re
 	}
 })
 
+
+// Close task
+router.post('/end-to-end-prototype/v1/agents/close-task', (req, res) => {
+  req.session.data.agent = req.session.data.agent || {}
+
+  req.session.data.agent.closeTask = req.body.agent?.closeTask
+
+  res.redirect('/end-to-end-prototype/v1/agents/agent-tasks')
+})
+
 // MI team leader
 
 router.post('/end-to-end-prototype/v1/team-leader/mi/mi-filters', (req, res) => {
