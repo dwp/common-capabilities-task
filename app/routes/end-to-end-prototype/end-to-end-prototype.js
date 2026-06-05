@@ -56,6 +56,22 @@ router.post('/end-to-end-prototype/v1/agents/is-it-the-right-customer', (req, re
 	}
 })
 
+router.post('/end-to-end-prototype/v1/agents/set-hold-date', (req, res) => {
+  if (req.body.action === 'put-on-hold') {
+    req.session.data.banner = 'put-on-hold'
+  }
+  res.redirect('/end-to-end-prototype/v1/agents/agent-tasks')
+})
+
+router.get('/end-to-end-prototype/v1/agents/agent-tasks', (req, res) => {
+  const banner = req.session.data.banner
+  req.session.data.banner = null
+
+  res.render('end-to-end-prototype/v1/agents/agent-tasks', {
+    banner
+  })
+})
+
 
 // Close task
 router.post('/end-to-end-prototype/v1/agents/close-task', (req, res) => {

@@ -57,8 +57,26 @@
   }) }}
 {% endif %}
 
+{# --- Put on hold banners --- #}
+{% if banner == "put-on-hold" %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      Task put on hold
+    </h3>
+    <p class="govuk-body">
+      The task has been successfully put on hold.
+    </p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+
 <h1 class="govuk-heading-l">{{pageName}}</h1>
-<p>DEBUG: {{ data.agent.closeTask }}</p>
+
 
 <div class="govuk-button-group">
 

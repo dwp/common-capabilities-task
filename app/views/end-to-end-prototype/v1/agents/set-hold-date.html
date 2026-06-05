@@ -3,7 +3,8 @@
 {% block pageTitle %}
   Put this task on hold
 {% endblock %}
-{% set pageName = "This page is in progres" %}
+
+{% set pageName = "Set a date to put this task on hold" %}
 
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -11,41 +12,69 @@
 
 {% block content %}
 <div class="govuk-grid-row">
-<div class="govuk-form-group">
     <div class="govuk-grid-column-two-thirds">
 
-    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-        <h1 class="govuk-fieldset__heading">
-           {{pageName}}
-        </h1>
-      </legend>
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p>This page is in progres</p>
+      <p class="govuk-body-m">This task will become available to work on again on this date.</p>
 
+      <form method="post" novalidate>
+
+      {{ govukDateInput({
+        id: "date",
+        fieldset: {
+          legend: {
+            text: "Date",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "For example, 31 3 1980"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm",
+          name: "action",
+          value: "put-on-hold"
+        }) }}
+        
+
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "put-on-hold"
+        }) }}
+      </div>
+
+    </form>
      
-      
-    </fieldset>
-    
+
   </div>
 </div>
-</div>
 
-    <div class="govuk-button-group">
-
-      {{ govukButton({
-        text: "Confirm",
-        href: "agent-tasks"
-      }) }}
-
-      {{ govukButton({
-        text: "Back",
-        classes: "govuk-button--secondary",
-        href: "put-on-hold"
-      }) }}
-
-    </div>
-  </form>
 
 
 {% endblock %}
