@@ -6,16 +6,241 @@
 {% set pageName = "All Claims One QA tasks for 	Oliver Bennett" %}
 
 {% block beforeContent %}
-  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Agent dashboard",
+      href: "home-agent"
+    },
+    {
+      text: "Find a customer",
+      href: "find-person"
+    }
+  ]
+}) }}
 {% endblock %}
+
 
 {% block content %}
 
+
+{% if data.showBanner %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have claimed Process Winter Fuel Benefit Request GB task.</h3>" | safe
+  }) }}
+{% endif %}
+
+
+
+
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-thirds">
 
   <h1 class="govuk-heading-m">{{pageName}}</h1>
+  <p>Completed, failed and cancelled tasks are not shown.</p>
+
+  
+  {{ govukTable({
+  caption: "",
+  firstCellIsHeader: false,
+  head: [
+    { text: "Created" },
+    { text: "Task type" },
+    { text: "Due" },
+    { text: "Status" },
+    { text: "Action" }
+  ],
+  rows: [
+      [
+        { text: "27 Jun 2026" },
+        { text: "Benefits Amount 01" },
+        { text: "27 Jun 2026 at 14:04" },
+        {
+          html: govukTag({
+            text: "Unallocated",
+            classes: "govuk-tag--grey"
+          })
+        },
+        { html: '<a href="task-benefits">Details</a>' }
+      ],
+      [
+        { text: "26 Jun 2026" },
+        { text: "Defect Retest Welsh Task Type 23rd Feb" },
+        {
+          html: govukTag({
+            text: "Overdue",
+            classes: "govuk-tag--red"
+          }) + '<br>' + '25 Jun 2026 10:11'
+        },
+        {
+          html: govukTag({
+            text: "Unallocated",
+            classes: "govuk-tag--grey"
+          })
+        },
+        { html: '<a href="#">Details</a>' }
+      ],
+      [
+        { text: "25 Jun 2026" },
+        { text: "Process Benefit Wales" },
+        {
+          html: govukTag({
+            text: "Overdue",
+            classes: "govuk-tag--red"
+          }) + '<br>' + '24 Jun 2026 10:11'
+        },
+        {
+          html: govukTag({
+            text: "Unallocated",
+            classes: "govuk-tag--grey"
+          })
+        },
+        { html: '<a href="#">Details</a>' }
+        ],
+        [
+        { text: "24 Jun 2026" },
+        { text: "Verify Employment Details 02" },
+        {
+          html: govukTag({
+            text: "Overdue",
+            classes: "govuk-tag--red"
+          }) + '<br>' + '23 Jun 2026 10:11'
+        },
+        {
+          html: govukTag({
+            text: "Unallocated",
+            classes: "govuk-tag--grey"
+          })
+        },
+        { html: '<a href="#">Details</a>' }
+      ],
+      [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ],
+    [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ],
+    [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ],
+    [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ],
+        [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ],
+        [
+      { text: "24 Jun 2026" },
+      { text: "Verify Employment Details 02" },
+      {
+        html: govukTag({
+          text: "Overdue",
+          classes: "govuk-tag--red"
+        }) + '<br>' + '23 Jun 2026 10:11'
+      },
+      {
+        html: govukTag({
+          text: "Unallocated",
+          classes: "govuk-tag--grey"
+        })
+      },
+      { html: '<a href="#">Details</a>' }
+    ]
+  ]
+}) }}
+
+{{ govukPagination({
+  next: {
+    href: "#"
+  },
+  items: [
+    {
+      number: 1,
+      current: true,
+      href: "#"
+    },
+    {
+      number: 2,
+      href: "#"
+    },
+    {
+      number: 3,
+      href: "#"
+    }
+  ]
+}) }}
     
   </div>
 

@@ -1,0 +1,137 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Benefits Amount 01 for Ron Atkinson" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+
+{% block beforeContent %} 
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Agent dashboard",
+        href: "home-agent"
+      },
+      {
+        text: "Find a customer",
+        href: "find-person"
+      },
+      {
+        text: "All Claims One QA tasks for Ron Atkinson",
+        href: "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+
+{# {% if data['ChangeDueDate'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have changed the due date.</h3>" | safe
+  }) }}
+{% elif data['ChangePriorityLevel'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have changed the priority level.</h3>" | safe
+  }) }}
+{% elif data['ReturnTaskToQueue'] == "yes" %}
+  {{ govukNotificationBanner({
+    type: "success",
+    html: "<h3 class='govuk-notification-banner__heading'>You have returned task to the queue.</h3>" | safe
+   }) }}
+{% endif %} #}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+      
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Customer
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Ron Atkinson
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            National Insurance Number
+          </dt>
+          <dd class="govuk-summary-list__value">
+            QQ 12 34 56 B8
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Task type
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Benefits Amount 01 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Due
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">27 Jun 2026 at 14:04</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Created
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">27 Jun 2026 at 12:04</p>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Status
+          </dt>
+          <dd class="govuk-summary-list__value">
+             {{govukTag({
+              text: "Unallocated",
+              classes: "govuk-tag--grey govuk-!-margin-top-1"
+            })}}
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Agent
+          </dt>
+          <dd class="govuk-summary-list__value">
+            None
+          </dd>
+        </div>
+      </dl>
+
+    <form method="post" novalidate>
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Claim task",
+          href: "#"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task-results"
+        }) }}
+      </div>
+    </form>
+
+    </div>
+</div>
+
+
+{% endblock %}
+
+
