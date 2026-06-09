@@ -13,7 +13,21 @@
 
 {% endblock %}
 
+
 {% block content %}
+
+{% if (data['showTaskConfirmBanner'] == "yes") %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You created TCS 006 New Claim Verification 001 for Oliver Bennett.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
 
 <div class="govuk-width-container">
   <h1 class="govuk-heading-l">Agent dashboard</h1>

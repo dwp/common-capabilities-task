@@ -23,30 +23,16 @@
 
 
 {% block content %}
-  {% if (data['claimTaskBanner'] == "yes") %}
-    {% set html %}
-      <h3 class="govuk-notification-banner__heading">
-        You have claimed Benefits Amount 01 Request task.
-      </h3>
-    {% endset %}
 
-    {{ govukNotificationBanner({
-      html: html,
-      type: "success"
+    {{ govukErrorSummary({
+      titleText: "You cannot claim this task. This is because you do not have attributes that match the task. If you need to work on this task, speak to a user with service manager access: they can change your attributes."
     }) }}
-{% endif %}
 
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
-  <h1 class="govuk-heading-l">{{pageName}}</h1>
-
-  {{ govukButton({
-    text: "Create a task",
-    href: "create-task"
-  }) }}
-
+  <h1 class="govuk-heading-m">{{pageName}}</h1>
   <p>Completed, failed and cancelled tasks are not shown.</p>
 
   
@@ -250,7 +236,6 @@
   ]
 }) }}
 
-  <a style="color:#d4351c" href="task-results-error" class="govuk-link">Error banner</a>
     
   </div>
 

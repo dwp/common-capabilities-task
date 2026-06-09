@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Create a task
+{% endblock %}
+
+{% set pageName = "Create a task" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "home-agent"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {{ govukSelect({
+          id: "",
+          name: "",
+          label: {
+            text: "Choose a task type",
+            isPageHeading: false,
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Select one"
+          },
+          value: data.create.task,
+          items: [
+            {
+              value: "Choose a task type",
+              text: "Choose a task type"
+            },
+            {
+              value: "TCS 006 New Claim Verification 001",
+              text: "TCS 006 New Claim Verification 001"
+            },
+            {
+              value: "Nil Claim SME",
+              text: "Nil Claim SME"
+            },
+              {
+              value: "Review",
+              text: "Review"
+            }
+          ]
+        }) }}
+       
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue",
+            href: "review-task"
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "task-results"
+          }) }}
+        </div>
+
+    </div>
+  </div>
+             
+{% endblock %}

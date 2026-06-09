@@ -117,7 +117,10 @@
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Claim task",
-          href: "#"
+          attributes: {
+          name: "claimTaskBanner",
+          value: "yes"
+          }
         }) }}
       
         {{ govukButton({
