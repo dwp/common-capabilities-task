@@ -1,0 +1,280 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}
+
+{% block content %}
+
+
+<div class="govuk-grid-row" data-testid="grid-row">
+  <div class="govuk-grid-column-one-third">
+    <section class="dwp-quick-reference dwp-quick-reference--reduced dwp-quick-reference--alternative" style="margin-left: 0;">
+      <dl class="dwp-quick-reference__block">
+        
+          <dt class="dwp-quick-reference__label govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-quick-reference__primary">Tim Cook<br><span>(tim.cook@dwp.gov.uk)</span><br><span class="dwp-quick-reference__secondary">Staff number: 0987654</span></dd>
+            <dt class="dwp-quick-reference__label dwp-quick-reference__label--primary">email:</dt>
+            <dd class="dwp-quick-reference__secondary">tim.cook@dwp.gov.uk</dd>
+            <dt class="dwp-quick-reference__label">Can work on these tasks:</dt>
+            <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              Verify Citizen Address Details 
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+           <strong class="govuk-tag dwp-quick-reference__status--white">
+             Benefits Amount 01
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              Benefits Amount 02
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              Benefits Amount 03
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              Benefits Amount 04
+            </strong>
+          </dd>
+          <dd class="dwp-quick-reference__status">
+            <strong class="govuk-tag dwp-quick-reference__status--white">
+              Benefits Amount 05
+            </strong>
+          </dd>
+      </dl>
+    </section>
+  </div>
+  <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">User profile</h1>
+    
+    <p class="govuk-body-m">
+      You can change the groups that Tim Cook belongs to. 
+      The attributes of the groups, plus individual attributes, determine which tasks Tim Cook can claim.
+    </p>
+
+    <h2 class="govuk-heading-m">Groups</h2>
+    <p>These are the groups that Tim Cook (tim.cook@dwp.gov.uk) currently belongs to.</p>
+
+    <dl class="govuk-summary-list govuk-!-static-margin-bottom-1">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key govuk-!-width-full" aria-label="Group one">
+          Group one
+          <details class="govuk-details govuk-!-static-margin-bottom-0 govuk-!-static-margin-top-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Attributes of this group
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-!-static-margin-bottom-0">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>weekends</div>
+                    <div>evenings</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>aa</div>
+                    <div>g6</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="language">language</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>spanish</div>
+                    <div>welsh</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+        
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" aria-label="new-agent-group">
+          Group two
+          <details class="govuk-details govuk-!-static-margin-bottom-0 govuk-!-static-margin-top-1">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Attributes of this group
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              <dl class="govuk-summary-list govuk-!-static-margin-bottom-0">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="working-pattern">working-pattern</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>weekends</div>
+                    <div>evenings</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="grade">grade</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>aa</div>
+                    <div>g6</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="language">language</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>spanish</div>
+                    <div>welsh</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="vulnerable">vulnerable</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="urgent">urgent</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="escalate">escalate</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key" aria-label="country-subdivision">country-subdivision</dt>
+                  <dd class="govuk-summary-list__value">
+                    <div>None</div>
+                  </dd>
+                </div>
+              </dl>
+            </div>
+          </details>
+        </dt>
+        <dd class="govuk-summary-list__value"></dd>
+       
+      </div>
+    </dl>
+    <div class="govuk-!-static-margin-bottom-5 govuk-!-static-margin-top-3">
+      <a href="change-groups" class="govuk-link">Change the groups Tim Cook belongs to</a>
+    </div>
+    
+    
+    <table class="govuk-table govuk-!-static-margin-bottom-5">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Team and role<br>
+        <span class="govuk-caption-m govuk-!-static-margin-top-2">
+          A single user can have both agent access and team leader access in DWP Task. 
+          They can only work as an agent in one team at a time. However, they can be a team leader in multiple teams.
+        </span>
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Team</th>
+          <th scope="col" class="govuk-table__header">Role</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Decision making team</th>
+          <td class="govuk-table__cell">Team leader</td>
+        </tr>
+      </tbody>
+    </table>
+
+     <table class="govuk-table govuk-!-static-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">
+        Individual attributes of Team Lead (tim.cook@dwp.gov.uk) 
+      </caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">working-pattern</th>
+          <th scope="col" class="govuk-table__header">weekends nine-to-five</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">language</th>
+          <td class="govuk-table__cell">English, Welsh</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">grade</th>
+          <td class="govuk-table__cell">g7</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+   
+    <div class="govuk-!-static-margin-bottom-3">
+      {# <a href="change-team-tm" class="govuk-link ">Change team and role</a> #}
+    </div>
+    
+    <form method="post">
+
+      <div class="govuk-button-group">
+        {% if data['changeGroupsTl'] == "yes" %}
+          {{ govukButton({
+            text: "Confirm changes",
+            attributes: {
+              name: "showBannerOneTl",
+              value: "yes"
+            }
+          }) }}
+        {% endif %}
+
+    </form>
+
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "manage-a-team"
+        }) }}
+      </div>
+
+  </div>
+  
+</div>
+
+{% endblock %}
+
+
