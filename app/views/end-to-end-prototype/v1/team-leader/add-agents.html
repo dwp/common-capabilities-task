@@ -1,0 +1,147 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Manage agents on Decision Making Team" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+  {% block pageScripts %}
+
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/teams.js"></script>
+  <script>
+    const teamMembers = [
+      "Aiden Jenkins, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Anderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Adams, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Johnston, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Ben Hoad, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Joel Odonnell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Oliver Logan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Dan Hayes, 12345678, G4S DWP Contact Center",
+      "Kathleen Lin, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Darren Lowery, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kamran Roth, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amaan Hubbard, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sally Whitaker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Georgia Duncan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Jean Booker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kaine Bell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Arjan Sharp, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Bianca Nicholson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Brett Henderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Hassan Young, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sonia Pruitt, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Erica Fernandez, 12345678, email@dwp.gov.uk, G4S DWP Contact Center"
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#searchb'),
+      id: 'searchb', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]}, ${parts[2]}, ${parts[3]}`
+       
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+{% block content %}
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+        
+    <label class="govuk-label govuk-label--m" for="searchb">Find an agent</label>
+      <div id="event-name-hint" class="govuk-hint">
+        Enter name, staff number or email
+      </div>
+    <div id="searchb" class="govuk-input--width-30"></div>
+
+    <div class="govuk-button-group govuk-!-static-margin-top-3">
+      {{ govukButton({
+        text: "Add",
+        id: "addTeamMember",
+        classes: "govuk-button--secondary"
+      }) }}
+    </div>
+
+
+    {{ govukDetails({
+        summaryText: "I cannot find the agent I'm looking for",
+        html: '<h2 class="govuk-heading-m">Get help with your search</h2>
+        <p>If you cannot find the agent you are looking for:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Check their details and try again - search by email or staff number if their name does not show results
+          </li>
+          <li>
+            If they are a new starter, wait 24 hours and try again
+          </li>
+          <li>
+            If they are not a new starter, or if they are and you’ve waited 24 hours,<a href="#"> report an incident on Tech Place</a>
+          </li>
+        </ul>
+        '
+    }) }}
+
+     </div>
+  </div>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+ 
+
+    <table class="govuk-table govuk-!-static-margin-bottom-2">
+      <caption class="govuk-table__caption govuk-table__caption--m">Agents</caption>
+      <thead class="govuk-table__head">
+        <th scope="col" class="govuk-table__header">Name</th>
+        <th scope="col" class="govuk-table__header">Staff number</th>
+        <th scope="col" class="govuk-table__header">Email</th>
+        <th scope="col" class="govuk-table__header">Office</th>
+        <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+      </thead>
+      <tbody id="TeamMembersTable" class="govuk-table__body">
+      </tbody>
+    </table>
+
+    <p id="tablePlaceholder">You have not added any team members to {{ data['humanreadablename'] or "None" }} yet.</p>
+
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    
+      {{ govukButton({
+        text: "Cancel",
+        classes: "govuk-button--secondary"
+      }) }}
+    
+      <a href="#" class="govuk-link">Link text</a>
+    </div>
+        
+    </div>
+  </div>
+  
+{% endblock %}

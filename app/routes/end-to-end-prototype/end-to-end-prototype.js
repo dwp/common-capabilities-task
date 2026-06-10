@@ -81,6 +81,10 @@ router.post('/end-to-end-prototype/v1/agents/review-task', (req, res) => {
   res.redirect('/end-to-end-prototype/v1/agents/home-agent')
 })
 
+router.post('/end-to-end-prototype/v1/team-leader/change-groups', (req, res) => {
+  res.redirect('/end-to-end-prototype/v1/team-leader/team-leader-profile')
+})
+
 
 // Close task
 router.post('/end-to-end-prototype/v1/agents/close-task', (req, res) => {

@@ -11,6 +11,19 @@ Team leader home
 
 {% block content %}
 
+{% if (data['changeGroupsTl'] == "yes") %}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have made changes to Tim Cook's details.
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
 
 <div class="govuk-grid-row" data-testid="grid-row">
   <div class="govuk-grid-column-one-third">
