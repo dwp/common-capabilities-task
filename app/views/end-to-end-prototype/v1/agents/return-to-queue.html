@@ -26,45 +26,6 @@
         
    
 
-      {% set returnReason %}
-        {{ govukCheckboxes({
-          name: "",
-          classes: "govuk-checkboxes--small",
-          fieldset: {
-          },
-          values: data.agent.returnTaskToQueue.reason,
-          items: [
-            {
-              value: "Further work is required",
-              text: "Further work is required"
-            }
-          ]
-        }) }}
-
-        {# {{ govukRadios({
-          name: "agent[returnTaskToQueue][reason]",
-          classes: "govuk-radios--small",
-          values: data.agent.returnTaskToQueue.reason,
-          items: [
-            {
-              value: "Further work is required",
-              text: "Further work is required"
-            },
-            {
-              value: "I do not have the right skills or training",
-              text: "I do not have the right skills or training",
-              hint: {text: "You will not get this task again"}
-            },
-            {
-              value: "The task does not reflect the work",
-              text: "The task does not reflect the work",
-              hint: {text: "You will not get this task again"}
-            }
-          ]
-        }) }} #}
-
-      {% endset -%}
-
       {% set returnAndBlockReason %}
         {{ govukRadios({
           name: "agent[returnTaskToQueue][reason]",
@@ -76,8 +37,8 @@
               text: "I do not have the right skills or training"
             },
             {
-              value: "The task does not reflect the work",
-              text: "The task does not reflect the work"
+              value: "Categorised under the wrong workstream",
+              text: "Categorised under the wrong workstream"
             }
           ]
         }) }}
@@ -97,8 +58,7 @@
           {
             value: "Return",
             text: "Return",
-            hint: {text: "Select a reason for returning the task"},
-            conditional: {html: returnReason}
+            hint: {text: "Select a reason for returning the task"}
           },
           {
             value: "Return and block",
