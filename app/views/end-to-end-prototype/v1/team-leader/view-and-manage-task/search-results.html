@@ -1,0 +1,603 @@
+{% extends "layouts/main.html" %}
+
+
+{% set pageName = "View and manage tasks" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block scripts %}
+  {{ super() }}
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const button = document.getElementById("toggle-tasks-button");
+      const tableWrapper = document.getElementById("tasks-table-wrapper");
+
+      if (!button || !tableWrapper) return;
+
+      button.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        const isHidden = tableWrapper.hidden;
+
+        tableWrapper.hidden = !isHidden;
+        button.setAttribute("aria-expanded", String(isHidden));
+      });
+    });
+  </script>
+{% endblock %}
+
+
+
+{% block content %}
+
+<form novalidate method="post">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{ pageName }}</h1>
+
+
+      {% set filtersHtml %}
+
+        <p class="govuk-body">
+          To view any tasks you must enter a data range. Enter from and to dates below.
+        </p>
+
+        <div class="govuk-form-group" data-testid="form-group-id">
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-one-third" class="govuk-grid-column-one-third">
+              <div class="govuk-form-group" data-testid="form-group-id">
+                <p class="govuk-body-m govuk-!-font-weight-bold">From</p>
+                <p class="govuk-hint">For example, 27 3 2024</p>
+
+                <div class="govuk-date-input" data-testid="date-input-group">
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="from-day">
+                        <span class="govuk-visually-hidden">From</span> Day
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                        id="from-day"
+                        name="from-day"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="from-month">
+                        <span class="govuk-visually-hidden">From</span> Month
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                        id="from-month"
+                        name="from-month"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="from-year">
+                        <span class="govuk-visually-hidden">From</span> Year
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-3"
+                        id="from-year"
+                        name="from-year"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div data-testid="column-one-third" class="govuk-grid-column-one-third">
+              <div class="govuk-form-group" data-testid="form-group-id">
+                <p class="govuk-body-m govuk-!-font-weight-bold">To</p>
+                <p class="govuk-hint">For example, 27 3 2024</p>
+
+                <div class="govuk-date-input" data-testid="date-input-group">
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="to-day">
+                        <span class="govuk-visually-hidden">To</span> Day
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                        id="to-day"
+                        name="to-day"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="to-month">
+                        <span class="govuk-visually-hidden">To</span> Month
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-2"
+                        id="to-month"
+                        name="to-month"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+
+                  <div class="govuk-date-input__item" data-testid="date-input-group-item">
+                    <div class="govuk-form-group" data-testid="form-group-id">
+                      <label class="govuk-label govuk-date-input__label" for="to-year">
+                        <span class="govuk-visually-hidden">To</span> Year
+                      </label>
+                      <input
+                        class="govuk-input govuk-date-input__input govuk-input--width-3"
+                        id="to-year"
+                        name="to-year"
+                        type="text"
+                        value=""
+                      >
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <p class="govuk-hint">
+                  This will display tasks created in this date range. Select an option below if you want to change this.
+                </p>
+
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                      Date range option
+                    </legend>
+
+                    <div data-testid="radios" class="govuk-radios" data-module="govuk-radios">
+                      <div class="govuk-radios__item">
+                        <input
+                          class="govuk-radios__input"
+                          id="created-date"
+                          name="dateRangeType"
+                          type="radio"
+                          value="created-date"
+                          checked=""
+                        >
+                        <label class="govuk-label govuk-radios__label" for="created-date">
+                          Created date
+                        </label>
+                      </div>
+
+                      <div class="govuk-radios__item">
+                        <input
+                          class="govuk-radios__input"
+                          id="completed-date"
+                          name="dateRangeType"
+                          type="radio"
+                          value="completed-date"
+                        >
+                        <label class="govuk-label govuk-radios__label" for="completed-date">
+                          Completed date
+                        </label>
+                      </div>
+                    </div>
+                  </fieldset>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="status">Status</label>
+                  <p class="govuk-hint">Select the status of the tasks you want to view (optional)</p>
+
+                  <select class="govuk-select" id="status" name="status" data-testid="select-component">
+                    <option></option>
+                    <option value="ALLOCATED">Allocated</option>
+                    <option value="ACTIVE">Active</option>
+                    <option value="SUSPENDED">On Hold</option>
+                    <option value="FAILED">Failed</option>
+                    <option value="CANCELLED">Cancelled</option>
+                    <option value="COMPLETED">Completed</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="taskTypeName">Task type</label>
+                  <p class="govuk-hint">Select the task type you want to view (optional)</p>
+
+                  <select class="govuk-select" id="taskTypeName" name="taskTypeName" data-testid="select-component">
+                    <option></option>
+                    <option value="welsh-task-type"> Defect Retest Welsh Task Type 23rd Feb</option>
+                    <option value="benefits-amount-07">Benefit Amount 99</option>
+                    <option value="benefitsamount-00">Benefits Amount 00</option>
+                    <option value="benefitsamount-01">Benefits Amount 01</option>
+                    <option value="benefitsamount-02">Benefits Amount 02</option>
+                    <option value="benefitsamount-03">Benefits Amount 03</option>
+                    <option value="benefitsamount-04">Benefits Amount 04</option>
+                    <option value="benefitsamount-05">Benefits Amount 05</option>
+                    <option value="benefitsamount-06">Benefits Amount 06</option>
+                    <option value="decision-to-grant-benefit">Decision To Grant Benefit Task Type</option>
+                    <option value="french-task-type">Defect Retest French Task Type 23rd Feb</option>
+                    <option value="verify-employment-gb">Eligible Employment Status GB</option>
+                    <option value="eligible-employment-status-scotland">Eligible Employment Status Scotland</option>
+                    <option value="eligible-employment-status-wales">Eligible Employment Status Wales</option>
+                    <option value="check-agent-group-issue">French Task Type</option>
+                    <option value="issuebenefitamount-03">Issue Benefit Amount 03</option>
+                    <option value="issuebenefitsamount-04">Issue Benefits Amount 04</option>
+                    <option value="process-benefit-gb">Process Benefit GB</option>
+                    <option value="process-benefit-scotland">Process Benefit Scotland</option>
+                    <option value="process-benefit-wales">Process Benefit Wales</option>
+                    <option value="spanish-task-type">Spanish Task Type</option>
+                    <option value="verifyaddress-01">Verify Citizen Address Details 01</option>
+                    <option value="verifyemploymentdetails-02">Verify Employment Details 02</option>
+                    <option value="check-welsh-tasks">Welsh Task Type 23rd Feb</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="priority">Priority</label>
+                  <p class="govuk-hint">Select the priority of the tasks you want to view (optional)</p>
+
+                  <select class="govuk-select" id="priority" name="priority" data-testid="select-component">
+                    <option></option>
+                    <option value="0">None</option>
+                    <option value="1">Low</option>
+                    <option value="2">Medium</option>
+                    <option value="3">High</option>
+                    <option value="4">Critical</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="search-autocomplete">Agent</label>
+                  <p class="govuk-hint">
+                    Enter name, staff number or email of the agent whose tasks you want to view (optional)
+                  </p>
+
+                  <div id="search" class="govuk-input--width-30 autocomplete-input">
+                    <div class="autocomplete__wrapper">
+                      <div
+                        class="autocomplete__status"
+                        style="border: 0px; clip: rect(0px, 0px, 0px, 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"
+                      >
+                        <div id="search-autocomplete__status--A" role="status" aria-atomic="true" aria-live="polite"></div>
+                        <div id="search-autocomplete__status--B" role="status" aria-atomic="true" aria-live="polite"></div>
+                      </div>
+
+                      <input
+                        aria-describedby="search-autocomplete__assistiveHint"
+                        aria-expanded="false"
+                        aria-controls="search-autocomplete__listbox"
+                        aria-autocomplete="list"
+                        autocomplete="off"
+                        class="autocomplete__input autocomplete__input--default"
+                        id="search-autocomplete"
+                        name="input-autocomplete"
+                        placeholder=""
+                        type="text"
+                        role="combobox"
+                        value=""
+                      >
+
+                      <ul
+                        aria-labelledby="search-autocomplete"
+                        id="search-autocomplete__listbox"
+                        role="listbox"
+                        class="autocomplete__menu autocomplete__menu--inline autocomplete__menu--hidden"
+                      ></ul>
+
+                      <span id="search-autocomplete__assistiveHint" style="display: none;">
+                        When autocomplete results are available use up and down arrows to review and enter to select.
+                        Touch device users, explore by touch or with swipe gestures.
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row govuk-!-margin-top-5">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-form-group" data-testid="form-group-id">
+                <label class="govuk-label govuk-!-font-weight-bold" for="nino">
+                  National Insurance number
+                </label>
+                <p class="govuk-hint">
+                  Enter a customer's National Insurance number to view tasks raised against this customer (optional)
+                </p>
+                <input class="govuk-input govuk-input--width-10" id="nino" name="nino" type="text" value="">
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-form-group" data-testid="form-group-id">
+                  <label class="govuk-label govuk-!-font-weight-bold" for="task-id">Task number</label>
+                  <p class="govuk-hint">Enter the task number to view a specific task (optional)</p>
+                  <input class="govuk-input govuk-input--width-20" id="task-id" name="taskId" type="text" value="">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row" data-testid="grid-row">
+            <div data-testid="column-full" class="govuk-grid-column-full">
+              <div class="govuk-!-margin-top-5">
+                <div class="govuk-input__wrapper" data-testid="input-wrapper">
+                  <div class="govuk-form-group" data-testid="form-group-id">
+                    <label class="govuk-label govuk-!-font-weight-bold" for="sort">Sort by</label>
+
+                    <select class="govuk-select" id="sort" name="sort" data-testid="select-component">
+                      <option data-testid="sort-option" value="createdDateEarliest" aria-label="Date created, earliest to latest">
+                        Created, earliest to latest
+                      </option>
+                      <option data-testid="sort-option" value="createdDateLatest" aria-label="Date created, latest to earliest">
+                        Created, latest to earliest
+                      </option>
+                      <option data-testid="sort-option" value="priorityLow" aria-label="Priority, low to critical">
+                        Priority, low to critical
+                      </option>
+                      <option data-testid="sort-option" value="priorityCritical" aria-label="Priority, critical to low">
+                        Priority, critical to low
+                      </option>
+                      <option data-testid="sort-option" value="mustCompleteByDateEarliest" aria-label="Date due, earliest to latest">
+                        Due, earliest to latest
+                      </option>
+                      <option data-testid="sort-option" value="mustCompleteByLatest" aria-label="Date due, latest to earliest">
+                        Due, latest to earliest
+                      </option>
+                      <option data-testid="sort-option" value="finishedDateEarliest" aria-label="Completed date, earliest to latest">
+                        Completed, earliest to latest
+                      </option>
+                      <option data-testid="sort-option" value="finishedDateLatest" aria-label="Completed date, latest to earliest">
+                        Completed, latest to earliest
+                      </option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+      {% endset %}
+
+      {{ govukDetails({
+        summaryText: "Filter tasks and change date",
+        html: filtersHtml
+      }) }}
+
+      <div class="govuk-button-group">
+       
+        {{ govukButton({ 
+          text: "View tasks",
+          type: "button",
+          attributes: {
+            id: "toggle-tasks-button",
+            "aria-controls": "tasks-table-wrapper",
+            "aria-expanded": "false"
+          }
+        }) }}
+
+        <a href="#" class="govuk-link">Clear filters</a>
+      </div>
+
+    </div>
+  </div>
+
+</form>
+
+<div id="tasks-table-wrapper" hidden>
+    <div class="govuk-grid-row" data-testid="grid-row">
+      <div data-testid="column-full" class="govuk-grid-column-full">
+        {# <table tabindex="-1" class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">
+            0 Tasks between 1 May 2026 and 12 June 2026
+          </caption>
+
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Details</th>
+              <th scope="col" class="govuk-table__header">
+                <span class="govuk-visually-hidden">Date created</span>
+                <span aria-hidden="true">Created</span>
+              </th>
+              <th scope="col" class="govuk-table__header">
+                <span class="govuk-visually-hidden">Date due</span>
+                <span aria-hidden="true">Due</span>
+              </th>
+              <th scope="col" class="govuk-table__header">Task</th>
+              <th scope="col" class="govuk-table__header table-cell-fixed-width">
+                <span class="govuk-visually-hidden">National Insurance Number</span>
+                <span aria-hidden="true">National Insurance<br>number</span>
+              </th>
+              <th scope="col" class="govuk-table__header">Agent</th>
+              <th scope="col" class="govuk-table__header">Priority</th>
+              <th scope="col" class="govuk-table__header">Status</th>
+            </tr>
+          </thead>
+
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" colspan="8" data-testid="table-cell">
+                No tasks found.
+              </td>
+            </tr>
+          </tbody>
+        </table> #}
+        {% set overdue1Html %}
+      <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-1">OVERDUE</strong><br>
+      5 Apr 2025<br>
+      at 15:59
+    {% endset %}
+
+    {% set overdue2Html %}
+      <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-1">OVERDUE</strong><br>
+      5 Mar 2025<br>
+      at 14:59
+    {% endset %}
+
+      {% set activeHtml %}
+        <strong class="govuk-tag govuk-tag--green">ACTIVE</strong>
+      {% endset %}
+
+      {% set allocatedHtml %}
+        <strong class="govuk-tag govuk-tag--yellow">ALLOCATED</strong>
+      {% endset %}
+
+      {{ govukTable({
+        classes: "govuk-!-margin-top-6",
+        caption: "2 tasks",
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            text: "Details"
+          },
+          {
+            text: "Created"
+          },
+          {
+            text: "Due"
+          },
+          {
+            text: "Task"
+          },
+          {
+            html: '<span class="govuk-visually-hidden">National Insurance number</span><span aria-hidden="true">National Insurance<br>number</span>',
+            classes: "table-cell-fixed-width"
+          },
+          {
+            text: "Agent"
+          },
+          {
+            text: "Priority"
+          },
+          {
+            text: "Status"
+          }
+        ],
+        rows: [
+          [
+            {
+              html: '<a href="task" class="govuk-link">View</a>'
+            },
+            {
+              html: '4 Mar<br>2025'
+            },
+            {
+              html: overdue1Html
+            },
+            {
+              html: 'Call customer'
+            },
+            {
+              text: "Not applicable",
+              classes: "table-cell-fixed-width"
+            },
+            {
+              html: 'Alice Bennett'
+            },
+            {
+              text: "None"
+            },
+            {
+              html: activeHtml
+            }
+          ],
+          [
+            {
+              html: '<a href="#" class="govuk-link">View</a>'
+            },
+            {
+              html: '4 Mar<br>2025'
+            },
+            {
+              html: overdue2Html
+            },
+            {
+              html: 'Social rented<br>sector'
+            },
+            {
+              text: "Not applicable",
+              classes: "table-cell-fixed-width"
+            },
+            {
+              html: 'shared<br>agent5.extqa1'
+            },
+            {
+              text: "None"
+            },
+            {
+              html: allocatedHtml
+            }
+          ]
+        ]
+      }) }}
+
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+    </div> {# grid col close #}
+  </div> {# grid row close #}
+
+
+
+
+{% endblock %}
+
+
+

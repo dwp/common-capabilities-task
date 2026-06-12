@@ -1,0 +1,68 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "History" %}
+
+{% block header %}
+  {% include "_includes/header.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "DWP Task dashboard",
+          href: "tasks"
+        },
+        {
+          text: "View and manage tasks",
+          href: "task"
+        },
+        {
+          text: "History",
+          href: "View history"
+        }
+      ]
+    }) }}
+{% endblock %}
+
+{% block content %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p class="govuk-body">View the history of completed ...</p>
+
+
+      {{
+          dwpTimeline({ 
+              items: [
+                  {
+                      title:  "Completed ‘DP224JP’ form received",
+                      byline:  "Finished",
+                      date:  "7 November 2025"
+                  },
+                  {
+                      title:  "Summary of report",
+                      byline:  "Opend",
+                      date:  "1 November 2025"
+                  },
+                  {
+                      title:  "Workplace assessment report",
+                      byline:  "John Goldsmith",
+                      date:  "15 May 2024 at 4:01pm"
+                  }
+            ]
+          })
+      }}
+      
+
+      
+    </div>
+</div>
+
+
+{% endblock %}
+
+
