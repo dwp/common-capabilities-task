@@ -1,0 +1,56 @@
+{% extends "layouts/main-team-agent-pip.html" %}
+
+{% block pageTitle %}
+  Agent home
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Agent dashboard</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="#">My tasks</a></h2>
+    <p>Claim and work on tasks.</p> 
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">My profile</a></h2>
+      <p>View details of groups, teams and attributes.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Search and create</a></h2>
+      <p>Search for and create tasks.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Search for tasks</a></h2>
+      <p>Search for and claim tasks.</p>
+    </div>
+</div>
+
+&nbsp;
+
+{% endblock %}
+
+
