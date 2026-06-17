@@ -1,0 +1,69 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+  Agent home
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Change organisation unit name</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        
+        <p>The current organisation unit name is ...</p>
+
+        {{ govukInput({
+          id: "",
+          name: "",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Organisatiuon service url",
+            isPageHeading: false,
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "Some hint text"
+          },
+          value: data.pip.link.input
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm",
+            href: "/pip/admin-settings"
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "/pip/admin-settings"
+          }) }}
+        
+        </div>
+
+     
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+

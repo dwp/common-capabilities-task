@@ -129,6 +129,16 @@ router.post('/end-to-end-prototype/v1/admin/change-permissions', (req, res) => {
 	}
 })
 
+router.post('/pip/select-journey', (req, res) => {
+	if (req.session.data.pip.selectJourney == 'one'){
+		res.redirect("/pip/home-agent")
+	} else {
+		res.redirect("/pip/admin-settings")
+	}
+})
+
+
+
 // Service Manager
 
 

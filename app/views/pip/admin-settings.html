@@ -1,0 +1,94 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+  Get Your State Benefit details
+{% endblock %}
+
+{% block beforeContent %}
+
+  {# {{ govukBackLink({
+    text: "Back",
+    href: "../"
+  }) }} #}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <h2 class="govuk-heading-l">Get Your State Benefit details</h2>
+
+  <p>View and manage GET Your State Benefit.</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {{ govukTable({
+        caption: "Details",
+        firstCellIsHeader: true,
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            html: "Organisatiuon unit ID",
+            classes: "govuk-!-font-size-16"
+          },
+          {
+            html: "sdar-gb",
+            classes: "govuk-!-font-weight-regular"
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Organisatiuon unit name"
+            },
+            {
+              text: "Get Your State Benefit"
+            },
+            {
+              html: '<a href="#" class="govuk-link">Change</a>',
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Organisatiuon service url"
+            },
+            {
+              text: "Personal Independence Payment"
+            },
+            {
+              html: '<a href="link-input-field" class="govuk-link">Change</a>',
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+      <h2 class="govuk-heading-m">Attributes</h2>
+
+      <p>You can only edit or remove attributes that have not yet been matched to a task type.</p>
+      <p>...</p>
+
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+
