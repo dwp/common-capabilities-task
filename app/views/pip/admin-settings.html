@@ -26,6 +26,14 @@
     <div class="govuk-grid-column-full">
 
 
+      {% set linkInputFieldText = "Add" %}
+
+      {% if data.linkInputFieldAdded == "true" %}
+        {% set linkInputFieldText = "Change" %}
+      {% endif %}
+
+      <p>linkInputFieldAdded: {{ data.linkInputFieldAdded }}</p>
+
       {{ govukTable({
         caption: "Details",
         firstCellIsHeader: true,
@@ -62,14 +70,16 @@
             },
             {
               text: "Personal Independence Payment"
-            },
+            },            
             {
-              html: '<a href="link-input-field" class="govuk-link">Change</a>',
+              html: '<a href="link-input-field" class="govuk-link">' + linkInputFieldText + '</a>',
               format: "numeric"
             }
           ]
         ]
       }) }}
+
+
 
       <h2 class="govuk-heading-m">Attributes</h2>
 

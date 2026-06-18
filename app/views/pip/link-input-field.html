@@ -25,6 +25,8 @@
         
         <p>The current organisation unit name is ...</p>
 
+        <form method="post" novalidate>
+
         {{ govukInput({
           id: "",
           name: "",
@@ -42,8 +44,7 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Confirm",
-            href: "/pip/admin-settings"
+            text: "Confirm"
           }) }}
         
           {{ govukButton({
@@ -51,9 +52,8 @@
             classes: "govuk-button--secondary",
             href: "/pip/admin-settings"
           }) }}
-        
         </div>
-
+      </form>
      
       </div>
     </div>

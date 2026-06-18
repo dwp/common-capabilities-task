@@ -137,6 +137,11 @@ router.post('/pip/select-journey', (req, res) => {
 	}
 })
 
+router.post('/pip/link-input-field', (req, res) => {
+	req.session.data.linkInputFieldAdded = 'true'
+	res.redirect('/pip/admin-settings')
+})
+
 
 
 // Service Manager
