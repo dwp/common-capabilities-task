@@ -19,18 +19,14 @@
   {% set headingText = "Add an organisation unit service URL" %}
   {% set paragraphText = "No URL set" %}
 
-  {% if data.linkChangeClicked == "true" %}
-      {% set headingText = "Change the organisation unit service URL" %}
-  {% endif %}
-
 
 <div class="govuk-width-container">
-  <h1 class="govuk-heading-l">{{headingText}}</h1>
+  <h1 class="govuk-heading-l">Change the organisation unit service UR</h1>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         
-        <p>There is no service URL currently set.</p>
+        <p>The service URL is https://www.gov.uk</p>
 
         <form method="post" novalidate>
 
@@ -51,7 +47,8 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Confirm"
+            text: "Confirm",
+            href: "/pip/admin-settings"
           }) }}
         
           {{ govukButton({
