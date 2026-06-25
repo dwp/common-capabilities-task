@@ -1,0 +1,107 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+  Get Your State Benefit details
+{% endblock %}
+
+{% block beforeContent %}
+
+  {# {{ govukBackLink({
+    text: "Back",
+    href: "../"
+  }) }} #}
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+  <h2 class="govuk-heading-l">Get Your State Benefit details</h2>
+
+  <p>View and manage get Your State Benefit.</p>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+
+      {% set linkInputFieldText = "Add" %}
+      {% set inputFieldLink = "No URL set" %}
+      {% set link = "link-input-field" %}
+
+      {% if data.linkInputFieldAdded == "true" %}
+        {% set linkInputFieldText = "Change" %}
+        {% set inputFieldLink = "https://www.example.gov.uk" %}
+        {% set link = "link-input-field-change" %}
+      {% endif %}
+
+
+      {{ govukTable({
+        caption: "Details",
+        firstCellIsHeader: true,
+        captionClasses: "govuk-table__caption--m",
+        head: [
+          {
+            html: "Organisation unit ID",
+            classes: "govuk-!-font-size-16"
+          },
+          {
+            html: "sdar-gb",
+            classes: "govuk-!-font-weight-regular"
+          },
+          {
+            text: ""
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "Organisation unit name"
+            },
+            {
+              text: "Get Your State Benefit"
+            },
+            {
+              html: '<a href="#" class="govuk-link">Change</a>',
+              format: "numeric"
+            }
+          ],
+          [
+            {
+              text: "Organisation service URL"
+            },
+            {
+              html: inputFieldLink
+            },            
+            {
+              html: '<a href="' + link + '"class="govuk-link">' + linkInputFieldText + '</a>',
+              format: "numeric"
+            }
+          ]
+        ]
+      }) }}
+
+
+
+      <h2 class="govuk-heading-m">Attributes</h2>
+
+      <p>You can only edit or remove attributes that have not yet been matched to a task type.</p>
+      <p>...</p>
+
+    </div>
+  </div>
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+

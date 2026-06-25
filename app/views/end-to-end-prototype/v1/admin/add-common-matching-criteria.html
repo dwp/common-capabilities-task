@@ -1,0 +1,182 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+    Add matching criteria
+{% endblock %}
+
+{% set pageName = "Add common matching criteria" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+
+       <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {{ govukTable({
+          head: [
+            { text: "Namespace" },
+            { text: "Name" },
+            { text: "Value" },
+            { text: "Action" }
+          ],
+          rows: [
+            [
+              { text: "dwp" },
+              { text: "test" },
+              { text: "attribute" },
+              {
+                html: govukRadios({
+                  name: "action-1",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "grade" },
+              { text: "g7" },
+              {
+                html: govukRadios({
+                  name: "action-2",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "grade" },
+              { text: "seo" },
+              {
+                html: govukRadios({
+                  name: "action-3",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "grade" },
+              { text: "g6" },
+              {
+                html: govukRadios({
+                  name: "action-4",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "escalate" },
+              { text: "true" },
+              {
+                html: govukRadios({
+                  name: "action-5",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "escalate" },
+              { text: "false" },
+              {
+                html: govukRadios({
+                  name: "action-6",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "country-subdivision" },
+              { text: "gb" },
+              {
+                html: govukRadios({
+                  name: "action-7",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ],
+            [
+              { text: "dwp" },
+              { text: "country-subdivision" },
+              { text: "ni" },
+              {
+                html: govukRadios({
+                  name: "action-8",
+                  classes: "govuk-radios--inline",
+                  items: [
+                    { value: "inherit", text: "Inherit" },
+                    { value: "extend", text: "Extend" }
+                  ]
+                })
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm",
+            href: "admin-settings"
+          }) }}
+        
+          {{ govukButton({
+            text: "Skip",
+            classes: "govuk-button--secondary"
+          }) }}
+        
+        </div>
+
+      </div>
+    </div>
+
+
+
+
+
+
+
+
+{% endblock %}
+
+

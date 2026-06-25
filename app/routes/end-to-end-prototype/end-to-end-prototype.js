@@ -142,6 +142,13 @@ router.post('/pip/link-input-field', (req, res) => {
 	res.redirect('/pip/admin-settings')
 })
 
+// New
+
+router.post('/v1/admin/pip/link-input-field', (req, res) => {
+	req.session.data.linkInputFieldAdded = 'true'
+	res.redirect('/v1/admin/pip/admin-settings')
+})
+
 
 
 // Service Manager

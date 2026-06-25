@@ -1,0 +1,126 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+    Add matching criteria
+{% endblock %}
+
+{% set pageName = "Add matching criteria" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "/end-to-end-prototype/v1/admin/what-is-the-new-ordanisation-unit-called"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p>Write key value pairs to set up matching criteria for this organisation unit.</p>
+        <h2 class="govuk-heading-m">Add a key value pair</h2>
+        <p>For example, role, decision-maker.</p>
+
+        <div class="govuk-grid-row">
+
+          <div class="govuk-grid-column-one-half">
+            {{ govukInput({
+              id: "key.value.name",
+              name: "",
+              label: {
+                text: "Name",
+                isPageHeading: false,
+                classes: "govuk-label--s"
+              },
+              value: data.key.value.name
+            }) }}
+          </div>
+
+          <div class="govuk-grid-column-one-half">
+             {{ govukInput({
+              id: "key.value.name",
+              name: "",
+              label: {
+                text: "Value",
+                isPageHeading: false,
+                classes: "govuk-label--s"
+              },
+              value: data.key.value.name
+            }) }}
+          </div>
+
+         </div>
+     
+          <!-- ✅ Buttons should sit in main column, not inside grid row -->
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Add",
+              classes: "govuk-button--secondary"
+            }) }}
+
+            {{ govukButton({
+              text: "Clear",
+              classes: "govuk-button--secondary"
+            }) }}
+          </div>
+
+          <h2 class="govuk-heading-m">Key value pairs</h2>
+
+
+          {{ govukTable({
+            head: [
+              { text: "Name" },
+              { text: "Value" },
+              { text: "Action" }
+            ],
+            rows: [
+              [
+                {
+                  html: '<span class="govuk-hint">You have not added any key value pairs yet.</span>',
+                  colspan: 3
+                }
+              ]
+            ]
+          }) }}
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "add-common-matching-criteria"
+            }) }}
+          
+            {{ govukButton({
+              text: "Skip",
+              classes: "govuk-button--secondary"
+            }) }}
+        
+          </div>
+
+
+      </div>
+    </div>
+
+
+ 
+ 
+
+ 
+
+
+
+
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+
