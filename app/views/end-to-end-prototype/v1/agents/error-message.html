@@ -13,14 +13,26 @@
 {% block content %}
 
 
-{# <p>Scenario 1 - Select an option</p> #}
+<p>Scenario 1 - Select an option</p>
 
 {{ govukErrorSummary({
-  titleText: "Select an option",
+  titleText: "There is a problem",
   errorList: [
     {
       text: "Select an option",
       href: "#ScenarioOne"
+    }
+  ]
+}) }}
+
+<p>Scenario 2 – Select an option on conditional radio buttons.</p>
+
+{{ govukErrorSummary({
+  titleText: "There is a problem",
+  errorList: [
+    {
+      text: "Select an option",
+      href: "#ScenarioTwo"
     }
   ]
 }) }}
@@ -60,14 +72,14 @@
         name: "ScenarioOne",
         fieldset: {
           legend: {
-            text: "Select an option",
+            text: "There is a problem",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         value: data.agent.returnTaskToQueue,
         errorMessage: {
-          text: "Select the team you want to view MI for"       
+          text: "Select an option"       
         },
         items: [
           {
@@ -106,18 +118,115 @@
       }) }}
       
   
-    <div class="govuk-button-group">
-      {{ govukButton({
-        text: "Confirm"
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task"
+        }) }}
+      </div>
+
+    </form>
+
+    <p>Scenario 2 - Select an option</p>
+
+
+     <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>
+        If you cannot work on this task, you should return it to the queue. Note that your team leader will be able to see you have done this, and they may contact you to understand your reason.
+      </p>
+
+    <form method="post" novalidate>
+        
+   
+
+      {% set returnAndBlockReason %}
+        {{ govukRadios({
+          name: "agent[returnTaskToQueue][reason]",
+          classes: "govuk-radios--small",
+          values: data.agent.returnTaskToQueue.reason,
+          errorMessage: {
+            text: "Select an option"       
+          },
+          items: [
+            {
+              value: "I do not have the right skills or training",
+              text: "I do not have the right skills or training"
+            },
+            {
+              value: "Categorised under the wrong work type",
+              text: "Categorised under the wrong work type"
+            }
+          ]
+        }) }}
+      {% endset -%}
+      
+      {{ govukRadios({
+        name: "ScenarioTwo",
+        fieldset: {
+          legend: {
+            text: "There is a problem",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.agent.returnTaskToQueue,
+        items: [
+          {
+            value: "Return",
+            text: "Return",
+            hint: {text: "You may get this task again."}
+          },
+          {
+            value: "Return and block",
+            text: "Return and block",
+            hint: {text: "You will not get this task again."},
+            conditional: {html: returnAndBlockReason}
+          }
+        ]
       }) }}
 
-      {{ govukButton({
-        text: "Back",
-        classes: "govuk-button--secondary",
-        href: "task"
+      {{ govukCheckboxes({
+        name: "",
+        fieldset: {
+          legend: {
+            text: "Add 'escalate' as an attribute to this task (optional)",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "Selecting 'escalate'  will make this task available only to agents who have an 'escalate' attribute in their profile"
+        },
+        values: data.agent.escalate,
+        items: [
+          {
+            value: "escalate",
+            text: "Escalate"
+          }
+        ]
       }) }}
-    </div>
-  </form>
+      
+  
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Confirm"
+        }) }}
+
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "task"
+        }) }}
+      </div>
+
+    </form>
+
 
 
 
