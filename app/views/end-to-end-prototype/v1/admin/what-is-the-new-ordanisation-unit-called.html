@@ -1,7 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
-{% set pageName = "What's the new ordanisation unit called?" %}
+{% set pageName = "What's the new organisation unit called?" %}
 
 
 {% block beforeContent %}
@@ -45,6 +45,20 @@
         },
         hint: {
           text: "For example, Personal Independence Payment(PIP)"
+        },
+        value: data.ordanisation.unit.name
+      }) }}
+
+      {{ govukInput({
+        id: "organisationUnitName",
+        name: "organisationUnitName",
+        label: {
+          text: "Organisation service URL (optional)",
+          isPageHeading: true,
+          classes: "govuk-label--s"
+        },
+        hint: {
+          text: "For example, https://www.gov.uk"
         },
         value: data.ordanisation.unit.name
       }) }}
