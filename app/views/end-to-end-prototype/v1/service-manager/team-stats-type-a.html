@@ -1,7 +1,7 @@
 
 {% extends "layouts/main.html" %}
 
-{% set pageName = "All allocated, active and completed tasks between 1 January 2026 and 1 May 2026" %}
+{% set pageName = "Task statistics between 1 January 2026 and 1 May 2026" %}
 
 
 {% block beforeContent %}
@@ -25,11 +25,15 @@
         
         <thead class="govuk-table__head">
           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-table__header" style="width: 300px">Task type</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Allocated</th>
+            <th scope="col" class="govuk-table__header">Task type</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Active</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Allocated</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Cancelled</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Failed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">On hold</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Unallocated</th>
+            {# <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total</th> #}
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -37,8 +41,11 @@
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">9</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">16</td>
           </tr>
         </tbody>
       </table>
