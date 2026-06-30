@@ -1,0 +1,173 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Organisation unit statistics" %}
+
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+  items: [
+    {
+      text: "Management Information",
+      href: "management-information"
+    }
+  ]
+}) }}
+{% endblock %}
+
+
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+
+  <!-- Two-thirds content -->
+  <div class="govuk-grid-column-two-thirds">
+
+    <h2 class="govuk-heading-l">
+      Statistics
+      <span class="govuk-caption-l">
+        Tasks 23 June 2026 to 30 June 2026
+      </span>
+    </h2>
+
+    <!-- Created -->
+    <p class="govuk-body-m">Created</p>
+    <p class="govuk-body-m">
+      <span class="govuk-!-font-size-48 govuk-!-font-weight-bold">
+        218
+      </span>
+    </p>
+
+    <!-- Completed -->
+    <p class="govuk-body-m">Completed</p>
+    <p class="govuk-body-m">
+      <span class="govuk-!-font-size-48 govuk-!-font-weight-bold">
+        218
+      </span>
+    </p>
+
+    <!-- Overdue -->
+    <p class="govuk-body-m">Overdue</p>
+    <p class="govuk-body-m">
+      <span class="govuk-!-font-size-48 govuk-!-font-weight-bold">
+        0
+      </span>
+    </p>
+
+    <!-- Average completion time -->
+    <p class="govuk-body-m">Average completion time</p>
+    <p class="govuk-body-m">
+      <span class="govuk-!-font-size-48 govuk-!-font-weight-bold">
+        1 minute
+      </span>
+    </p>
+
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" role="group">
+        
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h2 class="govuk-heading-m">
+            Date range
+            <span class="govuk-caption-m">
+              Enter the date range you want statistics for, from the earliest to latest.
+            </span>
+          </h2>
+        </legend>
+
+        <div class="govuk-!-margin-top-5 govuk-!-margin-bottom-5">
+
+          {{ govukDateInput({
+        id: "mvp[stats][startDate]",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "mvp[stats][endDate]",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 06 2025"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+      <button
+        class="govuk-button govuk-button--primary"
+        type="submit"
+        data-module="govuk-button">
+        Filter
+      </button>
+    </div>
+
+</div>
+
+</div>
+
+
+{% endblock %}
