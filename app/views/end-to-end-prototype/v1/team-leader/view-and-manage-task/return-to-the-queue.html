@@ -1,0 +1,76 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Return task to queue
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+ 
+      <h1 class="govuk-heading-l">
+          Return task to queue
+      </h1>
+  
+      <p>
+        This task is being worked on by shared. If shared is unable to work on it right now, you should return it to the queue.
+      </p>
+      
+
+    <form method="post" novalidate>
+
+      {{ govukRadios({
+        name: "agent[returnTaskToQueue]",
+        fieldset: {
+          legend: {
+            text: "Would you like to put this task back in the queue?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        value: data.agent.returnTaskToQueue,
+        items: [
+          {
+            value: "Yes",
+            text: "Yes",
+            hint: {text: "shared will be able to claim this task again."}
+          },
+          {
+            value: "Yes, and block this agent",
+            text: "Yes, and block this agent",
+            hint: {text: "shared will not get this task again until you unblock them."}
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+  
+    <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-button--secondary",
+        href: "task"
+      }) }}
+    </div>
+
+  </form>
+
+  {# <a style="color: #d4351c;" href="error-message">Error messages</a> #}
+
+  </div>
+</div>
+
+
+{% endblock %}
+
