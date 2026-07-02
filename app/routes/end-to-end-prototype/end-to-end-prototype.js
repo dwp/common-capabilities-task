@@ -133,7 +133,7 @@ router.post('/pip/select-journey', (req, res) => {
 	if (req.session.data.pip.selectJourney == 'one'){
 		res.redirect("/pip/home-agent")
 	} else {
-		res.redirect("/pip/admin-settings")
+		res.redirect("/end-to-end-prototype/v1/admin/what-is-the-new-ordanisation-unit-called")
 	}
 })
 
