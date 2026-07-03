@@ -189,12 +189,27 @@ router.post('/end-to-end-prototype/v1/team-leader/view-and-manage-task/change-du
   res.redirect('task')
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/change-due-date-and-time', (req, res) => {
+  req.session.data['ChangeDueDate'] = "yes"
+  res.redirect('task')
+})
+
 router.post('/end-to-end-prototype/v1/team-leader/view-and-manage-task/change-priority', (req, res) => {
   req.session.data['ChangePriorityLevel'] = "yes"
   res.redirect('task')
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/change-priority', (req, res) => {
+  req.session.data['ChangePriorityLevel'] = "yes"
+  res.redirect('task')
+})
+
 router.post('/end-to-end-prototype/v1/team-leader/view-and-manage-task/return-to-the-queue', (req, res) => {
+  req.session.data['ReturnTaskToQueue'] = "yes"
+  res.redirect('task')
+})
+
+router.post('/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/return-to-the-queue', (req, res) => {
   req.session.data['ReturnTaskToQueue'] = "yes"
   res.redirect('task')
 })

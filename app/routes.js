@@ -11,8 +11,6 @@ const fakeCaseData = require('./data/generate-case-data')
 // Add your routes here
 
 
-
-
 const express = require('express')
 const dayjs = require('dayjs')
 var objectSupport = require("dayjs/plugin/objectSupport");
