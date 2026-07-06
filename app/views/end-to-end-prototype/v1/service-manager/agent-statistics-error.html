@@ -65,6 +65,19 @@
 
 {% block content %}
 
+  <p>Scenario 1 - Select an option</p>
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter a name, staff number or email",
+        href: "#ScenarioOne"
+      }
+    ]
+  }) }}
+
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-three-quarters">
 
@@ -144,11 +157,17 @@
         ]
       }) }}
 
+    <div class="govuk-form-group govuk-form-group--error">
       <label class="govuk-label govuk-label--m" for="searchb">Agent</label>
         <div id="event-name-hint" class="govuk-hint">
          Enter name, staff number or email
         </div>
+        <p id="ScenarioOne" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span>Enter name, staff number or email
+        </p>
       <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
+    </div>
+
 
       {{ govukRadios({
         name: "sm[agentStats][taskType]",
@@ -231,7 +250,6 @@
         
       </form>
 
-      <a style="color: #d4351c;" href="agent-statistics-error">Error messages</a>
 
     </div>
   </div>
