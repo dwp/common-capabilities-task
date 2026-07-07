@@ -1,3 +1,4 @@
+
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
 {% block header %}
@@ -33,52 +34,48 @@
 
 {% block beforeContent %}
 
-  {# {{ govukBackLink({
-    text: "Back",
-    href: "../../select-user-admin"
-  }) }} #}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "DWP Task dashboard",
+        href: "home-service-manager_as_sr"
+      }
+    ]
+  }) }}
 
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-  <h1 class="govuk-heading-l">Service Manager dashboard</h1>
+  <h1 class="govuk-heading-l">Manage Org B setup</h1>
   <div class="box">
-    <h2 class="govuk-heading-m"><a href="view-and-manage-tasks/search-results">View and manage tasks</a></h2>
-    <p>View and manage tasks for Claims Org B over a given date range.</p> 
+      <h2 class="govuk-heading-m"><a href="question">Add and manage agents</a></h2>
+      <p>Add and manage agents, the groups they are in or their individual attributes. Agent must be added to Org B before they can be added to their team.</p>
   </div>
 </div>
 
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="manage-claims/manage-org-b">Manage Claims Org B setup</a></h2>
-      <p>Add or manage agents and groups, or view tasks and attributes in Claim Org B.</p>
+      <h2 class="govuk-heading-m"><a href="groups-home">Add and manage groups</a></h2>
+      <p>Add and manage groups for agents who do the same task. Agents is the same group will be able to claim the same task types.</p>
     </div>
 </div>
 
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="management-information">Management Information (MI)</a></h2>
-      <p>View MI for Org B.</p>
+      <h2 class="govuk-heading-m"><a href="#">Add and manage task types</a></h2>
+      <p>Add and manage task types in Org B.</p>
     </div>
 </div>
 
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="/end-to-end-prototype/v1/team-leader/home-team-leader">Team leader dashboard</a></h2>
-      <p>Work as a team leader.</p>
-    </div>
-</div>
-
-<div class="govuk-width-container">
-  &nbsp;
-    <div class="box">
-      <h2 class="govuk-heading-m"><a href="/end-to-end-prototype/v1/agents/home-agent">Agent dashboard</a></h2>
-      <p>Work as an agent.</p>
+      <h2 class="govuk-heading-m"><a href="#">View and manage teams</a></h2>
+      <p>Add or remove agents and team leaders, or delete teams in Org B.</p>
     </div>
 </div>
 
