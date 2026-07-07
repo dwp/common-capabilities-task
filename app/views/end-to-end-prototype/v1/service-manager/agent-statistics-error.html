@@ -71,11 +71,28 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Enter a name, staff number or email",
+        text: "Enter a 'From' date",
         href: "#ScenarioOne"
+      },
+      {
+        text: "Enter a 'To' date",
+        href: "#ScenarioTwo"
+      },
+      {
+        text: "Enter a name, staff number or email",
+        href: "#ScenarioThree"
+      },
+      {
+        text: "Select an option",
+        href: "#ScenarioFour"
+      },
+      {
+        text: "Select an option",
+        href: "#ScenarioFive"
       }
     ]
   }) }}
+
 
 
   <div class="govuk-grid-row">
@@ -88,9 +105,10 @@
       <p>Enter a date range.</p>
 
       <form method="post" action="#results" novalidate>
-            
+
+         
       {{ govukDateInput({
-        id: "mvp[stats][startDate]",
+        id: "ScenarioOne",
         fieldset: {
           legend: {
             text: "From",
@@ -101,6 +119,9 @@
         hint: {
           text: "For example, 12 06 2025"
         },
+         errorMessage: {
+          text: "Enter a 'From' date"
+        },
         items: [
           {
             name: "date",
@@ -122,9 +143,10 @@
           }
         ]
       }) }}
+   
 
       {{ govukDateInput({
-        id: "mvp[stats][endDate]",
+        id: "ScenarioTwo",
         fieldset: {
           legend: {
             text: "To",
@@ -135,6 +157,9 @@
         hint: {
           text: "For example, 12 06 2025"
         },
+         errorMessage: {
+          text: "Enter a 'To' date"
+        },
         items: [
           {
             name: "date",
@@ -157,20 +182,20 @@
         ]
       }) }}
 
-    <div class="govuk-form-group govuk-form-group--error">
-      <label class="govuk-label govuk-label--m" for="searchb">Agent</label>
-        <div id="event-name-hint" class="govuk-hint">
-         Enter name, staff number or email
-        </div>
-        <p id="ScenarioOne" class="govuk-error-message">
-          <span class="govuk-visually-hidden">Error:</span>Enter name, staff number or email
-        </p>
-      <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
-    </div>
+      <div class="govuk-form-group govuk-form-group--error">
+        <label class="govuk-label govuk-label--m" for="searchb">Agent</label>
+          <div id="event-name-hint" class="govuk-hint">
+          Enter name, staff number or email
+          </div>
+          <p id="ScenarioThree" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span>Enter name, staff number or email
+          </p>
+        <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
+      </div>
 
 
       {{ govukRadios({
-        name: "sm[agentStats][taskType]",
+        name: "ScenarioFour",
         fieldset: {
           legend: {
             text: "Task types",
@@ -180,6 +205,9 @@
         },
         hint: {
           text: "Select the task you want to view, or 'All' for total tasks"
+        },
+        errorMessage: {
+        text: "Select an option"
         },
         value: data.sm.agentStats.taskType,
         items: [
@@ -203,7 +231,7 @@
       }) }}
 
       {{ govukCheckboxes({
-        name: "sm[agentStats][status]",
+        name: "ScenarioFive",
         fieldset: {
           legend: {
             text: "Status",
@@ -213,6 +241,9 @@
         },
         hint: {
           text: "Select at least one option"
+        },
+        errorMessage: {
+        text: "Select an option"
         },
         values: data.sm.agentStats.status,
         items: [
