@@ -12,6 +12,25 @@
 {% endblock %}
 
 {% block content %}
+
+{{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter an organisation unit ID",
+        href: "#ScenarioOne"
+      },
+      {
+        text: "Enter an organisation unit name",
+        href: "#ScenarioTwo"
+      },
+      {
+        text: "Enter a URL with a protocol (https://), a host (www.) and without spaces",
+        href: "#ScenarioThree"
+      }
+    ]
+  }) }}
+
   
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -19,7 +38,7 @@
 
 
       {{ govukInput({
-        id: "organisationUnitId",
+        id: "ScenarioOne",
         name: "organisationUnitId",
         label: {
           text: "Organisation unit ID",
@@ -29,12 +48,15 @@
         hint: {
           text: "For example, personal-independence-payment"
         },
+        errorMessage: {
+          text: "Enter an organisation unit ID"
+        },
         value: data.organisation.unit.id
       }) }}
     
 
      {{ govukInput({
-        id: "ordanisationUnitName",
+        id: "ScenarioTwo",
         name: "ordanisationUnitName",
         label: {
           text: "Organisation unit name",
@@ -43,6 +65,9 @@
         },
         hint: {
           text: "For example, Personal Independence Payment(PIP)"
+        },
+        errorMessage: {
+          text: "Enter an organisation unit name"
         },
         value: data.ordanisation.unit.name
       }) }}
@@ -58,6 +83,9 @@
         hint: {
           text: "For example, https://www.gov.uk"
         },
+        errorMessage: {
+          text: "Enter a URL with a protocol (https://), a host (www.) and without spaces"
+        },
         value: data.organisation.unit.name
       }) }}
 
@@ -70,7 +98,6 @@
     </div>
   </div>
 
-  <a style="color: #d4351c;" href="what-is-the-new-ordanisation-unit-called-error">Error messages</a>
 
   
             
