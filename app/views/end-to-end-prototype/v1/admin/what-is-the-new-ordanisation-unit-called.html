@@ -1,5 +1,5 @@
 
-{% extends "layouts/main.html" %}
+{% extends "layouts/main-team-admin.html" %}
 
 {% set pageName = "Enter organisation details?" %}
 
@@ -42,7 +42,7 @@
           classes: "govuk-label--s"
         },
         hint: {
-          text: "For example, Personal Independence Payment(PIP)"
+          text: "For example, Personal Independence Payment (PIP)"
         },
         value: data.ordanisation.unit.name
       }) }}
@@ -56,7 +56,7 @@
           classes: "govuk-label--s"
         },
         hint: {
-          text: "For example, https://www.gov.uk"
+          text: "This must be a complete URL without spaces, for example https://www.gov.uk"
         },
         value: data.organisation.unit.name
       }) }}

@@ -16,12 +16,8 @@
 
 {% block content %}
 
-  {% set headingText = "Add an organisation unit service URL" %}
+  {% set headingText = "Add an organisation unit URL" %}
   {% set paragraphText = "No URL set" %}
-
-  {% if data.linkChangeClicked == "true" %}
-      {% set headingText = "Change the organisation unit URL" %}
-  {% endif %}
 
   {{ govukErrorSummary({
     titleText: "There is a problem",
@@ -38,7 +34,7 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full">
         
-      <h1 class="govuk-heading-l">Add an organisation service URL</h1>
+      <h1 class="govuk-heading-l">Change an organisation service URL</h1>
 
       <p>Adding a service URL gives users a link in the heading to their service landing page.</p>
       <p>To add or change a service URL, enter the URL below and select 'Confirm'.</p>
@@ -61,12 +57,13 @@
           errorMessage: {
             text: "Enter a URL with a protocol (https://), a host (www.) and without spaces"
           },
-          value: data.pip.link.input
+          value: "https://www.example.gov.uk"
         }) }}
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Confirm"
+            text: "Confirm",
+            href: "/pip/admin-settings"
           }) }}
         
           {{ govukButton({
