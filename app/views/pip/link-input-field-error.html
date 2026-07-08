@@ -23,6 +23,16 @@
       {% set headingText = "Change the organisation unit URL" %}
   {% endif %}
 
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter a URL with a protocol (https://), a host (www.) and without spaces",
+        href: "#ScenarioOne"
+      }
+    ]
+  }) }}
+
 
 
     <div class="govuk-grid-row">
@@ -37,7 +47,7 @@
         <form method="post" novalidate>
 
         {{ govukInput({
-          id: "",
+          id: "ScenarioOne",
           name: "",
           classes: "govuk-input--width-20",
           label: {
@@ -47,6 +57,9 @@
           },
           hint: {
             text: "For example, https://www.gov.uk"
+          },
+          errorMessage: {
+            text: "Enter a URL with a protocol (https://), a host (www.) and without spaces"
           },
           value: data.pip.link.input
         }) }}
@@ -64,7 +77,6 @@
         </div>
       </form>
 
-      <a style="color: #d4351c;" href="link-input-field-error">Error messages</a>
      
       </div>
     </div>
