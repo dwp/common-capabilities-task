@@ -1,0 +1,118 @@
+
+{% extends "layouts/main-team-admin.html" %}
+
+{% set pageName = "Create a new task type for Apply For Pension Credit" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+      {{ govukInput({
+        id: "taskTypeID",
+        name: "taskTypeID",
+        label: {
+          text: "Task type ID",
+          isPageHeading: true,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        hint: {
+          text: "For example, book-assessment."
+        },
+        value: data.task.type.id
+      }) }}
+
+      {{ govukInput({
+        id: "taskTypeID",
+        name: "taskTypeID",
+        label: {
+          text: "Task type name",
+          isPageHeading: true,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        hint: {
+          text: "For example, Book assessment."
+        },
+        value: data.task.type.id
+      }) }}
+
+      {{ govukInput({
+        id: "taskTypeID",
+        name: "taskTypeID",
+        label: {
+          text: "Execution URL (optional)",
+          isPageHeading: true,
+          classes: "govuk-label--s"
+        },
+        classes: "govuk-input--width-20",
+        hint: {
+          text: "For example, https://www.gov.uk"
+        },
+        value: data.task.type.id
+      }) }}
+
+      {{ govukRadios({
+        name: "",
+        fieldset: {
+          legend: {
+            text: "Priority (optional)",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.task.priority,
+        items: [
+          {
+            value: "None",
+            text: "None"
+          },
+          {
+            value: "Low",
+            text: "Low"
+          },
+          {
+            value: "Medium",
+            text: "Medium"
+          },
+          {
+            value: "High",
+            text: "High"
+          },
+            {
+            value: "Critical",
+            text: "Critical"
+          }
+        ]
+      }) }}
+
+      <div class="govuk-form-group" data-testid="form-group-id"><label class="govuk-label govuk-label--s" for="sla">Must complete in (optional)</label><p class="govuk-hint">Enter the number of days this task must be completed in.</p><input class="govuk-input govuk-input--width-5" id="sla" name="mustCompleteBy" type="text" value=""><span class="govuk-body-m"> days</span></div>
+    
+    
+
+      {{ govukButton({
+        text: "Continue",
+        href: "#"
+      }) }}
+      
+
+    </div>
+  </div>
+
+  <a style="color: #d4351c;" href="create-task-type-error">Error messages</a>
+
+  
+            
+      
+{% endblock %}

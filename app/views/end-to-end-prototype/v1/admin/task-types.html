@@ -1,0 +1,55 @@
+{% extends "layouts/main-team-admin.html" %}
+  
+{% block pageTitle %}
+  Apply For Pension Credit task types
+{% endblock %}
+
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "DWP Task dashboard",
+        href: "home-service-manager_as_sr"
+      },
+      {
+        text: "Manage organisation home",
+        href: "manage-org-b"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Apply For Pension Credit task types</h1>
+  
+  <p>Create and manage task types for Apply For Pension Credit. These are common items of routine work.</p>
+  <p>Task types allow a user to view and manage the different kinds of work in the Apply For Pension Credit organisation unit.</p>
+
+  {{ govukButton({
+    text: "Create task type",
+    href: "create-task-type"
+  }) }}
+
+  <div class="box5 govuk-!-margin-bottom-3">
+    <h2 class="govuk-heading-m"><a href="group-admin">task-type-one</a></h2>
+  </div>
+
+  <div class="box5 govuk-!-margin-bottom-3">
+    <h2 class="govuk-heading-m"><a href="group-admin">task-type-two</a></h2>
+  </div>
+
+  <div class="box5">
+    <h2 class="govuk-heading-m"><a href="group-admin">task-type-three</a></h2>
+  </div>
+
+</div>
+
+
+&nbsp;
+{% endblock %}
+
