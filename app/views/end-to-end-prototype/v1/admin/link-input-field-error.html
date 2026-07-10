@@ -1,0 +1,90 @@
+{% extends "layouts/main-team-agent-pip-2.html" %}
+
+{% block pageTitle %}
+  Add an Execution URL
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "../"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+  {% set headingText = "Add an Execution URL" %}
+  {% set paragraphText = "No URL set" %}
+
+  {% if data.linkChangeClicked == "true" %}
+      {% set headingText = "Change the organisation unit URL" %}
+  {% endif %}
+
+  {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Enter a URL with a protocol (https://), a host (www.) and without spaces",
+        href: "#ScenarioOne"
+      }
+    ]
+  }) }}
+
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        
+      <h1 class="govuk-heading-l">Add an organisation service URL</h1>
+
+      <p>Adding a Execution URL.</p>
+
+        <form method="post" novalidate>
+
+        {{ govukInput({
+          id: "ScenarioOne",
+          name: "",
+          classes: "govuk-input--width-20",
+          label: {
+            text: "Enter an organisation service URL",
+            isPageHeading: false,
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "This must be a complete URL without spaces, for example https://www.gov.uk"
+          },
+          errorMessage: {
+            text: "Enter a URL with a protocol (https://), a host (www.) and without spaces"
+          },
+          value: data.pip.link.input
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Confirm"
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "/pip/admin-settings"
+          }) }}
+        </div>
+      </form>
+
+     
+      </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}
+
+

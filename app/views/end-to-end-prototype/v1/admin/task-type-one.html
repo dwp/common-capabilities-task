@@ -1,0 +1,187 @@
+{% extends "layouts/main-team-admin.html" %}
+  
+{% block pageTitle %}
+  Task type one
+{% endblock %}
+
+{% set pageName = "Task type one" %}
+
+{% block beforeContent %}
+
+ {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.back()"
+ }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+    <p>View and manage this task type.</p>
+
+    <h2 class="govuk-heading-m">Task type details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Task type ID"
+          },
+          value: {
+            text: "4460testing"
+          }
+        },
+        {
+          key: {
+            text: "Task type name"
+          },
+          value: {
+            text: "4460Testing"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Execution URL"
+          },
+          value: {
+            text: ""
+          },
+          actions: {
+            items: [
+              {
+                href: "add-task-type-execution-url",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Priority"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Must complete in"
+          },
+          value: {
+            text: ""
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-m">Task type matching criteria</h2>
+
+    <p>Tasks that are already in progress will not be affected by changes you make to matching criteria.</p>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "escalate"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "roles"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "grade"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Back",
+      classes: "govuk-button--secondary",
+      href: "task-types"
+    }) }}
+
+    </div>
+</div>
+
+
+
+
+
+&nbsp;
+{% endblock %}
+
