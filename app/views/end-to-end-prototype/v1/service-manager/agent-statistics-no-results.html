@@ -150,7 +150,7 @@
         </div>
       <div id="searchb" class="govuk-input--width-30 govuk-!-margin-bottom-6"></div>
 
-      {{ govukRadios({
+      {# {{ govukRadios({
         name: "sm[agentStats][taskType]",
         fieldset: {
           legend: {
@@ -181,7 +181,79 @@
             text: "Type C"
           }
         ]
-      }) }}
+      }) }} #}
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            {{ govukInput({
+        label: {
+          text: "Task type (optional)",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Select the task you want to view, or 'All' for total tasks."
+        },
+        classes: "govuk-!-margin-bottom-0",
+        id: "event-name",
+        name: "eventName",      
+        attributes: {
+            placeholder: "Enter task type"
+          }
+      }) }}  
+
+      <div class="filter_border-bottom"> 
+        <div class="searchable-collection-component--only-scrollable">
+          <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                Type All
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                Type A
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Type B
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                Type C
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type D
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type E
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type F
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+        </div>
+      </div>
+
+
 
       {{ govukCheckboxes({
         name: "sm[agentStats][status]",
