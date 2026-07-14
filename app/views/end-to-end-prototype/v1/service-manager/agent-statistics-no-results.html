@@ -183,9 +183,9 @@
         ]
       }) }} #}
 
-      <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            {{ govukInput({
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+      {{ govukInput({
         label: {
           text: "Task type (optional)",
           classes: "govuk-label--m",
@@ -195,14 +195,16 @@
           text: "Select the task you want to view, or 'All' for total tasks."
         },
         classes: "govuk-!-margin-bottom-0",
-        id: "event-name",
-        name: "eventName",      
+        id: "sm[agentStats][taskType]",
+        name: "sm[agentStats][taskType]",      
         attributes: {
             placeholder: "Enter task type"
           }
       }) }}  
 
-      <div class="filter_border-bottom"> 
+  
+
+      <div class="govuk-!-margin-bottom-6"> 
         <div class="searchable-collection-component--only-scrollable">
           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
@@ -250,8 +252,9 @@
           </div>
         </div>
       </div>
-        </div>
+
       </div>
+    </div>
 
 
 
