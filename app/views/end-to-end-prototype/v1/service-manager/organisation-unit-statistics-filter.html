@@ -1,0 +1,229 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Organisation unit statistics" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <p>To view MI, you must enter a data range. Enter from and to dates below.</p> 
+
+      <form method="post" novalidate>
+
+      <h2 class="govuk-heading-m">Date range</h2>
+      <p>Enter a date range.</p>
+
+            
+      {{ govukDateInput({
+        id: "mvp[stats][startDate]",
+        fieldset: {
+          legend: {
+            text: "From",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 6 2025"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+      {{ govukDateInput({
+        id: "mvp[stats][endDate]",
+        fieldset: {
+          legend: {
+            text: "To",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        hint: {
+          text: "For example, 12 6 2025"
+        },
+        items: [
+          {
+            name: "date",
+            label: "Day",
+            value: data.day,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Month",
+            value: data.month,
+            classes: "govuk-input--width-2"
+          },
+          {
+            name: "date",
+            label: "Year",
+            value: data.year,
+            classes: "govuk-input--width-4"
+          }
+        ]
+      }) }}
+
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
+      {{ govukInput({
+        label: {
+          text: "Task type (optional)",
+          classes: "govuk-label--m",
+          isPageHeading: false
+        },
+        hint: {
+          text: "Select the task you want to view, or 'All' for total tasks."
+        },
+        classes: "govuk-!-margin-bottom-0",
+        id: "taskTypeSearch",
+        name: "sm[agentStats][taskType]",      
+        attributes: {
+            placeholder: "Enter task type"
+          }
+      }) }}  
+
+
+      <div class="govuk-!-margin-bottom-6"> 
+        <div class="searchable-collection-component--only-scrollable">
+          <div id="taskTypeList" class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                Type All
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+                Type A
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                Type B
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
+                Type C
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type D
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type E
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+              <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
+                Type F
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {{ govukCheckboxes({
+        name: "",
+        fieldset: {
+          legend: {
+            text: "",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--xl"
+          }
+        },
+        values: data.statusses,
+        items: [
+          {
+            value: "Unallocated",
+            text: "Unallocated"
+          }
+        ]
+      }) }}
+
+      </div>
+    </div>
+  
+      {{ govukButton({
+        text: "View MI",
+        href: "organisation-unit-statistics-results"
+      }) }}
+
+        
+        
+      </form>
+
+
+    </div>
+  </div>
+            
+
+{% endblock %}
+
+{% block pageScripts %}
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const searchInput = document.getElementById('taskTypeSearch');
+      const checkboxes = document.querySelectorAll(
+        '#taskTypeList .govuk-checkboxes__item'
+      );
+
+      searchInput.addEventListener('input', function () {
+        const searchTerm = this.value.toLowerCase().trim();
+
+        checkboxes.forEach(item => {
+          const label = item
+            .querySelector('.govuk-checkboxes__label')
+            .textContent
+            .toLowerCase();
+
+          item.style.display =
+            searchTerm === '' || label.includes(searchTerm)
+              ? ''
+              : 'none';
+        });
+      });
+    });
+  </script>
+{% endblock %}
+

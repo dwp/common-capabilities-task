@@ -1,0 +1,109 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Statistics" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      <div class="govuk-grid-row govuk-!-margin-top-6">
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="dashboard-stat">
+            <div class="dashboard-stat__number dashboard-stat__number--blue govuk-heading-xl">218</div>
+            <div class="dashboard-stat__title govuk-body">created</div>
+
+            <p class="govuk-body govuk-!-margin-top-4">
+              See how well services are doing
+            </p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="dashboard-stat">
+            <div class="dashboard-stat__number dashboard-stat__number--blue govuk-heading-xl">217</div>
+            <div class="dashboard-stat__title govuk-body">completed</div>
+
+            <p class="govuk-body govuk-!-margin-top-4">
+              See how many people are using services
+            </p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="dashboard-stat">
+            <div class="dashboard-stat__number dashboard-stat__number--blue  govuk-heading-xl">1</div>
+            <div class="dashboard-stat__title govuk-body">overdue</div>
+
+            <p class="govuk-body govuk-!-margin-top-4">
+              See other stats about government services
+            </p>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="dashboard-stat">
+            <div class="dashboard-stat__number dashboard-stat__number--blue govuk-heading-xl">1.2</div>
+            <div class="dashboard-stat__title govuk-body">average completion time</div>
+
+            <p class="govuk-body govuk-!-margin-top-4">
+              See other stats about government services
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      {# second version #}
+
+      <div class="govuk-grid-row govuk-!-margin-top-6">
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">218</div>
+            <div class="stats-card__label govuk-body">created</div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">217</div>
+            <div class="stats-card__label govuk-body">completed</div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">1</div>
+            <div class="stats-card__label govuk-body">ovedue</div>
+          </div>
+        </div>
+
+         <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">1.2</div>
+            <div class="stats-card__label govuk-body">average completion time</div>
+          </div>
+        </div>
+
+      </div>
+
+      
+    </div>
+  </div>
+            
+
+{% endblock %}
+
+

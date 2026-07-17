@@ -14,6 +14,8 @@
 
 // Add extra styles here
 
+ 
+
 
 .govuk-header__logo {
     display: none;
@@ -743,45 +745,7 @@
   padding-bottom: 20px;
 }
 
-// This ovverides GDS Transport font
 
-body,
-.govuk-body,
-
-// Headings
-.govuk-heading-xl,
-.govuk-heading-l,
-.govuk-heading-m,
-.govuk-heading-s,
-
-// Text + labels
-.govuk-label,
-.govuk-hint,
-.govuk-caption-m,
-.govuk-caption-l,
-
-// Links
-.govuk-link,
-a,
-
-// Form elements
-.govuk-input,
-.govuk-textarea,
-.govuk-select,
-.govuk-fieldset__legend--l,
-.govuk-fieldset__legend--m,
-.govuk-fieldset__legend--s,
-.govuk-fieldset__legend,
-
-// Tables
-.govuk-table,
-.govuk-table__header,
-.govuk-table__cell,
-
-// Lists
-.govuk-list {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 .dwp-footer__link, .dwp-footer__link:visited {
     color: #0b0c0c;
@@ -794,6 +758,45 @@ a,
 #main-content > div > div > form > div.govuk-grid-row > div > div.govuk-form-group {
   margin-bottom: 15px;
 }
+
+// Style for Org unit statistics
+
+.dashboard-stat {
+  // background: #f3f2f1;
+  padding: 20px;
+  height: 318px;
+  box-sizing: border-box;
+}
+
+.dashboard-stat__number {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: #484949;
+  margin-bottom: 12px;
+}
+
+.dashboard-stat__title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #484949;
+}
+
+// secon version
+
+.stats-card {
+  background-color: #f3f2f1; /* GOV.UK light grey */
+  padding: 30px;
+  min-height: 200px;
+  box-sizing: border-box;
+}
+
+.stats-card__number {
+  margin-bottom: 10px;
+}
+
+
 
 
 
