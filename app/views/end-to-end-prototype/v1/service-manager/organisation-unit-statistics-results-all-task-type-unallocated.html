@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "All task type statistics" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+      <!-- Table one - team -->
+
+      <table class="govuk-table govuk-!-static-margin-bottom-3">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Organisation unit statistics between 1 January 2026 and 1 May 2026</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Task type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Created</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Ovedue</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Average completion time</th>
+             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Unallocated</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">218</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">217</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1.2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">10</td>
+          </tr>
+
+           <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type B</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">201</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">198</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1.1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">8</td>
+          </tr>
+
+           <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type C</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">211</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">210</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1.1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">9</td>
+          </tr>
+
+           <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type D</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">214</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">213</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1.0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">14</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+
+      
+    </div>
+  </div>
+            
+
+{% endblock %}
+
+

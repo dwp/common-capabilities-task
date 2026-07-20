@@ -1,0 +1,90 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName = "Statistics" %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+
+      {# second version #}
+
+      {# <div class="govuk-grid-row govuk-!-margin-top-6 govuk-!-margin-bottom-6">
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">218</div>
+            <div class="stats-card__label govuk-body">created</div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">217</div>
+            <div class="stats-card__label govuk-body">completed</div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">1</div>
+            <div class="stats-card__label govuk-body">ovedue</div>
+          </div>
+        </div>
+
+         <div class="govuk-grid-column-one-quarter">
+          <div class="stats-card">
+            <div class="stats-card__number govuk-heading-xl">1.2</div>
+            <div class="stats-card__label govuk-body">average completion time</div>
+          </div>
+        </div>
+
+      </div> #}
+
+      <!-- Table one - team -->
+
+      <table class="govuk-table govuk-!-static-margin-bottom-3">
+        
+        <caption class="govuk-table__caption govuk-table__caption--m">Organisation unit statistics between 1 January 2026 and 1 May 2026</caption>
+        
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Task type</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Created</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Ovedue</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Average completion time</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">218</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">217</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">1.2</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#" class="govuk-link">Download as csv</a>
+
+
+    
+    </div>
+  </div>
+            
+
+{% endblock %}
+
+
