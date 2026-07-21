@@ -103,7 +103,7 @@
           isPageHeading: false
         },
         hint: {
-          text: "Select the task you want to view, or 'All' for total tasks."
+          text: "Enter a task type to search, or select any tasks you want to view."
         },
         classes: "govuk-!-margin-bottom-0",
         id: "taskTypeSearch",
@@ -167,10 +167,13 @@
         name: "",
         fieldset: {
           legend: {
-            text: "",
+            text: "Unallocated tasks",
             isPageHeading: true,
-            classes: "govuk-fieldset__legend--xl"
+            classes: "govuk-fieldset__legend--m"
           }
+        },
+        hint: {
+        text: "Select 'Unallocated' to view all unallocated tasks for each task type."
         },
         values: data.statusses,
         items: [
