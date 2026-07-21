@@ -17,12 +17,12 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p>To view MI, you must enter a data range. Enter from and to dates below.</p> 
+      <p>Enter a date range to view MI. You can select which task types to view, and include unallocated tasks.</p> 
 
       <form method="post" novalidate>
 
       <h2 class="govuk-heading-m">Date range</h2>
-      <p>Enter a date range.</p>
+      {# <p>Enter a date range.</p> #}
 
             
       {{ govukDateInput({
@@ -167,13 +167,13 @@
         name: "",
         fieldset: {
           legend: {
-            text: "Unallocated tasks",
+            text: "Unallocated tasks (optional)",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-        text: "Select 'Unallocated' to view all unallocated tasks for each task type."
+        text: "Select 'Unallocated' to include unallocated tasks in the results."
         },
         values: data.statusses,
         items: [
