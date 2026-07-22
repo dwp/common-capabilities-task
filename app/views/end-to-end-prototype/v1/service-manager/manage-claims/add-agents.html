@@ -1,0 +1,125 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set pageName = "Add agents" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Add agents
+{% endblock %}
+
+{% block header %}
+
+  <header data-module="govuk-header" class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div class="dwp-header__service-name">
+        <a href="/" class="dwp-header__link">{{serviceName}}</a>
+      </div>
+      <div class="dwp-header__service-action">
+          <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+      </div>
+    </div>
+  </header> 
+
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container govuk-!-margin-bottom-3'
+      }) }} 
+  </div> 
+
+{% endblock %}
+
+
+
+{% block content %}
+
+{% if data['showBannerTwo']%}
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      You have made changes to James Burton's details
+    </h3>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html,
+    type: "success"
+  }) }}
+{% endif %}
+
+
+<div class="govuk-width-container">
+ 
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+        <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
+        <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p>
+
+        {{ govukInput({
+          id: "",
+          name: "",
+          label: {
+            text: "Search",
+            isPageHeading: false,
+            classes: "govuk-label--m"
+          },
+          hint: {
+            text: "Use name, staff number, or email."
+          },
+          classes: "govuk-input--width-20",
+          value: data.search
+        }) }}
+        
+          {{ govukButton({
+            text: "Add an agent",
+            href: "manage-agents-add-an-agent"
+          }) }}
+
+        {{ govukDetails({
+          summaryText: "I cannot find the agent I am looking for",
+          html: "
+          <h2 class='govuk-heading-m'>I cannot find the agent I'm looking for</h2>
+          <h3 class='govuk-heading-s'>Get help with your search</h3>
+          <p>If you cannot find the agent you're looking for:</p>
+            <ul class='govuk-list govuk-list--bullet'>
+              <li>
+                Check their details and try again - search by email or staff number if their name doesn't show results
+              </li>
+              <li>
+                If they are a new starter, wait 24 hours and try again
+              </li>
+              <li>
+                If they are not a new starter, or if they are and you’ve waited 24 hours,  <a href='#'' class='govuk-link'>report an incident on Tech Place</a>
+              </li>
+            </ul> 
+          "
+        }) }} 
+         
+      
+      </div>
+
+      <div class="govuk-grid-column-one-quarter">
+        <div class="stats-card">
+          <div class="stats-card__number govuk-heading-l">218</div>
+          <div class="stats-card__label govuk-body">total count of agents</div>
+        </div>
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+

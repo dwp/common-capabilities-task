@@ -227,6 +227,14 @@ router.post('/end-to-end-prototype/v1/team-leader/mi/select', (req, res) => {
 	}
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/add-or-manage-agents', (req, res) => {
+	if (req.session.data.add.agents.or.manage == 'Add agents'){
+		res.redirect("add-agents")
+	} else {
+		res.redirect("add-agents-2")
+	}
+})
+
 
 
 
