@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 
-{% set pageName = "Statistics" %}
+{% set pageName = "Statistics by task type" %}
 
 
 {% block beforeContent %}
@@ -62,16 +62,18 @@
           <tr class="govuk-table__row">
             <th scope="col" class="govuk-table__header">Task type</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Created</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Unallocated</th>
             <th scope="col" class="govuk-table__header govuk-table__header--numeric">Overdue</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Average completion time<br> in minutes</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Completed</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Average minutes between starting and closing task</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">218</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">217</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">5</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">1</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">1.2</td>
           </tr>
