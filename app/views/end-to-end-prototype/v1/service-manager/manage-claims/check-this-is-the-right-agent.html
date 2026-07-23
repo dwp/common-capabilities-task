@@ -1,0 +1,108 @@
+
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set pageName = "Check this is the right agent" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Add agents
+{% endblock %}
+
+{% block header %}
+
+  <header data-module="govuk-header" class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div class="dwp-header__service-name">
+        <a href="/" class="dwp-header__link">{{serviceName}}</a>
+      </div>
+      <div class="dwp-header__service-action">
+          <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+      </div>
+    </div>
+  </header> 
+
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container govuk-!-margin-bottom-3'
+      }) }} 
+  </div> 
+
+{% endblock %}
+
+
+{% block content %}
+  
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Name"
+            },
+            value: {
+              text: "Aiden Jenkins"
+            }
+          },
+          {
+            key: {
+              text: "Email"
+            },
+            value: {
+              text: "aiden.jenkins@example.com"
+            }
+          },
+          {
+            key: {
+              text: "Staff number"
+            },
+            value: {
+              text: "111222333"
+            }
+          },
+          {
+            key: {
+              text: "Office"
+            },
+            value: {
+              text: "Newcastle"
+            }
+          }
+        ]
+      }) }}
+        
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "javascript:window.history.back()"
+        }) }}
+      </div>
+    
+     
+    {# <a style="color: #d4351c;" href="error-message-2">Error message</a><br><br> #}
+    </div>
+  </div>
+
+  
+            
+      
+{% endblock %}

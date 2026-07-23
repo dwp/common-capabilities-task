@@ -39,25 +39,64 @@
 {% endblock %}
 
 
+ {% block pageScripts %}
+
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/teams.js"></script>
+  <script>
+    const teamMembers = [
+      "Aiden Jenkins, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Anderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Adams, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Johnston, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Ben Hoad, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Joel Odonnell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Oliver Logan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Dan Hayes, 12345678, G4S DWP Contact Center",
+      "Kathleen Lin, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Darren Lowery, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kamran Roth, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amaan Hubbard, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sally Whitaker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Georgia Duncan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Jean Booker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kaine Bell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Arjan Sharp, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Bianca Nicholson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Brett Henderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Hassan Young, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sonia Pruitt, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Erica Fernandez, 12345678, email@dwp.gov.uk, G4S DWP Contact Center"
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#searchAgent'),
+      id: 'searchAgent', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]}, ${parts[2]}, ${parts[3]}`
+       
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
 
 {% block content %}
 
-{% if data['showBannerTwo']%}
-  {% set html %}
-    <h3 class="govuk-notification-banner__heading">
-      You have made changes to James Burton's details
-    </h3>
-  {% endset %}
-
-  {{ govukNotificationBanner({
-    html: html,
-    type: "success"
-  }) }}
-{% endif %}
-
 
 <div class="govuk-width-container">
- 
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -65,26 +104,21 @@
         <h1 class="govuk-heading-l">{{pageName}}</h1>
         <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
         <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p>
-
-        {{ govukInput({
-          id: "",
-          name: "",
-          label: {
-            text: "Search",
-            isPageHeading: false,
-            classes: "govuk-label--m"
-          },
-          hint: {
-            text: "Use name, staff number, or email."
-          },
-          classes: "govuk-input--width-20",
-          value: data.search
-        }) }}
         
-          {{ govukButton({
-            text: "Add an agent",
-            href: "manage-agents-add-an-agent"
-          }) }}
+
+          <label class="govuk-label govuk-label--m" for="searchb">Find a team member</label>
+            <div id="event-name-hint" class="govuk-hint">
+              Use their name or staff number
+            </div>
+          <div id="searchAgent" class="govuk-input--width-30"></div>
+
+          <div class="govuk-button-group govuk-!-static-margin-top-3">
+            {{ govukButton({
+              text: "Add an agent",
+              href: "check-this-is-the-right-agent"
+            }) }}
+          </div>
+
 
         {{ govukDetails({
           summaryText: "I cannot find the agent I am looking for",
@@ -105,15 +139,11 @@
             </ul> 
           "
         }) }} 
-         
-      
-      </div>
 
-      <div class="govuk-grid-column-one-quarter">
-        <div class="stats-card">
-          <div class="stats-card__number govuk-heading-l">218</div>
-          <div class="stats-card__label govuk-body">total count of agents</div>
-        </div>
+        {{ govukInsetText({
+          text: "There are 8 agents in the team"
+        }) }}
+      
       </div>
 
     </div>

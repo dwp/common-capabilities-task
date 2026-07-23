@@ -1,6 +1,6 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
-{% set pageName = "Manage agents" %}
+{% set pageName = "View or remove agents" %}
 
 {% block beforeContent %}
   {{ govukBackLink({
@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Manage agents
+  {{pageName}}
 {% endblock %}
 
 {% block header %}
@@ -43,8 +43,6 @@
 {% block content %}
 
 
-
-
 <div class="govuk-width-container">
  
 
@@ -52,7 +50,7 @@
       <div class="govuk-grid-column-two-thirds">
 
 
-        <h1 class="govuk-heading-l">Benefits One QA</h1>
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
         <p class="govuk-body-m">Use the filter to find agents and update their details.</p>
 
         <div class="govuk-form-group">
@@ -141,14 +139,11 @@
             }
           ]
         }) }}
-      
-      </div>
 
-      <div class="govuk-grid-column-one-quarter">
-        <div class="stats-card">
-          <div class="stats-card__number govuk-heading-xl">218</div>
-          <div class="stats-card__label govuk-body">total count of agents</div>
-        </div>
+        {{ govukInsetText({
+          text: "There are 8 agents in the team"
+        }) }}
+      
       </div>
 
     </div>
