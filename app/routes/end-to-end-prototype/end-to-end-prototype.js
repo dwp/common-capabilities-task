@@ -235,6 +235,29 @@ router.post('/end-to-end-prototype/v1/service-manager/manage-claims/add-or-manag
 	}
 })
 
+router.post(
+  '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-filter',
+  (req, res) => {
+    const taskTypes = [].concat(req.session.data.taskTypeList || [])
+
+    if (taskTypes.includes('Type All')) {
+      return res.redirect(
+        '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-results-all-task-type-unallocated'
+      )
+    }
+
+    if (taskTypes.includes('Type A')) {
+      return res.redirect(
+        '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-results-one-task-type'
+      )
+    }
+
+    return res.redirect(
+      '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-filter'
+    )
+  }
+)
+
 
 
 

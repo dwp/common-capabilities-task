@@ -19,7 +19,7 @@
 
       <p>Enter a date range to view task statistics for your organisation unit.</p> 
 
-      <form method="post" novalidate>
+   
 
       <h2 class="govuk-heading-m">Date range</h2>
       {# <p>Enter a date range.</p> #}
@@ -94,7 +94,7 @@
       }) }}
 
     <div class="govuk-grid-row">
-
+      <form method="post" novalidate>
       <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-6">
       {{ govukInput({
         label: {
@@ -116,16 +116,16 @@
 
       <div class="govuk-!-margin-bottom-4"> 
         <div class="searchable-collection-component--only-scrollable">
-          <div id="taskTypeList" class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+          <div id="taskTypeList" name="taskTypeList" class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="task-type-all" name="taskTypeList" type="checkbox" value="Type All">
+              <label class="govuk-label govuk-checkboxes__label" for="task-type-all">
                 Type All
               </label>
             </div>
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="">
-              <label class="govuk-label govuk-checkboxes__label" for="organisation">
+              <input class="govuk-checkboxes__input" id="task-type-a" name="taskTypeList" type="checkbox" value="Type A">
+              <label class="govuk-label govuk-checkboxes__label" for="task-type-a">
                 Type A
               </label>
             </div>
@@ -163,40 +163,20 @@
         </div>
       </div>
 
-      {# {{ govukCheckboxes({
-        name: "",
-        fieldset: {
-          legend: {
-            text: "Unallocated tasks (optional)",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-        text: "Select 'Unallocated' to include unallocated tasks in the results."
-        },
-        values: data.statusses,
-        items: [
-          {
-            value: "Unallocated",
-            text: "Unallocated"
-          }
-        ]
-      }) }} #}
+     
 
       </div>
     </div>
   
       {{ govukButton({
-        text: "View MI",
-        href: "organisation-unit-statistics-results-one-task-type"
+        text: "View MI"
       }) }}    
         
       </form>
 
-       <div class="govuk-button-group govuk-!-static-margin-top-0">
+       {# <div class="govuk-button-group govuk-!-static-margin-top-0">
         <a href="organisation-unit-statistics-results-all-task-type-unallocated" class="govuk-link">All task type plus unallocated tasks</a>
-      </div>
+      </div> #}
 
 
     </div>
