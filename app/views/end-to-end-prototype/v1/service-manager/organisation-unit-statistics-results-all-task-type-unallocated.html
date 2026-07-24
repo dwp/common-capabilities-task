@@ -17,6 +17,30 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
+    
+
+      {{ govukDetails({
+        summaryText: "What these results tell you",
+        html: "
+        <p>For your date range, these results show the number of:</p>
+        <ul class='govuk-list govuk-list--bullet'>
+          <li>
+            created tasks available to claim
+          </li>
+          <li>
+            unallocated tasks not yet claimed by an agent
+          </li>
+          <li>
+            overdue tasks past the SLA deadline and not marked as complete
+          </li>
+          <li>
+            completed tasks
+          </li>
+        </ul>
+        <p>You can also see the average completion time, which is the average minutes between starting work on a task and closing it.</p>
+        "
+      }) }}
+
 
       <!-- Table one - team -->
 
