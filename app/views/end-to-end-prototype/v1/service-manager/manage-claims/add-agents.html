@@ -42,7 +42,7 @@
  {% block pageScripts %}
 
   <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
-  <script type="text/javascript" src="/public/javascripts/teams.js"></script>
+  <script type="text/javascript" src="/public/javascripts/teams-2.js"></script>
   <script>
     const teamMembers = [
       "Aiden Jenkins, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
@@ -70,8 +70,8 @@
     ]
 
     accessibleAutocomplete({
-      element: document.querySelector('#searchAgent'),
-      id: 'searchAgent', // To match it to the existing <label>.
+      element: document.querySelector('#searchb'),
+      id: 'searchb', // To match it to the existing <label>.
       CSSNamespace: 'test',
       source: teamMembers,
       templates: {
@@ -99,7 +99,7 @@
 <div class="govuk-width-container">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-l">{{pageName}}</h1>
         <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
@@ -110,12 +110,19 @@
             <div id="event-name-hint" class="govuk-hint">
               Use their name or staff number
             </div>
-          <div id="searchAgent" class="govuk-input--width-30"></div>
+          <div id="searchb" class="govuk-input--width-30"></div>
 
-          <div class="govuk-button-group govuk-!-static-margin-top-3">
+          {# <div class="govuk-button-group govuk-!-static-margin-top-3">
             {{ govukButton({
               text: "Add an agent",
               href: "check-this-is-the-right-agent"
+            }) }}
+          </div> #}
+
+           <div class="govuk-button-group govuk-!-static-margin-top-3">
+            {{ govukButton({
+              text: "Add an agent",
+              id: "addTeamMember"
             }) }}
           </div>
 
@@ -141,8 +148,23 @@
         }) }} 
 
         {{ govukInsetText({
-          text: "There are 8 agents in the team"
+          text: "There are 2 agents in the team"
         }) }}
+
+        <table class="govuk-table govuk-!-static-margin-bottom-2">
+          <caption class="govuk-table__caption govuk-table__caption--m">Org B team members</caption>
+          <thead class="govuk-table__head">
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Staff number</th>
+            <th scope="col" class="govuk-table__header">Email</th>
+            <th scope="col" class="govuk-table__header">Office</th>
+            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
+          </thead>
+          <tbody id="TeamMembersTable" class="govuk-table__body">
+          </tbody>
+        </table>
+
+        <p id="tablePlaceholder">You have not added any team members to {{ data['humanreadablename'] or "None" }} yet.</p>
       
       </div>
 
