@@ -792,7 +792,8 @@
 #main-content > div > div > div.govuk-grid-column-two-thirds > div:nth-child(4){
   margin-bottom: 15px;
 }
-#main-content > div > div > form > div > div.govuk-form-group {
+#main-content > div > div > form > div > div.govuk-form-group,
+#main-content > div > div > form > div > div > div > div.govuk-form-group {
    margin-bottom: 15px;
 }
 
