@@ -240,18 +240,21 @@ router.post(
   (req, res) => {
     const taskTypes = [].concat(req.session.data.taskTypeList || [])
 
-    if (taskTypes.includes('Type All')) {
+    // If no task type checkbox is selected
+    if (taskTypes.length === 0) {
       return res.redirect(
         '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-results-all-task-type-unallocated'
       )
     }
 
+    // If Type A is selected
     if (taskTypes.includes('Type A')) {
       return res.redirect(
         '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-results-one-task-type'
       )
     }
 
+    // Fallback if another option is selected but no matching route exists yet
     return res.redirect(
       '/end-to-end-prototype/v1/service-manager/organisation-unit-statistics-filter'
     )
