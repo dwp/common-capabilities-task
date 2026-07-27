@@ -116,7 +116,7 @@ if(TeamMembersList) {
     <tr class="govuk-table__row">
     <td class="govuk-table__cell">${x.name}</td>
     <td class="govuk-table__cell">${x.staffNo}</td>
-    <td class="govuk-table__cell govuk-!-text-align-right"><a class="govuk-link" href="#">Remove</a></td>
+    <td class="govuk-table__cell govuk-!-text-align-right"><a class="govuk-link" href="#">View</a></td>
     </tr>`
         
        
@@ -162,7 +162,7 @@ function createTeamMemberObject(data){
     <td class="govuk-table__cell">${parts[1]}</td>
     <td class="govuk-table__cell">${parts[2]}</td>
     <td class="govuk-table__cell">${parts[3]}</td>
-    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">Remove</a></td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">View</a></td>
 
   </tr>`;
 
