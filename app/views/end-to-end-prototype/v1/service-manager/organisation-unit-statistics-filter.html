@@ -126,37 +126,37 @@
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="">
+                  <input class="govuk-checkboxes__input" id="task-type-b" name="organisation" type="checkbox" value="">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
                     Type B
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="">
+                  <input class="govuk-checkboxes__input" id="task-type-c" name="organisation" type="checkbox" value="">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
                     Type C
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="">
+                  <input class="govuk-checkboxes__input" id="task-type-d" name="organisation" type="checkbox" value="">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
                     Type D
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <input class="govuk-checkboxes__input" id="task-type-e" name="organisation" type="checkbox" value="DfT">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
                     Type E
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <input class="govuk-checkboxes__input" id="task-type-f" name="organisation" type="checkbox" value="DfT">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
                     Call back
                   </label>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
+                  <input class="govuk-checkboxes__input" id="task-type-" name="organisation" type="checkbox" value="DfT">
                   <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
                     Review and Allocate New Tasks 
                   </label>
@@ -204,12 +204,15 @@
 {% endblock %}
 
 {% block pageScripts %}
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const searchInput = document.getElementById('taskTypeSearch');
       const checkboxes = document.querySelectorAll(
         '#taskTypeList .govuk-checkboxes__item'
       );
+
+      if (!searchInput) return;
 
       searchInput.addEventListener('input', function () {
         const searchTerm = this.value.toLowerCase().trim();
@@ -220,13 +223,18 @@
             .textContent
             .toLowerCase();
 
-          item.style.display =
-            searchTerm === '' || label.includes(searchTerm)
+          // Don't filter until at least 2 characters have been entered
+          if (searchTerm.length < 2) {
+            item.style.display = '';
+          } else {
+            item.style.display = label.includes(searchTerm)
               ? ''
               : 'none';
+          }
         });
       });
     });
   </script>
+
 {% endblock %}
 
