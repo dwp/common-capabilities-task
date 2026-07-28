@@ -102,6 +102,11 @@
       <div class="govuk-grid-column-full">
 
         <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {{ govukInsetText({
+          text: "There are 2 agents in the team"
+        }) }}
+
         <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
         <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p>
         
@@ -121,8 +126,8 @@
 
            <div class="govuk-button-group govuk-!-static-margin-top-3">
             {{ govukButton({
-              text: "Add an agent",
-              id: "addTeamMember"
+              text: "Continue",
+              href: ""
             }) }}
           </div>
 
@@ -147,24 +152,6 @@
           "
         }) }} 
 
-        {{ govukInsetText({
-          text: "There are 2 agents in the team"
-        }) }}
-
-        <table class="govuk-table govuk-!-static-margin-bottom-2">
-          <caption class="govuk-table__caption govuk-table__caption--m">Org B team members</caption>
-          <thead class="govuk-table__head">
-            <th scope="col" class="govuk-table__header">Name</th>
-            <th scope="col" class="govuk-table__header">Staff number</th>
-            <th scope="col" class="govuk-table__header">Email</th>
-            <th scope="col" class="govuk-table__header">Office</th>
-            <th scope="col" class="govuk-table__header govuk-table__header--numeric">Action</th>
-          </thead>
-          <tbody id="TeamMembersTable" class="govuk-table__body">
-          </tbody>
-        </table>
-
-        <p id="tablePlaceholder">You have not added any team members to {{ data['humanreadablename'] or "None" }} yet.</p>
       
       </div>
 

@@ -162,7 +162,7 @@ function createTeamMemberObject(data){
     <td class="govuk-table__cell">${parts[1]}</td>
     <td class="govuk-table__cell">${parts[2]}</td>
     <td class="govuk-table__cell">${parts[3]}</td>
-    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="#">View</a></td>
+    <td class="govuk-table__cell govuk-table__cell--numeric"><a class="govuk-link" href="/end-to-end-prototype/v1/agents/my-profile-agent">View profile</a> | <a class="govuk-link" href="#">Remove</a></td>
 
   </tr>`;
 
