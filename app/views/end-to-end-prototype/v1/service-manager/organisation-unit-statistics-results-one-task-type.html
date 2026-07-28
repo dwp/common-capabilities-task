@@ -39,6 +39,23 @@
         "
       }) }}
 
+        {# Selected filters #}
+
+        <div class="moj-filter__selected results-selected-filters govuk-!-margin-bottom-5">
+          <div class="moj-filter__selected-heading">
+            <div class="moj-filter__heading-title">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Selected filters</h2>
+            </div>
+            <div class="moj-filter__heading-action">
+              <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+            </div>
+          </div>
+          <ul class="moj-filter-tags">
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Call back</a></li>
+            <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Review and Allocate New Tasks</a></li>
+          </ul>
+        </div>
+
 
       <table class="govuk-table govuk-!-static-margin-bottom-3">
         
@@ -56,12 +73,21 @@
         </thead>
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
-            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Type A</td>
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Call back</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">150</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">2</td>
             <td class="govuk-table__cell govuk-table__cell--numeric">7</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">146</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric">1.2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">141</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">2.2</td>
+          </tr>
+
+          <tr class="govuk-table__row">
+            <td scope="row" class="govuk-table__header govuk-!-width-one-quarter">Review and Allocate New Tasks</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">240</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">4</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">233</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric">4.1</td>
           </tr>
         </tbody>
       </table>
