@@ -85,6 +85,20 @@ router.post('/test/date-test-answer', function (req, res) {
     next();
   })
 
+  // to show date
+  
+  router.use((req, res, next) => {
+  const today = new Date()
+
+  res.locals.today = {
+    day: today.getDate(),
+    month: today.getMonth() + 1,
+    year: today.getFullYear()
+  }
+
+  next()
+})
+
 module.exports = router
 
 require('./routes/sdar-agent-claim/sdar-agent-claim')(router)
