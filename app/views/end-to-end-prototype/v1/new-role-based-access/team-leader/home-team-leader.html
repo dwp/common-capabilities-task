@@ -1,0 +1,62 @@
+{% extends "layouts/main-team-leader.html" %}
+
+{% block pageTitle %}
+  Team leader home
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+    text: "Back",
+    href: "../../select-user-admin"
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Team Leader dashboard</h1>
+  <div class="box">
+    <h2 class="govuk-heading-m"><a href="view-and-manage-teams">View and manage your team</a></h2>
+    <p>Add or remove agents and team leaders to or from your teams.</p> 
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="view-and-manage-task/search-results">View and manage tasks</a></h2>
+      <p>View and manage tasks for your team.</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Change due date of task</a></h2>
+      <p>Description</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Change priority of task</a></h2>
+      <p>Description</p>
+    </div>
+</div>
+
+<div class="govuk-width-container">
+  &nbsp;
+    <div class="box">
+      <h2 class="govuk-heading-m"><a href="#">Search and claim</a></h2>
+      <p>Description</p>
+    </div>
+</div>
+
+&nbsp;
+
+{% endblock %}
+
+
