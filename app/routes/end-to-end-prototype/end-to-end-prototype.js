@@ -262,7 +262,13 @@ router.post(
 )
 
 
-
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org', (req, res) => {
+	if (req.session.data.removindAgentFromOrg.agentRemoveNoTasks == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-georgia")
+	}
+})
 
 
 

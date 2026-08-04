@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ {{pageName}}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set pageName = "This user has tasks assigned" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          {{pageName}}
+        </h1>
+
+        <p>
+          You cannot remove them from the organisation until their assigned tasks are returned to the queue in 'View and manage tasks'.
+        </p>
+
+        <p>
+          Once you have done this, you can return to the user profile and remove them from the organisation.
+        </p>
+          
+        {{ govukButton({
+          text: "Go to 'View and manage tasks'",
+          href: "/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/search-results"
+        }) }}
+
+    </div>
+  </div>
+          
+       
+            
+           
+
+ 
+{% endblock %}

@@ -12,15 +12,17 @@ Team leader home
 
 {% block content %}
 
-{% if data['showBannerTwo']%}
-  {% set html %}
+
+
+{% if data.removindAgentFromOrg.agentRemoveNoTasks == "yes" %}
+  {% set bannerHtml %}
     <h3 class="govuk-notification-banner__heading">
-      You have made changes to James Burton's details
+      You have removed Georgia Duncan from Org A
     </h3>
   {% endset %}
 
   {{ govukNotificationBanner({
-    html: html,
+    html: bannerHtml,
     type: "success"
   }) }}
 {% endif %}
@@ -71,13 +73,13 @@ Team leader home
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" data-testid="table-cell">
-                <a href="agent-details-sm" id="100100200" class="govuk-link">Performance Team-Lead (performance.team-lead1)</a>
+                <a href="my-profile-agent-oliver" id="100100200" class="govuk-link">Oliver Logan</a>
                 <br><span class="govuk-hint">Staff number: 100100200</span>
               </td>
             </tr>
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" data-testid="table-cell">
-                <a href="agent-details-null" id="00090001" class="govuk-link">Performance Tester (00090001)</a>
+                <a href="my-profile-agent-georgia" id="00090001" class="govuk-link">Georgia Duncan</a>
                 <br><span class="govuk-hint">Staff number: 00090001</span>
               </td>
             </tr>
