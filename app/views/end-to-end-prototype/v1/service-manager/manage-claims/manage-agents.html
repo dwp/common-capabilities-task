@@ -77,12 +77,14 @@ Team leader home
                 <br><span class="govuk-hint">Staff number: 100100200</span>
               </td>
             </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-testid="table-cell">
-                <a href="my-profile-agent-georgia" id="00090001" class="govuk-link">Georgia Duncan</a>
-                <br><span class="govuk-hint">Staff number: 00090001</span>
-              </td>
-            </tr>
+            {% if data.removindAgentFromOrg.agentRemoveNoTasks != "yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" data-testid="table-cell">
+                  <a href="my-profile-agent-georgia" id="00090001" class="govuk-link">Georgia Duncan</a>
+                  <br><span class="govuk-hint">Staff number: 00090001</span>
+                </td>
+              </tr>
+            {% endif %}
             <tr class="govuk-table__row">
               <td class="govuk-table__cell " data-testid="table-cell">
                 <a href="agent-details-sm" id="00090002" class="govuk-link">Performance Tester (00090002)</a>
