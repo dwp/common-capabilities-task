@@ -12,27 +12,29 @@
   }) }}
 {% endblock %}
 
-{% set pageName = "This user has tasks assigned" %}
+{% set pageName = "You cannot remove this user yet" %}
 
 {% block content %}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      
+
         <h1 class="govuk-heading-l">
           {{pageName}}
         </h1>
 
         <p>
-          You cannot remove them from the organisation until their assigned tasks are returned to the queue in 'View and manage tasks'.
+          To remove this user from your organisation, you must first return all of their assigned tasks to the queue in 'View and manage tasks'.
         </p>
 
         <p>
-          Once you have done this, you can return to the user profile and remove them from the organisation.
+          After you have returned the tasks, go back to the user profile and try removing them again.
         </p>
           
         {{ govukButton({
-          text: "Go to 'View and manage tasks'",
+          text: "Review and return tasks",
           href: "/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/search-results"
         }) }}
 
