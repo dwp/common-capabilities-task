@@ -1,0 +1,80 @@
+{% extends "layouts/new-main.html" %}
+
+{% set pageName = "Are you sure you want to remove Georgia Duncan from Org A?" %}
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+
+{% endblock %}
+
+
+{% block content %}
+
+{{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select 'Yes, remove' if you want to remove Georgia Duncan from Org A",
+        href: "#ScenarioOne"
+      }
+    ]
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+     
+      <form method="post" novalidate>
+
+
+        {{ govukRadios({
+        name: "removindAgentFromOrg[agentRemoveNoTasks]",
+        id: "ScenarioOne",
+        fieldset: {
+          legend: {
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        errorMessage: {
+        text: "Select 'Yes, remove' if you want to remove Georgia Duncan from Org A"
+        },
+        value: data.removindAgentFromOrg.agentRemoveNoTasks,
+        items: [
+          {
+            value: "yes",
+            text: "Yes, remove"
+          },
+          {
+            value: "no",
+            text: "No"
+          }
+        ]
+      }) }}
+
+         
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+            text: "Continue"
+            }) }}
+          </div>
+
+        
+      </form>
+
+      
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
