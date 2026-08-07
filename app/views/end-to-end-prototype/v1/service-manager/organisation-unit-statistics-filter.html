@@ -115,7 +115,7 @@
             }) }}  
 
           
-            <div class="searchable-collection-component--only-scrollable">
+            <div class="searchable-collection-component--only-scrollable govuk-!-margin-bottom-6">
               <div id="taskTypeList" name="taskTypeList" class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="task-type-a" name="taskTypeList" type="checkbox" value="Type A">
@@ -163,22 +163,31 @@
             </div>
 
 
-          {# Selected filters #}
-
-          {# <div class="moj-filter__selected results-selected-filters govuk-!-margin-top-6">
-            <div class="moj-filter__selected-heading">
-              <div class="moj-filter__heading-title">
-                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Selected filters</h2>
-              </div>
-              <div class="moj-filter__heading-action">
-                <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
-              </div>
-            </div>
-            <ul class="moj-filter-tags">
-              <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Call back</a></li>
-              <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Review and Allocate New Tasks</a></li>
-            </ul>
-          </div> #}
+          {{ govukRadios({
+            name: "mi[timePeriod]",
+            fieldset: {
+              legend: {
+                text: "Time period (optional)",
+                isPageHeading: false,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            value: data.mi.timePeriod,
+            items: [
+              {
+                value: "Daily",
+                text: "Daily"
+              },
+              {
+                value: "Weekly",
+                text: "Weekly"
+              },
+               {
+                value: "Monthly",
+                text: "Monthly"
+              }
+            ]
+          }) }}
 
 
           {{ govukButton({
