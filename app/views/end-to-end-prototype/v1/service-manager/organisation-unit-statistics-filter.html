@@ -91,6 +91,45 @@
         ]
       }) }}
 
+      {{ govukRadios({
+          name: "mi[timePeriod]",
+          fieldset: {
+            legend: {
+              text: "Time period (optional)",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+              text: "Select an option. This will override the date range."
+            },
+          value: data.mi.timePeriod,
+          items: [
+            {
+              value: "Daily",
+              text: "Daily",
+              hint: {
+              text: "Add a hint text"
+              }
+            },
+            {
+              value: "Weekly",
+              text: "Weekly",
+              hint: {
+              text: "Add a hint text"
+              }
+            },
+              {
+              value: "Monthly",
+              text: "Monthly",
+              hint: {
+              text: "Add a hint text"
+              }
+            }
+          ]
+        }) }}
+
+
  
       <form method="post" novalidate>
 
@@ -163,36 +202,9 @@
             </div>
 
 
-          {{ govukRadios({
-            name: "mi[timePeriod]",
-            fieldset: {
-              legend: {
-                text: "Time period (optional)",
-                isPageHeading: false,
-                classes: "govuk-fieldset__legend--m"
-              }
-            },
-            value: data.mi.timePeriod,
-            items: [
-              {
-                value: "Daily",
-                text: "Daily"
-              },
-              {
-                value: "Weekly",
-                text: "Weekly"
-              },
-               {
-                value: "Monthly",
-                text: "Monthly"
-              }
-            ]
-          }) }}
-
 
           {{ govukButton({
-            text: "Search",
-            classes: "govuk-!-margin-top-6"
+            text: "Search"
           }) }}
           
         </div> 
