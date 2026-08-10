@@ -30,27 +30,40 @@
         </p>
 
         <p>
-          To return their tasks to the queue:
+          You need to return all their active, allocated and on hold tasks to the queue in 'View and manage tasks'.
         </p>
 
-        <ul class="govuk-list govuk-list--bullet">
+        <h2 class="govuk-heading-m">Reviewing and returning tasks to the queue</h2>
+
+        <ul class="govuk-list govuk-list--bullet govuk-list--number">
           <li>
-            go to <a href="/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/search-results" class="govuk-link">'View and manage tasks'</a>
+            Go to 'View and manage tasks' - the link will pre-populate the correct user ID and date range.
           </li>
           <li>
-            search for the user using today's date
+            Select ‘Active’ as the status.
           </li>
           <li>
-            return all of their assigned tasks to the queue
+            Select 'Search'.
+          </li>
+          <li>
+            Review and return any tasks to the queue.
+          </li>
+          <li>
+            Repeat these steps selecting 'Allocated' as the status.
+          </li>
+          <li>
+            Repeat these steps selecting 'On hold' as the status.
           </li>
         </ul>
 
-        <p>Once you have done this, go back to the user profile and remove the user from the organisation.</p>
+        <p>
+          Once you have done this, go back to the user profile and remove the user from the organisation.
+        </p>
 
-        {# {{ govukButton({
-          text: "Review and return tasks",
+        {{ govukButton({
+          text: "View and manage tasks",
           href: "/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/search-results"
-        }) }} #}
+        }) }}
 
     </div>
   </div>
