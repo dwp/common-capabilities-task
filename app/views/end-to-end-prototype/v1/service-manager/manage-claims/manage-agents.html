@@ -48,6 +48,11 @@ Team leader home
       </div>
       <div data-testid="column-one-third" class="govuk-grid-column-one-third">
         <h2 class="govuk-heading-m">Benefits One QA</h2>
+
+         {{ govukInsetText({
+          text: "There are 34 agents in the organisation"
+         }) }}
+
         <p class="govuk-body-m">Use the filter to find agents and update their details.</p>
 
         <div class="govuk-form-group" data-testid="form-group-id">
@@ -58,10 +63,6 @@ Team leader home
           </div>
         </div>
          
-         {{ govukInsetText({
-          text: "There are 34 agents in the organisation",
-          classes: "govuk-!-margin-bottom-2"
-         }) }}
 
         <table class="govuk-table">
           <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Benefits One QA</caption>
