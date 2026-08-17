@@ -176,13 +176,21 @@ router.post('/end-to-end-prototype/v1/service-manager/select', (req, res) => {
 	}
 })
 
+
 router.post('/end-to-end-prototype/v1/service-manager/agent-statistics-no-results', (req, res) => {
-	if (req.session.data.sm.agentStats.taskType == 'All'){
-		res.redirect("team-stats-with-details-with-on-hold")
-	} else {
-		res.redirect("team-stats-type-a")
-	}
+  const taskType = req.session.data.taskType
+
+  if (taskType === 'All' || taskType?.includes?.('All')) {
+    return res.redirect('team-stats-type-all')
+  }
+
+  if (taskType === 'Type A' || taskType?.includes?.('Type A')) {
+    return res.redirect('team-stats-type-a')
+  }
+
+  res.redirect('team-stats-type-all')
 })
+
 
 router.post('/end-to-end-prototype/v1/team-leader/view-and-manage-task/change-due-date-and-time', (req, res) => {
   req.session.data['ChangeDueDate'] = "yes"
