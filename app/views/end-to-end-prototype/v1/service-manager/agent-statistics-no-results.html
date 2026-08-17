@@ -192,7 +192,7 @@
           isPageHeading: false
         },
         hint: {
-          text: "Select the task you want to view, or 'All' for total tasks."
+          text: "All task types will display in the results unless a selection is made"
         },
         classes: "govuk-!-margin-bottom-0",
         id: "sm[agentStats][taskType]",
@@ -262,13 +262,13 @@
         name: "sm[agentStats][status]",
         fieldset: {
           legend: {
-            text: "Status",
+            text: "Status (optional)",
             isPageHeading: true,
             classes: "govuk-fieldset__legend--m"
           }
         },
         hint: {
-          text: "Select at least one option"
+          text: "All statuses will display in the results unless a selection is made"
         },
         values: data.sm.agentStats.status,
         items: [
