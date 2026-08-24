@@ -180,70 +180,54 @@
           checked: true
         },
         {
-          value: "yesterday",
-          text: "Yesterday"
+          value: "Last week",
+          text: "Last week",
+          hint: {
+            text: "Results will exclude weekends"
+            }
         },
         {
-          value: "Last seven days",
-          text: "Last seven days"
-        },
-          {
           value: "Last month",
-          text: "Last month"
+          text: "Last month",
+          hint: {
+            text: "Results will exclude weekends"
+            }
         },
         {
           divider: "or"
         },
         {
           value: "custome period",
-          text: "Other",
+          text: "Set a date range",
           conditional: {
             html: customePeriodHtml
           }
         }
       ]
     }) }}
- 
-          {# {{ govukRadios({
-              name: "mi[timePeriod]",
-              fieldset: {
-                legend: {
-                  text: "Time period (optional)",
-                  isPageHeading: false,
-                  classes: "govuk-fieldset__legend--m"
-                }
-              },
-              hint: {
-                  text: "Select an option. This will override the date range."
-                },
-              value: data.mi.timePeriod,
-              items: [
-                {
-                  value: "Daily",
-                  text: "Daily",
-                  hint: {
-                  text: "Add a hint text"
-                  }
-                },
-                {
-                  value: "Weekly",
-                  text: "Weekly",
-                  hint: {
-                  text: "Add a hint text"
-                  }
-                },
-                  {
-                  value: "Monthly",
-                  text: "Monthly",
-                  hint: {
-                  text: "Add a hint text"
-                  }
-                }
-              ]
-            }) }} #}
 
 
- 
+    {# {{ govukRadios({
+      name: "whereDoYouLive",
+      fieldset: {
+        legend: {
+          text: "Include weekends?",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--m"
+        }
+      },
+      items: [
+        {
+          value: "yes",
+          text: "Yes"
+        },
+        {
+          value: "no",
+          text: "No"
+        }
+      ]
+    }) }} #}
+
      
       <form method="post" novalidate>
 
