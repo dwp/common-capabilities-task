@@ -199,18 +199,23 @@ Team leader home
       </tbody>
     </table>
 
-    <h2 class="govuk-heading-m">Remove user from [Org name]</h2>
+    <h2 class="govuk-heading-m">Remove user from [org name]</h2>
 
-    <p>
+    {# <p>
       Before removing the user from the organisation unit, you must review all of their active, 
       allocated and on hold tasks in ‘View and manage tasks’. 
       Any assigned tasks must be returned to the queue.
+    </p> #}
+
+    <p>
+      Any open tasks will be returned to the queue.
     </p>
+
    
     {{ govukButton({
       text: "Remove from organisation unit",
       classes: "govuk-!-static-margin-top-2 govuk-button--warning",
-      href: "remove-agent-from-org"
+      href: "remove-agent-from-org-georgia"
     }) }}
 
 {% endblock %}

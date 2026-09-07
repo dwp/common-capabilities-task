@@ -269,15 +269,29 @@ router.post(
   }
 )
 
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-oliver', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveOliverLogan == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-oliver")
+	}
+})
 
-router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org', (req, res) => {
-	if (req.session.data.removindAgentFromOrg.agentRemoveNoTasks == 'yes'){
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-georgia', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveGeorgiaDuncan == 'yes'){
 		res.redirect("manage-agents")
 	} else {
 		res.redirect("my-profile-agent-georgia")
 	}
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/my-profile-agent-emily', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveEmilyCarter == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-emily")
+	}
+})
 
 
 }
