@@ -28,6 +28,10 @@ Team leader home
   {% set removedAgentName = "Emily Carter" %}
 {% endif %}
 
+{% if data.removingAgentFromOrg.agentRemoveSophieBennett == "yes" %}
+  {% set removedAgentName = "Sophie Bennett" %}
+{% endif %}
+
 {% if removedAgentName %}
   {{ govukNotificationBanner({
     type: "success",
@@ -108,12 +112,15 @@ Team leader home
               </tr>
             {% endif %}
 
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell " data-testid="table-cell">
-                <a href="agent-details-sm" id="00090003" class="govuk-link">Sophie Bennett</a>
-                <br><span class="govuk-hint">Staff number: 00090003</span>
-              </td>
-            </tr>
+            {% if data.removingAgentFromOrg.agentRemoveSophieBennett != "yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell " data-testid="table-cell">
+                  <a href="my-profile-agent-sophie" id="00090003" class="govuk-link">Sophie Bennett</a>
+                  <br><span class="govuk-hint">Staff number: 00090003</span>
+                </td>
+              </tr>
+            {% endif %}
+
             <tr class="govuk-table__row"><td class="govuk-table__cell " data-testid="table-cell">
               <a href="agent-details-sm" id="00090004" class="govuk-link">Performance Tester (00090004)</a>
               <br><span class="govuk-hint">Staff number: 00090004</span>

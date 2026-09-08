@@ -285,11 +285,19 @@ router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent
 	}
 })
 
-router.post('/end-to-end-prototype/v1/service-manager/manage-claims/my-profile-agent-emily', (req, res) => {
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-emily', (req, res) => {
 	if (req.session.data.removingAgentFromOrg.agentRemoveEmilyCarter == 'yes'){
 		res.redirect("manage-agents")
 	} else {
 		res.redirect("my-profile-agent-emily")
+	}
+})
+
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-sophie', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveSophieBennett == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-sophie")
 	}
 })
 
