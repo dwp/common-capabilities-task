@@ -32,6 +32,14 @@ Team leader home
   {% set removedAgentName = "Sophie Bennett" %}
 {% endif %}
 
+{% if data.removingAgentFromOrg.agentRemoveJamesWilson == "yes" %}
+  {% set removedAgentName = "James Wilson" %}
+{% endif %}
+
+{% if data.removingAgentFromOrg.agentRemoveCharlotteBrown == "yes" %}
+  {% set removedAgentName = "Charlotte Brown" %}
+{% endif %}
+
 {% if removedAgentName %}
   {{ govukNotificationBanner({
     type: "success",
@@ -114,24 +122,31 @@ Team leader home
 
             {% if data.removingAgentFromOrg.agentRemoveSophieBennett != "yes" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell " data-testid="table-cell">
+                <td class="govuk-table__cell ">
                   <a href="my-profile-agent-sophie" id="00090003" class="govuk-link">Sophie Bennett</a>
                   <br><span class="govuk-hint">Staff number: 00090003</span>
                 </td>
               </tr>
             {% endif %}
 
-            <tr class="govuk-table__row"><td class="govuk-table__cell " data-testid="table-cell">
-              <a href="agent-details-sm" id="00090004" class="govuk-link">Performance Tester (00090004)</a>
-              <br><span class="govuk-hint">Staff number: 00090004</span>
-            </td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell " data-testid="table-cell">
-              <a href="agent-details-sm" id="00090005" class="govuk-link">Performance Tester (00090005)</a>
-              <br><span class="govuk-hint">Staff number: 00090005</span>
-            </td>
-          </tr>
+            {% if data.removingAgentFromOrg.agentRemoveJamesWilson != "yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <a href="my-profile-agent-james" id="00090004" class="govuk-link">James Wilson</a>
+                  <br><span class="govuk-hint">Staff number: 00090004</span>
+                </td>
+              </tr>
+            {% endif %}
+            
+            {% if data.removingAgentFromOrg.agentRemoveCharlotteBrown != "yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell " data-testid="table-cell">
+                  <a href="my-profile-agent-charlotte" id="00090005" class="govuk-link">Charlotte Brown</a>
+                  <br><span class="govuk-hint">Staff number: 00090005</span>
+                </td>
+              </tr>
+            {% endif %}
+
           <tr class="govuk-table__row">
             <td class="govuk-table__cell " data-testid="table-cell">
               <a href="agent-details-sm" id="00090006" class="govuk-link">Performance Tester (00090006)</a>

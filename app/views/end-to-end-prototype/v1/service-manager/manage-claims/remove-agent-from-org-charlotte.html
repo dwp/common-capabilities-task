@@ -1,6 +1,6 @@
 {% extends "layouts/new-main.html" %}
 
-{% set pageName = "Are you sure you want to remove Emily Carter from [org name]?" %}
+{% set pageName = "Are you sure you want to remove Charlotte Brown from [org name]?" %}
 
 {% block beforeContent %}
 
@@ -18,24 +18,24 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p>They will be removed from 3 groups. They are not in any teams.</p>
-      <p>They have no open tasks.</p>
+      <p>They will be removed from 3 groups and 1 team. They are not in any groups.</p>
+      <p>They have 5 open tasks. These tasks will be returned to the queue for someone else to claim.</p>
 
       <form method="post" novalidate>
   
           {{ govukRadios({
-            name: "removingAgentFromOrg[agentRemoveEmilyCarter]",
+            name: "removingAgentFromOrg[agentRemoveCharlotteBrown]",
             fieldset: {
               legend: {
                 isPageHeading: false,
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            value: data.removingAgentFromOrg.agentRemoveEmilyCarter,
+            value: data.removingAgentFromOrg.agentRemoveCharlotteBrown,
             items: [
               {
                 value: "yes",
-                text: "Yes, remove Emily Carter"
+                text: "Yes, remove Charlotte Brown and return 5 tasks to the queue"
               },
               {
                 value: "no",
@@ -45,9 +45,9 @@
           }) }}
 
           <div class="govuk-button-group">
-              {{ govukButton({
-              text: "Continue"
-              }) }}
+            {{ govukButton({
+            text: "Continue"
+            }) }}
           </div>
         
       </form>

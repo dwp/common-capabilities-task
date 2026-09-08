@@ -301,5 +301,22 @@ router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent
 	}
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-james', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveJamesWilson == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-james")
+	}
+})
+
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent-from-org-charlotte', (req, res) => {
+	if (req.session.data.removingAgentFromOrg.agentRemoveCharlotteBrown == 'yes'){
+		res.redirect("manage-agents")
+	} else {
+		res.redirect("my-profile-agent-charlotte")
+	}
+})
+
+
 
 }
