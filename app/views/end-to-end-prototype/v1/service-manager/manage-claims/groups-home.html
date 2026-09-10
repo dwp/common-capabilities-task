@@ -28,7 +28,7 @@
 {% endblock %}
 
 {% block pageTitle %}
-  Service manager home
+  Groups
 {% endblock %}
 
 {% block beforeContent %}
@@ -50,6 +50,20 @@
 
 {% block content %}
 
+{% set removedGroup = null %}
+
+{% if data.removingAgentFromOrg.agentRemoveOliverLogan == "yes" %}
+  {% set removedGroup = "Oliver Logan" %}
+{% endif %}
+
+
+{% if removedGroup %}
+  {{ govukNotificationBanner({
+    type: "success",
+    text: "You deleted " + removedGroup
+  }) }}
+{% endif %}
+
 <div class="govuk-width-container">
   <h1 class="govuk-heading-l">Groups</h1>
   
@@ -61,15 +75,15 @@
   }) }}
 
   <div class="box5 govuk-!-margin-bottom-3">
-    <h2 class="govuk-heading-m"><a href="group-admin">group-one</a></h2>
+    <h2 class="govuk-heading-m"><a href="groups-one">group-one</a></h2>
   </div>
 
   <div class="box5 govuk-!-margin-bottom-3">
-    <h2 class="govuk-heading-m"><a href="group-admin">group-two</a></h2>
+    <h2 class="govuk-heading-m"><a href="#">group-two</a></h2>
   </div>
 
   <div class="box5">
-    <h2 class="govuk-heading-m"><a href="group-admin">group-three</a></h2>
+    <h2 class="govuk-heading-m"><a href="#">group-three</a></h2>
   </div>
 
 </div>

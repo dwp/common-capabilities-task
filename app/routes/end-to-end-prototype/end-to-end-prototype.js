@@ -317,6 +317,9 @@ router.post('/end-to-end-prototype/v1/service-manager/manage-claims/remove-agent
 	}
 })
 
+router.post('/end-to-end-prototype/v1/service-manager/manage-claims/groups-one', (req, res) => {
+	res.redirect("groups-home")
+})
 
 
 }

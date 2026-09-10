@@ -1,0 +1,234 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+    </div>
+ 
+  </div>
+</header> 
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+{% endblock %}
+
+{% block pageTitle %}
+  Group one
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "DWP Task dashboard",
+        href: "home-service-manager_as_sr"
+      },
+      {
+        text: "Manage organisation home",
+        href: "manage-org-b"
+      },
+      {
+        text: "Group one",
+        href: "manage-one"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Groups</h1>
+    <h2 class="govuk-heading-s">Task types</h2>
+
+    <p>Group one members will be able to:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        Process Benefit GB
+      </li>
+      <li>
+        Issue Benefits Amount 04
+      </li>
+      <li>
+        Decision To Grant Benefit Task Type
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Group details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Group ID"
+          },
+          value: {
+            text: "Group-one"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Group ID"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Group name"
+          },
+          value: {
+            text: "Kirill Test Group for audit screenshots"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Members"
+          },
+          value: {
+            text: "decision-maker-agent processing-agent"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-s">Matching criteria</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "working-pattern"
+          },
+          value: {
+            text: "weekends"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Group ID"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "role"
+          },
+          value: {
+            text: "decision-maker-agent
+            processing agent"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "grade"
+          },
+          value: {
+            text: "aa"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "language"
+          },
+          value: {
+            text: "english"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form method="post" novalidate>
+
+      <div class="govuk-button-group">
+
+        {{ govukButton({
+          text: "Delete Group",
+          classes: "govuk-button--warning"
+        }) }}
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "groups-home"
+        }) }}
+      
+      </div>
+
+    </form>
+  
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+
