@@ -50,19 +50,13 @@
 
 {% block content %}
 
-{% set removedGroup = null %}
-
-{% if data.removingAgentFromOrg.agentRemoveOliverLogan == "yes" %}
-  {% set removedGroup = "Oliver Logan" %}
-{% endif %}
-
-
 {% if removedGroup %}
   {{ govukNotificationBanner({
     type: "success",
-    text: "You deleted " + removedGroup
+    text: "You deleted group-one"
   }) }}
 {% endif %}
+
 
 <div class="govuk-width-container">
   <h1 class="govuk-heading-l">Groups</h1>

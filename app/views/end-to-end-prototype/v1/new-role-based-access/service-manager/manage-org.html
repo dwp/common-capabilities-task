@@ -1,7 +1,7 @@
+
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
   
 {% block header %}
-
 
 <header data-module="govuk-header" class="dwp-header">
   <div class="dwp-header__content govuk-width-container">
@@ -33,23 +33,26 @@
 
 {% block beforeContent %}
 
-  {# {{ govukBackLink({
-    text: "Back",
-    href: "../../select-user-admin"
-  }) }} #}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "DWP Task dashboard",
+        href: "home-service-manager_as_sr"
+      }
+    ]
+  }) }}
 
 {% endblock %}
 
 {% block content %}
 
-
-<h1 class="govuk-heading-l">Service Manager dashboard</h1>
-
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Manage Org B setup</h1>
 
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="/end-to-end-prototype/v1/service-manager/manage-claims/groups-home">Add and manage groups</a></h2>
+      <h2 class="govuk-heading-m"><a href="groups-home">Add and manage groups</a></h2>
       <p>Add and manage groups for agents who do the same task. Agents is the same group will be able to claim the same task types.</p>
     </div>
 </div>
@@ -57,16 +60,8 @@
 <div class="govuk-width-container">
   &nbsp;
     <div class="box">
-      <h2 class="govuk-heading-m"><a href="/end-to-end-prototype/v1/service-manager/view-and-manage-tasks/search-results">View and manage tasks</a></h2>
-      <p>View and manage tasks for Claims Org B over a given date range.</p>
-    </div>
-</div>
-
-<div class="govuk-width-container">
-  &nbsp;
-    <div class="box">
-      <h2 class="govuk-heading-m"><a href="manage-org">Manage [org name] set up - View and Manage Teams</a></h2>
-      <p>Add or remove agents and team leaders, or delete teams in [org name].</p>
+      <h2 class="govuk-heading-m"><a href="#">Add and manage task types</a></h2>
+      <p>Add and manage task types in Org B.</p>
     </div>
 </div>
 
