@@ -322,5 +322,15 @@ router.post('/end-to-end-prototype/v1/service-manager/manage-claims/groups-one',
 	res.redirect("groups-home")
 })
 
+router.post('/end-to-end-prototype/v1/new-role-based-access/service-manager/change-task-type-name', (req, res) => {
+	res.redirect("task-type-one")
+})
+
+router.post('/end-to-end-prototype/v1/new-role-based-access/service-manager/change-url', (req, res) => {
+	res.redirect("task-type-one")
+})
+
+
+
 
 }

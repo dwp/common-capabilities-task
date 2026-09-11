@@ -1,0 +1,210 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+    </div>
+ 
+  </div>
+</header> 
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+{% endblock %}
+
+{% block pageTitle %}
+  Check for change housing costs
+{% endblock %}
+
+{% block beforeContent %}
+
+ {{ govukBackLink({
+  text: "Back",
+  href: "add-and-manage-task-type"
+ }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">Check for change housing costs</h1>
+
+    <p>View and manage this task type.</p>
+
+    <h2 class="govuk-heading-s">Task type details</h2>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "Task type ID"
+          },
+          value: {
+            text: "check-for-change-housing-costs"
+          }
+        },
+        {
+          key: {
+            text: "Task type name"
+          },
+          value: {text: data.changeTaskTypeName or "Check for change housing costs"},
+          actions: {
+            items: [
+              {
+                href: "change-task-type-name",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Execution URL"
+          },
+          value: {text: data.changeUrl},
+          actions: {
+            items: [
+              {
+                href: "change-url",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Priority"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "change-priority",
+                text: "Change",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Must complete in"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <h2 class="govuk-heading-s">Task type matching criteria</h2>
+
+    <p>Tasks that are already in progress will not be affected by changes you make to matching criteria.</p>
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "escalate"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "roles"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "grade"
+          },
+          value: {
+            text: "None"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Add",
+                visuallyHiddenText: "Item label"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <form method="post" novalidate>
+
+      <div class="govuk-button-group">
+      
+        {{ govukButton({
+          text: "Back",
+          classes: "govuk-button--secondary",
+          href: "add-and-manage-task-type"
+        }) }}
+      
+      </div>
+
+    </form>
+  
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+

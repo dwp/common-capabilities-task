@@ -1,0 +1,100 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+    </div>
+ 
+  </div>
+</header> 
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+{% endblock %}
+
+{% block pageTitle %}
+  Apply [organisation name] task types
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "DWP Task dashboard",
+        href: "home-service-manager_as_sr"
+      },
+      {
+        text: "Manage organisation home",
+        href: "manage-org-b"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+  <h1 class="govuk-heading-l">Apply [organisation name] task types</h1>
+  
+  <p>Create and manage task types for [organisation name]. These are common items of routine work.</p>
+  <p>Task types allow a user to view and manage the different kinds of work in the Apply For Pension Credit organisation unit.</p>
+
+  {{ govukButton({
+    text: "Create task type",
+    href: "create-task-type"
+  }) }}
+
+  <div class="card">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link" href="task-type-one">check-for-change-housing-costs</a>
+    </h2>
+    <p class="govuk-body-m">Check for change housing costs</p>
+  </div>
+
+  <div class="card">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link" href="#">positive-claim-sme</a>
+    </h2>
+    <p class="govuk-body-m">Positive Claim SME</p>
+  </div>
+
+  <div class="card">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link" href="#">review</a>
+    </h2>
+    <p class="govuk-body-m">Review</p>
+  </div>
+
+  <div class="card">
+    <h2 class="govuk-heading-m">
+      <a class="govuk-link" href="#">tcs-006-new-claim-verification-003</a>
+    </h2>
+    <p class="govuk-body-m">TCS 006 New Claim Verification 003</p>
+  </div>
+
+
+</div>
+
+
+&nbsp;
+{% endblock %}
+
