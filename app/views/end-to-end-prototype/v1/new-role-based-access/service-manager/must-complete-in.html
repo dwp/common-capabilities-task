@@ -1,0 +1,107 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+  
+{% block header %}
+
+
+<header data-module="govuk-header" class="dwp-header">
+  <div class="dwp-header__content govuk-width-container">
+    <div class="dwp-header__service-name">
+      <a href="/" class="dwp-header__link">{{serviceName}}</a>
+    </div>
+    <div class="dwp-header__service-action">
+        <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+    </div>
+ 
+  </div>
+</header> 
+
+<div class="govuk-width-container">
+  {{ govukPhaseBanner({
+      tag: {
+        text: "Beta"
+      },
+      html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+      classes: 'govuk-width-container govuk-!-margin-bottom-3'
+    }) }} 
+</div> 
+
+{% endblock %}
+
+{% block pageTitle %}
+  Change or remove completion timeframe
+{% endblock %}
+
+{% block beforeContent %}
+
+ {{ govukBackLink({
+  text: "Back",
+  href: "add-and-manage-task-type"
+ }) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Change or remove completion timeframe</h1>
+
+    <p>
+      An optional completion timeframe indicates when a task should be completed by. 
+      This will set a due date for new tasks of this type when they are created.
+    </p>
+
+    <p>
+      Do not give a timeframe if you do not need due dates for this task type.
+    </p>
+
+    <form method="post" novalidate>
+
+
+      {{ govukRadios({
+        name: "change-or-remove-completion-timeframe",
+        fieldset: {
+          legend: {
+            text: "Do you want this task type to have a completion timeframe?",
+            isPageHeading: false,
+            classes: "govuk-fieldset__legend--s"
+          }
+        },
+        value: data.changeOrRemoveCompletionTimefram,
+        items: [
+          {
+            value: "Yes",
+            text: "Yes"
+          },
+          {
+            value: "No",
+            text: "No"
+          }
+        ]
+      }) }}
+
+   
+    <div class="govuk-button-group">
+
+      {{ govukButton({
+        text: "Confirm"
+      }) }}
+    
+      {{ govukButton({
+        text: "Back",
+        classes: "govuk-button--secondary",
+        href: "task-type-one"
+      }) }}
+    
+    </div>
+
+    </form>
+  
+  </div>
+</div>
+
+
+&nbsp;
+{% endblock %}
+
