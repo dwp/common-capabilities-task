@@ -77,6 +77,35 @@
 
 <h1 class="govuk-heading-l">{{pageName}}</h1>
 
+{{ govukCheckboxes({
+  name: "claimTasks",
+  fieldset: {
+    legend: {
+      text: "Select task types",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: ""
+  },
+  values: data.claimTasks,
+  items: [
+    {
+      value: "One",
+      text: "Workstream one"
+    },
+    {
+      value: "Two",
+      text: "Workstream two"
+    },
+    {
+      value: "Three",
+      text: "Workstream three"
+    }
+  ]
+}) }}
+
 
 <div class="govuk-button-group">
 
