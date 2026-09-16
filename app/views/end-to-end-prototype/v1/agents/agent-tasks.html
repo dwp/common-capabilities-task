@@ -76,35 +76,164 @@
 
 
 <h1 class="govuk-heading-l">{{pageName}}</h1>
+<h2 class="govuk-heading-s">Select task types</h2>
 
-{{ govukCheckboxes({
-  name: "claimTasks",
-  fieldset: {
-    legend: {
-      text: "Select task types",
-      isPageHeading: false,
-      classes: "govuk-fieldset__legend--s"
-    }
-  },
-  hint: {
-    text: ""
-  },
-  values: data.claimTasks,
-  items: [
-    {
-      value: "One",
-      text: "Workstream one"
-    },
-    {
-      value: "Two",
-      text: "Workstream two"
-    },
-    {
-      value: "Three",
-      text: "Workstream three"
-    }
-  ]
-}) }}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    {{ govukCheckboxes({
+      name: "claimTasks",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      values: data.claimTasks,
+      items: [
+        {
+          value: "One",
+          text: "Workstream one"
+        },
+        {
+          value: "Two",
+          text: "Task type A"
+        },
+        {
+          value: "Two",
+          text: "Task type B"
+        },
+        {
+          value: "Two",
+          text: "Task type C"
+        },
+        {
+          value: "Two",
+          text: "Task type D"
+        },
+        {
+          value: "Two",
+          text: "Task type E"
+        },
+        {
+          value: "Two",
+          text: "Task type F"
+        },
+        {
+          value: "Two",
+          text: "Task type G"
+        }
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-one-third">
+    {{ govukCheckboxes({
+      name: "claimTasks",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      values: data.claimTasks,
+      items: [
+        {
+          value: "One",
+          text: "Workstream two"
+        },
+        {
+          value: "Two",
+          text: "Task type H"
+        },
+        {
+          value: "Two",
+          text: "Task type I"
+        },
+        {
+          value: "Two",
+          text: "Task type J"
+        },
+        {
+          value: "Two",
+          text: "Task type K"
+        },
+        {
+          value: "Two",
+          text: "Task type L"
+        },
+        {
+          value: "Two",
+          text: "Task type M"
+        },
+        {
+          value: "Two",
+          text: "Task type N"
+        }
+      ]
+    }) }}
+  </div>
+  <div class="govuk-grid-column-one-third">
+    {{ govukCheckboxes({
+      name: "claimTasks",
+      classes: "govuk-checkboxes--small",
+      fieldset: {
+        legend: {
+          text: "",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: ""
+      },
+      values: data.claimTasks,
+      items: [
+        {
+          value: "One",
+          text: "Workstream three"
+        },
+        {
+          value: "Two",
+          text: "Task type O"
+        },
+        {
+          value: "Two",
+          text: "Task type P"
+        },
+        {
+          value: "Two",
+          text: "Task type Q"
+        },
+        {
+          value: "Two",
+          text: "Task type R"
+        },
+        {
+          value: "Two",
+          text: "Task type S"
+        },
+        {
+          value: "Two",
+          text: "Task type T"
+        },
+        {
+          value: "Two",
+          text: "Task type U"
+        }
+      ]
+    }) }}
+  </div>
+</div>
+
 
 
 <div class="govuk-button-group">
