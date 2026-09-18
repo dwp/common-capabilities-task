@@ -40,6 +40,10 @@ Team leader home
   {% set removedAgentName = "Charlotte Brown" %}
 {% endif %}
 
+{% if data.removingAgentFromOrg.agentRemoveLeonAtkinson == "yes" %}
+  {% set removedAgentName = "Leon Atkinson" %}
+{% endif %}
+
 {% if removedAgentName %}
   {{ govukNotificationBanner({
     type: "success",
@@ -146,6 +150,16 @@ Team leader home
                 </td>
               </tr>
             {% endif %}
+
+            {% if data.removingAgentFromOrg.agentRemoveLeonAtkinson != "yes" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" data-testid="table-cell">
+                  <a href="my-profile-agent-leon" id="00090005" class="govuk-link">Leon Atkinson</a>
+                  <br><span class="govuk-hint">Staff number: 00090006</span>
+                </td>
+              </tr>
+            {% endif %}
+
 
           <tr class="govuk-table__row">
             <td class="govuk-table__cell " data-testid="table-cell">

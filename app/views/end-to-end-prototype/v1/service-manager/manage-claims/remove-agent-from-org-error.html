@@ -18,7 +18,7 @@
     titleText: "There is a problem",
     errorList: [
       {
-        text: "Select 'Yes, remove Oliver Logan' if you want to remove Oliver Logan from [org name]",
+        text: "Select 'Yes, remove Oliver Logan from [org unit]' if you want to remove Oliver Logan from [org unit]",
         href: "#ScenarioOne"
       }
     ]
@@ -31,7 +31,7 @@
 
       <p>They are not in any teams or groups.</p>
 
-      <p>They have no open tasks.</p>
+      <p>They do not have any open tasks.</p>
 
 
       <form method="post" novalidate>
@@ -46,13 +46,13 @@
           }
         },
         errorMessage: {
-        text: "Select 'Yes, remove Oliver Logan' if you want to remove Oliver Logan from [org name]"
+        text: "Select 'Yes, remove Oliver Logan from [org unit]' if you want to remove Oliver Logan from [org unit]"
         },
         value: data.removindAgentFromOrg.agentRemoveNoTasks,
         items: [
           {
             value: "yes",
-            text: "Yes, remove Oliver Logan"
+            text: "Yes, remove Oliver Logan from [org unit]"
           },
           {
             value: "no",

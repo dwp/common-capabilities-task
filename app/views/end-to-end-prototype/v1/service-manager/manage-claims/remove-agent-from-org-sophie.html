@@ -18,8 +18,8 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p>They will be removed from 3 groups and 1 team.</p>
-      <p>They have no open tasks.</p>
+      <p>They will be removed from [groups] groups and [teams] teams.</p>
+      <p>They do not have any open tasks.</p>
 
       <form method="post" novalidate>
   
@@ -35,7 +35,7 @@
             items: [
               {
                 value: "yes",
-                text: "Yes, remove Sophie Bennett"
+                text: "Yes, remove Sophie Bennett from [org unit]"
               },
               {
                 value: "no",

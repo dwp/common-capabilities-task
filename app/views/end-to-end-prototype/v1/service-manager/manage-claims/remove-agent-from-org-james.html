@@ -18,8 +18,9 @@
 
       <h1 class="govuk-heading-l">{{pageName}}</h1>
 
-      <p>They will be removed from 2 teams. They are not in any groups.</p>
-      <p>They have 5 open tasks. These tasks will be returned to the queue for someone else to claim.</p>
+      <p>They are not in any groups. They will be removed from [teams] teams.</p>
+
+      <p>They have [tasks] open tasks. These tasks will be returned to the queue for someone else to claim.</p>
 
       <form method="post" novalidate>
   
@@ -35,7 +36,7 @@
             items: [
               {
                 value: "yes",
-                text: "Yes, remove James Wilson and return 5 tasks to the queue"
+                text: "Yes, remove [name] from [org unit] and return [tasks] to the queue"
               },
               {
                 value: "no",
