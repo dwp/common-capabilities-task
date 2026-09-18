@@ -47,7 +47,7 @@ Team leader home
 {% if removedAgentName %}
   {{ govukNotificationBanner({
     type: "success",
-    text: "You have removed " + removedAgentName + " from [org name]"
+    text: "You have removed " + removedAgentName + " from [org name]. [X] tasks have been returned to the queue."
   }) }}
 {% endif %}
 
