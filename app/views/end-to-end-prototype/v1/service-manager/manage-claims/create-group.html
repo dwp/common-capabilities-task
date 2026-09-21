@@ -38,7 +38,7 @@ Create a group
         }) }}
 
         {{ govukInput({
-          id: "group name",
+          id: "group-nam",
           name: "group-name",
           value: data['group-name'],
           label: {
@@ -51,6 +51,43 @@ Create a group
           }
         }) }}
 
+        {{ govukRadios({
+          name: "",
+          fieldset: {
+            legend: {
+              text: "Select",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          value: data.groupNameChose,
+          items: [
+            {
+              value: "Regular group",
+              text: "Regular group"
+            },
+            {
+              value: "Super group",
+              text: "Super group",
+              hint: {text: "Some explanation."}
+            }
+          ]
+        }) }}
+
+        {# {{ govukTextarea({
+          id: "groupName",
+          name: "group-name",
+          value: data['group-name'],
+          label: {
+            text: "Group name (optional)",
+            isPageHeading: false,
+            classes: "govuk-label--s"
+          },
+          hint: {
+            text: "For example, 'The agents in this group are decision makers. They have responsibility for customer decisions.'"
+          },
+          value: data.groupName
+        }) }} #}
 
      
   
