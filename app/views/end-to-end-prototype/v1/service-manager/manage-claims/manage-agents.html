@@ -60,14 +60,34 @@ Team leader home
   <main class="govuk-main-wrapper" id="main-content" role="main">
     <div class="govuk-grid-row" data-testid="grid-row">
       <div data-testid="column-two-thirds" class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Agents</h1>
-        <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
-        <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p>
+        <h1 class="govuk-heading-l">Add an agent</h1>
+        {# <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
+        <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p> #}
 
-          {{ govukButton({
-            text: "Add an agent",
-            href: "manage-agents-add-an-agent"
+          {{ govukInput({
+            id: "AddAnAgent",
+            name: "AddAnAgent",
+            label: {
+              text: "Search",
+              isPageHeading: false,
+              classes: "govuk-label--m"
+            },
+            classes: "govuk-input--width-20",
+            hint: {
+              text: "Use name, staff number, or email."
+            },
+            value: data.AddAnAgent
           }) }}
+
+
+          <div class="govuk-button-group">
+            {{ govukButton({
+              text: "Continue",
+              href: "manage-agents-add-an-agent"
+            }) }}
+          </div>
+
+          <a href="cannot-find-the-agent" class="govuk-link">I cannot find the agent I am looking for</a>
       
       </div>
       <div data-testid="column-one-third" class="govuk-grid-column-one-third">

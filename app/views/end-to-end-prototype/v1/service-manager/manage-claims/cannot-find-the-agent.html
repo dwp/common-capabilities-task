@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ {{pageName}}
+{% endblock %}
+
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% set pageName = "I cannot find the agent I'm looking for" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">
+          {{pageName}}
+        </h1>
+
+        <h2 class="govuk-heading-m">Get help with your search</h2>
+
+        <p>
+          If you cannot find the agent you're looking for:
+        </p>
+
+        <ul class="govuk-list govuk-list--bullet">
+          <li>
+            Check their details and try again - search by email or staff number if their name doesn't show results
+          </li>
+          <li>
+            If they are a new starter, wait 24 hours and try again
+          </li>
+          <li>
+            If they are a new starter, wait 24 hours and try again
+            <a aria-label="Opens in new tab" href="https://dwp.service-now.com/itsupport?id=dwp_report_an_incident&amp;sys_id=dbfc8aeb1b58dd50875b76a5d34bcb54">report an incident on Tech Place</a>
+          </li>
+        </ul>
+
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "manage-agents"
+          }) }}
+        
+
+    </div>
+  </div>
+          
+      
+  
+{% endblock %}
+
+
