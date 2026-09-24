@@ -10,6 +10,61 @@ Team leader home
 
 {% endblock %}
 
+ {% block pageScripts %}
+
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script type="text/javascript" src="/public/javascripts/teams-2.js"></script>
+  <script>
+    const teamMembers = [
+      "Aiden Jenkins, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Anderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Adams, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amy Johnston, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Ben Hoad, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Joel Odonnell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Oliver Logan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Dan Hayes, 12345678, G4S DWP Contact Center",
+      "Kathleen Lin, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Darren Lowery, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kamran Roth, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Amaan Hubbard, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sally Whitaker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Georgia Duncan, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Jean Booker, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Kaine Bell, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Arjan Sharp, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Bianca Nicholson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Brett Henderson, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Hassan Young, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Sonia Pruitt, 12345678, email@dwp.gov.uk, G4S DWP Contact Center",
+      "Erica Fernandez, 12345678, email@dwp.gov.uk, G4S DWP Contact Center"
+    ]
+
+    accessibleAutocomplete({
+      element: document.querySelector('#searchb'),
+      id: 'searchb', // To match it to the existing <label>.
+      CSSNamespace: 'test',
+      source: teamMembers,
+      templates: {
+        inputValue: function (suggestion) {
+          return suggestion
+        },
+        suggestion: function (suggestion) {
+          const parts = suggestion.split(", ");
+          return `${parts[0]}, ${parts[1]}, ${parts[2]}, ${parts[3]}`
+       
+        }
+      }
+    })
+  </script>
+{% endblock %}
+
+{% block stylesheets %}
+  {{ super() }}
+  <link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" type="text/css"/>
+{% endblock %}
+
+
 {% block content %}
 
 
@@ -64,23 +119,15 @@ Team leader home
         {# <p class="govuk-body-m">Add an agent and set their matching criteria.</p>
         <p class="govuk-body-m">When you have set up an agent you can change their group membership, update their matching criteria, or remove them.</p> #}
 
-          {{ govukInput({
-            id: "AddAnAgent",
-            name: "AddAnAgent",
-            label: {
-              text: "Search",
-              isPageHeading: false,
-              classes: "govuk-label--m"
-            },
-            classes: "govuk-input--width-20",
-            hint: {
-              text: "Use name, staff number, or email."
-            },
-            value: data.AddAnAgent
-          }) }}
+
+          <label class="govuk-label govuk-label--m" for="searchb">Search</label>
+            <div id="event-name-hint" class="govuk-hint">
+              Use name, staff number, or email.
+            </div>
+          <div id="searchb" class="govuk-input--width-30"></div>
 
 
-          <div class="govuk-button-group">
+          <div class="govuk-button-group govuk-!-margin-top-4">
             {{ govukButton({
               text: "Continue",
               href: "manage-agents-add-an-agent"
