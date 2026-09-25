@@ -338,6 +338,16 @@ router.post('/end-to-end-prototype/v1/new-role-based-access/service-manager/chan
 	res.redirect("task-type-one")
 })
 
+// 4884
+router.post('/agent-home/4884/what-next', (req, res) => {
+	if (req.session.data.agent.claimTasks == 'Claim tasks automaticaly'){
+		res.redirect("agent-no-tasks-automaticaly")
+	} else {
+		res.redirect("select-tasks-manually")
+	}
+})
+
+
 
 
 

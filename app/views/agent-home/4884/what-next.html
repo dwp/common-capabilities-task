@@ -1,0 +1,65 @@
+
+{% extends "layouts/main.html" %}
+
+{% set pageName = "How do you want to claim tasks?" %}
+
+  {% block beforeContent %}
+    {{ govukBackLink({
+      text: "Back",
+      href: "javascript:window.history.back()"
+    }) }}
+  {% endblock %}
+
+  {% block pageScripts %}
+
+  
+
+{% endblock %}
+
+
+
+{% block content %}
+
+<form method="post" novalidate>
+
+
+  <div class="govuk-grid-row govuk-!-margin-bottom-4">
+    <div class="govuk-grid-column-two-thirds">
+
+    {# <h1 class="govuk-heading-l">{{pageName}}</h1> #}
+
+    {{ govukRadios({
+      name: "agent[claimTasks]",
+      fieldset: {
+        legend: {
+          html: pageName,
+          isPageHeading: true,
+          classes: "govuk-fieldset__legend--l"
+        }
+      },
+      value: data.agent.claimTasks,
+      items: [
+        {
+          value: "Claim tasks automaticaly",
+          text: "Claim tasks automaticaly",
+          hint: {text: "Tasks are assigned automatically and appear in your work queue."}
+        },
+        {
+          value: "Manually claim tasks",
+          text: "Claim tasks manually",
+          hint: {text: "Choose individual tasks from the available task list."}
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Continue"
+    }) }}
+
+    </form>
+
+        
+    </div>
+  </div>
+  
+{% endblock %}
