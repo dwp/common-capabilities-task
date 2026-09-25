@@ -1,0 +1,117 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set pageName = "Check this is the right agent" %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block pageTitle %}
+  Add agents
+{% endblock %}
+
+{% block header %}
+
+  <header data-module="govuk-header" class="dwp-header">
+    <div class="dwp-header__content govuk-width-container">
+      <div class="dwp-header__service-name">
+        <a href="/" class="dwp-header__link">{{serviceName}}</a>
+      </div>
+      <div class="dwp-header__service-action">
+          <p class="header_right-panel"><span>National Mailbox</span> | <a class="dwp-header__link" href="select-user-sr">Working as a Service Manager</a></p>
+      </div>
+    </div>
+  </header> 
+
+  <div class="govuk-width-container">
+    {{ govukPhaseBanner({
+        tag: {
+          text: "Beta"
+        },
+        html: 'This is a new private beta service - help us to improve it by telling us your  <a class="govuk-link" href="feedback">feedback</a>.',
+        classes: 'govuk-width-container govuk-!-margin-bottom-3'
+      }) }} 
+  </div> 
+
+{% endblock %}
+
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{pageName}}</h1>
+
+        {{ govukTable({
+          caption: "",
+          firstCellIsHeader: false,
+          firstCellIsHeader: true,
+          head: [
+            
+          ],
+          rows: [
+            [
+              {
+                text: "Name"
+              },
+              {
+                text: "John Doe"
+              }
+            ],
+            [
+              {
+                text: "Email"
+              },
+              {
+                text: "john.doe@dwp.gov.uk"
+              }
+            ],
+            [
+              {
+                text: "Staff number"
+              },
+              {
+                text: "46001122"
+              }
+            ],
+            [
+              {
+                text: "Office"
+              },
+              {
+                text: "London, Caxton House"
+              }
+            ]
+          ]
+        }) }}
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Continue",
+            href: ""
+          }) }}
+        
+          {{ govukButton({
+            text: "Back",
+            classes: "govuk-button--secondary",
+            href: "add-agent"
+          }) }}
+        
+        </div>
+      
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
